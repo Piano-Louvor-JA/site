@@ -24,8 +24,10 @@ const SEEN_MAX = 10_000
 export async function recordGeoVisit(event: H3Event): Promise<void> {
   try {
     const config = useRuntimeConfig()
-    const salt = config.geoSalt as string
-    if (!salt) return // telemetria desativada sem GEO_SALT
+    const salt = (config.geoSalt as string) || ''
+    // RF-02 (SITE-TELEMETRIA): sem GEO_SALT a telemetria NÃO desliga — usa hash
+    // determinístico ip+ua+dia (SHA-256 sem salt). Menos robusto que salted,
+    // mas mantém dedup diária LGPD-compliant (o hash não é persistido).
 
     const country = getCountryFromEvent(event)
     if (country === 'unknown') return
@@ -34,7 +36,9 @@ export async function recordGeoVisit(event: H3Event): Promise<void> {
     if (!ip) return
 
     const day = geoDayBucket()
-    const visitorId = `${day}:${hashIp(ip, salt).slice(0, 16)}`
+    const ua = event.node.req.headers['user-agent'] ?? ''
+    const uaFirst = Array.isArray(ua) ? ua[0] : ua
+    const visitorId = `${day}:${hashIp(`${ip}|${uaFirst}`, salt || 'piano-unsalted').slice(0, 16)}`
     if (seenVisitors.has(visitorId)) return
 
     const db = getFirestore(getFirebaseAdmin())
@@ -57,6 +61,8 @@ export interface GeoStatsResult {
   totalVisits: number
   days: number
   countries: Array<{ country: string; visits: number }>
+  /** RF-02: 'salted' (GEO_SALT configurado) ou 'unsalted' (fallback dedup) */
+  telemetryMode: 'salted' | 'unsalted'
 }
 
 /**
@@ -88,5 +94,8 @@ export async function getGeoStats(days: number): Promise<GeoStatsResult> {
     .map(([country, visits]) => ({ country, visits }))
     .sort((a, b) => b.visits - a.visits)
 
-  return { totalVisits, days, countries }
+  const config = useRuntimeConfig()
+  const telemetryMode = (config.geoSalt as string) ? 'salted' : 'unsalted'
+
+  return { totalVisits, days, countries, telemetryMode }
 }
