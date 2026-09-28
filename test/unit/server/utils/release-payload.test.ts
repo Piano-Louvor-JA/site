@@ -6,15 +6,15 @@ describe('parseGithubReleasePayload', () => {
     const payload = {
       action: 'published',
       repository: {
-        full_name: 'pianolouvorja/app',
+        full_name: 'Piano-Louvor-JA/app',
         name: 'app',
-        html_url: 'https://github.com/pianolouvorja/app',
+        html_url: 'https://github.com/Piano-Louvor-JA/app',
       },
       release: {
         tag_name: 'v2.0.0',
         name: 'v2.0.0',
         body: '## Novidades\n- Feature A\n- Bug fix B',
-        html_url: 'https://github.com/pianolouvorja/app/releases/tag/v2.0.0',
+        html_url: 'https://github.com/Piano-Louvor-JA/app/releases/tag/v2.0.0',
         published_at: '2026-08-08T12:00:00Z',
       },
     }
@@ -23,11 +23,11 @@ describe('parseGithubReleasePayload', () => {
 
     expect(result).toEqual({
       repo: 'app',
-      repoUrl: 'https://github.com/pianolouvorja/app',
+      repoUrl: 'https://github.com/Piano-Louvor-JA/app',
       tag: 'v2.0.0',
       title: 'v2.0.0',
       body: '## Novidades\n- Feature A\n- Bug fix B',
-      releaseUrl: 'https://github.com/pianolouvorja/app/releases/tag/v2.0.0',
+      releaseUrl: 'https://github.com/Piano-Louvor-JA/app/releases/tag/v2.0.0',
       publishedAt: '2026-08-08T12:00:00Z',
       action: 'published',
     })
@@ -36,7 +36,7 @@ describe('parseGithubReleasePayload', () => {
   it('returns null for non-published action', () => {
     const payload = {
       action: 'unpublished',
-      repository: { full_name: 'pianolouvorja/app', name: 'app', html_url: '' },
+      repository: { full_name: 'Piano-Louvor-JA/app', name: 'app', html_url: '' },
       release: { tag_name: 'v1.0', name: 'v1.0', body: '', html_url: '', published_at: '' },
     }
 
@@ -46,7 +46,7 @@ describe('parseGithubReleasePayload', () => {
   it('returns null when action is draft', () => {
     const payload = {
       action: 'created',
-      repository: { full_name: 'pianolouvorja/app', name: 'app', html_url: '' },
+      repository: { full_name: 'Piano-Louvor-JA/app', name: 'app', html_url: '' },
       release: { tag_name: 'v1.0', name: 'v1.0', body: '', html_url: '', published_at: '' },
     }
 
@@ -56,7 +56,7 @@ describe('parseGithubReleasePayload', () => {
   it('returns null for missing release', () => {
     const payload = {
       action: 'published',
-      repository: { full_name: 'pianolouvorja/app', name: 'app', html_url: '' },
+      repository: { full_name: 'Piano-Louvor-JA/app', name: 'app', html_url: '' },
     }
 
     expect(parseGithubReleasePayload(payload)).toBeNull()
@@ -74,12 +74,12 @@ describe('parseGithubReleasePayload', () => {
   it('falls back to full_name when name is missing', () => {
     const payload = {
       action: 'published',
-      repository: { full_name: 'pianolouvorja/app' },
+      repository: { full_name: 'Piano-Louvor-JA/app' },
       release: { tag_name: 'v1.0' },
     }
 
     const result = parseGithubReleasePayload(payload)!
-    expect(result.repo).toBe('pianolouvorja/app')
+    expect(result.repo).toBe('Piano-Louvor-JA/app')
   })
 
   it('returns null when both name and full_name are missing', () => {

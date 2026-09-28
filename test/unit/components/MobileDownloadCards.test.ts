@@ -42,7 +42,7 @@ const mobileWithAsset: CategoryResult = {
   tag: 'v0.1.53',
   assets: {
     android: {
-      url: 'https://github.com/pianolouvorja/apk/releases/download/v0.1.53/louvorja-piano-0.1.19.apk',
+      url: 'https://github.com/Piano-Louvor-JA/apk/releases/download/v0.1.53/louvorja-piano-0.1.19.apk',
       name: 'louvorja-piano-0.1.19.apk',
       size: 70000000,
     },
@@ -56,7 +56,7 @@ const mobileWithIosAsset: CategoryResult = {
   tag: 'v0.1.53',
   assets: {
     ios: {
-      url: 'https://github.com/pianolouvorja/apk/releases/download/v0.1.53/app.ipa',
+      url: 'https://github.com/Piano-Louvor-JA/apk/releases/download/v0.1.53/app.ipa',
       name: 'app.ipa',
       size: 80000000,
     },
@@ -104,7 +104,7 @@ describe('MobileDownloadCards', () => {
     const btn = wrapper.find('.download-card__btn')
     expect(btn.exists()).toBe(true)
     expect(btn.attributes('href')).toBe(
-      'https://github.com/pianolouvorja/apk/releases/download/v0.1.53/louvorja-piano-0.1.19.apk',
+      'https://github.com/Piano-Louvor-JA/apk/releases/download/v0.1.53/louvorja-piano-0.1.19.apk',
     )
   })
 
