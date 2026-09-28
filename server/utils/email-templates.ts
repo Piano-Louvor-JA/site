@@ -115,7 +115,7 @@ function shell(
       ${inner}
     </td></tr>
     <tr><td style="padding:20px 0;border-top:1px solid ${T.border};color:${T.muted};font-size:12px;">
-      <p><a href="https://github.com/pianolouvorja" style="color:${T.muted};">GitHub</a> &middot;
+      <p><a href="https://github.com/Piano-Louvor-JA" style="color:${T.muted};">GitHub</a> &middot;
       <a href="https://pianolouvorja.com.br" style="color:${T.muted};">Site</a></p>
       <p><a href="${unsubscribeUrl}" style="color:${T.slateLight};">${strs.unsubscribe}</a></p>
       <p>&copy; 2026 Piano LouvorJA. ${strs.copyright}</p>

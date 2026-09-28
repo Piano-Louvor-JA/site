@@ -125,14 +125,14 @@ export async function fetchGitHubStats(): Promise<{
     const octokit = getOctokit()
 
     const [appReleases, tvReleases, mobileReleases, repoInfo] = await Promise.all([
-      octokit.rest.repos.listReleases({ owner: 'pianolouvorja', repo: 'app', per_page: 100 }),
+      octokit.rest.repos.listReleases({ owner: 'Piano-Louvor-JA', repo: 'app', per_page: 100 }),
       octokit.rest.repos.listReleases({
-        owner: 'pianolouvorja',
+        owner: 'Piano-Louvor-JA',
         repo: 'palco-receiver',
         per_page: 100,
       }),
-      octokit.rest.repos.listReleases({ owner: 'pianolouvorja', repo: 'apk', per_page: 100 }),
-      octokit.rest.repos.get({ owner: 'pianolouvorja', repo: 'app' }),
+      octokit.rest.repos.listReleases({ owner: 'Piano-Louvor-JA', repo: 'apk', per_page: 100 }),
+      octokit.rest.repos.get({ owner: 'Piano-Louvor-JA', repo: 'app' }),
     ])
 
     const allReleases = [appReleases.data, tvReleases.data, mobileReleases.data] as Release[][]

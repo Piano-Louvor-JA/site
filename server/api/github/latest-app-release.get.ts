@@ -15,7 +15,7 @@ export default defineEventHandler(async (event) => {
 
   try {
     const response = await octokit.rest.repos.getLatestRelease({
-      owner: 'pianolouvorja',
+      owner: 'Piano-Louvor-JA',
       repo: 'app',
     })
 
