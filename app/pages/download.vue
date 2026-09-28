@@ -209,7 +209,7 @@
             {{ $t('download.heroWebCta') }}
           </a>
           <a
-            href="https://github.com/pianolouvorja/app"
+            href="https://github.com/Piano-Louvor-JA/app"
             class="download-hero__btn download-hero__btn--secondary"
             target="_blank"
             rel="noopener noreferrer"
@@ -350,7 +350,7 @@
         <div class="download-source">
           <span>{{ $t('download.desktop.buildFromSource') }}</span>
           <a
-            href="https://github.com/pianolouvorja/app#readme"
+            href="https://github.com/Piano-Louvor-JA/app#readme"
             target="_blank"
             rel="noopener noreferrer"
           >
