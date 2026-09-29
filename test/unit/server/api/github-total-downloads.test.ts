@@ -35,7 +35,7 @@ describe('GET /api/github/total-downloads', () => {
 
   it('retorna o total de downloads (instalacoes) do fetchGitHubStats', async () => {
     mockFetchGitHubStats.mockResolvedValueOnce({
-      downloads: 1234,
+      downloads: { total: 1234, apps: [] },
       stars: 10,
       forks: 2,
     })
@@ -66,7 +66,7 @@ describe('GET /api/github/total-downloads', () => {
 
   it('usa cache de 5 minutos: segunda chamada nao refaz fetch', async () => {
     mockFetchGitHubStats.mockResolvedValue({
-      downloads: 42,
+      downloads: { total: 42, apps: [] },
       stars: 0,
       forks: 0,
     })
@@ -80,7 +80,7 @@ describe('GET /api/github/total-downloads', () => {
   it('cache expirado (>5min) refaz o fetch', async () => {
     vi.useFakeTimers()
     mockFetchGitHubStats.mockResolvedValue({
-      downloads: 42,
+      downloads: { total: 42, apps: [] },
       stars: 0,
       forks: 0,
     })

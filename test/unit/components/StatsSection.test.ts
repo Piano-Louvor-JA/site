@@ -26,7 +26,7 @@ describe('StatsSection', () => {
     await Promise.resolve()
     await Promise.resolve()
     const nums = wrapper.findAll('[data-testid="stat-num"]')
-    expect(nums[0].text()).toBe('8+')
+    expect(nums[0].text()).toBe('95+')
     expect(nums[1].text()).toBe('100%')
     expect(nums[2].text()).toBe('0')
     expect(nums[3].text()).toBe('PWA')
