@@ -24,10 +24,6 @@ export const communityMembers: CommunityMember[] = []
 export const communityJoinUrl =
   'https://docs.google.com/forms/d/e/1FAIpQLSdQuprx1kijND4RBdrsFPh4dKDNtCxoaX7LwW7W2BkN-jHthw/viewform'
 
-/** Form de cadastro de desenvolvedor (Google Forms) — link fixado no grupo WhatsApp. */
-export const communityDevFormUrl =
-  'https://docs.google.com/forms/d/e/1FAIpQLScQeQr_eVdvZfELugBiIcsKN11jMoekEy0cW_-ueictBrv-DA/viewform'
-
 /**
  * Canais oficiais da comunidade PIANO LouvorJA.
  * Links de convite públicos — sem dados pessoais (LGPD).
@@ -44,11 +40,5 @@ export const communityChannels = [
     /** Grupo de desenvolvedores (Telegram). */
     url: 'https://t.me/c/4390408870/6',
     icon: 'ti ti-brand-telegram',
-  },
-  {
-    id: 'dev-form',
-    /** Form de cadastro de desenvolvedor. */
-    url: communityDevFormUrl,
-    icon: 'ti ti-code',
   },
 ] as const
