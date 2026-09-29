@@ -13,7 +13,8 @@
     "openApp": "Abrir App",
     "language": "Idioma",
     "download": "Descargar",
-    "releases": "Versiones"
+    "releases": "Versiones",
+    "testers": "Probadores"
   },
   "hero": {
     "badge": "Nuevo: Versión Web Disponible",
@@ -40,12 +41,12 @@
     "features": "Funciones",
     "free": "Gratis",
     "installs": "Instalaciones",
-    "offline": "Funciona sin conexión"
+    "offline": "Datos locales"
   },
   "platforms": {
     "eyebrow": "Multiplataforma",
     "title": "Disponible donde lo necesitas",
-    "description": "Úselo en escritorio para máxima productividad, en el navegador como alternativa rápida, o en el móvil próximamente.",
+    "description": "Usa la app de escritorio para máxima productividad, el navegador como alternativa rápida o tu móvil con la app Android.",
     "desktop": {
       "badge": "Recomendado",
       "title": "Escritorio Nativo",
@@ -67,14 +68,14 @@
       "cta": "Abrir en Navegador"
     },
     "mobile": {
-      "badge": "Próximamente",
-      "title": "Móvil (Próximamente)",
-      "subtitle": "Android e iOS",
-      "description": "Aplicaciones nativas en desarrollo para llevar PIANO al teléfono y la tablet.",
-      "feature1": "Android nativo",
-      "feature2": "iOS nativo",
-      "feature3": "Sincronización en la nube",
-      "cta": "Avisar al lanzar"
+      "badge": "Nuevo",
+      "title": "Mobile",
+      "subtitle": "Android disponible",
+      "description": "App nativa Android disponible ahora. Controla el escenario digital desde tu móvil.",
+      "feature1": "Android nativo disponible",
+      "feature2": "Control del escenario digital",
+      "feature3": "iOS en desarrollo",
+      "cta": "Descargar App"
     }
   },
   "notifyModal": {
@@ -127,8 +128,8 @@
         "description": "Apariencia, proyección, multi-pantalla y preferencias totalmente personalizables."
       },
       "offline": {
-        "title": "Funciona Sin Conexión",
-        "description": "La app de escritorio funciona 100% sin conexión tras descargar los medios. La versión web requiere descargar los recursos primero."
+        "title": "Datos Locales",
+        "description": "La app de escritorio funciona 100% sin conexión tras descargar los medios. La versión web requiere conexión a internet para funcionar."
       }
     }
   },
@@ -137,11 +138,12 @@
     "title": "Hecho por y para la comunidad",
     "text1": "El {name} es un proyecto colaborativo de código abierto, creado para facilitar la gestión del culto.",
     "text2": "Desarrollado por el equipo Piano, la plataforma evoluciona continuamente con contribuciones de la comunidad. Gratuito, sin anuncios, sin recopilación de datos.",
+    "forkCredit": "PIANO LouvorJA es un fork del proyecto LouvorJA (github.com/louvorja), mantenido por la comunidad desde 2019. Agradecemos a los creadores y contribuidores originales que hicieron posible este proyecto.",
     "openSource": "Código Abierto",
     "stats": {
       "free": "Gratis",
       "installs": "Instalaciones",
-      "offline": "PWA Sin Conexión"
+      "offline": "Datos locales"
     }
   },
   "how": {
@@ -193,7 +195,63 @@
       "submit": "Enviar Mensaje",
       "sending": "Enviando...",
       "success": "¡Mensaje enviado con éxito! Nos pondremos en contacto pronto.",
-      "error": "Error al enviar. Intente nuevamente o escriba directamente a app{'@'}pianolouvorja.com.br."
+      "error": "Error al enviar. Intente nuevamente o escriba directamente a app{'@'}pianolouvorja.com.br.",
+      "typeLabel": "Asunto",
+      "type": {
+        "general": "Duda / Contacto general",
+        "tester": "Quiero ser probador",
+        "developer": "Quiero ser desarrollador",
+        "bug": "Reportar un error o sugerir una mejora"
+      },
+      "focusLabel": "¿Dónde usas PIANO?",
+      "focus": {
+        "app-desktop": "App de escritorio (Electron)",
+        "web-pwa": "Web / PWA",
+        "api": "API",
+        "mobile-flutter": "Móvil (Flutter)",
+        "tv-receiver": "TVs / Receiver",
+        "docs": "Documentación",
+        "qa": "Pruebas / QA",
+        "design": "Diseño / UI-UX"
+      },
+      "bio": "Bio corta",
+      "bioPlaceholder": "1-2 frases sobre ti...",
+      "links": "Enlaces (perfil, redes sociales)",
+      "linksPlaceholder": "Un enlace por línea (opcional)",
+      "avatar": "Avatar (opcional)",
+      "avatarPlaceholder": "Subir imagen (JPG/PNG)",
+      "avatarPreview": "Vista previa del avatar",
+      "removeAvatar": "Quitar avatar",
+      "github": "GitHub",
+      "githubPlaceholder": "usuario o URL de GitHub",
+      "portfolio": "LinkedIn o portafolio",
+      "portfolioPlaceholder": "URL (opcional)",
+      "areas": "Áreas de interés",
+      "availability": "Disponibilidad",
+      "availabilityPlaceholder": "Ej: noches y fines de semana, ~5h/semana...",
+      "stack": "Stack y experiencia",
+      "stackPlaceholder": "Tecnologías que dominas, experiencia previa...",
+      "motivation": "¿Por qué quieres contribuir?",
+      "motivationPlaceholder": "Cuéntanos un poco sobre tu motivación (mín. 20 caracteres)...",
+      "testerEmail": "Correo de probador (si ya estás registrado)",
+      "testerEmailPlaceholder": "Opcional — vincula el reporte a tu registro",
+      "reportTypeLabel": "Tipo de reporte",
+      "reportType": {
+        "bug": "Error (algo no funciona)",
+        "feature": "Sugerencia de mejora",
+        "other": "Otro"
+      },
+      "version": "Versión de la app",
+      "versionPlaceholder": "Ej: 1.4.2 (web/escritorio/móvil)",
+      "module": "Módulo afectado",
+      "modulePlaceholder": "Ej: Himnario, Liturgia, Proyección...",
+      "description": "Descripción",
+      "descriptionPlaceholder": "¿Qué pasó? ¿Qué esperabas? (mín. 20 caracteres)",
+      "steps": "Pasos para reproducir",
+      "stepsPlaceholder": "1. Abre... 2. Haz clic en... (opcional)",
+      "attachment": "Adjunto (captura/log)",
+      "attachmentPlaceholder": "Imagen, PDF, TXT o JSON",
+      "removeAttachment": "Quitar adjunto"
     },
     "direct": "O envíe un correo directamente a",
     "responseTime": "Tiempo medio de respuesta: 24-48h"
@@ -255,7 +313,7 @@
     },
     "content": {
       "gettingStarted": {
-        "intro": "PIANO LouvorJA es una aplicación web (PWA) que funciona en cualquier dispositivo con navegador moderno.",
+        "intro": "PIANO LouvorJA es una aplicación web que funciona en cualquier dispositivo con navegador moderno.",
         "steps": [
           "Abra la aplicación en su navegador o descargue la versión de escritorio.",
           "Importe su himnario o cree una colección en el Centro de Medios.",
@@ -334,7 +392,7 @@
       },
       "offline": {
         "question": "¿Funciona sin internet?",
-        "answer": "Sí. La app de escritorio funciona 100% sin conexión tras descargar los medios. La versión web también funciona sin conexión, pero necesita descargar los recursos primero. Todos los datos se almacenan localmente."
+        "answer": "La app de escritorio funciona 100% sin conexion tras descargar los medios. La version web requiere conexion a internet para funcionar. La app APK tambien funciona sin internet, siempre que el contenido este descargado localmente y los dispositivos esten en la misma red."
       },
       "devices": {
         "question": "¿En qué dispositivos puedo usarlo?",
@@ -342,7 +400,7 @@
       },
       "data": {
         "question": "¿Dónde se almacenan mis datos?",
-        "answer": "Los datos de la aplicación — himnos, liturgias, configuraciones — se almacenan localmente en su navegador o dispositivo. Nada se envía a servidores externos durante el uso. Al enviar el formulario de contacto, la información (nombre, correo, mensaje) se transmite vía Web3Forms para que podamos responder. Consulte nuestra Política de Privacidad para más detalles."
+        "answer": "La app de escritorio almacena datos (himnos, liturgia, configuraciones) localmente en su dispositivo. La versión web requiere conexión a internet y no almacena datos persistentes. Al enviar el formulario de contacto, la información (nombre, correo, mensaje) se transmite vía Web3Forms para que podamos responder. Consulte nuestra Política de Privacidad para más detalles."
       },
       "privacy": {
         "question": "¿Cómo protegen mi privacidad?",
@@ -354,7 +412,7 @@
       },
       "updates": {
         "question": "¿Cómo se actualiza la aplicación?",
-        "answer": "PIANO LouvorJA es una aplicación web progresiva (PWA). Las actualizaciones se aplican automáticamente al recargar la página. No es necesario descargar ni instalar actualizaciones manualmente. Siempre tendrá la versión más reciente."
+        "answer": "PIANO LouvorJA es una aplicacion web. Las actualizaciones se aplican automaticamente al recargar la pagina. No es necesario descargar ni instalar actualizaciones manualmente. Siempre tendra la version mas reciente."
       },
       "troubleshooting": {
         "question": "¿Qué hago si la aplicación no carga o muestra un error?",
@@ -388,6 +446,8 @@
     "developedBy": "Desarrollado por",
     "team": "Equipo Piano",
     "rights": "Todos los derechos reservados.",
+    "forkedFrom": "Fork de",
+    "originalProject": "Proyecto original LouvorJA",
     "legalNavLabel": "Enlaces legales",
     "legalNavTitle": "Legal",
     "moreNavLabel": "Más enlaces",
@@ -422,9 +482,7 @@
           "Contenido del mensaje",
           "1.2 Datos técnicos",
           "Cookie técnica piano_lang: almacena solo su preferencia de idioma. No contiene identificador personal.",
-          "No usamos cookies de rastreo, análisis, publicidad o perfilación.",
-          "1.3 Datos de la aplicación",
-          "La aplicación PIANO LouvorJA (himnos, liturgia, configuraciones, listas de reproducción) almacena todos los datos localmente en su navegador (LocalStorage/IndexedDB). Estos datos nunca se envían a nuestros servidores."
+          "No usamos cookies de rastreo, análisis, publicidad o perfilación."
         ]
       },
       "purpose": {
@@ -597,7 +655,6 @@
           "Usar la aplicación de forma ética y conforme a la ley aplicable",
           "No usarla para fines ilegales, difamatorios o que violen derechos de terceros",
           "Respetar los derechos de autor de las obras proyectadas",
-          "Mantener sus datos locales de forma segura (no mantenemos copias de seguridad en el servidor)",
           "No intentar comprometer la seguridad o disponibilidad del servicio"
         ]
       },
@@ -653,7 +710,7 @@
       "termination": {
         "title": "10. Resolución",
         "body": [
-          "Puede dejar de usar la aplicación en cualquier momento cerrando el navegador o desinstalando la PWA. Como no hay sistema de cuentas, no se requiere cancelación formal."
+          "Puede dejar de usar la aplicación en cualquier momento cerrando el navegador. Como no hay sistema de cuentas, no se requiere cancelación formal."
         ]
       },
       "law": {
@@ -711,7 +768,6 @@
     "reject": "Rechazar",
     "privacyLink": "Leer Política de Privacidad"
   },
-
   "admin": {
     "title": "Panel",
     "loginTitle": "Acceso Restringido",
@@ -784,7 +840,9 @@
         "autoUpdate": "Actualizaciones automáticas"
       },
       "buildFromSource": "¿Prefieres compilar desde el código fuente?",
-      "buildFromSourceLink": "Ver instrucciones en GitHub"
+      "buildFromSourceLink": "Ver instrucciones en GitHub",
+      "otherArch": "Descargar para {arch}",
+      "detectedArchitecture": "Arquitectura detectada: {architecture}"
     },
     "web": {
       "badge": "Instantáneo",
@@ -795,21 +853,38 @@
         "noInstall": "Sin instalación",
         "anyOs": "Cualquier sistema operativo",
         "autoUpdate": "Actualizaciones automáticas",
-        "pwa": "Instalable como PWA"
+        "pwa": "Acceso vía navegador"
       }
     },
     "mobile": {
-      "badge": "Próximamente",
+      "badge": "Disponible",
       "title": "Móvil",
-      "description": "La app Android (APK) está en desarrollo avanzado, aún sin lanzamiento oficial. Mientras tanto, usa la web app en el móvil.",
+      "description": "Descarga la app Android y lleva el PIANO en el móvil — controla el escenario desde tu dispositivo.",
       "platforms": "Android e iOS",
       "features": {
-        "nativeAndroid": "App Android (APK) — en desarrollo avanzado",
+        "nativeAndroid": "Android nativo (planificado)",
         "nativeIos": "iOS nativo (planificado)",
-        "cloudSync": "Sincronización en la nube (planificado)"
+        "cloudSync": "Sincronización en la nube (planificado)",
+        "remote": "Control remoto desde el desktop",
+        "network": "Sincronización por red local",
+        "offline": "Funciona sin conexión"
       },
-      "useWebInstead": "Usar web app en el teléfono por ahora",
-      "apkNote": "Vista previa del APK: build interno, disponible pronto para pruebas."
+      "useWebInstead": "Usar la web app en el móvil",
+      "noAssets": "Las descargas móviles estarán disponibles en breve.",
+      "android": {
+        "name": "Android",
+        "format": "Paquete .apk",
+        "arch": "arm64",
+        "downloadLabel": "Descargar APK",
+        "hint": "Instale el APK permitiendo orígenes desconocidos."
+      },
+      "ios": {
+        "name": "iOS",
+        "format": "App TestFlight",
+        "arch": "universal",
+        "downloadLabel": "Abrir TestFlight",
+        "hint": "Requiere invitación de TestFlight."
+      }
     },
     "systemRequirements": {
       "title": "Requisitos del Sistema",
@@ -817,27 +892,47 @@
       "web": "Web: Navegador moderno (Chrome, Firefox, Edge, Safari), conexión a internet para primer acceso"
     },
     "tv": {
-      "badge": "Próximamente",
-      "title": "Smart TV",
-      "description": "Estamos preparando PIANO para Smart TVs. La primera plataforma será LG con webOS.",
-      "lgBrand": "webOS (LG)",
-      "lgStatus": "En desarrollo",
-      "samsungBrand": "Tizen (Samsung)",
-      "samsungStatus": "En desarrollo",
-      "rokuBrand": "Roku TV",
-      "rokuStatus": "Planificado",
-      "androidTvBrand": "Android TV / Google TV",
-      "androidTvStatus": "Planificado",
-      "chromecastBrand": "Chromecast",
-      "chromecastStatus": "Planificado",
+      "badge": "Nuevo",
+      "title": "TV / Escenario Digital",
+      "description": "Convierte cualquier Smart TV en un receptor de escenario. Contrólala desde la app Android (APK) — control vía web y escritorio próximamente.",
+      "noAssets": "Los paquetes de TV se publicarán pronto.",
       "features": {
-        "nativeLg": "App nativo LG webOS",
-        "bigScreen": "Proyección directa en TV",
-        "remoteControl": "Control remoto vía app móvil"
+        "realtime": "Duplicación en tiempo real",
+        "multicast": "Varias TVs a la vez",
+        "autodiscover": "Descubrimiento automático en red"
       },
-      "useDesktopInstead": "Usa la app Desktop por ahora",
-      "appleTvBrand": "Apple TV",
-      "appleTvStatus": "Planificado"
+      "webos": {
+        "name": "LG webOS TV",
+        "format": "Paquete .ipk",
+        "arch": "arm",
+        "downloadLabel": "Descargar para webOS",
+        "hint": "Use Developer Mode o sideload con LG Device Manager."
+      },
+      "androidtv": {
+        "name": "Android TV",
+        "format": "Paquete .apk",
+        "arch": "arm64",
+        "downloadLabel": "Descargar para Android TV",
+        "hint": "Instale el APK con un gestor de archivos o via ADB."
+      },
+      "downloadGeneric": "Descargar",
+      "tizen": {
+        "name": "Samsung Tizen TV",
+        "format": "Paquete .tpk",
+        "hint": "Instalar mediante USB o Tizen Studio Device Manager."
+      }
+    },
+    "voidbr": {
+      "eyebrow": "Distro Linux asociada",
+      "title": "VoidBR LouvorJA Piano",
+      "subtitle": "Distribución Linux completa con PIANO LouvorJA preinstalado — creada por la comunidad VoidBR para facilitar la adopción legal del software en las iglesias.",
+      "description": "Sistema live bootable: arranca desde USB, usa e instala con PIANO y el acervo ya configurados.",
+      "feature1": "PIANO LouvorJA preinstalado y actualizado",
+      "feature2": "100% legal y gratuito — cero piratería",
+      "feature3": "Base Void Linux, ligera y estable",
+      "downloadLabel": "Descargar ISO (x86_64)",
+      "unavailable": "ISO temporalmente no disponible",
+      "communityLink": "Comunidad VoidBR"
     }
   },
   "contributors": {
@@ -876,14 +971,18 @@
     "products": {
       "web": "Web",
       "desktop": "Desktop",
-      "mobile": "Mobile"
+      "mobile": "Mobile",
+      "tv": "Smart TV"
     },
     "repos": {
       "web": "Web (Sitio)",
       "app": "App (Desktop)",
       "api": "API",
       "site": "Sitio"
-    }
+    },
+    "filterLabel": "Filtrar por producto",
+    "filterAll": "Todos",
+    "filterEmpty": "Aún no hay releases para este producto."
   },
   "tvSupport": {
     "eyebrow": "Hoja de ruta",
@@ -901,6 +1000,158 @@
     "chromecastStatus": "Planificado",
     "cta": "Seguir novedades",
     "appleTvBrand": "Apple TV",
-    "appleTvStatus": "Planificado"
+    "appleTvStatus": "Planificado",
+    "statusAvailable": "Disponible",
+    "downloadCta": "Descargar ahora"
+  },
+  "team": {
+    "eyebrow": "Nuestro Equipo",
+    "title": "Los profesionales detrás del proyecto",
+    "subtitle": "PIANO LouvorJA es construido por un equipo dedicado organizado en frentes de trabajo especializados, unidos por un propósito: servir a la comunidad con excelencia.",
+    "areas": {
+      "leadership": {
+        "title": "Liderazgo y Visión",
+        "description": "Dirección del proyecto, hoja de ruta del producto y relación con la comunidad adventista que PIANO sirve."
+      },
+      "desktop": {
+        "title": "App de Escritorio",
+        "description": "Aplicación Electron multipantalla para proyección en cultos: salida de medios, pantalla del escenario y control remoto."
+      },
+      "web": {
+        "title": "App Web",
+        "description": "Aplicación web para gestión de cultos, con acceso rápido desde el navegador (requiere conexión a internet)."
+      },
+      "api": {
+        "title": "API e Infraestructura",
+        "description": "API pública y servicios de backend que alimentan himnarios, listas de reproducción y sincronización entre dispositivos."
+      },
+      "site": {
+        "title": "Sitio y Contenido",
+        "description": "Presencia digital, documentación y comunicación: sitio multilingüe, lanzamientos y materiales de apoyo."
+      },
+      "quality": {
+        "title": "Calidad y CI",
+        "description": "Automatización de pipelines, pruebas y revisión de código para garantizar estabilidad en cada lanzamiento."
+      },
+      "distro": {
+        "title": "Distro Linux VoidBR",
+        "description": "Mantiene la ISO live VoidBR LouvorJA Piano: sistema completo bootable con PIANO y el acervo ya instalados — instalación legal, simple y offline para las iglesias."
+      }
+    },
+    "people": {
+      "title": "Quién construye el proyecto",
+      "avatarAlt": "Avatar de {name} en GitHub",
+      "more": "Saber más"
+    },
+    "members": {
+      "ezequiasfonseca": {
+        "role": "Fundador · Liderazgo y App de Escritorio",
+        "bio": "Ingeniero de Software senior con 15 años de experiencia en tecnología, cubriendo infraestructura, administración de sistemas Linux, DevOps y desarrollo Full Stack. Fundador de PIANO LouvorJA, lidera la visión del producto y la app de escritorio."
+      },
+      "rafaumeu": {
+        "role": "Tech Lead · Sitio, API y Calidad",
+        "bio": "Desarrollador full stack enfocado en el ecosistema PIANO LouvorJA: sitio, API, PWA y automatización de calidad. Responsable de CI/CD, pruebas y la experiencia multidispositivo del proyecto."
+      },
+      "rafaelji": {
+        "role": "App de Escritorio y Mac",
+        "bio": "Programador desde 2015, con experiencia en backend, frontend y mobile — hoy enfocado en React. Mantiene tres proyectos personales: Alva (app de Escuela Sabática), Appentecostes (traducción en tiempo real de sermones a 13 idiomas con IA) y FatIA (clips de video con IA local para redes sociales)."
+      },
+      "educharquero": {
+        "role": "Linux, App Web y PWA",
+        "bio": "Formación en Redes de Computadoras con posgrado en Docencia. Usuario de Linux desde Kurumin, décadas en infraestructura y responsable de conectux.com.br."
+      },
+      "vcatafesta": {
+        "role": "Distro VoidBR · ISO LouvorJA Piano",
+        "bio": "Fundador de la comunidad VoidBR (Void Linux Brasil) y del proyecto Chililinux (GNU/Linux basado en LFS). Desarrollador de Linux de bajo nivel — kernel personalizado, automatización y empaquetado — mantiene la ISO VoidBR LouvorJA Piano, que trae PIANO preinstalado y actualizado, facilitando la adopción legal del software en las iglesias."
+      },
+      "elomarxa": {
+        "role": "Diseño digital, UI y UX",
+        "bio": "Diseñador digital, con experiencia en producción de piezas visuales y desarrollando habilidades de UI y UX."
+      }
+    },
+    "work": {
+      "title": "Cómo trabajamos",
+      "text": "Código abierto, revisión por pares y entregas continuas: cada frente mantiene su repositorio en la organización, con integración e despliegue automatizados."
+    },
+    "cta": "Conoce la organización en GitHub",
+    "modal": {
+      "close": "Cerrar"
+    },
+    "contribute": {
+      "title": "Contribuye al proyecto",
+      "text": "PIANO es open-source y crece con la comunidad. Puedes contribuir con código, reportar bugs, sugerir funciones, ayudar con traducciones o compartir el proyecto.",
+      "ways": {
+        "code": "Enviar pull requests en GitHub",
+        "bugs": "Reportar bugs y sugerir mejorias",
+        "translate": "Ayudar con traducciones",
+        "share": "Compartir con tu comunidad"
+      },
+      "button": "Empezar a contribuir"
+    }
+  },
+  "community": {
+    "spot": "Este lugar es tuyo — ven a probar",
+    "eyebrow": "Comunidad",
+    "title": "Quién usa, prueba y contribuye",
+    "subtitle": "Testers, entusiastas y sugeridores que ayudan a PIANO LouvorJA a crecer. ¿Quieres participar?",
+    "roles": {
+      "tester": "Tester",
+      "enthusiast": "Entusiasta",
+      "suggester": "Sugeridor"
+    },
+    "since": "Desde {since}",
+    "link": "Ver perfil",
+    "cta": "Únete a la comunidad",
+    "channels": {
+      "whatsapp-support": "Grupo de soporte (WhatsApp)",
+      "telegram-devs": "Grupo de devs (Telegram)",
+      "dev-form": "Quiero ser desarrollador"
+    }
+  },
+  "testers": {
+    "eyebrow": "Comunidad de pruebas",
+    "title": "Probadores",
+    "subtitle": "Personas que prueban PIANO LouvorJA en condiciones reales de culto y reportan todo lo que encuentran — así la app se mantiene estable para tu iglesia.",
+    "gallery": {
+      "avatarAlt": "Avatar de {name}",
+      "more": "Saber más"
+    },
+    "modal": {
+      "close": "Cerrar"
+    },
+    "focus": {
+      "vm": "Máquina virtual",
+      "install": "Instalación",
+      "web": "Web",
+      "desktop": "Escritorio",
+      "mobile": "Móvil",
+      "tv": "TV / Escenario",
+      "community": "Comunidad"
+    },
+    "members": {
+      "natan": {
+        "bio": "Prueba PIANO en Void Linux y valida la instalación desde cero."
+      }
+    },
+    "reports": {
+      "title": "Reportes recientes de pruebas",
+      "loading": "Cargando reportes…",
+      "empty": "Aún no hay reportes.",
+      "comingSoon": "Pronto: reportes directos del formulario de pruebas.",
+      "anonymous": "Anónimo"
+    },
+    "cta": {
+      "title": "¿Quieres probar PIANO?",
+      "button": "Quiero ser tester",
+      "bug": "Reportar error"
+    }
+  },
+  "donate": {
+    "title": "Apoya el proyecto",
+    "subtitle": "PIANO LouvorJA es gratuito. Tu donación ayuda a mantener el proyecto vivo y sin anuncios.",
+    "button": "Donar ahora",
+    "pix": "Pix",
+    "boleto": "Boleto",
+    "card": "Tarjeta"
   }
 }

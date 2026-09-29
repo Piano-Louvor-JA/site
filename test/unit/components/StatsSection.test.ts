@@ -38,7 +38,7 @@ describe('StatsSection', () => {
     expect(text).toContain('Funcionalidades')
     expect(text).toContain('Gratuito')
     expect(text).toContain('Instalações')
-    expect(text).toContain('Funciona offline')
+    expect(text).toContain('Dados locais')
   })
 
   it('atualiza o numero de instalacoes quando a API retorna total', async () => {

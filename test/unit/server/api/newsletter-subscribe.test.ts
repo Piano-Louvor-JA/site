@@ -89,6 +89,12 @@ describe('mapButtondownError', () => {
     expect(mapButtondownError({ data: { detail: 'email not valid' } })).toBe('invalid-email')
   })
 
+  it('maps "blocked" (firewall) detail to invalid-email', () => {
+    expect(
+      mapButtondownError({ data: { detail: 'This subscriber was blocked by your firewall.' } }),
+    ).toBe('invalid-email')
+  })
+
   it('maps "rate limit" detail to rate-limited', () => {
     expect(mapButtondownError({ data: { detail: 'rate limit exceeded' } })).toBe('rate-limited')
   })
@@ -132,6 +138,20 @@ describe('mapButtondownError', () => {
   it('maps error with statusCode but not 429 to service-unavailable', () => {
     expect(mapButtondownError({ statusCode: 500 })).toBe('service-unavailable')
   })
+
+  it('maps array detail (already subscribed) to already-subscribed', () => {
+    expect(
+      mapButtondownError({
+        data: {
+          detail: [{ detail: 'Subscriber already subscribed' }, { code: 'ignored' }],
+        },
+      }),
+    ).toBe('already-subscribed')
+  })
+
+  it('maps empty array detail to service-unavailable', () => {
+    expect(mapButtondownError({ data: { detail: [] } })).toBe('service-unavailable')
+  })
 })
 
 describe('handleSubscribe', () => {
@@ -149,7 +169,7 @@ describe('handleSubscribe', () => {
 
     expect(result).toEqual({ success: true })
     expect(mockFetch).toHaveBeenCalledWith(
-      'https://api.buttondown.com/api/v1/subscribers',
+      'https://api.buttondown.com/v1/subscribers',
       expect.objectContaining({
         method: 'POST',
         headers: {
@@ -157,7 +177,7 @@ describe('handleSubscribe', () => {
           'Content-Type': 'application/json',
         },
         body: {
-          email: 'user@example.com',
+          email_address: 'user@example.com',
           metadata: { locale: 'pt-BR' },
         },
       }),
