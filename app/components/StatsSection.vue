@@ -8,7 +8,7 @@
   onMounted(load)
 
   const stats = computed(() => [
-    { num: '8+', key: 'features' },
+    { num: '95+', key: 'features' },
     { num: '100%', key: 'free' },
     { num: installsNum.value, key: 'installs' },
     { num: 'PWA', key: 'offline' },
