@@ -51,6 +51,29 @@ describe('useInstallsCount', () => {
     expect(installsNum.value).toBe('0')
   })
 
+  it('normaliza formato legado: total como objeto { total, apps }', async () => {
+    vi.stubGlobal('$fetch', vi.fn().mockResolvedValue({ total: { total: 987, apps: [] } }))
+    const { installsNum, installsRaw, loaded, load } = useInstallsCount()
+
+    await load()
+    await flush()
+
+    expect(installsNum.value).toBe('987')
+    expect(installsRaw.value).toBe(987)
+    expect(loaded.value).toBe(true)
+  })
+
+  it('mantem "0" quando total e objeto sem number em .total', async () => {
+    vi.stubGlobal('$fetch', vi.fn().mockResolvedValue({ total: { apps: [] } }))
+    const { installsNum, installsRaw, load } = useInstallsCount()
+
+    await load()
+    await flush()
+
+    expect(installsNum.value).toBe('0')
+    expect(installsRaw.value).toBe(0)
+  })
+
   it('mantem "0" quando o fetch rejeita', async () => {
     vi.stubGlobal('$fetch', vi.fn().mockRejectedValue(new Error('network')))
     const { installsNum, loaded, load } = useInstallsCount()
