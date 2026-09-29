@@ -411,107 +411,16 @@
       </div>
     </section>
 
+    <!-- TV e Palco Digital -->
+    <VoidbrIsoCard :iso="voidbrIso" />
+    <TvDownloadCards :tv-data="tvData" />
+
     <!-- Mobile -->
-    <section class="download-section">
-      <div class="download-section__container">
-        <div class="download-section__header">
-          <span class="download-section__badge download-section__badge--muted">
-            {{ $t('download.mobile.badge') }}
-          </span>
-          <h2 class="download-section__title">
-            {{ $t('download.mobile.title') }}
-          </h2>
-          <p class="download-section__desc">
-            {{ $t('download.mobile.description') }}
-          </p>
-          <p class="download-section__subtext">
-            {{ $t('download.mobile.platforms') }}
-          </p>
-        </div>
-
-        <ul class="download-features download-features--muted">
-          <li>
-            <i class="ti ti-clock" aria-hidden="true" />
-            {{ $t('download.mobile.features.nativeAndroid') }}
-          </li>
-          <li>
-            <i class="ti ti-clock" aria-hidden="true" />
-            {{ $t('download.mobile.features.nativeIos') }}
-          </li>
-          <li>
-            <i class="ti ti-clock" aria-hidden="true" />
-            {{ $t('download.mobile.features.cloudSync') }}
-          </li>
-        </ul>
-
-        <p class="download-section__subtext download-section__apk-note">
-          <i class="ti ti-flask" aria-hidden="true" />
-          {{ $t('download.mobile.apkNote') }}
-        </p>
-
-        <a :href="siteConfig.appUrl" class="download-card__btn download-card__btn--large">
-          <i class="ti ti-device-mobile" aria-hidden="true" />
-          {{ $t('download.mobile.useWebInstead') }}
-        </a>
-      </div>
-    </section>
-
-    <!-- Smart TV -->
-    <section class="download-section download-section--alt">
-      <div class="download-section__container">
-        <div class="download-section__header">
-          <span class="download-section__badge download-section__badge--muted">
-            {{ $t('download.tv.badge') }}
-          </span>
-          <h2 class="download-section__title">
-            {{ $t('download.tv.title') }}
-          </h2>
-          <p class="download-section__desc">
-            {{ $t('download.tv.description') }}
-          </p>
-        </div>
-
-        <div class="tv-brands">
-          <div
-            v-for="brand in tvBrands"
-            :key="brand.id"
-            class="tv-brand-card"
-            data-testid="download-tv-brand"
-          >
-            <img :src="brand.logo" :alt="brand.alt" class="tv-brand-card__logo" loading="lazy" />
-            <div class="tv-brand-card__info">
-              <h3 class="tv-brand-card__name">
-                {{ $t(`download.tv.${brand.id}Brand`) }}
-              </h3>
-              <span class="tv-brand-card__status">
-                <i class="ti ti-loader-2" aria-hidden="true" />
-                {{ $t(`download.tv.${brand.id}Status`) }}
-              </span>
-            </div>
-          </div>
-        </div>
-
-        <ul class="download-features download-features--muted">
-          <li>
-            <i class="ti ti-clock" aria-hidden="true" />
-            {{ $t('download.tv.features.nativeLg') }}
-          </li>
-          <li>
-            <i class="ti ti-clock" aria-hidden="true" />
-            {{ $t('download.tv.features.bigScreen') }}
-          </li>
-          <li>
-            <i class="ti ti-clock" aria-hidden="true" />
-            {{ $t('download.tv.features.remoteControl') }}
-          </li>
-        </ul>
-
-        <a href="#download" class="download-card__btn download-card__btn--large">
-          <i class="ti ti-device-desktop" aria-hidden="true" />
-          {{ $t('download.tv.useDesktopInstead') }}
-        </a>
-      </div>
-    </section>
+    <MobileDownloadCards
+      :mobile-data="mobileData"
+      :app-url="siteConfig.appUrl"
+      :detected-platform="detectedMobilePlatform"
+    />
 
     <!-- System Requirements -->
     <section class="download-section download-section--alt">
