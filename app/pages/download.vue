@@ -1,5 +1,7 @@
 <script setup lang="ts">
   import { siteConfig } from '~/data/site'
+  import type { AllDownloadsResponse, CategoryResult } from '~/utils/downloads'
+  import { detectArch, detectDevice } from '~/utils/device-detection'
   import { useTvBrands } from '~/composables/useTvBrands'
   import { useInstallsCount } from '~/composables/useInstallsCount'
 
@@ -10,6 +12,44 @@
   // Instalações em tempo real (GitHub) — fallback silencioso, badge só aparece com total > 0.
   const { installsNum, installsRaw, load: loadInstalls } = useInstallsCount()
 
+  // Server-side proxy avoids GitHub API rate limits on client
+  interface GithubAsset {
+    name: string
+    browser_download_url: string
+    size: number
+  }
+
+  interface GithubRelease {
+    tag_name: string
+    assets: GithubAsset[]
+  }
+
+  const latestTag = ref<string | null>(null)
+  const downloadUrls = ref<Record<string, string>>({})
+  const fetchError = ref(false)
+
+  // Detect OS client-side only to avoid hydration mismatch.
+  const detectedOs = ref<'linux' | 'windows' | 'macos' | null>(null)
+  const detectedArch = ref<'arm64' | 'x64'>('x64')
+  const detectedMobilePlatform = ref<'android' | 'ios' | null>(null)
+  const voidbrIso = ref<VoidbrIsoData | null>(null)
+
+  interface VoidbrIsoData {
+    available: boolean
+    fileName: string | null
+    url: string | null
+    sizeBytes: number | null
+    builtAt: string | null
+  }
+
+  const allDownloads = ref<AllDownloadsResponse | null>(null)
+  const tvData = computed<CategoryResult>(
+    () => allDownloads.value?.tv ?? { repo: 'palco-receiver', tag: null, assets: {} },
+  )
+  const mobileData = computed<CategoryResult>(
+    () => allDownloads.value?.mobile ?? { repo: 'apk', tag: null, assets: {} },
+  )
+
   // Fetch latest release via server proxy (token-backed, no rate limit)
   onMounted(async () => {
 
@@ -17,6 +57,9 @@
     // Mac UA não expõe arch real; userAgentData sim (Chromium). Safari/Firefox
     // caem no default x64 com link alternativo sempre visível.
     detectedArch.value = await detectArch()
+
+    // Instalações (total dinâmico do ecossistema)
+    loadInstalls()
 
     // Fetch latest release via server proxy (token-backed, no rate limit)
     try {
