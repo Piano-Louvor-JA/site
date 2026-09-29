@@ -30,7 +30,7 @@ export default defineEventHandler(async (event) => {
 
       while (hasMore) {
         const response = await octokit.rest.repos.listContributors({
-          owner: 'pianolouvorja',
+          owner: 'Piano-Louvor-JA',
           repo: repo,
           per_page: 100, // Máximo por página
           page,

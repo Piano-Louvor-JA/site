@@ -1,5 +1,6 @@
 import { setHeader, type H3Event } from 'h3'
 import { fetchGitHubStats } from '../../utils/dashboard-stats'
+import { TOTAL_INSTALLS_SNAPSHOT } from '../../utils/github-snapshots'
 
 /**
  * GET /api/github/total-downloads — adaptador publico e fino sobre fetchGitHubStats().
@@ -30,9 +31,20 @@ export async function handleTotalDownloads(event: H3Event): Promise<{ total: num
 
   // fetchGitHubStats nunca lanca — devolve { downloads: null, ... } em caso de erro
   const stats = await fetchGitHubStats()
-  cached = { total: stats.downloads?.total ?? null, timestamp: Date.now() }
+  const fresh = stats.downloads?.total ?? null
 
-  return { total: cached.total }
+  if (fresh !== null) {
+    cached = { total: fresh, timestamp: Date.now() }
+    return { total: fresh }
+  }
+
+  // FALLBACK 1: cache STALE (expirado) — melhor que snapshot, é o último valor REAL
+  if (cached && cached.total !== null) {
+    return { total: cached.total }
+  }
+
+  // FALLBACK 2: snapshot hardcoded (ultimo valor real conhecido, com snapshotDate)
+  return { total: TOTAL_INSTALLS_SNAPSHOT.total }
 }
 
 export default defineEventHandler(handleTotalDownloads)

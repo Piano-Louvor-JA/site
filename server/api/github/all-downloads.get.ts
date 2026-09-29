@@ -86,7 +86,7 @@ export default defineEventHandler(async (event): Promise<AllDownloadsResponse> =
           // Aggregate across the most recent releases per platform instead.
           if (config.aggregatePlatforms) {
             const list = await octokit.rest.repos.listReleases({
-              owner: 'pianolouvorja',
+              owner: 'Piano-Louvor-JA',
               repo: config.name,
               per_page: 15,
             })
@@ -102,7 +102,7 @@ export default defineEventHandler(async (event): Promise<AllDownloadsResponse> =
           }
 
           const release = await octokit.rest.repos.getLatestRelease({
-            owner: 'pianolouvorja',
+            owner: 'Piano-Louvor-JA',
             repo: config.name,
           })
           return {

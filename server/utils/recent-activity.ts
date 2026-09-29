@@ -21,7 +21,7 @@ export async function fetchRecentActivity(): Promise<ActivityItem[]> {
     const octokit = getOctokit()
 
     const response = await octokit.rest.activity.listRepoEvents({
-      owner: 'pianolouvorja',
+      owner: 'Piano-Louvor-JA',
       repo: 'web',
       per_page: 30,
     })

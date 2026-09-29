@@ -90,7 +90,7 @@ export default defineEventHandler(async (event) => {
   const results = await Promise.allSettled(
     repos.map(async (repo) => {
       const response = await octokit.rest.repos.listReleases({
-        owner: 'pianolouvorja',
+        owner: 'Piano-Louvor-JA',
         repo,
         per_page: 10,
       })
