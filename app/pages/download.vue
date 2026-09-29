@@ -1,10 +1,13 @@
 <script setup lang="ts">
   import { siteConfig } from '~/data/site'
   import { useInstallsCount } from '~/composables/useInstallsCount'
+  import { useTvBrands } from '~/composables/useTvBrands'
   import type { AllDownloadsResponse, CategoryResult } from '~/utils/downloads'
   import { detectArch, detectDevice } from '~/utils/device-detection'
 
   const { t } = useI18n()
+
+  const tvBrands = useTvBrands()
 
   useSeoMeta({
     title: () => t('download.metaTitle'),

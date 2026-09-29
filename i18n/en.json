@@ -369,7 +369,11 @@
         ]
       },
       "modules": {
-        "media": ["Player with 3 modes", "Hymnals and albums", "Sing-along mode"],
+        "media": [
+          "Player with 3 modes",
+          "Hymnals and albums",
+          "Sing-along mode"
+        ],
         "hymnal": [
           "Quick search by number or title",
           "Sequential playback",
@@ -380,16 +384,36 @@
           "Drag and drop to playlist",
           "Sing-along mode with lyrics"
         ],
-        "liturgy": ["13 item types", "Drag and drop", "Per-item countdown"],
-        "bible": ["Multiple versions", "Quick search", "Direct projection"],
-        "projection": ["Independent output", "Multi-screen", "Full control"],
+        "liturgy": [
+          "13 item types",
+          "Drag and drop",
+          "Per-item countdown"
+        ],
+        "bible": [
+          "Multiple versions",
+          "Quick search",
+          "Direct projection"
+        ],
+        "projection": [
+          "Independent output",
+          "Multi-screen",
+          "Full control"
+        ],
         "streaming": [
           "Custom CSS for lyrics display",
           "OBS and vMix integration",
           "Output to YouTube and Facebook"
         ],
-        "tools": ["Clock and stopwatch", "Countdown timer", "Raffle"],
-        "settings": ["Appearance", "Projection", "Multi-screen"]
+        "tools": [
+          "Clock and stopwatch",
+          "Countdown timer",
+          "Raffle"
+        ],
+        "settings": [
+          "Appearance",
+          "Projection",
+          "Multi-screen"
+        ]
       }
     },
     "faq": {
@@ -566,7 +590,9 @@
       },
       "cookies": {
         "title": "8. Cookies",
-        "body": ["We do not use third-party, analytics, or advertising cookies."],
+        "body": [
+          "We do not use third-party, analytics, or advertising cookies."
+        ],
         "table": {
           "header": {
             "cookie": "Cookie",
@@ -892,7 +918,8 @@
         "arch": "universal",
         "downloadLabel": "Open TestFlight",
         "hint": "TestFlight invite required."
-      }
+      },
+      "apkNote": "Install the APK by allowing apps from unknown sources in Android settings."
     },
     "systemRequirements": {
       "title": "System Requirements",
@@ -907,7 +934,10 @@
       "features": {
         "realtime": "Real-time mirroring",
         "multicast": "Multiple TVs at once",
-        "autodiscover": "Automatic network discovery"
+        "autodiscover": "Automatic network discovery",
+        "nativeLg": "Native app for webOS (LG)",
+        "bigScreen": "Optimized for big screens",
+        "remoteControl": "Palco remote control"
       },
       "webos": {
         "name": "LG webOS TV",
@@ -928,7 +958,8 @@
         "name": "Samsung Tizen TV",
         "format": ".tpk package",
         "hint": "Install via USB or Tizen Studio Device Manager."
-      }
+      },
+      "useDesktopInstead": "For unsupported TVs, use Palco via browser in fullscreen mode."
     },
     "voidbr": {
       "eyebrow": "Partner Linux distro",
@@ -986,7 +1017,9 @@
       "web": "Web (Site)",
       "app": "App (Desktop)",
       "api": "API",
-      "site": "Site"
+      "site": "Site",
+      "palco-receiver": "Palco for TVs",
+      "apk": "Mobile app (APK)"
     },
     "filterLabel": "Filter by product",
     "filterAll": "All",
