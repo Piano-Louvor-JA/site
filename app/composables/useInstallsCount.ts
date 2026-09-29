@@ -23,7 +23,11 @@ export function useInstallsCount() {
       let raw: number | null = null
       if (typeof data.total === 'number') {
         raw = data.total
-      } else if (data.total && typeof data.total === 'object' && typeof data.total.total === 'number') {
+      } else if (
+        data.total &&
+        typeof data.total === 'object' &&
+        typeof data.total.total === 'number'
+      ) {
         raw = data.total.total
       }
       if (raw !== null && raw > 0) {

@@ -52,11 +52,43 @@
 
   // Fetch latest release via server proxy (token-backed, no rate limit)
   onMounted(async () => {
+||||||| 99397cc
+  // Fetch latest release via server proxy (token-backed, no rate limit)
+  onMounted(async () => {
 
-    // Arquitetura da CPU (arm64 vs x64) — client-only, async via userAgentData.
-    // Mac UA não expõe arch real; userAgentData sim (Chromium). Safari/Firefox
-    // caem no default x64 com link alternativo sempre visível.
-    detectedArch.value = await detectArch()
+  // Server-side proxy avoids GitHub API rate limits on client
+  interface GithubAsset {
+    name: string
+    browser_download_url: string
+    size: number
+  }
+
+  interface GithubRelease {
+    tag_name: string
+    assets: GithubAsset[]
+  }
+
+  const latestTag = ref<string | null>(null)
+  const downloadUrls = ref<Record<string, string>>({})
+  const fetchError = ref(false)
+
+  // Detect OS client-side only to avoid hydration mismatch
+  const detectedOs = ref<'linux' | 'windows' | 'macos' | null>(null)
+
+  onMounted(async () => {
+    // Instalações em tempo real (fallback silencioso dentro do composable)
+    void loadInstalls()
+
+    // OS detection on client only (avoids SSR/client mismatch)
+    const ua = navigator.userAgent
+    const lower = ua.toLowerCase()
+    if (lower.includes('mac os') || lower.includes('macos') || lower.includes('darwin')) {
+      detectedOs.value = 'macos'
+    } else if (lower.includes('windows')) {
+      detectedOs.value = 'windows'
+    } else if (lower.includes('linux') || lower.includes('x11')) {
+      detectedOs.value = 'linux'
+    }
 
     // Instalações (total dinâmico do ecossistema)
     loadInstalls()
@@ -71,90 +103,26 @@
       for (const asset of data.assets) {
         const name = asset.name.toLowerCase()
         if (name.endsWith('.appimage')) {
-          if (name.includes('arm64')) {
-            downloadUrls.value['linux-arm64'] = asset.browser_download_url
-          } else {
-            downloadUrls.value['linux-x64'] = asset.browser_download_url
-          }
+          downloadUrls.value.linux = asset.browser_download_url
         } else if (name.endsWith('.exe')) {
           downloadUrls.value.windows = asset.browser_download_url
         } else if (name.endsWith('.dmg')) {
-          if (name.includes('arm64')) {
-            downloadUrls.value['macos-arm64'] = asset.browser_download_url
-          } else {
-            downloadUrls.value['macos-x64'] = asset.browser_download_url
-          }
+          downloadUrls.value.macos = asset.browser_download_url
         }
       }
     } catch {
       fetchError.value = true
     }
-
-    // ISO VoidBR (não-bloqueante, independente)
-    fetch('/api/github/voidbr-iso')
-      .then((r) => (r.ok ? r.json() : null))
-      .then((d) => {
-        voidbrIso.value = d
-      })
-      .catch(() => {
-        voidbrIso.value = null
-      })
-
-    // Fetch TV + Mobile downloads (non-blocking, independent)
-    fetch('/api/github/all-downloads')
-      .then((res) => {
-        if (!res.ok) throw new Error('Failed to fetch all downloads')
-        return res.json() as Promise<AllDownloadsResponse>
-      })
-      .then((data) => {
-        allDownloads.value = data
-      })
-      .catch(() => {
-        // Silently fall back to empty (components show "coming soon")
-      })
-  })
-
-  /**
-   * Link alternativo de arquitetura: usuário em Mac arm64 vê o x64 (e vice-versa).
-   * Sempre visível quando existe — correção a 1 clique se a detecção errar.
-   */
-  const altArchDownload = computed(() => {
-    if (detectedOs.value === 'macos') {
-      const primary = detectedArch.value === 'arm64' ? 'macos-arm64' : 'macos-x64'
-      const alt = detectedArch.value === 'arm64' ? 'macos-x64' : 'macos-arm64'
-      return downloadUrls.value[primary] && downloadUrls.value[alt]
-        ? {
-            url: downloadUrls.value[alt] as string,
-            arch: detectedArch.value === 'arm64' ? 'x64' : 'arm64',
-          }
-        : null
-    }
-    if (detectedOs.value === 'linux') {
-      const primary = detectedArch.value === 'arm64' ? 'linux-arm64' : 'linux-x64'
-      const alt = detectedArch.value === 'arm64' ? 'linux-x64' : 'linux-arm64'
-      return downloadUrls.value[primary] && downloadUrls.value[alt]
-        ? {
-            url: downloadUrls.value[alt] as string,
-            arch: detectedArch.value === 'arm64' ? 'x64' : 'arm64',
-          }
-        : null
-    }
-    return null
   })
 
   const desktopCards = computed(() => [
     {
-      os:
-        detectedOs.value === 'linux'
-          ? detectedArch.value === 'arm64'
-            ? ('linux-arm64' as const)
-            : ('linux-x64' as const)
-          : ('linux-x64' as const),
+      os: 'linux' as const,
       icon: '',
       i18nPrefix: 'download.desktop.linux',
       recommended: detectedOs.value === 'linux',
       requiresDiskSpace: true,
-      available: !!downloadUrls.value['linux-x64'] || !!downloadUrls.value['linux-arm64'],
+      available: !!downloadUrls.value.linux,
     },
     {
       os: 'windows' as const,
@@ -165,17 +133,12 @@
       available: !!downloadUrls.value.windows,
     },
     {
-      os:
-        detectedOs.value === 'macos'
-          ? detectedArch.value === 'arm64'
-            ? ('macos-arm64' as const)
-            : ('macos-x64' as const)
-          : ('macos-x64' as const),
+      os: 'macos' as const,
       icon: 'ti-brand-apple',
       i18nPrefix: 'download.desktop.macos',
       recommended: detectedOs.value === 'macos',
       requiresDiskSpace: true,
-      available: !!downloadUrls.value['macos-x64'] || !!downloadUrls.value['macos-arm64'],
+      available: !!downloadUrls.value.macos,
     },
   ])
 </script>
@@ -252,7 +215,7 @@
             <div class="download-card__header">
               <!-- Tux (Linux) via SVG inline - ti-brand-tux nao existe no Tabler -->
               <svg
-                v-if="card.os.startsWith('linux')"
+                v-if="card.os === 'linux'"
                 class="download-card__icon download-card__icon--svg"
                 viewBox="0 0 24 24"
                 fill="currentColor"
@@ -306,13 +269,6 @@
               <i class="ti ti-download" aria-hidden="true" />
               {{ $t(`${card.i18nPrefix}.downloadLabel`) }}
             </button>
-            <a
-              v-if="altArchDownload && (card.os.startsWith('macos') || card.os.startsWith('linux'))"
-              :href="altArchDownload.url"
-              class="download-card__arch-alt"
-            >
-              {{ $t('download.desktop.otherArch', { arch: altArchDownload.arch }) }}
-            </a>
             <p class="download-card__hint">
               {{ $t(`${card.i18nPrefix}.hint`) }}
             </p>
@@ -397,16 +353,107 @@
       </div>
     </section>
 
-    <!-- TV e Palco Digital -->
-    <VoidbrIsoCard :iso="voidbrIso" />
-    <TvDownloadCards :tv-data="tvData" />
-
     <!-- Mobile -->
-    <MobileDownloadCards
-      :mobile-data="mobileData"
-      :app-url="siteConfig.appUrl"
-      :detected-platform="detectedMobilePlatform"
-    />
+    <section class="download-section">
+      <div class="download-section__container">
+        <div class="download-section__header">
+          <span class="download-section__badge download-section__badge--muted">
+            {{ $t('download.mobile.badge') }}
+          </span>
+          <h2 class="download-section__title">
+            {{ $t('download.mobile.title') }}
+          </h2>
+          <p class="download-section__desc">
+            {{ $t('download.mobile.description') }}
+          </p>
+          <p class="download-section__subtext">
+            {{ $t('download.mobile.platforms') }}
+          </p>
+        </div>
+
+        <ul class="download-features download-features--muted">
+          <li>
+            <i class="ti ti-clock" aria-hidden="true" />
+            {{ $t('download.mobile.features.nativeAndroid') }}
+          </li>
+          <li>
+            <i class="ti ti-clock" aria-hidden="true" />
+            {{ $t('download.mobile.features.nativeIos') }}
+          </li>
+          <li>
+            <i class="ti ti-clock" aria-hidden="true" />
+            {{ $t('download.mobile.features.cloudSync') }}
+          </li>
+        </ul>
+
+        <p class="download-section__subtext download-section__apk-note">
+          <i class="ti ti-flask" aria-hidden="true" />
+          {{ $t('download.mobile.apkNote') }}
+        </p>
+
+        <a :href="siteConfig.appUrl" class="download-card__btn download-card__btn--large">
+          <i class="ti ti-device-mobile" aria-hidden="true" />
+          {{ $t('download.mobile.useWebInstead') }}
+        </a>
+      </div>
+    </section>
+
+    <!-- Smart TV -->
+    <section class="download-section download-section--alt">
+      <div class="download-section__container">
+        <div class="download-section__header">
+          <span class="download-section__badge download-section__badge--muted">
+            {{ $t('download.tv.badge') }}
+          </span>
+          <h2 class="download-section__title">
+            {{ $t('download.tv.title') }}
+          </h2>
+          <p class="download-section__desc">
+            {{ $t('download.tv.description') }}
+          </p>
+        </div>
+
+        <div class="tv-brands">
+          <div
+            v-for="brand in tvBrands"
+            :key="brand.id"
+            class="tv-brand-card"
+            data-testid="download-tv-brand"
+          >
+            <img :src="brand.logo" :alt="brand.alt" class="tv-brand-card__logo" loading="lazy" />
+            <div class="tv-brand-card__info">
+              <h3 class="tv-brand-card__name">
+                {{ $t(`download.tv.${brand.id}Brand`) }}
+              </h3>
+              <span class="tv-brand-card__status">
+                <i class="ti ti-loader-2" aria-hidden="true" />
+                {{ $t(`download.tv.${brand.id}Status`) }}
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <ul class="download-features download-features--muted">
+          <li>
+            <i class="ti ti-clock" aria-hidden="true" />
+            {{ $t('download.tv.features.nativeLg') }}
+          </li>
+          <li>
+            <i class="ti ti-clock" aria-hidden="true" />
+            {{ $t('download.tv.features.bigScreen') }}
+          </li>
+          <li>
+            <i class="ti ti-clock" aria-hidden="true" />
+            {{ $t('download.tv.features.remoteControl') }}
+          </li>
+        </ul>
+
+        <a href="#download" class="download-card__btn download-card__btn--large">
+          <i class="ti ti-device-desktop" aria-hidden="true" />
+          {{ $t('download.tv.useDesktopInstead') }}
+        </a>
+      </div>
+    </section>
 
     <!-- System Requirements -->
     <section class="download-section download-section--alt">
@@ -429,19 +476,6 @@
   .download-page {
     --download-radius: var(--piano-radius-md);
     --download-radius-sm: var(--piano-radius-sm);
-  }
-
-  .download-card__arch-alt {
-    display: inline-block;
-    margin-top: 0.5rem;
-    font-size: 0.8125rem;
-    color: var(--piano-cyan);
-    text-decoration: underline;
-    text-underline-offset: 3px;
-
-    &:hover {
-      color: var(--piano-cyan-light);
-    }
   }
 
   /* Hero */
@@ -808,6 +842,63 @@
 
       &:hover {
         text-decoration: underline;
+      }
+    }
+  }
+
+  /* TV Brands */
+  .tv-brands {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .tv-brand-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    border: 1px solid var(--piano-border);
+    border-radius: var(--download-radius);
+    background: var(--piano-bg-solid);
+    transition: border-color 0.15s ease;
+
+    &:hover {
+      border-color: var(--piano-accent);
+    }
+
+    &__logo {
+      height: 40px;
+      width: auto;
+      max-width: 140px;
+      object-fit: contain;
+    }
+
+    &__info {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    &__name {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--piano-text-primary);
+    }
+
+    &__status {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--piano-text-tertiary);
+
+      i {
+        font-size: 0.85rem;
+        animation: spin 1.5s linear infinite;
       }
     }
   }

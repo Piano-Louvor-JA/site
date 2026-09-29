@@ -30,7 +30,7 @@ export async function handleTotalDownloads(event: H3Event): Promise<{ total: num
 
   // fetchGitHubStats nunca lanca — devolve { downloads: null, ... } em caso de erro
   const stats = await fetchGitHubStats()
-  cached = { total: stats.downloads, timestamp: Date.now() }
+  cached = { total: stats.downloads?.total ?? null, timestamp: Date.now() }
 
   return { total: cached.total }
 }
