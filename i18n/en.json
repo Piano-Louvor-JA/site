@@ -39,7 +39,7 @@
   "stats": {
     "features": "Features",
     "free": "Free",
-    "installs": "Installs",
+    "installs": "Installations",
     "offline": "Works offline"
   },
   "platforms": {
@@ -140,7 +140,7 @@
     "openSource": "Open Source",
     "stats": {
       "free": "Free",
-      "installs": "Installs",
+      "installs": "Installations",
       "offline": "PWA Offline"
     }
   },

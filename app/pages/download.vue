@@ -1,10 +1,14 @@
 <script setup lang="ts">
   import { siteConfig } from '~/data/site'
   import { useTvBrands } from '~/composables/useTvBrands'
+  import { useInstallsCount } from '~/composables/useInstallsCount'
 
   const { t } = useI18n()
 
   const tvBrands = useTvBrands()
+
+  // Instalações em tempo real (GitHub) — fallback silencioso, badge só aparece com total > 0.
+  const { installsNum, installsRaw, load: loadInstalls } = useInstallsCount()
 
   useSeoMeta({
     title: () => t('download.metaTitle'),
@@ -31,6 +35,9 @@
   const detectedOs = ref<'linux' | 'windows' | 'macos' | null>(null)
 
   onMounted(async () => {
+    // Instalações em tempo real (fallback silencioso dentro do composable)
+    void loadInstalls()
+
     // OS detection on client only (avoids SSR/client mismatch)
     const ua = navigator.userAgent
     const lower = ua.toLowerCase()
@@ -98,6 +105,13 @@
     <section class="download-hero">
       <div class="download-hero__container">
         <span class="download-hero__eyebrow">{{ $t('download.heroEyebrow') }}</span>
+        <span
+          v-if="installsRaw > 0"
+          data-testid="download-installs-badge"
+          class="download-hero__eyebrow download-hero__eyebrow--installs"
+        >
+          {{ $t('stats.installs') }}: {{ installsNum }}
+        </span>
         <h1 class="download-hero__title">
           {{ $t('download.heroTitle') }}
         </h1>
@@ -439,6 +453,10 @@
       font-weight: 700;
       color: var(--piano-accent);
       margin-bottom: 1rem;
+
+      &--installs {
+        margin-left: 0.75rem;
+      }
     }
 
     &__title {

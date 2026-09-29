@@ -20,6 +20,7 @@ function mountDownloadPage() {
 describe('DownloadPage', () => {
   beforeEach(() => {
     vi.stubGlobal('useSeoMeta', vi.fn())
+    vi.stubGlobal('$fetch', vi.fn().mockResolvedValue({ total: null }))
     vi.stubGlobal(
       'fetch',
       vi.fn().mockResolvedValue({
@@ -82,5 +83,24 @@ describe('DownloadPage', () => {
     ).toBe(true)
     expect(wrapper.html()).not.toContain('https://github.com/pianolouvorja/app/releases')
     expect(wrapper.text()).toContain('Em breve')
+  })
+
+  it('não exibe o badge de instalações quando a API retorna null (fallback silencioso)', async () => {
+    const wrapper = mountDownloadPage()
+    await flushPromises()
+
+    expect(wrapper.find('[data-testid="download-installs-badge"]').exists()).toBe(false)
+  })
+
+  it('exibe o badge de instalações formatado quando a API retorna total', async () => {
+    vi.stubGlobal('$fetch', vi.fn().mockResolvedValue({ total: 1234 }))
+
+    const wrapper = mountDownloadPage()
+    await flushPromises()
+
+    const badge = wrapper.find('[data-testid="download-installs-badge"]')
+    expect(badge.exists()).toBe(true)
+    expect(badge.text()).toContain('Instalações')
+    expect(badge.text()).toContain('1.234')
   })
 })
