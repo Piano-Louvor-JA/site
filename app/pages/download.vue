@@ -1,16 +1,15 @@
 <script setup lang="ts">
   import { siteConfig } from '~/data/site'
+  import { useInstallsCount } from '~/composables/useInstallsCount'
   import type { AllDownloadsResponse, CategoryResult } from '~/utils/downloads'
   import { detectArch, detectDevice } from '~/utils/device-detection'
-  import { useTvBrands } from '~/composables/useTvBrands'
-  import { useInstallsCount } from '~/composables/useInstallsCount'
 
   const { t } = useI18n()
 
-  const tvBrands = useTvBrands()
-
-  // Instalações em tempo real (GitHub) — fallback silencioso, badge só aparece com total > 0.
-  const { installsNum, installsRaw, load: loadInstalls } = useInstallsCount()
+  useSeoMeta({
+    title: () => t('download.metaTitle'),
+    description: () => t('download.metaDescription'),
+  })
 
   // Server-side proxy avoids GitHub API rate limits on client
   interface GithubAsset {
@@ -28,10 +27,24 @@
   const downloadUrls = ref<Record<string, string>>({})
   const fetchError = ref(false)
 
+  // Dynamic downloads from all-downloads endpoint
+  const allDownloads = ref<AllDownloadsResponse | null>(null)
+  const tvData = computed<CategoryResult>(
+    () => allDownloads.value?.tv ?? { repo: 'palco-receiver', tag: null, assets: {} },
+  )
+  const mobileData = computed<CategoryResult>(
+    () => allDownloads.value?.mobile ?? { repo: 'apk', tag: null, assets: {} },
+  )
+
   // Detect OS client-side only to avoid hydration mismatch.
+  // Uses the shared device-detection util so Android phones (whose UA
+  // contains "Linux") are NOT misclassified as desktop Linux.
   const detectedOs = ref<'linux' | 'windows' | 'macos' | null>(null)
   const detectedArch = ref<'arm64' | 'x64'>('x64')
   const detectedMobilePlatform = ref<'android' | 'ios' | null>(null)
+
+  // Instalações em tempo real (GitHub) — fallback silencioso, badge só aparece com total > 0.
+  const { installsNum, installsRaw, load: loadInstalls } = useInstallsCount()
   const voidbrIso = ref<VoidbrIsoData | null>(null)
 
   interface VoidbrIsoData {
@@ -42,53 +55,26 @@
     builtAt: string | null
   }
 
-  const allDownloads = ref<AllDownloadsResponse | null>(null)
-  const tvData = computed<CategoryResult>(
-    () => allDownloads.value?.tv ?? { repo: 'palco-receiver', tag: null, assets: {} },
-  )
-  const mobileData = computed<CategoryResult>(
-    () => allDownloads.value?.mobile ?? { repo: 'apk', tag: null, assets: {} },
-  )
-
-  // Fetch latest release via server proxy (token-backed, no rate limit)
   onMounted(async () => {
-||||||| 99397cc
-  // Fetch latest release via server proxy (token-backed, no rate limit)
-  onMounted(async () => {
-
-  // Server-side proxy avoids GitHub API rate limits on client
-  interface GithubAsset {
-    name: string
-    browser_download_url: string
-    size: number
-  }
-
-  interface GithubRelease {
-    tag_name: string
-    assets: GithubAsset[]
-  }
-
-  const latestTag = ref<string | null>(null)
-  const downloadUrls = ref<Record<string, string>>({})
-  const fetchError = ref(false)
-
-  // Detect OS client-side only to avoid hydration mismatch
-  const detectedOs = ref<'linux' | 'windows' | 'macos' | null>(null)
-
-  onMounted(async () => {
-    // Instalações em tempo real (fallback silencioso dentro do composable)
-    void loadInstalls()
-
-    // OS detection on client only (avoids SSR/client mismatch)
-    const ua = navigator.userAgent
-    const lower = ua.toLowerCase()
-    if (lower.includes('mac os') || lower.includes('macos') || lower.includes('darwin')) {
-      detectedOs.value = 'macos'
-    } else if (lower.includes('windows')) {
-      detectedOs.value = 'windows'
-    } else if (lower.includes('linux') || lower.includes('x11')) {
-      detectedOs.value = 'linux'
+    const device = detectDevice(navigator.userAgent)
+    if (device.category === 'desktop') {
+      detectedOs.value =
+        device.platform === 'macos'
+          ? 'macos'
+          : device.platform === 'windows'
+            ? 'windows'
+            : device.platform === 'linux'
+              ? 'linux'
+              : null
+    } else if (device.category === 'mobile') {
+      detectedMobilePlatform.value =
+        device.platform === 'android' ? 'android' : device.platform === 'ios' ? 'ios' : null
     }
+
+    // Arquitetura da CPU (arm64 vs x64) — client-only, async via userAgentData.
+    // Mac UA não expõe arch real; userAgentData sim (Chromium). Safari/Firefox
+    // caem no default x64 com link alternativo sempre visível.
+    detectedArch.value = await detectArch()
 
     // Instalações (total dinâmico do ecossistema)
     loadInstalls()
@@ -103,26 +89,90 @@
       for (const asset of data.assets) {
         const name = asset.name.toLowerCase()
         if (name.endsWith('.appimage')) {
-          downloadUrls.value.linux = asset.browser_download_url
+          if (name.includes('arm64')) {
+            downloadUrls.value['linux-arm64'] = asset.browser_download_url
+          } else {
+            downloadUrls.value['linux-x64'] = asset.browser_download_url
+          }
         } else if (name.endsWith('.exe')) {
           downloadUrls.value.windows = asset.browser_download_url
         } else if (name.endsWith('.dmg')) {
-          downloadUrls.value.macos = asset.browser_download_url
+          if (name.includes('arm64')) {
+            downloadUrls.value['macos-arm64'] = asset.browser_download_url
+          } else {
+            downloadUrls.value['macos-x64'] = asset.browser_download_url
+          }
         }
       }
     } catch {
       fetchError.value = true
     }
+
+    // ISO VoidBR (não-bloqueante, independente)
+    fetch('/api/github/voidbr-iso')
+      .then((r) => (r.ok ? r.json() : null))
+      .then((d) => {
+        voidbrIso.value = d
+      })
+      .catch(() => {
+        voidbrIso.value = null
+      })
+
+    // Fetch TV + Mobile downloads (non-blocking, independent)
+    fetch('/api/github/all-downloads')
+      .then((res) => {
+        if (!res.ok) throw new Error('Failed to fetch all downloads')
+        return res.json() as Promise<AllDownloadsResponse>
+      })
+      .then((data) => {
+        allDownloads.value = data
+      })
+      .catch(() => {
+        // Silently fall back to empty (components show "coming soon")
+      })
+  })
+
+  /**
+   * Link alternativo de arquitetura: usuário em Mac arm64 vê o x64 (e vice-versa).
+   * Sempre visível quando existe — correção a 1 clique se a detecção errar.
+   */
+  const altArchDownload = computed(() => {
+    if (detectedOs.value === 'macos') {
+      const primary = detectedArch.value === 'arm64' ? 'macos-arm64' : 'macos-x64'
+      const alt = detectedArch.value === 'arm64' ? 'macos-x64' : 'macos-arm64'
+      return downloadUrls.value[primary] && downloadUrls.value[alt]
+        ? {
+            url: downloadUrls.value[alt] as string,
+            arch: detectedArch.value === 'arm64' ? 'x64' : 'arm64',
+          }
+        : null
+    }
+    if (detectedOs.value === 'linux') {
+      const primary = detectedArch.value === 'arm64' ? 'linux-arm64' : 'linux-x64'
+      const alt = detectedArch.value === 'arm64' ? 'linux-x64' : 'linux-arm64'
+      return downloadUrls.value[primary] && downloadUrls.value[alt]
+        ? {
+            url: downloadUrls.value[alt] as string,
+            arch: detectedArch.value === 'arm64' ? 'x64' : 'arm64',
+          }
+        : null
+    }
+    return null
   })
 
   const desktopCards = computed(() => [
     {
-      os: 'linux' as const,
+      os:
+        detectedOs.value === 'linux'
+          ? detectedArch.value === 'arm64'
+            ? ('linux-arm64' as const)
+            : ('linux-x64' as const)
+          : ('linux-x64' as const),
       icon: '',
       i18nPrefix: 'download.desktop.linux',
       recommended: detectedOs.value === 'linux',
       requiresDiskSpace: true,
-      available: !!downloadUrls.value.linux,
+      available: !!downloadUrls.value['linux-x64'] || !!downloadUrls.value['linux-arm64'],
     },
     {
       os: 'windows' as const,
@@ -133,12 +183,17 @@
       available: !!downloadUrls.value.windows,
     },
     {
-      os: 'macos' as const,
+      os:
+        detectedOs.value === 'macos'
+          ? detectedArch.value === 'arm64'
+            ? ('macos-arm64' as const)
+            : ('macos-x64' as const)
+          : ('macos-x64' as const),
       icon: 'ti-brand-apple',
       i18nPrefix: 'download.desktop.macos',
       recommended: detectedOs.value === 'macos',
       requiresDiskSpace: true,
-      available: !!downloadUrls.value.macos,
+      available: !!downloadUrls.value['macos-x64'] || !!downloadUrls.value['macos-arm64'],
     },
   ])
 </script>
