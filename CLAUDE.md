@@ -110,11 +110,11 @@ qualquer cor/estilo, ler a decisão completa em:
 
 Resumo dos tokens-alvo (verificados no código do produto):
 
-| Camada | Tokens |
-|---|---|
-| Marca/logo | azul `#2196F3` + amarelo `#F8C800` |
+| Camada       | Tokens                                                                              |
+| ------------ | ----------------------------------------------------------------------------------- |
+| Marca/logo   | azul `#2196F3` + amarelo `#F8C800`                                                  |
 | UI/interação | neutros dark `#131313` / light `#F8F9FF` + laranja `#E0895A` (defaultAccent do app) |
-| Auxiliares | teal `#78D6D2` |
+| Auxiliares   | teal `#78D6D2`                                                                      |
 
 Fontes da verdade no produto: `pianolouvorja/app/src/design-system/themes/accents.ts`
 (defaultAccent orange `#E0895A`) e `tokens/colors.ts`. Dark/Light no site deve
