@@ -13,11 +13,14 @@ export default {
     contact: 'Contacto',
     openApp: 'Abrir App',
     language: 'Idioma',
+    toggleTheme: 'Alternar tema claro/oscuro',
   },
   hero: {
     badge: 'Nuevo: Versión Web Disponible',
     title: 'Gestor de Culto',
-    titleHighlight: 'Simple y Completo',
+    titleHighlight: 'Simple y',
+
+    titleHighlight2: 'Completo',
     subtitle:
       'Organice himnarios, liturgia, Biblia y proyección en un solo lugar. Acceda desde cualquier dispositivo.',
     ctaPrimary: 'Abrir Aplicación',

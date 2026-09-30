@@ -13,12 +13,13 @@
     "openApp": "Abrir App",
     "language": "Idioma",
     "download": "Baixar",
-    "releases": "Versões"
+    "releases": "Versões",
+    "toggleTheme": "Alternar tema claro/escuro"
   },
   "hero": {
     "badge": "Novo: Versão Web Disponível",
     "title": "Gerenciador de Culto",
-    "titleHighlight": "Simples e Completo",
+    "titleHighlight": "Simples e",
     "subtitle": "Organize hinários, liturgia, Bíblia e projeção em um só lugar. Acesse de qualquer dispositivo, sem instalação.",
     "ctaPrimary": "Abrir Aplicativo",
     "ctaSecondary": "Ver Plataformas",
@@ -34,7 +35,8 @@
       "next": "Próximo",
       "nextTitle": "Boas-Vindas e Louvor",
       "elapsedTime": "Tempo decorrido"
-    }
+    },
+    "titleHighlight2": "Completo"
   },
   "stats": {
     "features": "Funcionalidades",
@@ -711,7 +713,6 @@
     "reject": "Recusar",
     "privacyLink": "Ler Política de Privacidade"
   },
-
   "admin": {
     "title": "Dashboard",
     "loginTitle": "Acesso Restrito",
