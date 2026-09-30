@@ -89,11 +89,11 @@
 
 <style scoped lang="scss">
   .voidbr-iso {
-    padding: 4rem 1.5rem;
-    background: var(--piano-dark, #0a1733);
+    padding: clamp(2.5rem, 6vw, 4rem) 1.5rem;
+    background: var(--piano-bg-tertiary);
 
     &__container {
-      max-width: 1100px;
+      max-width: 72rem;
       margin: 0 auto;
       text-align: center;
     }

@@ -24,6 +24,40 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 - Parser de release notes: reconhece seções "Novos recursos/Melhorias/Correções" + renderiza markdown inline (bold/links) sanitizado
 
 
+## [1.4.0](https://github.com/pianolouvorja/site/compare/v1.3.0...v1.4.0) (2026-09-25)
+
+### Site (institucional)
+
+**Comunidade**
+- Seção Comunidade reformulada: WhatsApp (suporte) + Telegram, SEO e PWA
+- Painel admin de membros: gestão completa (roles, ban, auditoria, export CSV)
+- Endpoints admin `/community/*` com custom claims (requireRole server-side)
+- Migração do roster de testadores: Google Sheets → Firestore
+- `/testers`: galeria de testadores com modal e relatos dinâmicos da sheet
+- Formulário `/contact` com select de assunto (geral/testador/dev/bug)
+- Endpoint `community/register` com gravação em Sheets e moderação
+
+**Admin & UX**
+- Navegação entre painéis no layout admin + nav do admin no layout público
+- Ícone Pix real na seção "Apoie o projeto"
+- Limpeza de nav redundante no dashboard
+
+**Correções**
+- Layout `default` restaurado após merge com staging
+- `/testers` restaurado no nav; SSR das rotas admin corrigido
+- SVG do Pix visível (CSS estilizava apenas `i`, não `svg`)
+- Sass migrado de `sass-embedded` para JS puro (build travava no fallback)
+- Vitest: workers limitados (Node 24 derrubava IPC em suites longas)
+
+**Web (app PWA)**
+
+#### 25 de setembro de 2026
+- Entrega da Comunidade no Web App: coletâneas compartilhadas, ranking e moderação (paridade com desktop)
+
+
+**Web (app PWA)**
+- Comunidade entregue no Web App (25/09/2026): coletâneas compartilhadas, ranking e moderação — paridade com o desktop
+
 ## [1.3.0](https://github.com/pianolouvorja/site/compare/v1.2.0...v1.3.0) (2026-09-23)
 
 ## [1.2.0](https://github.com/pianolouvorja/site/compare/v1.1.0...v1.2.0) (2026-09-12)
