@@ -90,7 +90,7 @@
 <style scoped lang="scss">
   .voidbr-iso {
     padding: clamp(2.5rem, 6vw, 4rem) 1.5rem;
-    background: var(--piano-bg-tertiary);
+    background: var(--piano-dark, #0a1733);
 
     &__container {
       max-width: 72rem;
