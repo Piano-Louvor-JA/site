@@ -18,6 +18,7 @@ import {
   clearTotalDownloadsCache,
   handleTotalDownloads,
 } from '~~/server/api/github/total-downloads.get'
+import { TOTAL_INSTALLS_SNAPSHOT } from '~~/server/utils/github-snapshots'
 
 function makeEvent() {
   return { node: { res: { setHeader: vi.fn() } } }
@@ -52,7 +53,7 @@ describe('GET /api/github/total-downloads', () => {
     )
   })
 
-  it('retorna { total: null } silenciosamente quando o GitHub falha (fallback)', async () => {
+  it('serve o snapshot hardcoded quando o GitHub falha e nao ha cache (fallback)', async () => {
     mockFetchGitHubStats.mockResolvedValueOnce({
       downloads: null,
       stars: null,
@@ -61,7 +62,7 @@ describe('GET /api/github/total-downloads', () => {
 
     const result = await handleTotalDownloads(makeEvent() as never)
 
-    expect(result).toEqual({ total: null })
+    expect(result).toEqual({ total: TOTAL_INSTALLS_SNAPSHOT.total })
   })
 
   it('usa cache de 5 minutos: segunda chamada nao refaz fetch', async () => {
@@ -93,16 +94,39 @@ describe('GET /api/github/total-downloads', () => {
     vi.useRealTimers()
   })
 
-  it('cacheia tambem o fallback null (nao martela a API em caso de erro)', async () => {
+  it('cacheia tambem o fallback: erro apos sucesso nao martela a API (cache stale vence snapshot)', async () => {
+    mockFetchGitHubStats
+      .mockResolvedValueOnce({
+        downloads: { total: 42, apps: [] },
+        stars: 0,
+        forks: 0,
+      })
+      .mockResolvedValue({
+        downloads: null,
+        stars: null,
+        forks: null,
+      })
+
+    await handleTotalDownloads(makeEvent() as never) // popula cache com 42
+    vi.useFakeTimers()
+    vi.advanceTimersByTime(5 * 60 * 1000 + 1) // cache expira, mas stale e reaproveitado
+    const result = await handleTotalDownloads(makeEvent() as never)
+
+    expect(mockFetchGitHubStats).toHaveBeenCalledTimes(2)
+    expect(result).toEqual({ total: 42 }) // cache stale, nao snapshot
+    vi.useRealTimers()
+  })
+
+  it('apos erro sem cache, serve snapshot e refaz fetch no proximo TTL (nao congela o null)', async () => {
     mockFetchGitHubStats.mockResolvedValue({
       downloads: null,
       stars: null,
       forks: null,
     })
 
-    await handleTotalDownloads(makeEvent() as never)
-    await handleTotalDownloads(makeEvent() as never)
+    await handleTotalDownloads(makeEvent() as never) // snapshot
+    await handleTotalDownloads(makeEvent() as never) // tenta de novo
 
-    expect(mockFetchGitHubStats).toHaveBeenCalledTimes(1)
+    expect(mockFetchGitHubStats).toHaveBeenCalledTimes(2)
   })
 })
