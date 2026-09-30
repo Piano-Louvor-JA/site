@@ -207,13 +207,10 @@ export async function fetchNewsletterStats(): Promise<{
     const apiKey = config.buttondownApiKey || config.public?.buttondownApiKey
     if (!apiKey) return { subscribers: null }
 
-    const response = await $fetch<{ count: number }>(
-      'https://api.buttondown.com/v1/subscribers',
-      {
-        headers: { Authorization: `Token ${apiKey}` },
-        timeout: 5000,
-      },
-    )
+    const response = await $fetch<{ count: number }>('https://api.buttondown.com/v1/subscribers', {
+      headers: { Authorization: `Token ${apiKey}` },
+      timeout: 5000,
+    })
 
     return { subscribers: response.count ?? null }
   } catch {

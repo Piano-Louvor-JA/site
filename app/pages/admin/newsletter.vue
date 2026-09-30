@@ -102,7 +102,10 @@
     try {
       const res = await $fetch<{ subscribers: Sub[]; total: number }>(
         '/api/admin/newsletter/subscribers',
-        { query: subSearch.value ? { search: subSearch.value } : {}, headers: await getAuthHeaders() },
+        {
+          query: subSearch.value ? { search: subSearch.value } : {},
+          headers: await getAuthHeaders(),
+        },
       )
       subscribers.value = res.subscribers
     } catch {
@@ -154,7 +157,9 @@
 
   async function loadHistory() {
     try {
-      const res = await $fetch<{ history: HistoryItem[] }>('/api/admin/newsletter/history', { headers: await getAuthHeaders() })
+      const res = await $fetch<{ history: HistoryItem[] }>('/api/admin/newsletter/history', {
+        headers: await getAuthHeaders(),
+      })
       history.value = res.history
     } catch {
       history.value = []
@@ -169,7 +174,9 @@
 
   async function loadStatus() {
     try {
-      smtpStatus.value = await $fetch('/api/admin/newsletter/status', { headers: await getAuthHeaders() })
+      smtpStatus.value = await $fetch('/api/admin/newsletter/status', {
+        headers: await getAuthHeaders(),
+      })
     } catch {
       smtpStatus.value = null
     }
