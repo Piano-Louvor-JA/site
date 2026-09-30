@@ -13,7 +13,7 @@
     title: 'Dashboard · Piano Louvor JA',
   })
 
-  const { user, logout, getToken } = useFirebaseAuth()
+  const { user, loading: authLoading, logout, getToken } = useFirebaseAuth()
   const { stats, loading, refresh } = useDashboardStats()
 
   // --- Atividade recente ---
@@ -251,6 +251,14 @@
 </script>
 
 <template>
+  <!-- Gate de auth: nao renderiza o dashboard sem usuario autenticado (evita flash do dashboard no primeiro load) -->
+  <div v-if="authLoading" class="admin-auth-loading">
+    <i class="ti ti-loader-2" aria-hidden="true" />
+  </div>
+  <div v-else-if="!user" class="admin-auth-loading">
+    <p>Redirecionando para o login...</p>
+  </div>
+  <template v-else>
   <!-- Modal: forcar troca de senha -->
   <div v-if="mustChangePassword" class="change-password-overlay">
     <div class="change-password-card">
@@ -440,6 +448,7 @@
       </div>
     </section>
   </div>
+  </template>
 </template>
 
 <style scoped>

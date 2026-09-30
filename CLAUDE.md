@@ -98,3 +98,28 @@ e2e/              # Testes E2E (Playwright)
 - **Fluxo**: feature branch → PR → review → merge
 - **Pre-commit hook**: roda lint-staged (eslint + typecheck nos arquivos alterados)
 - **Commit message**: convencional (`feat:`, `fix:`, `test:`, `docs:`, `refactor:`)
+
+## ⚠️ Decisão de Design Pendente de Implementação — Brand Alignment (30/09/2026)
+
+**Direção validada pelo Rafael**: o site deve usar os tokens de cor do PRODUTO
+(hoje usa uma família azul/ciano que não existe nos apps). Antes de mexer em
+qualquer cor/estilo, ler a decisão completa em:
+
+- **Doc-mestre (Obsidian)**: `04-Projects/PIANO Site — Redesign Identidade e Carrossel de Plataformas.md`
+- Resumo técnico também em `docs/DESIGN-BRAND-ALIGNMENT.md` (não versionado — docs/ é gitignored)
+
+Resumo dos tokens-alvo (verificados no código do produto):
+
+| Camada | Tokens |
+|---|---|
+| Marca/logo | azul `#2196F3` + amarelo `#F8C800` |
+| UI/interação | neutros dark `#131313` / light `#F8F9FF` + laranja `#E0895A` (defaultAccent do app) |
+| Auxiliares | teal `#78D6D2` |
+
+Fontes da verdade no produto: `pianolouvorja/app/src/design-system/themes/accents.ts`
+(defaultAccent orange `#E0895A`) e `tokens/colors.ts`. Dark/Light no site deve
+espelhar os temas Ethereal Lumens / Luminous Clarity.
+
+**Fila de implementação**: (1) paleta+hero → (2) dark/light toggle → (3) carrossel
+de 6 plataformas com prints reais + GSAP (substituir PlatformsSection). Detalhes,
+regras anti-AI-slop e arquivo-por-arquivo no doc-mestre.
