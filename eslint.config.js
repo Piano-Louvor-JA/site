@@ -73,6 +73,7 @@ export default [
         useNewsletter: 'readonly',
         useDashboardStats: 'readonly',
         useTvBrands: 'readonly',
+        useTheme: 'readonly',
         // Browser DOM types
         MouseEvent: 'readonly',
         KeyboardEvent: 'readonly',

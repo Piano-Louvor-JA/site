@@ -3,6 +3,8 @@
   import { navLinks, secondaryNavLinks, siteConfig } from '~/data/site'
 
   const { locale, locales, setLocale } = useI18n()
+  const { theme, toggleTheme, initTheme } = useTheme()
+  onMounted(initTheme)
   const route = useRoute()
   const mobileMenuOpen = ref(false)
   const langMenuOpen = ref(false)
@@ -110,6 +112,16 @@
       <!-- Direita: codename PIANO + lang switcher + CTA -->
       <div class="header__header-end">
         <img src="/brand/codename-piano.svg" alt="" class="header__codename" />
+
+        <!-- Theme toggle (Ethereal Lumens / Luminous Clarity) -->
+        <button
+          data-testid="header-theme-toggle"
+          class="header__theme-btn"
+          :aria-label="$t('nav.toggleTheme')"
+          @click="toggleTheme"
+        >
+          <i :class="theme === 'dark' ? 'ti ti-sun' : 'ti ti-moon'" />
+        </button>
 
         <!-- Language switcher -->
         <div class="header__lang">
@@ -296,6 +308,29 @@
       filter: brightness(0) invert(1);
     }
 
+    /* Theme toggle */
+    &__theme-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: rgba(255, 255, 255, 0.9);
+      width: 36px;
+      height: 36px;
+      border-radius: var(--piano-radius-sm);
+      cursor: pointer;
+      font-size: 1.05rem;
+      transition: all 0.2s;
+
+      &:hover,
+      &:focus-visible {
+        background: var(--site-accent-soft);
+        border-color: rgba(224, 137, 90, 0.4);
+        color: var(--site-accent-text);
+      }
+    }
+
     /* Language switcher */
     &__lang {
       position: relative;
@@ -316,8 +351,8 @@
 
         &:hover,
         &:focus-visible {
-          background: rgba(0, 193, 230, 0.2);
-          border-color: rgba(0, 193, 230, 0.4);
+          background: var(--site-accent-soft);
+          border-color: rgba(224, 137, 90, 0.4);
           color: #fff;
         }
 
@@ -337,7 +372,7 @@
         right: 0;
         background: rgba(10, 23, 51, 0.98);
         backdrop-filter: blur(16px);
-        border: 1px solid rgba(0, 193, 230, 0.2);
+        border: 1px solid var(--site-border);
         border-radius: var(--piano-radius-md);
         padding: 0.375rem;
         min-width: 140px;
@@ -363,7 +398,7 @@
 
         &:hover,
         &:focus-visible {
-          background: rgba(0, 193, 230, 0.15);
+          background: var(--site-accent-soft);
           color: #fff;
         }
       }
