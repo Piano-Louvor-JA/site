@@ -95,7 +95,7 @@
     &__container {
       max-width: 72rem;
       margin: 0 auto;
-      text-align: center;
+      text-align: left;
     }
 
     &__eyebrow {

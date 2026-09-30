@@ -549,8 +549,8 @@
     }
 
     &__header {
-      text-align: center;
-      max-width: 42rem;
+      text-align: left;
+      max-width: 72rem;
       margin: 0 auto 2.5rem;
     }
 
@@ -565,6 +565,9 @@
       background: var(--piano-accent-soft);
       color: var(--piano-accent);
       margin-bottom: 0.75rem;
+      /* alinhamento consistente entre secoes: ancora a esquerda do container,
+         nao centralizada (larguras de texto diferentes deslocavam o centro visual) */
+      margin-left: 0;
 
       &--accent {
         background: rgba(34, 197, 94, 0.12);
