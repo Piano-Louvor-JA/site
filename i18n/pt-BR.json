@@ -17,7 +17,7 @@
     "testers": "Testadores"
   },
   "hero": {
-    "badge": "Novo: Versão Web Disponível",
+    "badge": "Novo: Web App (PWA) Disponível",
     "title": "Gerenciador de Culto",
     "titleHighlight": "Simples e Completo",
     "subtitle": "Organize hinários, liturgia, Bíblia e projeção em um só lugar. Acesse de qualquer dispositivo, sem instalação.",
@@ -129,7 +129,7 @@
       },
       "offline": {
         "title": "Dados Locais",
-        "description": "O app desktop funciona 100% offline após o download das mídias. A versão web requer conexão com internet para funcionar."
+        "description": "O app desktop funciona 100% offline após o download das mídias. O Web App (PWA) roda no navegador — e este SITE é a vitrine institucional com downloads, releases e documentação."
       }
     }
   },
@@ -312,7 +312,7 @@
     },
     "content": {
       "gettingStarted": {
-        "intro": "O PIANO LouvorJA é uma aplicação web que funciona em qualquer dispositivo com navegador moderno. Não é necessário instalar — basta acessar pelo navegador.",
+        "intro": "O Web App (PWA) do PIANO LouvorJA funciona em qualquer dispositivo com navegador moderno. Não é necessário instalar — basta acessar pelo navegador. Este site é a página institucional do ecossistema.",
         "steps": [
           "Abra o aplicativo no navegador do seu computador ou dispositivo móvel.",
           "Para melhor experiência, adicione à tela inicial pelo menu do navegador.",
