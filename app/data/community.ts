@@ -36,8 +36,8 @@ export const communityChannels = [
     icon: 'ti ti-brand-whatsapp',
   },
   {
-    id: 'telegram-devs',
-    /** Grupo de desenvolvedores (Telegram). */
+    id: 'telegram-community',
+    /** Grupo da comunidade (Telegram). */
     url: 'https://t.me/c/4390408870/6',
     icon: 'ti ti-brand-telegram',
   },

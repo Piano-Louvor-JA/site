@@ -1137,8 +1137,8 @@
     "cta": "Únete a la comunidad",
     "channels": {
       "whatsapp-support": "Grupo de soporte (WhatsApp)",
-      "telegram-devs": "Grupo de devs (Telegram)",
-      "dev-form": "Quiero ser desarrollador"
+      "dev-form": "Quiero ser desarrollador",
+      "telegram-community": "Comunidad en Telegram"
     }
   },
   "testers": {
