@@ -11,12 +11,13 @@
     "docs": "Documentation",
     "contact": "Contact",
     "openApp": "Open App",
-    "language": "Language"
+    "language": "Language",
+    "toggleTheme": "Toggle light/dark theme"
   },
   "hero": {
     "badge": "New: Web Version Available",
     "title": "Worship Service Manager",
-    "titleHighlight": "Simple and Complete",
+    "titleHighlight": "Simple and",
     "subtitle": "Organize hymnals, liturgy, Bible and projection in one place. Access from any device, no installation required.",
     "ctaPrimary": "Open App",
     "ctaSecondary": "See Platforms",
@@ -32,7 +33,8 @@
       "next": "Next",
       "nextTitle": "Welcome and Praise",
       "elapsedTime": "Elapsed time"
-    }
+    },
+    "titleHighlight2": "Complete"
   },
   "stats": {
     "features": "Features",

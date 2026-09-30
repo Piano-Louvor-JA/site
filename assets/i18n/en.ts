@@ -13,11 +13,14 @@ export default {
     contact: 'Contact',
     openApp: 'Open App',
     language: 'Language',
+    toggleTheme: 'Toggle light/dark theme',
   },
   hero: {
     badge: 'New: Web Version Available',
     title: 'Worship Service Manager',
-    titleHighlight: 'Simple and Complete',
+    titleHighlight: 'Simple and',
+
+    titleHighlight2: 'Complete',
     subtitle:
       'Organize hymnals, liturgy, Bible and projection in one place. Access from any device, no installation required.',
     ctaPrimary: 'Open App',
