@@ -242,7 +242,7 @@
             <div class="download-card__header">
               <!-- Tux (Linux) via SVG inline - ti-brand-tux nao existe no Tabler -->
               <svg
-                v-if="card.os === 'linux'"
+                v-if="card.os.startsWith('linux')"
                 class="download-card__icon download-card__icon--svg"
                 viewBox="0 0 24 24"
                 fill="currentColor"
