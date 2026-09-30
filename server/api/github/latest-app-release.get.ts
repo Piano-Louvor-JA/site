@@ -33,7 +33,10 @@ export default defineEventHandler(async (event) => {
   } catch (error) {
     // FALLBACK: GitHub indisponivel — serve snapshot hardcoded (ultimo release real conhecido).
     // Nunca 502: o botao de download desktop tem que funcionar sempre.
-    console.error('[latest-app-release] GitHub falhou, servindo snapshot:', error instanceof Error ? error.message : error)
+    console.error(
+      '[latest-app-release] GitHub falhou, servindo snapshot:',
+      error instanceof Error ? error.message : error,
+    )
     return {
       tag_name: LATEST_APP_SNAPSHOT.tag_name,
       snapshot: true,

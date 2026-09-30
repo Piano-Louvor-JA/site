@@ -1,13 +1,10 @@
 <script setup lang="ts">
   import { siteConfig } from '~/data/site'
   import { useInstallsCount } from '~/composables/useInstallsCount'
-  import { useTvBrands } from '~/composables/useTvBrands'
   import type { AllDownloadsResponse, CategoryResult } from '~/utils/downloads'
   import { detectArch, detectDevice } from '~/utils/device-detection'
 
   const { t } = useI18n()
-
-  const tvBrands = useTvBrands()
 
   useSeoMeta({
     title: () => t('download.metaTitle'),
@@ -135,34 +132,6 @@
       })
   })
 
-  /**
-   * Link alternativo de arquitetura: usuário em Mac arm64 vê o x64 (e vice-versa).
-   * Sempre visível quando existe — correção a 1 clique se a detecção errar.
-   */
-  const altArchDownload = computed(() => {
-    if (detectedOs.value === 'macos') {
-      const primary = detectedArch.value === 'arm64' ? 'macos-arm64' : 'macos-x64'
-      const alt = detectedArch.value === 'arm64' ? 'macos-x64' : 'macos-arm64'
-      return downloadUrls.value[primary] && downloadUrls.value[alt]
-        ? {
-            url: downloadUrls.value[alt] as string,
-            arch: detectedArch.value === 'arm64' ? 'x64' : 'arm64',
-          }
-        : null
-    }
-    if (detectedOs.value === 'linux') {
-      const primary = detectedArch.value === 'arm64' ? 'linux-arm64' : 'linux-x64'
-      const alt = detectedArch.value === 'arm64' ? 'linux-x64' : 'linux-arm64'
-      return downloadUrls.value[primary] && downloadUrls.value[alt]
-        ? {
-            url: downloadUrls.value[alt] as string,
-            arch: detectedArch.value === 'arm64' ? 'x64' : 'arm64',
-          }
-        : null
-    }
-    return null
-  })
-
   const desktopCards = computed(() => [
     {
       os:
@@ -273,7 +242,7 @@
             <div class="download-card__header">
               <!-- Tux (Linux) via SVG inline - ti-brand-tux nao existe no Tabler -->
               <svg
-                v-if="card.os === 'linux'"
+                v-if="card.os.startsWith('linux')"
                 class="download-card__icon download-card__icon--svg"
                 viewBox="0 0 24 24"
                 fill="currentColor"

@@ -1,5 +1,5 @@
 import { Octokit } from '@octokit/rest'
-import { readSnapshot, writeSnapshot, saveEtag, getEtag } from './snapshot-store'
+import { writeSnapshot, getEtag } from './snapshot-store'
 
 /**
  * Sincronizador GitHub → snapshot local.
@@ -92,7 +92,11 @@ async function syncReleases(): Promise<void> {
 
 async function syncContributors(): Promise<void> {
   const ok = await conditional('contributors', async () => {
-    const res = await octokit().rest.repos.listContributors({ owner: ORG, repo: 'app', per_page: 100 })
+    const res = await octokit().rest.repos.listContributors({
+      owner: ORG,
+      repo: 'app',
+      per_page: 100,
+    })
     return { data: res.data, headers: res.headers }
   })
   if (ok.changed && ok.data) writeSnapshot('contributors', ok.data, ok.etag)
@@ -100,7 +104,11 @@ async function syncContributors(): Promise<void> {
 
 async function syncRecentActivity(): Promise<void> {
   const ok = await conditional('recent-activity', async () => {
-    const res = await octokit().rest.activity.listRepoEvents({ owner: ORG, repo: 'web', per_page: 30 })
+    const res = await octokit().rest.activity.listRepoEvents({
+      owner: ORG,
+      repo: 'web',
+      per_page: 30,
+    })
     return { data: res.data, headers: res.headers }
   })
   if (ok.changed && ok.data) writeSnapshot('recent-activity', ok.data, ok.etag)
@@ -123,7 +131,10 @@ export async function syncGithubSnapshots(): Promise<void> {
     try {
       await job()
     } catch (e) {
-      console.warn(`[sync] ${name} falhou (snapshot local mantém o site servindo):`, e instanceof Error ? e.message : e)
+      console.warn(
+        `[sync] ${name} falhou (snapshot local mantém o site servindo):`,
+        e instanceof Error ? e.message : e,
+      )
     }
   }
   running = false
