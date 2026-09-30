@@ -108,6 +108,14 @@
     }
   }
 
+  function countryName(iso: string): string {
+    try {
+      return new Intl.DisplayNames(['pt-BR'], { type: 'region' }).of(iso.toUpperCase()) ?? iso
+    } catch {
+      return iso
+    }
+  }
+
   const topCountries = computed(() => geoStats.value?.countries.slice(0, 10) ?? [])
 
   function maxCountryVisits(countries: Array<{ visits: number }>): number {
@@ -407,7 +415,7 @@
         <div v-else-if="topCountries.length === 0" class="placeholder">Dados indisponíveis.</div>
         <ul v-else class="geo-list">
           <li v-for="item in topCountries" :key="item.country" class="geo-item">
-            <span class="geo-country">{{ item.country }}</span>
+            <span class="geo-country">{{ countryName(item.country) }}</span>
             <span class="geo-bar-track">
               <span
                 class="geo-bar"
