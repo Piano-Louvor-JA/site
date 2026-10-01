@@ -131,11 +131,7 @@
 
       &--available {
         border-color: rgba(34, 197, 94, 0.3);
-        background: linear-gradient(
-          135deg,
-          rgba(34, 197, 94, 0.06) 0%,
-          rgba(16, 67, 140, 0.08) 100%
-        );
+        background: rgba(34, 197, 94, 0.06);
 
         &:hover {
           border-color: rgba(34, 197, 94, 0.5);
