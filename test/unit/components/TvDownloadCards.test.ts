@@ -41,17 +41,17 @@ const tvWithAssets: CategoryResult = {
   tag: 'v0.1.13',
   assets: {
     androidtv: {
-      url: 'https://github.com/pianolouvorja/palco-receiver/releases/download/v0.1.13/PalcoLouvorJA-AndroidTV-0.1.0.apk',
+      url: 'https://github.com/Piano-Louvor-JA/palco-receiver/releases/download/v0.1.13/PalcoLouvorJA-AndroidTV-0.1.0.apk',
       name: 'PalcoLouvorJA-AndroidTV-0.1.0.apk',
       size: 46000000,
     },
     webos: {
-      url: 'https://github.com/pianolouvorja/palco-receiver/releases/download/v0.1.13/com.piano.louvorja.palco_0.1.13_all.ipk',
+      url: 'https://github.com/Piano-Louvor-JA/palco-receiver/releases/download/v0.1.13/com.piano.louvorja.palco_0.1.13_all.ipk',
       name: 'com.piano.louvorja.palco_0.1.13_all.ipk',
       size: 3500000,
     },
     tizen: {
-      url: 'https://github.com/pianolouvorja/palco-receiver/releases/download/v0.1.13/PalcoLouvorJA-Tizen-0.1.0.tpk',
+      url: 'https://github.com/Piano-Louvor-JA/palco-receiver/releases/download/v0.1.13/PalcoLouvorJA-Tizen-0.1.0.tpk',
       name: 'PalcoLouvorJA-Tizen-0.1.0.tpk',
       size: 5200000,
     },

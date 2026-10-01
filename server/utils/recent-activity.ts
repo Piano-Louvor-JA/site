@@ -13,7 +13,7 @@ function getOctokit(): Octokit {
 }
 
 /**
- * Busca eventos recentes do repo pianolouvorja/web.
+ * Busca eventos recentes do repo Piano-Louvor-JA/web.
  * Filtra: releases publicados, PRs, issues.
  */
 export async function fetchRecentActivity(): Promise<ActivityItem[]> {
@@ -21,7 +21,7 @@ export async function fetchRecentActivity(): Promise<ActivityItem[]> {
     const octokit = getOctokit()
 
     const response = await octokit.rest.activity.listRepoEvents({
-      owner: 'pianolouvorja',
+      owner: 'Piano-Louvor-JA',
       repo: 'web',
       per_page: 30,
     })

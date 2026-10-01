@@ -44,4 +44,6 @@ export interface GeoStats {
   totalVisits: number
   days: number
   countries: Array<{ country: string; visits: number }>
+  /** RF-02 (SITE-TELEMETRIA): modo de dedup — salted (GEO_SALT) ou unsalted (fallback) */
+  telemetryMode: 'salted' | 'unsalted'
 }

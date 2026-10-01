@@ -17,7 +17,7 @@
     "testers": "Testers"
   },
   "hero": {
-    "badge": "New: Web Version Available",
+    "badge": "New: Web App (PWA) Available",
     "title": "Worship Service Manager",
     "titleHighlight": "Simple and Complete",
     "subtitle": "Organize hymnals, liturgy, Bible and projection in one place. Access from any device, no installation required.",
@@ -38,10 +38,10 @@
     }
   },
   "stats": {
-    "features": "Features",
+    "features": "Ecosystem features",
     "free": "Free",
-    "installs": "Installs",
-    "offline": "Local data"
+    "installs": "Installations",
+    "offline": "Works offline"
   },
   "platforms": {
     "eyebrow": "Cross-platform",
@@ -142,8 +142,8 @@
     "openSource": "Open Source",
     "stats": {
       "free": "Free",
-      "installs": "Installs",
-      "offline": "Local data"
+      "installs": "Installations",
+      "offline": "PWA Offline"
     }
   },
   "how": {
@@ -652,7 +652,7 @@
           "Respects copyright per Law 9.610/98"
         ],
         "link": {
-          "url": "https://github.com/pianolouvorja",
+          "url": "https://github.com/Piano-Louvor-JA",
           "text": "GitHub repository"
         }
       },
@@ -753,7 +753,7 @@
     "placeholder": "Your best email",
     "button": "Subscribe",
     "loading": "Subscribing...",
-    "success": "Subscription confirmed! Thank you.",
+    "success": "Subscription confirmed! You will receive updates in your email.",
     "errors": {
       "invalidEmail": "Invalid email. Please check and try again.",
       "alreadySubscribed": "This email is already subscribed.",
@@ -892,7 +892,8 @@
         "arch": "universal",
         "downloadLabel": "Open TestFlight",
         "hint": "TestFlight invite required."
-      }
+      },
+      "apkNote": "Install the APK by allowing apps from unknown sources in Android settings."
     },
     "systemRequirements": {
       "title": "System Requirements",
@@ -907,7 +908,10 @@
       "features": {
         "realtime": "Real-time mirroring",
         "multicast": "Multiple TVs at once",
-        "autodiscover": "Automatic network discovery"
+        "autodiscover": "Automatic network discovery",
+        "nativeLg": "Native app for webOS (LG)",
+        "bigScreen": "Optimized for big screens",
+        "remoteControl": "Palco remote control"
       },
       "webos": {
         "name": "LG webOS TV",
@@ -928,7 +932,8 @@
         "name": "Samsung Tizen TV",
         "format": ".tpk package",
         "hint": "Install via USB or Tizen Studio Device Manager."
-      }
+      },
+      "useDesktopInstead": "For unsupported TVs, use Palco via browser in fullscreen mode."
     },
     "voidbr": {
       "eyebrow": "Partner Linux distro",
@@ -986,7 +991,9 @@
       "web": "Web (Site)",
       "app": "App (Desktop)",
       "api": "API",
-      "site": "Site"
+      "site": "Site",
+      "palco-receiver": "Palco for TVs",
+      "apk": "Mobile app (APK)"
     },
     "filterLabel": "Filter by product",
     "filterAll": "All",
@@ -1112,8 +1119,8 @@
     "cta": "Join the community",
     "channels": {
       "whatsapp-support": "Support group (WhatsApp)",
-      "telegram-devs": "Dev group (Telegram)",
-      "dev-form": "Become a developer"
+      "dev-form": "Become a developer",
+      "telegram-community": "Community on Telegram"
     }
   },
   "testers": {

@@ -11,7 +11,7 @@ Obrigado por contribuir! Este documento descreve o processo de desenvolvimento.
 ## Setup
 
 ```bash
-git clone https://github.com/pianolouvorja/site.git
+git clone https://github.com/Piano-Louvor-JA/site.git
 cd site
 pnpm install
 ```
@@ -128,7 +128,7 @@ test/
 
 ## Reportar bugs
 
-Abra uma [issue](https://github.com/pianolouvorja/site/issues) com:
+Abra uma [issue](https://github.com/Piano-Louvor-JA/site/issues) com:
 
 - Descrição do problema
 - Passos para reproduzir

@@ -109,7 +109,7 @@ describe('useAppHead', () => {
     const org = getOrg()
     expect(org).toBeDefined()
     expect(org.url).toBe('https://pianolouvorja.com.br')
-    expect(org.sameAs).toContain('https://github.com/pianolouvorja')
+    expect(org.sameAs).toContain('https://github.com/Piano-Louvor-JA')
   })
 
   it('define htmlAttrs.lang com o locale atual', () => {

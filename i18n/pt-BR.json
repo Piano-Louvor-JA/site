@@ -17,7 +17,7 @@
     "testers": "Testadores"
   },
   "hero": {
-    "badge": "Novo: Versão Web Disponível",
+    "badge": "Novo: Web App (PWA) Disponível",
     "title": "Gerenciador de Culto",
     "titleHighlight": "Simples e Completo",
     "subtitle": "Organize hinários, liturgia, Bíblia e projeção em um só lugar. Acesse de qualquer dispositivo, sem instalação.",
@@ -38,7 +38,7 @@
     }
   },
   "stats": {
-    "features": "Funcionalidades",
+    "features": "Funcionalidades do ecossistema",
     "free": "Gratuito",
     "installs": "Instalações",
     "offline": "Dados locais"
@@ -129,7 +129,7 @@
       },
       "offline": {
         "title": "Dados Locais",
-        "description": "O app desktop funciona 100% offline após o download das mídias. A versão web requer conexão com internet para funcionar."
+        "description": "O app desktop funciona 100% offline após o download das mídias. O Web App (PWA) roda no navegador — e este SITE é a vitrine institucional com downloads, releases e documentação."
       }
     }
   },
@@ -312,7 +312,7 @@
     },
     "content": {
       "gettingStarted": {
-        "intro": "O PIANO LouvorJA é uma aplicação web que funciona em qualquer dispositivo com navegador moderno. Não é necessário instalar — basta acessar pelo navegador.",
+        "intro": "O Web App (PWA) do PIANO LouvorJA funciona em qualquer dispositivo com navegador moderno. Não é necessário instalar — basta acessar pelo navegador. Este site é a página institucional do ecossistema.",
         "steps": [
           "Abra o aplicativo no navegador do seu computador ou dispositivo móvel.",
           "Para melhor experiência, adicione à tela inicial pelo menu do navegador.",
@@ -652,7 +652,7 @@
           "Respeita os direitos autorais conforme Lei 9.610/98"
         ],
         "link": {
-          "url": "https://github.com/pianolouvorja",
+          "url": "https://github.com/Piano-Louvor-JA",
           "text": "repositório no GitHub"
         }
       },
@@ -753,7 +753,7 @@
     "placeholder": "Seu melhor e-mail",
     "button": "Inscrever",
     "loading": "Inscrevendo...",
-    "success": "Inscrição confirmada! Obrigado.",
+    "success": "Inscrição confirmada! Você receberá as novidades no seu email.",
     "errors": {
       "invalidEmail": "E-mail inválido. Verifique e tente novamente.",
       "alreadySubscribed": "Este e-mail já está inscrito.",
@@ -892,7 +892,8 @@
         "arch": "universal",
         "downloadLabel": "Acessar TestFlight",
         "hint": "Convite do TestFlight necessário."
-      }
+      },
+      "apkNote": "Instale o APK permitindo apps de fontes desconhecidas nas configurações do Android."
     },
     "systemRequirements": {
       "title": "Requisitos do Sistema",
@@ -907,24 +908,32 @@
       "features": {
         "realtime": "Espelhamento em tempo real",
         "multicast": "Múltiplas TVs simultâneas",
-        "autodiscover": "Descoberta automática na rede"
+        "autodiscover": "Descoberta automática na rede",
+        "nativeLg": "App nativo para webOS (LG)",
+        "bigScreen": "Otimizado para telas grandes",
+        "remoteControl": "Controle remoto do Palco"
       },
       "webos": {
         "name": "LG webOS TV",
         "format": "Pacote .ipk",
-        "hint": "Use o Developer Mode ou sideload via Device Manager da LG."
+        "hint": "Use o Developer Mode ou sideload via Device Manager da LG.",
+        "arch": "arm",
+        "downloadLabel": "Baixar para webOS"
       },
       "androidtv": {
         "name": "Android TV",
         "format": "Pacote .apk",
-        "hint": "Faça sideload do APK com um app de arquivos ou via ADB."
+        "hint": "Faça sideload do APK com um app de arquivos ou via ADB.",
+        "arch": "arm64",
+        "downloadLabel": "Baixar para Android TV"
       },
       "downloadGeneric": "Baixar",
       "tizen": {
         "name": "Samsung Tizen TV",
         "format": "Pacote .tpk",
         "hint": "Instale via USB ou Tizen Studio Device Manager."
-      }
+      },
+      "useDesktopInstead": "Para TVs sem suporte, use o Palco via navegador no modo tela cheia."
     },
     "voidbr": {
       "eyebrow": "Distro Linux parceira",
@@ -982,7 +991,9 @@
       "web": "Web (Site)",
       "app": "App (Desktop)",
       "api": "API",
-      "site": "Site"
+      "site": "Site",
+      "palco-receiver": "Palco para TVs",
+      "apk": "App mobile (APK)"
     },
     "filterLabel": "Filtrar por produto",
     "filterAll": "Todos",
@@ -1005,7 +1016,8 @@
     "cta": "Acompanhar novidades",
     "appleTvBrand": "Apple TV",
     "appleTvStatus": "Planejado",
-    "statusAvailable": "Disponivel"
+    "statusAvailable": "Disponivel",
+    "downloadCta": "Baixar agora"
   },
   "team": {
     "eyebrow": "Nossa Equipe",
@@ -1107,8 +1119,8 @@
     "cta": "Faça parte da comunidade",
     "channels": {
       "whatsapp-support": "Grupo de suporte (WhatsApp)",
-      "telegram-devs": "Grupo de devs (Telegram)",
-      "dev-form": "Quero ser desenvolvedor"
+      "dev-form": "Quero ser desenvolvedor",
+      "telegram-community": "Comunidade no Telegram"
     }
   },
   "testers": {

@@ -1,5 +1,11 @@
 <script setup lang="ts">
   import { siteConfig } from '~/data/site'
+  import { useInstallsCount } from '~/composables/useInstallsCount'
+
+  const { installsNum, load } = useInstallsCount()
+
+  // Instalações em tempo real (GitHub) — fallback "0".
+  onMounted(load)
 </script>
 
 <template>
@@ -41,7 +47,7 @@
             <span class="about__stat-label">{{ $t('about.stats.free') }}</span>
           </div>
           <div class="about__stat">
-            <span class="about__stat-num">0</span>
+            <span class="about__stat-num" data-testid="about-installs-num">{{ installsNum }}</span>
             <span class="about__stat-label">{{ $t('about.stats.installs') }}</span>
           </div>
           <div class="about__stat">
