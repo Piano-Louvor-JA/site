@@ -1,10 +1,18 @@
 <script setup lang="ts">
-  const stats = [
-    { num: '8+', key: 'features' },
+  import { useInstallsCount } from '~/composables/useInstallsCount'
+
+  const { installsNum, load } = useInstallsCount()
+
+  // Instalações em tempo real: soma de downloads de assets de release (GitHub).
+  // Fallback "0" — nunca congela um número antigo em caso de erro.
+  onMounted(load)
+
+  const stats = computed(() => [
+    { num: '95+', key: 'features' },
     { num: '100%', key: 'free' },
-    { num: '0', key: 'installs' },
+    { num: installsNum.value, key: 'installs' },
     { num: 'PWA', key: 'offline' },
-  ] as const
+  ])
 </script>
 
 <template>

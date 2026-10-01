@@ -1,5 +1,76 @@
 # Changelog
 
+All notable changes to this project are documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+## [Unreleased]
+
+### piano-site (este repo)
+
+#### Added (F0 — 29/09/2026)
+
+- Contador dinâmico de instalações na home e /download — soma de downloads de TODOS os repos do ecossistema (app + apk + palco-receiver), via `/api/github/total-downloads`
+- Endpoint público `/api/github/total-downloads` com cache de 5 min
+- Stat "95+ Funcionalidades do ecossistema" na home (antes "8+", estático)
+- Camada de resiliência GitHub: snapshot persistente em disco (`.data/github-snapshots.json`) + sincronizador background com ETag condicional (30 min) — o site serve dados locais e NUNCA depende da API GitHub no caminho do visitante
+- Fallback hardcoded (snapshots reais datados) como último recurso em total-downloads e latest-app-release
+
+#### Fixed (29/09/2026)
+
+- Owner GitHub atualizado `pianolouvorja` → `Piano-Louvor-JA` em 38 arquivos (PR #60, migração da org)
+- Seções Mobile/TV/VoidBR restauradas na /download (cards de download reais no lugar do "coming soon")
+- VoidBR ISO: URL canônica nova (`voidbr-live-plasma-louvorja-piano-current.iso`) + listagem via `/iso/` (o `/iso/current/` antigo retorna 301)
+- `download.vue`: script reconstruído (conflitos de merge haviam triplicado onMounted e apagado declarações)
+- i18n: paridade pt-BR/en/es (653 keys) + 21 keys faltantes (tv.features, apkNote, releases.repos)
+- Footer: removido canal dev-form (Google Forms antigo); Telegram re-rotulado para "Comunidade"
+- Parser de release notes: reconhece seções "Novos recursos/Melhorias/Correções" + renderiza markdown inline (bold/links) sanitizado
+
+## [1.4.0](https://github.com/pianolouvorja/site/compare/v1.3.0...v1.4.0) (2026-09-25)
+
+### Site (institucional)
+
+**Comunidade**
+
+- Seção Comunidade reformulada: WhatsApp (suporte) + Telegram, SEO e PWA
+- Painel admin de membros: gestão completa (roles, ban, auditoria, export CSV)
+- Endpoints admin `/community/*` com custom claims (requireRole server-side)
+- Migração do roster de testadores: Google Sheets → Firestore
+- `/testers`: galeria de testadores com modal e relatos dinâmicos da sheet
+- Formulário `/contact` com select de assunto (geral/testador/dev/bug)
+- Endpoint `community/register` com gravação em Sheets e moderação
+
+**Admin & UX**
+
+- Navegação entre painéis no layout admin + nav do admin no layout público
+- Ícone Pix real na seção "Apoie o projeto"
+- Limpeza de nav redundante no dashboard
+
+**Correções**
+
+- Layout `default` restaurado após merge com staging
+- `/testers` restaurado no nav; SSR das rotas admin corrigido
+- SVG do Pix visível (CSS estilizava apenas `i`, não `svg`)
+- Sass migrado de `sass-embedded` para JS puro (build travava no fallback)
+- Vitest: workers limitados (Node 24 derrubava IPC em suites longas)
+
+**Web (app PWA)**
+
+#### 25 de setembro de 2026
+
+- Entrega da Comunidade no Web App: coletâneas compartilhadas, ranking e moderação (paridade com desktop)
+
+**Web (app PWA)**
+
+- Comunidade entregue no Web App (25/09/2026): coletâneas compartilhadas, ranking e moderação — paridade com o desktop
+
+## [1.3.0](https://github.com/pianolouvorja/site/compare/v1.2.0...v1.3.0) (2026-09-23)
+
+## [1.2.0](https://github.com/pianolouvorja/site/compare/v1.1.0...v1.2.0) (2026-09-12)
+
+## 1.0.0 (2026-08-22)
+
+# Changelog
+
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),

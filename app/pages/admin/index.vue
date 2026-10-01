@@ -1,7 +1,8 @@
 <script setup lang="ts">
   import { ref, computed } from 'vue'
   import { updatePassword, signInWithEmailAndPassword } from 'firebase/auth'
-  import type { ActivityItem } from '~/types/dashboard'
+  import type { ActivityItem, GeoStats } from '~/types/dashboard'
+  import { useTimeseries } from '~/composables/useTimeseries'
 
   definePageMeta({
     layout: 'admin',
@@ -12,7 +13,7 @@
     title: 'Dashboard · Piano Louvor JA',
   })
 
-  const { user, logout, getToken } = useFirebaseAuth()
+  const { user, loading: authLoading, logout, getToken } = useFirebaseAuth()
   const { stats, loading, refresh } = useDashboardStats()
 
   // --- Atividade recente ---
@@ -88,6 +89,48 @@
     }
   }
 
+  // --- Audiencia por pais (geo) ---
+  const geoStats = ref<GeoStats | null>(null)
+  const geoLoading = ref(true)
+
+  async function fetchGeo() {
+    geoLoading.value = true
+    try {
+      const token = await getToken()
+      geoStats.value = await $fetch<GeoStats>('/api/admin/geo', {
+        params: { days: 30 },
+        headers: token ? { Authorization: `Bearer ${token}` } : {},
+      })
+    } catch {
+      geoStats.value = null
+    } finally {
+      geoLoading.value = false
+    }
+  }
+
+  function countryName(iso: string): string {
+    try {
+      return new Intl.DisplayNames(['pt-BR'], { type: 'region' }).of(iso.toUpperCase()) ?? iso
+    } catch {
+      return iso
+    }
+  }
+
+  const topCountries = computed(() => geoStats.value?.countries.slice(0, 10) ?? [])
+
+  // RF-03 (SITE-TELEMETRIA): distingue config quebrada de coleta em andamento
+  const geoPlaceholder = computed(() => {
+    if (!geoStats.value) return 'Dados indisponíveis.'
+    if (geoStats.value.telemetryMode === 'unsalted') {
+      return 'Telemetria ativa sem salt — configure GEO_SALT.'
+    }
+    return 'Coletando dados — primeiros números em 24-48h.'
+  })
+
+  function maxCountryVisits(countries: Array<{ visits: number }>): number {
+    return countries.reduce((max, c) => Math.max(max, c.visits), 0)
+  }
+
   // --- Helpers de formatacao ---
   function formatValue(value: number | null): string {
     if (value === null) return '—'
@@ -125,14 +168,13 @@
   type DetailView = 'downloads' | 'newsletter' | 'visits' | null
   const activeView = ref<DetailView>(null)
   const chartFilter = ref<'7d' | '30d' | '12m'>('12m')
-
   const statCards = computed(() => {
     const s = stats.value
     return [
       {
         key: 'downloads' as const,
         label: 'Downloads',
-        value: s ? formatValue(s.downloads) : '—',
+        value: s?.downloads ? formatValue(s.downloads.total) : '—',
         icon: 'ti ti-download',
         loading: loading.value,
         color: '#22d3ee',
@@ -156,7 +198,6 @@
     ]
   })
 
-  // --- Chart data: mock in dev, empty in prod ---
   interface ChartData {
     type: 'area' | 'bar' | 'line'
     series: Array<{ name: string; data: number[] }>
@@ -169,36 +210,7 @@
     newsletter: { type: 'bar', name: 'Assinantes', color: '#a78bfa' },
     visits: { type: 'line', name: 'Visitas', color: '#4ade80' },
   }
-
-  // DEV-ONLY mock data (tree-shaken in production builds)
-  const mockByPeriod: Record<string, Record<'7d' | '30d' | '12m', number[]>> = import.meta.dev
-    ? {
-        downloads: {
-          '7d': [8, 12, 6, 15, 10, 22, 18],
-          '30d': [
-            3, 5, 2, 8, 6, 12, 9, 4, 7, 15, 11, 8, 14, 6, 10, 12, 9, 7, 16, 11, 8, 13, 5, 9, 14, 10,
-            7, 12, 15, 18,
-          ],
-          '12m': [12, 19, 15, 27, 22, 35, 44, 38, 52, 61, 55, 73],
-        },
-        newsletter: {
-          '7d': [2, 1, 3, 0, 2, 4, 3],
-          '30d': [
-            1, 0, 2, 1, 3, 2, 1, 0, 4, 2, 1, 3, 2, 1, 0, 3, 2, 4, 1, 2, 0, 3, 1, 2, 4, 3, 1, 2, 3,
-            5,
-          ],
-          '12m': [8, 12, 15, 18, 22, 28, 35, 42, 48, 55, 62, 78],
-        },
-        visits: {
-          '7d': [45, 52, 38, 61, 48, 75, 82],
-          '30d': [
-            12, 18, 15, 22, 19, 28, 25, 31, 20, 26, 15, 33, 29, 24, 18, 35, 27, 22, 30, 19, 38, 25,
-            31, 16, 28, 34, 21, 26, 40, 45,
-          ],
-          '12m': [120, 145, 180, 210, 195, 250, 310, 285, 340, 420, 380, 510],
-        },
-      }
-    : {}
+  const timeseries = useTimeseries(chartFilter.value)
 
   const dayLabels = ['Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab', 'Dom']
   const monthLabels = [
@@ -222,27 +234,14 @@
     if (!meta) return { type: 'line', series: [], categories: monthLabels, colors: [] }
     const period = chartFilter.value
 
-    if (import.meta.dev && mockByPeriod[key]) {
-      const data = mockByPeriod[key][period]
-      const categories =
-        period === '12m'
-          ? monthLabels
-          : period === '7d'
-            ? dayLabels
-            : Array.from({ length: 30 }, (_, i) => `${i + 1}`)
-      return {
-        type: meta.type,
-        series: [{ name: meta.name, data }],
-        categories,
-        colors: [meta.color],
-      }
-    }
-
-    // Prod: no historical data from API yet
+    const source = timeseries.data.value?.[key === 'newsletter' ? 'subscribers' : key]
+    const categories =
+      timeseries.data.value?.buckets ??
+      (period === '12m' ? monthLabels : period === '7d' ? dayLabels : [])
     return {
       type: meta.type,
-      series: [{ name: meta.name, data: [] }],
-      categories: monthLabels,
+      series: [{ name: meta.name, data: source?.map((point) => point.value) ?? [] }],
+      categories,
       colors: [meta.color],
     }
   }
@@ -260,165 +259,217 @@
   onMounted(() => {
     checkTempPassword()
     fetchActivity()
+    fetchGeo()
   })
 
   async function handleRefresh() {
-    await Promise.all([refresh(), fetchActivity()])
+    await Promise.all([refresh(), fetchActivity(), fetchGeo()])
   }
 </script>
 
 <template>
-  <!-- Modal: forcar troca de senha -->
-  <div v-if="mustChangePassword" class="change-password-overlay">
-    <div class="change-password-card">
-      <h2>Troque sua senha</h2>
-      <p class="change-password-desc">
-        Voce esta usando a senha provisoria. Por seguranca, defina uma nova senha antes de
-        continuar.
-      </p>
-      <form class="change-password-form" @submit.prevent="handleChangePassword">
-        <div class="field">
-          <label for="newPassword">Nova senha</label>
-          <input
-            id="newPassword"
-            v-model="newPassword"
-            type="password"
-            required
-            minlength="8"
-            placeholder="Minimo 8 caracteres"
-            :disabled="changingPassword"
-          />
-        </div>
-        <div class="field">
-          <label for="confirmPassword">Confirmar senha</label>
-          <input
-            id="confirmPassword"
-            v-model="confirmPassword"
-            type="password"
-            required
-            placeholder="Repita a nova senha"
-            :disabled="changingPassword"
-          />
-        </div>
-        <p v-if="changePasswordError" class="error">
-          {{ changePasswordError }}
-        </p>
-        <button type="submit" class="login-btn" :disabled="changingPassword">
-          {{ changingPassword ? 'Salvando...' : 'Trocar senha' }}
-        </button>
-      </form>
-    </div>
+  <!-- Gate de auth: nao renderiza o dashboard sem usuario autenticado (evita flash do dashboard no primeiro load) -->
+  <div v-if="authLoading" class="admin-auth-loading">
+    <i class="ti ti-loader-2" aria-hidden="true" />
   </div>
-
-  <div v-else class="dashboard">
-    <header class="dash-header">
-      <div>
-        <h1>Dashboard</h1>
-        <p class="welcome">Bem-vindo, {{ user?.email || 'admin' }}</p>
-        <p v-if="lastUpdatedText" class="updated-info">
-          {{ lastUpdatedText }}
+  <div v-else-if="!user" class="admin-auth-loading">
+    <p>Redirecionando para o login...</p>
+  </div>
+  <template v-else>
+    <!-- Modal: forcar troca de senha -->
+    <div v-if="mustChangePassword" class="change-password-overlay">
+      <div class="change-password-card">
+        <h2>Troque sua senha</h2>
+        <p class="change-password-desc">
+          Voce esta usando a senha provisoria. Por seguranca, defina uma nova senha antes de
+          continuar.
         </p>
-      </div>
-      <div class="header-actions">
-        <NuxtLink to="/admin/newsletter" class="refresh-btn">
-          <i class="ti ti-mail" />
-          <span>Newsletter</span>
-        </NuxtLink>
-        <button class="refresh-btn" :disabled="loading" @click="handleRefresh">
-          <i class="ti ti-refresh" :class="{ spinning: loading }" />
-          <span>{{ loading ? 'Carregando...' : 'Atualizar' }}</span>
-        </button>
-        <button class="logout-btn" @click="logout">
-          <i class="ti ti-logout" />
-          Sair
-        </button>
-      </div>
-    </header>
-
-    <section class="stats-grid">
-      <button
-        v-for="card in statCards"
-        :key="card.key"
-        class="stat-card"
-        :class="{ 'stat-card--active': activeView === card.key }"
-        :style="{ '--card-color': card.color }"
-        @click="activeView = activeView === card.key ? null : card.key"
-      >
-        <i :class="card.icon" class="stat-icon" />
-        <div>
-          <div class="stat-value">
-            <span v-if="card.loading" class="skeleton">———</span>
-            <span v-else>{{ card.value }}</span>
+        <form class="change-password-form" @submit.prevent="handleChangePassword">
+          <div class="field">
+            <label for="newPassword">Nova senha</label>
+            <input
+              id="newPassword"
+              v-model="newPassword"
+              type="password"
+              required
+              minlength="8"
+              placeholder="Minimo 8 caracteres"
+              :disabled="changingPassword"
+            />
           </div>
-          <div class="stat-label">
-            {{ card.label }}
+          <div class="field">
+            <label for="confirmPassword">Confirmar senha</label>
+            <input
+              id="confirmPassword"
+              v-model="confirmPassword"
+              type="password"
+              required
+              placeholder="Repita a nova senha"
+              :disabled="changingPassword"
+            />
+          </div>
+          <p v-if="changePasswordError" class="error">
+            {{ changePasswordError }}
+          </p>
+          <button type="submit" class="login-btn" :disabled="changingPassword">
+            {{ changingPassword ? 'Salvando...' : 'Trocar senha' }}
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <div v-else class="dashboard">
+      <header class="dash-header">
+        <div>
+          <h1>Dashboard</h1>
+          <p class="welcome">Bem-vindo, {{ user?.email || 'admin' }}</p>
+          <p v-if="lastUpdatedText" class="updated-info">
+            {{ lastUpdatedText }}
+          </p>
+        </div>
+        <div class="header-actions">
+          <button class="refresh-btn" :disabled="loading" @click="handleRefresh">
+            <i class="ti ti-refresh" :class="{ spinning: loading }" />
+            <span>{{ loading ? 'Carregando...' : 'Atualizar' }}</span>
+          </button>
+          <button class="logout-btn" @click="logout">
+            <i class="ti ti-logout" />
+            Sair
+          </button>
+        </div>
+      </header>
+
+      <section class="stats-grid">
+        <button
+          v-for="card in statCards"
+          :key="card.key"
+          class="stat-card"
+          :class="{ 'stat-card--active': activeView === card.key }"
+          :style="{ '--card-color': card.color }"
+          @click="activeView = activeView === card.key ? null : card.key"
+        >
+          <i :class="card.icon" class="stat-icon" />
+          <div>
+            <div class="stat-value">
+              <span v-if="card.loading" class="skeleton">———</span>
+              <span v-else>{{ card.value }}</span>
+            </div>
+            <div class="stat-label">
+              {{ card.label }}
+            </div>
+          </div>
+        </button>
+      </section>
+
+      <!-- Download breakdown by app -->
+      <section v-if="stats?.downloads?.apps?.length" class="download-breakdown">
+        <h2 class="breakdown-title">Downloads por App</h2>
+        <div class="breakdown-grid">
+          <div v-for="app in stats.downloads.apps" :key="app.repo" class="breakdown-card">
+            <div class="breakdown-card__header">
+              <span class="breakdown-card__label">{{ app.label }}</span>
+              <span v-if="app.latestTag" class="breakdown-card__tag">{{ app.latestTag }}</span>
+            </div>
+            <div class="breakdown-card__total">
+              {{ formatValue(app.totalDownloads) }}
+            </div>
+            <ul v-if="app.platforms.length" class="breakdown-platforms">
+              <li v-for="p in app.platforms" :key="p.platform" class="breakdown-platform">
+                <span class="breakdown-platform__name">{{ p.platform }}</span>
+                <span class="breakdown-platform__count">{{ formatValue(p.downloads) }}</span>
+              </li>
+            </ul>
+            <div v-else class="breakdown-platforms--empty">Sem dados por plataforma</div>
           </div>
         </div>
-      </button>
-    </section>
+      </section>
 
-    <!-- Chart detail panel -->
-    <transition name="slide">
-      <section v-if="activeView" class="chart-panel">
-        <div class="chart-panel__header">
-          <h2>{{ getChartTitle(activeView) }}</h2>
-          <div class="chart-panel__controls">
-            <div class="chart-filters">
-              <button
-                v-for="f in ['7d', '30d', '12m']"
-                :key="f"
-                class="chart-filter"
-                :class="{ 'chart-filter--active': chartFilter === f }"
-                @click="chartFilter = f"
-              >
-                {{ f }}
+      <!-- Chart detail panel -->
+      <transition name="slide">
+        <section v-if="activeView" class="chart-panel">
+          <div class="chart-panel__header">
+            <h2>{{ getChartTitle(activeView) }}</h2>
+            <div class="chart-panel__controls">
+              <div class="chart-filters">
+                <button
+                  v-for="f in ['7d', '30d', '12m']"
+                  :key="f"
+                  class="chart-filter"
+                  :class="{ 'chart-filter--active': chartFilter === f }"
+                  @click="timeseries.setPeriod(f as '7d' | '30d' | '12m')"
+                >
+                  {{ f }}
+                </button>
+              </div>
+              <button class="chart-close" @click="activeView = null">
+                <i class="ti ti-x" />
               </button>
             </div>
-            <button class="chart-close" @click="activeView = null">
-              <i class="ti ti-x" />
-            </button>
           </div>
-        </div>
-        <AdminChart
-          :key="activeView + chartFilter"
-          :type="getChart(activeView).type"
-          :series="getChart(activeView).series"
-          :categories="getChart(activeView).categories"
-          :colors="getChart(activeView).colors"
-          :height="320"
-        />
-      </section>
-    </transition>
+          <AdminChart
+            :key="activeView + chartFilter"
+            :type="getChart(activeView).type"
+            :series="getChart(activeView).series"
+            :categories="getChart(activeView).categories"
+            :colors="getChart(activeView).colors"
+            :height="320"
+          />
+        </section>
+      </transition>
 
-    <section class="content-area">
-      <div class="panel">
-        <h2>Atividade Recente</h2>
-        <div v-if="activityLoading" class="placeholder">Carregando...</div>
-        <div v-else-if="recentActivity.length === 0" class="placeholder">Dados indisponiveis.</div>
-        <ul v-else class="activity-list">
-          <li v-for="(item, i) in recentActivity" :key="i" class="activity-item">
-            <a :href="item.url" target="_blank" rel="noopener" class="activity-link">
-              <i :class="activityIcon(item.type)" class="activity-icon" />
-              <div class="activity-content">
-                <span class="activity-title">{{ item.title }}</span>
-                <span class="activity-meta">
-                  por {{ item.author }} · {{ formatRelativeTime(item.createdAt) }}
-                </span>
-              </div>
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div class="panel">
-        <h2>Links Rapidos</h2>
-        <nav class="quick-links">
-          <NuxtLink to="/" target="_blank"> Ver site </NuxtLink>
-          <NuxtLink to="/releases"> Releases </NuxtLink>
-          <NuxtLink to="/download"> Download </NuxtLink>
-        </nav>
-      </div>
-    </section>
-  </div>
+      <section class="content-area">
+        <div class="panel">
+          <h2>Audiência por País (30d)</h2>
+          <div v-if="geoLoading" class="placeholder">Carregando...</div>
+          <div v-else-if="topCountries.length === 0" class="placeholder">
+            {{ geoPlaceholder }}
+          </div>
+          <ul v-else class="geo-list">
+            <li v-for="item in topCountries" :key="item.country" class="geo-item">
+              <span class="geo-country">{{ countryName(item.country) }}</span>
+              <span class="geo-bar-track">
+                <span
+                  class="geo-bar"
+                  :style="{
+                    width: `${(item.visits / Math.max(maxCountryVisits(topCountries), 1)) * 100}%`,
+                  }"
+                />
+              </span>
+              <span class="geo-visits">{{ formatValue(item.visits) }}</span>
+            </li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h2>Atividade Recente</h2>
+          <div v-if="activityLoading" class="placeholder">Carregando...</div>
+          <div v-else-if="recentActivity.length === 0" class="placeholder">
+            Dados indisponiveis.
+          </div>
+          <ul v-else class="activity-list">
+            <li v-for="(item, i) in recentActivity" :key="i" class="activity-item">
+              <a :href="item.url" target="_blank" rel="noopener" class="activity-link">
+                <i :class="activityIcon(item.type)" class="activity-icon" />
+                <div class="activity-content">
+                  <span class="activity-title">{{ item.title }}</span>
+                  <span class="activity-meta">
+                    por {{ item.author }} · {{ formatRelativeTime(item.createdAt) }}
+                  </span>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h2>Links Rapidos</h2>
+          <nav class="quick-links">
+            <NuxtLink to="/" target="_blank"> Ver site </NuxtLink>
+            <NuxtLink to="/releases"> Releases </NuxtLink>
+            <NuxtLink to="/download"> Download </NuxtLink>
+          </nav>
+        </div>
+      </section>
+    </div>
+  </template>
 </template>
 
 <style scoped>
@@ -793,6 +844,49 @@
     gap: 1.5rem;
   }
 
+  .geo-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .geo-item {
+    display: grid;
+    grid-template-columns: 2.5rem 1fr 3.5rem;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.85rem;
+  }
+
+  .geo-country {
+    font-weight: 600;
+    color: #e2e8f0;
+  }
+
+  .geo-bar-track {
+    height: 8px;
+    border-radius: 4px;
+    background: #1e293b;
+    overflow: hidden;
+  }
+
+  .geo-bar {
+    display: block;
+    height: 100%;
+    border-radius: 4px;
+    background: linear-gradient(90deg, #22d3ee, #4ade80);
+    transition: width 0.4s ease;
+  }
+
+  .geo-visits {
+    text-align: right;
+    color: #94a3b8;
+    font-variant-numeric: tabular-nums;
+  }
+
   @media (max-width: 768px) {
     .content-area {
       grid-template-columns: 1fr;
@@ -888,5 +982,88 @@
 
   .quick-links a:hover {
     color: #06b6d4;
+  }
+  .download-breakdown {
+    margin-bottom: 2rem;
+  }
+
+  .breakdown-title {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: #94a3b8;
+    margin: 0 0 1rem;
+  }
+
+  .breakdown-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+  }
+
+  .breakdown-card {
+    background: #111827;
+    border: 1px solid #1e293b;
+    border-radius: 10px;
+    padding: 1.25rem;
+  }
+
+  .breakdown-card__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+  }
+
+  .breakdown-card__label {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: #cbd5e1;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .breakdown-card__tag {
+    font-size: 0.6875rem;
+    color: #64748b;
+    background: #1e293b;
+    padding: 0.125rem 0.5rem;
+    border-radius: 4px;
+  }
+
+  .breakdown-card__total {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #22d3ee;
+    margin-bottom: 0.75rem;
+  }
+
+  .breakdown-platforms {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+  }
+
+  .breakdown-platform {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8125rem;
+  }
+
+  .breakdown-platform__name {
+    color: #94a3b8;
+  }
+
+  .breakdown-platform__count {
+    color: #e2e8f0;
+    font-weight: 500;
+  }
+
+  .breakdown-platforms--empty {
+    font-size: 0.75rem;
+    color: #475569;
+    font-style: italic;
   }
 </style>

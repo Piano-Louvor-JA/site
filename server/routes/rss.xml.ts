@@ -1,6 +1,6 @@
 /**
  * RSS Feed — /rss.xml
- * Busca os últimos 20 releases do GitHub (pianolouvorja/web) e retorna XML.
+ * Busca os últimos 20 releases do GitHub (Piano-Louvor-JA/web) e retorna XML.
  * Cache de 1h no Cloudflare/Vercel edge.
  */
 // Removido GITHUB_API pois chamamos via proxy $fetch interno

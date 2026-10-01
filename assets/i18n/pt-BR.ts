@@ -308,6 +308,14 @@ export default {
             action: 'Busca rápida',
             shortcut: 'Ctrl+K',
           },
+          {
+            action: 'Encerrar projeção',
+            shortcut: 'ESC',
+          },
+          {
+            action: 'Alternar operador ↔ projeção (app desktop)',
+            shortcut: 'Ctrl+Alt+P',
+          },
         ],
       },
       modules: {
@@ -439,6 +447,11 @@ export default {
           'Não utilizamos cookies de rastreamento, analytics, publicidade ou perfilação.',
           '1.3 Dados do aplicativo',
           'O aplicativo PIANO LouvorJA (hinos, liturgias, configurações, playlists) armazena todos os dados localmente no seu navegador (LocalStorage/IndexedDB). Esses dados não são enviados para nossos servidores.',
+          '1.4 Dados técnicos de audiência (coleta automática)',
+          'Quando você navega pelo site, coletamos de forma agregada:',
+          'País de origem da visita (derivado do header HTTP do provedor de CDN, ex.: Cloudflare/Vercel) — não utilizamos geolocalização por GPS.',
+          'Endereço IP processado exclusivamente como hash (SHA-256 com salt secreto). O endereço IP NUNCA é armazenado em texto claro e não pode ser revertido para identificá-lo.',
+          'Contador de visitas por país por dia. Não há perfil individual, histórico de navegação ou vinculação com sua identidade.',
         ],
       },
       purpose: {
@@ -514,7 +527,10 @@ export default {
       },
       cookies: {
         title: '8. Cookies',
-        body: ['Não utilizamos cookies de terceiros, analytics ou publicidade.'],
+        body: [
+          'Não utilizamos cookies de terceiros, analytics ou publicidade.',
+          'A telemetria de audiência por país é agregada e anônima (país + IP hasheado em contadores diários); não utiliza cookies de rastreamento nem identifica indivíduos.',
+        ],
         table: {
           header: {
             cookie: 'Cookie',
@@ -601,7 +617,7 @@ export default {
           'Respeita os direitos autorais conforme Lei 9.610/98',
         ],
         link: {
-          url: 'https://github.com/pianolouvorja',
+          url: 'https://github.com/Piano-Louvor-JA',
           text: 'repositório no GitHub',
         },
       },
@@ -653,6 +669,8 @@ export default {
         title: '8. Privacidade e Dados',
         body: [
           'O tratamento de dados pessoais é regido pela nossa {link}, que integra estes Termos.',
+          'Os dados técnicos de audiência (país de origem e endereço IP hasheado, agregados em contadores diários) são coletados automaticamente para fins estatísticos.',
+          'O endereço IP nunca é armazenado em texto claro e não permite identificar usuários individuais.',
         ],
         link: {
           url: '/privacy',
@@ -730,5 +748,14 @@ export default {
       desktop: 'Desktop',
       mobile: 'Mobile',
     },
+  },
+  donate: {
+    title: 'Apoie o projeto',
+    subtitle:
+      'O PIANO LouvorJA é gratuito. Sua doação ajuda a manter o projeto vivo e sem anúncios.',
+    button: 'Doar agora',
+    pix: 'Pix',
+    boleto: 'Boleto',
+    card: 'Cartão',
   },
 } as const

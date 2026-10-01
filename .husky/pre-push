@@ -1,1 +1,2 @@
-pnpm lint && pnpm format:check && pnpm typecheck && pnpm test
+# Portão local rápido. Unitários, integração, mutação e E2E rodam no PR staging → main.
+pnpm lint && pnpm format:check && pnpm typecheck

@@ -65,7 +65,7 @@ export const WithInternalLink: Story = {
 export const WithExternalLink: Story = {
   args: {
     message: 'Visit the {link} to explore the codebase.',
-    linkUrl: 'https://github.com/pianolouvorja',
+    linkUrl: 'https://github.com/Piano-Louvor-JA',
     linkText: 'GitHub repository',
     external: true,
   },

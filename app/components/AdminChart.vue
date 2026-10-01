@@ -68,8 +68,7 @@
       horizontalAlign: 'right',
       labels: { colors: '#94a3b8' },
     },
-    plotOptions:
-      props.type === 'bar' ? { bar: { borderRadius: 6, columnWidth: '50%' } } : undefined,
+    plotOptions: props.type === 'bar' ? { bar: { borderRadius: 6, columnWidth: '50%' } } : {},
     responsive: [
       {
         breakpoint: 640,
