@@ -6,6 +6,8 @@
   const { theme, toggleTheme, initTheme } = useTheme()
   onMounted(initTheme)
   const route = useRoute()
+  const config = useRuntimeConfig()
+  const donateUrl = config.public.asaasDonateUrl as string
   const mobileMenuOpen = ref(false)
   const langMenuOpen = ref(false)
   const isScrolled = ref(false)
@@ -108,6 +110,19 @@
           {{ $t(link.i18nKey) }}
         </NuxtLink>
       </nav>
+
+      <!-- Donate — destaque extra entre nav e CTA -->
+      <a
+        v-if="donateUrl"
+        data-testid="header-donate"
+        :href="donateUrl"
+        class="header__donate"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <i class="ti ti-heart" />
+        <span>{{ $t('donate.button') }}</span>
+      </a>
 
       <!-- Direita: codename PIANO + lang switcher + CTA -->
       <div class="header__header-end">
@@ -217,6 +232,18 @@
         </div>
 
         <a
+          v-if="donateUrl"
+          :href="donateUrl"
+          class="header__nav-mobile-cta header__nav-mobile-cta--donate"
+          target="_blank"
+          rel="noopener noreferrer"
+          @click="closeMobileMenu"
+        >
+          <i class="ti ti-heart" />
+          {{ $t('donate.button') }}
+        </a>
+
+        <a
           :href="siteConfig.appUrl"
           class="header__nav-mobile-cta"
           target="_blank"
@@ -252,7 +279,7 @@
     }
 
     &__container {
-      max-width: 976px;
+      max-width: 1200px;
       margin: 0 auto;
       display: flex;
       align-items: center;
@@ -461,6 +488,41 @@
       }
     }
 
+    /* Donate — outline discreto ao lado do CTA */
+    &__donate {
+      display: flex;
+      align-items: center;
+      gap: 0.375rem;
+      background: transparent;
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      padding: 0.5rem 1.125rem;
+      border-radius: var(--piano-radius-full);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition:
+        background 0.2s,
+        border-color 0.2s,
+        transform 0.2s;
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.12);
+        border-color: rgba(255, 255, 255, 0.6);
+        transform: translateY(-1px);
+
+        i {
+          color: #ff6b81;
+        }
+      }
+
+      i {
+        font-size: 1.05rem;
+        color: rgba(255, 255, 255, 0.85);
+        transition: color 0.2s;
+      }
+    }
+
     &__cta {
       display: flex;
       align-items: center;
@@ -573,10 +635,29 @@
       i {
         font-size: 1.1rem;
       }
+
+      &--donate {
+        background: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.35);
+        margin-top: 0;
+      }
     }
 
     @media (max-width: 1280px) {
       &__codename {
+        display: none;
+      }
+    }
+
+    /* Doar visível consome espaço extra — esconde codename antes */
+    @media (max-width: 1440px) {
+      .header__container:has(.header__donate) .header__codename {
+        display: none;
+      }
+    }
+
+    @media (max-width: 1100px) {
+      .header__container:has(.header__donate) .header__donate {
         display: none;
       }
     }

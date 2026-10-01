@@ -8,20 +8,12 @@ export interface ActivityItem {
   url: string
 }
 
-/** Override para testes */
-let _octokitOverride: Octokit | null = null
-
-export function __setOctokitForTesting(octokit: Octokit | null): void {
-  _octokitOverride = octokit
-}
-
 function getOctokit(): Octokit {
-  if (_octokitOverride) return _octokitOverride
   return new Octokit({ auth: process.env.GITHUB_TOKEN || undefined })
 }
 
 /**
- * Busca eventos recentes do repo pianolouvorja/web.
+ * Busca eventos recentes do repo Piano-Louvor-JA/web.
  * Filtra: releases publicados, PRs, issues.
  */
 export async function fetchRecentActivity(): Promise<ActivityItem[]> {
@@ -29,7 +21,7 @@ export async function fetchRecentActivity(): Promise<ActivityItem[]> {
     const octokit = getOctokit()
 
     const response = await octokit.rest.activity.listRepoEvents({
-      owner: 'pianolouvorja',
+      owner: 'Piano-Louvor-JA',
       repo: 'web',
       per_page: 30,
     })

@@ -5,9 +5,36 @@ allowBuilds:
   # O chmod em scripts/postinstall-host.mjs restaura +x antes do build.
   esbuild: false
   protobufjs: true
+  re2: true
   ttf2woff2: false
 overrides:
   rollup: 4.62.4
+  # Mínimo corrigido dos advisories high/critical do `pnpm audit`.
+  '@grpc/grpc-js': '1.14.5'
+  '@xmldom/xmldom': '0.9.12'
+  # Cada major do brace-expansion tem API diferente. 5.x quebra o minimatch 3/5/6/9.
+  'brace-expansion@^1.1.7': '1.1.21'
+  'brace-expansion@^2.0.1': '2.1.7'
+  'brace-expansion@^2.0.2': '2.1.7'
+  'brace-expansion@^5.0.8': '5.0.12'
+  'minimatch@3>brace-expansion': '1.1.21'
+  'minimatch@5>brace-expansion': '2.1.7'
+  'minimatch@6>brace-expansion': '2.1.7'
+  'minimatch@9>brace-expansion': '2.1.7'
+  'minimatch@10>brace-expansion': '5.0.12'
+  # 3.1.8 fecha o moderate novo de normalização de host; 3.1.7 já era override.
+  'ajv>fast-uri': '3.1.8'
+  'happy-dom': '>=20.8.9'
+  js-yaml: '4.3.2'
+  'nanoid@3': '3.3.18'
+  nodemailer: '>=10.0.6'
+  svgo: '4.1.0'
+  tmp: '0.2.7'
+  undici: '8.11.2'
+  # GHSA do devalue <=5.9.2 (Nuxt e i18n). Nuxt 4.5 pede ^5.8.2; 5.9.4 cabe nessa faixa.
+  devalue: '5.9.4'
+  # GHSA-c475-qrg2-pj4r: basic-ftp <=6.2.0. get-uri (via Lighthouse) pede ^5.
+  'get-uri>basic-ftp': '6.2.1'
   # Hostinger: binário Dart do sass-embedded falha com EACCES.
   # Bloquear só o *-linux-* deixa o pacote JS do sass-embedded instalado;
   # o Vite prefere ele e trava em "unavailable in pure JS mode" (Vitest/Nuxt setup).
@@ -15,3 +42,10 @@ overrides:
   sass-embedded: '-'
   sass-embedded-linux-x64: '-'
   sass-embedded-linux-musl-x64: '-'
+
+# extract-zip 2.0.2 (correção do GHSA) ainda não foi publicado no npm.
+# Entra só via @lhci/cli > lighthouse > puppeteer, ferramenta de dev.
+audit:
+  ignore:
+    - GHSA-jmr9-qjv8-65gv
+    - GHSA-7pqw-9j4j-h8q3

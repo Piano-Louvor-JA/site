@@ -7,8 +7,10 @@
     <FeaturesSection />
     <AboutSection />
     <HowItWorksSection />
-    <ContributorsSection />
+    <TeamSection />
+    <CommunitySection />
     <NewsletterForm variant="section" />
+    <DonateButton />
     <CtaSection />
     <WelcomePopup />
   </div>

@@ -1,10 +1,10 @@
 <script setup lang="ts">
   import { siteConfig } from '~/data/site'
-  import { useTvBrands } from '~/composables/useTvBrands'
+  import { useInstallsCount } from '~/composables/useInstallsCount'
+  import type { AllDownloadsResponse, CategoryResult } from '~/utils/downloads'
+  import { detectArch, detectDevice } from '~/utils/device-detection'
 
   const { t } = useI18n()
-
-  const tvBrands = useTvBrands()
 
   useSeoMeta({
     title: () => t('download.metaTitle'),
@@ -27,20 +27,57 @@
   const downloadUrls = ref<Record<string, string>>({})
   const fetchError = ref(false)
 
-  // Detect OS client-side only to avoid hydration mismatch
+  // Dynamic downloads from all-downloads endpoint
+  const allDownloads = ref<AllDownloadsResponse | null>(null)
+  const tvData = computed<CategoryResult>(
+    () => allDownloads.value?.tv ?? { repo: 'palco-receiver', tag: null, assets: {} },
+  )
+  const mobileData = computed<CategoryResult>(
+    () => allDownloads.value?.mobile ?? { repo: 'apk', tag: null, assets: {} },
+  )
+
+  // Detect OS client-side only to avoid hydration mismatch.
+  // Uses the shared device-detection util so Android phones (whose UA
+  // contains "Linux") are NOT misclassified as desktop Linux.
   const detectedOs = ref<'linux' | 'windows' | 'macos' | null>(null)
+  const detectedArch = ref<'arm64' | 'x64'>('x64')
+  const detectedMobilePlatform = ref<'android' | 'ios' | null>(null)
+
+  // Instalações em tempo real (GitHub) — fallback silencioso, badge só aparece com total > 0.
+  const { installsNum, installsRaw, load: loadInstalls } = useInstallsCount()
+  const voidbrIso = ref<VoidbrIsoData | null>(null)
+
+  interface VoidbrIsoData {
+    available: boolean
+    fileName: string | null
+    url: string | null
+    sizeBytes: number | null
+    builtAt: string | null
+  }
 
   onMounted(async () => {
-    // OS detection on client only (avoids SSR/client mismatch)
-    const ua = navigator.userAgent
-    const lower = ua.toLowerCase()
-    if (lower.includes('mac os') || lower.includes('macos') || lower.includes('darwin')) {
-      detectedOs.value = 'macos'
-    } else if (lower.includes('windows')) {
-      detectedOs.value = 'windows'
-    } else if (lower.includes('linux') || lower.includes('x11')) {
-      detectedOs.value = 'linux'
+    const device = detectDevice(navigator.userAgent)
+    if (device.category === 'desktop') {
+      detectedOs.value =
+        device.platform === 'macos'
+          ? 'macos'
+          : device.platform === 'windows'
+            ? 'windows'
+            : device.platform === 'linux'
+              ? 'linux'
+              : null
+    } else if (device.category === 'mobile') {
+      detectedMobilePlatform.value =
+        device.platform === 'android' ? 'android' : device.platform === 'ios' ? 'ios' : null
     }
+
+    // Arquitetura da CPU (arm64 vs x64) — client-only, async via userAgentData.
+    // Mac UA não expõe arch real; userAgentData sim (Chromium). Safari/Firefox
+    // caem no default x64 com link alternativo sempre visível.
+    detectedArch.value = await detectArch()
+
+    // Instalações (total dinâmico do ecossistema)
+    loadInstalls()
 
     // Fetch latest release via server proxy (token-backed, no rate limit)
     try {
@@ -52,26 +89,62 @@
       for (const asset of data.assets) {
         const name = asset.name.toLowerCase()
         if (name.endsWith('.appimage')) {
-          downloadUrls.value.linux = asset.browser_download_url
+          if (name.includes('arm64')) {
+            downloadUrls.value['linux-arm64'] = asset.browser_download_url
+          } else {
+            downloadUrls.value['linux-x64'] = asset.browser_download_url
+          }
         } else if (name.endsWith('.exe')) {
           downloadUrls.value.windows = asset.browser_download_url
         } else if (name.endsWith('.dmg')) {
-          downloadUrls.value.macos = asset.browser_download_url
+          if (name.includes('arm64')) {
+            downloadUrls.value['macos-arm64'] = asset.browser_download_url
+          } else {
+            downloadUrls.value['macos-x64'] = asset.browser_download_url
+          }
         }
       }
     } catch {
       fetchError.value = true
     }
+
+    // ISO VoidBR (não-bloqueante, independente)
+    fetch('/api/github/voidbr-iso')
+      .then((r) => (r.ok ? r.json() : null))
+      .then((d) => {
+        voidbrIso.value = d
+      })
+      .catch(() => {
+        voidbrIso.value = null
+      })
+
+    // Fetch TV + Mobile downloads (non-blocking, independent)
+    fetch('/api/github/all-downloads')
+      .then((res) => {
+        if (!res.ok) throw new Error('Failed to fetch all downloads')
+        return res.json() as Promise<AllDownloadsResponse>
+      })
+      .then((data) => {
+        allDownloads.value = data
+      })
+      .catch(() => {
+        // Silently fall back to empty (components show "coming soon")
+      })
   })
 
   const desktopCards = computed(() => [
     {
-      os: 'linux' as const,
+      os:
+        detectedOs.value === 'linux'
+          ? detectedArch.value === 'arm64'
+            ? ('linux-arm64' as const)
+            : ('linux-x64' as const)
+          : ('linux-x64' as const),
       icon: '',
       i18nPrefix: 'download.desktop.linux',
       recommended: detectedOs.value === 'linux',
       requiresDiskSpace: true,
-      available: !!downloadUrls.value.linux,
+      available: !!downloadUrls.value['linux-x64'] || !!downloadUrls.value['linux-arm64'],
     },
     {
       os: 'windows' as const,
@@ -82,12 +155,17 @@
       available: !!downloadUrls.value.windows,
     },
     {
-      os: 'macos' as const,
+      os:
+        detectedOs.value === 'macos'
+          ? detectedArch.value === 'arm64'
+            ? ('macos-arm64' as const)
+            : ('macos-x64' as const)
+          : ('macos-x64' as const),
       icon: 'ti-brand-apple',
       i18nPrefix: 'download.desktop.macos',
       recommended: detectedOs.value === 'macos',
       requiresDiskSpace: true,
-      available: !!downloadUrls.value.macos,
+      available: !!downloadUrls.value['macos-x64'] || !!downloadUrls.value['macos-arm64'],
     },
   ])
 </script>
@@ -98,6 +176,13 @@
     <section class="download-hero">
       <div class="download-hero__container">
         <span class="download-hero__eyebrow">{{ $t('download.heroEyebrow') }}</span>
+        <span
+          v-if="installsRaw > 0"
+          data-testid="download-installs-badge"
+          class="download-hero__eyebrow download-hero__eyebrow--installs"
+        >
+          {{ $t('stats.installs') }}: {{ installsNum }}
+        </span>
         <h1 class="download-hero__title">
           {{ $t('download.heroTitle') }}
         </h1>
@@ -110,7 +195,7 @@
             {{ $t('download.heroWebCta') }}
           </a>
           <a
-            href="https://github.com/pianolouvorja/app"
+            href="https://github.com/Piano-Louvor-JA/app"
             class="download-hero__btn download-hero__btn--secondary"
             target="_blank"
             rel="noopener noreferrer"
@@ -157,7 +242,7 @@
             <div class="download-card__header">
               <!-- Tux (Linux) via SVG inline - ti-brand-tux nao existe no Tabler -->
               <svg
-                v-if="card.os === 'linux'"
+                v-if="card.os.startsWith('linux')"
                 class="download-card__icon download-card__icon--svg"
                 viewBox="0 0 24 24"
                 fill="currentColor"
@@ -244,7 +329,7 @@
         <div class="download-source">
           <span>{{ $t('download.desktop.buildFromSource') }}</span>
           <a
-            href="https://github.com/pianolouvorja/app#readme"
+            href="https://github.com/Piano-Louvor-JA/app#readme"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -295,107 +380,16 @@
       </div>
     </section>
 
+    <!-- TV e Palco Digital -->
+    <VoidbrIsoCard :iso="voidbrIso" />
+    <TvDownloadCards :tv-data="tvData" />
+
     <!-- Mobile -->
-    <section class="download-section">
-      <div class="download-section__container">
-        <div class="download-section__header">
-          <span class="download-section__badge download-section__badge--muted">
-            {{ $t('download.mobile.badge') }}
-          </span>
-          <h2 class="download-section__title">
-            {{ $t('download.mobile.title') }}
-          </h2>
-          <p class="download-section__desc">
-            {{ $t('download.mobile.description') }}
-          </p>
-          <p class="download-section__subtext">
-            {{ $t('download.mobile.platforms') }}
-          </p>
-        </div>
-
-        <ul class="download-features download-features--muted">
-          <li>
-            <i class="ti ti-clock" aria-hidden="true" />
-            {{ $t('download.mobile.features.nativeAndroid') }}
-          </li>
-          <li>
-            <i class="ti ti-clock" aria-hidden="true" />
-            {{ $t('download.mobile.features.nativeIos') }}
-          </li>
-          <li>
-            <i class="ti ti-clock" aria-hidden="true" />
-            {{ $t('download.mobile.features.cloudSync') }}
-          </li>
-        </ul>
-
-        <p class="download-section__subtext download-section__apk-note">
-          <i class="ti ti-flask" aria-hidden="true" />
-          {{ $t('download.mobile.apkNote') }}
-        </p>
-
-        <a :href="siteConfig.appUrl" class="download-card__btn download-card__btn--large">
-          <i class="ti ti-device-mobile" aria-hidden="true" />
-          {{ $t('download.mobile.useWebInstead') }}
-        </a>
-      </div>
-    </section>
-
-    <!-- Smart TV -->
-    <section class="download-section download-section--alt">
-      <div class="download-section__container">
-        <div class="download-section__header">
-          <span class="download-section__badge download-section__badge--muted">
-            {{ $t('download.tv.badge') }}
-          </span>
-          <h2 class="download-section__title">
-            {{ $t('download.tv.title') }}
-          </h2>
-          <p class="download-section__desc">
-            {{ $t('download.tv.description') }}
-          </p>
-        </div>
-
-        <div class="tv-brands">
-          <div
-            v-for="brand in tvBrands"
-            :key="brand.id"
-            class="tv-brand-card"
-            data-testid="download-tv-brand"
-          >
-            <img :src="brand.logo" :alt="brand.alt" class="tv-brand-card__logo" loading="lazy" />
-            <div class="tv-brand-card__info">
-              <h3 class="tv-brand-card__name">
-                {{ $t(`download.tv.${brand.id}Brand`) }}
-              </h3>
-              <span class="tv-brand-card__status">
-                <i class="ti ti-loader-2" aria-hidden="true" />
-                {{ $t(`download.tv.${brand.id}Status`) }}
-              </span>
-            </div>
-          </div>
-        </div>
-
-        <ul class="download-features download-features--muted">
-          <li>
-            <i class="ti ti-clock" aria-hidden="true" />
-            {{ $t('download.tv.features.nativeLg') }}
-          </li>
-          <li>
-            <i class="ti ti-clock" aria-hidden="true" />
-            {{ $t('download.tv.features.bigScreen') }}
-          </li>
-          <li>
-            <i class="ti ti-clock" aria-hidden="true" />
-            {{ $t('download.tv.features.remoteControl') }}
-          </li>
-        </ul>
-
-        <a href="#download" class="download-card__btn download-card__btn--large">
-          <i class="ti ti-device-desktop" aria-hidden="true" />
-          {{ $t('download.tv.useDesktopInstead') }}
-        </a>
-      </div>
-    </section>
+    <MobileDownloadCards
+      :mobile-data="mobileData"
+      :app-url="siteConfig.appUrl"
+      :detected-platform="detectedMobilePlatform"
+    />
 
     <!-- System Requirements -->
     <section class="download-section download-section--alt">
@@ -439,6 +433,10 @@
       font-weight: 700;
       color: var(--piano-accent);
       margin-bottom: 1rem;
+
+      &--installs {
+        margin-left: 0.75rem;
+      }
     }
 
     &__title {
@@ -520,8 +518,8 @@
     }
 
     &__header {
-      text-align: center;
-      max-width: 42rem;
+      text-align: left;
+      max-width: 72rem;
       margin: 0 auto 2.5rem;
     }
 
@@ -536,6 +534,9 @@
       background: var(--piano-accent-soft);
       color: var(--piano-accent);
       margin-bottom: 0.75rem;
+      /* alinhamento consistente entre secoes: ancora a esquerda do container,
+         nao centralizada (larguras de texto diferentes deslocavam o centro visual) */
+      margin-left: 0;
 
       &--accent {
         background: rgba(34, 197, 94, 0.12);

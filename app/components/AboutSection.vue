@@ -1,5 +1,11 @@
 <script setup lang="ts">
   import { siteConfig } from '~/data/site'
+  import { useInstallsCount } from '~/composables/useInstallsCount'
+
+  const { installsNum, load } = useInstallsCount()
+
+  // Instalações em tempo real (GitHub) — fallback "0".
+  onMounted(load)
 </script>
 
 <template>
@@ -24,6 +30,16 @@
         <p class="about__text">
           {{ $t('about.text2') }}
         </p>
+        <p class="about__fork-credit">
+          {{ $t('about.forkCredit') }}
+          <a
+            href="https://github.com/louvorja"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="about__fork-link"
+            >github.com/louvorja</a
+          >
+        </p>
 
         <div class="about__stats">
           <div class="about__stat">
@@ -31,7 +47,7 @@
             <span class="about__stat-label">{{ $t('about.stats.free') }}</span>
           </div>
           <div class="about__stat">
-            <span class="about__stat-num">0</span>
+            <span class="about__stat-num" data-testid="about-installs-num">{{ installsNum }}</span>
             <span class="about__stat-label">{{ $t('about.stats.installs') }}</span>
           </div>
           <div class="about__stat">
@@ -128,6 +144,24 @@
       color: var(--piano-text-secondary);
       line-height: 1.8;
       margin-bottom: 1.25rem;
+    }
+
+    &__fork-credit {
+      font-size: 0.9rem;
+      color: var(--piano-gray-600);
+      line-height: 1.6;
+      margin-bottom: 1.25rem;
+      font-style: italic;
+    }
+
+    &__fork-link {
+      color: var(--piano-blue);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+
+      &:hover {
+        color: var(--piano-cyan);
+      }
     }
 
     &__stats {

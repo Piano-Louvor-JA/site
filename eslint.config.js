@@ -78,6 +78,9 @@ export default [
         MouseEvent: 'readonly',
         KeyboardEvent: 'readonly',
         HTMLElement: 'readonly',
+        HTMLInputElement: 'readonly',
+        File: 'readonly',
+        URL: 'readonly',
         Event: 'readonly',
         IntersectionObserver: 'readonly',
         // Browser globals
