@@ -1,5 +1,9 @@
 import { afterEach, describe, expect, it } from 'vitest'
-import { formatCountryName, resetCountryDisplayCache } from '~/utils/country-display'
+import {
+  formatCountryName,
+  resetCountryDisplayCache,
+  type CountryLocale,
+} from '~/utils/country-display'
 
 const REAL_DISPLAY_NAMES = Intl.DisplayNames
 
@@ -84,5 +88,54 @@ describe('formatCountryName', () => {
   it('faz fallback para o ISO cru quando of() devolve o próprio código', () => {
     stubDisplayNames((code) => code)
     expect(formatCountryName('BR')).toBe('BR')
+  })
+
+  it('faz fallback para o ISO cru quando of() não devolve nome', () => {
+    stubDisplayNames(() => '')
+    expect(formatCountryName('BR')).toBe('BR')
+  })
+
+  it('reusa o Intl.DisplayNames em cache na segunda consulta do mesmo locale', () => {
+    expect(formatCountryName('BR')).toBe('Brasil')
+    expect(formatCountryName('PT')).toBe('Portugal')
+  })
+
+  it('tenta o próximo locale quando o primeiro não é suportado', () => {
+    class SelectiveDisplayNames {
+      constructor(locales: string | string[]) {
+        const locale = Array.isArray(locales) ? locales[0] : locales
+        if (locale !== 'en') throw new RangeError(locale)
+      }
+      of(code: string): string {
+        return code === 'BR' ? 'Brazil' : code
+      }
+    }
+    Object.defineProperty(Intl, 'DisplayNames', {
+      configurable: true,
+      writable: true,
+      value: SelectiveDisplayNames,
+    })
+    expect(formatCountryName('BR')).toBe('Brazil')
+  })
+
+  it('devolve o ISO cru quando nenhum locale do fallback é suportado', () => {
+    class AlwaysThrowDisplayNames {
+      constructor() {
+        throw new RangeError('unsupported')
+      }
+      of(): string {
+        return 'não chega'
+      }
+    }
+    Object.defineProperty(Intl, 'DisplayNames', {
+      configurable: true,
+      writable: true,
+      value: AlwaysThrowDisplayNames,
+    })
+    expect(formatCountryName('BR')).toBe('BR')
+  })
+
+  it('usa o rótulo pt-BR quando o locale pedido não tem rótulo', () => {
+    expect(formatCountryName('', 'de' as CountryLocale)).toBe('Desconhecido')
   })
 })
