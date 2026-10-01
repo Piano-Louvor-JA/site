@@ -1,4 +1,4 @@
-# PR staging → main: suíte completa.
+# PR staging → main: suíte completa, inclusive gitleaks.
 # Push em main fica só com o smoke (lint, typecheck e build); a suíte já rodou no PR.
 name: CI (Main)
 
@@ -44,6 +44,25 @@ jobs:
 
       - name: SSG Build
         run: pnpm generate
+
+  secrets:
+    name: gitleaks (segredos no diff/histórico)
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      # CLI open source. A action oficial (gitleaks-action@v2) exige licença
+      # paga (GITLEAKS_LICENSE) em repositório de organização.
+      - name: Install gitleaks
+        run: |
+          curl -sSfL https://github.com/gitleaks/gitleaks/releases/download/v8.28.0/gitleaks_8.28.0_linux_x64.tar.gz | tar -xz -C "$RUNNER_TEMP"
+      - name: Scan
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        run: |
+          "$RUNNER_TEMP/gitleaks" detect --source . --redact --log-opts="$BASE_SHA..HEAD"
 
   tests:
     name: Unit tests + coverage

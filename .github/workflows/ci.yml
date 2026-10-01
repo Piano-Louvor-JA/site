@@ -1,5 +1,5 @@
 # PR e push em staging: só o portão rápido.
-# Testes, mutação, E2E, Sonar, Storybook e Lighthouse rodam no PR staging → main
+# Testes, mutação, E2E, Sonar, Storybook, Lighthouse e gitleaks rodam no PR staging → main
 # (workflow CI Main).
 name: CI
 
