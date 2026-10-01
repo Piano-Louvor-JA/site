@@ -47,7 +47,7 @@
 <style scoped lang="scss">
   .about {
     padding: 6rem 1.5rem;
-    background: var(--piano-gray-100);
+    background: var(--piano-bg-secondary);
     position: relative;
     overflow: hidden;
 
@@ -78,14 +78,14 @@
 
         i {
           font-size: 4rem;
-          color: var(--piano-cyan);
+          color: var(--piano-accent);
         }
       }
 
       &-text {
         font-size: 1.1rem;
         font-weight: 700;
-        color: #fff;
+        color: var(--piano-text-primary);
         letter-spacing: 0.05em;
       }
 
@@ -145,12 +145,12 @@
       &-num {
         font-size: 1.75rem;
         font-weight: 800;
-        color: var(--piano-blue);
+        color: var(--piano-accent);
       }
 
       &-label {
         font-size: 0.85rem;
-        color: var(--piano-gray-700);
+        color: var(--piano-text-muted);
       }
     }
 

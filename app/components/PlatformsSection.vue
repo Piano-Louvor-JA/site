@@ -21,7 +21,7 @@
         { icon: 'ti-wifi-off', key: 'feature2' },
         { icon: 'ti-keyboard', key: 'feature3' },
       ],
-      accent: 'cyan',
+      accent: 'orange',
       ctaHref: '#download',
       ctaLabel: 'platforms.desktop.cta',
     },
@@ -161,7 +161,7 @@
 
     &__eyebrow {
       display: inline-block;
-      color: var(--piano-cyan);
+      color: var(--piano-accent-text);
       font-size: 0.85rem;
       font-weight: 700;
       text-transform: uppercase;
@@ -172,14 +172,14 @@
     &__title {
       font-size: 2.5rem;
       font-weight: 800;
-      color: #fff;
+      color: var(--piano-text-primary);
       margin-bottom: 1rem;
       letter-spacing: -0.02em;
     }
 
     &__description {
       font-size: 1.1rem;
-      color: rgba(255, 255, 255, 0.7);
+      color: var(--piano-text-secondary);
       line-height: 1.7;
     }
 
@@ -203,40 +203,22 @@
         transform: translateY(-4px);
       }
 
-      &--cyan {
-        background: linear-gradient(
-          135deg,
-          rgba(0, 193, 230, 0.08) 0%,
-          rgba(16, 67, 140, 0.12) 100%
-        );
-
-        &:hover {
-          border-color: rgba(0, 193, 230, 0.4);
-        }
-      }
-
-      &--yellow {
-        background: linear-gradient(
-          135deg,
-          rgba(252, 206, 2, 0.06) 0%,
-          rgba(16, 67, 140, 0.12) 100%
-        );
-
-        &:hover {
-          border-color: rgba(252, 206, 2, 0.3);
-        }
-      }
-
+      &--orange,
+      &--yellow,
       &--blue {
-        background: linear-gradient(
-          135deg,
-          rgba(4, 84, 155, 0.12) 0%,
-          rgba(16, 67, 140, 0.18) 100%
-        );
+        background: var(--piano-bg-solid);
+      }
 
-        &:hover {
-          border-color: rgba(4, 84, 155, 0.5);
-        }
+      &--orange:hover {
+        border-color: var(--piano-accent);
+      }
+
+      &--yellow:hover {
+        border-color: var(--piano-yellow);
+      }
+
+      &--blue:hover {
+        border-color: var(--piano-blue);
       }
 
       &-header {
@@ -260,16 +242,16 @@
         }
       }
 
-      &--cyan &-icon {
-        background: linear-gradient(135deg, var(--piano-cyan) 0%, #0098b3 100%);
+      &--orange &-icon {
+        background: var(--piano-accent);
       }
 
       &--yellow &-icon {
-        background: linear-gradient(135deg, var(--piano-yellow) 0%, #d9a800 100%);
+        background: var(--piano-yellow-dark);
       }
 
       &--blue &-icon {
-        background: linear-gradient(135deg, var(--piano-blue-deep) 0%, #0a3070 100%);
+        background: var(--piano-blue-deep);
       }
 
       &-badge {
@@ -280,50 +262,48 @@
         text-transform: uppercase;
         letter-spacing: 0.04em;
 
-        &--cyan {
-          background: rgba(0, 193, 230, 0.15);
-          color: var(--piano-cyan-light);
-          border: 1px solid rgba(0, 193, 230, 0.3);
+        &--orange {
+          background: var(--piano-accent-soft);
+          color: var(--piano-accent-text);
+          border: 1px solid var(--piano-accent);
         }
 
         &--yellow {
-          background: rgba(252, 206, 2, 0.12);
-          color: var(--piano-yellow);
-          border: 1px solid rgba(252, 206, 2, 0.3);
+          color: var(--piano-yellow-dark);
+          border: 1px solid var(--piano-yellow);
         }
 
         &--blue {
-          background: rgba(4, 84, 155, 0.25);
-          color: var(--piano-cyan-light);
-          border: 1px solid rgba(4, 84, 155, 0.5);
+          color: var(--piano-blue);
+          border: 1px solid var(--piano-blue);
         }
       }
 
       &-name {
         font-size: 1.4rem;
         font-weight: 700;
-        color: #fff;
+        color: var(--piano-text-primary);
         margin-bottom: 0.25rem;
       }
 
       &-tagline {
         font-size: 0.95rem;
         font-weight: 600;
-        color: var(--piano-cyan-light);
+        color: var(--piano-accent-text);
         margin-bottom: 0.75rem;
       }
 
       &--yellow &-tagline {
-        color: var(--piano-yellow);
+        color: var(--piano-yellow-dark);
       }
 
       &--blue &-tagline {
-        color: var(--piano-cyan-light);
+        color: var(--piano-blue);
       }
 
       &-desc {
         font-size: 0.9rem;
-        color: rgba(255, 255, 255, 0.65);
+        color: var(--piano-text-muted);
         line-height: 1.6;
         margin-bottom: 1.5rem;
       }
@@ -341,21 +321,21 @@
           align-items: center;
           gap: 0.5rem;
           font-size: 0.875rem;
-          color: rgba(255, 255, 255, 0.8);
+          color: var(--piano-text-secondary);
 
           i {
             font-size: 1.1rem;
-            color: var(--piano-cyan);
+            color: var(--piano-accent);
           }
         }
       }
 
       &--yellow &-list li i {
-        color: var(--piano-yellow);
+        color: var(--piano-yellow-dark);
       }
 
       &--blue &-list li i {
-        color: var(--piano-cyan-light);
+        color: var(--piano-blue);
       }
 
       &-cta {
@@ -373,34 +353,31 @@
           transform 0.2s,
           box-shadow 0.2s;
 
-        &--cyan {
-          background: var(--piano-bg-accent);
+        &--orange {
+          background: var(--piano-accent);
           color: #fff;
 
           &:hover {
+            background: var(--piano-accent-hover);
             transform: translateY(-2px);
-            box-shadow: 0 4px 20px rgba(0, 193, 230, 0.4);
           }
         }
 
         &--yellow {
-          background: rgba(252, 206, 2, 0.15);
-          color: var(--piano-yellow);
-          border: 1px solid rgba(252, 206, 2, 0.3);
+          color: var(--piano-yellow-dark);
+          border: 1px solid var(--piano-yellow);
 
           &:hover {
-            background: rgba(252, 206, 2, 0.2);
             transform: translateY(-2px);
           }
         }
 
         &--blue {
-          background: rgba(4, 84, 155, 0.3);
-          color: var(--piano-cyan-light);
-          border: 1px solid rgba(4, 84, 155, 0.5);
+          background: var(--piano-accent-soft);
+          color: var(--piano-accent-text);
+          border: 1px solid var(--piano-accent);
 
           &:hover {
-            background: rgba(4, 84, 155, 0.4);
             transform: translateY(-2px);
           }
         }

@@ -102,15 +102,15 @@
       gap: 0.75rem;
       padding: 2rem 2.5rem;
       border-radius: var(--piano-radius-lg);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      background: linear-gradient(135deg, rgba(0, 193, 230, 0.06) 0%, rgba(16, 67, 140, 0.1) 100%);
+      border: 1px solid var(--piano-border-subtle);
+      background: var(--piano-accent-soft);
       transition:
         transform 0.3s,
         border-color 0.3s;
 
       &:hover {
         transform: translateY(-4px);
-        border-color: rgba(0, 193, 230, 0.35);
+        border-color: var(--piano-accent);
       }
     }
 

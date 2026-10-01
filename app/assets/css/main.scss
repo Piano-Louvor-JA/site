@@ -32,6 +32,13 @@
   --site-text-muted: rgba(191, 199, 212, 0.7);
   --site-overlay: rgba(0, 0, 0, 0.7);
 
+  // Superfícies de componentes (header fixo, chips de ação)
+  --site-header: rgba(19, 19, 19, 0.85);
+  --site-header-scrolled: rgba(19, 19, 19, 0.95);
+  --site-chip: rgba(255, 255, 255, 0.1);
+  --site-chip-border: rgba(255, 255, 255, 0.15);
+  --site-chip-text: rgba(255, 255, 255, 0.9);
+
   // ============================================
   // Camada 3 — Acento/interação (laranja do produto)
   // Fonte: themes/accents.ts → defaultAccent orange #E0895A
@@ -55,6 +62,11 @@
     --site-text-muted: #5f6670;
     --site-overlay: rgba(25, 28, 32, 0.55);
     --site-accent-text: #b45e2f;
+    --site-header: rgba(248, 249, 255, 0.85);
+    --site-header-scrolled: rgba(248, 249, 255, 0.95);
+    --site-chip: rgba(25, 28, 32, 0.06);
+    --site-chip-border: rgba(25, 28, 32, 0.12);
+    --site-chip-text: rgba(25, 28, 32, 0.9);
   }
 
   // ============================================
@@ -88,6 +100,11 @@
   --piano-bg-tertiary: var(--site-container);
   --piano-border: var(--site-border);
   --piano-border-subtle: var(--site-border-subtle);
+  --piano-header: var(--site-header);
+  --piano-header-scrolled: var(--site-header-scrolled);
+  --piano-chip: var(--site-chip);
+  --piano-chip-border: var(--site-chip-border);
+  --piano-chip-text: var(--site-chip-text);
 
   // Semantic tokens — accent
   --piano-accent: var(--site-accent);

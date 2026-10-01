@@ -105,8 +105,8 @@
 <style scoped lang="scss">
   .newsletter {
     padding: 3.5rem 1.5rem;
-    background: var(--piano-dark);
-    border-top: 1px solid var(--piano-slate);
+    background: var(--piano-bg-secondary);
+    border-top: 1px solid var(--piano-border);
 
     &__container {
       max-width: 540px;
@@ -116,7 +116,7 @@
 
     &__icon {
       font-size: 2rem;
-      color: var(--piano-cyan);
+      color: var(--piano-accent);
       margin-bottom: 1rem;
       display: block;
     }
@@ -146,18 +146,18 @@
       min-width: 200px;
       padding: 0.75rem 1rem;
       border-radius: var(--piano-radius-md);
-      background: var(--piano-slate);
+      background: var(--piano-bg-solid);
       border: 1px solid var(--piano-border);
-      color: var(--piano-text-on-dark);
+      color: var(--piano-text-primary);
       font-size: 0.95rem;
 
       &::placeholder {
-        color: var(--piano-text-on-dark-muted);
+        color: var(--piano-text-muted);
       }
 
       &:focus {
         outline: none;
-        border-color: var(--piano-cyan);
+        border-color: var(--piano-accent);
       }
     }
 
@@ -166,16 +166,18 @@
       border-radius: var(--piano-radius-md);
       font-weight: 600;
       font-size: 0.95rem;
-      background: linear-gradient(135deg, var(--piano-cyan) 0%, var(--piano-blue) 100%);
-      color: var(--piano-text-on-dark);
+      background: var(--piano-accent);
+      color: #ffffff;
       border: none;
       cursor: pointer;
       transition:
         transform 0.2s,
-        opacity 0.2s;
+        opacity 0.2s,
+        background 0.2s;
 
       &:hover:not(:disabled) {
         transform: translateY(-1px);
+        background: var(--piano-accent-hover);
       }
 
       &:disabled {
@@ -201,7 +203,7 @@
       }
 
       &--success {
-        color: var(--piano-cyan-light);
+        color: var(--piano-success);
         font-weight: 600;
         font-size: 1.05rem;
       }

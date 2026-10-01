@@ -487,15 +487,15 @@
       }
 
       &--site {
-        background: rgba(0, 193, 230, 0.12);
+        background: var(--piano-accent-soft);
         color: var(--piano-cyan);
-        border-color: rgba(0, 193, 230, 0.25);
+        border-color: var(--piano-accent);
       }
 
       &--web {
-        background: rgba(0, 193, 230, 0.12);
+        background: var(--piano-accent-soft);
         color: var(--piano-cyan);
-        border-color: rgba(0, 193, 230, 0.25);
+        border-color: var(--piano-accent);
       }
     }
 
@@ -574,12 +574,12 @@
       }
 
       &--web {
-        background: rgba(0, 193, 230, 0.12);
+        background: var(--piano-accent-soft);
         color: var(--piano-cyan);
       }
 
       &--desktop {
-        background: rgba(4, 84, 155, 0.12);
+        background: var(--piano-accent-soft);
         color: var(--piano-accent);
       }
 

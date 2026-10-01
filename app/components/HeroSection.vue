@@ -309,7 +309,7 @@
       border-radius: var(--piano-radius-lg);
       box-shadow:
         0 24px 64px rgba(0, 0, 0, 0.4),
-        0 0 0 1px rgba(0, 193, 230, 0.1);
+        0 0 0 1px var(--piano-border-subtle);
       overflow: hidden;
       transform: perspective(1000px) rotateY(-3deg) rotateX(2deg);
     }
@@ -343,8 +343,8 @@
       align-items: center;
       justify-content: space-between;
       padding: 0.75rem 1rem;
-      background: linear-gradient(135deg, rgba(16, 67, 140, 0.4) 0%, rgba(10, 23, 51, 0.6) 100%);
-      border-bottom: 1px solid rgba(0, 193, 230, 0.15);
+      background: linear-gradient(135deg, rgba(224, 137, 90, 0.16) 0%, rgba(19, 19, 19, 0.6) 100%);
+      border-bottom: 1px solid var(--piano-border-subtle);
     }
 
     &__preview-brand {
@@ -468,8 +468,8 @@
     &__preview-card-badge {
       font-size: 0.7rem;
       font-weight: 600;
-      color: var(--site-accent);
-      background: rgba(0, 193, 230, 0.15);
+      color: var(--piano-accent-text);
+      background: var(--piano-accent-soft);
       padding: 0.25rem 0.5rem;
       border-radius: var(--piano-radius-full);
       flex-shrink: 0;
@@ -518,7 +518,7 @@
       justify-content: space-around;
       padding: 0.625rem 0.5rem;
       background: rgba(0, 0, 0, 0.5);
-      border-top: 1px solid rgba(0, 193, 230, 0.1);
+      border-top: 1px solid var(--piano-border-subtle);
     }
 
     &__preview-dock-item {
@@ -537,7 +537,7 @@
 
       &--active {
         color: var(--site-accent);
-        background: rgba(0, 193, 230, 0.15);
+        background: var(--piano-accent-soft);
       }
     }
 
