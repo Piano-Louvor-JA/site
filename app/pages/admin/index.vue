@@ -110,6 +110,15 @@
 
   const topCountries = computed(() => geoStats.value?.countries.slice(0, 10) ?? [])
 
+  // RF-03 (SITE-TELEMETRIA): distingue config quebrada de coleta em andamento
+  const geoPlaceholder = computed(() => {
+    if (!geoStats.value) return 'Dados indisponíveis.'
+    if (geoStats.value.telemetryMode === 'unsalted') {
+      return 'Telemetria ativa sem salt — configure GEO_SALT.'
+    }
+    return 'Coletando dados — primeiros números em 24-48h.'
+  })
+
   function maxCountryVisits(countries: Array<{ visits: number }>): number {
     return countries.reduce((max, c) => Math.max(max, c.visits), 0)
   }
@@ -396,7 +405,9 @@
       <div class="panel">
         <h2>Audiência por País (30d)</h2>
         <div v-if="geoLoading" class="placeholder">Carregando...</div>
-        <div v-else-if="topCountries.length === 0" class="placeholder">Dados indisponíveis.</div>
+        <div v-else-if="topCountries.length === 0" class="placeholder">
+          {{ geoPlaceholder }}
+        </div>
         <ul v-else class="geo-list">
           <li v-for="item in topCountries" :key="item.country" class="geo-item">
             <span class="geo-country">{{ item.country }}</span>
