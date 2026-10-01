@@ -12,7 +12,7 @@ const appReleaseWithInstaller = {
     {
       name: 'LouvorJA---PIANO-Setup-1.17.5.exe',
       browser_download_url:
-        'https://github.com/pianolouvorja/app/releases/download/untagged-ade129dd9673126dc496/LouvorJA---PIANO-Setup-1.17.5.exe',
+        'https://github.com/Piano-Louvor-JA/app/releases/download/untagged-ade129dd9673126dc496/LouvorJA---PIANO-Setup-1.17.5.exe',
     },
   ],
 }
@@ -46,7 +46,7 @@ describe('ReleasesPage', () => {
     const download = wrapper.get('.release-card__link')
     expect(download.attributes('href')).toBe(appReleaseWithInstaller.assets[0].browser_download_url)
     expect(download.attributes('target')).toBeUndefined()
-    expect(wrapper.html()).not.toContain('github.com/orgs/pianolouvorja/repositories')
+    expect(wrapper.html()).not.toContain('github.com/orgs/Piano-Louvor-JA/repositories')
   })
 
   it('não apresenta link quando a release não possui instalador direto', async () => {

@@ -45,13 +45,13 @@ describe('DownloadPage', () => {
             {
               name: 'LouvorJA.-.PIANO-1.17.5.AppImage',
               browser_download_url:
-                'https://github.com/pianolouvorja/app/releases/download/v1.17.5/LouvorJA.-.PIANO-1.17.5.AppImage',
+                'https://github.com/Piano-Louvor-JA/app/releases/download/v1.17.5/LouvorJA.-.PIANO-1.17.5.AppImage',
               size: 168657109,
             },
             {
               name: 'LouvorJA.-.PIANO.Setup.1.17.5.exe',
               browser_download_url:
-                'https://github.com/pianolouvorja/app/releases/download/v1.17.5/LouvorJA.-.PIANO.Setup.1.17.5.exe',
+                'https://github.com/Piano-Louvor-JA/app/releases/download/v1.17.5/LouvorJA.-.PIANO.Setup.1.17.5.exe',
               size: 127700720,
             },
           ],
@@ -85,7 +85,7 @@ describe('DownloadPage', () => {
         control.classes().includes('download-card__btn--disabled'),
       ),
     ).toBe(true)
-    expect(wrapper.html()).not.toContain('https://github.com/pianolouvorja/app/releases')
+    expect(wrapper.html()).not.toContain('https://github.com/Piano-Louvor-JA/app/releases')
     expect(wrapper.text()).toContain('Em breve')
   })
 

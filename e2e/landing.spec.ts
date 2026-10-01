@@ -125,7 +125,7 @@ test.describe('Landing page', () => {
 
     // GitHub social link
     const githubLink = page.locator('.footer__social-link[aria-label="GitHub"]')
-    await expect(githubLink).toHaveAttribute('href', 'https://github.com/pianolouvorja')
+    await expect(githubLink).toHaveAttribute('href', 'https://github.com/Piano-Louvor-JA')
   })
 
   test('clicking secondary CTA scrolls to platforms', async ({ page }) => {

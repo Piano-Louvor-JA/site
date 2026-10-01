@@ -13,7 +13,7 @@ function getOctokit(): Octokit {
 }
 
 /**
- * Busca eventos recentes do repo pianolouvorja/web.
+ * Busca eventos recentes do repo Piano-Louvor-JA/web.
  * Filtra: releases publicados, PRs, issues.
  */
 export async function fetchRecentActivity(): Promise<ActivityItem[]> {
