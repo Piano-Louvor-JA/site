@@ -9,10 +9,14 @@ import type { H3Event } from 'h3'
  * O que persiste é somente o código ISO do país (dado agregável).
  */
 
-/** Headers de país por CDN, em ordem de prioridade. */
+/** Headers de país por CDN, em ordem de prioridade.
+ *  RF-01 (SITE-TELEMETRIA): adiciona x-hcdn-country (Hostinger CDN, nosso caso
+ *  em produção) e x-visitor-country (genérico) à lista original. */
 const COUNTRY_HEADERS = [
   'cf-ipcountry', // Cloudflare
+  'x-hcdn-country', // Hostinger CDN
   'x-vercel-ip-country', // Vercel
+  'x-visitor-country', // genérico (CDNs sem header dedicado)
   'x-geo-country', // custom proxies
 ] as const
 
