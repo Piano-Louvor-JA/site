@@ -3,6 +3,7 @@
   import { updatePassword, signInWithEmailAndPassword } from 'firebase/auth'
   import type { ActivityItem, GeoStats } from '~/types/dashboard'
   import { useTimeseries } from '~/composables/useTimeseries'
+  import { formatCountryName } from '~/utils/country-display'
 
   definePageMeta({
     layout: 'admin',
@@ -118,6 +119,12 @@
     }
     return 'Coletando dados — primeiros números em 24-48h.'
   })
+
+  // F1 item 4: exibe nome legível do país (Intl.DisplayNames) em vez do ISO cru.
+  // Locale da UI: o site é PT-BR por padrão (i18n en/es apenas nas landing pages).
+  function countryName(code: string): string {
+    return formatCountryName(code, 'pt-BR')
+  }
 
   function maxCountryVisits(countries: Array<{ visits: number }>): number {
     return countries.reduce((max, c) => Math.max(max, c.visits), 0)
@@ -410,7 +417,7 @@
         </div>
         <ul v-else class="geo-list">
           <li v-for="item in topCountries" :key="item.country" class="geo-item">
-            <span class="geo-country">{{ item.country }}</span>
+            <span class="geo-country">{{ countryName(item.country) }}</span>
             <span class="geo-bar-track">
               <span
                 class="geo-bar"
