@@ -1,4 +1,5 @@
 import { Octokit } from '@octokit/rest'
+import { LATEST_APP_SNAPSHOT } from '../../utils/github-snapshots'
 
 const octokit = new Octokit({
   auth: process.env.GITHUB_TOKEN,
@@ -30,10 +31,17 @@ export default defineEventHandler(async (event) => {
       })),
     }
   } catch (error) {
-    console.error('Error fetching latest app release:', error)
-    throw createError({
-      statusCode: 502,
-      statusMessage: 'Failed to fetch latest release',
-    })
+    // FALLBACK: GitHub indisponivel — serve snapshot hardcoded (ultimo release real conhecido).
+    // Nunca 502: o botao de download desktop tem que funcionar sempre.
+    console.error(
+      '[latest-app-release] GitHub falhou, servindo snapshot:',
+      error instanceof Error ? error.message : error,
+    )
+    return {
+      tag_name: LATEST_APP_SNAPSHOT.tag_name,
+      snapshot: true,
+      snapshotDate: LATEST_APP_SNAPSHOT.snapshotDate,
+      assets: LATEST_APP_SNAPSHOT.assets.map((a) => ({ ...a })),
+    }
   }
 })

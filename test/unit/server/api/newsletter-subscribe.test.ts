@@ -179,6 +179,7 @@ describe('handleSubscribe', () => {
         body: {
           email_address: 'user@example.com',
           metadata: { locale: 'pt-BR' },
+          type: 'regular',
         },
       }),
     )

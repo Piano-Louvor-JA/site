@@ -119,8 +119,8 @@
     }
 
     &__header {
-      text-align: center;
-      max-width: 42rem;
+      text-align: left;
+      max-width: 72rem;
       margin: 0 auto 2.5rem;
     }
 
