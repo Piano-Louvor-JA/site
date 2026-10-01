@@ -85,7 +85,7 @@ describe('TeamSection', () => {
     const wrapper = mount(TeamSection, { global: { stubs: ['i'] } })
     const btn = wrapper.find('a.team__contribute-btn')
     expect(btn.exists()).toBe(true)
-    expect(btn.attributes('href')).toBe('https://github.com/pianolouvorja')
+    expect(btn.attributes('href')).toBe('https://github.com/Piano-Louvor-JA')
     expect(btn.attributes('target')).toBe('_blank')
     expect(btn.text().length).toBeGreaterThan(5)
   })

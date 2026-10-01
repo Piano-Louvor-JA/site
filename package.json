@@ -9,11 +9,11 @@
   "author": "Equipe LouvorJA",
   "repository": {
     "type": "git",
-    "url": "https://github.com/pianolouvorja/site.git"
+    "url": "https://github.com/Piano-Louvor-JA/site.git"
   },
   "homepage": "https://pianolouvorja.com.br",
   "bugs": {
-    "url": "https://github.com/pianolouvorja/site/issues"
+    "url": "https://github.com/Piano-Louvor-JA/site/issues"
   },
   "engines": {
     "node": ">=24.6.0",

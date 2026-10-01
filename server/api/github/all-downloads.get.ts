@@ -21,17 +21,17 @@ const STATIC_SNAPSHOT: AllDownloadsResponse = {
     tag: 'v0.1.53',
     assets: {
       linux: {
-        url: 'https://github.com/pianolouvorja/app/releases/download/v0.1.53/piano-louvor-ja-0.1.53.AppImage',
+        url: 'https://github.com/Piano-Louvor-JA/app/releases/download/v0.1.53/piano-louvor-ja-0.1.53.AppImage',
         name: 'piano-louvor-ja-0.1.53.AppImage',
         size: 95000000,
       },
       windows: {
-        url: 'https://github.com/pianolouvorja/app/releases/download/v0.1.53/piano-louvor-ja-Setup-0.1.53.exe',
+        url: 'https://github.com/Piano-Louvor-JA/app/releases/download/v0.1.53/piano-louvor-ja-Setup-0.1.53.exe',
         name: 'piano-louvor-ja-Setup-0.1.53.exe',
         size: 98000000,
       },
       macos: {
-        url: 'https://github.com/pianolouvorja/app/releases/download/v0.1.53/piano-louvor-ja-0.1.53.dmg',
+        url: 'https://github.com/Piano-Louvor-JA/app/releases/download/v0.1.53/piano-louvor-ja-0.1.53.dmg',
         name: 'piano-louvor-ja-0.1.53.dmg',
         size: 102000000,
       },
@@ -42,12 +42,12 @@ const STATIC_SNAPSHOT: AllDownloadsResponse = {
     tag: 'v1.0.0',
     assets: {
       webos: {
-        url: 'https://github.com/pianolouvorja/palco-receiver/releases/download/v1.0.0/palco-receiver_1.0.0_all.ipk',
+        url: 'https://github.com/Piano-Louvor-JA/palco-receiver/releases/download/v1.0.0/palco-receiver_1.0.0_all.ipk',
         name: 'palco-receiver_1.0.0_all.ipk',
         size: 2500000,
       },
       tizen: {
-        url: 'https://github.com/pianolouvorja/palco-receiver/releases/download/v1.0.0/palco-receiver_1.0.0.tpk',
+        url: 'https://github.com/Piano-Louvor-JA/palco-receiver/releases/download/v1.0.0/palco-receiver_1.0.0.tpk',
         name: 'palco-receiver_1.0.0.tpk',
         size: 2800000,
       },
@@ -58,7 +58,7 @@ const STATIC_SNAPSHOT: AllDownloadsResponse = {
     tag: 'v0.1.53',
     assets: {
       android: {
-        url: 'https://github.com/pianolouvorja/apk/releases/download/v0.1.53/piano-louvor-ja-0.1.53.apk',
+        url: 'https://github.com/Piano-Louvor-JA/apk/releases/download/v0.1.53/piano-louvor-ja-0.1.53.apk',
         name: 'piano-louvor-ja-0.1.53.apk',
         size: 35000000,
       },
@@ -86,7 +86,7 @@ export default defineEventHandler(async (event): Promise<AllDownloadsResponse> =
           // Aggregate across the most recent releases per platform instead.
           if (config.aggregatePlatforms) {
             const list = await octokit.rest.repos.listReleases({
-              owner: 'pianolouvorja',
+              owner: 'Piano-Louvor-JA',
               repo: config.name,
               per_page: 15,
             })
@@ -102,7 +102,7 @@ export default defineEventHandler(async (event): Promise<AllDownloadsResponse> =
           }
 
           const release = await octokit.rest.repos.getLatestRelease({
-            owner: 'pianolouvorja',
+            owner: 'Piano-Louvor-JA',
             repo: config.name,
           })
           return {

@@ -617,7 +617,7 @@ export default {
           'Respeita os direitos autorais conforme Lei 9.610/98',
         ],
         link: {
-          url: 'https://github.com/pianolouvorja',
+          url: 'https://github.com/Piano-Louvor-JA',
           text: 'repositório no GitHub',
         },
       },

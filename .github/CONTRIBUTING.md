@@ -12,7 +12,7 @@ Obrigado por querer contribuir! Este guia descreve o processo para enviar mudanc
 
 ```bash
 # Clone o repositorio
-git clone git@github.com:pianolouvorja/site.git
+git clone git@github.com:Piano-Louvor-JA/site.git
 cd site
 
 # Instale as dependencias
