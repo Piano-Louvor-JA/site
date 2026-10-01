@@ -30,6 +30,8 @@ overrides:
   svgo: '4.1.0'
   tmp: '0.2.7'
   undici: '8.11.2'
+  # GHSA-c475-qrg2-pj4r: basic-ftp <=6.2.0. get-uri (via Lighthouse) pede ^5.
+  'get-uri>basic-ftp': '6.2.1'
   # Hostinger: binário Dart do sass-embedded falha com EACCES.
   # Bloquear só o *-linux-* deixa o pacote JS do sass-embedded instalado;
   # o Vite prefere ele e trava em "unavailable in pure JS mode" (Vitest/Nuxt setup).
