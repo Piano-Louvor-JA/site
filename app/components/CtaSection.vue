@@ -98,16 +98,18 @@
       font-size: 1.1rem;
       font-weight: 700;
       text-decoration: none;
-      background: linear-gradient(135deg, var(--piano-cyan) 0%, var(--piano-blue) 100%);
+      background: var(--piano-accent);
       color: #fff;
-      box-shadow: 0 8px 32px rgba(0, 193, 230, 0.4);
+      box-shadow: var(--piano-shadow-glow);
       transition:
         transform 0.2s,
-        box-shadow 0.2s;
+        box-shadow 0.2s,
+        background 0.2s;
 
       &:hover {
         transform: translateY(-3px);
-        box-shadow: 0 12px 40px rgba(0, 193, 230, 0.55);
+        box-shadow: var(--piano-shadow-md);
+        background: var(--piano-accent-hover);
       }
 
       i {

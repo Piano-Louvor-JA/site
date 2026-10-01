@@ -580,9 +580,9 @@
   }
 
   .admin-content__nav button.active {
-    background: var(--piano-cyan);
-    color: #0a1733;
-    border-color: var(--piano-cyan);
+    background: var(--piano-accent);
+    color: #ffffff;
+    border-color: var(--piano-accent);
     font-weight: 600;
   }
 
@@ -708,9 +708,9 @@
   }
 
   .btn-primary {
-    background: var(--piano-cyan);
-    border-color: var(--piano-cyan);
-    color: #0a1733;
+    background: var(--piano-accent);
+    border-color: var(--piano-accent);
+    color: #ffffff;
     font-weight: 600;
   }
 
@@ -816,7 +816,7 @@
   }
 
   .admin-table tbody tr:hover {
-    background: rgba(0, 193, 230, 0.05);
+    background: var(--piano-accent-soft);
   }
 
   .admin-table .cell-name {
@@ -878,8 +878,8 @@
 
   .admin-table .actions button:hover:not(:disabled),
   .lyric-row .actions button:hover:not(:disabled) {
-    border-color: var(--piano-cyan);
-    background: rgba(0, 193, 230, 0.08);
+    border-color: var(--piano-accent);
+    background: var(--piano-accent-soft);
   }
 
   .admin-table .actions button.danger,
@@ -969,8 +969,8 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background: rgba(0, 193, 230, 0.12);
-    color: var(--piano-cyan);
+    background: var(--piano-accent-soft);
+    color: var(--piano-accent-text);
     border-radius: 6px;
     font-weight: 700;
     font-size: 0.8rem;

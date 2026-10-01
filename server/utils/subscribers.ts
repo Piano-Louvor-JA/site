@@ -39,7 +39,12 @@ export const parseSub = parseSubscriber
 
 export async function fetchSubscribers(): Promise<Subscriber[]> {
   const config = useRuntimeConfig()
-  if (!config.buttondownApiKey) return []
+  if (!config.buttondownApiKey) {
+    console.error(
+      '[newsletter] BUTTONDOWN_API_KEY ausente no runtime config — lista de assinantes vazia',
+    )
+    return []
+  }
 
   const subscribers: Subscriber[] = []
   let url: string | null = 'https://api.buttondown.com/v1/subscribers'
@@ -48,7 +53,14 @@ export async function fetchSubscribers(): Promise<Subscriber[]> {
     const response = await fetch(url, {
       headers: { Authorization: `Token ${config.buttondownApiKey}` },
     })
-    if (!response.ok) break
+    if (!response.ok) {
+      console.error('[newsletter] Buttondown GET /subscribers falhou', {
+        status: response.status,
+        statusText: response.statusText,
+        url,
+      })
+      break
+    }
 
     const data = (await response.json()) as ButtondownResponse
     subscribers.push(...(data.results ?? []).map(parseSubscriber))

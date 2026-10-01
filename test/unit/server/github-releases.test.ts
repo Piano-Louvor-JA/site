@@ -12,7 +12,7 @@ vi.mock('@octokit/rest', () => ({
               tag_name: 'v1.0.0',
               name: 'Release v1.0.0',
               published_at: '2025-01-15T10:00:00Z',
-              html_url: 'https://github.com/pianolouvorja/web/releases/tag/v1.0.0',
+              html_url: 'https://github.com/Piano-Louvor-JA/web/releases/tag/v1.0.0',
               body: 'body',
               assets: [],
             },

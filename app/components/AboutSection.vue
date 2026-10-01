@@ -1,5 +1,11 @@
 <script setup lang="ts">
   import { siteConfig } from '~/data/site'
+  import { useInstallsCount } from '~/composables/useInstallsCount'
+
+  const { installsNum, load } = useInstallsCount()
+
+  // Instalações em tempo real (GitHub) — fallback "0".
+  onMounted(load)
 </script>
 
 <template>
@@ -41,7 +47,7 @@
             <span class="about__stat-label">{{ $t('about.stats.free') }}</span>
           </div>
           <div class="about__stat">
-            <span class="about__stat-num">0</span>
+            <span class="about__stat-num" data-testid="about-installs-num">{{ installsNum }}</span>
             <span class="about__stat-label">{{ $t('about.stats.installs') }}</span>
           </div>
           <div class="about__stat">
@@ -57,7 +63,7 @@
 <style scoped lang="scss">
   .about {
     padding: 6rem 1.5rem;
-    background: var(--piano-gray-100);
+    background: var(--piano-bg-secondary);
     position: relative;
     overflow: hidden;
 
@@ -88,14 +94,14 @@
 
         i {
           font-size: 4rem;
-          color: var(--piano-cyan);
+          color: var(--piano-accent);
         }
       }
 
       &-text {
         font-size: 1.1rem;
         font-weight: 700;
-        color: #fff;
+        color: var(--piano-text-primary);
         letter-spacing: 0.05em;
       }
 
@@ -173,12 +179,12 @@
       &-num {
         font-size: 1.75rem;
         font-weight: 800;
-        color: var(--piano-blue);
+        color: var(--piano-accent);
       }
 
       &-label {
         font-size: 0.85rem;
-        color: var(--piano-gray-700);
+        color: var(--piano-text-muted);
       }
     }
 

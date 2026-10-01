@@ -3,7 +3,7 @@
     { "name": "main", "channel": "latest", "prerelease": false },
     { "name": "staging", "channel": "beta", "prerelease": "beta" }
   ],
-  "repositoryUrl": "https://github.com/pianolouvorja/site.git",
+  "repositoryUrl": "https://github.com/Piano-Louvor-JA/site.git",
   "tagFormat": "v${version}",
   "plugins": [
     [

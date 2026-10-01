@@ -89,13 +89,13 @@
 
 <style scoped lang="scss">
   .voidbr-iso {
-    padding: 4rem 1.5rem;
-    background: var(--piano-dark, #0a1733);
+    padding: clamp(2.5rem, 6vw, 4rem) 1.5rem;
+    background: var(--piano-dark);
 
     &__container {
-      max-width: 1100px;
+      max-width: 72rem;
       margin: 0 auto;
-      text-align: center;
+      text-align: left;
     }
 
     &__eyebrow {
@@ -140,7 +140,7 @@
 
     &__icon {
       font-size: 3.5rem;
-      color: var(--piano-cyan, #00c1e6);
+      color: var(--piano-accent-text);
 
       @media (max-width: 768px) {
         display: flex;
@@ -212,7 +212,7 @@
       align-items: center;
       gap: 0.5rem;
       background: var(--piano-yellow, #fcce02);
-      color: var(--piano-dark, #0a1733);
+      color: var(--piano-dark);
       font-weight: 700;
       padding: 0.85rem 1.75rem;
       border-radius: 8px;
@@ -235,7 +235,7 @@
       display: inline-flex;
       align-items: center;
       gap: 0.35rem;
-      color: var(--piano-cyan, #00c1e6);
+      color: var(--piano-accent-text);
       font-size: 0.875rem;
       text-decoration: none;
 

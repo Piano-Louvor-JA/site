@@ -31,7 +31,7 @@ function shellModeracao({ titulo, corpoHtml }: ShellParams): string {
       ${corpoHtml}
     </td></tr>
     <tr><td style="padding:20px 0;border-top:1px solid ${T.border};color:${T.muted};font-size:12px;">
-      <p><a href="https://github.com/pianolouvorja" style="color:${T.muted};">GitHub</a> &middot;
+      <p><a href="https://github.com/Piano-Louvor-JA" style="color:${T.muted};">GitHub</a> &middot;
       <a href="https://pianolouvorja.com.br" style="color:${T.muted};">Site</a></p>
       <p>&copy; 2026 Piano LouvorJA</p>
     </td></tr>
@@ -95,7 +95,7 @@ export function renderModeracao(
           corpoHtml:
             p('Sua inscrição como <strong>desenvolvedor(a)</strong> foi aprovada. 🎉') +
             p(
-              `Nosso código vive em <a href="https://github.com/pianolouvorja" style="color:${T.cyan};">github.com/pianolouvorja</a> e a coordenação do time acontece no <a href="${esc(vars.whatsappUrl || '#')}" style="color:${T.cyan};">grupo de devs no WhatsApp</a>.`,
+              `Nosso código vive em <a href="https://github.com/Piano-Louvor-JA" style="color:${T.cyan};">github.com/Piano-Louvor-JA</a> e a coordenação do time acontece no <a href="${esc(vars.whatsappUrl || '#')}" style="color:${T.cyan};">grupo de devs no WhatsApp</a>.`,
             ) +
             p(
               '<strong>Primeiro passo:</strong> entra no grupo, se apresenta e a gente te indica uma issue pra começar conforme tua stack.',

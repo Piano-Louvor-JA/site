@@ -1,10 +1,18 @@
 <script setup lang="ts">
-  const stats = [
-    { num: '8+', key: 'features' },
+  import { useInstallsCount } from '~/composables/useInstallsCount'
+
+  const { installsNum, load } = useInstallsCount()
+
+  // Instalações em tempo real: soma de downloads de assets de release (GitHub).
+  // Fallback "0" — nunca congela um número antigo em caso de erro.
+  onMounted(load)
+
+  const stats = computed(() => [
+    { num: '95+', key: 'features' },
     { num: '100%', key: 'free' },
-    { num: '0', key: 'installs' },
+    { num: installsNum.value, key: 'installs' },
     { num: 'PWA', key: 'offline' },
-  ] as const
+  ])
 </script>
 
 <template>
@@ -20,7 +28,7 @@
 
 <style scoped lang="scss">
   .stats {
-    background: var(--piano-bg-accent);
+    background: var(--piano-bg-solid);
     padding: 2.5rem 1.5rem;
 
     &__container {
@@ -41,13 +49,13 @@
     &__num {
       font-size: 2.5rem;
       font-weight: 800;
-      color: #fff;
+      color: var(--piano-accent);
       letter-spacing: -0.02em;
     }
 
     &__label {
       font-size: 0.9rem;
-      color: rgba(255, 255, 255, 0.8);
+      color: var(--piano-text-muted);
     }
 
     @media (max-width: 600px) {

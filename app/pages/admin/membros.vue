@@ -295,9 +295,9 @@
   }
 
   .btn-primary {
-    background: var(--piano-cyan);
-    border-color: var(--piano-cyan);
-    color: #0a1733;
+    background: var(--piano-accent);
+    border-color: var(--piano-accent);
+    color: #ffffff;
     font-weight: 600;
   }
 
@@ -350,7 +350,7 @@
   }
 
   .admin-table tbody tr:hover {
-    background: rgba(0, 193, 230, 0.05);
+    background: var(--piano-accent-soft);
   }
 
   .cell-name {
@@ -385,9 +385,9 @@
 
   .badge-owner,
   .badge-admin {
-    background: rgba(0, 193, 230, 0.12);
-    color: var(--piano-cyan);
-    border: 1px solid rgba(0, 193, 230, 0.35);
+    background: var(--piano-accent-soft);
+    color: var(--piano-accent-text);
+    border: 1px solid var(--piano-accent);
   }
 
   .badge-moderator {
@@ -416,8 +416,8 @@
   }
 
   .admin-table .actions button:hover {
-    border-color: var(--piano-cyan);
-    background: rgba(0, 193, 230, 0.08);
+    border-color: var(--piano-accent);
+    background: var(--piano-accent-soft);
   }
 
   .empty {

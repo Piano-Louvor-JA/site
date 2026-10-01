@@ -13,6 +13,8 @@ export default {
     contact: 'Contacto',
     openApp: 'Abrir App',
     language: 'Idioma',
+    releases: 'Versiones',
+    testers: 'Probadores',
     toggleTheme: 'Alternar tema claro/oscuro',
   },
   hero: {
@@ -614,7 +616,7 @@ export default {
           'Respeta los derechos de autor según la Ley 9.610/98',
         ],
         link: {
-          url: 'https://github.com/pianolouvorja',
+          url: 'https://github.com/Piano-Louvor-JA',
           text: 'repositorio en GitHub',
         },
       },

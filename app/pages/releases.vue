@@ -146,6 +146,27 @@
     return result.length > 0 ? result.join('\n') : body
   }
 
+  /**
+   * Renderiza markdown inline (bold/links) de forma sanitizada — sem v-html.
+   * Suporta: **bold**, [texto](url). Todo o resto vira texto puro escapado.
+   */
+  function renderInline(
+    text: string,
+  ): Array<{ type: 'text' | 'bold' | 'link'; value: string; href?: string }> {
+    const out: Array<{ type: 'text' | 'bold' | 'link'; value: string; href?: string }> = []
+    const re = /\*\*([^*]+)\*\*|\[([^\]]+)\]\(([^)]+)\)/g
+    let last = 0
+    let m: RegExpExecArray | null
+    while ((m = re.exec(text)) !== null) {
+      if (m.index > last) out.push({ type: 'text', value: text.slice(last, m.index) })
+      if (m[1] !== undefined) out.push({ type: 'bold', value: m[1] })
+      else out.push({ type: 'link', value: m[2] ?? '', href: m[3] })
+      last = re.lastIndex
+    }
+    if (last < text.length) out.push({ type: 'text', value: text.slice(last) })
+    return out
+  }
+
   function parseReleaseBody(
     body: string,
     activeLocale: string = 'pt-BR',
@@ -166,7 +187,11 @@
       const trimmed = line.trim()
 
       // Detect section headers (PT + EN + ES)
-      if (/^#{1,3}\s*(destaques|highlights|destacados)/i.test(trimmed)) {
+      if (
+        /^#{1,3}\s*(destaques|highlights|destacados|novos recursos|novidades|melhorias|improvements|correções|correções de bugs|correcciones|fixed|nuevo)/i.test(
+          trimmed,
+        )
+      ) {
         currentSection = 'highlights'
         continue
       }
@@ -174,7 +199,11 @@
         currentSection = 'pullRequests'
         continue
       }
-      if (/^#{1,3}\s*(changelog|changes|alterações|cambios)/i.test(trimmed)) {
+      if (
+        /^#{1,3}\s*(changelog|changes|alterações|cambios|em relação à versão|relación con la versión|notas da versão|release notes)/i.test(
+          trimmed,
+        )
+      ) {
         currentSection = 'changelog'
         continue
       }
@@ -349,7 +378,20 @@
               </h3>
               <ul class="release-card__list">
                 <li v-for="(item, i) in release.highlights" :key="`h-${i}`">
-                  {{ item }}
+                  <template v-for="(part, pi) in renderInline(item)" :key="`p-${pi}`">
+                    <strong v-if="part.type === 'bold'">{{ part.value }}</strong>
+                    <a
+                      v-else-if="part.type === 'link'"
+                      :href="part.href"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="release__link"
+                      >{{ part.value }}</a
+                    >
+                    <template v-else>
+                      {{ part.value }}
+                    </template>
+                  </template>
                 </li>
               </ul>
             </div>
@@ -360,7 +402,20 @@
               </h3>
               <ul class="release-card__list release-card__list--prs">
                 <li v-for="(item, i) in release.pullRequests" :key="`p-${i}`">
-                  {{ item }}
+                  <template v-for="(part, pi) in renderInline(item)" :key="`p-${pi}`">
+                    <strong v-if="part.type === 'bold'">{{ part.value }}</strong>
+                    <a
+                      v-else-if="part.type === 'link'"
+                      :href="part.href"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="release__link"
+                      >{{ part.value }}</a
+                    >
+                    <template v-else>
+                      {{ part.value }}
+                    </template>
+                  </template>
                 </li>
               </ul>
             </div>
@@ -371,7 +426,20 @@
               </h3>
               <ul class="release-card__list release-card__list--changelog">
                 <li v-for="(item, i) in release.changelog" :key="`c-${i}`">
-                  {{ item }}
+                  <template v-for="(part, pi) in renderInline(item)" :key="`p-${pi}`">
+                    <strong v-if="part.type === 'bold'">{{ part.value }}</strong>
+                    <a
+                      v-else-if="part.type === 'link'"
+                      :href="part.href"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="release__link"
+                      >{{ part.value }}</a
+                    >
+                    <template v-else>
+                      {{ part.value }}
+                    </template>
+                  </template>
                 </li>
               </ul>
             </div>
@@ -564,15 +632,15 @@
       }
 
       &--site {
-        background: rgba(0, 193, 230, 0.12);
+        background: var(--piano-accent-soft);
         color: var(--piano-cyan);
-        border-color: rgba(0, 193, 230, 0.25);
+        border-color: var(--piano-accent);
       }
 
       &--web {
-        background: rgba(0, 193, 230, 0.12);
+        background: var(--piano-accent-soft);
         color: var(--piano-cyan);
-        border-color: rgba(0, 193, 230, 0.25);
+        border-color: var(--piano-accent);
       }
     }
 
@@ -651,12 +719,12 @@
       }
 
       &--web {
-        background: rgba(0, 193, 230, 0.12);
+        background: var(--piano-accent-soft);
         color: var(--piano-cyan);
       }
 
       &--desktop {
-        background: rgba(4, 84, 155, 0.12);
+        background: var(--piano-accent-soft);
         color: var(--piano-accent);
       }
 

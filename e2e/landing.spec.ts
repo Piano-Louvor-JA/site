@@ -31,9 +31,11 @@ test.describe('Landing page', () => {
 
     // Check numbers are correct
     const nums = page.locator('[data-testid="stat-num"]')
-    await expect(nums.nth(0)).toHaveText('8+')
+    // Installs são carregados em tempo real via useInstallsCount (fallback "0"
+    // em ambiente sem rede/API, ex.: CI de E2E) — aceita qualquer número.
+    await expect(nums.nth(0)).toHaveText('95+')
     await expect(nums.nth(1)).toHaveText('100%')
-    await expect(nums.nth(2)).toHaveText('0')
+    await expect(nums.nth(2)).toHaveText(/[\d.]+/)
     await expect(nums.nth(3)).toHaveText('PWA')
   })
 
@@ -123,7 +125,7 @@ test.describe('Landing page', () => {
 
     // GitHub social link
     const githubLink = page.locator('.footer__social-link[aria-label="GitHub"]')
-    await expect(githubLink).toHaveAttribute('href', 'https://github.com/pianolouvorja')
+    await expect(githubLink).toHaveAttribute('href', 'https://github.com/Piano-Louvor-JA')
   })
 
   test('clicking secondary CTA scrolls to platforms', async ({ page }) => {

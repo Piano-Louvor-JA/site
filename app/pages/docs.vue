@@ -450,8 +450,8 @@
     align-items: flex-start;
     gap: 1rem;
     padding: 1.25rem 1.5rem;
-    background: rgba(0, 193, 230, 0.08);
-    border-left: 4px solid var(--piano-cyan);
+    background: var(--piano-accent-soft);
+    border-left: 4px solid var(--piano-accent);
     border-radius: var(--piano-radius-md);
 
     i {
@@ -531,7 +531,7 @@
     }
 
     tbody tr:hover {
-      background: rgba(0, 193, 230, 0.04);
+      background: var(--piano-accent-soft);
     }
   }
 

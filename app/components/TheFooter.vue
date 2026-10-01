@@ -31,7 +31,7 @@
   const donateUrl = config.public.asaasDonateUrl as string
 
   const socialLinks = [
-    { icon: 'ti-brand-github', href: 'https://github.com/pianolouvorja', label: 'GitHub' },
+    { icon: 'ti-brand-github', href: 'https://github.com/Piano-Louvor-JA', label: 'GitHub' },
     {
       icon: 'ti-brand-youtube',
       href: 'https://www.youtube.com/@pianolouvorja',

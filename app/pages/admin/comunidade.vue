@@ -323,9 +323,9 @@
       font-size: 0.9rem;
 
       &.--ativa {
-        background: #00c1e6;
-        border-color: #00c1e6;
-        color: #0a1733;
+        background: var(--piano-accent);
+        border-color: var(--piano-accent);
+        color: #ffffff;
         font-weight: 600;
       }
     }
@@ -335,7 +335,7 @@
       min-width: 20px;
       padding: 1px 6px;
       border-radius: 999px;
-      background: rgba(0, 193, 230, 0.15);
+      background: var(--piano-accent-soft);
       font-size: 0.75rem;
       text-align: center;
       margin-left: 4px;
@@ -380,7 +380,7 @@
     }
 
     &__email {
-      color: #00c1e6;
+      color: var(--piano-accent-text);
       font-size: 0.85rem;
       margin: 0 0 10px;
     }

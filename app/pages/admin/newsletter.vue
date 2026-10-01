@@ -7,6 +7,14 @@
   useHead({ title: 'Newsletter · Piano Louvor JA' })
 
   const { logout } = useFirebaseAuth()
+  const getAuthHeaders = async (): Promise<Record<string, string>> => {
+    try {
+      const token = await useFirebaseAuth().getToken()
+      return token ? { Authorization: `Bearer ${token}` } : {}
+    } catch {
+      return {}
+    }
+  }
 
   type Tab = 'compose' | 'subscribers' | 'history' | 'status'
   const activeTab = ref<Tab>('compose')
@@ -94,7 +102,10 @@
     try {
       const res = await $fetch<{ subscribers: Sub[]; total: number }>(
         '/api/admin/newsletter/subscribers',
-        { query: subSearch.value ? { search: subSearch.value } : {} },
+        {
+          query: subSearch.value ? { search: subSearch.value } : {},
+          headers: await getAuthHeaders(),
+        },
       )
       subscribers.value = res.subscribers
     } catch {
@@ -123,7 +134,7 @@
     try {
       const result = await $fetch<{ success: boolean }>(
         `/api/admin/newsletter/subscribers/${encodeURIComponent(email)}`,
-        { method: 'DELETE' },
+        { method: 'DELETE', headers: await getAuthHeaders() },
       )
       if (!result.success) return
       subscribers.value = subscribers.value.filter((s) => s.email !== email)
@@ -146,7 +157,9 @@
 
   async function loadHistory() {
     try {
-      const res = await $fetch<{ history: HistoryItem[] }>('/api/admin/newsletter/history')
+      const res = await $fetch<{ history: HistoryItem[] }>('/api/admin/newsletter/history', {
+        headers: await getAuthHeaders(),
+      })
       history.value = res.history
     } catch {
       history.value = []
@@ -161,7 +174,9 @@
 
   async function loadStatus() {
     try {
-      smtpStatus.value = await $fetch('/api/admin/newsletter/status')
+      smtpStatus.value = await $fetch('/api/admin/newsletter/status', {
+        headers: await getAuthHeaders(),
+      })
     } catch {
       smtpStatus.value = null
     }
