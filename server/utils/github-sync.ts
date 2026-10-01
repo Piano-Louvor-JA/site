@@ -143,6 +143,9 @@ export async function syncGithubSnapshots(): Promise<void> {
 /** Inicia o loop de background. Chamado uma vez no boot do server (plugin nitro). */
 export function startGithubSync(): void {
   // primeira passada adiantada (1min após boot — não atrasa o start)
-  setTimeout(() => void syncGithubSnapshots(), 60_000)
-  setInterval(() => void syncGithubSnapshots(), SYNC_INTERVAL_MS)
+  // unref: o timer não impede o processo de encerrar no `nuxt generate`
+  const first = setTimeout(() => void syncGithubSnapshots(), 60_000)
+  const loop = setInterval(() => void syncGithubSnapshots(), SYNC_INTERVAL_MS)
+  first.unref()
+  loop.unref()
 }
