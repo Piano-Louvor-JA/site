@@ -3,6 +3,7 @@
   import { updatePassword, signInWithEmailAndPassword } from 'firebase/auth'
   import type { ActivityItem, GeoStats } from '~/types/dashboard'
   import { useTimeseries } from '~/composables/useTimeseries'
+  import { formatCountryName } from '~/utils/country-display'
 
   definePageMeta({
     layout: 'admin',
@@ -108,14 +109,6 @@
     }
   }
 
-  function countryName(iso: string): string {
-    try {
-      return new Intl.DisplayNames(['pt-BR'], { type: 'region' }).of(iso.toUpperCase()) ?? iso
-    } catch {
-      return iso
-    }
-  }
-
   const topCountries = computed(() => geoStats.value?.countries.slice(0, 10) ?? [])
 
   // RF-03 (SITE-TELEMETRIA): distingue config quebrada de coleta em andamento
@@ -126,6 +119,12 @@
     }
     return 'Coletando dados — primeiros números em 24-48h.'
   })
+
+  // F1 item 4: exibe nome legível do país (Intl.DisplayNames) em vez do ISO cru.
+  // Locale da UI: o site é PT-BR por padrão (i18n en/es apenas nas landing pages).
+  function countryName(code: string): string {
+    return formatCountryName(code, 'pt-BR')
+  }
 
   function maxCountryVisits(countries: Array<{ visits: number }>): number {
     return countries.reduce((max, c) => Math.max(max, c.visits), 0)
