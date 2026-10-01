@@ -1,4 +1,3 @@
-/usr/bin/bash: warning: setlocale: LC_ALL: cannot change locale (pt_BR.UTF-8)
 # Security jobs em todo PR e no push de staging/main.
 # Gitleaks fica só no PR staging → main (workflow CI Main).
 # Bloqueia PR com: dependência vuln high+, [EXTRA] semgrep SAST
