@@ -1,10 +1,15 @@
-# Security jobs — copiar para .github/workflows/security.yml do repo
-# Bloqueia PR com: segredo no diff, dependência vuln high+, [EXTRA] semgrep SAST
+/usr/bin/bash: warning: setlocale: LC_ALL: cannot change locale (pt_BR.UTF-8)
+# Security jobs em todo PR e no push de staging/main.
+# Gitleaks fica só no PR staging → main (workflow CI Main).
+# Bloqueia PR com: dependência vuln high+, [EXTRA] semgrep SAST
 name: security
 on:
   pull_request:
   push:
     branches: [staging, main]
+
+permissions:
+  contents: read
 
 jobs:
   secrets:
@@ -17,15 +22,23 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+jobs:
   dependencies:
     name: npm audit (high+ bloqueia)
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
       - uses: actions/setup-node@v4
-        with: { node-version: 22, cache: npm }
-      - run: npm ci || npm install --no-save
-      - run: npm audit --audit-level=high
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+      # O site resolve dependências com pnpm. `npm ci` quebra no peer de
+      # vue3-apexcharts e nunca chega no audit.
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+      - name: Audit
+        run: pnpm audit --audit-level=high
 
   sast:
     name: semgrep SAST
@@ -33,4 +46,10 @@ jobs:
     container: semgrep/semgrep
     steps:
       - uses: actions/checkout@v4
-      - run: semgrep scan --config auto --error --exclude-rule generic.secrets.security.detected-generic-secret
+      # Só app/ e server/, só severidade ERROR. `auto` no repo inteiro marcava
+      # tag @v4 dos workflows e .npmrc como bloqueio (53 findings).
+      - name: Scan
+        run: |
+          semgrep scan --config p/javascript --config p/typescript \
+            --severity ERROR --error \
+            app server
