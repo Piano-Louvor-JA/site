@@ -1,5 +1,6 @@
 <script setup lang="ts">
   import { siteConfig } from '~/data/site'
+  import { useInstallsCount } from '~/composables/useInstallsCount'
   import type { AllDownloadsResponse, CategoryResult } from '~/utils/downloads'
   import { detectArch, detectDevice } from '~/utils/device-detection'
 
@@ -41,6 +42,9 @@
   const detectedOs = ref<'linux' | 'windows' | 'macos' | null>(null)
   const detectedArch = ref<'arm64' | 'x64'>('x64')
   const detectedMobilePlatform = ref<'android' | 'ios' | null>(null)
+
+  // Instalações em tempo real (GitHub) — fallback silencioso, badge só aparece com total > 0.
+  const { installsNum, installsRaw, load: loadInstalls } = useInstallsCount()
   const voidbrIso = ref<VoidbrIsoData | null>(null)
 
   interface VoidbrIsoData {
@@ -71,6 +75,9 @@
     // Mac UA não expõe arch real; userAgentData sim (Chromium). Safari/Firefox
     // caem no default x64 com link alternativo sempre visível.
     detectedArch.value = await detectArch()
+
+    // Instalações (total dinâmico do ecossistema)
+    loadInstalls()
 
     // Fetch latest release via server proxy (token-backed, no rate limit)
     try {
@@ -125,34 +132,6 @@
       })
   })
 
-  /**
-   * Link alternativo de arquitetura: usuário em Mac arm64 vê o x64 (e vice-versa).
-   * Sempre visível quando existe — correção a 1 clique se a detecção errar.
-   */
-  const altArchDownload = computed(() => {
-    if (detectedOs.value === 'macos') {
-      const primary = detectedArch.value === 'arm64' ? 'macos-arm64' : 'macos-x64'
-      const alt = detectedArch.value === 'arm64' ? 'macos-x64' : 'macos-arm64'
-      return downloadUrls.value[primary] && downloadUrls.value[alt]
-        ? {
-            url: downloadUrls.value[alt] as string,
-            arch: detectedArch.value === 'arm64' ? 'x64' : 'arm64',
-          }
-        : null
-    }
-    if (detectedOs.value === 'linux') {
-      const primary = detectedArch.value === 'arm64' ? 'linux-arm64' : 'linux-x64'
-      const alt = detectedArch.value === 'arm64' ? 'linux-x64' : 'linux-arm64'
-      return downloadUrls.value[primary] && downloadUrls.value[alt]
-        ? {
-            url: downloadUrls.value[alt] as string,
-            arch: detectedArch.value === 'arm64' ? 'x64' : 'arm64',
-          }
-        : null
-    }
-    return null
-  })
-
   const desktopCards = computed(() => [
     {
       os:
@@ -197,6 +176,13 @@
     <section class="download-hero">
       <div class="download-hero__container">
         <span class="download-hero__eyebrow">{{ $t('download.heroEyebrow') }}</span>
+        <span
+          v-if="installsRaw > 0"
+          data-testid="download-installs-badge"
+          class="download-hero__eyebrow download-hero__eyebrow--installs"
+        >
+          {{ $t('stats.installs') }}: {{ installsNum }}
+        </span>
         <h1 class="download-hero__title">
           {{ $t('download.heroTitle') }}
         </h1>
@@ -209,7 +195,7 @@
             {{ $t('download.heroWebCta') }}
           </a>
           <a
-            href="https://github.com/pianolouvorja/app"
+            href="https://github.com/Piano-Louvor-JA/app"
             class="download-hero__btn download-hero__btn--secondary"
             target="_blank"
             rel="noopener noreferrer"
@@ -310,13 +296,6 @@
               <i class="ti ti-download" aria-hidden="true" />
               {{ $t(`${card.i18nPrefix}.downloadLabel`) }}
             </button>
-            <a
-              v-if="altArchDownload && (card.os.startsWith('macos') || card.os.startsWith('linux'))"
-              :href="altArchDownload.url"
-              class="download-card__arch-alt"
-            >
-              {{ $t('download.desktop.otherArch', { arch: altArchDownload.arch }) }}
-            </a>
             <p class="download-card__hint">
               {{ $t(`${card.i18nPrefix}.hint`) }}
             </p>
@@ -350,7 +329,7 @@
         <div class="download-source">
           <span>{{ $t('download.desktop.buildFromSource') }}</span>
           <a
-            href="https://github.com/pianolouvorja/app#readme"
+            href="https://github.com/Piano-Louvor-JA/app#readme"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -435,19 +414,6 @@
     --download-radius-sm: var(--piano-radius-sm);
   }
 
-  .download-card__arch-alt {
-    display: inline-block;
-    margin-top: 0.5rem;
-    font-size: 0.8125rem;
-    color: var(--piano-cyan);
-    text-decoration: underline;
-    text-underline-offset: 3px;
-
-    &:hover {
-      color: var(--piano-cyan-light);
-    }
-  }
-
   /* Hero */
   .download-hero {
     padding: clamp(3rem, 8vw, 6rem) 1.5rem;
@@ -467,6 +433,10 @@
       font-weight: 700;
       color: var(--piano-accent);
       margin-bottom: 1rem;
+
+      &--installs {
+        margin-left: 0.75rem;
+      }
     }
 
     &__title {
@@ -548,8 +518,8 @@
     }
 
     &__header {
-      text-align: center;
-      max-width: 42rem;
+      text-align: left;
+      max-width: 72rem;
       margin: 0 auto 2.5rem;
     }
 
@@ -564,6 +534,9 @@
       background: var(--piano-accent-soft);
       color: var(--piano-accent);
       margin-bottom: 0.75rem;
+      /* alinhamento consistente entre secoes: ancora a esquerda do container,
+         nao centralizada (larguras de texto diferentes deslocavam o centro visual) */
+      margin-left: 0;
 
       &--accent {
         background: rgba(34, 197, 94, 0.12);
@@ -808,6 +781,63 @@
 
       &:hover {
         text-decoration: underline;
+      }
+    }
+  }
+
+  /* TV Brands */
+  .tv-brands {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .tv-brand-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    border: 1px solid var(--piano-border);
+    border-radius: var(--download-radius);
+    background: var(--piano-bg-solid);
+    transition: border-color 0.15s ease;
+
+    &:hover {
+      border-color: var(--piano-accent);
+    }
+
+    &__logo {
+      height: 40px;
+      width: auto;
+      max-width: 140px;
+      object-fit: contain;
+    }
+
+    &__info {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    &__name {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--piano-text-primary);
+    }
+
+    &__status {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--piano-text-tertiary);
+
+      i {
+        font-size: 0.85rem;
+        animation: spin 1.5s linear infinite;
       }
     }
   }

@@ -20,6 +20,7 @@ function mountDownloadPage() {
 describe('DownloadPage', () => {
   beforeEach(() => {
     vi.stubGlobal('useSeoMeta', vi.fn())
+    vi.stubGlobal('$fetch', vi.fn().mockResolvedValue({ total: null }))
     vi.stubGlobal(
       'fetch',
       vi.fn().mockResolvedValue({
@@ -44,13 +45,13 @@ describe('DownloadPage', () => {
             {
               name: 'LouvorJA.-.PIANO-1.17.5.AppImage',
               browser_download_url:
-                'https://github.com/pianolouvorja/app/releases/download/v1.17.5/LouvorJA.-.PIANO-1.17.5.AppImage',
+                'https://github.com/Piano-Louvor-JA/app/releases/download/v1.17.5/LouvorJA.-.PIANO-1.17.5.AppImage',
               size: 168657109,
             },
             {
               name: 'LouvorJA.-.PIANO.Setup.1.17.5.exe',
               browser_download_url:
-                'https://github.com/pianolouvorja/app/releases/download/v1.17.5/LouvorJA.-.PIANO.Setup.1.17.5.exe',
+                'https://github.com/Piano-Louvor-JA/app/releases/download/v1.17.5/LouvorJA.-.PIANO.Setup.1.17.5.exe',
               size: 127700720,
             },
           ],
@@ -84,7 +85,26 @@ describe('DownloadPage', () => {
         control.classes().includes('download-card__btn--disabled'),
       ),
     ).toBe(true)
-    expect(wrapper.html()).not.toContain('https://github.com/pianolouvorja/app/releases')
+    expect(wrapper.html()).not.toContain('https://github.com/Piano-Louvor-JA/app/releases')
     expect(wrapper.text()).toContain('Em breve')
+  })
+
+  it('não exibe o badge de instalações quando a API retorna null (fallback silencioso)', async () => {
+    const wrapper = mountDownloadPage()
+    await flushPromises()
+
+    expect(wrapper.find('[data-testid="download-installs-badge"]').exists()).toBe(false)
+  })
+
+  it('exibe o badge de instalações formatado quando a API retorna total', async () => {
+    vi.stubGlobal('$fetch', vi.fn().mockResolvedValue({ total: 1234 }))
+
+    const wrapper = mountDownloadPage()
+    await flushPromises()
+
+    const badge = wrapper.find('[data-testid="download-installs-badge"]')
+    expect(badge.exists()).toBe(true)
+    expect(badge.text()).toContain('Instalações')
+    expect(badge.text()).toContain('1.234')
   })
 })

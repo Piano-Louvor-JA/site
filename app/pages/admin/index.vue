@@ -14,7 +14,7 @@
     title: 'Dashboard · Piano Louvor JA',
   })
 
-  const { user, logout, getToken } = useFirebaseAuth()
+  const { user, loading: authLoading, logout, getToken } = useFirebaseAuth()
   const { stats, loading, refresh } = useDashboardStats()
 
   // --- Atividade recente ---
@@ -267,197 +267,208 @@
 </script>
 
 <template>
-  <!-- Modal: forcar troca de senha -->
-  <div v-if="mustChangePassword" class="change-password-overlay">
-    <div class="change-password-card">
-      <h2>Troque sua senha</h2>
-      <p class="change-password-desc">
-        Voce esta usando a senha provisoria. Por seguranca, defina uma nova senha antes de
-        continuar.
-      </p>
-      <form class="change-password-form" @submit.prevent="handleChangePassword">
-        <div class="field">
-          <label for="newPassword">Nova senha</label>
-          <input
-            id="newPassword"
-            v-model="newPassword"
-            type="password"
-            required
-            minlength="8"
-            placeholder="Minimo 8 caracteres"
-            :disabled="changingPassword"
-          />
-        </div>
-        <div class="field">
-          <label for="confirmPassword">Confirmar senha</label>
-          <input
-            id="confirmPassword"
-            v-model="confirmPassword"
-            type="password"
-            required
-            placeholder="Repita a nova senha"
-            :disabled="changingPassword"
-          />
-        </div>
-        <p v-if="changePasswordError" class="error">
-          {{ changePasswordError }}
-        </p>
-        <button type="submit" class="login-btn" :disabled="changingPassword">
-          {{ changingPassword ? 'Salvando...' : 'Trocar senha' }}
-        </button>
-      </form>
-    </div>
+  <!-- Gate de auth: nao renderiza o dashboard sem usuario autenticado (evita flash do dashboard no primeiro load) -->
+  <div v-if="authLoading" class="admin-auth-loading">
+    <i class="ti ti-loader-2" aria-hidden="true" />
   </div>
-
-  <div v-else class="dashboard">
-    <header class="dash-header">
-      <div>
-        <h1>Dashboard</h1>
-        <p class="welcome">Bem-vindo, {{ user?.email || 'admin' }}</p>
-        <p v-if="lastUpdatedText" class="updated-info">
-          {{ lastUpdatedText }}
+  <div v-else-if="!user" class="admin-auth-loading">
+    <p>Redirecionando para o login...</p>
+  </div>
+  <template v-else>
+    <!-- Modal: forcar troca de senha -->
+    <div v-if="mustChangePassword" class="change-password-overlay">
+      <div class="change-password-card">
+        <h2>Troque sua senha</h2>
+        <p class="change-password-desc">
+          Voce esta usando a senha provisoria. Por seguranca, defina uma nova senha antes de
+          continuar.
         </p>
+        <form class="change-password-form" @submit.prevent="handleChangePassword">
+          <div class="field">
+            <label for="newPassword">Nova senha</label>
+            <input
+              id="newPassword"
+              v-model="newPassword"
+              type="password"
+              required
+              minlength="8"
+              placeholder="Minimo 8 caracteres"
+              :disabled="changingPassword"
+            />
+          </div>
+          <div class="field">
+            <label for="confirmPassword">Confirmar senha</label>
+            <input
+              id="confirmPassword"
+              v-model="confirmPassword"
+              type="password"
+              required
+              placeholder="Repita a nova senha"
+              :disabled="changingPassword"
+            />
+          </div>
+          <p v-if="changePasswordError" class="error">
+            {{ changePasswordError }}
+          </p>
+          <button type="submit" class="login-btn" :disabled="changingPassword">
+            {{ changingPassword ? 'Salvando...' : 'Trocar senha' }}
+          </button>
+        </form>
       </div>
-      <div class="header-actions">
-        <button class="refresh-btn" :disabled="loading" @click="handleRefresh">
-          <i class="ti ti-refresh" :class="{ spinning: loading }" />
-          <span>{{ loading ? 'Carregando...' : 'Atualizar' }}</span>
-        </button>
-        <button class="logout-btn" @click="logout">
-          <i class="ti ti-logout" />
-          Sair
-        </button>
-      </div>
-    </header>
+    </div>
 
-    <section class="stats-grid">
-      <button
-        v-for="card in statCards"
-        :key="card.key"
-        class="stat-card"
-        :class="{ 'stat-card--active': activeView === card.key }"
-        :style="{ '--card-color': card.color }"
-        @click="activeView = activeView === card.key ? null : card.key"
-      >
-        <i :class="card.icon" class="stat-icon" />
+    <div v-else class="dashboard">
+      <header class="dash-header">
         <div>
-          <div class="stat-value">
-            <span v-if="card.loading" class="skeleton">———</span>
-            <span v-else>{{ card.value }}</span>
+          <h1>Dashboard</h1>
+          <p class="welcome">Bem-vindo, {{ user?.email || 'admin' }}</p>
+          <p v-if="lastUpdatedText" class="updated-info">
+            {{ lastUpdatedText }}
+          </p>
+        </div>
+        <div class="header-actions">
+          <button class="refresh-btn" :disabled="loading" @click="handleRefresh">
+            <i class="ti ti-refresh" :class="{ spinning: loading }" />
+            <span>{{ loading ? 'Carregando...' : 'Atualizar' }}</span>
+          </button>
+          <button class="logout-btn" @click="logout">
+            <i class="ti ti-logout" />
+            Sair
+          </button>
+        </div>
+      </header>
+
+      <section class="stats-grid">
+        <button
+          v-for="card in statCards"
+          :key="card.key"
+          class="stat-card"
+          :class="{ 'stat-card--active': activeView === card.key }"
+          :style="{ '--card-color': card.color }"
+          @click="activeView = activeView === card.key ? null : card.key"
+        >
+          <i :class="card.icon" class="stat-icon" />
+          <div>
+            <div class="stat-value">
+              <span v-if="card.loading" class="skeleton">———</span>
+              <span v-else>{{ card.value }}</span>
+            </div>
+            <div class="stat-label">
+              {{ card.label }}
+            </div>
           </div>
-          <div class="stat-label">
-            {{ card.label }}
+        </button>
+      </section>
+
+      <!-- Download breakdown by app -->
+      <section v-if="stats?.downloads?.apps?.length" class="download-breakdown">
+        <h2 class="breakdown-title">Downloads por App</h2>
+        <div class="breakdown-grid">
+          <div v-for="app in stats.downloads.apps" :key="app.repo" class="breakdown-card">
+            <div class="breakdown-card__header">
+              <span class="breakdown-card__label">{{ app.label }}</span>
+              <span v-if="app.latestTag" class="breakdown-card__tag">{{ app.latestTag }}</span>
+            </div>
+            <div class="breakdown-card__total">
+              {{ formatValue(app.totalDownloads) }}
+            </div>
+            <ul v-if="app.platforms.length" class="breakdown-platforms">
+              <li v-for="p in app.platforms" :key="p.platform" class="breakdown-platform">
+                <span class="breakdown-platform__name">{{ p.platform }}</span>
+                <span class="breakdown-platform__count">{{ formatValue(p.downloads) }}</span>
+              </li>
+            </ul>
+            <div v-else class="breakdown-platforms--empty">Sem dados por plataforma</div>
           </div>
         </div>
-      </button>
-    </section>
+      </section>
 
-    <!-- Download breakdown by app -->
-    <section v-if="stats?.downloads?.apps?.length" class="download-breakdown">
-      <h2 class="breakdown-title">Downloads por App</h2>
-      <div class="breakdown-grid">
-        <div v-for="app in stats.downloads.apps" :key="app.repo" class="breakdown-card">
-          <div class="breakdown-card__header">
-            <span class="breakdown-card__label">{{ app.label }}</span>
-            <span v-if="app.latestTag" class="breakdown-card__tag">{{ app.latestTag }}</span>
-          </div>
-          <div class="breakdown-card__total">
-            {{ formatValue(app.totalDownloads) }}
-          </div>
-          <ul v-if="app.platforms.length" class="breakdown-platforms">
-            <li v-for="p in app.platforms" :key="p.platform" class="breakdown-platform">
-              <span class="breakdown-platform__name">{{ p.platform }}</span>
-              <span class="breakdown-platform__count">{{ formatValue(p.downloads) }}</span>
-            </li>
-          </ul>
-          <div v-else class="breakdown-platforms--empty">Sem dados por plataforma</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Chart detail panel -->
-    <transition name="slide">
-      <section v-if="activeView" class="chart-panel">
-        <div class="chart-panel__header">
-          <h2>{{ getChartTitle(activeView) }}</h2>
-          <div class="chart-panel__controls">
-            <div class="chart-filters">
-              <button
-                v-for="f in ['7d', '30d', '12m']"
-                :key="f"
-                class="chart-filter"
-                :class="{ 'chart-filter--active': chartFilter === f }"
-                @click="timeseries.setPeriod(f as '7d' | '30d' | '12m')"
-              >
-                {{ f }}
+      <!-- Chart detail panel -->
+      <transition name="slide">
+        <section v-if="activeView" class="chart-panel">
+          <div class="chart-panel__header">
+            <h2>{{ getChartTitle(activeView) }}</h2>
+            <div class="chart-panel__controls">
+              <div class="chart-filters">
+                <button
+                  v-for="f in ['7d', '30d', '12m']"
+                  :key="f"
+                  class="chart-filter"
+                  :class="{ 'chart-filter--active': chartFilter === f }"
+                  @click="timeseries.setPeriod(f as '7d' | '30d' | '12m')"
+                >
+                  {{ f }}
+                </button>
+              </div>
+              <button class="chart-close" @click="activeView = null">
+                <i class="ti ti-x" />
               </button>
             </div>
-            <button class="chart-close" @click="activeView = null">
-              <i class="ti ti-x" />
-            </button>
           </div>
-        </div>
-        <AdminChart
-          :key="activeView + chartFilter"
-          :type="getChart(activeView).type"
-          :series="getChart(activeView).series"
-          :categories="getChart(activeView).categories"
-          :colors="getChart(activeView).colors"
-          :height="320"
-        />
-      </section>
-    </transition>
+          <AdminChart
+            :key="activeView + chartFilter"
+            :type="getChart(activeView).type"
+            :series="getChart(activeView).series"
+            :categories="getChart(activeView).categories"
+            :colors="getChart(activeView).colors"
+            :height="320"
+          />
+        </section>
+      </transition>
 
-    <section class="content-area">
-      <div class="panel">
-        <h2>Audiência por País (30d)</h2>
-        <div v-if="geoLoading" class="placeholder">Carregando...</div>
-        <div v-else-if="topCountries.length === 0" class="placeholder">
-          {{ geoPlaceholder }}
+      <section class="content-area">
+        <div class="panel">
+          <h2>Audiência por País (30d)</h2>
+          <div v-if="geoLoading" class="placeholder">Carregando...</div>
+          <div v-else-if="topCountries.length === 0" class="placeholder">
+            {{ geoPlaceholder }}
+          </div>
+          <ul v-else class="geo-list">
+            <li v-for="item in topCountries" :key="item.country" class="geo-item">
+              <span class="geo-country">{{ countryName(item.country) }}</span>
+              <span class="geo-bar-track">
+                <span
+                  class="geo-bar"
+                  :style="{
+                    width: `${(item.visits / Math.max(maxCountryVisits(topCountries), 1)) * 100}%`,
+                  }"
+                />
+              </span>
+              <span class="geo-visits">{{ formatValue(item.visits) }}</span>
+            </li>
+          </ul>
         </div>
-        <ul v-else class="geo-list">
-          <li v-for="item in topCountries" :key="item.country" class="geo-item">
-            <span class="geo-country">{{ countryName(item.country) }}</span>
-            <span class="geo-bar-track">
-              <span
-                class="geo-bar"
-                :style="{
-                  width: `${(item.visits / Math.max(maxCountryVisits(topCountries), 1)) * 100}%`,
-                }"
-              />
-            </span>
-            <span class="geo-visits">{{ formatValue(item.visits) }}</span>
-          </li>
-        </ul>
-      </div>
-      <div class="panel">
-        <h2>Atividade Recente</h2>
-        <div v-if="activityLoading" class="placeholder">Carregando...</div>
-        <div v-else-if="recentActivity.length === 0" class="placeholder">Dados indisponiveis.</div>
-        <ul v-else class="activity-list">
-          <li v-for="(item, i) in recentActivity" :key="i" class="activity-item">
-            <a :href="item.url" target="_blank" rel="noopener" class="activity-link">
-              <i :class="activityIcon(item.type)" class="activity-icon" />
-              <div class="activity-content">
-                <span class="activity-title">{{ item.title }}</span>
-                <span class="activity-meta">
-                  por {{ item.author }} · {{ formatRelativeTime(item.createdAt) }}
-                </span>
-              </div>
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div class="panel">
-        <h2>Links Rapidos</h2>
-        <nav class="quick-links">
-          <NuxtLink to="/" target="_blank"> Ver site </NuxtLink>
-          <NuxtLink to="/releases"> Releases </NuxtLink>
-          <NuxtLink to="/download"> Download </NuxtLink>
-        </nav>
-      </div>
-    </section>
-  </div>
+        <div class="panel">
+          <h2>Atividade Recente</h2>
+          <div v-if="activityLoading" class="placeholder">Carregando...</div>
+          <div v-else-if="recentActivity.length === 0" class="placeholder">
+            Dados indisponiveis.
+          </div>
+          <ul v-else class="activity-list">
+            <li v-for="(item, i) in recentActivity" :key="i" class="activity-item">
+              <a :href="item.url" target="_blank" rel="noopener" class="activity-link">
+                <i :class="activityIcon(item.type)" class="activity-icon" />
+                <div class="activity-content">
+                  <span class="activity-title">{{ item.title }}</span>
+                  <span class="activity-meta">
+                    por {{ item.author }} · {{ formatRelativeTime(item.createdAt) }}
+                  </span>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h2>Links Rapidos</h2>
+          <nav class="quick-links">
+            <NuxtLink to="/" target="_blank"> Ver site </NuxtLink>
+            <NuxtLink to="/releases"> Releases </NuxtLink>
+            <NuxtLink to="/download"> Download </NuxtLink>
+          </nav>
+        </div>
+      </section>
+    </div>
+  </template>
 </template>
 
 <style scoped>

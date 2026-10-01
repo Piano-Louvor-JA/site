@@ -116,6 +116,10 @@ export async function handleSubscribe(event: H3Event): Promise<{ success: true }
       body: {
         email_address: body!.email as string,
         metadata: body!.metadata ?? {},
+        // Ativa direto (decisão Rafael 30/09): double opt-in do Buttondown
+        // dependia de email de confirmação que não chegava (SPF/DKIM do
+        // remetente). Inscrição via próprio site tem validação + rate limit.
+        type: 'regular',
       },
     })
 

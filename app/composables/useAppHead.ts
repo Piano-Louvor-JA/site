@@ -53,7 +53,7 @@ export function useAppHead(options: AppHeadOptions = {}) {
     url: SITE_URL,
     logo: `${SITE_URL}/brand/logo-louvor-ja.svg`,
     sameAs: [
-      'https://github.com/pianolouvorja',
+      'https://github.com/Piano-Louvor-JA',
       'https://www.youtube.com/@pianolouvorja',
       'https://chat.whatsapp.com/LBcTv5rQDZw3OU56QmUahc',
     ],
@@ -78,7 +78,7 @@ export function useAppHead(options: AppHeadOptions = {}) {
     isAccessibleForFree: true,
     // Entity linking: conecta a entidade aos perfis oficiais (melhora rankeamento)
     sameAs: [
-      'https://github.com/pianolouvorja',
+      'https://github.com/Piano-Louvor-JA',
       'https://www.youtube.com/@pianolouvorja',
       'https://chat.whatsapp.com/LBcTv5rQDZw3OU56QmUahc',
       'https://t.me/c/4390408870/6',

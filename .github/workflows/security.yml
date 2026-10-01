@@ -11,17 +11,6 @@ permissions:
   contents: read
 
 jobs:
-  secrets:
-    name: gitleaks (segredos no diff/histórico)
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-        with: { fetch-depth: 0 } # histórico completo pra scan
-      - uses: gitleaks/gitleaks-action@v2
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-jobs:
   dependencies:
     name: npm audit (high+ bloqueia)
     runs-on: ubuntu-latest

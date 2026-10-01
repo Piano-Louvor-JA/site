@@ -14,7 +14,7 @@ export interface TeamMember {
 }
 
 /** URL da organização no GitHub — institucional, sem pessoas. */
-export const teamOrgUrl = 'https://github.com/pianolouvorja'
+export const teamOrgUrl = 'https://github.com/Piano-Louvor-JA'
 
 /**
  * Camada de pessoas: perfis públicos do GitHub (avatar, nome e link), sem

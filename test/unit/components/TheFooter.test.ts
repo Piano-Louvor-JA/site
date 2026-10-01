@@ -50,7 +50,7 @@ describe('TheFooter', () => {
 
   it('tem link do GitHub do projeto', () => {
     const wrapper = createWrapper()
-    const github = wrapper.find('a[href="https://github.com/pianolouvorja"]')
+    const github = wrapper.find('a[href="https://github.com/Piano-Louvor-JA"]')
     expect(github.exists()).toBe(true)
     expect(github.classes()).toContain('footer__social-link')
   })

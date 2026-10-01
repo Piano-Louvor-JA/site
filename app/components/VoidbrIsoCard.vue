@@ -89,13 +89,13 @@
 
 <style scoped lang="scss">
   .voidbr-iso {
-    padding: 4rem 1.5rem;
+    padding: clamp(2.5rem, 6vw, 4rem) 1.5rem;
     background: var(--piano-dark, #0a1733);
 
     &__container {
-      max-width: 1100px;
+      max-width: 72rem;
       margin: 0 auto;
-      text-align: center;
+      text-align: left;
     }
 
     &__eyebrow {
