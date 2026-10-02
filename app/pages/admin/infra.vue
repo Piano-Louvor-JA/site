@@ -8,6 +8,16 @@
     services: Record<string, string>
   }
 
+  // URLs de acesso por serviço (Tailscale — 100.x só abre em máquinas da rede).
+  // A API prod é a única com endpoint público.
+  const SERVICE_URLS: Record<string, string> = {
+    grafana: 'http://100.124.203.116:3012',
+    prometheus: 'http://100.124.203.116:9090',
+    'uptime-kuma': 'http://100.124.203.116:3013',
+    n8n: 'http://100.124.203.116:5678',
+    'piano-api-prod': 'https://api.pianolouvorja.com.br/v1/health',
+  }
+
   const { $firebaseAuth } = useNuxtApp() as unknown as {
     $firebaseAuth: { currentUser: { getIdToken: () => Promise<string> } | null }
   }
@@ -20,6 +30,10 @@
     if (pct > 90) return 'infra-card__pct--critical'
     if (pct >= 80) return 'infra-card__pct--warning'
     return 'infra-card__pct--ok'
+  }
+
+  function serviceUrl(name: string): string | undefined {
+    return SERVICE_URLS[name]
   }
 
   function serviceOk(code: string): boolean {
@@ -145,7 +159,20 @@
       <h3 class="infra__services-title">Serviços</h3>
       <ul class="infra__services">
         <li v-for="(code, name) in data.services" :key="name" class="infra-service">
-          <span class="infra-service__name">{{ name }}</span>
+          <span class="infra-service__name">
+            <a
+              v-if="serviceUrl(String(name))"
+              :href="serviceUrl(String(name))"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="infra-service__link"
+              :title="`Abrir ${String(name)} (Tailscale)`"
+            >
+              {{ name }}
+              <i class="ti ti-external-link" aria-hidden="true" />
+            </a>
+            <template v-else>{{ name }}</template>
+          </span>
           <span
             :class="[
               'infra-service__badge',
@@ -276,6 +303,25 @@
       font-size: 0.9rem;
       font-weight: 600;
       color: #e5e2e1;
+    }
+
+    &__link {
+      color: #e0895a;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      transition: color 0.2s;
+
+      i {
+        font-size: 0.85rem;
+        opacity: 0.7;
+      }
+
+      &:hover {
+        color: #c9713f;
+        text-decoration: underline;
+      }
     }
 
     &__badge {
