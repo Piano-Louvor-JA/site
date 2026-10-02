@@ -49,3 +49,7 @@ audit:
   ignore:
     - GHSA-jmr9-qjv8-65gv
     - GHSA-7pqw-9j4j-h8q3
+    # node-forge <=1.4.0 (RSA PKCS#1, via listhen do @nuxt/cli/nitro). Fix >=1.4.1
+    # NÃO existe publicado (latest = 1.4.0). Dev-only (servidor de dev do Nuxt),
+    # sem uso em runtime/produção. Reavaliar quando o fix sair.
+    - GHSA-86w9-cpqp-85rv
