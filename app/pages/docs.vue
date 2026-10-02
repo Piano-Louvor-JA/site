@@ -286,7 +286,7 @@
 
     &__eyebrow {
       display: inline-block;
-      color: var(--piano-cyan-light);
+      color: var(--piano-accent-text);
       font-size: 0.85rem;
       font-weight: 700;
       text-transform: uppercase;
@@ -297,7 +297,7 @@
     &__title {
       font-size: 3rem;
       font-weight: 800;
-      color: var(--piano-text-on-dark);
+      color: var(--piano-text-primary);
       margin-bottom: 1rem;
       letter-spacing: -0.02em;
     }
@@ -332,7 +332,7 @@
       flex-direction: column;
       gap: 0.25rem;
       padding: 1rem 0;
-      border-left: 2px solid var(--piano-gray-300);
+      border-left: 2px solid var(--piano-border);
     }
 
     &__link {
@@ -358,15 +358,15 @@
       }
 
       &:hover {
-        background: var(--piano-gray-100);
-        color: var(--piano-blue);
+        background: var(--piano-accent-soft);
+        color: var(--piano-accent-text);
       }
 
       &--active {
-        background: var(--piano-gray-100);
-        color: var(--piano-blue);
+        background: var(--piano-accent-soft);
+        color: var(--piano-accent-text);
         font-weight: 700;
-        border-left: 3px solid var(--piano-blue);
+        border-left: 3px solid var(--piano-accent);
         margin-left: -2px;
       }
     }
@@ -390,10 +390,10 @@
       color: var(--piano-text-primary);
       margin-bottom: 1rem;
       padding-bottom: 0.75rem;
-      border-bottom: 2px solid var(--piano-gray-100);
+      border-bottom: 2px solid var(--piano-border-subtle);
 
       i {
-        color: var(--piano-blue);
+        color: var(--piano-accent);
         font-size: 1.4rem;
       }
     }
@@ -418,7 +418,8 @@
       gap: 1rem;
       padding: 1rem;
       margin-bottom: 0.75rem;
-      background: var(--piano-gray-100);
+      background: var(--piano-bg-secondary);
+      border: 1px solid var(--piano-border-subtle);
       border-radius: var(--piano-radius-md);
     }
 
@@ -430,7 +431,7 @@
       height: 32px;
       border-radius: var(--piano-radius-full);
       background: var(--piano-bg-accent);
-      color: #fff;
+      color: var(--piano-on-accent);
       font-weight: 700;
       font-size: 0.9rem;
       flex-shrink: 0;
@@ -455,7 +456,7 @@
     border-radius: var(--piano-radius-md);
 
     i {
-      color: var(--piano-cyan);
+      color: var(--piano-accent);
       font-size: 1.5rem;
       flex-shrink: 0;
     }
@@ -479,17 +480,17 @@
     align-items: center;
     gap: 0.65rem;
     padding: 1rem 1.25rem;
-    background: var(--piano-white);
-    border: 1px solid var(--piano-gray-300);
+    background: var(--piano-bg-solid);
+    border: 1px solid var(--piano-border);
     border-radius: var(--piano-radius-md);
     transition: border-color 0.2s;
 
     &:hover {
-      border-color: var(--piano-cyan);
+      border-color: var(--piano-accent);
     }
 
     i {
-      color: var(--piano-blue);
+      color: var(--piano-accent-text);
       font-size: 1.2rem;
       flex-shrink: 0;
     }
@@ -505,7 +506,7 @@
   .doc-table-wrapper {
     overflow-x: auto;
     border-radius: var(--piano-radius-md);
-    border: 1px solid var(--piano-gray-300);
+    border: 1px solid var(--piano-border);
   }
 
   .doc-table {
@@ -515,7 +516,7 @@
     th {
       padding: 0.85rem 1.25rem;
       text-align: left;
-      background: var(--piano-gray-100);
+      background: var(--piano-bg-secondary);
       font-size: 0.85rem;
       font-weight: 700;
       text-transform: uppercase;
@@ -525,7 +526,7 @@
 
     td {
       padding: 0.85rem 1.25rem;
-      border-top: 1px solid var(--piano-gray-100);
+      border-top: 1px solid var(--piano-border-subtle);
       font-size: 0.95rem;
       color: var(--piano-text-primary);
     }
@@ -538,8 +539,9 @@
   .doc-kbd {
     display: inline-block;
     padding: 0.2rem 0.6rem;
-    background: var(--piano-dark);
-    color: var(--piano-cyan-light);
+    background: var(--piano-bg-secondary);
+    border: 1px solid var(--piano-border);
+    color: var(--piano-accent-text);
     border-radius: var(--piano-radius-sm);
     font-family: 'JetBrains Mono', 'Fira Code', monospace;
     font-size: 0.85rem;
@@ -553,13 +555,13 @@
     gap: 0.75rem;
 
     &__item {
-      background: var(--piano-white);
-      border: 1px solid var(--piano-gray-300);
+      background: var(--piano-bg-solid);
+      border: 1px solid var(--piano-border);
       border-radius: var(--piano-radius-md);
       overflow: hidden;
 
       &[open] {
-        border-color: var(--piano-blue);
+        border-color: var(--piano-accent);
       }
     }
 
@@ -580,7 +582,7 @@
       }
 
       i {
-        color: var(--piano-blue);
+        color: var(--piano-accent);
         transition: transform 0.2s;
         flex-shrink: 0;
       }
@@ -617,7 +619,7 @@
         flex-direction: row;
         flex-wrap: wrap;
         border-left: none;
-        border-bottom: 2px solid var(--piano-gray-300);
+        border-bottom: 2px solid var(--piano-border);
         padding: 0 0 1rem;
       }
 
@@ -630,7 +632,7 @@
           border-left: none;
           margin-left: 0;
           background: var(--piano-bg-accent);
-          color: #fff;
+          color: var(--piano-on-accent);
         }
       }
     }

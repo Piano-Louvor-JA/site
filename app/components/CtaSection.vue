@@ -48,7 +48,7 @@
       position: absolute;
       width: 600px;
       height: 600px;
-      background: radial-gradient(circle, var(--piano-cyan) 0%, transparent 70%);
+      background: radial-gradient(circle, var(--piano-accent) 0%, transparent 70%);
       border-radius: 50%;
       top: 50%;
       left: 50%;
@@ -67,7 +67,7 @@
 
     &__icon {
       font-size: 3rem;
-      color: var(--piano-cyan);
+      color: var(--piano-accent);
       margin-bottom: 1.25rem;
       display: block;
     }
@@ -75,7 +75,7 @@
     &__title {
       font-size: 2.5rem;
       font-weight: 800;
-      color: #fff;
+      color: var(--piano-text-primary);
       margin-bottom: 1rem;
       letter-spacing: -0.02em;
       line-height: 1.2;
@@ -83,7 +83,7 @@
 
     &__subtitle {
       font-size: 1.15rem;
-      color: rgba(255, 255, 255, 0.75);
+      color: var(--piano-text-secondary);
       line-height: 1.7;
       max-width: 520px;
       margin: 0 auto 2rem;
@@ -99,7 +99,7 @@
       font-weight: 700;
       text-decoration: none;
       background: var(--piano-accent);
-      color: #fff;
+      color: var(--piano-on-accent);
       box-shadow: var(--piano-shadow-glow);
       transition:
         transform 0.2s,
@@ -129,11 +129,11 @@
         align-items: center;
         gap: 0.375rem;
         font-size: 0.9rem;
-        color: rgba(255, 255, 255, 0.6);
+        color: var(--piano-nav-muted);
       }
 
       i {
-        color: var(--piano-cyan);
+        color: var(--piano-accent);
         font-size: 1.05rem;
       }
     }

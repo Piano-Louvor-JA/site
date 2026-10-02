@@ -289,13 +289,13 @@
     text-align: center;
     margin-top: 1.5rem;
     font-size: 0.8125rem;
-    color: #64748b;
+    color: #94a3b8;
     text-decoration: none;
     transition: color 0.15s;
   }
 
   .back-link:hover {
-    color: #94a3b8;
+    color: #22d3ee;
   }
 
   .reset-link {
@@ -303,7 +303,7 @@
     text-align: center;
     background: none;
     border: none;
-    color: #64748b;
+    color: #94a3b8;
     font-size: 0.8125rem;
     cursor: pointer;
     padding: 0.5rem 0;
