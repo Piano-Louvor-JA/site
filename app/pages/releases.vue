@@ -208,10 +208,10 @@
         continue
       }
 
-      // Collect list items
+      // Collect list items (ignora separadores '---'/'--' do markdown)
       if (currentSection && trimmed.startsWith('-')) {
-        const item = trimmed.replace(/^-\s*/, '').trim()
-        if (item) {
+        const item = trimmed.replace(/^-+\s*/, '').trim()
+        if (item && !/^-+$/.test(trimmed)) {
           sections[currentSection].push(item)
         }
       }
@@ -225,8 +225,11 @@
     ) {
       sections.changelog = localizedBody
         .split('\n')
-        .filter((l) => l.trim().startsWith('-'))
-        .map((l) => l.trim().replace(/^-\s*/, ''))
+        .filter((l) => {
+          const s = l.trim()
+          return s.startsWith('-') && !/^-+$/.test(s)
+        })
+        .map((l) => l.trim().replace(/^-+\s*/, ''))
     }
 
     return sections
