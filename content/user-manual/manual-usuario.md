@@ -1,120 +1,195 @@
 # LouvorJA PIANO — Manual do Usuário
 
-**Versão 1.29.1** · Aplicativo de projeção e apoio ao culto
+**Versão 1.29.1** · Projeção, hinos e apoio completo ao culto
+
+> Este manual ensina a usar **todos** os recursos do aplicativo — inclusive os que não estão
+> na cara. Cada seção traz não só o "como fazer", mas o "para que serve" e as combinações
+> que economizam tempo no culto.
 
 ---
 
-## Bem-vindo
+## A ideia central do aplicativo
 
-O LouvorJA PIANO é o aplicativo que organiza **tudo o que aparece na tela durante o culto**: hinos e letras, Bíblia, relógio, temporizador, contagem regressiva, sorteios e a liturgia completa. Você controla tudo em uma janela (o **operador**) e o que a igreja vê aparece na **tela de projeção** — outro monitor, TV ou o aplicativo do Palco.
+O LouvorJA PIANO separa o culto em **duas telas**:
 
-Este manual foi escrito a partir do funcionamento real do aplicativo, seção por seção.
+- **Tela do operador** (você): onde você prepara e controla tudo.
+- **Tela da igreja** (projeção): outro monitor, TV ou o aplicativo do Palco — mostra apenas o que interessa à congregação, no estilo visual que você escolheu.
 
----
-
-## Primeira abertura
-
-Na primeira vez, o aplicativo mostra a tela de configuração inicial e prepara o catálogo (hinos, coletâneas e capas são baixados em segundo plano — você pode usar o app enquanto isso). Nas aberturas seguintes, ele abre direto, rápido.
-
-> **Offline-first:** tudo o que você baixa ou configura fica salvo no próprio aparelho. Se a internet cair, ou se você fechar e reabrir o aplicativo, nada se perde — downloads, progresso e configurações continuam de onde estavam.
+Você prepara **antes** (downloads, liturgia, configuração visual) e durante o culto só **clica e avança**. Tudo é salvo automaticamente no seu aparelho: pode fechar, reiniciar o computador ou perder a internet — **nada se perde** (downloads, progresso, liturgias, configurações).
 
 ---
 
-## As telas do aplicativo
+## Conhecendo a tela
 
-Na barra de navegação você encontra 7 seções:
+Na barra de navegação há 7 seções:
 
-| Seção                | O que faz                                               |
-| -------------------- | ------------------------------------------------------- |
-| **Início**           | Resumo e atalhos                                        |
-| **Central de Mídia** | Hinos, coletâneas, letras, slides e mídia para projeção |
-| **Comunidade**       | Ranking e recursos comunitários                         |
-| **Liturgia**         | Montagem da programação do culto, item por item         |
-| **Bíblia**           | Leitura e projeção de versículos                        |
-| **Utilitários**      | Relógio, temporizador, contagem regressiva, sorteios    |
-| **Configurações**    | Aparência, projeção, contas e backup                    |
+**Início** · **Central de Mídia** · **Comunidade** · **Liturgia** · **Bíblia** · **Utilitários** · **Configurações**
+
+No canto superior você encontra ainda:
+
+- **Zoom da interface** (−/＋): aumenta ou diminui o tamanho de tudo no app. Se o computador está longe e a letra parece pequena, aumente aqui — a configuração fica salva.
+- **Relógio** no cabeçalho, sempre visível.
+- **Botão de conta** (quando habilitado) para entrar com seu usuário.
 
 ---
 
-## 1. Central de Mídia (hinos e letras)
+## 1. Central de Mídia — hinos, letras e slides
 
-É aqui que você prepara o que será cantado.
+### O básico
 
-- **Buscar**: digite o nome do hino ou trecho da letra. Os resultados aparecem na lista.
-- **Baixar**: hinos baixados ficam disponíveis offline, com barra de progresso. Se a conexão cair no meio, o progresso fica salvo.
-- **Projetar**: com um hino aberto, o botão **Projetar** envia a letra para a tela de projeção. Ao avançar de slide/estrofe, a tela da igreja acompanha em tempo real.
-- **Player**: hinos com áudio têm controles de play/pause. O áudio toca mesmo se você navegar para outra seção; pause e volume ficam sempre acessíveis.
-- **Capa**: quando o hino não tem letra selecionada, a projeção mostra a capa do álbum com o título.
+1. Digite na busca o nome do hino ou um trecho da letra.
+2. Clique no hino para abrir.
+3. Clique em **Projetar** — a letra vai para a tela da igreja.
+4. Avance slide a slide (estrofe/verso/refrão); a projeção acompanha na hora.
 
-## 2. Liturgia (programação do culto)
+### Baixando para usar sem internet
 
-Monte o culto inteiro antes dele começar:
+- Cada hino tem botão de **download**. Com barra de progresso visível, você acompanha.
+- **Pode fechar o app no meio do download**: o progresso fica salvo e continua depois.
+- Hino baixado = disponível para sempre, sem internet.
 
-1. Clique em **Liturgia** e crie uma nova liturgia.
-2. **Adicione itens** escolhendo o tipo:
-   - **Categoria/Separador** — divide o culto em blocos (ex.: "Louvor", "Palavra"). Tem horário de início e fim.
-   - **Música** — puxa do catálogo; você pode escrever um título complementar (ex.: "Boas-vindas").
-   - **Vídeo / Áudio / Imagens / PDF / Apresentação (PPT)** — arquivos do seu computador.
-   - **Site / Vídeo online** — qualquer link (YouTube, Vimeo).
-   - **Anotações** — texto livre para a equipe.
-3. **Reordene** arrastando os itens. Categorias arrastam os filhos juntos.
-4. **Salve**. Ao reabrir, tudo está exatamente como deixou.
-5. Durante o culto, projete item por item e marque como **concluído** o que já passou.
+### O que dá para fazer com um hino aberto
 
-> Itens com horário inválido são apontados na hora: o aplicativo foca o campo que precisa de correção.
+- **Letra e slides**: avance/refaça slides livremente; a barra de progresso do slide aparece na projeção.
+- **Capa**: se não houver letra selecionada, a projeção mostra automaticamente a **capa do álbum** com o título — bom para o momento do pré-lobby.
+- **Próxima frase**: a projeção mostra um preview do que vem depois.
+- **Player de áudio**: play/pause, volume e posição. O áudio **continua tocando** enquanto você navega em outras seções — perfeito para o hino tocar enquanto você já abre a Bíblia.
+- **Trocar de hino durante o áudio**: o app faz a transição suave (fade) entre o áudio que está tocando e o novo.
+
+### Editor de música (para quem monta o acervo)
+
+No editor você pode:
+
+- **Importar/exportar arquivos `.slja`** — o formato do LouvorJA antigo (Delphi). Se sua igreja tem acervo do sistema anterior, é por aqui que ele entra.
+- **Alterar a capa da coletânea** e **remover capa**.
+- **Ocultar/mostrar painéis** de edição para trabalhar com mais espaço na tela.
+
+---
+
+## 2. Liturgia — monte o culto inteiro antes
+
+A Liturgia é o recurso mais poderoso do app: em vez de ficar procurando hino/bíblia/cronômetro durante o culto, você **monta tudo antes** e durante o culto só clica em "próximo".
+
+### Montando
+
+1. Abra **Liturgia** → crie uma nova.
+2. Adicione itens de vários tipos:
+   - **Categoria/Separador** — cria blocos visuais ("Louvor", "Palavra", "Ofertório"). Tem horário de início e fim, e serve para agrupar os itens seguintes.
+   - **Música** — busca no catálogo; campo livre para título complementar ("Boas-vindas", "Oração").
+   - **Vídeo, Áudio, Imagens (várias de uma vez), PDF, Apresentação PowerPoint** — arquivos locais.
+   - **Site / Vídeo online** — cole qualquer link (YouTube, Vimeo).
+   - **Anotações** — recadinho para a equipe (não vai para a tela da igreja).
+3. **Reordene arrastando**: arrastar uma categoria leva todos os itens dela juntos.
+4. **Salve**. Pode fechar o app — abre exatamente como estava.
+
+### Durante o culto
+
+- Avance item por item; o app marca o que já passou (**done**), ajudando a equipe a saber em que ponto está.
+- Erro de preenchimento (ex.: horário da categoria faltando)? O app **foca automaticamente o campo errado** — não precisa caçar.
+
+### Dicas de quem usa no dia a dia
+
+- Monte a liturgia **na ordem do culto** usando categorias como marcadores de tempo — facilita ver se o culto está dentro do horário.
+- Vídeo e PDF abrem no player configurado (veja seção Configurações → Player externo).
+
+---
 
 ## 3. Bíblia
 
-- Escolha **versão, livro, capítulo e versículos**.
-- **Projetar** envia o versículo para a tela. Ao trocar de versículo, a tela acompanha.
-- O controle remoto (se emparelhado) também pode avançar versículos durante o culto.
+- Escolha **versão → livro → capítulo → versículo(s)**.
+- **Projetar**: o texto vai para a tela da igreja com o estilo configurado.
+- **Selecionar versículo**: o controle remoto também consegue avançar/limpar seleção durante o culto.
+- **Fechar projeção da Bíblia** com um comando, sem precisar navegar.
 
-## 4. Utilitários
+> Combinação útil: projete a Bíblia durante a mensagem e use o **relógio** no segundo monitor/TV para controlar o tempo.
 
-- **Relógio**: digital, com escolha de cor, formato 12/24h e exibir segundos.
-- **Temporizador**: conta o tempo do culto ou de um segmento.
-- **Contagem regressiva**: para começar o culto no horário.
-- **Sorteios**: sorteia números, nomes ou ítens com som e animação na tela.
-- Todos têm **presets de cor** e podem ser projetados como os demais.
+---
+
+## 4. Utilitários — relógio, tempo e sorteios
+
+- **Relógio**: digital, escolha **cor**, **12/24h** e **mostrar segundos**. Ideal para o telão antes do culto começar.
+- **Temporizador**: cronomatra o culto. Suporta **marcas** (save marks) para guardar momentos.
+- **Contagem regressiva**: contagem para o início — configure a duração, inicie, e a igreja vê o tempo restante.
+- **Sorteios**: sorteie números, nomes ou itens da lista, com som e animação na tela da igreja.
+- Todos aceitam **presets de cor** e projeção igual aos outros módulos.
+
+---
 
 ## 5. Comunidade
 
 Ranking e conteúdo compartilhado com a comunidade LouvorJA.
 
-## 6. Configurações
+---
 
-- **Aparência**: tema claro/escuro e preferências visuais.
-- **Projeção**: personalize o que a igreja vê — cor de fundo e do texto, tamanho da fonte, moldura da caixa de texto, imagem de fundo e alinhamento. Serve para as letras, relógio, temporizador e demais telas.
-- **Players externos** (Windows/Desktop): escolha qual programa abrir seus vídeos e áudios, ou detecte os instalados. Você pode adicionar um player que não aparece na lista escolhendo o arquivo do executável.
-- **Backup**: exporta/importa seus dados.
-- **Conta**: entre com sua conta para sincronizar (opcional — esqueci minha senha e cadastro funcionam pela mesma tela).
-- **Pasta de mídia legada** (Windows): importa o acervo do aplicativo antigo.
+## 6. Configurações — deixe a tela da igreja do seu jeito
 
-## 7. Controle remoto / Palco
+### Projeção (o que a igreja vê)
 
-- **Emparelhe** o celular ou outra tela pela aba de Controle Remoto (P2P na mesma rede, ou via servidor).
-- Depois de emparelhado, o celular vira controle: avança hino, versículo, play/pause.
-- O **Palco** (receiver em TV) conecta pela rede e mostra a projeção com o mesmo conteúdo.
+- **Cor de fundo e cor do texto** da letra.
+- **Tamanho da fonte** (slider de 50% a 200%) e **peso da fonte**.
+- **Caixa de texto**: liga/desliga a moldura atrás da letra, com opacidade e borda ajustáveis — essencial quando o fundo tem imagem clara.
+- **Alinhamento** horizontal e vertical do texto na tela.
+- **Imagem de fundo**: presets oficiais ou qualquer imagem.
+- **Dica**: fundo claro → use caixa escura; fundo escuro → caixa clara ou sem caixa.
+
+### Estilo da Bíblia
+
+Peso da fonte e alinhamento específicos para versículos (separados da configuração das letras).
+
+### Player externo (Desktop/Windows)
+
+- **Associado ao sistema**: usa o player padrão do Windows — recomendado.
+- Ou escolha um player detectado (VLC etc.) ou **adicione qualquer executável** pelo seletor de arquivos (ex.: MPV, PotPlayer).
+- **Remover** um player customizado volta para o associado.
+
+### Backup
+
+Exporte suas configurações e dados para transferir para outro computador.
+
+### Conta
+
+Entrar, cadastrar e **recuperar senha** ("Esqueci minha senha" envia um token de redefinição — o app não revela se o e-mail existe, por segurança).
+
+### Mídia legada (Windows)
+
+Importa automaticamente o acervo do aplicativo antigo: escolha a pasta e o app analisa, mostra o que falta e importa.
 
 ---
 
-## Atalhos e comportamentos úteis
+## 7. Controle remoto e Palco
 
-- **ESC** durante a projeção encerra a projeção (com confirmação).
-- Projetando algo, **trocar de seção não derruba** a projeção — ela continua até você encerrar.
-- Tudo é salvo automaticamente: pode fechar e reabrir quando quiser.
+- **Emparelhe** o celular/outra tela: P2P na mesma rede ou via servidor (duas abas de pareamento).
+- Do controle remoto você pode: **buscar hino, abrir música (com álbum), avançar versículo, limpar seleção, fechar projeção, iniciar/pausar/zerar timer e countdown, salvar marcas, configurar o relógio, ligar/desligar projeção de cada módulo**.
+- **Palco (TV)**: o receiver conecta na rede e mostra a projeção. Ideal para igrejas com TV separada do projetor.
+
+---
+
+## Recursos que passam despercebidos (e ajudam muito)
+
+| Recurso                     | Onde                   | Para que serve                                                           |
+| --------------------------- | ---------------------- | ------------------------------------------------------------------------ |
+| **Zoom da interface**       | Cabeçalho, botões −/＋ | Computador longe ou tela pequena: aumente tudo                           |
+| **`.slja` import/export**   | Editor de música       | Traz o acervo do LouvorJA antigo (Delphi); faz backup de hino individual |
+| **Fade entre áudios**       | Automático             | Trocar de hino não "estoura" — transição suave                           |
+| **Capa automática**         | Projeção de hino       | Sem slide selecionado, mostra a capa do álbum                            |
+| **Marcas do temporizador**  | Timer                  | Salva timestamps de momentos do culto                                    |
+| **PowerPoint customizável** | Configurações → PPT    | Escolha o motor de apresentação ou deixe o global                        |
+| **ESC na projeção**         | Atalho                 | Encerra a projeção com confirmação — sem medo de clicar errado           |
+| **Nada se perde**           | Sempre                 | Fechar/reiniciar/perder internet não apaga nada do que você fez          |
 
 ---
 
 ## Problemas comuns
 
-| Situação                      | O que fazer                                                                                                                  |
-| ----------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
-| Catálogo não carrega          | O aplicativo tenta várias APIs automaticamente. Verifique a internet; o que já está baixado continua funcionando offline.    |
-| Vídeo não abre                | Em Desktop, confira em Configurações qual player está selecionado; "Associado ao sistema" usa o player padrão do Windows.    |
-| Tela de projeção não atualiza | Confirme que a janela de projeção está aberta na opção certa (Mídia/Bíblia/etc.). Reabra a janela de projeção se necessário. |
-| Erro no início do app         | Use **Tentar novamente** na própria tela de erro. Se persistir, o app continua abrindo com o que está salvo localmente.      |
+| Situação                          | O que fazer                                                                                                   |
+| --------------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| Catálogo não carrega              | O app tenta automaticamente várias APIs em cascata. O que já foi baixado **continua funcionando offline**.    |
+| Vídeo abre no player errado       | Configurações → Player externo → "Associado ao sistema" ou escolha outro.                                     |
+| Tela da igreja não atualiza       | Confirme que a janela de projeção está aberta no módulo certo (ex.: `Mídia`, `Bíblia`). Reabra se necessário. |
+| App iniciou com erro              | Clique em **Tentar novamente**. Sem bridge (modo navegador), o app avisa mas continua com os dados locais.    |
+| Letra pequena na tela do operador | Zoom da interface (＋) no cabeçalho.                                                                          |
+| Perdi o progresso de um download  | Não perdeu: recarregue e o progresso continua de onde parou.                                                  |
 
 ---
 
-_Manual gerado a partir do código-fonte v1.29.1 — cada seção reflete o comportamento real do aplicativo._
+_Manual gerado do código-fonte v1.29.1. Cada recurso descrito foi verificado no funcionamento real do aplicativo._
