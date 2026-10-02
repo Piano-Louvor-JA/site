@@ -72,7 +72,7 @@
       </div>
 
       <div v-if="resetSent" class="reset-success">
-        <i class="ti ti-mail-check" aria-hidden="true" style="font-size: 2.5rem; color: #22d3ee" />
+        <i class="ti ti-mail-check" aria-hidden="true" style="font-size: 2.5rem; color: #e0895a" />
         <p>Email de recuperação enviado!</p>
         <p class="reset-hint">
           Verifique sua caixa de entrada (e o spam) e clique no link para redefinir sua senha.
@@ -159,8 +159,8 @@
   .login-card {
     width: 100%;
     max-width: 400px;
-    background: #111827;
-    border: 1px solid #1e293b;
+    background: #1e1e1e;
+    border: 1px solid #353534;
     border-radius: 12px;
     padding: 2.5rem;
   }
@@ -174,12 +174,12 @@
     font-size: 1.5rem;
     font-weight: 700;
     margin: 0 0 0.25rem;
-    color: #22d3ee;
+    color: #e0895a;
   }
 
   .login-header p {
     font-size: 0.875rem;
-    color: #94a3b8;
+    color: #bfc7d4;
     margin: 0;
   }
 
@@ -198,22 +198,22 @@
   .field label {
     font-size: 0.8125rem;
     font-weight: 600;
-    color: #cbd5e1;
+    color: #e5e2e1;
   }
 
   .field input {
     padding: 0.75rem 1rem;
-    background: #0f172a;
+    background: #242424;
     border: 1px solid #334155;
     border-radius: 8px;
-    color: #e2e8f0;
+    color: #e5e2e1;
     font-size: 0.9375rem;
     transition: border-color 0.15s;
   }
 
   .field input:focus {
     outline: none;
-    border-color: #22d3ee;
+    border-color: #e0895a;
   }
 
   .field input:disabled {
@@ -236,7 +236,7 @@
     right: 0.5rem;
     background: none;
     border: none;
-    color: #64748b;
+    color: #8a93a1;
     cursor: pointer;
     padding: 0.25rem;
     display: flex;
@@ -246,7 +246,7 @@
   }
 
   .password-toggle:hover {
-    color: #22d3ee;
+    color: #e0895a;
   }
 
   .password-toggle i {
@@ -265,8 +265,8 @@
 
   .login-btn {
     padding: 0.75rem 1rem;
-    background: #22d3ee;
-    color: #0a0e1a;
+    background: #e0895a;
+    color: #131313;
     border: none;
     border-radius: 8px;
     font-size: 0.9375rem;
@@ -276,7 +276,7 @@
   }
 
   .login-btn:hover:not(:disabled) {
-    background: #06b6d4;
+    background: #c9713f;
   }
 
   .login-btn:disabled {
@@ -289,13 +289,13 @@
     text-align: center;
     margin-top: 1.5rem;
     font-size: 0.8125rem;
-    color: #94a3b8;
+    color: #bfc7d4;
     text-decoration: none;
     transition: color 0.15s;
   }
 
   .back-link:hover {
-    color: #22d3ee;
+    color: #e0895a;
   }
 
   .reset-link {
@@ -303,7 +303,7 @@
     text-align: center;
     background: none;
     border: none;
-    color: #94a3b8;
+    color: #bfc7d4;
     font-size: 0.8125rem;
     cursor: pointer;
     padding: 0.5rem 0;
@@ -312,7 +312,7 @@
   }
 
   .reset-link:hover {
-    color: #22d3ee;
+    color: #e0895a;
   }
 
   .reset-success {
@@ -321,14 +321,14 @@
   }
 
   .reset-success p {
-    color: #cbd5e1;
+    color: #e5e2e1;
     font-size: 0.9rem;
     margin: 0.75rem 0 0.25rem;
   }
 
   .reset-hint {
     font-size: 0.8125rem !important;
-    color: #64748b !important;
+    color: #8a93a1 !important;
     margin-top: 0.5rem !important;
   }
 </style>

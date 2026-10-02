@@ -286,7 +286,7 @@
     }
 
     &__sub {
-      color: var(--color-text-muted, #64748b);
+      color: var(--color-text-muted, #8a93a1);
       font-size: 0.9rem;
       margin: 0;
     }
@@ -316,7 +316,7 @@
     &__tab {
       padding: 8px 14px;
       border-radius: 999px;
-      border: 1px solid var(--color-border, #1e293b);
+      border: 1px solid var(--color-border, #353534);
       background: transparent;
       color: inherit;
       cursor: pointer;
@@ -345,7 +345,7 @@
       margin-left: auto;
       padding: 8px 14px;
       border-radius: 8px;
-      border: 1px solid var(--color-border, #1e293b);
+      border: 1px solid var(--color-border, #353534);
       background: transparent;
       color: inherit;
       cursor: pointer;
@@ -363,13 +363,13 @@
     }
 
     &__vazio {
-      color: var(--color-text-muted, #64748b);
+      color: var(--color-text-muted, #8a93a1);
       text-align: center;
       padding: 40px 0;
     }
 
     &__card {
-      border: 1px solid var(--color-border, #1e293b);
+      border: 1px solid var(--color-border, #353534);
       border-radius: 12px;
       padding: 16px;
 
@@ -394,7 +394,7 @@
     }
 
     dt {
-      color: var(--color-text-muted, #64748b);
+      color: var(--color-text-muted, #8a93a1);
       font-size: 0.75rem;
       text-transform: uppercase;
       letter-spacing: 0.03em;

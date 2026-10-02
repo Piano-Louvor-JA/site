@@ -252,8 +252,8 @@
 
   input,
   select {
-    background: #0a0e1a;
-    border: 1px solid #1e293b;
+    background: #131313;
+    border: 1px solid #353534;
     border-radius: 8px;
     color: var(--piano-text-on-dark, #fff);
     padding: 0.5rem 0.75rem;
@@ -277,8 +277,8 @@
     gap: 0.4rem;
     padding: 0.5rem 1rem;
     border-radius: 8px;
-    border: 1px solid #1e293b;
-    background: #111827;
+    border: 1px solid #353534;
+    background: #1e1e1e;
     color: var(--piano-text-on-dark, #fff);
     cursor: pointer;
     font-size: 0.85rem;
@@ -316,8 +316,8 @@
   }
 
   .table-card {
-    background: #111827;
-    border: 1px solid #1e293b;
+    background: #1e1e1e;
+    border: 1px solid #353534;
     border-radius: 12px;
     overflow: hidden;
     margin-bottom: 1rem;
@@ -336,7 +336,7 @@
     text-transform: uppercase;
     letter-spacing: 0.05em;
     color: var(--piano-text-on-dark-muted, rgba(255, 255, 255, 0.7));
-    border-bottom: 1px solid #1e293b;
+    border-bottom: 1px solid #353534;
   }
 
   .admin-table td {
@@ -398,7 +398,7 @@
 
   .badge-member {
     background: rgba(148, 163, 184, 0.12);
-    color: #cbd5e1;
+    color: #e5e2e1;
     border: 1px solid rgba(148, 163, 184, 0.35);
   }
 
@@ -407,7 +407,7 @@
     align-items: center;
     gap: 0.3rem;
     padding: 0.3rem 0.65rem;
-    border: 1px solid #1e293b;
+    border: 1px solid #353534;
     border-radius: 6px;
     background: transparent;
     color: rgba(255, 255, 255, 0.85);
@@ -452,8 +452,8 @@
   }
 
   .confirm__card {
-    background: #111827;
-    border: 1px solid #1e293b;
+    background: #1e1e1e;
+    border: 1px solid #353534;
     border-radius: 14px;
     padding: 1.5rem;
     max-width: 28rem;
