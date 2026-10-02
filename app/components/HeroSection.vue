@@ -211,13 +211,13 @@
     }
 
     &__title-accent {
-      // Sem gradiente: "Simples" na marca azul, "e Completo" no acento laranja
-      color: var(--brand-blue);
-      -webkit-text-fill-color: var(--brand-blue);
+      // Sem gradiente: "Simples" na marca azul, "e Completo" no acento (texto AA por tema)
+      color: var(--piano-title-accent);
+      -webkit-text-fill-color: var(--piano-title-accent);
 
       span {
-        color: var(--site-accent);
-        -webkit-text-fill-color: var(--site-accent);
+        color: var(--piano-accent-text);
+        -webkit-text-fill-color: var(--piano-accent-text);
       }
     }
 
@@ -251,7 +251,7 @@
 
       &--primary {
         background: var(--site-accent);
-        color: #fff;
+        color: var(--piano-on-accent);
         box-shadow: var(--piano-shadow-glow);
 
         &:hover {

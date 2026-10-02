@@ -49,7 +49,7 @@
     &__num {
       font-size: 2.5rem;
       font-weight: 800;
-      color: var(--piano-accent);
+      color: var(--piano-accent-text);
       letter-spacing: -0.02em;
     }
 

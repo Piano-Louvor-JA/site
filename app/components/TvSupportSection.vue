@@ -150,7 +150,7 @@
     &__brand-name {
       font-size: 1rem;
       font-weight: 600;
-      color: var(--piano-cyan-light);
+      color: var(--piano-accent-text);
       text-align: center;
     }
 

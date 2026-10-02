@@ -313,7 +313,7 @@
     }
 
     &__brand-louvor {
-      color: #fff;
+      color: var(--piano-chip-text);
     }
 
     &__brand-ja {
@@ -332,7 +332,7 @@
     &__codename {
       height: 16px;
       width: auto;
-      filter: brightness(0) invert(1);
+      filter: var(--piano-codename-filter);
     }
 
     /* Theme toggle */
@@ -380,7 +380,7 @@
         &:focus-visible {
           background: var(--site-accent-soft);
           border-color: rgba(224, 137, 90, 0.4);
-          color: #fff;
+          color: var(--piano-accent-text);
         }
 
         i {
@@ -415,7 +415,7 @@
         text-align: left;
         background: none;
         border: none;
-        color: rgba(255, 255, 255, 0.85);
+        color: var(--piano-nav-text);
         padding: 0.5rem 0.75rem;
         border-radius: var(--piano-radius-sm);
         cursor: pointer;
@@ -426,7 +426,7 @@
         &:hover,
         &:focus-visible {
           background: var(--site-accent-soft);
-          color: #fff;
+          color: var(--piano-accent-text);
         }
       }
     }
@@ -471,7 +471,7 @@
     }
 
     &__nav-link {
-      color: rgba(255, 255, 255, 0.85);
+      color: var(--piano-nav-text);
       text-decoration: none;
       font-size: 0.85rem;
       font-weight: 500;
@@ -483,7 +483,7 @@
 
       &:hover,
       &:focus-visible {
-        color: var(--piano-chip-text);
+        color: var(--piano-accent-text);
         background: var(--piano-accent-soft);
       }
     }
@@ -494,8 +494,8 @@
       align-items: center;
       gap: 0.375rem;
       background: transparent;
-      color: #fff;
-      border: 1px solid rgba(255, 255, 255, 0.35);
+      color: var(--piano-chip-text);
+      border: 1px solid var(--piano-outline-border);
       padding: 0.5rem 1.125rem;
       border-radius: var(--piano-radius-full);
       text-decoration: none;
@@ -507,8 +507,8 @@
         transform 0.2s;
 
       &:hover {
-        background: rgba(255, 255, 255, 0.12);
-        border-color: rgba(255, 255, 255, 0.6);
+        background: var(--piano-outline-hover);
+        border-color: var(--piano-outline-border);
         transform: translateY(-1px);
 
         i {
@@ -518,7 +518,7 @@
 
       i {
         font-size: 1.05rem;
-        color: rgba(255, 255, 255, 0.85);
+        color: var(--piano-nav-text);
         transition: color 0.2s;
       }
     }
@@ -528,7 +528,7 @@
       align-items: center;
       gap: 0.375rem;
       background: var(--piano-bg-accent);
-      color: #fff;
+      color: var(--piano-on-accent);
       padding: 0.5rem 1.125rem;
       border-radius: var(--piano-radius-full);
       text-decoration: none;
@@ -567,7 +567,7 @@
         display: block;
         width: 24px;
         height: 2px;
-        background: #fff;
+        background: var(--piano-chip-text);
         border-radius: 2px;
         transition: all 0.3s;
         transform-origin: center;
@@ -598,7 +598,7 @@
     }
 
     &__nav-mobile-link {
-      color: rgba(255, 255, 255, 0.9);
+      color: var(--piano-nav-text);
       text-decoration: none;
       padding: 0.75rem 0.5rem;
       font-size: 1rem;
@@ -613,7 +613,7 @@
 
       &--secondary {
         font-size: 0.875rem;
-        color: rgba(255, 255, 255, 0.6);
+        color: var(--piano-nav-muted);
         font-weight: 400;
       }
     }
@@ -624,7 +624,7 @@
       justify-content: center;
       gap: 0.5rem;
       background: var(--piano-bg-accent);
-      color: #fff;
+      color: var(--piano-on-accent);
       padding: 0.75rem;
       border-radius: var(--piano-radius-sm);
       text-decoration: none;
@@ -638,7 +638,8 @@
 
       &--donate {
         background: transparent;
-        border: 1px solid rgba(255, 255, 255, 0.35);
+        border: 1px solid var(--piano-outline-border);
+        color: var(--piano-chip-text);
         margin-top: 0;
       }
     }

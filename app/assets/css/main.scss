@@ -38,6 +38,13 @@
   --site-chip: rgba(255, 255, 255, 0.1);
   --site-chip-border: rgba(255, 255, 255, 0.15);
   --site-chip-text: rgba(255, 255, 255, 0.9);
+  --site-nav-text: rgba(255, 255, 255, 0.85);
+  --site-nav-muted: rgba(255, 255, 255, 0.6);
+  --site-outline-border: rgba(255, 255, 255, 0.35);
+  --site-outline-hover: rgba(255, 255, 255, 0.12);
+  --site-codename-filter: brightness(0) invert(1);
+  --site-title-accent: var(--brand-blue);
+  --site-yellow-text: #f8c800;
 
   // ============================================
   // Camada 3 — Acento/interação (laranja do produto)
@@ -67,6 +74,13 @@
     --site-chip: rgba(25, 28, 32, 0.06);
     --site-chip-border: rgba(25, 28, 32, 0.12);
     --site-chip-text: rgba(25, 28, 32, 0.9);
+    --site-nav-text: rgba(25, 28, 32, 0.75);
+    --site-nav-muted: rgba(25, 28, 32, 0.5);
+    --site-outline-border: rgba(25, 28, 32, 0.3);
+    --site-outline-hover: rgba(25, 28, 32, 0.06);
+    --site-codename-filter: brightness(0);
+    --site-title-accent: var(--brand-blue-deep);
+    --site-yellow-text: #8a6d00;
   }
 
   // ============================================
@@ -105,6 +119,14 @@
   --piano-chip: var(--site-chip);
   --piano-chip-border: var(--site-chip-border);
   --piano-chip-text: var(--site-chip-text);
+  --piano-nav-text: var(--site-nav-text);
+  --piano-nav-muted: var(--site-nav-muted);
+  --piano-outline-border: var(--site-outline-border);
+  --piano-outline-hover: var(--site-outline-hover);
+  --piano-codename-filter: var(--site-codename-filter);
+  --piano-title-accent: var(--site-title-accent);
+  --piano-yellow-text: var(--site-yellow-text);
+  --piano-on-accent: #1c130f;
 
   // Semantic tokens — accent
   --piano-accent: var(--site-accent);

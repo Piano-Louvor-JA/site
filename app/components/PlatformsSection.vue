@@ -249,7 +249,7 @@
         }
 
         &--yellow {
-          color: var(--piano-yellow-dark);
+          color: var(--piano-yellow-text);
           border: 1px solid var(--piano-yellow);
         }
 
@@ -274,7 +274,7 @@
       }
 
       &--yellow &-tagline {
-        color: var(--piano-yellow-dark);
+        color: var(--piano-yellow-text);
       }
 
       &--blue &-tagline {
@@ -311,7 +311,7 @@
       }
 
       &--yellow &-list li i {
-        color: var(--piano-yellow-dark);
+        color: var(--piano-yellow-text);
       }
 
       &--blue &-list li i {
@@ -335,7 +335,7 @@
 
         &--orange {
           background: var(--piano-accent);
-          color: #fff;
+          color: var(--piano-on-accent);
 
           &:hover {
             background: var(--piano-accent-hover);
@@ -344,7 +344,7 @@
         }
 
         &--yellow {
-          color: var(--piano-yellow-dark);
+          color: var(--piano-yellow-text);
           border: 1px solid var(--piano-yellow);
 
           &:hover {
