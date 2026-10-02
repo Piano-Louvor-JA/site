@@ -218,6 +218,16 @@ a {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--brand-blue);
+  background: var(--site-accent);
   border-radius: var(--piano-radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--site-accent-hover);
+}
+
+// Firefox
+* {
+  scrollbar-color: var(--site-accent) var(--site-container);
+  scrollbar-width: thin;
 }
