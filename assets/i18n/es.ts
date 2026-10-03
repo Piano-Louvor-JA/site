@@ -74,6 +74,23 @@ export default {
       feature3: 'Actualizaciones automáticas',
       cta: 'Abrir en Navegador',
     },
+    tv: {
+      badge: 'Smart TV',
+      title: 'Palco en las TVs',
+      subtitle: 'Proyección que acompaña el culto',
+      description:
+        'Receiver para Android TV, webOS (LG), Tizen (Samsung) y Apple TV. El palco refleja el escritorio en tiempo real.',
+      cta: 'Ver en la TV',
+    },
+    voidbr: {
+      badge: 'Distro Linux',
+      title: 'VoidBR LouvorJA Piano',
+      subtitle: 'Sistema operativo listo para la iglesia',
+      description:
+        'ISO live de la comunidad Void Linux BR con el PIANO y el acervo ya instalados. Arranca y funciona — instalación simple y offline.',
+      cta: 'Conocer la distro',
+      credit: 'Proyecto independiente de la comunidad Void Linux Brasil',
+    },
     mobile: {
       badge: 'Próximamente',
       title: 'Móvil (Próximamente)',

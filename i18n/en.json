@@ -48,7 +48,7 @@
   "platforms": {
     "eyebrow": "Cross-platform",
     "title": "Available where you need it",
-    "description": "Use the desktop app for maximum productivity, the browser as a quick alternative, or your phone with the Android app.",
+    "description": "From desktop to the church TV: the same worship manager on every screen.",
     "desktop": {
       "badge": "Recommended",
       "title": "Native Desktop",
@@ -78,6 +78,21 @@
       "feature2": "Digital stage control",
       "feature3": "iOS in development",
       "cta": "Download App"
+    },
+    "tv": {
+      "badge": "Smart TV",
+      "title": "Stage on TVs",
+      "subtitle": "Projection that follows the service",
+      "description": "Receiver for Android TV, webOS (LG), Tizen (Samsung) and Apple TV. The stage mirrors the desktop in real time.",
+      "cta": "View on TV"
+    },
+    "voidbr": {
+      "badge": "Linux distro",
+      "title": "VoidBR LouvorJA Piano",
+      "subtitle": "A ready-to-go OS for churches",
+      "description": "Live ISO from the Void Linux BR community with PIANO and the hymnal pre-installed. Boot and go — simple, offline setup.",
+      "cta": "Explore the distro",
+      "credit": "Independent project by the Void Linux Brazil community"
     }
   },
   "notifyModal": {
