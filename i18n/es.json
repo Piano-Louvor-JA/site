@@ -14,12 +14,13 @@
     "language": "Idioma",
     "download": "Descargar",
     "releases": "Versiones",
-    "testers": "Probadores"
+    "testers": "Probadores",
+    "toggleTheme": "Alternar tema claro/oscuro"
   },
   "hero": {
     "badge": "Nuevo: Web App (PWA) Disponible",
     "title": "Gestor de Culto",
-    "titleHighlight": "Simple y Completo",
+    "titleHighlight": "Simple y",
     "subtitle": "Organice himnarios, liturgia, Biblia y proyección en un solo lugar. Acceda desde cualquier dispositivo.",
     "ctaPrimary": "Abrir Aplicación",
     "ctaSecondary": "Ver Plataformas",
@@ -35,7 +36,8 @@
       "next": "Siguiente",
       "nextTitle": "Bienvenida y Alabanza",
       "elapsedTime": "Tiempo transcurrido"
-    }
+    },
+    "titleHighlight2": "Completo"
   },
   "stats": {
     "features": "Funciones del ecosistema",
@@ -46,7 +48,7 @@
   "platforms": {
     "eyebrow": "Multiplataforma",
     "title": "Disponible donde lo necesitas",
-    "description": "Usa la app de escritorio para máxima productividad, el navegador como alternativa rápida o tu móvil con la app Android.",
+    "description": "Del escritorio a la TV del templo: el mismo gestor de culto en todas las pantallas.",
     "desktop": {
       "badge": "Recomendado",
       "title": "Escritorio Nativo",
@@ -76,6 +78,21 @@
       "feature2": "Control del escenario digital",
       "feature3": "iOS en desarrollo",
       "cta": "Descargar App"
+    },
+    "tv": {
+      "badge": "Smart TV",
+      "title": "Palco en las TVs",
+      "subtitle": "Proyección que acompaña el culto",
+      "description": "Receiver para Android TV, webOS (LG), Tizen (Samsung) y Apple TV. El palco refleja el escritorio en tiempo real.",
+      "cta": "Ver en la TV"
+    },
+    "voidbr": {
+      "badge": "Distro Linux",
+      "title": "VoidBR LouvorJA Piano",
+      "subtitle": "Sistema operativo listo para la iglesia",
+      "description": "ISO live de la comunidad Void Linux BR con el PIANO y el acervo ya instalados. Arranca y funciona — instalación simple y offline.",
+      "cta": "Conocer la distro",
+      "credit": "Proyecto independiente de la comunidad Void Linux Brasil"
     }
   },
   "notifyModal": {

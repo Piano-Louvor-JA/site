@@ -40,7 +40,7 @@
 <style scoped lang="scss">
   .features {
     padding: 6rem 1.5rem;
-    background: var(--piano-white);
+    background: var(--piano-bg-primary);
     position: relative;
     overflow: hidden;
 
@@ -51,7 +51,7 @@
       left: 0;
       right: 0;
       height: 200px;
-      background: linear-gradient(180deg, var(--piano-gray-100) 0%, transparent 100%);
+      background: linear-gradient(180deg, var(--piano-bg-solid) 0%, transparent 100%);
       pointer-events: none;
     }
 
@@ -98,8 +98,8 @@
     }
 
     &__card {
-      background: #fff;
-      border: 1px solid var(--piano-gray-300);
+      background: var(--piano-bg-solid);
+      border: 1px solid var(--piano-border);
       border-radius: var(--piano-radius-lg);
       padding: 2rem 1.5rem;
       transition:

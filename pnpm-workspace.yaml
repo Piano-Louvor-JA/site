@@ -33,6 +33,8 @@ overrides:
   undici: '8.11.2'
   # GHSA do devalue <=5.9.2 (Nuxt e i18n). Nuxt 4.5 pede ^5.8.2; 5.9.4 cabe nessa faixa.
   devalue: '5.9.4'
+  # GHSA-xjh9-v7x6-24jw / GHSA-x8mw-p69m-v3mx (@fastify/busboy via firebase-admin)
+  '@fastify/busboy': '>=3.2.1'
   # GHSA-c475-qrg2-pj4r: basic-ftp <=6.2.0. get-uri (via Lighthouse) pede ^5.
   'get-uri>basic-ftp': '6.2.1'
   # Hostinger: binário Dart do sass-embedded falha com EACCES.
@@ -49,3 +51,14 @@ audit:
   ignore:
     - GHSA-jmr9-qjv8-65gv
     - GHSA-7pqw-9j4j-h8q3
+    # node-forge <=1.4.0 (RSA PKCS#1, via listhen do @nuxt/cli/nitro). Fix >=1.4.1
+    # NÃO existe publicado (latest = 1.4.0). Dev-only (servidor de dev do Nuxt),
+    # sem uso em runtime/produção. Reavaliar quando o fix sair.
+    - GHSA-86w9-cpqp-85rv
+    # braces <3.0.4 (via micromatch do fast-glob do @nuxtjs/i18n — build only).
+    # Override direto quebra firebase-tools (pede ~3.0.3). Reavaliar quando o
+    # ecossistema subir micromatch.
+    - GHSA-vfj7-8cjw-p6xm
+    # http-cache-semantics <4.2.1 (via node-gyp do ttf2woff2 do tabler — dev only).
+    # Fix >=4.2.1 NAO publicado (latest = 4.2.0). Reavaliar quando sair.
+    - GHSA-ch52-4w7c-c8xp

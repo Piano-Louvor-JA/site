@@ -13,11 +13,16 @@ export default {
     contact: 'Contato',
     openApp: 'Abrir App',
     language: 'Idioma',
+    releases: 'Versões',
+    testers: 'Testadores',
+    toggleTheme: 'Alternar tema claro/escuro',
   },
   hero: {
     badge: 'Novo: Versão Web Disponível',
     title: 'Gerenciador de Culto',
-    titleHighlight: 'Simples e Completo',
+    titleHighlight: 'Simples e',
+
+    titleHighlight2: 'Completo',
     subtitle:
       'Organize hinários, liturgia, Bíblia e projeção em um só lugar. Acesse de qualquer dispositivo, sem instalação.',
     ctaPrimary: 'Abrir Aplicativo',
@@ -68,6 +73,23 @@ export default {
       feature2: 'Funciona em qualquer SO',
       feature3: 'Atualizações automáticas',
       cta: 'Abrir no Navegador',
+    },
+    tv: {
+      badge: 'Smart TV',
+      title: 'Palco nas TVs',
+      subtitle: 'Projeção que acompanha o culto',
+      description:
+        'Receiver para Android TV, webOS (LG), Tizen (Samsung) e Apple TV. O palco espelha o desktop em tempo real.',
+      cta: 'Ver na TV',
+    },
+    voidbr: {
+      badge: 'Distro Linux',
+      title: 'VoidBR LouvorJA Piano',
+      subtitle: 'Sistema operacional pronto pra igreja',
+      description:
+        'ISO live da comunidade Void Linux BR com o PIANO e o acervo já instalados. Boota e funciona — instalação simples e offline.',
+      cta: 'Conhecer a distro',
+      credit: 'Projeto independente da comunidade Void Linux Brasil',
     },
     mobile: {
       badge: 'Em Breve',

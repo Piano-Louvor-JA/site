@@ -14,12 +14,13 @@
     "language": "Idioma",
     "download": "Baixar",
     "releases": "Versões",
-    "testers": "Testadores"
+    "testers": "Testadores",
+    "toggleTheme": "Alternar tema claro/escuro"
   },
   "hero": {
     "badge": "Novo: Web App (PWA) Disponível",
     "title": "Gerenciador de Culto",
-    "titleHighlight": "Simples e Completo",
+    "titleHighlight": "Simples e",
     "subtitle": "Organize hinários, liturgia, Bíblia e projeção em um só lugar. Acesse de qualquer dispositivo, sem instalação.",
     "ctaPrimary": "Abrir Aplicativo",
     "ctaSecondary": "Ver Plataformas",
@@ -35,7 +36,8 @@
       "next": "Próximo",
       "nextTitle": "Boas-Vindas e Louvor",
       "elapsedTime": "Tempo decorrido"
-    }
+    },
+    "titleHighlight2": "Completo"
   },
   "stats": {
     "features": "Funcionalidades do ecossistema",
@@ -46,7 +48,7 @@
   "platforms": {
     "eyebrow": "Multiplataforma",
     "title": "Disponível onde você precisa",
-    "description": "Use no desktop para máxima produtividade, no navegador como alternativa rápida ou no celular com o app Android.",
+    "description": "Do desktop à TV do templo: o mesmo gerenciador de culto em todas as telas.",
     "desktop": {
       "badge": "Recomendado",
       "title": "Desktop Nativo",
@@ -76,6 +78,21 @@
       "feature2": "Controle do palco digital",
       "feature3": "iOS em desenvolvimento",
       "cta": "Baixar App"
+    },
+    "tv": {
+      "badge": "Smart TV",
+      "title": "Palco nas TVs",
+      "subtitle": "Projeção que acompanha o culto",
+      "description": "Receiver para Android TV, webOS (LG), Tizen (Samsung) e Apple TV. O palco espelha o desktop em tempo real.",
+      "cta": "Ver na TV"
+    },
+    "voidbr": {
+      "badge": "Distro Linux",
+      "title": "VoidBR LouvorJA Piano",
+      "subtitle": "Sistema operacional pronto pra igreja",
+      "description": "ISO live da comunidade Void Linux BR com o PIANO e o acervo já instalados. Boota e funciona — instalação simples e offline.",
+      "cta": "Conhecer a distro",
+      "credit": "Projeto independente da comunidade Void Linux Brasil"
     }
   },
   "notifyModal": {

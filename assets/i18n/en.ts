@@ -13,11 +13,16 @@ export default {
     contact: 'Contact',
     openApp: 'Open App',
     language: 'Language',
+    releases: 'Releases',
+    testers: 'Testers',
+    toggleTheme: 'Toggle light/dark theme',
   },
   hero: {
     badge: 'New: Web Version Available',
     title: 'Worship Service Manager',
-    titleHighlight: 'Simple and Complete',
+    titleHighlight: 'Simple and',
+
+    titleHighlight2: 'Complete',
     subtitle:
       'Organize hymnals, liturgy, Bible and projection in one place. Access from any device, no installation required.',
     ctaPrimary: 'Open App',
@@ -68,6 +73,23 @@ export default {
       feature2: 'Works on any OS',
       feature3: 'Automatic updates',
       cta: 'Open in Browser',
+    },
+    tv: {
+      badge: 'Smart TV',
+      title: 'Stage on TVs',
+      subtitle: 'Projection that follows the service',
+      description:
+        'Receiver for Android TV, webOS (LG), Tizen (Samsung) and Apple TV. The stage mirrors the desktop in real time.',
+      cta: 'View on TV',
+    },
+    voidbr: {
+      badge: 'Linux distro',
+      title: 'VoidBR LouvorJA Piano',
+      subtitle: 'A ready-to-go OS for churches',
+      description:
+        'Live ISO from the Void Linux BR community with PIANO and the hymnal pre-installed. Boot and go — simple, offline setup.',
+      cta: 'Explore the distro',
+      credit: 'Independent project by the Void Linux Brazil community',
     },
     mobile: {
       badge: 'Coming Soon',

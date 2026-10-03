@@ -190,7 +190,7 @@
 <style scoped lang="scss">
   .team {
     padding: 6rem 1.5rem;
-    background: var(--piano-white);
+    background: var(--piano-bg-primary);
     position: relative;
     overflow: hidden;
 
@@ -294,8 +294,9 @@
       font-weight: 600;
       padding: 0.3rem 0.7rem;
       border-radius: 999px;
-      background: var(--piano-gray-100);
-      color: var(--piano-text-secondary);
+      background: var(--piano-chip);
+      border: 1px solid var(--piano-chip-border);
+      color: var(--piano-nav-text);
     }
 
     &__people {
@@ -394,7 +395,8 @@
       max-width: 640px;
       margin: 0 auto;
       padding: 2.25rem 2rem;
-      background: var(--piano-gray-100);
+      background: var(--piano-bg-secondary);
+      border: 1px solid var(--piano-border-subtle);
       border-radius: var(--piano-radius-lg);
     }
 
@@ -455,7 +457,7 @@
       color: var(--piano-text-secondary);
       padding: 0.5rem 0.75rem;
       border-radius: var(--piano-radius-sm);
-      background: var(--piano-gray-100);
+      background: var(--piano-bg-secondary);
 
       i {
         color: var(--piano-accent);
@@ -507,7 +509,7 @@
       width: 100%;
       max-height: 85vh;
       overflow-y: auto;
-      background: var(--piano-white);
+      background: var(--piano-bg-solid);
       border-radius: var(--piano-radius-lg);
       box-shadow: var(--piano-shadow-lg);
       padding: 2.5rem 2rem 2rem;
@@ -532,7 +534,7 @@
       transition: background 0.2s ease;
 
       &:hover {
-        background: var(--piano-gray-100);
+        background: var(--piano-chip);
       }
     }
 
@@ -585,7 +587,7 @@
       transition: background 0.2s ease;
 
       &:hover {
-        background: var(--piano-gray-100);
+        background: var(--piano-chip);
       }
     }
   }

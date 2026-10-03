@@ -4,7 +4,7 @@
 
 <template>
   <section id="hero" class="hero">
-    <div class="hero__glow hero__glow--cyan" />
+    <div class="hero__glow hero__glow--accent" />
     <div class="hero__glow hero__glow--yellow" />
 
     <div class="hero__container">
@@ -16,7 +16,9 @@
 
         <h1 class="hero__title">
           {{ $t('hero.title') }}<br />
-          <span class="hero__title-accent">{{ $t('hero.titleHighlight') }}</span>
+          <span class="hero__title-accent"
+            >{{ $t('hero.titleHighlight') }} <span>{{ $t('hero.titleHighlight2') }}</span></span
+          >
         </h1>
 
         <p data-testid="hero-subtitle" class="hero__subtitle">
@@ -50,7 +52,7 @@
             {{ $t('hero.meta.anyDevice') }}
           </div>
           <div class="hero__meta-item">
-            <i class="ti ti-award" />
+            <i class="ti ti-code" />
             {{ $t('hero.meta.openSource') }}
           </div>
         </div>
@@ -81,7 +83,7 @@
           <div class="hero__preview-body">
             <!-- Hino atual em destaque -->
             <div class="hero__preview-card hero__preview-card--hymn">
-              <div class="hero__preview-card-icon hero__preview-card-icon--cyan">
+              <div class="hero__preview-card-icon hero__preview-card-icon--accent">
                 <i class="ti ti-music" />
               </div>
               <div class="hero__preview-card-info">
@@ -144,7 +146,8 @@
     display: flex;
     align-items: center;
     overflow: hidden;
-    background: var(--piano-bg-primary);
+    background: var(--site-bg);
+    transition: background 0.3s;
     padding: 8rem 1.5rem 4rem;
 
     &__glow {
@@ -154,10 +157,10 @@
       opacity: 0.35;
       pointer-events: none;
 
-      &--cyan {
+      &--accent {
         width: 500px;
         height: 500px;
-        background: var(--piano-cyan);
+        background: var(--site-accent);
         top: -100px;
         right: -100px;
       }
@@ -188,9 +191,9 @@
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      background: rgba(0, 193, 230, 0.15);
-      border: 1px solid rgba(0, 193, 230, 0.3);
-      color: var(--piano-cyan-light);
+      background: var(--site-accent-soft);
+      border: 1px solid rgba(224, 137, 90, 0.3);
+      color: var(--site-accent-text);
       padding: 0.375rem 1rem;
       border-radius: var(--piano-radius-full);
       font-size: 0.85rem;
@@ -202,21 +205,25 @@
       font-size: 3.5rem;
       font-weight: 800;
       line-height: 1.1;
-      color: #fff;
+      color: var(--site-text);
       margin-bottom: 1.25rem;
       letter-spacing: -0.02em;
     }
 
     &__title-accent {
-      background: linear-gradient(135deg, var(--piano-cyan) 0%, var(--piano-yellow) 100%);
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
+      // Sem gradiente: "Simples" na marca azul, "e Completo" no acento (texto AA por tema)
+      color: var(--piano-title-accent);
+      -webkit-text-fill-color: var(--piano-title-accent);
+
+      span {
+        color: var(--piano-accent-text);
+        -webkit-text-fill-color: var(--piano-accent-text);
+      }
     }
 
     &__subtitle {
       font-size: 1.2rem;
-      color: rgba(255, 255, 255, 0.8);
+      color: var(--site-text-secondary);
       line-height: 1.7;
       max-width: 480px;
       margin-bottom: 2rem;
@@ -243,23 +250,24 @@
         box-shadow 0.2s;
 
       &--primary {
-        background: var(--piano-bg-accent);
-        color: #fff;
-        box-shadow: 0 4px 20px rgba(0, 193, 230, 0.4);
+        background: var(--site-accent);
+        color: var(--piano-on-accent);
+        box-shadow: var(--piano-shadow-glow);
 
         &:hover {
+          background: var(--site-accent-hover);
           transform: translateY(-2px);
-          box-shadow: 0 8px 32px rgba(0, 193, 230, 0.55);
+          box-shadow: 0 8px 32px rgba(224, 137, 90, 0.55);
         }
       }
 
       &--secondary {
-        background: rgba(255, 255, 255, 0.1);
-        color: #fff;
-        border: 1px solid rgba(255, 255, 255, 0.2);
+        background: transparent;
+        color: var(--site-text);
+        border: 1px solid var(--site-border);
 
         &:hover {
-          background: rgba(255, 255, 255, 0.15);
+          background: var(--site-accent-soft);
           transform: translateY(-2px);
         }
       }
@@ -279,12 +287,12 @@
       display: flex;
       align-items: center;
       gap: 0.375rem;
-      color: rgba(255, 255, 255, 0.65);
+      color: var(--site-text-secondary);
       font-size: 0.85rem;
 
       i {
         font-size: 1.05rem;
-        color: var(--piano-cyan);
+        color: var(--site-accent);
       }
     }
 
@@ -301,7 +309,7 @@
       border-radius: var(--piano-radius-lg);
       box-shadow:
         0 24px 64px rgba(0, 0, 0, 0.4),
-        0 0 0 1px rgba(0, 193, 230, 0.1);
+        0 0 0 1px var(--piano-border-subtle);
       overflow: hidden;
       transform: perspective(1000px) rotateY(-3deg) rotateX(2deg);
     }
@@ -335,8 +343,8 @@
       align-items: center;
       justify-content: space-between;
       padding: 0.75rem 1rem;
-      background: linear-gradient(135deg, rgba(16, 67, 140, 0.4) 0%, rgba(10, 23, 51, 0.6) 100%);
-      border-bottom: 1px solid rgba(0, 193, 230, 0.15);
+      background: linear-gradient(135deg, rgba(224, 137, 90, 0.16) 0%, rgba(19, 19, 19, 0.6) 100%);
+      border-bottom: 1px solid var(--piano-border-subtle);
     }
 
     &__preview-brand {
@@ -362,7 +370,7 @@
       color: #fff;
     }
     &__preview-ja {
-      color: var(--piano-cyan-light);
+      color: var(--brand-yellow);
       font-weight: 400;
     }
 
@@ -389,7 +397,7 @@
     /* Corpo do app — gradiente como o webapp */
     &__preview-body {
       padding: 1rem;
-      background: linear-gradient(180deg, #0a1733 0%, #061026 100%);
+      background: linear-gradient(180deg, var(--piano-slate) 0%, var(--piano-dark) 100%);
       display: flex;
       flex-direction: column;
       gap: 0.625rem;
@@ -407,8 +415,8 @@
     }
 
     &__preview-card--hymn {
-      background: rgba(0, 193, 230, 0.1);
-      border-color: rgba(0, 193, 230, 0.25);
+      background: var(--site-accent-soft);
+      border-color: rgba(224, 137, 90, 0.25);
     }
 
     &__preview-card-icon {
@@ -425,8 +433,8 @@
         color: #fff;
       }
 
-      &--cyan {
-        background: linear-gradient(135deg, var(--piano-cyan) 0%, #0098b3 100%);
+      &--accent {
+        background: linear-gradient(135deg, var(--site-accent) 0%, var(--site-accent-hover) 100%);
       }
 
       &--yellow {
@@ -460,8 +468,8 @@
     &__preview-card-badge {
       font-size: 0.7rem;
       font-weight: 600;
-      color: var(--piano-cyan);
-      background: rgba(0, 193, 230, 0.15);
+      color: var(--piano-accent-text);
+      background: var(--piano-accent-soft);
       padding: 0.25rem 0.5rem;
       border-radius: var(--piano-radius-full);
       flex-shrink: 0;
@@ -510,7 +518,7 @@
       justify-content: space-around;
       padding: 0.625rem 0.5rem;
       background: rgba(0, 0, 0, 0.5);
-      border-top: 1px solid rgba(0, 193, 230, 0.1);
+      border-top: 1px solid var(--piano-border-subtle);
     }
 
     &__preview-dock-item {
@@ -528,8 +536,8 @@
       }
 
       &--active {
-        color: var(--piano-cyan);
-        background: rgba(0, 193, 230, 0.15);
+        color: var(--site-accent);
+        background: var(--piano-accent-soft);
       }
     }
 

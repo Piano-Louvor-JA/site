@@ -9,6 +9,8 @@ vi.mock('firebase/app', () => ({
 // Mock firebase/auth
 vi.mock('firebase/auth', () => ({
   getAuth: vi.fn(() => ({ name: 'mock-auth' })),
+  setPersistence: vi.fn(() => Promise.resolve()),
+  browserLocalPersistence: { type: 'LOCAL' },
 }))
 
 import { initializeApp } from 'firebase/app'
