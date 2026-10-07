@@ -38,7 +38,8 @@
     "format:check": "prettier --check .",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "SB_DISABLE_TELEMETRY=1 CI=true storybook build",
-    "prepare": "husky"
+    "prepare": "husky",
+    "test:coverage:gate": "node scripts/coverage-gate.mjs"
   },
   "dependencies": {
     "@nuxtjs/i18n": "^10.5.0",
