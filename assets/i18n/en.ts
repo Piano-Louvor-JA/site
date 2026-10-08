@@ -74,23 +74,6 @@ export default {
       feature3: 'Automatic updates',
       cta: 'Open in Browser',
     },
-    tv: {
-      badge: 'Smart TV',
-      title: 'Stage on TVs',
-      subtitle: 'Projection that follows the service',
-      description:
-        'Receiver for Android TV, webOS (LG), Tizen (Samsung) and Apple TV. The stage mirrors the desktop in real time.',
-      cta: 'View on TV',
-    },
-    voidbr: {
-      badge: 'Linux distro',
-      title: 'VoidBR LouvorJA Piano',
-      subtitle: 'A ready-to-go OS for churches',
-      description:
-        'Live ISO from the Void Linux BR community with PIANO and the hymnal pre-installed. Boot and go — simple, offline setup.',
-      cta: 'Explore the distro',
-      credit: 'Independent project by the Void Linux Brazil community',
-    },
     mobile: {
       badge: 'Coming Soon',
       title: 'Mobile (Coming Soon)',

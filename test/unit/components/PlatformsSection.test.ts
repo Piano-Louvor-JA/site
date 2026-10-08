@@ -1,12 +1,6 @@
-import { describe, it, expect, vi } from 'vitest'
+import { describe, it, expect } from 'vitest'
 import { mount } from '@vue/test-utils'
 import PlatformsSection from '~/components/PlatformsSection.vue'
-
-// Composable GSAP (client-only): stubado — os testes de unidade cobrem a
-// estrutura SSR do componente; o comportamento do carrossel é e2e/visual.
-vi.mock('~/composables/usePlatformsCarousel', () => ({
-  usePlatformsCarousel: () => ({ activeIndex: { value: 0 } }),
-}))
 
 const mountPlatform = () =>
   mount(PlatformsSection, {
@@ -28,10 +22,10 @@ describe('PlatformsSection', () => {
     expect(wrapper.text()).toContain('Multiplataforma')
   })
 
-  it('renderiza 5 cards (desktop, web, mobile, tv, voidbr)', () => {
+  it('renderiza 3 cards de plataforma', () => {
     const wrapper = mountPlatform()
     const cards = wrapper.findAll('[data-testid="platform-card"]')
-    expect(cards.length).toBe(5)
+    expect(cards.length).toBe(3)
   })
 
   it('cada card tem titulo, descricao e CTA', () => {
@@ -43,12 +37,12 @@ describe('PlatformsSection', () => {
     })
   })
 
-  it('card desktop aponta para a pagina de download', () => {
+  it('card desktop aponta para #download', () => {
     const wrapper = mountPlatform()
     const cards = wrapper.findAll('[data-testid="platform-card"]')
     const desktopCard = cards[0]
     const cta = desktopCard.find('a')
-    expect(cta.attributes('href')).toBe('/download')
+    expect(cta.attributes('href')).toBe('#download')
   })
 
   it('card web aponta para a URL do app e abre em nova aba', () => {
@@ -58,7 +52,6 @@ describe('PlatformsSection', () => {
     const cta = webCard.find('a')
     expect(cta.attributes('href')).toMatch(/^https:\/\//)
     expect(cta.attributes('target')).toBe('_blank')
-    expect(cta.attributes('rel')).toContain('noopener')
   })
 
   it('card mobile aponta para a pagina de download (app disponivel)', () => {
@@ -69,40 +62,8 @@ describe('PlatformsSection', () => {
     expect(cta.attributes('href')).toBe('/download')
     // Link interno — nao deve abrir em nova aba
     expect(cta.attributes('target')).toBeUndefined()
-  })
-
-  it('card TV existe com print do palco', () => {
-    const wrapper = mountPlatform()
-    const cards = wrapper.findAll('[data-testid="platform-card"]')
-    const tvCard = cards[3]
-    expect(tvCard.find('img').attributes('src')).toContain('palco-tv')
-  })
-
-  it('voidbr tem credito da comunidade e link externo', () => {
-    const wrapper = mountPlatform()
-    const cards = wrapper.findAll('[data-testid="platform-card"]')
-    const voidbrCard = cards[4]
-    const credit = voidbrCard.find('.platforms__card-credit')
-    expect(credit.exists()).toBe(true)
-    expect(credit.attributes('href')).toContain('voidbr.org')
-    const cta = voidbrCard.find('.platforms__card-cta')
-    expect(cta.attributes('target')).toBe('_blank')
-    expect(cta.attributes('rel')).toContain('noopener')
-  })
-
-  it('cada card mostra o print real (webp do carrossel) com alt', () => {
-    const wrapper = mountPlatform()
-    const imgs = wrapper.findAll('img.platforms__shot')
-    expect(imgs.length).toBe(5)
-    imgs.forEach((img) => {
-      expect(img.attributes('src')).toMatch(/^\/img\/carrossel\//)
-      expect(img.attributes('alt')?.length).toBeGreaterThan(5)
-    })
-  })
-
-  it('expose viewport + track com scroll-snap (fallback sem JS)', () => {
-    const wrapper = mountPlatform()
-    expect(wrapper.find('.platforms__viewport').exists()).toBe(true)
-    expect(wrapper.find('.platforms__track').exists()).toBe(true)
+    // Badge de disponibilidade, nao "Em breve"
+    expect(mobileCard.text()).toContain('Novo')
+    expect(mobileCard.text()).not.toContain('Em Breve')
   })
 })

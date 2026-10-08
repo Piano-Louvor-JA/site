@@ -54,9 +54,6 @@ importers:
       firebase-admin:
         specifier: ^14.2.0
         version: 14.2.0(@firebase/app-compat@0.5.16)(@firebase/app@0.16.0)(encoding@0.1.13)(supports-color@10.2.2)
-      gsap:
-        specifier: ^3.15.0
-        version: 3.15.0
       h3:
         specifier: 1.15.11
         version: 1.15.11
@@ -5396,9 +5393,6 @@ packages:
   graceful-fs@4.2.11:
     resolution: {integrity: sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ==}
 
-  gsap@3.15.0:
-    resolution: {integrity: sha512-dMW4CWBTUK1AEEDeZc1g4xpPGIrSf9fJF960qbTZmN/QwZIWY5wgliS6JWl9/25fpTGJrMRtSjGtOmPnfjZB+A==}
-
   gtoken@7.1.0:
     resolution: {integrity: sha512-pCcEwRi+TKpMlxAQObHDQ56KawURgyAf6jtIY046fJ5tIv3zDe/LEIubckAO8fj6JnAxLdmWkUfNyulQ2iKdEw==}
     engines: {node: '>=14.0.0'}
@@ -9365,8 +9359,8 @@ packages:
   vue-component-type-helpers@2.2.12:
     resolution: {integrity: sha512-YbGqHZ5/eW4SnkPNR44mKVc6ZKQoRs/Rux1sxC6rdwXb4qpbOSYfDr9DsTHolOTGmIKgM9j141mZbBeg05R1pw==}
 
-  vue-component-type-helpers@3.3.12:
-    resolution: {integrity: sha512-HwCqmgTfLFskQc4P5TRnbduCMyPat2Ezu0elLWOGn0dD/6BKHP15B5bxce6aDi+E4kblPtru8amIBQzu0Di3qQ==}
+  vue-component-type-helpers@3.3.11:
+    resolution: {integrity: sha512-LwcxzeliO9fkQcpJG0PoX8X5kmAhKmH9wkpDLxNabwzkQ9Zeib2YVHwFV4pcWmMLfXVfjr/dSV+DaJ3cIPgSNA==}
 
   vue-component-type-helpers@3.3.8:
     resolution: {integrity: sha512-troqCMmQodQDqUqn63NQaFi+CDSclSe7sc8VEBFqf5GFLqmGR2Ph3P2WEC7qwpRVyEWsTi/aAr4vyOe/B1hU3g==}
@@ -12880,7 +12874,7 @@ snapshots:
       ts-dedent: 2.3.0
       type-fest: 2.19.0
       vue: 3.5.40(typescript@5.9.3)
-      vue-component-type-helpers: 3.3.12
+      vue-component-type-helpers: 3.3.11
 
   '@stryker-mutator/api@9.6.1':
     dependencies:
@@ -15981,8 +15975,6 @@ snapshots:
   graceful-fs@4.2.10: {}
 
   graceful-fs@4.2.11: {}
-
-  gsap@3.15.0: {}
 
   gtoken@7.1.0(encoding@0.1.13)(supports-color@10.2.2):
     dependencies:
@@ -20386,7 +20378,7 @@ snapshots:
 
   vue-component-type-helpers@2.2.12: {}
 
-  vue-component-type-helpers@3.3.12: {}
+  vue-component-type-helpers@3.3.11: {}
 
   vue-component-type-helpers@3.3.8: {}
 
