@@ -12,9 +12,7 @@ export default defineNuxtPlugin((nuxtApp) => {
 
   const report = (error: unknown): void => {
     try {
-      void import('@sentry/browser').then(({ captureException }) =>
-        captureException(error),
-      )
+      void import('@sentry/browser').then(({ captureException }) => captureException(error))
     } catch {
       /* telemetria nunca quebra o site */
     }

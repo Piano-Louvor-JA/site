@@ -38,7 +38,11 @@ describe('telemetry.client plugin', () => {
     })
     await vi.waitFor(() => expect(initMock).toHaveBeenCalledTimes(1))
     expect(initMock).toHaveBeenCalledWith(
-      expect.objectContaining({ dsn: 'https://key@errors.example/1', sendDefaultPii: false, tracesSampleRate: 0 }),
+      expect.objectContaining({
+        dsn: 'https://key@errors.example/1',
+        sendDefaultPii: false,
+        tracesSampleRate: 0,
+      }),
     )
     const error = new Error('boom')
     hooks['vue:error'](error)
