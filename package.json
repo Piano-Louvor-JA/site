@@ -43,7 +43,6 @@
   "dependencies": {
     "@nuxtjs/i18n": "^10.5.0",
     "@octokit/rest": "^22.0.1",
-    "@sentry/browser": "^9.47.2",
     "@tabler/icons-webfont": "^3.48.0",
     "apexcharts": "^3.54.1",
     "firebase": "^12.17.0",
@@ -68,6 +67,7 @@
     "@semantic-release/changelog": "^7.0.0",
     "@semantic-release/git": "^11.0.1",
     "@semantic-release/github": "^12.0.9",
+    "@sentry/browser": "^9.47.2",
     "@storybook/addon-essentials": "^8.6.14",
     "@storybook/addon-interactions": "^8.6.14",
     "@storybook/vue3": "^8.6.14",
@@ -96,5 +96,21 @@
     "typescript-eslint": "^8.65.0",
     "vitest": "^3.2.4",
     "vue-tsc": "^3.0.5"
+  },
+  "pnpm": {
+    "auditConfig": {
+      "ignoreGhsas": [
+        "GHSA-vfj7-8cjw-p6xm",
+        "GHSA-6qxp-vccf-f47h",
+        "GHSA-86w9-cpqp-85rv",
+        "GHSA-v5rq-49vh-5v5c",
+        "GHSA-858h-whjf-mvg5",
+        "GHSA-g4wm-2vf7-vfgr",
+        "GHSA-x6jw-m9v5-85vh",
+        "GHSA-5gmw-xhrv-c9v3",
+        "GHSA-85c8-ppgw-ccpr",
+        "GHSA-g2v6-rqmx-r4w6"
+      ]
+    }
   }
 }

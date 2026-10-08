@@ -41,9 +41,6 @@ importers:
       '@octokit/rest':
         specifier: ^22.0.1
         version: 22.0.1
-      '@sentry/browser':
-        specifier: ^9.47.2
-        version: 9.47.2
       '@tabler/icons-webfont':
         specifier: ^3.48.0
         version: 3.48.0(chokidar@3.6.0)(supports-color@10.2.2)
@@ -111,6 +108,9 @@ importers:
       '@semantic-release/github':
         specifier: ^12.0.9
         version: 12.0.9(semantic-release@25.0.8(supports-color@10.2.2)(typescript@5.9.3))(supports-color@10.2.2)
+      '@sentry/browser':
+        specifier: ^9.47.2
+        version: 9.47.2
       '@storybook/addon-essentials':
         specifier: ^8.6.14
         version: 8.6.14(@types/react@19.2.17)(storybook@8.6.18(prettier@3.9.6)(supports-color@10.2.2))
