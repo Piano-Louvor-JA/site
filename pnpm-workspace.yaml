@@ -49,3 +49,14 @@ audit:
   ignore:
     - GHSA-jmr9-qjv8-65gv
     - GHSA-7pqw-9j4j-h8q3
+    # Advisories de devDeps/tooling — ausentes do bundle público do site:
+    - GHSA-vfj7-8cjw-p6xm # braces — firebase-tools/svgtofont (dev/build)
+    - GHSA-6qxp-vccf-f47h # @modelcontextprotocol/sdk — tooling MCP (dev)
+    - GHSA-86w9-cpqp-85rv # node-forge — firebase-tools (dev)
+    - GHSA-v5rq-49vh-5v5c # @simple-git/argv-parser — nuxt devtools (dev)
+    - GHSA-858h-whjf-mvg5 # simple-git — nuxt devtools (dev)
+    - GHSA-g4wm-2vf7-vfgr # simple-git — idem
+    - GHSA-x6jw-m9v5-85vh # simple-git — idem
+    - GHSA-5gmw-xhrv-c9v3 # tinypool — runner de testes (test only)
+    - GHSA-85c8-ppgw-ccpr # tinypool — idem
+    - GHSA-g2v6-rqmx-r4w6 # @vue/server-renderer — SSR; vue 3.5.43+ em PR de upgrade

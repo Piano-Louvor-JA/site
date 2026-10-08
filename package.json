@@ -96,21 +96,5 @@
     "typescript-eslint": "^8.65.0",
     "vitest": "^3.2.4",
     "vue-tsc": "^3.0.5"
-  },
-  "pnpm": {
-    "auditConfig": {
-      "ignoreGhsas": [
-        "GHSA-vfj7-8cjw-p6xm",
-        "GHSA-6qxp-vccf-f47h",
-        "GHSA-86w9-cpqp-85rv",
-        "GHSA-v5rq-49vh-5v5c",
-        "GHSA-858h-whjf-mvg5",
-        "GHSA-g4wm-2vf7-vfgr",
-        "GHSA-x6jw-m9v5-85vh",
-        "GHSA-5gmw-xhrv-c9v3",
-        "GHSA-85c8-ppgw-ccpr",
-        "GHSA-g2v6-rqmx-r4w6"
-      ]
-    }
   }
 }
