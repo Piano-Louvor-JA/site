@@ -7,17 +7,6 @@ const { initMock, captureMock } = vi.hoisted(() => ({
 
 vi.mock('@sentry/browser', () => ({ init: initMock, captureException: captureMock }))
 
-const stubApp = (fn: (h: string, cb: unknown) => void) => {
-  const hooks: Record<string, unknown> = {}
-  const nuxtApp = {
-    hook: (name: string, cb: unknown) => {
-      hooks[name] = cb
-    },
-  }
-  vi.stubGlobal('defineNuxtPlugin', (plugin: (app: unknown) => unknown) => plugin(nuxtApp))
-  return hooks
-}
-
 import plugin from '~/plugins/telemetry.client'
 
 describe('telemetry.client plugin', () => {
