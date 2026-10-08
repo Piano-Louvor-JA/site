@@ -41,6 +41,9 @@ importers:
       '@octokit/rest':
         specifier: ^22.0.1
         version: 22.0.1
+      '@sentry/browser':
+        specifier: ^9.47.2
+        version: 9.47.2
       '@tabler/icons-webfont':
         specifier: ^3.48.0
         version: 3.48.0(chokidar@3.6.0)(supports-color@10.2.2)
@@ -2756,13 +2759,37 @@ packages:
     peerDependencies:
       semantic-release: '>=20.1.0'
 
+  '@sentry-internal/browser-utils@9.47.2':
+    resolution: {integrity: sha512-LKRDMpyCZ+tUmhWYN6kaYlO/4X5pF5k5q5UcsoJtDQc/1vXZ6fM5AaGHseAnDTzie/Rblm46S/gEo84bVvblFg==}
+    engines: {node: '>=18'}
+
+  '@sentry-internal/feedback@9.47.2':
+    resolution: {integrity: sha512-daa2anVNapDNT6IATGM7yJgM+azDTcY9UHknlxKVQVRiRYnir8pUnQa6gYErYqUJeAHrZedE+eEk4M5RG/t3hA==}
+    engines: {node: '>=18'}
+
+  '@sentry-internal/replay-canvas@9.47.2':
+    resolution: {integrity: sha512-MWkpf0TSGmc0+uQlylrhCMreFFKMonRPNnyqcGbyI7CDmPRrL5TDYSS2bUF4BmA5d5N1vYF934/tkpONKjM71Q==}
+    engines: {node: '>=18'}
+
+  '@sentry-internal/replay@9.47.2':
+    resolution: {integrity: sha512-8SKV9tB/bY1c4QtsWrOZfWHwFffCr8s03Nl1e6vmlqEfLX5AGoeHsQneXbm7xmqUahr25QyyGAgUDZZrfefrgw==}
+    engines: {node: '>=18'}
+
   '@sentry-internal/tracing@7.120.4':
     resolution: {integrity: sha512-Fz5+4XCg3akeoFK+K7g+d7HqGMjmnLoY2eJlpONJmaeT9pXY7yfUyXKZMmMajdE2LxxKJgQ2YKvSCaGVamTjHw==}
     engines: {node: '>=8'}
 
+  '@sentry/browser@9.47.2':
+    resolution: {integrity: sha512-dqs+whBtZwXElSkU4JFgRSsERJmHX/EhC9TeevFvkv6aTtx//7qOhuhhIzA/FO7Td8OAKt6TmbLjGOmXhDk9Mg==}
+    engines: {node: '>=18'}
+
   '@sentry/core@7.120.4':
     resolution: {integrity: sha512-TXu3Q5kKiq8db9OXGkWyXUbIxMMuttB5vJ031yolOl5T/B69JRyAoKuojLBjRv1XX583gS1rSSoX8YXX7ATFGA==}
     engines: {node: '>=8'}
+
+  '@sentry/core@9.47.2':
+    resolution: {integrity: sha512-WYEP2ZHkTQMP7Gg5frzrQy1475TnK5Qv8wgvHiTlNerYaEBCNpAeWjUltTgfCQ8Hbv1iq4inca7Kqmmyv9gLnQ==}
+    engines: {node: '>=18'}
 
   '@sentry/integrations@7.120.4':
     resolution: {integrity: sha512-kkBTLk053XlhDCg7OkBQTIMF4puqFibeRO3E3YiVc4PGLnocXMaVpOSCkMqAc1k1kZ09UgGi8DxfQhnFEjUkpA==}
@@ -9358,8 +9385,8 @@ packages:
   vue-component-type-helpers@2.2.12:
     resolution: {integrity: sha512-YbGqHZ5/eW4SnkPNR44mKVc6ZKQoRs/Rux1sxC6rdwXb4qpbOSYfDr9DsTHolOTGmIKgM9j141mZbBeg05R1pw==}
 
-  vue-component-type-helpers@3.3.11:
-    resolution: {integrity: sha512-LwcxzeliO9fkQcpJG0PoX8X5kmAhKmH9wkpDLxNabwzkQ9Zeib2YVHwFV4pcWmMLfXVfjr/dSV+DaJ3cIPgSNA==}
+  vue-component-type-helpers@3.3.12:
+    resolution: {integrity: sha512-HwCqmgTfLFskQc4P5TRnbduCMyPat2Ezu0elLWOGn0dD/6BKHP15B5bxce6aDi+E4kblPtru8amIBQzu0Di3qQ==}
 
   vue-component-type-helpers@3.3.8:
     resolution: {integrity: sha512-troqCMmQodQDqUqn63NQaFi+CDSclSe7sc8VEBFqf5GFLqmGR2Ph3P2WEC7qwpRVyEWsTi/aAr4vyOe/B1hU3g==}
@@ -12607,16 +12634,44 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
+  '@sentry-internal/browser-utils@9.47.2':
+    dependencies:
+      '@sentry/core': 9.47.2
+
+  '@sentry-internal/feedback@9.47.2':
+    dependencies:
+      '@sentry/core': 9.47.2
+
+  '@sentry-internal/replay-canvas@9.47.2':
+    dependencies:
+      '@sentry-internal/replay': 9.47.2
+      '@sentry/core': 9.47.2
+
+  '@sentry-internal/replay@9.47.2':
+    dependencies:
+      '@sentry-internal/browser-utils': 9.47.2
+      '@sentry/core': 9.47.2
+
   '@sentry-internal/tracing@7.120.4':
     dependencies:
       '@sentry/core': 7.120.4
       '@sentry/types': 7.120.4
       '@sentry/utils': 7.120.4
 
+  '@sentry/browser@9.47.2':
+    dependencies:
+      '@sentry-internal/browser-utils': 9.47.2
+      '@sentry-internal/feedback': 9.47.2
+      '@sentry-internal/replay': 9.47.2
+      '@sentry-internal/replay-canvas': 9.47.2
+      '@sentry/core': 9.47.2
+
   '@sentry/core@7.120.4':
     dependencies:
       '@sentry/types': 7.120.4
       '@sentry/utils': 7.120.4
+
+  '@sentry/core@9.47.2': {}
 
   '@sentry/integrations@7.120.4':
     dependencies:
@@ -12873,7 +12928,7 @@ snapshots:
       ts-dedent: 2.3.0
       type-fest: 2.19.0
       vue: 3.5.40(typescript@5.9.3)
-      vue-component-type-helpers: 3.3.11
+      vue-component-type-helpers: 3.3.12
 
   '@stryker-mutator/api@9.6.1':
     dependencies:
@@ -20377,7 +20432,7 @@ snapshots:
 
   vue-component-type-helpers@2.2.12: {}
 
-  vue-component-type-helpers@3.3.11: {}
+  vue-component-type-helpers@3.3.12: {}
 
   vue-component-type-helpers@3.3.8: {}
 

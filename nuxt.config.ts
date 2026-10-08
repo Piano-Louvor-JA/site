@@ -120,6 +120,9 @@ export default defineNuxtConfig({
 
       // Admin authorization (comma-separated emails)
       adminEmails: process.env.ADMIN_EMAILS || '',
+
+      // Telemetria Glitchtip (client): vazio = desligada
+      telemetriaDsn: process.env.NUXT_PUBLIC_TELEMETRIA_DSN || '',
     },
   },
 })
