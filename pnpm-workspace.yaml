@@ -77,3 +77,4 @@ audit:
     # Reavaliar quando o devtools subir pra >=4.
     - GHSA-x6jw-m9v5-85vh
     - GHSA-g4wm-2vf7-vfgr
+    - GHSA-858h-whjf-mvg5
