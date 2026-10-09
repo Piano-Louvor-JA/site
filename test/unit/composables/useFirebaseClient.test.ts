@@ -137,4 +137,12 @@ describe('useFirebaseClient', () => {
     }
     mockConfig.public.firebaseProjectId = saved
   })
+  it('continua disponível quando persistência local é rejeitada', async () => {
+    const { setPersistence } = await import('firebase/auth')
+    vi.mocked(setPersistence).mockRejectedValueOnce(new Error('storage bloqueado'))
+    const { useFirebaseClient } = await import('~/composables/useFirebaseClient')
+    const result = useFirebaseClient()
+    await vi.waitFor(() => expect(setPersistence).toHaveBeenCalled())
+    expect(result).toBeDefined()
+  })
 })

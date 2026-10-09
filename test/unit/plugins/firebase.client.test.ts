@@ -89,4 +89,11 @@ describe('firebase.client plugin', () => {
 
     consoleWarnSpy.mockRestore()
   })
+  it('continua disponível quando persistência local é rejeitada', async () => {
+    const { setPersistence } = await import('firebase/auth')
+    vi.mocked(setPersistence).mockRejectedValueOnce(new Error('storage bloqueado'))
+    const result = plugin({} as never)
+    await vi.waitFor(() => expect(setPersistence).toHaveBeenCalled())
+    expect(result).toBeDefined()
+  })
 })

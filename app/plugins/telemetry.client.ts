@@ -6,20 +6,18 @@
  * window/unhandledrejection via SDK) e erros manuais via reportTelemetryError.
  * Nunca propaga erro próprio: telemetria é opcional, o site segue de pé.
  */
+export const telemetryEnvironment = (isDev: boolean) => (isDev ? 'development' : 'production')
+
 export default defineNuxtPlugin((nuxtApp) => {
   const dsn = useRuntimeConfig().public.telemetriaDsn as string
   if (!dsn) return
 
   const report = (error: unknown): void => {
-    try {
-      void import('@sentry/browser')
-        .then(({ captureException }) => captureException(error))
-        .catch(() => {
-          /* telemetria nunca quebra o site */
-        })
-    } catch {
-      /* telemetria nunca quebra o site */
-    }
+    void import('@sentry/browser')
+      .then(({ captureException }) => captureException(error))
+      .catch(() => {
+        /* telemetria nunca quebra o site */
+      })
   }
 
   nuxtApp.hook('vue:error', report)
@@ -29,7 +27,7 @@ export default defineNuxtPlugin((nuxtApp) => {
     .then(({ init }) => {
       init({
         dsn,
-        environment: import.meta.dev ? 'development' : 'production',
+        environment: telemetryEnvironment(import.meta.dev),
         release: 'louvorja-site',
         sendDefaultPii: false,
         tracesSampleRate: 0,
