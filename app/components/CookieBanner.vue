@@ -90,7 +90,7 @@
     right: 0;
     z-index: 50;
     background: var(--piano-dark);
-    border-top: 1px solid var(--piano-cyan);
+    border-top: 1px solid var(--piano-accent);
 
     &__container {
       max-width: 75rem;
@@ -118,12 +118,12 @@
 
     &__link {
       white-space: nowrap;
-      color: var(--piano-cyan);
+      color: var(--piano-accent-text);
       font-weight: 500;
       text-decoration: underline;
 
       &:hover {
-        color: var(--piano-cyan-light);
+        color: var(--piano-accent);
       }
     }
 
@@ -145,8 +145,8 @@
       border-radius: var(--piano-radius-sm);
       font-size: 0.875rem;
       font-weight: 600;
-      color: var(--piano-white);
-      background: var(--piano-blue);
+      color: #ffffff;
+      background: var(--piano-accent);
       cursor: pointer;
       transition: background 0.2s;
 
@@ -155,7 +155,7 @@
       }
 
       &:hover {
-        background: var(--piano-blue-deep);
+        background: var(--piano-accent-hover);
       }
 
       &--reject {

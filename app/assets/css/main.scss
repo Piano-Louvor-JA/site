@@ -1,74 +1,167 @@
 // ============================================
 // PIANO LouvorJA — Brand Design Tokens
+// Alinhado ao design system do produto
+// (pianolouvorja/app/src/design-system/)
 // ============================================
 
 :root {
-  // Brand palette
-  --piano-blue-deep: #10438c;
-  --piano-blue: #04549b;
-  --piano-blue-light: #0a6bc2;
-  --piano-cyan: #00c1e6;
-  --piano-cyan-light: #5dd9f0;
-  --piano-yellow: #fcce02;
-  --piano-yellow-dark: #e0b800;
+  // ============================================
+  // Camada 1 — Marca/logo (fixa nos dois temas)
+  // Fonte: tokens/colors.ts do produto
+  // ============================================
+  --brand-blue: #2196f3;
+  --brand-blue-deep: #1976d2;
+  --brand-blue-light: #64b5f6;
+  --brand-blue-soft: #9ecaff;
+  --brand-teal: #78d6d2;
+  --brand-yellow: #f8c800;
+  --brand-yellow-dark: #e0b800;
 
-  // Neutral palette
-  --piano-dark: #0a1733;
-  --piano-slate: #1e2a45;
-  --piano-gray-700: #475569;
-  --piano-gray-500: #64748b;
-  --piano-gray-300: #cbd5e1;
-  --piano-gray-100: #f1f5f9;
+  // ============================================
+  // Camada 2 — Tema (default: dark — Ethereal Lumens)
+  // Light override: html[data-theme='light'] — Luminous Clarity
+  // ============================================
+  --site-bg: #131313;
+  --site-surface: #1e1e1e;
+  --site-card: #242424;
+  --site-container: #201f1f;
+  --site-border: #353534;
+  --site-border-subtle: rgba(255, 255, 255, 0.08);
+  --site-text: #e5e2e1;
+  --site-text-secondary: #bfc7d4;
+  --site-text-muted: rgba(191, 199, 212, 0.7);
+  --site-overlay: rgba(0, 0, 0, 0.7);
+
+  // Superfícies de componentes (header fixo, chips de ação)
+  --site-header: rgba(19, 19, 19, 0.85);
+  --site-header-scrolled: rgba(19, 19, 19, 0.95);
+  --site-chip: rgba(255, 255, 255, 0.1);
+  --site-chip-border: rgba(255, 255, 255, 0.15);
+  --site-chip-text: rgba(255, 255, 255, 0.9);
+  --site-nav-text: rgba(255, 255, 255, 0.85);
+  --site-nav-muted: rgba(255, 255, 255, 0.6);
+  --site-outline-border: rgba(255, 255, 255, 0.35);
+  --site-outline-hover: rgba(255, 255, 255, 0.12);
+  --site-codename-filter: brightness(0) invert(1);
+  --site-title-accent: var(--brand-blue);
+  --site-yellow-text: #f8c800;
+
+  // ============================================
+  // Camada 3 — Acento/interação (laranja do produto)
+  // Fonte: themes/accents.ts → defaultAccent orange #E0895A
+  // accent-escuro: variação AA para TEXTO laranja em fundo claro
+  // ============================================
+  --site-accent: #e0895a;
+  --site-accent-hover: #c9713f;
+  --site-accent-soft: rgba(224, 137, 90, 0.12);
+  --site-accent-text: #e0895a;
+
+  // Light theme — Luminous Clarity (tokens/colors.ts → light)
+  &[data-theme='light'] {
+    --site-bg: #f8f9ff;
+    --site-surface: #ffffff;
+    --site-card: #ffffff;
+    --site-container: #eeeeef;
+    --site-border: #dfe3eb;
+    --site-border-subtle: rgba(0, 0, 0, 0.08);
+    --site-text: #191c20;
+    --site-text-secondary: #43474e;
+    --site-text-muted: #5f6670;
+    --site-overlay: rgba(25, 28, 32, 0.55);
+    --site-accent-text: #b45e2f;
+    --site-header: rgba(248, 249, 255, 0.85);
+    --site-header-scrolled: rgba(248, 249, 255, 0.95);
+    --site-chip: rgba(25, 28, 32, 0.06);
+    --site-chip-border: rgba(25, 28, 32, 0.12);
+    --site-chip-text: rgba(25, 28, 32, 0.9);
+    --site-nav-text: rgba(25, 28, 32, 0.75);
+    --site-nav-muted: rgba(25, 28, 32, 0.5);
+    --site-outline-border: rgba(25, 28, 32, 0.3);
+    --site-outline-hover: rgba(25, 28, 32, 0.06);
+    --site-codename-filter: brightness(0);
+    --site-title-accent: var(--brand-blue-deep);
+    --site-yellow-text: #8a6d00;
+  }
+
+  // ============================================
+  // Aliases legados --piano-* → paleta do produto
+  // (nomes preservados: ~465 usos em 26 arquivos; valores trocados)
+  // ============================================
+
+  // Brand palette (azul/amarelo da marca)
+  --piano-blue-deep: var(--brand-blue-deep);
+  --piano-blue: var(--brand-blue);
+  --piano-blue-light: var(--brand-blue-light);
+  --piano-cyan: var(--site-accent);
+  --piano-cyan-light: var(--site-accent-text);
+  --piano-yellow: var(--brand-yellow);
+  --piano-yellow-dark: var(--brand-yellow-dark);
+
+  // Neutral palette (tema)
+  --piano-dark: #131313;
+  --piano-slate: #1e1e1e;
+  --piano-gray-700: #43474e;
+  --piano-gray-500: #5f6670;
+  --piano-gray-300: #dfe3eb;
+  --piano-gray-100: #eeeeef;
   --piano-white: #ffffff;
 
   // Semantic tokens — surfaces
-  --piano-bg-primary: linear-gradient(
-    135deg,
-    var(--piano-blue-deep) 0%,
-    var(--piano-blue) 45%,
-    var(--piano-blue-light) 100%
-  );
-  --piano-bg-accent: linear-gradient(135deg, var(--piano-blue) 0%, var(--piano-cyan) 100%);
-  --piano-bg-solid: #ffffff;
-  --piano-bg-secondary: #f8fafc;
-  --piano-bg-tertiary: #f1f5f9;
-  --piano-border: #cbd5e1;
-  --piano-border-subtle: #e2e8f0;
+  --piano-bg-primary: var(--site-bg);
+  --piano-bg-accent: var(--site-accent);
+  --piano-bg-solid: var(--site-surface);
+  --piano-bg-secondary: var(--site-container);
+  --piano-bg-tertiary: var(--site-container);
+  --piano-border: var(--site-border);
+  --piano-border-subtle: var(--site-border-subtle);
+  --piano-header: var(--site-header);
+  --piano-header-scrolled: var(--site-header-scrolled);
+  --piano-chip: var(--site-chip);
+  --piano-chip-border: var(--site-chip-border);
+  --piano-chip-text: var(--site-chip-text);
+  --piano-nav-text: var(--site-nav-text);
+  --piano-nav-muted: var(--site-nav-muted);
+  --piano-outline-border: var(--site-outline-border);
+  --piano-outline-hover: var(--site-outline-hover);
+  --piano-codename-filter: var(--site-codename-filter);
+  --piano-title-accent: var(--site-title-accent);
+  --piano-yellow-text: var(--site-yellow-text);
+  --piano-on-accent: #1c130f;
 
-  // Semantic tokens — accent (brand-aligned)
-  --piano-accent: var(--piano-blue);
-  --piano-accent-hover: var(--piano-blue-deep);
-  --piano-accent-soft: rgba(4, 84, 155, 0.1);
+  // Semantic tokens — accent
+  --piano-accent: var(--site-accent);
+  --piano-accent-hover: var(--site-accent-hover);
+  --piano-accent-soft: var(--site-accent-soft);
 
-  // Semantic tokens — text (WCAG AA on light surfaces)
-  --piano-text-primary: var(--piano-dark);
-  --piano-text-secondary: var(--piano-gray-700); // #475569 — 7.6:1 on #fff
-  --piano-text-tertiary: #475569; // alias for consistency (same as secondary, guaranteed AA)
-  --piano-text-muted: #64748b; // #64748b — 4.8:1 on #fff (AA pass)
-  --piano-text-on-dark: #ffffff;
+  // Semantic tokens — text (tema)
+  --piano-text-primary: var(--site-text);
+  --piano-text-secondary: var(--site-text-secondary);
+  --piano-text-tertiary: var(--site-text-secondary);
+  --piano-text-muted: var(--site-text-muted);
+  --piano-text-on-dark: var(--site-text);
 
   // Semantic tokens — feedback
-  --piano-error: #dc2626; // AA on #fff (4.6:1)
-  --piano-success: #22c55e; // AA on #fff (3.9:1 for large/UI, used as bg with white text)
-  --piano-success-hover: #16a34a; // darker shade for hover
+  --piano-error: #dc2626;
+  --piano-success: #22c55e;
+  --piano-success-hover: #16a34a;
 
-  // PIX brand color
+  // PIX brand color (marca oficial Pix — inalterável)
   --piano-pix: #32bcad;
   --piano-pix-hover: #28a194;
   --piano-pix-glow: rgba(50, 188, 173, 0.3);
 
   // Overlay
-  --piano-overlay: rgba(0, 0, 0, 0.7);
+  --piano-overlay: var(--site-overlay);
 
-  // Semantic tokens — text on dark backgrounds (WCAG AA on --piano-dark)
-  --piano-text-on-dark-secondary: rgba(255, 255, 255, 0.85); // 11:1 on #0a1733
-  --piano-text-on-dark-muted: rgba(255, 255, 255, 0.7); // 7.5:1 on #0a1733
+  // Semantic tokens — text on dark (legado; tema cuida do contraste)
+  --piano-text-on-dark-secondary: var(--site-text-secondary);
+  --piano-text-on-dark-muted: var(--site-text-muted);
 
-  // Shadows
-  --piano-shadow-sm: 0 1px 3px rgba(16, 67, 140, 0.08);
-  --piano-shadow-md: 0 4px 12px rgba(16, 67, 140, 0.12);
-  --piano-shadow-lg: 0 12px 32px rgba(16, 67, 140, 0.16);
-  --piano-shadow-glow: 0 0 32px rgba(0, 193, 230, 0.3);
+  // Shadows (neutras — funcionam nos dois temas)
+  --piano-shadow-sm: 0 1px 3px rgba(19, 19, 19, 0.1);
+  --piano-shadow-md: 0 4px 12px rgba(19, 19, 19, 0.14);
+  --piano-shadow-lg: 0 12px 32px rgba(19, 19, 19, 0.18);
+  --piano-shadow-glow: 0 0 32px rgba(224, 137, 90, 0.3);
 
   // Radii
   --piano-radius-sm: 8px;
@@ -100,7 +193,8 @@ body {
     Roboto,
     sans-serif;
   line-height: 1.6;
-  color: var(--piano-text-primary);
+  background: var(--site-bg);
+  color: var(--site-text);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -110,8 +204,8 @@ a {
 }
 
 ::selection {
-  background: var(--piano-cyan);
-  color: var(--piano-white);
+  background: var(--site-accent);
+  color: #ffffff;
 }
 
 // Scrollbar styling
@@ -120,10 +214,20 @@ a {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--piano-gray-100);
+  background: var(--site-container);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--piano-blue);
+  background: var(--site-accent);
   border-radius: var(--piano-radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--site-accent-hover);
+}
+
+// Firefox
+* {
+  scrollbar-color: var(--site-accent) var(--site-container);
+  scrollbar-width: thin;
 }

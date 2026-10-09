@@ -12,8 +12,8 @@ import plugin from '~/plugins/telemetry.client'
 describe('telemetry.client plugin', () => {
   beforeEach(() => {
     vi.resetModules()
-    initMock.mockClear()
-    captureMock.mockClear()
+    initMock.mockReset()
+    captureMock.mockReset()
   })
 
   it('sem DSN não inicializa SDK nem registra hooks', () => {
@@ -47,5 +47,25 @@ describe('telemetry.client plugin', () => {
     const error = new Error('boom')
     hooks['vue:error'](error)
     await vi.waitFor(() => expect(captureMock).toHaveBeenCalledWith(error))
+  })
+  it('falha assíncrona do SDK não escapa para o navegador', async () => {
+    vi.stubGlobal('useRuntimeConfig', () => ({
+      public: { telemetriaDsn: 'https://key@errors.example/1' },
+    }))
+    initMock.mockImplementationOnce(() => {
+      throw new Error('SDK indisponível')
+    })
+    captureMock.mockImplementationOnce(() => {
+      throw new Error('captura indisponível')
+    })
+    const hooks: Record<string, (e: unknown) => void> = {}
+    plugin({
+      hook: (name: string, cb: (e: unknown) => void) => {
+        hooks[name] = cb
+      },
+    })
+    await vi.waitFor(() => expect(initMock).toHaveBeenCalledTimes(1))
+    hooks['vue:error'](new Error('erro original'))
+    await vi.waitFor(() => expect(captureMock).toHaveBeenCalledTimes(1))
   })
 })

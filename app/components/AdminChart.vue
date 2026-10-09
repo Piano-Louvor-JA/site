@@ -11,7 +11,7 @@
 
   const props = withDefaults(defineProps<ChartProps>(), {
     height: 280,
-    colors: () => ['#22d3ee'],
+    colors: () => ['#e0895a'],
   })
 
   const isLine = computed(() => props.type === 'line' || props.type === 'area')
@@ -19,7 +19,7 @@
   const chartOptions = computed<ApexOptions>(() => ({
     chart: {
       background: 'transparent',
-      foreColor: '#94a3b8',
+      foreColor: '#bfc7d4',
       toolbar: { show: false },
       fontFamily: 'system-ui, -apple-system, sans-serif',
       animations: { enabled: true, speed: 350 },
@@ -27,7 +27,7 @@
     theme: { mode: 'dark' },
     colors: props.colors,
     grid: {
-      borderColor: '#1e293b',
+      borderColor: '#353534',
       strokeDashArray: 3,
       padding: { left: 10, right: 10 },
     },
@@ -66,7 +66,7 @@
     legend: {
       position: 'top',
       horizontalAlign: 'right',
-      labels: { colors: '#94a3b8' },
+      labels: { colors: '#bfc7d4' },
     },
     plotOptions: props.type === 'bar' ? { bar: { borderRadius: 6, columnWidth: '50%' } } : {},
     responsive: [

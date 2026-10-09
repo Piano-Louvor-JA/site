@@ -26,6 +26,7 @@ const defaultListReleasesResults = [
     data: [
       {
         tag_name: 'v2.0.0',
+        published_at: '2026-08-01T12:00:00Z',
         assets: [
           { name: 'LouvorJA-2.0.0.AppImage', download_count: 200 },
           { name: 'LouvorJA-Setup-2.0.0.exe', download_count: 350 },
@@ -36,6 +37,7 @@ const defaultListReleasesResults = [
       },
       {
         tag_name: 'v1.9.0',
+        published_at: '2026-07-01T12:00:00Z',
         assets: [
           { name: 'LouvorJA-1.9.0.AppImage', download_count: 80 },
           { name: 'LouvorJA-Setup-1.9.0.exe', download_count: 120 },
@@ -48,6 +50,7 @@ const defaultListReleasesResults = [
     data: [
       {
         tag_name: 'v0.5.0',
+        published_at: '2026-07-15T12:00:00Z',
         assets: [
           { name: 'AndroidTV-louvorja-palco-0.5.0.apk', download_count: 45 },
           { name: 'louvorja-palco-webos-0.5.0.ipk', download_count: 12 },
@@ -61,6 +64,7 @@ const defaultListReleasesResults = [
     data: [
       {
         tag_name: 'v1.2.0',
+        published_at: '2026-09-01T12:00:00Z',
         assets: [
           { name: 'louvorja-piano-1.2.0.apk', download_count: 500 },
           { name: 'louvorja-piano-ios-unsigned.ipa', download_count: 30 },
@@ -68,6 +72,7 @@ const defaultListReleasesResults = [
       },
       {
         tag_name: 'v1.1.0',
+        published_at: '2026-08-15T12:00:00Z',
         assets: [{ name: 'louvorja-piano-1.1.0.apk', download_count: 200 }],
       },
     ],
@@ -215,7 +220,7 @@ describe('dashboard-stats', () => {
 
     it('handles repos with releases but no assets', async () => {
       mockInstance.rest.repos.listReleases.mockResolvedValue({
-        data: [{ tag_name: 'v1.0.0', assets: [] }],
+        data: [{ tag_name: 'v1.0.0', published_at: '2026-06-01T12:00:00Z', assets: [] }],
       })
       const result = await fetchGitHubStats()
       expect(result.downloads!.total).toBe(0)

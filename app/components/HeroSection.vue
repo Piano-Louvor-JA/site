@@ -1,10 +1,24 @@
 <script setup lang="ts">
+  import { ref } from 'vue'
   import { siteConfig } from '~/data/site'
+  import { useHeroCarousel } from '~/composables/useHeroCarousel'
+
+  // Telas mockadas do produto girando dentro da janela de preview
+  const slides = [
+    { src: '/img/hero-carrossel/desktop.webp', alt: 'App desktop PIANO LouvorJA — tela inicial' },
+    { src: '/img/hero-carrossel/web.webp', alt: 'App Web PIANO LouvorJA — álbuns' },
+    { src: '/img/hero-carrossel/mobile.webp', alt: 'App mobile PIANO LouvorJA' },
+    { src: '/img/hero-carrossel/palco-tv.webp', alt: 'Palco PIANO projetando na TV' },
+    { src: '/img/hero-carrossel/voidbr.webp', alt: 'VoidBR LouvorJA Piano' },
+  ]
+
+  const previewRoot = ref<HTMLElement | null>(null)
+  useHeroCarousel(previewRoot, slides.length)
 </script>
 
 <template>
   <section id="hero" class="hero">
-    <div class="hero__glow hero__glow--cyan" />
+    <div class="hero__glow hero__glow--accent" />
     <div class="hero__glow hero__glow--yellow" />
 
     <div class="hero__container">
@@ -16,7 +30,9 @@
 
         <h1 class="hero__title">
           {{ $t('hero.title') }}<br />
-          <span class="hero__title-accent">{{ $t('hero.titleHighlight') }}</span>
+          <span class="hero__title-accent"
+            >{{ $t('hero.titleHighlight') }} <span>{{ $t('hero.titleHighlight2') }}</span></span
+          >
         </h1>
 
         <p data-testid="hero-subtitle" class="hero__subtitle">
@@ -50,15 +66,15 @@
             {{ $t('hero.meta.anyDevice') }}
           </div>
           <div class="hero__meta-item">
-            <i class="ti ti-award" />
+            <i class="ti ti-code" />
             {{ $t('hero.meta.openSource') }}
           </div>
         </div>
       </div>
 
-      <!-- Preview: replica fiel do webapp (AppShell) -->
+      <!-- Preview: janela com telas mockadas do produto em carrossel -->
       <div class="hero__preview">
-        <div class="hero__preview-window" data-testid="hero-preview-window">
+        <div ref="previewRoot" class="hero__preview-window" data-testid="hero-preview-window">
           <!-- Barra de janela estilo desktop -->
           <div class="hero__preview-bar"><span /><span /><span /></div>
 
@@ -77,40 +93,36 @@
             </div>
           </div>
 
-          <!-- Corpo do app com gradiente (igual ao webapp) -->
+          <!-- Corpo: telas mockadas em carrossel (crossfade + Ken Burns no desktop) -->
           <div class="hero__preview-body">
-            <!-- Hino atual em destaque -->
-            <div class="hero__preview-card hero__preview-card--hymn">
-              <div class="hero__preview-card-icon hero__preview-card-icon--cyan">
-                <i class="ti ti-music" />
-              </div>
-              <div class="hero__preview-card-info">
-                <span class="hero__preview-card-label">Hino atual</span>
-                <span class="hero__preview-card-title">Nº 15 — Divino Comigo</span>
-              </div>
-              <span class="hero__preview-card-badge">Ativo</span>
+            <div
+              v-for="(slide, i) in slides"
+              :key="slide.src"
+              class="hero__preview-slide"
+              :class="{ 'hero__preview-slide--active': i === 0 }"
+            >
+              <img
+                :src="slide.src"
+                :alt="slide.alt"
+                class="hero__preview-img"
+                :loading="i === 0 ? 'eager' : 'lazy'"
+                decoding="async"
+                width="1280"
+                height="800"
+              />
             </div>
+          </div>
 
-            <!-- Próximo item -->
-            <div class="hero__preview-card hero__preview-card--liturgy">
-              <div class="hero__preview-card-icon hero__preview-card-icon--yellow">
-                <i class="ti ti-book-2" />
-              </div>
-              <div class="hero__preview-card-info">
-                <span class="hero__preview-card-label">Próximo</span>
-                <span class="hero__preview-card-title">Boas-Vindas e Louvor</span>
-              </div>
-              <i class="ti ti-chevron-right hero__preview-card-arrow" />
-            </div>
-
-            <!-- Cronômetro -->
-            <div class="hero__preview-timer">
-              <div class="hero__preview-timer-label">
-                <i class="ti ti-clock-hour-4" />
-                <span>Tempo decorrido</span>
-              </div>
-              <span class="hero__preview-timer-value">10:32</span>
-            </div>
+          <!-- Dots de navegação (auto-rotação a cada 5s; clicáveis no desktop) -->
+          <div class="hero__preview-dots" role="tablist" aria-label="Telas do produto">
+            <button
+              v-for="(slide, i) in slides"
+              :key="`dot-${slide.src}`"
+              type="button"
+              class="hero__preview-dot"
+              :class="{ 'hero__preview-dot--active': i === 0 }"
+              :aria-label="`Tela ${i + 1} de ${slides.length}`"
+            />
           </div>
 
           <!-- Dock inferior (igual ao webapp) -->
@@ -144,7 +156,8 @@
     display: flex;
     align-items: center;
     overflow: hidden;
-    background: var(--piano-bg-primary);
+    background: var(--site-bg);
+    transition: background 0.3s;
     padding: 8rem 1.5rem 4rem;
 
     &__glow {
@@ -154,10 +167,10 @@
       opacity: 0.35;
       pointer-events: none;
 
-      &--cyan {
+      &--accent {
         width: 500px;
         height: 500px;
-        background: var(--piano-cyan);
+        background: var(--site-accent);
         top: -100px;
         right: -100px;
       }
@@ -188,9 +201,9 @@
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      background: rgba(0, 193, 230, 0.15);
-      border: 1px solid rgba(0, 193, 230, 0.3);
-      color: var(--piano-cyan-light);
+      background: var(--site-accent-soft);
+      border: 1px solid rgba(224, 137, 90, 0.3);
+      color: var(--site-accent-text);
       padding: 0.375rem 1rem;
       border-radius: var(--piano-radius-full);
       font-size: 0.85rem;
@@ -202,21 +215,25 @@
       font-size: 3.5rem;
       font-weight: 800;
       line-height: 1.1;
-      color: #fff;
+      color: var(--site-text);
       margin-bottom: 1.25rem;
       letter-spacing: -0.02em;
     }
 
     &__title-accent {
-      background: linear-gradient(135deg, var(--piano-cyan) 0%, var(--piano-yellow) 100%);
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
+      // Sem gradiente: "Simples" na marca azul, "e Completo" no acento (texto AA por tema)
+      color: var(--piano-title-accent);
+      -webkit-text-fill-color: var(--piano-title-accent);
+
+      span {
+        color: var(--piano-accent-text);
+        -webkit-text-fill-color: var(--piano-accent-text);
+      }
     }
 
     &__subtitle {
       font-size: 1.2rem;
-      color: rgba(255, 255, 255, 0.8);
+      color: var(--site-text-secondary);
       line-height: 1.7;
       max-width: 480px;
       margin-bottom: 2rem;
@@ -243,23 +260,24 @@
         box-shadow 0.2s;
 
       &--primary {
-        background: var(--piano-bg-accent);
-        color: #fff;
-        box-shadow: 0 4px 20px rgba(0, 193, 230, 0.4);
+        background: var(--site-accent);
+        color: var(--piano-on-accent);
+        box-shadow: var(--piano-shadow-glow);
 
         &:hover {
+          background: var(--site-accent-hover);
           transform: translateY(-2px);
-          box-shadow: 0 8px 32px rgba(0, 193, 230, 0.55);
+          box-shadow: 0 8px 32px rgba(224, 137, 90, 0.55);
         }
       }
 
       &--secondary {
-        background: rgba(255, 255, 255, 0.1);
-        color: #fff;
-        border: 1px solid rgba(255, 255, 255, 0.2);
+        background: transparent;
+        color: var(--site-text);
+        border: 1px solid var(--site-border);
 
         &:hover {
-          background: rgba(255, 255, 255, 0.15);
+          background: var(--site-accent-soft);
           transform: translateY(-2px);
         }
       }
@@ -279,12 +297,12 @@
       display: flex;
       align-items: center;
       gap: 0.375rem;
-      color: rgba(255, 255, 255, 0.65);
+      color: var(--site-text-secondary);
       font-size: 0.85rem;
 
       i {
         font-size: 1.05rem;
-        color: var(--piano-cyan);
+        color: var(--site-accent);
       }
     }
 
@@ -301,7 +319,7 @@
       border-radius: var(--piano-radius-lg);
       box-shadow:
         0 24px 64px rgba(0, 0, 0, 0.4),
-        0 0 0 1px rgba(0, 193, 230, 0.1);
+        0 0 0 1px var(--piano-border-subtle);
       overflow: hidden;
       transform: perspective(1000px) rotateY(-3deg) rotateX(2deg);
     }
@@ -335,8 +353,8 @@
       align-items: center;
       justify-content: space-between;
       padding: 0.75rem 1rem;
-      background: linear-gradient(135deg, rgba(16, 67, 140, 0.4) 0%, rgba(10, 23, 51, 0.6) 100%);
-      border-bottom: 1px solid rgba(0, 193, 230, 0.15);
+      background: linear-gradient(135deg, rgba(224, 137, 90, 0.16) 0%, rgba(19, 19, 19, 0.6) 100%);
+      border-bottom: 1px solid var(--piano-border-subtle);
     }
 
     &__preview-brand {
@@ -362,7 +380,7 @@
       color: #fff;
     }
     &__preview-ja {
-      color: var(--piano-cyan-light);
+      color: var(--brand-yellow);
       font-weight: 400;
     }
 
@@ -386,122 +404,62 @@
       letter-spacing: 0.05em;
     }
 
-    /* Corpo do app — gradiente como o webapp */
+    /* Corpo do app — telas mockadas em carrossel */
     &__preview-body {
-      padding: 1rem;
-      background: linear-gradient(180deg, #0a1733 0%, #061026 100%);
-      display: flex;
-      flex-direction: column;
-      gap: 0.625rem;
-      min-height: 240px;
-    }
-
-    &__preview-card {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      padding: 0.75rem;
-      border-radius: var(--piano-radius-md);
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    &__preview-card--hymn {
-      background: rgba(0, 193, 230, 0.1);
-      border-color: rgba(0, 193, 230, 0.25);
-    }
-
-    &__preview-card-icon {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 40px;
-      height: 40px;
-      border-radius: var(--piano-radius-sm);
-      flex-shrink: 0;
-
-      i {
-        font-size: 1.25rem;
-        color: #fff;
-      }
-
-      &--cyan {
-        background: linear-gradient(135deg, var(--piano-cyan) 0%, #0098b3 100%);
-      }
-
-      &--yellow {
-        background: linear-gradient(135deg, var(--piano-yellow) 0%, #d9a800 100%);
-      }
-    }
-
-    &__preview-card-info {
-      display: flex;
-      flex-direction: column;
-      flex: 1;
-      min-width: 0;
-    }
-
-    &__preview-card-label {
-      font-size: 0.7rem;
-      color: rgba(255, 255, 255, 0.5);
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-    }
-
-    &__preview-card-title {
-      font-size: 0.875rem;
-      font-weight: 600;
-      color: #fff;
-      white-space: nowrap;
+      position: relative;
+      background: var(--piano-dark);
+      min-height: 260px;
       overflow: hidden;
-      text-overflow: ellipsis;
     }
 
-    &__preview-card-badge {
-      font-size: 0.7rem;
-      font-weight: 600;
-      color: var(--piano-cyan);
-      background: rgba(0, 193, 230, 0.15);
-      padding: 0.25rem 0.5rem;
-      border-radius: var(--piano-radius-full);
-      flex-shrink: 0;
-    }
+    &__preview-slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity 0.65s ease;
+      pointer-events: none;
 
-    &__preview-card-arrow {
-      color: rgba(255, 255, 255, 0.4);
-      font-size: 1.1rem;
-    }
-
-    /* Cronômetro */
-    &__preview-timer {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0.75rem 1rem;
-      border-radius: var(--piano-radius-md);
-      background: rgba(252, 206, 2, 0.08);
-      border: 1px solid rgba(252, 206, 2, 0.2);
-      margin-top: auto;
-    }
-
-    &__preview-timer-label {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-size: 0.8rem;
-      color: rgba(255, 255, 255, 0.6);
-
-      i {
-        color: var(--piano-yellow);
+      &--active {
+        opacity: 1;
+        pointer-events: auto;
       }
     }
 
-    &__preview-timer-value {
-      font-family: 'Plus Jakarta Sans', monospace;
-      font-size: 1.25rem;
-      font-weight: 800;
-      color: var(--piano-yellow);
-      letter-spacing: 0.02em;
+    &__preview-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+      will-change: transform;
+    }
+
+    /* Dots de navegação do carrossel */
+    &__preview-dots {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.625rem 0 0.25rem;
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    &__preview-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      border: none;
+      padding: 0;
+      background: rgba(255, 255, 255, 0.25);
+      cursor: pointer;
+      transition:
+        background 0.3s,
+        width 0.3s;
+
+      &--active {
+        background: var(--site-accent);
+        width: 22px;
+        border-radius: 4px;
+      }
     }
 
     /* Dock inferior */
@@ -510,7 +468,7 @@
       justify-content: space-around;
       padding: 0.625rem 0.5rem;
       background: rgba(0, 0, 0, 0.5);
-      border-top: 1px solid rgba(0, 193, 230, 0.1);
+      border-top: 1px solid var(--piano-border-subtle);
     }
 
     &__preview-dock-item {
@@ -528,8 +486,8 @@
       }
 
       &--active {
-        color: var(--piano-cyan);
-        background: rgba(0, 193, 230, 0.15);
+        color: var(--site-accent);
+        background: var(--piano-accent-soft);
       }
     }
 

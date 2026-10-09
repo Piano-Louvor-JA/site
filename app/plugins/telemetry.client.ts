@@ -12,7 +12,11 @@ export default defineNuxtPlugin((nuxtApp) => {
 
   const report = (error: unknown): void => {
     try {
-      void import('@sentry/browser').then(({ captureException }) => captureException(error))
+      void import('@sentry/browser')
+        .then(({ captureException }) => captureException(error))
+        .catch(() => {
+          /* telemetria nunca quebra o site */
+        })
     } catch {
       /* telemetria nunca quebra o site */
     }
@@ -21,13 +25,17 @@ export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.hook('vue:error', report)
   nuxtApp.hook('app:error', report)
 
-  void import('@sentry/browser').then(({ init }) => {
-    init({
-      dsn,
-      environment: import.meta.dev ? 'development' : 'production',
-      release: 'louvorja-site',
-      sendDefaultPii: false,
-      tracesSampleRate: 0,
+  void import('@sentry/browser')
+    .then(({ init }) => {
+      init({
+        dsn,
+        environment: import.meta.dev ? 'development' : 'production',
+        release: 'louvorja-site',
+        sendDefaultPii: false,
+        tracesSampleRate: 0,
+      })
     })
-  })
+    .catch(() => {
+      /* falha de carregamento/inicialização não afeta o site */
+    })
 })

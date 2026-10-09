@@ -14,12 +14,13 @@
     "language": "Idioma",
     "download": "Descargar",
     "releases": "Versiones",
-    "testers": "Probadores"
+    "testers": "Probadores",
+    "toggleTheme": "Alternar tema claro/oscuro"
   },
   "hero": {
     "badge": "Nuevo: Web App (PWA) Disponible",
     "title": "Gestor de Culto",
-    "titleHighlight": "Simple y Completo",
+    "titleHighlight": "Simple y",
     "subtitle": "Organice himnarios, liturgia, Biblia y proyección en un solo lugar. Acceda desde cualquier dispositivo.",
     "ctaPrimary": "Abrir Aplicación",
     "ctaSecondary": "Ver Plataformas",
@@ -35,7 +36,8 @@
       "next": "Siguiente",
       "nextTitle": "Bienvenida y Alabanza",
       "elapsedTime": "Tiempo transcurrido"
-    }
+    },
+    "titleHighlight2": "Completo"
   },
   "stats": {
     "features": "Funciones del ecosistema",
