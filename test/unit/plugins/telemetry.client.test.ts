@@ -7,7 +7,7 @@ const { initMock, captureMock } = vi.hoisted(() => ({
 
 vi.mock('@sentry/browser', () => ({ init: initMock, captureException: captureMock }))
 
-import plugin from '~/plugins/telemetry.client'
+import plugin, { telemetryEnvironment } from '~/plugins/telemetry.client'
 
 describe('telemetry.client plugin', () => {
   beforeEach(() => {
@@ -67,5 +67,9 @@ describe('telemetry.client plugin', () => {
     await vi.waitFor(() => expect(initMock).toHaveBeenCalledTimes(1))
     hooks['vue:error'](new Error('erro original'))
     await vi.waitFor(() => expect(captureMock).toHaveBeenCalledTimes(1))
+  })
+  it('identifica o ambiente de desenvolvimento e produção', () => {
+    expect(telemetryEnvironment(true)).toBe('development')
+    expect(telemetryEnvironment(false)).toBe('production')
   })
 })
