@@ -4,7 +4,7 @@
    * Herda cor via currentColor; alinha com o texto como os ícones .ti do Tabler.
    * Uso: <IconPix /> (1em, inline) ou <IconPix :size="24" />.
    */
-  defineProps<{
+  const props = defineProps<{
     /** Tamanho em px (default 1em pra alinhar com texto). */
     size?: number | string
   }>()
@@ -12,8 +12,8 @@
 
 <template>
   <svg
-    :width="size || '1em'"
-    :height="size || '1em'"
+    :width="props.size || '1em'"
+    :height="props.size || '1em'"
     viewBox="0 0 24 24"
     fill="currentColor"
     role="img"

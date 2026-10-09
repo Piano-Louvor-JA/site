@@ -3,24 +3,26 @@ import handler from '../../../server/api/github/releases.get'
 
 // Mock Octokit para não chamar rede
 vi.mock('@octokit/rest', () => ({
-  Octokit: vi.fn().mockImplementation(() => ({
-    rest: {
-      repos: {
-        listReleases: vi.fn().mockResolvedValue({
-          data: [
-            {
-              tag_name: 'v1.0.0',
-              name: 'Release v1.0.0',
-              published_at: '2025-01-15T10:00:00Z',
-              html_url: 'https://github.com/Piano-Louvor-JA/web/releases/tag/v1.0.0',
-              body: 'body',
-              assets: [],
-            },
-          ],
-        }),
+  Octokit: vi.fn().mockImplementation(function () {
+    return {
+      rest: {
+        repos: {
+          listReleases: vi.fn().mockResolvedValue({
+            data: [
+              {
+                tag_name: 'v1.0.0',
+                name: 'Release v1.0.0',
+                published_at: '2025-01-15T10:00:00Z',
+                html_url: 'https://github.com/Piano-Louvor-JA/web/releases/tag/v1.0.0',
+                body: 'body',
+                assets: [],
+              },
+            ],
+          }),
+        },
       },
-    },
-  })),
+    }
+  }),
 }))
 
 describe('server/api/github/releases.get.ts (handler)', () => {
