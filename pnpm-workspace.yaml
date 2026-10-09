@@ -7,6 +7,11 @@ allowBuilds:
   protobufjs: true
   re2: true
   ttf2woff2: false
+hoistPattern:
+  - '*'
+  # Let semantic-release resolve the explicit writer-8-compatible root preset.
+  # Commitlint keeps its own newer preset instead of leaking it to release notes.
+  - '!conventional-changelog-conventionalcommits'
 overrides:
   rollup: 4.62.4
   # Mínimo corrigido dos advisories high/critical do `pnpm audit`.

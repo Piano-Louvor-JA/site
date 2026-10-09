@@ -83,6 +83,7 @@
     "@vitest/coverage-istanbul": "^4.1.10",
     "@vitest/coverage-v8": "^4.1.10",
     "@vue/test-utils": "^2.5.1",
+    "conventional-changelog-conventionalcommits": "9.3.1",
     "eslint": "^10.12.0",
     "eslint-plugin-vue": "^10.11.1",
     "firebase-tools": "^15.32.1",
