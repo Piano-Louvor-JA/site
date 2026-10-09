@@ -70,6 +70,13 @@ export default defineNuxtConfig({
         { rel: 'icon', href: '/favicon.ico', sizes: 'any' },
         { rel: 'apple-touch-icon', href: '/ico/favicon.png' },
       ],
+      // Anti-FOUC: aplica data-theme antes da hidratação (default dark)
+      script: [
+        {
+          innerHTML:
+            "try{var t=localStorage.getItem('piano-theme');if(t!=='light'&&t!=='dark'){t=window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark'}document.documentElement.dataset.theme=t}catch(e){document.documentElement.dataset.theme='dark'}",
+        },
+      ],
     },
   },
 
@@ -120,6 +127,9 @@ export default defineNuxtConfig({
 
       // Admin authorization (comma-separated emails)
       adminEmails: process.env.ADMIN_EMAILS || '',
+
+      // Telemetria Glitchtip (client): vazio = desligada
+      telemetriaDsn: process.env.NUXT_PUBLIC_TELEMETRIA_DSN || '',
     },
   },
 })

@@ -10,6 +10,7 @@ interface GitHubRelease {
   tag_name: string
   name: string
   published_at: string
+  draft?: boolean
   html_url: string
   body: string
   _repo: string
@@ -107,7 +108,9 @@ export default defineEventHandler(async (event) => {
     const repo = repos[i]
 
     if (result.status === 'fulfilled') {
-      allReleases.push(...result.value)
+      // Drafts não têm published_at (e o site não deve listá-las): filtra antes
+      const published = result.value.filter((r) => !r.draft && r.published_at)
+      allReleases.push(...published)
     } else {
       // Loga mas nao derruba a resposta inteira
       console.error(`Error fetching releases from ${repo}:`, result.reason)
@@ -115,9 +118,14 @@ export default defineEventHandler(async (event) => {
   }
 
   // Ordena por data de publicacao (mais recentes primeiro)
+  const ts = (r: GitHubRelease) => {
+    const raw = r.published_at ?? r.created_at
+    const ms = raw ? new Date(raw).getTime() : Number.NaN
+    return Number.isNaN(ms) ? Number.NEGATIVE_INFINITY : ms
+  }
   allReleases.sort((a, b) => {
-    const dateA = new Date(a.published_at ?? a.created_at ?? new Date()).getTime()
-    const dateB = new Date(b.published_at ?? b.created_at ?? new Date()).getTime()
+    const dateA = ts(a)
+    const dateB = ts(b)
     return dateB - dateA
   })
 

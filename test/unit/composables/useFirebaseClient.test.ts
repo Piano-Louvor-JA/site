@@ -9,6 +9,8 @@ vi.mock('firebase/app', () => ({
 // Mock firebase/auth
 vi.mock('firebase/auth', () => ({
   getAuth: vi.fn(() => ({ name: 'mock-auth' })),
+  setPersistence: vi.fn(() => Promise.resolve()),
+  browserLocalPersistence: { type: 'LOCAL' },
 }))
 
 // Mock useRuntimeConfig
@@ -134,5 +136,13 @@ describe('useFirebaseClient', () => {
       expect(e).toBeDefined()
     }
     mockConfig.public.firebaseProjectId = saved
+  })
+  it('continua disponível quando persistência local é rejeitada', async () => {
+    const { setPersistence } = await import('firebase/auth')
+    vi.mocked(setPersistence).mockRejectedValueOnce(new Error('storage bloqueado'))
+    const { useFirebaseClient } = await import('~/composables/useFirebaseClient')
+    const result = useFirebaseClient()
+    await vi.waitFor(() => expect(setPersistence).toHaveBeenCalled())
+    expect(result).toBeDefined()
   })
 })

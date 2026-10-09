@@ -1,5 +1,5 @@
 import { initializeApp, getApps, type FirebaseApp } from 'firebase/app'
-import { getAuth, type Auth } from 'firebase/auth'
+import { getAuth, setPersistence, browserLocalPersistence, type Auth } from 'firebase/auth'
 
 let app: FirebaseApp | null = null
 let authInstance: Auth | null = null
@@ -38,5 +38,10 @@ export function useFirebaseClient(): Auth {
       })
 
   authInstance = getAuth(app)
+  // Mesma persistência explícita do plugin — a instância compartilhada não
+  // deve depender do default implícito ao trocar de página/aba.
+  void setPersistence(authInstance, browserLocalPersistence).catch(() => {
+    // IndexedDB indisponível: sessão fica em memória (degrada, não quebra)
+  })
   return authInstance
 }

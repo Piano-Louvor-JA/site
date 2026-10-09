@@ -1,0 +1,5 @@
+
+# Web3Forms Access Key pública, não credencial secreta.
+# https://docs.web3forms.com/getting-started/faq
+# Exceção somente deste achado histórico; demais chaves continuam verificadas.
+ff13288a5945669cd3edeecf5087d504c96e26fc:app/pages/contact.vue:generic-api-key:5

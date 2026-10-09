@@ -85,7 +85,9 @@ async function syncLatestAppRelease(): Promise<void> {
 async function syncReleases(): Promise<void> {
   const ok = await conditional('releases', async () => {
     const res = await octokit().rest.repos.listReleases({ owner: ORG, repo: 'app', per_page: 100 })
-    return { data: res.data, headers: res.headers }
+    // Drafts não têm published_at (viram 1969 no front) e não são releases públicas
+    const published = res.data.filter((r) => !r.draft && r.published_at)
+    return { data: published, headers: res.headers }
   })
   if (ok.changed && ok.data) writeSnapshot('releases', ok.data, ok.etag)
 }

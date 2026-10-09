@@ -7,6 +7,7 @@
 
   const navItems = [
     { to: '/admin', label: 'Dashboard', icon: 'ti-layout-dashboard' },
+    { to: '/admin/infra', label: 'Infra', icon: 'ti-server-2' },
     { to: '/admin/conteudo', label: 'Conteúdo', icon: 'ti-music' },
     { to: '/admin/comunidade', label: 'Comunidade', icon: 'ti-users-group' },
     { to: '/admin/newsletter', label: 'Newsletter', icon: 'ti-mail' },
@@ -47,8 +48,8 @@
 <style scoped lang="scss">
   .admin-layout {
     min-height: 100vh;
-    background: #0a0e1a;
-    color: #e8eef5;
+    background: #131313;
+    color: #e5e2e1;
   }
 
   .admin-nav {
@@ -56,7 +57,7 @@
     align-items: center;
     gap: 1.5rem;
     padding: 0.75rem 1.5rem;
-    background: #0d1322;
+    background: #1e1e1e;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 
     &__brand {
@@ -94,7 +95,7 @@
         color 0.15s;
 
       &:hover {
-        color: #e8eef5;
+        color: #e5e2e1;
         background: rgba(255, 255, 255, 0.06);
       }
 
