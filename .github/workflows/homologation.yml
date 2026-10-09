@@ -64,7 +64,7 @@ jobs:
           echo "version=$NEXT_VERSION" >> $GITHUB_OUTPUT
 
       - name: Post validation summary
-        uses: actions/github-script@v7
+        uses: actions/github-script@v9
         with:
           script: |
             const version = '${{ steps.preview.outputs.version }}';
