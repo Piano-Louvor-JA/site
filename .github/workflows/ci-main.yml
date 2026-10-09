@@ -166,7 +166,7 @@ jobs:
         uses: actions/upload-artifact@v6
         with:
           name: mutation-report
-          path: .stryker-tmp/reports/
+          path: reports/mutation/
           retention-days: 7
 
   e2e:
