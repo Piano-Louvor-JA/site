@@ -94,7 +94,9 @@ const mockInstance = {
 
 vi.mock('@octokit/rest', () => {
   return {
-    Octokit: vi.fn().mockImplementation(() => mockInstance),
+    Octokit: vi.fn().mockImplementation(function () {
+      return mockInstance
+    }),
   }
 })
 
