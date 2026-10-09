@@ -3,6 +3,14 @@
 All notable changes to this project are documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.6.1](https://github.com/Piano-Louvor-JA/site/compare/v1.6.0...v1.6.1) (2026-10-09)
+
+### Bug Fixes
+
+- **ci:** restore compatible Vitest mutation testing ([c6c0012](https://github.com/Piano-Louvor-JA/site/commit/c6c00126e1d64ee64277c2f79825fbd348f1dbc2))
+- **ci:** restore release notes preset compatibility ([44c0dd1](https://github.com/Piano-Louvor-JA/site/commit/44c0dd11cb349787db43923ed8f668ce29663373))
+- **test:** keep Vue props macro compatible with mutation runner ([cd82438](https://github.com/Piano-Louvor-JA/site/commit/cd824381ba4ccc6af77b94c55f390ef848173bd1))
+
 ## [1.6.0](https://github.com/Piano-Louvor-JA/site/compare/v1.5.0...v1.6.0) (2026-10-09)
 
 ## [1.5.0](https://github.com/Piano-Louvor-JA/site/compare/v1.4.0...v1.5.0) (2026-10-01)
