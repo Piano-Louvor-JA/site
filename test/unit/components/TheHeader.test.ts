@@ -26,6 +26,16 @@ beforeEach(() => {
 
 vi.stubGlobal('useRoute', () => ({ path: '/' }))
 
+// Stub useTheme (composable de tema — testado em useTheme.test.ts)
+const mockTheme = ref<'dark' | 'light'>('dark')
+const mockToggleTheme = vi.fn()
+const mockInitTheme = vi.fn()
+vi.stubGlobal('useTheme', () => ({
+  theme: mockTheme,
+  toggleTheme: mockToggleTheme,
+  initTheme: mockInitTheme,
+}))
+
 vi.stubGlobal('useLocalePath', () => (path: string) => path)
 
 // Stub NuxtLink para nao quebrar render
@@ -92,6 +102,23 @@ describe('TheHeader', () => {
     const cta = wrapper.find('[data-testid="header-cta"]')
     expect(cta.exists()).toBe(true)
     expect(cta.attributes('href')).toMatch(/^https:\/\//)
+  })
+
+  it('tem botao de alternancia de tema (dark/light)', async () => {
+    const wrapper = createWrapper()
+    const btn = wrapper.find('[data-testid="header-theme-toggle"]')
+    expect(btn.exists()).toBe(true)
+    expect(btn.attributes('aria-label')).toBe('nav.toggleTheme')
+    await btn.trigger('click')
+    expect(mockToggleTheme).toHaveBeenCalledTimes(1)
+  })
+
+  it('icone do tema reflete o tema atual (sol em dark, lua em light)', async () => {
+    const wrapper = createWrapper()
+    expect(wrapper.find('[data-testid="header-theme-toggle"] i').classes()).toContain('ti-sun')
+    mockTheme.value = 'light'
+    await nextTick()
+    expect(wrapper.find('[data-testid="header-theme-toggle"] i').classes()).toContain('ti-moon')
   })
 
   it('menu mobile inicia fechado com aria-expanded false', () => {
@@ -255,6 +282,16 @@ describe('TheHeader', () => {
     const wrapper = createWrapper()
     expect(wrapper.vm.navHref('/#features')).toBe('/#features')
     vi.stubGlobal('useRoute', () => ({ path: '/' }))
+
+    // Stub useTheme (composable de tema — testado em useTheme.test.ts)
+    const mockTheme = ref<'dark' | 'light'>('dark')
+    const mockToggleTheme = vi.fn()
+    const mockInitTheme = vi.fn()
+    vi.stubGlobal('useTheme', () => ({
+      theme: mockTheme,
+      toggleTheme: mockToggleTheme,
+      initTheme: mockInitTheme,
+    }))
   })
 
   it('navHref processa #hash puro quando esta na home', () => {
@@ -267,6 +304,16 @@ describe('TheHeader', () => {
     const wrapper = createWrapper()
     expect(wrapper.vm.navHref('#features')).toBe('/#features')
     vi.stubGlobal('useRoute', () => ({ path: '/' }))
+
+    // Stub useTheme (composable de tema — testado em useTheme.test.ts)
+    const mockTheme = ref<'dark' | 'light'>('dark')
+    const mockToggleTheme = vi.fn()
+    const mockInitTheme = vi.fn()
+    vi.stubGlobal('useTheme', () => ({
+      theme: mockTheme,
+      toggleTheme: mockToggleTheme,
+      initTheme: mockInitTheme,
+    }))
   })
 
   it('navHref reconhece path com trailing slash como home', () => {
@@ -274,6 +321,16 @@ describe('TheHeader', () => {
     const wrapper = createWrapper()
     expect(wrapper.vm.navHref('#features')).toBe('#features')
     vi.stubGlobal('useRoute', () => ({ path: '/' }))
+
+    // Stub useTheme (composable de tema — testado em useTheme.test.ts)
+    const mockTheme = ref<'dark' | 'light'>('dark')
+    const mockToggleTheme = vi.fn()
+    const mockInitTheme = vi.fn()
+    vi.stubGlobal('useTheme', () => ({
+      theme: mockTheme,
+      toggleTheme: mockToggleTheme,
+      initTheme: mockInitTheme,
+    }))
   })
 
   it('navHref reconhece /en como home', () => {
@@ -281,6 +338,16 @@ describe('TheHeader', () => {
     const wrapper = createWrapper()
     expect(wrapper.vm.navHref('#features')).toBe('#features')
     vi.stubGlobal('useRoute', () => ({ path: '/' }))
+
+    // Stub useTheme (composable de tema — testado em useTheme.test.ts)
+    const mockTheme = ref<'dark' | 'light'>('dark')
+    const mockToggleTheme = vi.fn()
+    const mockInitTheme = vi.fn()
+    vi.stubGlobal('useTheme', () => ({
+      theme: mockTheme,
+      toggleTheme: mockToggleTheme,
+      initTheme: mockInitTheme,
+    }))
   })
 
   it('navHref reconhece /es como home', () => {
@@ -288,6 +355,16 @@ describe('TheHeader', () => {
     const wrapper = createWrapper()
     expect(wrapper.vm.navHref('#features')).toBe('#features')
     vi.stubGlobal('useRoute', () => ({ path: '/' }))
+
+    // Stub useTheme (composable de tema — testado em useTheme.test.ts)
+    const mockTheme = ref<'dark' | 'light'>('dark')
+    const mockToggleTheme = vi.fn()
+    const mockInitTheme = vi.fn()
+    vi.stubGlobal('useTheme', () => ({
+      theme: mockTheme,
+      toggleTheme: mockToggleTheme,
+      initTheme: mockInitTheme,
+    }))
   })
 
   it('navHref processa rota interna via localePath', () => {

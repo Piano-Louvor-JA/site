@@ -58,8 +58,8 @@
 <style scoped lang="scss">
   .donate {
     padding: 3.5rem 1.5rem;
-    background: var(--piano-dark);
-    border-top: 1px solid var(--piano-slate);
+    background: var(--piano-bg-secondary);
+    border-top: 1px solid var(--piano-border);
 
     &__container {
       max-width: 540px;
@@ -69,7 +69,7 @@
 
     &__icon {
       font-size: 2rem;
-      color: var(--piano-error, #ff5c5c);
+      color: var(--piano-accent);
       margin-bottom: 1rem;
       display: block;
     }
@@ -77,13 +77,13 @@
     &__title {
       font-size: 1.6rem;
       font-weight: 700;
-      color: var(--piano-text-on-dark);
+      color: var(--piano-text-primary);
       margin-bottom: 0.5rem;
     }
 
     &__subtitle {
       font-size: 0.95rem;
-      color: var(--piano-text-on-dark-muted);
+      color: var(--piano-text-muted);
       margin-bottom: 1.5rem;
     }
 
@@ -95,17 +95,18 @@
       border-radius: var(--piano-radius-full);
       font-weight: 700;
       font-size: 1rem;
-      background: linear-gradient(135deg, #ff5c5c 0%, #ff8a5c 100%);
-      color: #fff;
+      background: var(--piano-accent);
+      color: var(--piano-on-accent);
       text-decoration: none;
-      box-shadow: 0 8px 24px rgba(255, 92, 92, 0.35);
+      box-shadow: var(--piano-shadow-glow);
       transition:
         transform 0.2s,
         box-shadow 0.2s;
 
       &:hover {
         transform: translateY(-2px);
-        box-shadow: 0 12px 32px rgba(255, 92, 92, 0.5);
+        background: var(--piano-accent-hover);
+        box-shadow: var(--piano-shadow-md);
       }
 
       i {
@@ -133,7 +134,7 @@
         font-size: 1rem;
         width: 1em;
         height: 1em;
-        color: var(--piano-cyan);
+        color: var(--piano-accent);
       }
     }
   }

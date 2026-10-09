@@ -3,6 +3,8 @@
   import { navLinks, secondaryNavLinks, siteConfig } from '~/data/site'
 
   const { locale, locales, setLocale } = useI18n()
+  const { theme, toggleTheme, initTheme } = useTheme()
+  onMounted(initTheme)
   const route = useRoute()
   const config = useRuntimeConfig()
   const donateUrl = config.public.asaasDonateUrl as string
@@ -125,6 +127,16 @@
       <!-- Direita: codename PIANO + lang switcher + CTA -->
       <div class="header__header-end">
         <img src="/brand/codename-piano.svg" alt="" class="header__codename" />
+
+        <!-- Theme toggle (Ethereal Lumens / Luminous Clarity) -->
+        <button
+          data-testid="header-theme-toggle"
+          class="header__theme-btn"
+          :aria-label="$t('nav.toggleTheme')"
+          @click="toggleTheme"
+        >
+          <i :class="theme === 'dark' ? 'ti ti-sun' : 'ti ti-moon'" />
+        </button>
 
         <!-- Language switcher -->
         <div class="header__lang">
@@ -253,16 +265,16 @@
     left: 0;
     right: 0;
     z-index: 100;
-    background: rgba(16, 67, 140, 0.85);
+    background: var(--piano-header);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    border-bottom: 1px solid rgba(0, 193, 230, 0.15);
+    border-bottom: 1px solid var(--piano-border-subtle);
     transition:
       background 0.3s,
       box-shadow 0.3s;
 
     &--scrolled {
-      background: rgba(10, 23, 51, 0.95);
+      background: var(--piano-header-scrolled);
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
     }
 
@@ -301,7 +313,7 @@
     }
 
     &__brand-louvor {
-      color: #fff;
+      color: var(--piano-chip-text);
     }
 
     &__brand-ja {
@@ -320,7 +332,30 @@
     &__codename {
       height: 16px;
       width: auto;
-      filter: brightness(0) invert(1);
+      filter: var(--piano-codename-filter);
+    }
+
+    /* Theme toggle */
+    &__theme-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--piano-chip);
+      border: 1px solid var(--piano-chip-border);
+      color: var(--piano-chip-text);
+      width: 36px;
+      height: 36px;
+      border-radius: var(--piano-radius-sm);
+      cursor: pointer;
+      font-size: 1.05rem;
+      transition: all 0.2s;
+
+      &:hover,
+      &:focus-visible {
+        background: var(--site-accent-soft);
+        border-color: rgba(224, 137, 90, 0.4);
+        color: var(--site-accent-text);
+      }
     }
 
     /* Language switcher */
@@ -331,9 +366,9 @@
         display: flex;
         align-items: center;
         gap: 0.25rem;
-        background: rgba(255, 255, 255, 0.1);
-        border: 1px solid rgba(255, 255, 255, 0.15);
-        color: rgba(255, 255, 255, 0.9);
+        background: var(--piano-chip);
+        border: 1px solid var(--piano-chip-border);
+        color: var(--piano-chip-text);
         padding: 0.4rem 0.6rem;
         border-radius: var(--piano-radius-sm);
         cursor: pointer;
@@ -343,9 +378,9 @@
 
         &:hover,
         &:focus-visible {
-          background: rgba(0, 193, 230, 0.2);
-          border-color: rgba(0, 193, 230, 0.4);
-          color: #fff;
+          background: var(--site-accent-soft);
+          border-color: rgba(224, 137, 90, 0.4);
+          color: var(--piano-accent-text);
         }
 
         i {
@@ -362,9 +397,9 @@
         position: absolute;
         top: calc(100% + 0.5rem);
         right: 0;
-        background: rgba(10, 23, 51, 0.98);
+        background: var(--piano-bg-solid);
         backdrop-filter: blur(16px);
-        border: 1px solid rgba(0, 193, 230, 0.2);
+        border: 1px solid var(--site-border);
         border-radius: var(--piano-radius-md);
         padding: 0.375rem;
         min-width: 140px;
@@ -380,7 +415,7 @@
         text-align: left;
         background: none;
         border: none;
-        color: rgba(255, 255, 255, 0.85);
+        color: var(--piano-nav-text);
         padding: 0.5rem 0.75rem;
         border-radius: var(--piano-radius-sm);
         cursor: pointer;
@@ -390,8 +425,8 @@
 
         &:hover,
         &:focus-visible {
-          background: rgba(0, 193, 230, 0.15);
-          color: #fff;
+          background: var(--site-accent-soft);
+          color: var(--piano-accent-text);
         }
       }
     }
@@ -406,9 +441,9 @@
         display: flex;
         align-items: center;
         gap: 0.375rem;
-        background: rgba(255, 255, 255, 0.1);
-        border: 1px solid rgba(255, 255, 255, 0.15);
-        color: rgba(255, 255, 255, 0.9);
+        background: var(--piano-chip);
+        border: 1px solid var(--piano-chip-border);
+        color: var(--piano-chip-text);
         padding: 0.5rem 0.75rem;
         border-radius: var(--piano-radius-sm);
         cursor: pointer;
@@ -418,7 +453,7 @@
         justify-content: center;
 
         &:hover {
-          background: rgba(0, 193, 230, 0.2);
+          background: var(--piano-accent-soft);
         }
 
         i {
@@ -436,7 +471,7 @@
     }
 
     &__nav-link {
-      color: rgba(255, 255, 255, 0.85);
+      color: var(--piano-nav-text);
       text-decoration: none;
       font-size: 0.85rem;
       font-weight: 500;
@@ -448,8 +483,8 @@
 
       &:hover,
       &:focus-visible {
-        color: #fff;
-        background: rgba(0, 193, 230, 0.15);
+        color: var(--piano-accent-text);
+        background: var(--piano-accent-soft);
       }
     }
 
@@ -459,8 +494,8 @@
       align-items: center;
       gap: 0.375rem;
       background: transparent;
-      color: #fff;
-      border: 1px solid rgba(255, 255, 255, 0.35);
+      color: var(--piano-chip-text);
+      border: 1px solid var(--piano-outline-border);
       padding: 0.5rem 1.125rem;
       border-radius: var(--piano-radius-full);
       text-decoration: none;
@@ -472,8 +507,8 @@
         transform 0.2s;
 
       &:hover {
-        background: rgba(255, 255, 255, 0.12);
-        border-color: rgba(255, 255, 255, 0.6);
+        background: var(--piano-outline-hover);
+        border-color: var(--piano-outline-border);
         transform: translateY(-1px);
 
         i {
@@ -483,7 +518,7 @@
 
       i {
         font-size: 1.05rem;
-        color: rgba(255, 255, 255, 0.85);
+        color: var(--piano-nav-text);
         transition: color 0.2s;
       }
     }
@@ -493,20 +528,22 @@
       align-items: center;
       gap: 0.375rem;
       background: var(--piano-bg-accent);
-      color: #fff;
+      color: var(--piano-on-accent);
       padding: 0.5rem 1.125rem;
       border-radius: var(--piano-radius-full);
       text-decoration: none;
       font-weight: 600;
       font-size: 0.9rem;
-      box-shadow: 0 2px 12px rgba(0, 193, 230, 0.35);
+      box-shadow: var(--piano-shadow-glow);
       transition:
         transform 0.2s,
-        box-shadow 0.2s;
+        box-shadow 0.2s,
+        background 0.2s;
 
       &:hover {
         transform: translateY(-1px);
-        box-shadow: 0 4px 20px rgba(0, 193, 230, 0.5);
+        background: var(--piano-accent-hover);
+        box-shadow: var(--piano-shadow-md);
       }
 
       i {
@@ -530,7 +567,7 @@
         display: block;
         width: 24px;
         height: 2px;
-        background: #fff;
+        background: var(--piano-chip-text);
         border-radius: 2px;
         transition: all 0.3s;
         transform-origin: center;
@@ -556,12 +593,12 @@
       flex-direction: column;
       padding: 1rem 1.5rem 1.5rem;
       gap: 0.25rem;
-      background: rgba(10, 23, 51, 0.98);
+      background: var(--piano-bg-solid);
       backdrop-filter: blur(16px);
     }
 
     &__nav-mobile-link {
-      color: rgba(255, 255, 255, 0.9);
+      color: var(--piano-nav-text);
       text-decoration: none;
       padding: 0.75rem 0.5rem;
       font-size: 1rem;
@@ -570,13 +607,13 @@
       transition: all 0.2s;
 
       &:hover {
-        background: rgba(0, 193, 230, 0.12);
-        color: var(--piano-cyan-light);
+        background: var(--piano-accent-soft);
+        color: var(--piano-accent-text);
       }
 
       &--secondary {
         font-size: 0.875rem;
-        color: rgba(255, 255, 255, 0.6);
+        color: var(--piano-nav-muted);
         font-weight: 400;
       }
     }
@@ -587,7 +624,7 @@
       justify-content: center;
       gap: 0.5rem;
       background: var(--piano-bg-accent);
-      color: #fff;
+      color: var(--piano-on-accent);
       padding: 0.75rem;
       border-radius: var(--piano-radius-sm);
       text-decoration: none;
@@ -601,7 +638,8 @@
 
       &--donate {
         background: transparent;
-        border: 1px solid rgba(255, 255, 255, 0.35);
+        border: 1px solid var(--piano-outline-border);
+        color: var(--piano-chip-text);
         margin-top: 0;
       }
     }

@@ -564,9 +564,9 @@
     align-items: center;
     gap: 0.4rem;
     padding: 0.45rem 0.9rem;
-    border: 1px solid #1e293b;
+    border: 1px solid #353534;
     border-radius: 8px;
-    background: #111827;
+    background: #1e1e1e;
     color: var(--piano-text-on-dark-secondary, rgba(255, 255, 255, 0.85));
     cursor: pointer;
     font-size: 0.85rem;
@@ -580,9 +580,9 @@
   }
 
   .admin-content__nav button.active {
-    background: var(--piano-cyan);
-    color: #0a1733;
-    border-color: var(--piano-cyan);
+    background: var(--piano-accent);
+    color: #ffffff;
+    border-color: var(--piano-accent);
     font-weight: 600;
   }
 
@@ -616,8 +616,8 @@
 
   /* ---------- login ---------- */
   .admin-content__login {
-    background: #111827;
-    border: 1px solid #1e293b;
+    background: #1e1e1e;
+    border: 1px solid #353534;
     border-radius: 12px;
     padding: 2rem;
     max-width: 26rem;
@@ -657,8 +657,8 @@
   input,
   select,
   textarea {
-    background: #0a0e1a;
-    border: 1px solid #1e293b;
+    background: #131313;
+    border: 1px solid #353534;
     border-radius: 8px;
     color: var(--piano-text-on-dark, #fff);
     padding: 0.5rem 0.75rem;
@@ -686,8 +686,8 @@
     gap: 0.4rem;
     padding: 0.5rem 1rem;
     border-radius: 8px;
-    border: 1px solid #1e293b;
-    background: #111827;
+    border: 1px solid #353534;
+    background: #1e1e1e;
     color: var(--piano-text-on-dark, #fff);
     cursor: pointer;
     font-size: 0.85rem;
@@ -708,9 +708,9 @@
   }
 
   .btn-primary {
-    background: var(--piano-cyan);
-    border-color: var(--piano-cyan);
-    color: #0a1733;
+    background: var(--piano-accent);
+    border-color: var(--piano-accent);
+    color: #ffffff;
     font-weight: 600;
   }
 
@@ -754,8 +754,8 @@
     gap: 0.6rem;
     align-items: center;
     padding: 1rem;
-    background: #111827;
-    border: 1px solid #1e293b;
+    background: #1e1e1e;
+    border: 1px solid #353534;
     border-radius: 12px;
     margin-bottom: 1.25rem;
   }
@@ -778,8 +778,8 @@
 
   /* ---------- tabela ---------- */
   .table-card {
-    background: #111827;
-    border: 1px solid #1e293b;
+    background: #1e1e1e;
+    border: 1px solid #353534;
     border-radius: 12px;
     overflow: hidden;
   }
@@ -797,7 +797,7 @@
     text-transform: uppercase;
     letter-spacing: 0.05em;
     color: var(--piano-text-on-dark-muted, rgba(255, 255, 255, 0.7));
-    border-bottom: 1px solid #1e293b;
+    border-bottom: 1px solid #353534;
     background: rgba(255, 255, 255, 0.02);
   }
 
@@ -816,7 +816,7 @@
   }
 
   .admin-table tbody tr:hover {
-    background: rgba(0, 193, 230, 0.05);
+    background: var(--piano-accent-soft);
   }
 
   .admin-table .cell-name {
@@ -865,7 +865,7 @@
     align-items: center;
     gap: 0.3rem;
     padding: 0.3rem 0.65rem;
-    border: 1px solid #1e293b;
+    border: 1px solid #353534;
     border-radius: 6px;
     background: transparent;
     color: var(--piano-text-on-dark-secondary, rgba(255, 255, 255, 0.85));
@@ -878,8 +878,8 @@
 
   .admin-table .actions button:hover:not(:disabled),
   .lyric-row .actions button:hover:not(:disabled) {
-    border-color: var(--piano-cyan);
-    background: rgba(0, 193, 230, 0.08);
+    border-color: var(--piano-accent);
+    background: var(--piano-accent-soft);
   }
 
   .admin-table .actions button.danger,
@@ -958,8 +958,8 @@
     gap: 0.6rem;
     align-items: flex-start;
     padding: 0.85rem;
-    background: #111827;
-    border: 1px solid #1e293b;
+    background: #1e1e1e;
+    border: 1px solid #353534;
     border-radius: 12px;
   }
 
@@ -969,8 +969,8 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background: rgba(0, 193, 230, 0.12);
-    color: var(--piano-cyan);
+    background: var(--piano-accent-soft);
+    color: var(--piano-accent-text);
     border-radius: 6px;
     font-weight: 700;
     font-size: 0.8rem;
@@ -1006,8 +1006,8 @@
   }
 
   .confirm__card {
-    background: #111827;
-    border: 1px solid #1e293b;
+    background: #1e1e1e;
+    border: 1px solid #353534;
     border-radius: 14px;
     padding: 1.5rem;
     max-width: 26rem;

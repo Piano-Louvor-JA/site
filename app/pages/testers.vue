@@ -306,10 +306,10 @@
       align-items: center;
       gap: 1rem;
       padding: 1.25rem;
-      background: var(--piano-white);
-      border: 1px solid var(--piano-gray-100);
+      background: var(--piano-bg-solid);
+      border: 1px solid var(--piano-border);
       border-radius: 16px;
-      box-shadow: 0 2px 8px rgba(10, 23, 51, 0.06);
+      box-shadow: var(--piano-shadow-sm);
     }
 
     &__avatar {
@@ -444,7 +444,7 @@
     &__overlay {
       position: absolute;
       inset: 0;
-      background: rgba(10, 23, 51, 0.55);
+      background: var(--piano-overlay);
     }
 
     &__panel {
