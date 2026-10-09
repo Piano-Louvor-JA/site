@@ -1,5 +1,5 @@
 import { initializeApp, type FirebaseApp } from 'firebase/app'
-import { getAuth, type Auth } from 'firebase/auth'
+import { getAuth, setPersistence, browserLocalPersistence, type Auth } from 'firebase/auth'
 
 /**
  * Firebase initialization plugin.
@@ -26,6 +26,14 @@ export default defineNuxtPlugin(() => {
 
   const app: FirebaseApp = initializeApp(firebaseConfig)
   const auth: Auth = getAuth(app)
+
+  // Persistência local explícita: evita o IndexedDB alternar entre abas
+  // ("Database is closing/hidden" quando múltiplas instâncias/páginas do
+  // admin competem pela mesma DB em reload/HMR) e garante sessão estável.
+  void setPersistence(auth, browserLocalPersistence).catch(() => {
+    // Sem IndexedDB (modo privado/bloqueado): Auth cai em memória — login
+    // funciona, só não sobrevive ao refresh. Não deve quebrar o app.
+  })
 
   return {
     provide: {

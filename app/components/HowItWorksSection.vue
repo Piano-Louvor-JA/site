@@ -46,7 +46,7 @@
 <style scoped lang="scss">
   .how {
     padding: 6rem 1.5rem;
-    background: var(--piano-white);
+    background: var(--piano-bg-primary);
 
     &__container {
       max-width: 1000px;
@@ -92,7 +92,7 @@
       top: 0;
       bottom: 0;
       width: 2px;
-      background: linear-gradient(180deg, var(--piano-blue) 0%, var(--piano-cyan) 100%);
+      background: var(--piano-border);
       transform: translateX(-50%);
     }
 
@@ -138,8 +138,8 @@
         color: #fff;
         font-size: 1.5rem;
         font-weight: 800;
-        box-shadow: 0 4px 16px rgba(0, 193, 230, 0.4);
-        border: 4px solid #fff;
+        box-shadow: var(--piano-shadow-md);
+        border: 4px solid var(--piano-bg-primary);
       }
     }
 

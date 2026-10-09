@@ -463,12 +463,12 @@
     font-size: 1.5rem;
     font-weight: 700;
     margin: 0;
-    color: #22d3ee;
+    color: #e0895a;
   }
 
   .welcome {
     font-size: 0.875rem;
-    color: #94a3b8;
+    color: #bfc7d4;
     margin: 0.25rem 0 0;
   }
 
@@ -489,13 +489,13 @@
     cursor: pointer;
     transition: all 0.15s;
     background: transparent;
-    color: #94a3b8;
+    color: #bfc7d4;
     text-decoration: none;
   }
 
   .back-btn:hover {
-    border-color: #22d3ee;
-    color: #22d3ee;
+    border-color: #e0895a;
+    color: #e0895a;
   }
 
   .logout-btn:hover {
@@ -507,7 +507,7 @@
     display: flex;
     gap: 0.5rem;
     margin-bottom: 1.5rem;
-    border-bottom: 1px solid #1e293b;
+    border-bottom: 1px solid #353534;
     padding-bottom: 0.5rem;
   }
 
@@ -519,19 +519,19 @@
     background: transparent;
     border: none;
     border-radius: 8px;
-    color: #64748b;
+    color: #8a93a1;
     font-size: 0.875rem;
     cursor: pointer;
     transition: all 0.15s;
   }
 
   .nl-tab:hover {
-    color: #94a3b8;
-    background: #111827;
+    color: #bfc7d4;
+    background: #1e1e1e;
   }
 
   .nl-tab--active {
-    color: #22d3ee;
+    color: #e0895a;
     background: rgba(34, 211, 238, 0.08);
   }
 
@@ -566,7 +566,7 @@
   .field label {
     font-size: 0.75rem;
     font-weight: 600;
-    color: #64748b;
+    color: #8a93a1;
     text-transform: uppercase;
     letter-spacing: 0.03em;
   }
@@ -575,10 +575,10 @@
   .field select,
   .field textarea {
     padding: 0.625rem 0.75rem;
-    background: #0f172a;
+    background: #242424;
     border: 1px solid #334155;
     border-radius: 8px;
-    color: #e2e8f0;
+    color: #e5e2e1;
     font-size: 0.875rem;
     font-family: inherit;
     transition: border-color 0.15s;
@@ -594,12 +594,12 @@
   .field select:focus,
   .field textarea:focus {
     outline: none;
-    border-color: #22d3ee;
+    border-color: #e0895a;
   }
 
   .compose-preview {
-    background: #0f172a;
-    border: 1px solid #1e293b;
+    background: #242424;
+    border: 1px solid #353534;
     border-radius: 8px;
     padding: 1rem;
     overflow-y: auto;
@@ -620,7 +620,7 @@
   .preview-loading {
     font-weight: 400;
     text-transform: none;
-    color: #22d3ee;
+    color: #e0895a;
     font-size: 0.6875rem;
   }
 
@@ -656,10 +656,10 @@
 
   .test-input {
     padding: 0.5rem 0.75rem;
-    background: #0f172a;
+    background: #242424;
     border: 1px solid #334155;
     border-radius: 8px;
-    color: #e2e8f0;
+    color: #e5e2e1;
     font-size: 0.8125rem;
     width: 200px;
   }
@@ -679,13 +679,13 @@
   }
 
   .btn-primary {
-    background: #22d3ee;
-    color: #0a0e1a;
+    background: #e0895a;
+    color: #131313;
   }
 
   .btn-secondary {
-    background: #1e293b;
-    color: #e2e8f0;
+    background: #353534;
+    color: #e5e2e1;
   }
 
   .btn-primary:disabled,
@@ -723,16 +723,16 @@
     flex: 1;
     min-width: 200px;
     padding: 0.5rem 0.75rem;
-    background: #0f172a;
+    background: #242424;
     border: 1px solid #334155;
     border-radius: 8px;
-    color: #e2e8f0;
+    color: #e5e2e1;
     font-size: 0.875rem;
   }
 
   .sub-count {
     font-size: 0.75rem;
-    color: #64748b;
+    color: #8a93a1;
   }
 
   .sub-table {
@@ -744,16 +744,16 @@
   .sub-table th {
     text-align: left;
     padding: 0.625rem;
-    color: #64748b;
+    color: #8a93a1;
     font-size: 0.75rem;
     text-transform: uppercase;
-    border-bottom: 1px solid #1e293b;
+    border-bottom: 1px solid #353534;
   }
 
   .sub-table td {
     padding: 0.625rem;
-    color: #cbd5e1;
-    border-bottom: 1px solid #0f172a;
+    color: #e5e2e1;
+    border-bottom: 1px solid #242424;
   }
 
   .badge {
@@ -777,7 +777,7 @@
   .icon-btn-danger {
     background: none;
     border: none;
-    color: #64748b;
+    color: #8a93a1;
     cursor: pointer;
     padding: 0.25rem;
     transition: color 0.15s;
@@ -791,13 +791,13 @@
   .nl-loading {
     text-align: center;
     padding: 3rem;
-    color: #64748b;
+    color: #8a93a1;
     font-size: 0.875rem;
   }
 
   .history-item {
-    background: #111827;
-    border: 1px solid #1e293b;
+    background: #1e1e1e;
+    border: 1px solid #353534;
     border-radius: 8px;
     padding: 1rem;
     margin-bottom: 0.75rem;
@@ -811,7 +811,7 @@
   }
 
   .history-head strong {
-    color: #e2e8f0;
+    color: #e5e2e1;
     font-size: 0.9375rem;
   }
 
@@ -828,7 +828,7 @@
 
   .history-template {
     font-size: 0.75rem;
-    color: #64748b;
+    color: #8a93a1;
     margin-left: auto;
   }
 
@@ -846,15 +846,15 @@
   }
 
   .status-card {
-    background: #111827;
-    border: 1px solid #1e293b;
+    background: #1e1e1e;
+    border: 1px solid #353534;
     border-radius: 12px;
     padding: 1.5rem;
   }
 
   .status-card h3 {
     font-size: 0.875rem;
-    color: #64748b;
+    color: #8a93a1;
     text-transform: uppercase;
     margin: 0 0 0.75rem;
   }
@@ -862,17 +862,17 @@
   .status-card p {
     margin: 0.25rem 0;
     font-size: 0.875rem;
-    color: #cbd5e1;
+    color: #e5e2e1;
   }
 
   .stat-big {
     font-size: 2rem !important;
     font-weight: 800;
-    color: #22d3ee !important;
+    color: #e0895a !important;
   }
 
   .stat-sub {
-    color: #64748b !important;
+    color: #8a93a1 !important;
     font-size: 0.75rem !important;
   }
 

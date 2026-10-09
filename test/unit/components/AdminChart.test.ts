@@ -79,7 +79,7 @@ describe('AdminChart', () => {
 
   it('usa colors default quando nao fornecido', () => {
     const wrapper = mountChart()
-    expect(wrapper.props('colors')).toEqual(['#22d3ee'])
+    expect(wrapper.props('colors')).toEqual(['#e0895a'])
   })
 
   it('usa colors customizados quando fornecido', () => {
@@ -149,7 +149,7 @@ describe('AdminChart', () => {
       type: 'line',
       series: [{ data: [1, 2] }],
       categories: ['A', 'B'],
-      colors: ['#22d3ee'],
+      colors: ['#e0895a'],
     })
     await flushPromises()
     expect(wrapper.find('.mock-apexchart').exists()).toBe(true)

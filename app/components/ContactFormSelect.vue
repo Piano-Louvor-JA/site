@@ -991,8 +991,8 @@
       }
 
       &:hover {
-        border-color: var(--piano-blue);
-        background: rgba(0, 193, 230, 0.05);
+        border-color: var(--piano-accent);
+        background: var(--piano-accent-soft);
       }
     }
 
@@ -1063,11 +1063,11 @@
       }
 
       &--success {
-        background: rgba(0, 193, 230, 0.08);
-        color: var(--piano-blue);
+        background: rgba(34, 197, 94, 0.08);
+        color: var(--piano-success);
 
         i {
-          color: var(--piano-cyan);
+          color: var(--piano-success);
         }
       }
 

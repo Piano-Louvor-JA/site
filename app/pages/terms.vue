@@ -95,8 +95,8 @@
 
 <style scoped lang="scss">
   .legal-page {
-    background: var(--piano-dark);
-    color: rgba(255, 255, 255, 0.85);
+    background: var(--piano-bg-primary);
+    color: var(--piano-text-primary);
     min-height: 100vh;
     padding: 0 1.5rem 4rem;
 
@@ -113,26 +113,26 @@
     &__title {
       font-size: 2.5rem;
       font-weight: 700;
-      color: #fff;
+      color: var(--piano-text-primary);
       margin: 0 0 0.5rem;
     }
 
     &__updated {
       font-size: 0.9rem;
-      color: rgba(255, 255, 255, 0.5);
+      color: var(--piano-text-muted);
       margin: 0;
     }
 
     &__intro {
-      background: rgba(255, 255, 255, 0.05);
+      background: var(--piano-accent-soft);
       border-radius: var(--piano-radius-md);
       padding: 1.5rem;
       margin-bottom: 3rem;
-      border-left: 4px solid var(--piano-cyan);
+      border-left: 4px solid var(--piano-accent);
     }
 
     &__toc {
-      background: rgba(255, 255, 255, 0.03);
+      background: var(--piano-bg-secondary);
       border-radius: var(--piano-radius-md);
       padding: 1.5rem;
       margin-bottom: 3rem;
@@ -150,7 +150,7 @@
         display: flex;
         align-items: center;
         gap: 0.5rem;
-        color: rgba(255, 255, 255, 0.7);
+        color: var(--piano-text-secondary);
         text-decoration: none;
         font-size: 0.9rem;
         padding: 0.5rem;
@@ -158,13 +158,13 @@
         transition: all 0.2s;
 
         &:hover {
-          background: rgba(255, 255, 255, 0.05);
-          color: var(--piano-cyan);
+          background: var(--piano-accent-soft);
+          color: var(--piano-accent);
         }
 
         i {
           font-size: 1rem;
-          color: var(--piano-cyan);
+          color: var(--piano-accent);
         }
       }
     }
@@ -180,23 +180,23 @@
     &__section-title {
       font-size: 1.5rem;
       font-weight: 600;
-      color: #fff;
+      color: var(--piano-text-primary);
       margin: 0 0 1rem;
       padding-bottom: 0.5rem;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      border-bottom: 1px solid var(--piano-border-subtle);
     }
 
     &__section-body {
       font-size: 0.95rem;
       line-height: 1.7;
-      color: rgba(255, 255, 255, 0.75);
+      color: var(--piano-text-secondary);
 
       p {
         margin: 0 0 0.75rem;
       }
 
       a {
-        color: var(--piano-cyan);
+        color: var(--piano-accent);
         text-decoration: none;
 
         &:hover {

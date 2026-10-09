@@ -327,12 +327,12 @@
       width: 3rem;
       height: 3rem;
       border-radius: 50%;
-      background: rgba(0, 193, 230, 0.1);
+      background: var(--piano-accent-soft);
       display: flex;
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
-      color: var(--piano-cyan);
+      color: var(--piano-accent);
     }
 
     &__title {

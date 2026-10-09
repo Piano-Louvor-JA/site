@@ -110,6 +110,8 @@ interface ReleaseAsset {
 interface Release {
   tag_name: string
   assets: ReleaseAsset[]
+  draft?: boolean
+  published_at?: string | null
 }
 
 /**
@@ -135,7 +137,13 @@ export async function fetchGitHubStats(): Promise<{
       octokit.rest.repos.get({ owner: 'Piano-Louvor-JA', repo: 'app' }),
     ])
 
-    const allReleases = [appReleases.data, tvReleases.data, mobileReleases.data] as Release[][]
+    // Drafts (published_at null) não são releases públicas — excluir das stats
+    const publishedOnly = (rs: Release[]) => rs.filter((r) => !r.draft && r.published_at)
+    const allReleases = [
+      publishedOnly(appReleases.data),
+      publishedOnly(tvReleases.data),
+      publishedOnly(mobileReleases.data),
+    ] as Release[][]
 
     const apps: AppDownloadStats[] = REPO_CONFIGS.map((config, i) => {
       const releases = allReleases[i] ?? []

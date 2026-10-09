@@ -176,7 +176,7 @@
         value: s?.downloads ? formatValue(s.downloads.total) : '—',
         icon: 'ti ti-download',
         loading: loading.value,
-        color: '#22d3ee',
+        color: '#e0895a',
       },
       {
         key: 'newsletter' as const,
@@ -205,7 +205,7 @@
   }
 
   const chartMeta: Record<string, { type: ChartData['type']; name: string; color: string }> = {
-    downloads: { type: 'area', name: 'Downloads', color: '#22d3ee' },
+    downloads: { type: 'area', name: 'Downloads', color: '#e0895a' },
     newsletter: { type: 'bar', name: 'Assinantes', color: '#a78bfa' },
     visits: { type: 'line', name: 'Visitas', color: '#4ade80' },
   }
@@ -478,14 +478,14 @@
     justify-content: center;
     min-height: 100vh;
     padding: 2rem;
-    background: #0a0e1a;
+    background: #131313;
   }
 
   .change-password-card {
     width: 100%;
     max-width: 420px;
-    background: #111827;
-    border: 1px solid #1e293b;
+    background: #1e1e1e;
+    border: 1px solid #353534;
     border-radius: 12px;
     padding: 2.5rem;
   }
@@ -494,12 +494,12 @@
     font-size: 1.25rem;
     font-weight: 700;
     margin: 0 0 0.5rem;
-    color: #22d3ee;
+    color: #e0895a;
   }
 
   .change-password-desc {
     font-size: 0.8125rem;
-    color: #94a3b8;
+    color: #bfc7d4;
     margin: 0 0 1.5rem;
     line-height: 1.5;
   }
@@ -519,22 +519,22 @@
   .field label {
     font-size: 0.8125rem;
     font-weight: 600;
-    color: #cbd5e1;
+    color: #e5e2e1;
   }
 
   .field input {
     padding: 0.75rem 1rem;
-    background: #0f172a;
+    background: #242424;
     border: 1px solid #334155;
     border-radius: 8px;
-    color: #e2e8f0;
+    color: #e5e2e1;
     font-size: 0.9375rem;
     transition: border-color 0.15s;
   }
 
   .field input:focus {
     outline: none;
-    border-color: #22d3ee;
+    border-color: #e0895a;
   }
 
   .field input:disabled {
@@ -553,8 +553,8 @@
 
   .login-btn {
     padding: 0.75rem 1rem;
-    background: #22d3ee;
-    color: #0a0e1a;
+    background: #e0895a;
+    color: #131313;
     border: none;
     border-radius: 8px;
     font-size: 0.9375rem;
@@ -564,7 +564,7 @@
   }
 
   .login-btn:hover:not(:disabled) {
-    background: #06b6d4;
+    background: #c9713f;
   }
 
   .login-btn:disabled {
@@ -591,12 +591,12 @@
     font-size: 1.5rem;
     font-weight: 700;
     margin: 0;
-    color: #22d3ee;
+    color: #e0895a;
   }
 
   .welcome {
     font-size: 0.875rem;
-    color: #94a3b8;
+    color: #bfc7d4;
     margin: 0.25rem 0 0;
   }
 
@@ -619,14 +619,14 @@
     background: transparent;
     border: 1px solid #334155;
     border-radius: 8px;
-    color: #22d3ee;
+    color: #e0895a;
     font-size: 0.8125rem;
     cursor: pointer;
     transition: all 0.15s;
   }
 
   .refresh-btn:hover:not(:disabled) {
-    border-color: #22d3ee;
+    border-color: #e0895a;
     background: rgba(34, 211, 238, 0.08);
   }
 
@@ -656,7 +656,7 @@
     background: transparent;
     border: 1px solid #334155;
     border-radius: 8px;
-    color: #94a3b8;
+    color: #bfc7d4;
     font-size: 0.8125rem;
     cursor: pointer;
     transition: all 0.15s;
@@ -678,8 +678,8 @@
     display: flex;
     align-items: center;
     gap: 1rem;
-    background: #111827;
-    border: 1px solid #1e293b;
+    background: #1e1e1e;
+    border: 1px solid #353534;
     border-radius: 12px;
     padding: 1.25rem 1.5rem;
     cursor: pointer;
@@ -691,25 +691,25 @@
     font-family: inherit;
 
     &:hover {
-      border-color: var(--card-color, #22d3ee);
+      border-color: var(--card-color, #e0895a);
       transform: translateY(-2px);
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
     }
 
     &--active {
-      border-color: var(--card-color, #22d3ee);
+      border-color: var(--card-color, #e0895a);
       background: rgba(34, 211, 238, 0.05);
     }
   }
 
   .stat-icon {
     font-size: 1.75rem;
-    color: var(--card-color, #22d3ee);
+    color: var(--card-color, #e0895a);
   }
 
   .chart-panel {
-    background: #111827;
-    border: 1px solid #1e293b;
+    background: #1e1e1e;
+    border: 1px solid #353534;
     border-radius: 12px;
     padding: 1.5rem;
     margin-bottom: 2rem;
@@ -723,7 +723,7 @@
       h2 {
         font-size: 0.9375rem;
         font-weight: 600;
-        color: #cbd5e1;
+        color: #e5e2e1;
         margin: 0;
       }
     }
@@ -732,7 +732,7 @@
   .chart-close {
     background: none;
     border: none;
-    color: #64748b;
+    color: #8a93a1;
     cursor: pointer;
     padding: 0.25rem;
     font-size: 1.125rem;
@@ -752,7 +752,7 @@
   .chart-filters {
     display: flex;
     gap: 0.25rem;
-    background: #0f172a;
+    background: #242424;
     border-radius: 8px;
     padding: 0.125rem;
   }
@@ -762,19 +762,19 @@
     background: transparent;
     border: none;
     border-radius: 6px;
-    color: #64748b;
+    color: #8a93a1;
     font-size: 0.6875rem;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.15s;
 
     &:hover {
-      color: #94a3b8;
+      color: #bfc7d4;
     }
 
     &--active {
-      background: #1e293b;
-      color: #22d3ee;
+      background: #353534;
+      color: #e0895a;
     }
   }
 
@@ -784,7 +784,7 @@
     gap: 1rem;
     margin-top: 1rem;
     padding-top: 1rem;
-    border-top: 1px solid #1e293b;
+    border-top: 1px solid #353534;
   }
 
   .chart-stat {
@@ -795,7 +795,7 @@
 
   .chart-stat__label {
     font-size: 0.6875rem;
-    color: #64748b;
+    color: #8a93a1;
     text-transform: uppercase;
     letter-spacing: 0.03em;
   }
@@ -803,7 +803,7 @@
   .chart-stat__value {
     font-size: 1.125rem;
     font-weight: 700;
-    color: #e2e8f0;
+    color: #e5e2e1;
   }
 
   .slide-enter-active,
@@ -822,7 +822,7 @@
   .stat-value {
     font-size: 1.5rem;
     font-weight: 700;
-    color: #e2e8f0;
+    color: #e5e2e1;
   }
 
   .skeleton {
@@ -832,7 +832,7 @@
 
   .stat-label {
     font-size: 0.75rem;
-    color: #64748b;
+    color: #8a93a1;
     text-transform: uppercase;
     letter-spacing: 0.05em;
   }
@@ -862,13 +862,13 @@
 
   .geo-country {
     font-weight: 600;
-    color: #e2e8f0;
+    color: #e5e2e1;
   }
 
   .geo-bar-track {
     height: 8px;
     border-radius: 4px;
-    background: #1e293b;
+    background: #353534;
     overflow: hidden;
   }
 
@@ -876,13 +876,13 @@
     display: block;
     height: 100%;
     border-radius: 4px;
-    background: linear-gradient(90deg, #22d3ee, #4ade80);
+    background: linear-gradient(90deg, #e0895a, #4ade80);
     transition: width 0.4s ease;
   }
 
   .geo-visits {
     text-align: right;
-    color: #94a3b8;
+    color: #bfc7d4;
     font-variant-numeric: tabular-nums;
   }
 
@@ -893,8 +893,8 @@
   }
 
   .panel {
-    background: #111827;
-    border: 1px solid #1e293b;
+    background: #1e1e1e;
+    border: 1px solid #353534;
     border-radius: 12px;
     padding: 1.5rem;
   }
@@ -902,7 +902,7 @@
   .panel h2 {
     font-size: 1rem;
     font-weight: 600;
-    color: #e2e8f0;
+    color: #e5e2e1;
     margin: 0 0 1rem;
   }
 
@@ -922,7 +922,7 @@
 
   .activity-item {
     padding: 0.5rem 0;
-    border-bottom: 1px solid #1e293b;
+    border-bottom: 1px solid #353534;
   }
 
   .activity-item:last-child {
@@ -939,12 +939,12 @@
   }
 
   .activity-link:hover {
-    color: #22d3ee;
+    color: #e0895a;
   }
 
   .activity-icon {
     font-size: 1.125rem;
-    color: #22d3ee;
+    color: #e0895a;
     flex-shrink: 0;
     margin-top: 0.125rem;
   }
@@ -957,13 +957,13 @@
 
   .activity-title {
     font-size: 0.875rem;
-    color: #e2e8f0;
+    color: #e5e2e1;
     line-height: 1.4;
   }
 
   .activity-meta {
     font-size: 0.75rem;
-    color: #64748b;
+    color: #8a93a1;
   }
 
   .quick-links {
@@ -973,14 +973,14 @@
   }
 
   .quick-links a {
-    color: #22d3ee;
+    color: #e0895a;
     text-decoration: none;
     font-size: 0.875rem;
     transition: color 0.15s;
   }
 
   .quick-links a:hover {
-    color: #06b6d4;
+    color: #c9713f;
   }
   .download-breakdown {
     margin-bottom: 2rem;
@@ -989,7 +989,7 @@
   .breakdown-title {
     font-size: 0.9375rem;
     font-weight: 600;
-    color: #94a3b8;
+    color: #bfc7d4;
     margin: 0 0 1rem;
   }
 
@@ -1000,8 +1000,8 @@
   }
 
   .breakdown-card {
-    background: #111827;
-    border: 1px solid #1e293b;
+    background: #1e1e1e;
+    border: 1px solid #353534;
     border-radius: 10px;
     padding: 1.25rem;
   }
@@ -1016,15 +1016,15 @@
   .breakdown-card__label {
     font-size: 0.8125rem;
     font-weight: 600;
-    color: #cbd5e1;
+    color: #e5e2e1;
     text-transform: uppercase;
     letter-spacing: 0.05em;
   }
 
   .breakdown-card__tag {
     font-size: 0.6875rem;
-    color: #64748b;
-    background: #1e293b;
+    color: #8a93a1;
+    background: #353534;
     padding: 0.125rem 0.5rem;
     border-radius: 4px;
   }
@@ -1032,7 +1032,7 @@
   .breakdown-card__total {
     font-size: 1.5rem;
     font-weight: 700;
-    color: #22d3ee;
+    color: #e0895a;
     margin-bottom: 0.75rem;
   }
 
@@ -1052,11 +1052,11 @@
   }
 
   .breakdown-platform__name {
-    color: #94a3b8;
+    color: #bfc7d4;
   }
 
   .breakdown-platform__count {
-    color: #e2e8f0;
+    color: #e5e2e1;
     font-weight: 500;
   }
 
