@@ -40,7 +40,15 @@ describe('telemetry.client plugin', () => {
     expect(initMock).toHaveBeenCalledWith(
       expect.objectContaining({
         dsn: 'https://key@errors.example/1',
-        sendDefaultPii: false,
+        dataCollection: expect.objectContaining({
+          userInfo: false,
+          cookies: false,
+          httpBodies: [],
+          databaseQueryData: false,
+          queues: false,
+          genAI: { inputs: false, outputs: false },
+          graphQL: { document: false, variables: false },
+        }),
         tracesSampleRate: 0,
       }),
     )

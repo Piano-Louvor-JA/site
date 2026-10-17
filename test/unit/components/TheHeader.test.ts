@@ -81,6 +81,8 @@ describe('TheHeader', () => {
     await wrapper.find('[data-testid="header-menu-toggle"]').trigger('click')
     const mobile = wrapper.find('.header__nav-mobile-cta--donate')
     expect(mobile.exists()).toBe(true)
+    // O teste verifica o fechamento do menu, sem navegar para um checkout externo.
+    mobile.element.addEventListener('click', (event) => event.preventDefault(), { once: true })
     await mobile.trigger('click')
     expect(wrapper.find('[data-testid="header-nav-mobile"]').exists()).toBe(false)
   })
