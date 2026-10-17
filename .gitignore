@@ -10,6 +10,7 @@ test-results
 storybook-static
 .stryker-tmp
 *.patch
+!patches/*.patch
 reports
 .DS_Store
 .env

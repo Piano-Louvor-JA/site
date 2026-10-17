@@ -43,6 +43,9 @@ overrides:
   tinypool: '>=2.1.2'
   handlebars: '>=4.7.10'
 
+patchedDependencies:
+  '@stryker-mutator/vitest-runner@10.0.0': 3c9b97ef92da646892a3d93af005902a1efde39e8d986092a97357837856cad6
+
 importers:
 
   .:
@@ -140,7 +143,7 @@ importers:
         version: 10.0.0(@types/node@26.6.4)
       '@stryker-mutator/vitest-runner':
         specifier: ^10.0.0
-        version: 10.0.0(@stryker-mutator/core@10.0.0(@types/node@26.6.4))(vitest@5.0.4)
+        version: 10.0.0(patch_hash=3c9b97ef92da646892a3d93af005902a1efde39e8d986092a97357837856cad6)(@stryker-mutator/core@10.0.0(@types/node@26.6.4))(vitest@5.0.4)
       '@testing-library/jest-dom':
         specifier: ^7.0.1
         version: 7.0.1(@testing-library/dom@10.4.2)(vitest@5.0.4)
@@ -13452,7 +13455,7 @@ snapshots:
 
   '@stryker-mutator/util@10.0.0': {}
 
-  '@stryker-mutator/vitest-runner@10.0.0(@stryker-mutator/core@10.0.0(@types/node@26.6.4))(vitest@5.0.4)':
+  '@stryker-mutator/vitest-runner@10.0.0(patch_hash=3c9b97ef92da646892a3d93af005902a1efde39e8d986092a97357837856cad6)(@stryker-mutator/core@10.0.0(@types/node@26.6.4))(vitest@5.0.4)':
     dependencies:
       '@stryker-mutator/api': 10.0.0
       '@stryker-mutator/core': 10.0.0(@types/node@26.6.4)

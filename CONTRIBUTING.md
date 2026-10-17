@@ -24,6 +24,15 @@ não oferece a API JavaScript usada por ESLint e Vue, o alias `typescript` apont
 compilador 7 instalado e preserva a checagem Vue e as regras de lint; não remova o
 alias de compatibilidade enquanto essas ferramentas dependerem dessa API.
 
+## Compatibilidade da mutação com Vitest 5
+
+O patch versionado em `patches/` alinha os nomes usados pelo runner Stryker 10 ao
+separador `>` do Vitest 5. Sem ele, testes cobertos não são selecionados e aparecem
+como mutantes sobreviventes sem execução ([bug upstream #6210](https://github.com/stryker-mutator/stryker-js/issues/6210)).
+O patch é aplicado pelo pnpm na instalação congelada. Preserve o gate completo e
+os limiares de `stryker.config.json`; a verificação direcionada usada no diagnóstico
+não substitui a execução completa de `pnpm test:mutation` da promoção.
+
 ## Scripts disponíveis
 
 | Script               | Descrição                         |
