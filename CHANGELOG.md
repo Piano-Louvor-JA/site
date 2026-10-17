@@ -3,6 +3,28 @@
 All notable changes to this project are documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.6.2](https://github.com/Piano-Louvor-JA/site/compare/v1.6.1...v1.6.2) (2026-10-17)
+
+### Bug Fixes
+
+- **ci:** align Stryker test filters with Vitest 5 ([1041d3e](https://github.com/Piano-Louvor-JA/site/commit/1041d3e97b7e4c7b4598949b6f168825b3c39e2c))
+- **site:** use empty Flathub verification marker ([ad4aafc](https://github.com/Piano-Louvor-JA/site/commit/ad4aafc0844767c65d46ce4f7fd4ff4312699645))
+
+### Tests
+
+- **deps:** verify upgraded runtime contracts ([31241de](https://github.com/Piano-Louvor-JA/site/commit/31241dee3bc127866e670d55b0908e7a407e1f2c))
+
+### Miscellaneous Chores
+
+- **deps:** adapt grouped upgrades to current tooling ([cdccd63](https://github.com/Piano-Louvor-JA/site/commit/cdccd639f4a59ed839de8dfab4664ecbd421a8f4))
+- **deps:** bump actions/checkout from 4 to 7 ([d95c693](https://github.com/Piano-Louvor-JA/site/commit/d95c6931a657d34802acffc2244fc3d2088a0b3b))
+- **deps:** bump actions/download-artifact from 7 to 8 ([a3b2428](https://github.com/Piano-Louvor-JA/site/commit/a3b242888d58720b839c7c49c6439c9bc28c74f1))
+- **deps:** bump actions/setup-node from 4 to 7 ([7da8fd5](https://github.com/Piano-Louvor-JA/site/commit/7da8fd5da0efa4af048c347a3baf13d9ffd37bef))
+- **deps:** bump actions/upload-artifact from 6 to 7 ([39bd899](https://github.com/Piano-Louvor-JA/site/commit/39bd8993d2e908f6cf964b9ccbacad7b88eb9413))
+- **deps:** bump the npm-dependencies group with 24 updates ([7caf2fb](https://github.com/Piano-Louvor-JA/site/commit/7caf2fb42d15e0936a7f7549efc45f1d5d9d2802))
+- **site:** add Flathub domain verification file ([7fe7e74](https://github.com/Piano-Louvor-JA/site/commit/7fe7e740f57fb98caeaf6e0f91608176c937d68f))
+- **sync:** bring main v1.6.1 back to staging ([6d08ffc](https://github.com/Piano-Louvor-JA/site/commit/6d08ffc7ed84d4683ad29ba53832644c2b83f0ef))
+
 ## [1.6.1](https://github.com/Piano-Louvor-JA/site/compare/v1.6.0...v1.6.1) (2026-10-09)
 
 ### Bug Fixes
