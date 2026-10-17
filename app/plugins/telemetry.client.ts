@@ -29,7 +29,21 @@ export default defineNuxtPlugin((nuxtApp) => {
         dsn,
         environment: telemetryEnvironment(import.meta.dev),
         release: 'louvorja-site',
-        sendDefaultPii: false,
+        // Sentry 11 amplia a coleta por padrão; preserve a política anterior.
+        dataCollection: {
+          userInfo: false,
+          cookies: false,
+          httpHeaders: {
+            request: { deny: ['forwarded', '-ip', 'remote-', 'via', '-user'] },
+            response: { deny: ['forwarded', '-ip', 'remote-', 'via', '-user'] },
+          },
+          httpBodies: [],
+          urlQueryParams: { deny: ['forwarded', '-ip', 'remote-', 'via', '-user'] },
+          genAI: { inputs: false, outputs: false },
+          databaseQueryData: false,
+          queues: false,
+          graphQL: { document: false, variables: false },
+        },
         tracesSampleRate: 0,
       })
     })

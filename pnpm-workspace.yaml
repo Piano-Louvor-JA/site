@@ -9,10 +9,12 @@ allowBuilds:
   ttf2woff2: false
 hoistPattern:
   - '*'
-  # Let semantic-release resolve the explicit writer-8-compatible root preset.
+  # Let semantic-release resolve the explicit conventional-commits preset.
   # Commitlint keeps its own newer preset instead of leaking it to release notes.
   - '!conventional-changelog-conventionalcommits'
 overrides:
+  # Preset 10 usa funções de renderização, disponíveis no writer 9.
+  '@semantic-release/release-notes-generator>conventional-changelog-writer': '^9.3.0'
   rollup: 4.62.4
   # Mínimo corrigido dos advisories high/critical do `pnpm audit`.
   '@grpc/grpc-js': '1.14.5'
