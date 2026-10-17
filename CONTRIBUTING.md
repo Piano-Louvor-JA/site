@@ -16,6 +16,14 @@ cd site
 pnpm install
 ```
 
+## Compatibilidade das ferramentas TypeScript
+
+O compilador TypeScript 7 fica no alias `@typescript/native` (`tsc`). Como a versão 7.0
+não oferece a API JavaScript usada por ESLint e Vue, o alias `typescript` aponta para
+`@typescript/typescript6`, conforme a [migração oficial da Microsoft](https://devblogs.microsoft.com/typescript/announcing-typescript-7-0/#running-side-by-side-with-typescript-6.0). Isso mantém o
+compilador 7 instalado e preserva a checagem Vue e as regras de lint; não remova o
+alias de compatibilidade enquanto essas ferramentas dependerem dessa API.
+
 ## Scripts disponíveis
 
 | Script               | Descrição                         |

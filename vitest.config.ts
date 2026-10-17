@@ -8,7 +8,7 @@ const alias = {
   '@': fileURLToPath(new URL('./app', import.meta.url)),
   '~~': fileURLToPath(new URL('.', import.meta.url)),
   '@@': fileURLToPath(new URL('.', import.meta.url)),
-  h3: fileURLToPath(new URL('node_modules/h3/dist/index.mjs', import.meta.url)),
+  h3: fileURLToPath(import.meta.resolve('h3')),
 }
 
 /**
@@ -79,6 +79,7 @@ export default defineConfig({
           include: ['test/**/*.test.ts'],
           exclude: ['test/integration/**'],
           name: 'unit',
+          pool: 'threads',
           css: false,
           // node 24 + tinypool: paralelismo entre arquivos derruba o canal IPC
           fileParallelism: false,
