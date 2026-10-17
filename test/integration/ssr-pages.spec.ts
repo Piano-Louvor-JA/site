@@ -6,6 +6,23 @@ describe('SSR rendering das páginas', async () => {
     rootDir: process.cwd(),
   })
 
+  describe('Contrato HTTP do Nitro após atualização de dependências', () => {
+    it('mantém 401 para verificação de autenticação sem token', async () => {
+      await expect($fetch('/api/auth/verify')).rejects.toMatchObject({ statusCode: 401 })
+    })
+
+    it('mantém 401 para membros administrativos sem token', async () => {
+      await expect($fetch('/api/admin/community/members')).rejects.toMatchObject({
+        statusCode: 401,
+      })
+    })
+
+    it('renderiza sitemap pelo handler HTTP do framework', async () => {
+      const xml = await $fetch('/sitemap.xml')
+      expect(xml).toContain('<urlset')
+    })
+  })
+
   describe('Página inicial (index)', () => {
     it('renderiza HTML no SSR', async () => {
       const html = await $fetch('/')

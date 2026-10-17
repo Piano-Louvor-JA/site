@@ -8,7 +8,7 @@ const alias = {
   '@': fileURLToPath(new URL('./app', import.meta.url)),
   '~~': fileURLToPath(new URL('.', import.meta.url)),
   '@@': fileURLToPath(new URL('.', import.meta.url)),
-  h3: fileURLToPath(new URL('node_modules/h3/dist/index.mjs', import.meta.url)),
+  h3: fileURLToPath(import.meta.resolve('h3')),
 }
 
 /**
@@ -64,11 +64,10 @@ function mockImportMetaUnit(): Plugin {
 
 export default defineConfig({
   test: {
-    // Node 24 + tinypool: muitos workers concorrentes derrubam o canal IPC
-    // (ERR_IPC_CHANNEL_CLOSED em suítes longas). Limita workers pra o
-    // pre-push (husky) rodar a suíte completa de forma estável.
+    pool: 'threads',
+    // Node 24 + Vitest 5: threads evitam travamento do pool de processos.
+    // Limita workers para manter a suíte completa estável.
     maxWorkers: 2,
-    minWorkers: 1,
     projects: [
       {
         plugins: [stripVueStyles(), vue(), mockImportMetaUnit()],
@@ -79,6 +78,7 @@ export default defineConfig({
           include: ['test/**/*.test.ts'],
           exclude: ['test/integration/**'],
           name: 'unit',
+          pool: 'threads',
           css: false,
           // node 24 + tinypool: paralelismo entre arquivos derruba o canal IPC
           fileParallelism: false,

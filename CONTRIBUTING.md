@@ -16,6 +16,23 @@ cd site
 pnpm install
 ```
 
+## Compatibilidade das ferramentas TypeScript
+
+O compilador TypeScript 7 fica no alias `@typescript/native` (`tsc`). Como a versão 7.0
+não oferece a API JavaScript usada por ESLint e Vue, o alias `typescript` aponta para
+`@typescript/typescript6`, conforme a [migração oficial da Microsoft](https://devblogs.microsoft.com/typescript/announcing-typescript-7-0/#running-side-by-side-with-typescript-6.0). Isso mantém o
+compilador 7 instalado e preserva a checagem Vue e as regras de lint; não remova o
+alias de compatibilidade enquanto essas ferramentas dependerem dessa API.
+
+## Compatibilidade da mutação com Vitest 5
+
+O patch versionado em `patches/` alinha os nomes usados pelo runner Stryker 10 ao
+separador `>` do Vitest 5. Sem ele, testes cobertos não são selecionados e aparecem
+como mutantes sobreviventes sem execução ([bug upstream #6210](https://github.com/stryker-mutator/stryker-js/issues/6210)).
+O patch é aplicado pelo pnpm na instalação congelada. Preserve o gate completo e
+os limiares de `stryker.config.json`; a verificação direcionada usada no diagnóstico
+não substitui a execução completa de `pnpm test:mutation` da promoção.
+
 ## Scripts disponíveis
 
 | Script               | Descrição                         |

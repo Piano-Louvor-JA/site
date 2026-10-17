@@ -9,10 +9,12 @@ allowBuilds:
   ttf2woff2: false
 hoistPattern:
   - '*'
-  # Let semantic-release resolve the explicit writer-8-compatible root preset.
+  # Let semantic-release resolve the explicit conventional-commits preset.
   # Commitlint keeps its own newer preset instead of leaking it to release notes.
   - '!conventional-changelog-conventionalcommits'
 overrides:
+  # Preset 10 usa funções de renderização, disponíveis no writer 9.
+  '@semantic-release/release-notes-generator>conventional-changelog-writer': '^9.3.0'
   rollup: 4.62.4
   # Mínimo corrigido dos advisories high/critical do `pnpm audit`.
   '@grpc/grpc-js': '1.14.5'
@@ -84,3 +86,8 @@ audit:
     - GHSA-x6jw-m9v5-85vh
     - GHSA-g4wm-2vf7-vfgr
     - GHSA-858h-whjf-mvg5
+
+# Vitest 5 usa " > " na cadeia do teste; Stryker 10 ainda usa espaços.
+# Remover após correção upstream: https://github.com/stryker-mutator/stryker-js/issues/6210
+patchedDependencies:
+  '@stryker-mutator/vitest-runner@10.0.0': patches/@stryker-mutator__vitest-runner@10.0.0.patch
