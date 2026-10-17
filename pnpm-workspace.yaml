@@ -86,3 +86,8 @@ audit:
     - GHSA-x6jw-m9v5-85vh
     - GHSA-g4wm-2vf7-vfgr
     - GHSA-858h-whjf-mvg5
+
+# Vitest 5 usa " > " na cadeia do teste; Stryker 10 ainda usa espaços.
+# Remover após correção upstream: https://github.com/stryker-mutator/stryker-js/issues/6210
+patchedDependencies:
+  '@stryker-mutator/vitest-runner@10.0.0': patches/@stryker-mutator__vitest-runner@10.0.0.patch
