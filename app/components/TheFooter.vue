@@ -122,6 +122,11 @@
                 {{ $t('footer.terms') }}
               </NuxtLink>
             </li>
+            <li>
+              <NuxtLink :to="localePath('/conduta')">
+                {{ $t('footer.conduct') }}
+              </NuxtLink>
+            </li>
           </ul>
         </nav>
       </div>

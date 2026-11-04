@@ -463,7 +463,8 @@
     "moreNavLabel": "Mais links",
     "moreNavTitle": "Saiba mais",
     "privacy": "Política de Privacidade",
-    "terms": "Termos de Uso"
+    "terms": "Termos de Uso",
+    "conduct": "Código de Conduta"
   },
   "common": {
     "loading": "Carregando...",
@@ -1170,5 +1171,63 @@
     "pix": "Pix",
     "boleto": "Boleto",
     "card": "Cartão"
+  },
+  "conduct": {
+    "title": "Código de Conduta da Comunidade",
+    "metaDescription": "Princípios, moderação e recurso da Comunidade LouvorJA — baseados na filosofia adventista de música.",
+    "lastUpdated": "Versão 1.0 — Novembro de 2026",
+    "tocLabel": "Nesta página",
+    "intro": "A Comunidade LouvorJA existe para que membros criem, compartilhem e celebrem conteúdo de louvor ao piano que glorifique a Deus e edifique a igreja. Este Código é baseado nos princípios oficiais da Igreja Adventista do Sétimo Dia, especialmente o documento \"A Seventh-day Adventist Philosophy of Music\" (Annual Council, 2004), as 28 Crenças Fundamentais e o Manual da Igreja.",
+    "purposeQuote": "“Assim, quer você coma quer beba ou faça qualquer outra coisa, faça tudo para a glória de Deus.” — 1 Coríntios 10:31",
+    "sections": {
+      "celebrate": {
+        "title": "1. O que celebramos",
+        "body": [
+          "Conteúdo que glorifica a Deus, busca o nobre e o melhor (Fp 4:8), mensagem espiritual genuína, equilíbrio, autenticidade e diversidade cultural — estilo musical não é critério de exclusão; conteúdo e mensagem são. Respeito entre membros: diferenças de gosto não são motivo de conflito."
+        ]
+      },
+      "notAllowed": {
+        "title": "2. O que não é permitido",
+        "body": [
+          "Doutrina: letra ou mensagem contrária à Escritura ou às 28 Crenças Fundamentais.",
+          "Impróprio: conteúdo que estimule luxúria, paixão, desespero, raiva ou ódio — ofensivo, sexualizado, violento, com palavrões.",
+          "Copyright: plágio ou uso não autorizado de obra protegida — hinos têm detentores de direitos.",
+          "Spam: publicidade, autopromoção, conteúdo sem relação com louvor.",
+          "Conduta: assédio, ataque pessoal, discriminação ou perseguição a outros membros."
+        ]
+      },
+      "moderation": {
+        "title": "3. Moderação: reports e strikes",
+        "body": [
+          "Princípio central: ocultar não é remover. Conteúdo suspeito é primeiro ocultado da vitrine; a remoção definitiva só acontece após revisão.",
+          "1º report leve (spam/outro): conteúdo marcado \"em avaliação\", segue visível, entra na fila dos Game Masters.",
+          "3 reports, ou 1 report grave (doutrina, impróprio, copyright): ocultado automaticamente e prioridade máxima.",
+          "Revisão do Game Master em até 7 dias: mantido volta ao ar com explicação; removido gera strike ao autor com motivo e orientação deste Código.",
+          "Strikes: 1º aviso formal + conteúdo removido; 2º suspensão de publicar por 7 dias; 3º banimento de publicar (conta mantém acesso de consumo). Remoção não apaga autoria nem pontos legítimos. Todo strike pode ser recorrido aos devs; casos graves vão à equipe."
+        ]
+      },
+      "gameMasters": {
+        "title": "4. Game Masters",
+        "body": [
+          "Seguindo o modelo de Jetro (Êxodo 18), dois a três membros convidados pela equipe de desenvolvimento carregam a fila de revisão, avisos e orientação de novos membros. Aplicam este Código como está escrito; mudanças sobem para os devs. Casos graves vão à equipe de desenvolvimento. Ordem de decisão: proteção da comunidade primeiro; preservação do criador depois."
+        ]
+      },
+      "transparency": {
+        "title": "5. Transparência e recurso",
+        "body": [
+          "Este Código é público e visível dentro do app na seção Comunidade.",
+          "Todo autor sabe o que foi removido, por quê (qual item do Código) e como recorrer.",
+          "Mudanças passam pela equipe de desenvolvimento + liderança, com consulta aos Game Masters.",
+          "Nenhum conteúdo é removido silenciosamente."
+        ]
+      },
+      "invitation": {
+        "title": "6. Um convite",
+        "body": [
+          "A Comunidade é um lugar para servir. Publique com excelência, reporte com justiça, revise com misericórdia."
+        ],
+        "quote": "“Cantai ao Senhor um cântico novo; cantai ao Senhor, todas as terras.” — Salmo 96:1"
+      }
+    }
   }
 }
