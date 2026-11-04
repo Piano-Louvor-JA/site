@@ -66,10 +66,7 @@
         >
           {{ paragraph }}
         </p>
-        <blockquote
-          v-if="section.id === 'invitation'"
-          class="legal-page__quote"
-        >
+        <blockquote v-if="section.id === 'invitation'" class="legal-page__quote">
           {{ $t('conduct.sections.invitation.quote') }}
         </blockquote>
       </section>
