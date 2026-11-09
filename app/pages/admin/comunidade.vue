@@ -95,8 +95,22 @@
             : `${acaoLabel} ✓ — sem email`,
       }
       await carregar()
-    } catch {
-      feedback.value = { ok: false, msg: 'Erro ao processar' }
+    } catch (err: unknown) {
+      // SPEC decisão 4: erro HTTP estruturado — mostrar status/mensagem do backend
+      // em vez de engolir com 'Erro ao processar'.
+      const status =
+        typeof err === 'object' && err !== null && 'statusCode' in err
+          ? (err as { statusCode?: number }).statusCode
+          : undefined
+      const msg =
+        typeof err === 'object' && err !== null && ('statusMessage' in err || 'message' in err)
+          ? (err as { statusMessage?: string; message?: string }).statusMessage ||
+            (err as { message?: string }).message
+          : undefined
+      feedback.value = {
+        ok: false,
+        msg: status ? `Erro ${status}${msg ? `: ${msg}` : ''}` : 'Erro ao processar',
+      }
     } finally {
       processando.value = null
     }
