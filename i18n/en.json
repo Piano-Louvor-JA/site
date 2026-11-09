@@ -463,7 +463,8 @@
     "moreNavLabel": "More links",
     "moreNavTitle": "More",
     "privacy": "Privacy Policy",
-    "terms": "Terms of Use"
+    "terms": "Terms of Use",
+    "conduct": "Code of Conduct"
   },
   "common": {
     "loading": "Loading...",
@@ -1170,5 +1171,63 @@
     "pix": "Pix",
     "boleto": "Bank slip",
     "card": "Card"
+  },
+  "conduct": {
+    "title": "Community Code of Conduct",
+    "metaDescription": "Principles, moderation and appeals of the LouvorJA Community — grounded in the Adventist philosophy of music.",
+    "lastUpdated": "Version 1.0 — November 2026",
+    "tocLabel": "On this page",
+    "intro": "The LouvorJA Community exists so members may create, share and celebrate piano worship content that glorifies God and edifies the church. This Code is grounded in the official principles of the Seventh-day Adventist Church, especially \"A Seventh-day Adventist Philosophy of Music\" (Annual Council, 2004), the 28 Fundamental Beliefs and the Church Manual.",
+    "purposeQuote": "“So whether you eat or drink or whatever you do, do it all for the glory of God.” — 1 Corinthians 10:31",
+    "sections": {
+      "celebrate": {
+        "title": "1. What we celebrate",
+        "body": [
+          "Content that glorifies God, pursues the noble and the best (Php 4:8), carries a genuine spiritual message, balance, authenticity and cultural diversity — musical style is not a ground for exclusion; content and message are. Respect among members: taste differences are no ground for conflict."
+        ]
+      },
+      "notAllowed": {
+        "title": "2. What is not allowed",
+        "body": [
+          "Doctrine: lyrics or message contrary to Scripture or the 28 Fundamental Beliefs.",
+          "Improper: content stirring lust, passion, despair, anger or hatred — offensive, sexualized, violent or profane.",
+          "Copyright: plagiarism or unauthorized use of protected works — hymns have rights holders.",
+          "Spam: advertising, self-promotion, content unrelated to worship.",
+          "Conduct: harassment, personal attacks, discrimination or persecution of other members."
+        ]
+      },
+      "moderation": {
+        "title": "3. Moderation: reports and strikes",
+        "body": [
+          "Core principle: hiding is not removing. Suspect content is first hidden from the showcase; definitive removal only after review.",
+          "First light report (spam/other): content marked \"under review\", stays visible, enters the Game Masters queue.",
+          "3 reports, or 1 severe report (doctrine, improper, copyright): automatically hidden with top priority.",
+          "Game Master review within 7 days: kept content returns with an explanation; removed content earns the author a strike with reason and guidance from this Code.",
+          "Strikes: 1st formal warning + content removed; 2nd 7-day publishing suspension; 3rd publishing ban (account keeps consumption access). Removal does not erase authorship or legitimately earned points. Every strike may be appealed to the devs; severe cases go to the team."
+        ]
+      },
+      "gameMasters": {
+        "title": "4. Game Masters",
+        "body": [
+          "Following Jethro’s model (Exodus 18), two to three members invited by the development team carry the review queue, warnings and guidance of new members. They apply this Code as written; changes go up to the devs. Severe cases go to the development team. Order of decision: protecting the community first; preserving the creator second."
+        ]
+      },
+      "transparency": {
+        "title": "5. Transparency and appeals",
+        "body": [
+          "This Code is public and visible inside the app in the Community section.",
+          "Every author knows what was removed, why (which Code item) and how to appeal.",
+          "Changes go through the development team + leadership, consulting the Game Masters.",
+          "No content is removed silently."
+        ]
+      },
+      "invitation": {
+        "title": "6. An invitation",
+        "body": [
+          "The Community is a place to serve. Publish with excellence, report with justice, review with mercy."
+        ],
+        "quote": "“Sing to the LORD a new song; sing to the LORD, all the earth.” — Psalm 96:1"
+      }
+    }
   }
 }

@@ -455,7 +455,8 @@
     "moreNavLabel": "Más enlaces",
     "moreNavTitle": "Saber más",
     "privacy": "Política de Privacidad",
-    "terms": "Términos de Uso"
+    "terms": "Términos de Uso",
+    "conduct": "Código de Conducta"
   },
   "common": {
     "loading": "Cargando...",
@@ -1162,5 +1163,63 @@
     "pix": "Pix",
     "boleto": "Boleto",
     "card": "Tarjeta"
+  },
+  "conduct": {
+    "title": "Código de Conducta de la Comunidad",
+    "metaDescription": "Principios, moderación y apelaciones de la Comunidad LouvorJA — basados en la filosofía adventista de la música.",
+    "lastUpdated": "Versión 1.0 — Noviembre de 2026",
+    "tocLabel": "En esta página",
+    "intro": "La Comunidad LouvorJA existe para que los miembros creen, compartan y celebren contenido de alabanza con piano que glorifique a Dios y edifique la iglesia. Este Código se basa en los principios oficiales de la Iglesia Adventista del Séptimo Día, especialmente \"A Seventh-day Adventist Philosophy of Music\" (Consejo Anual, 2004), las 28 Creencias Fundamentales y el Manual de la Iglesia.",
+    "purposeQuote": "“Si, pues, coméis o bebéis o hacéis otra cosa, hacedlo todo para la gloria de Dios.” — 1 Corintios 10:31",
+    "sections": {
+      "celebrate": {
+        "title": "1. Lo que celebramos",
+        "body": [
+          "Contenido que glorifica a Dios, busca lo noble y lo mejor (Fil 4:8), mensaje espiritual genuino, equilibrio, autenticidad y diversidad cultural — el estilo musical no es criterio de exclusión; el contenido y el mensaje sí lo son. Respeto entre miembros: las diferencias de gusto no son motivo de conflicto."
+        ]
+      },
+      "notAllowed": {
+        "title": "2. Lo que no está permitido",
+        "body": [
+          "Doctrina: letra o mensaje contrario a las Escrituras o a las 28 Creencias Fundamentales.",
+          "Impropio: contenido que estimule lujuria, pasión, desesperación, ira u odio — ofensivo, sexualizado, violento o con groserías.",
+          "Copyright: plagio o uso no autorizado de obra protegida — los himnos tienen titulares de derechos.",
+          "Spam: publicidad, autopromoción, contenido sin relación con la alabanza.",
+          "Conducta: acoso, ataque personal, discriminación o persecución a otros miembros."
+        ]
+      },
+      "moderation": {
+        "title": "3. Moderación: reportes y strikes",
+        "body": [
+          "Principio central: ocultar no es eliminar. El contenido sospechoso primero se oculta de la vitrina; la eliminación definitiva solo ocurre tras revisión.",
+          "1er reporte leve (spam/otro): contenido marcado \"en evaluación\", sigue visible, entra en la fila de los Game Masters.",
+          "3 reportes, o 1 reporte grave (doctrina, impropio, copyright): ocultado automáticamente con prioridad máxima.",
+          "Revisión del Game Master en hasta 7 días: si se mantiene, vuelve con explicación; si se elimina, el autor recibe un strike con el motivo y la orientación de este Código.",
+          "Strikes: 1º aviso formal + contenido eliminado; 2º suspensión de publicar por 7 días; 3º prohibición de publicar (la cuenta mantiene acceso de consumo). La eliminación no borra la autoría ni los puntos legítimos. Todo strike puede apelarse a los devs; casos graves van al equipo."
+        ]
+      },
+      "gameMasters": {
+        "title": "4. Game Masters",
+        "body": [
+          "Siguiendo el modelo de Jetro (Éxodo 18), dos o tres miembros invitados por el equipo de desarrollo llevan la fila de revisión, avisos y orientación de nuevos miembros. Aplican este Código como está escrito; los cambios suben a los devs. Casos graves van al equipo de desarrollo. Orden de decisión: protección de la comunidad primero; preservación del creador después."
+        ]
+      },
+      "transparency": {
+        "title": "5. Transparencia y apelación",
+        "body": [
+          "Este Código es público y visible dentro de la app en la sección Comunidad.",
+          "Todo autor sabe qué fue eliminado, por qué (qué ítem del Código) y cómo apelar.",
+          "Los cambios pasan por el equipo de desarrollo + liderazgo, consultando a los Game Masters.",
+          "Ningún contenido se elimina silenciosamente."
+        ]
+      },
+      "invitation": {
+        "title": "6. Una invitación",
+        "body": [
+          "La Comunidad es un lugar para servir. Publica con excelencia, reporta con justicia, revisa con misericordia."
+        ],
+        "quote": "“Cantad al SEÑOR cántico nuevo; cantad al SEÑOR toda la tierra.” — Salmo 96:1"
+      }
+    }
   }
 }
