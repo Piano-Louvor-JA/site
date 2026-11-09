@@ -3,6 +3,33 @@
 All notable changes to this project are documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.7.0](https://github.com/Piano-Louvor-JA/site/compare/v1.6.2...v1.7.0) (2026-11-09)
+
+### Features
+
+- **coc:** página /conduta com CoC v1.0 integral (pt/en/es) + link no footer ([78f4088](https://github.com/Piano-Louvor-JA/site/commit/78f4088f9dc46a6d7f7f8bd9db9eb050797041fa))
+
+### Bug Fixes
+
+- **admin:** isolamento do sendmail na moderacao e erro estruturado na ui ([d6fbf39](https://github.com/Piano-Louvor-JA/site/commit/d6fbf396f925f6eda3a91a01030a3fb046088d5e))
+- **deps:** patch security advisories and validate conduct translations ([68cecc1](https://github.com/Piano-Louvor-JA/site/commit/68cecc1100903285b82a1f90c056966bbbec5144))
+- **deps:** resolve active high severity advisories ([4ab3510](https://github.com/Piano-Louvor-JA/site/commit/4ab35107fcdc22ea7fb551ba3fbc21861fc0feda))
+- **deps:** resolve active high severity advisories ([70a7af6](https://github.com/Piano-Louvor-JA/site/commit/70a7af681accdb9404ba471254b99e45ee458dc2))
+- **deps:** resolve active high severity advisories ([58d97c0](https://github.com/Piano-Louvor-JA/site/commit/58d97c077ff64f57370c0831b6beb185d7877817))
+
+### Styles
+
+- **coc:** prettier ([78afaee](https://github.com/Piano-Louvor-JA/site/commit/78afaee0e4fc332440cbd9409762920a3aa4b728))
+
+### Miscellaneous Chores
+
+- **deps:** bump SonarSource/sonarqube-scan-action from 8.3.0 to 8.4.1 ([1f6de6d](https://github.com/Piano-Louvor-JA/site/commit/1f6de6de5745b7fd61d1ee14d64d0f5b0633b629))
+- **deps:** bump the npm-dependencies group across 1 directory with 29 updates ([3b7f77f](https://github.com/Piano-Louvor-JA/site/commit/3b7f77f1f13e2ee483b84d4025c68e586d6ba685))
+- merge staging after dependency updates ([31a0a1d](https://github.com/Piano-Louvor-JA/site/commit/31a0a1db1fc68d61357fd8d6e6c9667d5bd1f6e6))
+- merge staging after dependency updates ([cecb89c](https://github.com/Piano-Louvor-JA/site/commit/cecb89c83cc69013645b1aacd698b3c71e09cc83))
+- merge staging after dependency updates ([b8b0d00](https://github.com/Piano-Louvor-JA/site/commit/b8b0d004fe941cb84a5c3f85b868a4aac53ab4de))
+- sync main v1.6.2 into staging ([4713f7a](https://github.com/Piano-Louvor-JA/site/commit/4713f7a4cab7b5a455c2769b42f2586ba6aa4a0f))
+
 ## [1.6.2](https://github.com/Piano-Louvor-JA/site/compare/v1.6.1...v1.6.2) (2026-10-17)
 
 ### Bug Fixes
