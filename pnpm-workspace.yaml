@@ -13,6 +13,10 @@ hoistPattern:
   # Commitlint keeps its own newer preset instead of leaking it to release notes.
   - '!conventional-changelog-conventionalcommits'
 overrides:
+  'vue-i18n@11': '11.4.14'
+  '@intlify/core@11': '11.4.14'
+  '@intlify/core-base@11': '11.4.14'
+  '@intlify/shared@11': '11.4.14'
   # Preset 10 usa funções de renderização, disponíveis no writer 9.
   '@semantic-release/release-notes-generator>conventional-changelog-writer': '^9.3.0'
   rollup: 4.62.4
@@ -37,7 +41,7 @@ overrides:
   nodemailer: '>=10.0.6'
   svgo: '4.1.0'
   tmp: '0.2.7'
-  undici: '8.11.2'
+  undici: '8.12.2'
   # GHSA do devalue <=5.9.2 (Nuxt e i18n). Nuxt 4.5 pede ^5.8.2; 5.9.4 cabe nessa faixa.
   devalue: '5.9.4'
   # GHSA-xjh9-v7x6-24jw / GHSA-x8mw-p69m-v3mx (@fastify/busboy via firebase-admin)
