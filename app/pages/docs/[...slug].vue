@@ -13,13 +13,21 @@
     () => `docs_${localeDir.value.replace('-', '')}` as keyof Collections,
   )
 
+  type DocPage = PageCollectionItemBase & {
+    reviewed_at?: string
+    toc?: boolean
+    body?: { toc?: { links?: Array<{ id: string; text: string }> } }
+  }
+
   const { data: page, error } = await useAsyncData(
     `docs-${slugPath.value}-${locale.value}`,
     () =>
       queryCollection(collectionName.value)
         .path(`/docs/${localeDir.value}/${slugPath.value}`)
-        .first() as unknown as Promise<PageCollectionItemBase | null>,
+        .first() as unknown as Promise<DocPage | null>,
   )
+
+  const resolvedPage = computed(() => page.value ?? undefined)
 
   if (error.value || !page.value) {
     throw createError({ statusCode: 404, statusMessage: 'Doc not found', fatal: true })
@@ -154,7 +162,7 @@
             </li>
           </ul>
         </div>
-        <ContentRenderer :value="page">
+        <ContentRenderer v-if="resolvedPage" :value="resolvedPage">
           <template #empty>
             <p>{{ t('docs.empty') || 'Conteúdo não encontrado.' }}</p>
           </template>
