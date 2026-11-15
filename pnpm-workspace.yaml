@@ -17,6 +17,10 @@ overrides:
   'vue-i18n@11': '11.4.14'
   '@intlify/core@11': '11.4.14'
   '@intlify/core-base@11': '11.4.14'
+  # GHSA-mrhx-c7xc-m3w5 (zod <4.6.6, high): @nuxt/content 3.16 usa ^3.25.76.
+  # zod-to-json-schema aceita peer ^4; API usada é compatível. Remover quando
+  # @nuxt/content publicar versão com zod 4 fixa.
+  zod: '4.6.6'
   'zod@4': '4.6.6'
   '@intlify/shared@11': '11.4.14'
   # Preset 10 usa funções de renderização, disponíveis no writer 9.

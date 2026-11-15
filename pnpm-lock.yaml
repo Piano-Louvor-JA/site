@@ -8,6 +8,7 @@ overrides:
   vue-i18n@11: 11.4.14
   '@intlify/core@11': 11.4.14
   '@intlify/core-base@11': 11.4.14
+  zod: 4.6.6
   zod@4: 4.6.6
   '@intlify/shared@11': 11.4.14
   '@semantic-release/release-notes-generator>conventional-changelog-writer': ^9.3.0
@@ -11069,9 +11070,6 @@ packages:
     peerDependencies:
       zod: 4.6.6
 
-  zod@3.25.76:
-    resolution: {integrity: sha512-gzUt/qt81nXsFGKIFcC3YnfEAx5NkunCfnDlvuBSSFS02bcXu4Lmea0AFIUwbLWxWPx3d9p8S5QoaujKcNQxcQ==}
-
   zod@4.6.6:
     resolution: {integrity: sha512-4UmzQUF5fxvfcYHlbjBmejU+w+hbDnWFx4aS8kBx7nPBHcO2SqPbpAG8snbdg+Xse4pRefR98hgjFgIMCI/UhA==}
 
@@ -13191,8 +13189,8 @@ snapshots:
       unist-util-stringify-position: 4.0.0
       unist-util-visit: 5.2.0
       unplugin: 3.7.0(esbuild@0.28.2)(rolldown@1.2.18)(rollup@4.62.4)(vite@8.3.7(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.100.0)(sass@1.108.1)(terser@5.51.2)(yaml@2.9.1))
-      zod: 3.25.76
-      zod-to-json-schema: 3.25.2(zod@3.25.76)
+      zod: 4.6.6
+      zod-to-json-schema: 3.25.2(zod@4.6.6)
     optionalDependencies:
       '@electric-sql/pglite': 0.3.16
       better-sqlite3: 13.2.0
@@ -23621,15 +23619,9 @@ snapshots:
       normalize-path: 3.0.0
       readable-stream: 4.8.0
 
-  zod-to-json-schema@3.25.2(zod@3.25.76):
-    dependencies:
-      zod: 3.25.76
-
   zod-to-json-schema@3.25.2(zod@4.6.6):
     dependencies:
       zod: 4.6.6
-
-  zod@3.25.76: {}
 
   zod@4.6.6: {}
 
