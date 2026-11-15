@@ -128,6 +128,11 @@
               </NuxtLink>
             </li>
             <li>
+              <NuxtLink :to="localePath('/ranking')">
+                {{ $t('footer.ranking') }}
+              </NuxtLink>
+            </li>
+            <li>
               <NuxtLink :to="localePath('/midias')">
                 {{ $t('footer.midias') }}
               </NuxtLink>
