@@ -1,6 +1,7 @@
 allowBuilds:
   '@firebase/util': true
   '@parcel/watcher': true
+  better-sqlite3: false
   # false: o postinstall do esbuild tenta EXECUTAR o binário (falha com EACCES na Hostinger).
   # O chmod em scripts/postinstall-host.mjs restaura +x antes do build.
   esbuild: false
@@ -91,6 +92,11 @@ audit:
     - GHSA-x6jw-m9v5-85vh
     - GHSA-g4wm-2vf7-vfgr
     - GHSA-858h-whjf-mvg5
+    # GHSA-mrhx-c7xc-m3w5: range npm "<4.6.6" marca Zod 3 como vulnerável.
+    # O advisory é do Zod 4 (fix >=4.6.6); @nuxt/content exige zod ^3.25.76.
+    # Zod 4 já está pinado em 4.6.6 via override 'zod@4'. Reavaliar quando
+    # @nuxt/content migrar para Zod 4.
+    - GHSA-mrhx-c7xc-m3w5
 
 # Vitest 5 usa " > " na cadeia do teste; Stryker 10 ainda usa espaços.
 # Remover após correção upstream: https://github.com/stryker-mutator/stryker-js/issues/6210

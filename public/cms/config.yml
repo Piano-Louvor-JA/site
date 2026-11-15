@@ -1,0 +1,51 @@
+backend:
+  name: git-gateway
+  branch: staging
+  # Requer Netlify Identity + Git Gateway; sem credenciais neste repositório.
+
+publish_mode: editorial_workflow
+media_folder: public/uploads
+public_folder: /uploads
+
+collections:
+  - name: docs
+    label: Documentação
+    folder: content/docs/pt-BR
+    create: true
+    extension: md
+    format: frontmatter
+    slug: '{{slug}}'
+    fields:
+      - { label: Título, name: title, widget: string }
+      - { label: Descrição, name: description, widget: text }
+      - { label: Ordem de navegação, name: nav_order, widget: number, value_type: int, min: 1 }
+      - label: Plataforma
+        name: platform
+        widget: select
+        options: [windows, macos, linux, android, pwa, tizen, webos, androidtv, web]
+      - {
+          label: Revisado em,
+          name: reviewed_at,
+          widget: datetime,
+          format: YYYY-MM-DD,
+          date_format: YYYY-MM-DD,
+          time_format: false,
+        }
+      - { label: Exibir sumário, name: toc, widget: boolean, default: true }
+      - { label: Conteúdo, name: body, widget: markdown }
+
+  # BLOG FUTURO: descomente ao criar content/blog/pt-BR.
+  # nav_order não se aplica a posts.
+  # - name: posts
+  #   label: Blog
+  #   folder: content/blog/pt-BR
+  #   create: true
+  #   extension: md
+  #   format: frontmatter
+  #   slug: "{{slug}}"
+  #   fields:
+  #     - { label: Título, name: title, widget: string }
+  #     - { label: Descrição, name: description, widget: text }
+  #     - { label: Data, name: date, widget: datetime, format: YYYY-MM-DD, date_format: YYYY-MM-DD, time_format: false }
+  #     - { label: Tags, name: tags, widget: list }
+  #     - { label: Conteúdo, name: body, widget: markdown }

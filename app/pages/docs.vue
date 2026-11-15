@@ -43,6 +43,108 @@
   // Active section for sidebar highlight
   const activeSection = ref('gettingStarted')
 
+  // F2.4 — cards de guias completos (14 páginas de conteúdo)
+  const guideCards = [
+    {
+      to: '/docs/getting-started',
+      testid: 'getting-started',
+      icon: 'ti-rocket',
+      title: 'Primeiro culto em 15 minutos',
+      desc: 'Do download à projeção: fluxo completo.',
+    },
+    {
+      to: '/docs/install/windows',
+      testid: 'windows',
+      icon: 'ti-brand-windows',
+      title: 'Instalar no Windows',
+      desc: 'Microsoft Store ou instalador EXE.',
+    },
+    {
+      to: '/docs/install/macos',
+      testid: 'macos',
+      icon: 'ti-brand-apple',
+      title: 'Instalar no macOS',
+      desc: 'DMG Apple Silicon ou Intel.',
+    },
+    {
+      to: '/docs/install/linux',
+      testid: 'linux',
+      icon: 'ti-brand-linux',
+      title: 'Instalar no Linux',
+      desc: 'AppImage, Snap ou Flathub.',
+    },
+    {
+      to: '/docs/install/android-apk',
+      testid: 'android',
+      icon: 'ti-brand-android',
+      title: 'Instalar no Android (APK)',
+      desc: 'Celular e TV Box.',
+    },
+    {
+      to: '/docs/install/web-pwa',
+      testid: 'pwa',
+      icon: 'ti-world',
+      title: 'Usar pelo navegador (PWA)',
+      desc: 'Sem instalar nada.',
+    },
+    {
+      to: '/docs/install/tv-samsung-tizen',
+      testid: 'tv-samsung',
+      icon: 'ti-device-tv',
+      title: 'TV Samsung (Tizen)',
+      desc: 'Projeção via Palco.',
+    },
+    {
+      to: '/docs/install/tv-lg-webos',
+      testid: 'tv-lg',
+      icon: 'ti-device-tv',
+      title: 'TV LG (webOS)',
+      desc: 'Projeção via Palco.',
+    },
+    {
+      to: '/docs/install/tv-android',
+      testid: 'tv-android',
+      icon: 'ti-device-tv',
+      title: 'Android TV / Google TV',
+      desc: 'APK ou TV Box.',
+    },
+    {
+      to: '/docs/palco-multi-device',
+      testid: 'palco',
+      icon: 'ti-devices',
+      title: 'Palco multi-dispositivo',
+      desc: 'Celular controla, TV projeta.',
+    },
+    {
+      to: '/docs/faq',
+      testid: 'faq',
+      icon: 'ti-help-circle',
+      title: 'Perguntas frequentes',
+      desc: 'Gratuito, offline, privacidade.',
+    },
+    {
+      to: '/docs/troubleshooting',
+      testid: 'troubleshooting',
+      icon: 'ti-bug',
+      title: 'Solução de problemas',
+      desc: 'Diagnóstico por sintoma.',
+    },
+    {
+      to: '/docs/shortcuts',
+      testid: 'shortcuts',
+      icon: 'ti-keyboard',
+      title: 'Atalhos de teclado',
+      desc: 'Tabela completa por contexto.',
+    },
+    {
+      to: '/docs/manual',
+      testid: 'manual',
+      icon: 'ti-book-2',
+      title: 'Manual completo',
+      desc: 'Todas as ferramentas, seção por seção.',
+    },
+  ]
+
   const allSectionIds = ['gettingStarted', ...moduleSections.map((m) => m.id), 'shortcuts', 'faq']
 
   const scrollToSection = (id: string) => {
@@ -83,6 +185,30 @@
     title: t('docs.title'),
     description: t('docs.subtitle'),
     path: '/docs',
+  })
+
+  // JSON-LD FAQPage — serializa as 9 FAQs i18n docs.faq.* (agentic/SEO)
+  const faqJsonLd = computed(() => ({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqItems.map((item) => {
+      const q = t(`docs.faq.${item.key}.question`)
+      const a = t(`docs.faq.${item.key}.answer`)
+      return {
+        '@type': 'Question',
+        name: q,
+        acceptedAnswer: { '@type': 'Answer', text: a },
+      }
+    }),
+  }))
+
+  useHead({
+    script: [
+      {
+        type: 'application/ld+json',
+        innerHTML: JSON.stringify(faqJsonLd.value),
+      },
+    ],
   })
 </script>
 
@@ -149,6 +275,33 @@
 
       <!-- Content area -->
       <main class="docs-content">
+        <!-- Doc pages cards (F2.4: guia completo por tema/plataforma) -->
+        <section id="doc-guides" class="doc-section" data-testid="docs-section-guides">
+          <h2 class="doc-section__title">
+            <i class="ti ti-book" />
+            {{ $t('docs.guides.title') || 'Guias completos' }}
+          </h2>
+          <p class="doc-section__lead">
+            {{
+              $t('docs.guides.lead') ||
+              'Cada ferramenta do ecossistema explicada passo a passo, por plataforma.'
+            }}
+          </p>
+          <div class="doc-guides">
+            <NuxtLink
+              v-for="guide in guideCards"
+              :key="guide.to"
+              class="doc-guide-card"
+              :to="guide.to"
+              :data-testid="`docs-guide-${guide.testid}`"
+            >
+              <i :class="['ti', guide.icon]" />
+              <span class="doc-guide-card__title">{{ guide.title }}</span>
+              <span class="doc-guide-card__desc">{{ guide.desc }}</span>
+            </NuxtLink>
+          </div>
+        </section>
+
         <!-- Getting Started -->
         <section
           id="doc-gettingStarted"
@@ -271,6 +424,50 @@
 <style scoped lang="scss">
   .docs-page {
     min-height: 100vh;
+  }
+
+  // F2.4 — cards de guias
+  .doc-guides {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .doc-guide-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    padding: 1.1rem 1.25rem;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-decoration: none;
+    transition:
+      border-color 0.2s,
+      background 0.2s;
+
+    &:hover {
+      border-color: var(--piano-accent-text);
+      background: rgba(255, 255, 255, 0.07);
+    }
+
+    .ti {
+      font-size: 1.4rem;
+      color: var(--piano-accent-text);
+    }
+
+    &__title {
+      color: var(--piano-text-primary);
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    &__desc {
+      color: rgba(255, 255, 255, 0.65);
+      font-size: 0.85rem;
+      line-height: 1.4;
+    }
   }
 
   // ── Hero ──────────────────────────────────────
