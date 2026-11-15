@@ -3,6 +3,41 @@
 All notable changes to this project are documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.8.0](https://github.com/Piano-Louvor-JA/site/compare/v1.7.0...v1.8.0) (2026-11-15)
+
+### Features
+
+- **admin:** página /admin/gestao — eventos sazonais CRUD + pool de tasks semanais (SPEC piano-admin-panel v1.1.0) ([6b68cf1](https://github.com/Piano-Louvor-JA/site/commit/6b68cf1799aa217f2eb3fa97fc729fb1638cb2b2))
+- **docs:** fases 1+2 @nuxt/content e 14 páginas pt-BR ([cd5e571](https://github.com/Piano-Louvor-JA/site/commit/cd5e571e56e88a5915e6a1b7f532235cc68f131d))
+- **midias:** página /midias com download de mídias via Google Drive ([d8e1295](https://github.com/Piano-Louvor-JA/site/commit/d8e129577951377a92e32a04c3f9a7553dee3333))
+- **site:** ranking público da comunidade + refit /conduta no layout (SPEC piano-site-public v1.0.0) ([ed64395](https://github.com/Piano-Louvor-JA/site/commit/ed64395f47c2f4d607fcc437e3f9dbc9d991f44f))
+
+### Bug Fixes
+
+- **admin:** map community rows to physical sheet lines ([370f3a4](https://github.com/Piano-Louvor-JA/site/commit/370f3a40f0fccfa557fb47faaae24b316990fa21))
+- **docs:** compatibiliza build e testes do conteúdo ([c911ee4](https://github.com/Piano-Louvor-JA/site/commit/c911ee45224cb85ea4676a40f41d004b74ef43e3))
+- **docs:** tipa frontmatter da página de conteúdo ([d098205](https://github.com/Piano-Louvor-JA/site/commit/d0982057b42c8e76a5c1b6161f59cdcd292fd354))
+- **lint:** remove unused vars no ranking.vue e ranking.test.ts (pre-push eslint) ([a835497](https://github.com/Piano-Louvor-JA/site/commit/a8354977d3378a2dabac63a22310a0e030a38691))
+- **ranking:** TS2558 — doFetch não recebe type argument (typecheck do CI) ([652288e](https://github.com/Piano-Louvor-JA/site/commit/652288e8453ee9fced3a832cf116edb756f9ae03))
+- **security:** ignora GHSA do Zod 3 falso positivo via @nuxt/content ([955fa9a](https://github.com/Piano-Louvor-JA/site/commit/955fa9ae0fcfe724fe6684e9bcb80362a9a73efa))
+
+### Styles
+
+- **cms:** formata configuração decap ([ba99b89](https://github.com/Piano-Louvor-JA/site/commit/ba99b894ac12bf679afb8c07f896fb8d3fe2c963))
+- format community-pending-row test with Prettier ([05b1d7f](https://github.com/Piano-Louvor-JA/site/commit/05b1d7f6054a2204cb74202c26d3324fcec52872))
+- prettier nos arquivos novos (ranking/conduta/footer/i18n) ([373004b](https://github.com/Piano-Louvor-JA/site/commit/373004babddc79e06fb0e49d096f927cda78b12c))
+
+### Miscellaneous Chores
+
+- **deps:** bump the npm-dependencies group with 17 updates ([d1262cc](https://github.com/Piano-Louvor-JA/site/commit/d1262ccca7a312fb820f07a5b8bffc98ca69cefd))
+- merge staging into dependabot após site[#118](https://github.com/Piano-Louvor-JA/site/issues/118) ([8b9e553](https://github.com/Piano-Louvor-JA/site/commit/8b9e55384dff4d30ea0f71afb21d49ee2b862c83))
+- merge staging into feat/media-drive-section ([6b7e879](https://github.com/Piano-Louvor-JA/site/commit/6b7e87930d14bb3e3cb99c876ad9b31e84092b4f))
+- merge staging into feat/site-public-ranking ([b8e0cfa](https://github.com/Piano-Louvor-JA/site/commit/b8e0cfaf40b73a8b45008a5d8492e2fd1d2fc5b2))
+- merge staging into feat/site-public-ranking após [#118](https://github.com/Piano-Louvor-JA/site/issues/118)/[#119](https://github.com/Piano-Louvor-JA/site/issues/119) ([3a934bd](https://github.com/Piano-Louvor-JA/site/commit/3a934bd867641dfa75a1175a7bc3668f04be4ad5))
+- resolve conflito de merge com staging (deps dependabot) ([5d36327](https://github.com/Piano-Louvor-JA/site/commit/5d363273f9669116c1dd5c92fc6d056fa6b92748))
+- resolve merge staging — footer ranking + midias ([1b353bc](https://github.com/Piano-Louvor-JA/site/commit/1b353bc16c1ebdae0847f595ef481e65853364a3))
+- retrigger CI com base staging (limpa checks órfãos de main) ([0c0b6f4](https://github.com/Piano-Louvor-JA/site/commit/0c0b6f4cc353f67da621c95f349f1c65d5427918))
+
 ## [1.7.0](https://github.com/Piano-Louvor-JA/site/compare/v1.6.2...v1.7.0) (2026-11-09)
 
 ### Features
