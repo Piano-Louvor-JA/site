@@ -456,7 +456,9 @@
     "moreNavTitle": "Saber más",
     "privacy": "Política de Privacidad",
     "terms": "Términos de Uso",
-    "conduct": "Código de Conducta"
+    "conduct": "Código de Conducta",
+    "ranking": "Ranking",
+    "midias": "Medios"
   },
   "common": {
     "loading": "Cargando...",
@@ -1221,5 +1223,28 @@
         "quote": "“Cantad al SEÑOR cántico nuevo; cantad al SEÑOR toda la tierra.” — Salmo 96:1"
       }
     }
+  },
+  "ranking": {
+    "title": "Ranking de la Comunidad",
+    "metaDescription": "Ranking público y transparente de los contribuidores de la comunidad PIANO LouvorJA — publicaciones, usos y colecciones sincronizadas.",
+    "subtitle": "Contribuciones de la comunidad — público y transparente",
+    "tabsLabel": "Período del ranking",
+    "tabAll": "General",
+    "tabWeek": "Semana",
+    "errorText": "No se pudo cargar el ranking ahora.",
+    "retry": "Intentar de nuevo",
+    "empty": "Todavía no hay puntajes registrados.",
+    "footerLink": "Ranking"
+  },
+  "midias": {
+    "title": "Medios de LouvorJA",
+    "metaDescription": "Descarga los medios y colecciones de LouvorJA PIANO directamente de Google Drive — sin depender de la API, offline y gratis.",
+    "subtitle": "Colecciones y audio de la comunidad",
+    "description": "Los archivos de medios de LouvorJA PIANO (colecciones, audios y packs) están alojados en el Google Drive de la comunidad. Descarga con el botón de abajo e impórtalos en la app.",
+    "noteOffline": "Funciona offline: después de importar en la app, todo queda guardado en tu dispositivo.",
+    "noteBackup": "Ideal para iglesias con internet inestable — descarga una vez, usa para siempre.",
+    "downloadButton": "Abrir medios en Google Drive",
+    "unavailable": "Los enlaces de medios se publicarán pronto.",
+    "footerLink": "Medios"
   }
 }
