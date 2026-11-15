@@ -132,6 +132,11 @@
                 {{ $t('footer.ranking') }}
               </NuxtLink>
             </li>
+            <li>
+              <NuxtLink :to="localePath('/midias')">
+                {{ $t('footer.midias') }}
+              </NuxtLink>
+            </li>
           </ul>
         </nav>
       </div>

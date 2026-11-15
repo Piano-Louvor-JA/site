@@ -112,6 +112,9 @@ export default defineNuxtConfig({
       // Env var: NUXT_PUBLIC_TESTERS_SHEET_URL
       testersSheetUrl: process.env.NUXT_PUBLIC_TESTERS_SHEET_URL || '',
 
+      // Downloads de mídias (Google Drive) — SPEC piano-site-drive-midias
+      driveMediaUrl: process.env.NUXT_PUBLIC_DRIVE_MEDIA_URL || '',
+
       web3formsKey: process.env.WEB3FORMS_ACCESS_KEY || '',
 
       // GA4

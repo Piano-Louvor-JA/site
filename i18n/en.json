@@ -465,7 +465,8 @@
     "privacy": "Privacy Policy",
     "terms": "Terms of Use",
     "conduct": "Code of Conduct",
-    "ranking": "Ranking"
+    "ranking": "Ranking",
+    "midias": "Media"
   },
   "common": {
     "loading": "Loading...",
@@ -1242,5 +1243,16 @@
     "retry": "Try again",
     "empty": "No scores recorded yet.",
     "footerLink": "Ranking"
+  },
+  "midias": {
+    "title": "LouvorJA Media",
+    "metaDescription": "Download LouvorJA PIANO media and collections directly from Google Drive — API-independent, offline and free.",
+    "subtitle": "Community collections and audio",
+    "description": "LouvorJA PIANO media files (collections, audio and packs) are hosted on the community Google Drive. Download using the button below and import them in the app.",
+    "noteOffline": "Works offline: after importing in the app, everything is saved on your device.",
+    "noteBackup": "Great for churches with unstable internet — download once, use forever.",
+    "downloadButton": "Open media on Google Drive",
+    "unavailable": "Media links will be published soon.",
+    "footerLink": "Media"
   }
 }

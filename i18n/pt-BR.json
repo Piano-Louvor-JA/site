@@ -465,7 +465,8 @@
     "privacy": "Política de Privacidade",
     "terms": "Termos de Uso",
     "conduct": "Código de Conduta",
-    "ranking": "Ranking"
+    "ranking": "Ranking",
+    "midias": "Mídias"
   },
   "common": {
     "loading": "Carregando...",
@@ -1242,5 +1243,16 @@
     "retry": "Tentar novamente",
     "empty": "Ainda não há pontuações registradas.",
     "footerLink": "Ranking"
+  },
+  "midias": {
+    "title": "Mídias do LouvorJA",
+    "metaDescription": "Baixe as mídias e coletâneas do LouvorJA PIANO diretamente do Google Drive — sem depender da API, offline e gratuito.",
+    "subtitle": "Coletâneas e áudios da comunidade",
+    "description": "Os arquivos de mídia do LouvorJA PIANO (coletâneas, áudios e packs) estão hospedados no Google Drive da comunidade. Baixe pelo botão abaixo e importe no app.",
+    "noteOffline": "Funciona offline: depois de importar no app, tudo fica salvo no seu dispositivo.",
+    "noteBackup": "Ótimo para igrejas com internet instável — baixe uma vez, use para sempre.",
+    "downloadButton": "Abrir mídias no Google Drive",
+    "unavailable": "Os links de mídia serão publicados em breve.",
+    "footerLink": "Mídias"
   }
 }
