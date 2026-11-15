@@ -49,40 +49,17 @@ const mockFetch = vi.fn(async () => ({
       'pendente',
     ],
     // linha física 3 — outro pendente (deve ter row=3)
-    [
-      'Maria',
-      'maria@test.com',
-      '',
-      '',
-      'web',
-      '',
-      '',
-      '',
-      '',
-      'FALSE',
-      '',
-      'pendente',
-    ],
+    ['Maria', 'maria@test.com', '', '', 'web', '', '', '', '', 'FALSE', '', 'pendente'],
     // linha física 4 — já aprovado (NÃO entra nos pendentes)
-    [
-      'José',
-      'jose@test.com',
-      '',
-      '',
-      '',
-      '',
-      '',
-      '',
-      '',
-      'TRUE',
-      '',
-      'aprovado',
-    ],
+    ['José', 'jose@test.com', '', '', '', '', '', '', '', 'TRUE', '', 'aprovado'],
   ],
 }))
 vi.stubGlobal('$fetch', mockFetch)
 
-vi.stubGlobal('requireAuth', vi.fn(async () => 'uid-admin'))
+vi.stubGlobal(
+  'requireAuth',
+  vi.fn(async () => 'uid-admin'),
+)
 
 process.env.TESTERS_SHEET_ID = 'test-sheet-id'
 process.env.GOOGLE_CLIENT_ID = 'client-id'
