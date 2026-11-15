@@ -19,7 +19,7 @@ async function fetchTab(
     `https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/${tab}!${range}`,
     { headers: { Authorization: `Bearer ${token}` } },
   )
-  return (res.values ?? []).map((values, i) => ({ row: i + 1, values }))
+  return (res.values ?? []).map((values, i) => ({ row: i + 2, values }))
 }
 
 let cachedToken: { token: string; exp: number } | null = null
