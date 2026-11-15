@@ -464,7 +464,8 @@
     "moreNavTitle": "More",
     "privacy": "Privacy Policy",
     "terms": "Terms of Use",
-    "conduct": "Code of Conduct"
+    "conduct": "Code of Conduct",
+    "midias": "Media"
   },
   "common": {
     "loading": "Loading...",
@@ -1229,5 +1230,16 @@
         "quote": "“Sing to the LORD a new song; sing to the LORD, all the earth.” — Psalm 96:1"
       }
     }
+  },
+  "midias": {
+    "title": "LouvorJA Media",
+    "metaDescription": "Download LouvorJA PIANO media and collections directly from Google Drive — API-independent, offline and free.",
+    "subtitle": "Community collections and audio",
+    "description": "LouvorJA PIANO media files (collections, audio and packs) are hosted on the community Google Drive. Download using the button below and import them in the app.",
+    "noteOffline": "Works offline: after importing in the app, everything is saved on your device.",
+    "noteBackup": "Great for churches with unstable internet — download once, use forever.",
+    "downloadButton": "Open media on Google Drive",
+    "unavailable": "Media links will be published soon.",
+    "footerLink": "Media"
   }
 }
