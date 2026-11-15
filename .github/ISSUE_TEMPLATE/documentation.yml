@@ -1,0 +1,51 @@
+name: 📚 Documentação
+description: Problema, melhoria ou erro nas páginas de documentação (/docs)
+labels: ['documentation']
+body:
+  - type: dropdown
+    id: page
+    attributes:
+      label: Página afetada
+      options:
+        - /docs (hub)
+        - /docs/install/windows
+        - /docs/install/macos
+        - /docs/install/linux
+        - /docs/install/android-apk
+        - /docs/install/web-pwa
+        - /docs/install/tv-samsung-tizen
+        - /docs/install/tv-lg-webos
+        - /docs/install/tv-android
+        - /docs/getting-started
+        - /docs/palco-multi-device
+        - /docs/faq
+        - /docs/troubleshooting
+        - /docs/shortcuts
+        - /docs/manual
+        - Outra / não sei
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Tipo
+      options:
+        - Conteúdo incorreto ou desatualizado
+        - Passo que não funciona
+        - Falta de conteúdo (recurso não documentado)
+        - Erro de português/formatação
+        - Sugestão de melhoria
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Descreva o problema
+      description: O que está errado/faltando e o que você esperava encontrar. Se possível, cole o trecho.
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Contexto (opcional)
+      description: Dispositivo/sistema, versão do app, captura de tela.

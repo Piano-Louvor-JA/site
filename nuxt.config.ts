@@ -2,7 +2,7 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-01-01',
   devtools: { enabled: true },
 
-  modules: ['@nuxtjs/i18n', 'nuxt-gtag'],
+  modules: ['@nuxtjs/i18n', 'nuxt-gtag', '@nuxt/content'],
 
   gtag: {
     id: process.env.GOOGLE_ANALYTICS_ID || '',
@@ -50,6 +50,7 @@ export default defineNuxtConfig({
         '/es',
         '/200.html',
         '/404.html',
+        '/llms-full.txt',
         // GitHub API — pré-renderizado como JSON estático (sem servidor Node em produção)
         // Pular durante testes (VITEST) para evitar rate limit da API do GitHub
         ...(!process.env.VITEST ? ['/api/github/contributors', '/api/github/releases'] : []),
@@ -82,6 +83,55 @@ export default defineNuxtConfig({
 
   typescript: {
     strict: true,
+  },
+
+  // F2.5 — rotas de docs geradas do conteúdo (crawlLinks segue false; enumeramos nós)
+  hooks: {
+    'nitro:build:before': async (nitro) => {
+      try {
+        // ESM-safe imports (nuxt.config é ESM)
+        const { readdirSync, readFileSync, statSync, writeFileSync } = await import('node:fs')
+        const { resolve } = await import('node:path')
+        const base = resolve('./content/docs/pt-BR')
+        const walk = (dir: string): Array<{ slug: string; lastmod: string | null }> => {
+          const out: Array<{ slug: string; lastmod: string | null }> = []
+          for (const entry of readdirSync(dir, { withFileTypes: true })) {
+            if (entry.isDirectory()) out.push(...walk(resolve(dir, entry.name)))
+            else if (entry.name.endsWith('.md')) {
+              const file = resolve(dir, entry.name)
+              const rel = file.slice(base.length + 1).replace(/\.md$/, '')
+              const slug = rel.split('/').map(encodeURIComponent).join('/')
+              const fm = readFileSync(file, 'utf8').match(/^reviewed_at:\s*(.+)$/m)
+              let lastmod: string | null = null
+              if (fm) {
+                const d = new Date(`${fm[1]!.trim()}T12:00:00Z`)
+                if (!Number.isNaN(d.getTime())) lastmod = d.toISOString()
+              }
+              if (!lastmod) {
+                const d = new Date(statSync(file).mtime)
+                lastmod = Number.isNaN(d.getTime()) ? null : d.toISOString()
+              }
+              out.push({ slug, lastmod })
+            }
+          }
+          return out
+        }
+        const pages = walk(base)
+        if (pages.length === 0) return
+        // Rotas de docs: pt-BR (default, sem prefixo) + en/es prefixadas
+        const docRoutes = pages.flatMap((p) => [
+          `/docs/${p.slug}`,
+          `/en/docs/${p.slug}`,
+          `/es/docs/${p.slug}`,
+        ])
+        nitro.options.prerender.routes.push(...docRoutes)
+        // Índice p/ sitemap.xml ler lastmod (runtime Nitro roda fora do repo root às vezes)
+        const idxPath = resolve('./content/docs-index.json')
+        writeFileSync(idxPath, JSON.stringify(pages))
+      } catch {
+        // content/docs ausente no primeiro build — nada a injetar
+      }
+    },
   },
 
   runtimeConfig: {

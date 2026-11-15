@@ -24,6 +24,10 @@ extract_mutants.py
 # Interno (não publicar por enquanto)
 .cursor/
 docs/
+# ...mas o conteúdo versionado de documentação entra (RF-05):
+!content/docs/
+# ...e a página catch-all das docs (RF-08):
+!app/pages/docs/
 
 # Internal planning (SDD)
 .planning/
