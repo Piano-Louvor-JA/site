@@ -1,7 +1,7 @@
 <script setup lang="ts">
   import type { Collections, PageCollectionItemBase } from '@nuxt/content'
-  // queryCollection vem do auto-import do módulo; import explícito p/ eslint (client build)
-  import { queryCollection } from '@nuxt/content/dist/runtime/client'
+  // auto-import do módulo, exposto via virtual #imports (eslint-safe)
+  import { queryCollection } from '#imports'
 
   const route = useRoute()
   const { locale, t } = useI18n()
