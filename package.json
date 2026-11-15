@@ -41,10 +41,12 @@
     "prepare": "husky"
   },
   "dependencies": {
+    "@nuxt/content": "^3.16.2",
     "@nuxtjs/i18n": "^10.6.0",
     "@octokit/rest": "^22.0.1",
     "@tabler/icons-webfont": "^3.50.0",
     "apexcharts": "^8.7.0",
+    "better-sqlite3": "^13.2.0",
     "firebase": "^13.2.0",
     "firebase-admin": "^14.5.0",
     "gsap": "^3.15.0",
@@ -54,9 +56,9 @@
     "nuxt": "^4.6.4",
     "nuxt-gtag": "^5.0.0",
     "vue": "^3.5.45",
+    "vue-i18n": "11.4.14",
     "vue-router": "^5.4.0",
-    "vue3-apexcharts": "^1.11.3",
-    "vue-i18n": "11.4.14"
+    "vue3-apexcharts": "^1.11.3"
   },
   "devDependencies": {
     "@commitlint/cli": "^21.2.4",

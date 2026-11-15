@@ -1,8 +1,10 @@
 import { defineEventHandler } from 'h3'
+import { readFileSync } from 'node:fs'
+import { resolve } from 'node:path'
 
 const SITE_URL = 'https://pianolouvorja.com.br'
 
-const ROUTES = [
+const ROUTES: Array<{ path: string; changefreq: string; priority: string }> = [
   { path: '/', changefreq: 'weekly', priority: '1.0' },
   { path: '/download', changefreq: 'monthly', priority: '0.9' },
   { path: '/releases', changefreq: 'weekly', priority: '0.8' },
@@ -14,17 +16,40 @@ const ROUTES = [
 
 const LOCALES = ['', '/en', '/es']
 
+/** Páginas de doc pt-BR criadas no build — injetadas via nuxt.config hooks (F2.5). */
+const DOC_PAGES: Array<{ slug: string; lastmod: string | null }> = (() => {
+  try {
+    const raw = readFileSync(resolve('./content/docs-index.json'), 'utf8')
+    return JSON.parse(raw) as Array<{ slug: string; lastmod: string | null }>
+  } catch {
+    return []
+  }
+})()
+
+/** lastmod: reviewed_at do frontmatter; senão mtime do repo (revisão do conteúdo). */
+function lastmodFor(path: string): string | null {
+  const m = path.match(/^\/(?:en\/|es\/)?docs\/(.+)$/)
+  if (!m) return null
+  return DOC_PAGES.find((p) => p.slug === m[1])?.lastmod ?? null
+}
+
 /**
  * GET /sitemap.xml
- * Gera sitemap dinamico com todas as rotas x locales.
+ * Gera sitemap dinamico com todas as rotas x locales + lastmod + páginas de docs.
  */
 export default defineEventHandler((event) => {
-  const urls = ROUTES.flatMap((route) =>
+  const allRoutes = [
+    ...ROUTES,
+    ...DOC_PAGES.map((p) => ({ path: `/docs/${p.slug}`, changefreq: 'monthly', priority: '0.6' })),
+  ]
+
+  const urls = allRoutes.flatMap((route) =>
     LOCALES.map((locale) => {
       const url = `${SITE_URL}${locale}${route.path === '/' ? (locale ? '' : '/') : route.path}`
+      const lastmod = lastmodFor(route.path)
       return `  <url>
     <loc>${url}</loc>
-    <changefreq>${route.changefreq}</changefreq>
+${lastmod ? `    <lastmod>${lastmod}</lastmod>\n` : ''}    <changefreq>${route.changefreq}</changefreq>
     <priority>${route.priority}</priority>
   </url>`
     }),

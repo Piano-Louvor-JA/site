@@ -1,6 +1,7 @@
 allowBuilds:
   '@firebase/util': true
   '@parcel/watcher': true
+  better-sqlite3: false
   # false: o postinstall do esbuild tenta EXECUTAR o binário (falha com EACCES na Hostinger).
   # O chmod em scripts/postinstall-host.mjs restaura +x antes do build.
   esbuild: false
