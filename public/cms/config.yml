@@ -14,7 +14,7 @@ collections:
     create: true
     extension: md
     format: frontmatter
-    slug: "{{slug}}"
+    slug: '{{slug}}'
     fields:
       - { label: Título, name: title, widget: string }
       - { label: Descrição, name: description, widget: text }
@@ -23,7 +23,14 @@ collections:
         name: platform
         widget: select
         options: [windows, macos, linux, android, pwa, tizen, webos, androidtv, web]
-      - { label: Revisado em, name: reviewed_at, widget: datetime, format: YYYY-MM-DD, date_format: YYYY-MM-DD, time_format: false }
+      - {
+          label: Revisado em,
+          name: reviewed_at,
+          widget: datetime,
+          format: YYYY-MM-DD,
+          date_format: YYYY-MM-DD,
+          time_format: false,
+        }
       - { label: Exibir sumário, name: toc, widget: boolean, default: true }
       - { label: Conteúdo, name: body, widget: markdown }
 
