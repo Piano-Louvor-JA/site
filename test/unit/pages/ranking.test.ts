@@ -8,7 +8,7 @@ import es from '../../../i18n/es.json'
 
 /**
  * SPEC piano-site-public v1.0.0 (RF-02..RF-05): ranking público no site.
- * Dados de GET /api/piano/proxy/v1/custom/ranking?window=week|all
+ * Dados de GET /v1/custom/ranking?window=week|all
  * (proxy → api.pianolouvorja.com.br, público sem auth, X-Tenant default piano).
  * Regras: NUNCA exibir e-mail; API fora → estado de erro com retry (AC-4);
  * pódio top-3 + lista (AC-2); abas semana/geral; i18n 3 idiomas; SEO meta.
