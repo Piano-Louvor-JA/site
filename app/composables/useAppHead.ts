@@ -86,13 +86,19 @@ export function useAppHead(options: AppHeadOptions = {}) {
   }))
 
   // Build hreflang alternate links for all configured locales (e.g. Google crawlers)
-  const alternateLinks = computed(() =>
-    (locales.value as Array<{ code: string }>).map((l) => ({
+  const alternateLinks = computed(() => [
+    ...(locales.value as Array<{ code: string }>).map((l) => ({
       rel: 'alternate' as const,
       hreflang: l.code,
       href: getUrlForLocale(l.code),
     })),
-  )
+    // x-default: aponta o fallback (default locale) para buscas sem locale correspondente
+    {
+      rel: 'alternate' as const,
+      hreflang: 'x-default',
+      href: getUrlForLocale(defaultLocale),
+    },
+  ])
 
   // og:locale:alternate for each non-default locale
   const ogLocaleAlternates = computed(() =>
