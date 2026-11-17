@@ -58,7 +58,10 @@
     erroCarregar.value = false
     if (!sheetUrl) {
       erroCarregar.value = true
-      feedback.value = { ok: false, msg: 'Planilha de testadores não configurada (NUXT_PUBLIC_TESTERS_SHEET_URL)' }
+      feedback.value = {
+        ok: false,
+        msg: 'Planilha de testadores não configurada (NUXT_PUBLIC_TESTERS_SHEET_URL)',
+      }
       loading.value = false
       return
     }
