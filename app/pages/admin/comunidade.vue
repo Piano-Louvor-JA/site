@@ -1,4 +1,6 @@
 <script setup lang="ts">
+  import { parseCommunityPending } from '~/utils/community-pending'
+
   definePageMeta({
     layout: 'admin',
     middleware: 'auth',
@@ -7,6 +9,8 @@
   useHead({ title: 'Comunidade · Piano Louvor JA' })
 
   const { getToken } = useFirebaseAuth()
+  const config = useRuntimeConfig()
+  const sheetUrl = String(config.public.testersSheetUrl ?? '').trim()
 
   interface PendenteBase {
     row: number
@@ -43,25 +47,43 @@
   const devs = ref<DevPendente[]>([])
   const relatos = ref<RelatoNovo[]>([])
   const loading = ref(false)
+  /** true somente quando o carregamento FALHOU — oculta listas (SPEC §4: nunca "🎉" sobre erro). */
+  const erroCarregar = ref(false)
   const feedback = ref<{ ok: boolean; msg: string } | null>(null)
   const processando = ref<string | null>(null) // `${tab}:${row}`
 
   async function carregar() {
     loading.value = true
     feedback.value = null
+    erroCarregar.value = false
+    if (!sheetUrl) {
+      erroCarregar.value = true
+      feedback.value = { ok: false, msg: 'Planilha de testadores não configurada (NUXT_PUBLIC_TESTERS_SHEET_URL)' }
+      loading.value = false
+      return
+    }
     try {
-      const token = await getToken()
-      const res = await $fetch<{
-        testersPendentes: TesterPendente[]
-        devsPendentes: DevPendente[]
-        relatosNovos: RelatoNovo[]
-      }>('/api/admin/community/pending', {
-        headers: token ? { Authorization: `Bearer ${token}` } : {},
-      })
-      testers.value = res.testersPendentes
-      devs.value = res.devsPendentes
-      relatos.value = res.relatosNovos
+      const sep = sheetUrl.includes('?') ? '&' : '?'
+      const fetchSheet = (sheet: string) =>
+        $fetch(`${sheetUrl}${sep}sheet=${encodeURIComponent(sheet)}`, { responseType: 'text' })
+      const [testersCsv, devsCsv, relatosCsv] = await Promise.all([
+        fetchSheet('testadores'),
+        fetchSheet('desenvolvedores'),
+        fetchSheet('relatos'),
+      ])
+      const res = parseCommunityPending(
+        typeof testersCsv === 'string' ? testersCsv : '',
+        typeof devsCsv === 'string' ? devsCsv : '',
+        typeof relatosCsv === 'string' ? relatosCsv : '',
+      )
+      testers.value = res.testers
+      devs.value = res.devs
+      relatos.value = res.relatos
     } catch {
+      erroCarregar.value = true
+      testers.value = []
+      devs.value = []
+      relatos.value = []
       feedback.value = { ok: false, msg: 'Erro ao carregar pendentes' }
     } finally {
       loading.value = false
@@ -154,7 +176,7 @@
     </nav>
 
     <!-- Testadores -->
-    <section v-if="activeTab === 'testers'" class="admin-comunidade__lista">
+    <section v-if="activeTab === 'testers' && !erroCarregar" class="admin-comunidade__lista">
       <p v-if="!testers.length" class="admin-comunidade__vazio">Nenhum testador pendente 🎉</p>
       <article v-for="t in testers" :key="`t${t.row}`" class="admin-comunidade__card">
         <h3>{{ t.nome }}</h3>
@@ -195,7 +217,7 @@
     </section>
 
     <!-- Desenvolvedores -->
-    <section v-if="activeTab === 'devs'" class="admin-comunidade__lista">
+    <section v-if="activeTab === 'devs' && !erroCarregar" class="admin-comunidade__lista">
       <p v-if="!devs.length" class="admin-comunidade__vazio">Nenhum dev pendente 🎉</p>
       <article v-for="d in devs" :key="`d${d.row}`" class="admin-comunidade__card">
         <h3>{{ d.nome }}</h3>
@@ -248,7 +270,7 @@
     </section>
 
     <!-- Relatos -->
-    <section v-if="activeTab === 'relatos'" class="admin-comunidade__lista">
+    <section v-if="activeTab === 'relatos' && !erroCarregar" class="admin-comunidade__lista">
       <p v-if="!relatos.length" class="admin-comunidade__vazio">Nenhum relato novo 🎉</p>
       <article v-for="r in relatos" :key="`r${r.row}`" class="admin-comunidade__card">
         <h3>{{ r.tipo }} — {{ r.modulo || 'geral' }}</h3>
