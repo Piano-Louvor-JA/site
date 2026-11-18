@@ -14,7 +14,7 @@ const ROUTES: Array<{ path: string; changefreq: string; priority: string }> = [
   { path: '/terms', changefreq: 'yearly', priority: '0.3' },
 ]
 
-const LOCALES = ['', '/en', '/es']
+const LOCALES = ['', '/en', '/es', '/ru', '/uk', '/fr']
 
 /** Páginas de doc pt-BR criadas no build — injetadas via nuxt.config hooks (F2.5). */
 const DOC_PAGES: Array<{ slug: string; lastmod: string | null }> = (() => {

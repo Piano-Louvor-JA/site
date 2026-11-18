@@ -87,7 +87,7 @@ describe('useLocaleMessages', () => {
   })
 
   it('retorna undefined para locale invalido', () => {
-    setLocale('fr')
+    setLocale('de')
     const { raw } = useLocaleMessages()
     expect(raw('meta.title')).toBeUndefined()
   })
