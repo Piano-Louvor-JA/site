@@ -5,6 +5,7 @@
   import { detectArch, detectDevice } from '~/utils/device-detection'
 
   const { t } = useI18n()
+  const localePath = useLocalePath()
 
   useSeoMeta({
     title: () => t('download.metaTitle'),
@@ -390,6 +391,22 @@
       :app-url="siteConfig.appUrl"
       :detected-platform="detectedMobilePlatform"
     />
+
+    <!-- Midias (coletaneas/audios via Google Drive) -->
+    <section class="download-section">
+      <div class="download-section__container download-midias">
+        <h2 class="download-section__title download-section__title--small">
+          {{ $t('download.midias.title') }}
+        </h2>
+        <p class="download-midias__description">
+          {{ $t('download.midias.description') }}
+        </p>
+        <NuxtLink :to="localePath('/midias')" class="download-midias__cta">
+          <i class="ti ti-download" aria-hidden="true" />
+          {{ $t('download.midias.cta') }}
+        </NuxtLink>
+      </div>
+    </section>
 
     <!-- System Requirements -->
     <section class="download-section download-section--alt">

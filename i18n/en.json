@@ -900,6 +900,11 @@
       },
       "apkNote": "Install the APK by allowing apps from unknown sources in Android settings."
     },
+    "midias": {
+      "title": "LouvorJA Media",
+      "description": "Download collections, audio and packs straight from the community's Google Drive — no API dependency, offline and free.",
+      "cta": "Open Media"
+    },
     "systemRequirements": {
       "title": "System Requirements",
       "desktop": "Desktop: 4GB RAM, 500MB disk space, GPU with WebGL support",
