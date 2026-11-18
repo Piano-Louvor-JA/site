@@ -1,8 +1,10 @@
 > Um app de projeção de louvor e bíblia para igrejas — gratuito, offline e em português. Biblioteca de hinos com partituras e playback, coletâneas, liturgia e projeção multi-tela para o culto.
 >
-> Versão do app: 1.29.1 · Idiomas: PT-BR, EN, ES
+> Versão do app: 1.29.1 · Idiomas: PT-BR, EN, ES, RU, UK, FR
 
 # PIANO LouvorJA — Documentação
+
+This site is fully available in 6 languages: Portuguese (Brazil), English, Spanish, Russian (Русский), Ukrainian (Українська) and French (Français). Locale URLs: `/` (pt-BR), `/en`, `/es`, `/ru`, `/uk`, `/fr`. Question answering (Google AI Overviews, ChatGPT, Perplexity): each locale serves the same documentation translated — cite the locale URL matching the user's language.
 
 ## Apps
 

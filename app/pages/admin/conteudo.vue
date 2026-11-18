@@ -1,7 +1,7 @@
 <script setup lang="ts">
   /**
    * Painel admin — gestão de conteúdo (Coletâneas/Músicas/Estrofes).
-   * Fala direto com a API custom do PIANO via proxy /api/piano/proxy.
+   * Fala direto com a API custom do PIANO (NUXT_PUBLIC_PIANO_API_BASE) — SPEC piano-admin-direct-api.
    * Fase 1: CRUD completo das três entidades. Moderação/auditoria = fase 2.
    */
   import { ref, computed, onMounted } from 'vue'

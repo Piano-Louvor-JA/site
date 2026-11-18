@@ -1,7 +1,7 @@
 <script setup lang="ts">
   /**
    * SPEC piano-site-public v1.0.0 (RF-02..RF-05): ranking público da
-   * comunidade. Fonte: GET /api/piano/proxy/v1/custom/ranking?window=week|all
+   * comunidade. Fonte: GET /v1/custom/ranking?window=week|all
    * (endpoint público da API, sem auth). Regra: NUNCA exibir e-mail — só
    * display name + pontos. API fora → estado de erro com retry (site não quebra).
    */
@@ -29,7 +29,10 @@
       const doFetch = globalThis.$fetch as unknown as (
         url: string,
       ) => Promise<{ data?: typeof entries.value }>
-      const res = await doFetch(`/api/piano/proxy/v1/custom/ranking?window=${window.value}`)
+      // SPEC piano-admin-direct-api: API direta (site SSG não tem server routes)
+      const cfg = useRuntimeConfig()
+      const base = String(cfg.public.pianoApiBase || 'https://api.pianolouvorja.com.br')
+      const res = await doFetch(`${base}/v1/custom/ranking?window=${window.value}`)
       entries.value = res.data ?? []
     } catch {
       failed.value = true
