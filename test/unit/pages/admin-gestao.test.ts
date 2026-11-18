@@ -4,7 +4,7 @@ import { mount, flushPromises } from '@vue/test-utils'
 /**
  * SPEC piano-admin-panel v1.1.0 (RF-04): página Admin/Gestão no site —
  * CRUD de eventos sazonais + editor do pool de tasks semanais, chamando
- * /api/piano/proxy/v1/custom/admin/* com Bearer do login piano.
+ * {pianoApiBase}/v1/custom/admin/* com Bearer do login piano (SPEC piano-admin-direct-api).
  * UI só renderiza gestão para quem está autenticado (middleware auth).
  */
 import AdminGestaoPage from '~/pages/admin/gestao.vue'

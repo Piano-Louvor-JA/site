@@ -12,11 +12,17 @@
 import ptBR from '../../assets/i18n/pt-BR'
 import en from '../../assets/i18n/en'
 import es from '../../assets/i18n/es'
+import ru from '../../assets/i18n/ru'
+import uk from '../../assets/i18n/uk'
+import fr from '../../assets/i18n/fr'
 
 const localeData: Record<string, Record<string, unknown>> = {
   'pt-BR': ptBR,
   en,
   es,
+  ru,
+  uk,
+  fr,
 }
 
 export function isNullish(v: unknown): boolean {

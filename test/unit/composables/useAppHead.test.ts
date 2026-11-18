@@ -83,11 +83,15 @@ describe('useAppHead', () => {
     useAppHead()
     const arg = useHeadMock.mock.calls[0][0]
     const alternates = arg.link.filter((l: any) => l.rel === 'alternate' && l.hreflang)
-    expect(alternates.length).toBe(3)
+    expect(alternates.length).toBe(7)
     const hreflangs = alternates.map((a: any) => a.hreflang)
     expect(hreflangs).toContain('pt-BR')
     expect(hreflangs).toContain('en')
     expect(hreflangs).toContain('es')
+    expect(hreflangs).toContain('ru')
+    expect(hreflangs).toContain('uk')
+    expect(hreflangs).toContain('fr')
+    expect(hreflangs).toContain('x-default')
   })
 
   const getJsonLds = (): any[] => {

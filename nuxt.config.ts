@@ -14,6 +14,9 @@ export default defineNuxtConfig({
       { code: 'pt-BR', language: 'pt-BR', name: 'Portugues', file: 'pt-BR.json' },
       { code: 'en', language: 'en', name: 'English', file: 'en.json' },
       { code: 'es', language: 'es', name: 'Espanol', file: 'es.json' },
+      { code: 'ru', language: 'ru', name: 'Русский', file: 'ru.json' },
+      { code: 'uk', language: 'uk', name: 'Українська', file: 'uk.json' },
+      { code: 'fr', language: 'fr', name: 'Français', file: 'fr.json' },
     ],
     defaultLocale: 'pt-BR',
     strategy: 'prefix_except_default',
@@ -164,6 +167,8 @@ export default defineNuxtConfig({
 
       // Downloads de mídias (Google Drive) — SPEC piano-site-drive-midias
       driveMediaUrl: process.env.NUXT_PUBLIC_DRIVE_MEDIA_URL || '',
+      // API custom do PIANO (painel admin) — base por ambiente (SPEC piano-admin-direct-api)
+      pianoApiBase: process.env.NUXT_PUBLIC_PIANO_API_BASE || 'https://api.pianolouvorja.com.br',
 
       web3formsKey: process.env.WEB3FORMS_ACCESS_KEY || '',
 
