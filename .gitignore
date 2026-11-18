@@ -34,3 +34,6 @@ docs/
 
 # Firebase service account (nunca commitar)
 service-account.json
+
+# artefato gerado pelo @nuxt/content (nao commitar)
+content/docs-index.json
