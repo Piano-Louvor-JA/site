@@ -95,11 +95,31 @@ describe('matchAssets', () => {
   // RF-04/T4: release com os 4 APKs → só o universal casa como android.
   it('matches ONLY the universal APK when release has universal + per-ABI assets', () => {
     const assets: RawReleaseAsset[] = [
-      { name: 'louvorja-piano-1.0.1-arm64-v8a.apk', browser_download_url: 'https://x/arm64.apk', size: 50000000 },
-      { name: 'louvorja-piano-1.0.1-x86_64.apk', browser_download_url: 'https://x/x86.apk', size: 52000000 },
-      { name: 'louvorja-piano-1.0.1-universal.apk', browser_download_url: 'https://x/universal.apk', size: 150000000 },
-      { name: 'louvorja-piano-1.0.1-armeabi-v7a.apk', browser_download_url: 'https://x/armv7.apk', size: 51000000 },
-      { name: 'louvorja-piano-1.0.1-ios-unsigned.ipa', browser_download_url: 'https://x/app.ipa', size: 40000000 },
+      {
+        name: 'louvorja-piano-1.0.1-arm64-v8a.apk',
+        browser_download_url: 'https://x/arm64.apk',
+        size: 50000000,
+      },
+      {
+        name: 'louvorja-piano-1.0.1-x86_64.apk',
+        browser_download_url: 'https://x/x86.apk',
+        size: 52000000,
+      },
+      {
+        name: 'louvorja-piano-1.0.1-universal.apk',
+        browser_download_url: 'https://x/universal.apk',
+        size: 150000000,
+      },
+      {
+        name: 'louvorja-piano-1.0.1-armeabi-v7a.apk',
+        browser_download_url: 'https://x/armv7.apk',
+        size: 51000000,
+      },
+      {
+        name: 'louvorja-piano-1.0.1-ios-unsigned.ipa',
+        browser_download_url: 'https://x/app.ipa',
+        size: 40000000,
+      },
     ]
     const result = matchAssets(assets, REPO_CONFIGS[2].assetMatchers)
     expect(result.android).toEqual({
@@ -129,8 +149,16 @@ describe('matchAssets', () => {
   // RF-04/T6: release sem universal → card fica "Em breve" (sem android).
   it('falls back to no android card when release has no universal APK', () => {
     const assets: RawReleaseAsset[] = [
-      { name: 'louvorja-piano-1.0.1-arm64-v8a.apk', browser_download_url: 'https://x/arm64.apk', size: 50000000 },
-      { name: 'louvorja-piano-1.0.1-ios-unsigned.ipa', browser_download_url: 'https://x/app.ipa', size: 40000000 },
+      {
+        name: 'louvorja-piano-1.0.1-arm64-v8a.apk',
+        browser_download_url: 'https://x/arm64.apk',
+        size: 50000000,
+      },
+      {
+        name: 'louvorja-piano-1.0.1-ios-unsigned.ipa',
+        browser_download_url: 'https://x/app.ipa',
+        size: 40000000,
+      },
     ]
     const result = matchAssets(assets, REPO_CONFIGS[2].assetMatchers)
     expect(result).not.toHaveProperty('android')
