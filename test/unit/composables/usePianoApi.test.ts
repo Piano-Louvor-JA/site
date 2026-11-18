@@ -400,4 +400,76 @@ describe('usePianoApi', () => {
     const api = usePianoApi()
     expect(await api.listMusics(1)).toEqual([])
   })
+
+  it('pianoApiBase vazio mantém default de produção — branch fromEnv falsy', async () => {
+    const previous = globalThis.useRuntimeConfig
+    vi.stubGlobal('useRuntimeConfig', () => ({
+      public: { pianoApiBase: '' },
+    }))
+    try {
+      fetchMock.mockResolvedValueOnce({ data: [], meta: { total: 0 } })
+      const api = usePianoApi()
+      await api.listCollections()
+      expect(fetchMock).toHaveBeenCalledWith(
+        'https://api.pianolouvorja.com.br/v1/custom/collections',
+        expect.anything(),
+      )
+    } finally {
+      vi.stubGlobal('useRuntimeConfig', previous)
+    }
+  })
+
+  it('pianoApiBase não-string mantém default de produção — branch typeof', async () => {
+    const previous = globalThis.useRuntimeConfig
+    vi.stubGlobal('useRuntimeConfig', () => ({
+      public: { pianoApiBase: 123 as unknown as string },
+    }))
+    try {
+      fetchMock.mockResolvedValueOnce({ data: [], meta: { total: 0 } })
+      const api = usePianoApi()
+      await api.listCollections()
+      expect(fetchMock).toHaveBeenCalledWith(
+        'https://api.pianolouvorja.com.br/v1/custom/collections',
+        expect.anything(),
+      )
+    } finally {
+      vi.stubGlobal('useRuntimeConfig', previous)
+    }
+  })
+
+  it('pianoApiBase com barra final é normalizado', async () => {
+    const previous = globalThis.useRuntimeConfig
+    vi.stubGlobal('useRuntimeConfig', () => ({
+      public: { pianoApiBase: 'https://api-stg.pianolouvorja.com.br/' },
+    }))
+    try {
+      fetchMock.mockResolvedValueOnce({ data: [], meta: { total: 0 } })
+      const api = usePianoApi()
+      await api.listCollections()
+      expect(fetchMock).toHaveBeenCalledWith(
+        'https://api-stg.pianolouvorja.com.br/v1/custom/collections',
+        expect.anything(),
+      )
+    } finally {
+      vi.stubGlobal('useRuntimeConfig', previous)
+    }
+  })
+
+  it('useRuntimeConfig indisponível cai no default de produção — branch catch', async () => {
+    const previous = globalThis.useRuntimeConfig
+    vi.stubGlobal('useRuntimeConfig', () => {
+      throw new Error('no nuxt context')
+    })
+    try {
+      fetchMock.mockResolvedValueOnce({ data: [], meta: { total: 0 } })
+      const api = usePianoApi()
+      await api.listCollections()
+      expect(fetchMock).toHaveBeenCalledWith(
+        'https://api.pianolouvorja.com.br/v1/custom/collections',
+        expect.anything(),
+      )
+    } finally {
+      vi.stubGlobal('useRuntimeConfig', previous)
+    }
+  })
 })
