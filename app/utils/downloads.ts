@@ -76,7 +76,9 @@ export const REPO_CONFIGS: RepoConfig[] = [
     name: 'apk',
     category: 'mobile',
     assetMatchers: [
-      { platform: 'android', test: (n) => /^louvorja-piano-.*\.apk$/i.test(n) },
+      // RF-04: somente o APK universal é oferecido; per-ABIs não casam.
+      // Sem -universal na release, card fica "Em breve" (sem card quebrado).
+      { platform: 'android', test: (n) => /^louvorja-piano-.*-universal\.apk$/i.test(n) },
       { platform: 'ios', test: (n) => /ios-unsigned\.ipa$/i.test(n) },
     ],
   },

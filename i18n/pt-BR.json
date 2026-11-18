@@ -887,7 +887,7 @@
       "android": {
         "name": "Android",
         "format": "Pacote .apk",
-        "arch": "arm64",
+        "arch": "Universal (arm64, armv7, x86_64)",
         "downloadLabel": "Baixar APK",
         "hint": "Instale o APK permitindo fontes desconhecidas."
       },
