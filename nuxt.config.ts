@@ -164,6 +164,8 @@ export default defineNuxtConfig({
 
       // Downloads de mídias (Google Drive) — SPEC piano-site-drive-midias
       driveMediaUrl: process.env.NUXT_PUBLIC_DRIVE_MEDIA_URL || '',
+      // API custom do PIANO (painel admin) — base por ambiente (SPEC piano-admin-direct-api)
+      pianoApiBase: process.env.NUXT_PUBLIC_PIANO_API_BASE || 'https://api.pianolouvorja.com.br',
 
       web3formsKey: process.env.WEB3FORMS_ACCESS_KEY || '',
 
