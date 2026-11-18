@@ -79,10 +79,11 @@ describe('matchAssets', () => {
     expect(result).toHaveProperty('webos')
   })
 
-  it('matches louvorja-piano-*.apk as android for mobile category', () => {
+  // RF-04: contrato novo — somente -universal.apk casa como android.
+  it('matches the -universal APK as android for mobile category', () => {
     const assets: RawReleaseAsset[] = [
       {
-        name: 'louvorja-piano-0.1.53.apk',
+        name: 'louvorja-piano-1.0.1-universal.apk',
         browser_download_url: 'https://example.com/mobile.apk',
         size: 70000000,
       },
@@ -169,12 +170,12 @@ describe('matchAssets', () => {
   it('last matching asset wins for same platform', () => {
     const assets: RawReleaseAsset[] = [
       {
-        name: 'louvorja-piano-0.1.50.apk',
+        name: 'louvorja-piano-1.0.0-universal.apk',
         browser_download_url: 'https://x.com/old.apk',
         size: 50000000,
       },
       {
-        name: 'louvorja-piano-0.1.53.apk',
+        name: 'louvorja-piano-1.0.1-universal.apk',
         browser_download_url: 'https://x.com/new.apk',
         size: 70000000,
       },
