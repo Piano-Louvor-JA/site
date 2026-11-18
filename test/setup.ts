@@ -65,6 +65,7 @@ vi.stubGlobal('useLocalePath', () => (path: string) => path)
 // Mock de useRuntimeConfig
 vi.stubGlobal('useRuntimeConfig', () => ({
   public: {
+    pianoApiBase: 'https://api-stg.pianolouvorja.com.br',
     firebaseApiKey: '***',
     firebaseAuthDomain: 'test.firebaseapp.com',
     firebaseProjectId: 'test-project',

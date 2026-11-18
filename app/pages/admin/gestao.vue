@@ -3,7 +3,7 @@
    * SPEC piano-admin-panel v1.1.0 (RF-04): gestão de eventos sazonais e
    * pool de tasks semanais — fatia 1 do painel admin.
    * Auth: middleware auth (Firebase) no site; chamadas vão para a API piano
-   * via /api/piano/proxy com Bearer do login piano (usePianoApi).
+   * direto na API custom (NUXT_PUBLIC_PIANO_API_BASE) com Bearer do login piano (usePianoApi) — SPEC piano-admin-direct-api.
    * A API rejeita 403 quem não está em ADMIN_EMAILS dela (fail-closed).
    */
   import { ref, onMounted } from 'vue'
@@ -324,6 +324,24 @@
     max-width: 800px;
     margin: 0 auto;
     padding: 2rem 1.5rem 4rem;
+
+    // SPEC piano-admin-direct-api RF-03: login centralizado na viewport
+    &__login {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: calc(100vh - 8rem);
+      text-align: center;
+
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        width: 100%;
+        max-width: 360px;
+      }
+    }
 
     h1 {
       font-size: 2rem;
