@@ -30,7 +30,7 @@ describe('usePianoApi', () => {
     const session = await api.login('a@b.c', 'senha')
     expect(session.token).toBe('tok-123')
     expect(fetchMock).toHaveBeenCalledWith(
-      '/api/piano/proxy/v1/custom/auth/login',
+      'https://api-stg.pianolouvorja.com.br/v1/custom/auth/login',
       expect.objectContaining({ method: 'POST' }),
     )
     expect(localStorage.getItem('piano_admin_token')).toBe('tok-123')
@@ -49,7 +49,7 @@ describe('usePianoApi', () => {
     const api = usePianoApi()
     await api.listCollections()
     expect(fetchMock).toHaveBeenCalledWith(
-      '/api/piano/proxy/v1/custom/collections',
+      'https://api-stg.pianolouvorja.com.br/v1/custom/collections',
       expect.objectContaining({
         headers: expect.objectContaining({ Authorization: 'Bearer tok-123' }),
       }),
@@ -82,7 +82,7 @@ describe('usePianoApi', () => {
     const api = usePianoApi()
     await api.createCollection({ name: 'Nova', visibility: 'private' })
     expect(fetchMock).toHaveBeenCalledWith(
-      '/api/piano/proxy/v1/custom/collections',
+      'https://api-stg.pianolouvorja.com.br/v1/custom/collections',
       expect.objectContaining({
         method: 'POST',
       }),
@@ -97,7 +97,7 @@ describe('usePianoApi', () => {
     const api = usePianoApi()
     await api.updateCollection(5, { visibility: 'public' })
     expect(fetchMock).toHaveBeenCalledWith(
-      '/api/piano/proxy/v1/custom/collections/5',
+      'https://api-stg.pianolouvorja.com.br/v1/custom/collections/5',
       expect.objectContaining({ method: 'PUT' }),
     )
   })
@@ -108,7 +108,7 @@ describe('usePianoApi', () => {
     const api = usePianoApi()
     await api.deleteCollection(7)
     expect(fetchMock).toHaveBeenCalledWith(
-      '/api/piano/proxy/v1/custom/collections/7',
+      'https://api-stg.pianolouvorja.com.br/v1/custom/collections/7',
       expect.objectContaining({ method: 'DELETE' }),
     )
   })
@@ -119,12 +119,12 @@ describe('usePianoApi', () => {
     const api = usePianoApi()
     await api.listMusics(3)
     expect(fetchMock).toHaveBeenCalledWith(
-      '/api/piano/proxy/v1/custom/collections/3/musics',
+      'https://api-stg.pianolouvorja.com.br/v1/custom/collections/3/musics',
       expect.anything(),
     )
     await api.getMusic(12)
     expect(fetchMock).toHaveBeenCalledWith(
-      '/api/piano/proxy/v1/custom/musics/12',
+      'https://api-stg.pianolouvorja.com.br/v1/custom/musics/12',
       expect.anything(),
     )
   })
@@ -137,7 +137,7 @@ describe('usePianoApi', () => {
     const res = await api.uploadFile(bytes, 'som.mp3', 'audio')
     expect(res?.idFile).toBe(4)
     const [url, opts] = fetchMock.mock.calls[0]!
-    expect(String(url)).toBe('/api/piano/proxy/v1/custom/files')
+    expect(String(url)).toBe('https://api-stg.pianolouvorja.com.br/v1/custom/files')
     expect((opts as RequestInit).method).toBe('POST')
     expect((opts as { body: FormData }).body).toBeInstanceOf(FormData)
   })
@@ -148,7 +148,7 @@ describe('usePianoApi', () => {
     const api = usePianoApi()
     const res = await api.createMusic(3, { name: 'Nova' })
     expect(fetchMock).toHaveBeenCalledWith(
-      '/api/piano/proxy/v1/custom/collections/3/musics',
+      'https://api-stg.pianolouvorja.com.br/v1/custom/collections/3/musics',
       expect.objectContaining({ method: 'POST' }),
     )
     expect(res?.id).toBe(21)
@@ -161,7 +161,7 @@ describe('usePianoApi', () => {
     const ok = await api.updateMusic(8, { id_file_audio: 4 })
     expect(ok).toBe(true)
     expect(fetchMock).toHaveBeenCalledWith(
-      '/api/piano/proxy/v1/custom/musics/8',
+      'https://api-stg.pianolouvorja.com.br/v1/custom/musics/8',
       expect.objectContaining({ method: 'PUT' }),
     )
   })
@@ -180,7 +180,7 @@ describe('usePianoApi', () => {
     const api = usePianoApi()
     expect(await api.deleteMusic(9)).toBe(true)
     expect(fetchMock).toHaveBeenCalledWith(
-      '/api/piano/proxy/v1/custom/musics/9',
+      'https://api-stg.pianolouvorja.com.br/v1/custom/musics/9',
       expect.objectContaining({ method: 'DELETE' }),
     )
   })
@@ -203,7 +203,7 @@ describe('usePianoApi', () => {
     const api = usePianoApi()
     const res = await api.createLyric(5, { lyric: 'Verso', order: 1 })
     expect(fetchMock).toHaveBeenCalledWith(
-      '/api/piano/proxy/v1/custom/musics/5/lyrics',
+      'https://api-stg.pianolouvorja.com.br/v1/custom/musics/5/lyrics',
       expect.objectContaining({ method: 'POST' }),
     )
     expect(res?.id).toBe(33)
@@ -215,7 +215,7 @@ describe('usePianoApi', () => {
     const api = usePianoApi()
     expect(await api.updateLyric(33, { lyric: 'x' })).toBe(true)
     expect(fetchMock).toHaveBeenCalledWith(
-      '/api/piano/proxy/v1/custom/lyrics/33',
+      'https://api-stg.pianolouvorja.com.br/v1/custom/lyrics/33',
       expect.objectContaining({ method: 'PUT' }),
     )
   })
@@ -226,7 +226,7 @@ describe('usePianoApi', () => {
     const api = usePianoApi()
     expect(await api.deleteLyric(33)).toBe(true)
     expect(fetchMock).toHaveBeenCalledWith(
-      '/api/piano/proxy/v1/custom/lyrics/33',
+      'https://api-stg.pianolouvorja.com.br/v1/custom/lyrics/33',
       expect.objectContaining({ method: 'DELETE' }),
     )
   })
@@ -399,5 +399,77 @@ describe('usePianoApi', () => {
     fetchMock.mockResolvedValueOnce({})
     const api = usePianoApi()
     expect(await api.listMusics(1)).toEqual([])
+  })
+
+  it('pianoApiBase vazio mantém default de produção — branch fromEnv falsy', async () => {
+    const previous = globalThis.useRuntimeConfig
+    vi.stubGlobal('useRuntimeConfig', () => ({
+      public: { pianoApiBase: '' },
+    }))
+    try {
+      fetchMock.mockResolvedValueOnce({ data: [], meta: { total: 0 } })
+      const api = usePianoApi()
+      await api.listCollections()
+      expect(fetchMock).toHaveBeenCalledWith(
+        'https://api.pianolouvorja.com.br/v1/custom/collections',
+        expect.anything(),
+      )
+    } finally {
+      vi.stubGlobal('useRuntimeConfig', previous)
+    }
+  })
+
+  it('pianoApiBase não-string mantém default de produção — branch typeof', async () => {
+    const previous = globalThis.useRuntimeConfig
+    vi.stubGlobal('useRuntimeConfig', () => ({
+      public: { pianoApiBase: 123 as unknown as string },
+    }))
+    try {
+      fetchMock.mockResolvedValueOnce({ data: [], meta: { total: 0 } })
+      const api = usePianoApi()
+      await api.listCollections()
+      expect(fetchMock).toHaveBeenCalledWith(
+        'https://api.pianolouvorja.com.br/v1/custom/collections',
+        expect.anything(),
+      )
+    } finally {
+      vi.stubGlobal('useRuntimeConfig', previous)
+    }
+  })
+
+  it('pianoApiBase com barra final é normalizado', async () => {
+    const previous = globalThis.useRuntimeConfig
+    vi.stubGlobal('useRuntimeConfig', () => ({
+      public: { pianoApiBase: 'https://api-stg.pianolouvorja.com.br/' },
+    }))
+    try {
+      fetchMock.mockResolvedValueOnce({ data: [], meta: { total: 0 } })
+      const api = usePianoApi()
+      await api.listCollections()
+      expect(fetchMock).toHaveBeenCalledWith(
+        'https://api-stg.pianolouvorja.com.br/v1/custom/collections',
+        expect.anything(),
+      )
+    } finally {
+      vi.stubGlobal('useRuntimeConfig', previous)
+    }
+  })
+
+  it('useRuntimeConfig indisponível cai no default de produção — branch catch', async () => {
+    const previous = globalThis.useRuntimeConfig
+    vi.stubGlobal('useRuntimeConfig', () => {
+      throw new Error('no nuxt context')
+    })
+    try {
+      fetchMock.mockResolvedValueOnce({ data: [], meta: { total: 0 } })
+      const api = usePianoApi()
+      await api.listCollections()
+      expect(fetchMock).toHaveBeenCalledWith(
+        'https://api.pianolouvorja.com.br/v1/custom/collections',
+        expect.anything(),
+      )
+    } finally {
+      vi.stubGlobal('useRuntimeConfig', previous)
+    }
   })
 })

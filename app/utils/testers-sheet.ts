@@ -13,7 +13,7 @@ export interface TesterReport {
   report: string
 }
 
-type RawRow = Record<string, string>
+export type RawRow = Record<string, string>
 
 /**
  * RFC-4180-ish CSV parser (quotes, escaped quotes, CRLF, embedded newlines).

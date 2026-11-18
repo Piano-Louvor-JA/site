@@ -71,6 +71,17 @@ export default defineEventHandler(async (event) => {
     return sortedContributors
   } catch (error) {
     console.error('Error fetching contributors:', error)
+    // Em CI/prerender, não derrubar o SSG por rate limit / token ausente.
+    if (process.env.CI || process.env.NITRO_PRESET || process.env.VITEST) {
+      return [
+        {
+          login: 'ci-fallback',
+          contributions: 0,
+          avatar_url: '',
+          html_url: 'https://github.com/Piano-Louvor-JA',
+        },
+      ]
+    }
     return createError({
       statusCode: 500,
       message: 'Failed to fetch contributors from GitHub',

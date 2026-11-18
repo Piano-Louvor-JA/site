@@ -1,7 +1,8 @@
 /**
  * Cliente da API custom do PIANO (coletâneas/músicas/estrofes) para o
- * painel admin. O site fala DIRETO com a API via proxy server-side
- * (/api/piano/proxy → api.pianolouvorja.com.br) para evitar CORS.
+ * painel admin. O site chama a API DIRETAMENTE (client-side) — o hosting
+ * do site é SSG/estático e server routes (proxy) não existem em produção.
+ * Base configurável por NUXT_PUBLIC_PIANO_API_BASE (SPEC piano-admin-direct-api v1.0.0).
  *
  * Auth: login próprio da API (e-mail/senha), token Bearer persistido em
  * localStorage. 401 em qualquer chamada = sessão expirada → logout local.
@@ -98,7 +99,18 @@ export function usePianoApi() {
         url: string,
         opts?: Record<string, unknown>,
       ) => Promise<R>
-      return await doFetch<T>(`/api/piano/proxy${path}`, {
+      // Base da API por ambiente (SPEC piano-admin-direct-api v1.0.0):
+      // o site é SSG — server routes/proxy não existem no hosting, então a
+      // chamada é client-side direta. Default = produção.
+      let base = 'https://api.pianolouvorja.com.br'
+      try {
+        const cfg = useRuntimeConfig()
+        const fromEnv = cfg?.public?.pianoApiBase
+        if (typeof fromEnv === 'string' && fromEnv) base = fromEnv.replace(/\/$/, '')
+      } catch {
+        // useRuntimeConfig indisponível (fora do contexto Nuxt) → default PROD
+      }
+      return await doFetch<T>(`${base}${path}`, {
         method: options.method ?? 'GET',
         headers,
         body,

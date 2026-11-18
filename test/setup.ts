@@ -41,6 +41,9 @@ vi.stubGlobal('useI18n', () => ({
       { code: 'pt-BR', iso: 'pt-BR', name: 'Português' },
       { code: 'en', iso: 'en', name: 'English' },
       { code: 'es', iso: 'es', name: 'Español' },
+      { code: 'ru', iso: 'ru', name: 'Русский' },
+      { code: 'uk', iso: 'uk', name: 'Українська' },
+      { code: 'fr', iso: 'fr', name: 'Français' },
     ],
   },
   setLocale: mockSetLocale,
@@ -62,6 +65,7 @@ vi.stubGlobal('useLocalePath', () => (path: string) => path)
 // Mock de useRuntimeConfig
 vi.stubGlobal('useRuntimeConfig', () => ({
   public: {
+    pianoApiBase: 'https://api-stg.pianolouvorja.com.br',
     firebaseApiKey: '***',
     firebaseAuthDomain: 'test.firebaseapp.com',
     firebaseProjectId: 'test-project',

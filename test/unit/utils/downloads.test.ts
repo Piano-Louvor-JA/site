@@ -79,16 +79,90 @@ describe('matchAssets', () => {
     expect(result).toHaveProperty('webos')
   })
 
-  it('matches louvorja-piano-*.apk as android for mobile category', () => {
+  // RF-04: contrato novo — somente -universal.apk casa como android.
+  it('matches the -universal APK as android for mobile category', () => {
     const assets: RawReleaseAsset[] = [
       {
-        name: 'louvorja-piano-0.1.53.apk',
+        name: 'louvorja-piano-1.0.1-universal.apk',
         browser_download_url: 'https://example.com/mobile.apk',
         size: 70000000,
       },
     ]
     const result = matchAssets(assets, REPO_CONFIGS[2].assetMatchers)
     expect(result).toHaveProperty('android')
+  })
+
+  // RF-04/T4: release com os 4 APKs → só o universal casa como android.
+  it('matches ONLY the universal APK when release has universal + per-ABI assets', () => {
+    const assets: RawReleaseAsset[] = [
+      {
+        name: 'louvorja-piano-1.0.1-arm64-v8a.apk',
+        browser_download_url: 'https://x/arm64.apk',
+        size: 50000000,
+      },
+      {
+        name: 'louvorja-piano-1.0.1-x86_64.apk',
+        browser_download_url: 'https://x/x86.apk',
+        size: 52000000,
+      },
+      {
+        name: 'louvorja-piano-1.0.1-universal.apk',
+        browser_download_url: 'https://x/universal.apk',
+        size: 150000000,
+      },
+      {
+        name: 'louvorja-piano-1.0.1-armeabi-v7a.apk',
+        browser_download_url: 'https://x/armv7.apk',
+        size: 51000000,
+      },
+      {
+        name: 'louvorja-piano-1.0.1-ios-unsigned.ipa',
+        browser_download_url: 'https://x/app.ipa',
+        size: 40000000,
+      },
+    ]
+    const result = matchAssets(assets, REPO_CONFIGS[2].assetMatchers)
+    expect(result.android).toEqual({
+      url: 'https://x/universal.apk',
+      name: 'louvorja-piano-1.0.1-universal.apk',
+      size: 150000000,
+    })
+    expect(result.ios).toBeDefined()
+  })
+
+  // RF-04/T5: cada per-ABI sozinho NÃO produz entrada android (T5).
+  it.each(['arm64-v8a', 'armeabi-v7a', 'x86_64'])(
+    'does NOT match per-ABI asset %s as android',
+    (abi) => {
+      const assets: RawReleaseAsset[] = [
+        {
+          name: `louvorja-piano-1.0.1-${abi}.apk`,
+          browser_download_url: `https://x/${abi}.apk`,
+          size: 50000000,
+        },
+      ]
+      const result = matchAssets(assets, REPO_CONFIGS[2].assetMatchers)
+      expect(result).not.toHaveProperty('android')
+    },
+  )
+
+  // RF-04/T6: release sem universal → card fica "Em breve" (sem android).
+  it('falls back to no android card when release has no universal APK', () => {
+    const assets: RawReleaseAsset[] = [
+      {
+        name: 'louvorja-piano-1.0.1-arm64-v8a.apk',
+        browser_download_url: 'https://x/arm64.apk',
+        size: 50000000,
+      },
+      {
+        name: 'louvorja-piano-1.0.1-ios-unsigned.ipa',
+        browser_download_url: 'https://x/app.ipa',
+        size: 40000000,
+      },
+    ]
+    const result = matchAssets(assets, REPO_CONFIGS[2].assetMatchers)
+    expect(result).not.toHaveProperty('android')
+    expect(result).toHaveProperty('ios')
   })
 
   it('does NOT match AndroidTV apk as mobile android (different regex)', () => {
@@ -124,12 +198,12 @@ describe('matchAssets', () => {
   it('last matching asset wins for same platform', () => {
     const assets: RawReleaseAsset[] = [
       {
-        name: 'louvorja-piano-0.1.50.apk',
+        name: 'louvorja-piano-1.0.0-universal.apk',
         browser_download_url: 'https://x.com/old.apk',
         size: 50000000,
       },
       {
-        name: 'louvorja-piano-0.1.53.apk',
+        name: 'louvorja-piano-1.0.1-universal.apk',
         browser_download_url: 'https://x.com/new.apk',
         size: 70000000,
       },

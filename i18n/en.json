@@ -887,7 +887,7 @@
       "android": {
         "name": "Android",
         "format": ".apk package",
-        "arch": "arm64",
+        "arch": "Universal (arm64, armv7, x86_64)",
         "downloadLabel": "Download APK",
         "hint": "Install the APK allowing unknown sources."
       },
