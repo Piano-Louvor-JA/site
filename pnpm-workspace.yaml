@@ -97,6 +97,11 @@ audit:
     # Zod 4 já está pinado em 4.6.6 via override 'zod@4'. Reavaliar quando
     # @nuxt/content migrar para Zod 4.
     - GHSA-mrhx-c7xc-m3w5
+    # picomatch <=4.0.7 ReDoS (GHSA-fc5q-39xc-vjpf). Fix >=4.0.8 NÃO existe
+    # publicado (latest = 4.0.7, atualizado 08/2026). picomatch é glob matcher
+    # de build/tooling (via tinyglobby/fdir do @nuxt/content), sem input
+    # adversarial em runtime. Reavaliar quando o 4.0.8 sair.
+    - GHSA-fc5q-39xc-vjpf
 
 # Vitest 5 usa " > " na cadeia do teste; Stryker 10 ainda usa espaços.
 # Remover após correção upstream: https://github.com/stryker-mutator/stryker-js/issues/6210
