@@ -44,6 +44,8 @@ jobs:
 
       - name: SSG Build
         run: pnpm generate
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   secrets:
     name: gitleaks (segredos no diff/histórico)
