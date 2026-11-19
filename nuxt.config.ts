@@ -162,8 +162,14 @@ export default defineNuxtConfig({
       asaasDonateUrl: process.env.NUXT_PUBLIC_ASAAS_DONATE_URL || '',
 
       // Testers sheet (Google Forms → Sheets gviz CSV público)
-      // Env var: NUXT_PUBLIC_TESTERS_SHEET_URL
-      testersSheetUrl: process.env.NUXT_PUBLIC_TESTERS_SHEET_URL || '',
+      // Env var: NUXT_PUBLIC_TESTERS_SHEET_URL (override opcional).
+      // Default = sheet pública de relatos de testadores — valor público por
+      // design (lida client-side, sem OAuth), nunca um segredo. Default no
+      // código elimina a classe de bug "deploy sem env → painel vazio"
+      // (ocorrido em STG+PROD em 17-19/11/2026, PR #127 checklist item 3).
+      testersSheetUrl:
+        process.env.NUXT_PUBLIC_TESTERS_SHEET_URL ||
+        'https://docs.google.com/spreadsheets/d/1Do-Qp5iMkyO125C2yKTvgpkHBynvALSxgiXzwi1NQCE/gviz/tq?tqx=out:csv',
 
       // Downloads de mídias (Google Drive) — SPEC piano-site-drive-midias
       driveMediaUrl: process.env.NUXT_PUBLIC_DRIVE_MEDIA_URL || '',
