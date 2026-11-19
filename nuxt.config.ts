@@ -48,9 +48,22 @@ export default defineNuxtConfig({
       ignore: ['/admin', '/admin/**'],
       crawlLinks: false,
       routes: [
-        '/',
-        '/en',
-        '/es',
+        // SPEC piano-site-telemetria-v2 RF-P1: SEO completo — TODAS as rotas
+        // públicas x TODOS os locales (pt-BR default sem prefixo; en/es/ru/uk/fr
+        // prefixados). Fonte única espelhada no sitemap.xml.ts; crawler não
+        // depende mais de render client-side nas páginas localizadas.
+        ...[
+          '/',
+          '/download',
+          '/releases',
+          '/docs',
+          '/contact',
+          '/privacy',
+          '/terms',
+        ].flatMap((route) => [
+          route,
+          ...['/en', '/es', '/ru', '/uk', '/fr'].map((l) => `${l}${route === '/' ? '' : route}`),
+        ]),
         '/200.html',
         '/404.html',
         '/llms-full.txt',
@@ -124,8 +137,7 @@ export default defineNuxtConfig({
         // Rotas de docs: pt-BR (default, sem prefixo) + en/es prefixadas
         const docRoutes = pages.flatMap((p) => [
           `/docs/${p.slug}`,
-          `/en/docs/${p.slug}`,
-          `/es/docs/${p.slug}`,
+          ...['/en', '/es', '/ru', '/uk', '/fr'].map((l) => `${l}/docs/${p.slug}`),
         ])
         nitro.options.prerender.routes.push(...docRoutes)
         // Índice p/ sitemap.xml ler lastmod (runtime Nitro roda fora do repo root às vezes)

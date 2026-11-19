@@ -14,6 +14,8 @@
     title: 'Dashboard · Piano Louvor JA',
   })
 
+  const config = useRuntimeConfig()
+
   const { user, loading: authLoading, logout, getToken } = useFirebaseAuth()
   const { stats, loading, refresh } = useDashboardStats()
 
@@ -98,10 +100,18 @@
     geoLoading.value = true
     try {
       const token = await getToken()
-      geoStats.value = await $fetch<GeoStats>('/api/admin/geo', {
-        params: { days: 30 },
-        headers: token ? { Authorization: `Bearer ${token}` } : {},
-      })
+      // SPEC piano-site-telemetria-v2 (RF-S2): fonte única = API do PIANO
+      // (o site é SSG — a rota Nitro /api/admin/geo não existe no hosting).
+      const apiBase =
+        String(config.public.pianoApiBase ?? '').replace(/\/$/, '') ||
+        'https://api.pianolouvorja.com.br'
+      geoStats.value = await globalThis.$fetch<GeoStats>(
+        `${apiBase}/v1/geo/stats`,
+        {
+          params: { days: 30 },
+          headers: token ? { Authorization: `Bearer ${token}` } : {},
+        },
+      )
     } catch {
       geoStats.value = null
     } finally {
@@ -189,9 +199,11 @@
       {
         key: 'visits' as const,
         label: 'Visitas (30d)',
-        value: s ? formatValue(s.visits) : '—',
+        // SPEC piano-site-telemetria-v2 (RF-S2): fonte = API do PIANO
+        // (geoStats), não /api/admin/stats (rota Nitro inexistente em SSG).
+        value: geoStats.value ? formatValue(geoStats.value.totalVisits) : '—',
         icon: 'ti ti-eye',
-        loading: loading.value,
+        loading: geoLoading.value,
         color: '#4ade80',
       },
     ]
