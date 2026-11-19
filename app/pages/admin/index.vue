@@ -105,13 +105,10 @@
       const apiBase =
         String(config.public.pianoApiBase ?? '').replace(/\/$/, '') ||
         'https://api.pianolouvorja.com.br'
-      geoStats.value = await globalThis.$fetch<GeoStats>(
-        `${apiBase}/v1/geo/stats`,
-        {
-          params: { days: 30 },
-          headers: token ? { Authorization: `Bearer ${token}` } : {},
-        },
-      )
+      geoStats.value = await globalThis.$fetch<GeoStats>(`${apiBase}/v1/geo/stats`, {
+        params: { days: 30 },
+        headers: token ? { Authorization: `Bearer ${token}` } : {},
+      })
     } catch {
       geoStats.value = null
     } finally {
