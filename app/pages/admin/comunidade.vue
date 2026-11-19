@@ -100,11 +100,16 @@
     feedback.value = null
     try {
       const token = await getToken()
-      const res = await $fetch<{
+      // SPEC piano-admin-comunidade-moderacao v2.0.0 (ADR-001): escrita
+      // server-side na API do PIANO — o site é SSG e não tem a rota Nitro.
+      const apiBase =
+        String(config.public.pianoApiBase ?? '').replace(/\/$/, '') ||
+        'https://api.pianolouvorja.com.br'
+      const res = await globalThis.$fetch<{
         ok: boolean
         emailEnviado: boolean
         emailErro?: string
-      }>('/api/admin/community/review', {
+      }>(`${apiBase}/v1/custom/admin/community/review`, {
         method: 'POST',
         headers: token ? { Authorization: `Bearer ${token}` } : {},
         body: { tab, row, acao },
