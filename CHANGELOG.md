@@ -3,6 +3,20 @@
 All notable changes to this project are documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.10.0](https://github.com/Piano-Louvor-JA/site/compare/v1.9.0...v1.10.0) (2026-11-19)
+
+### Features
+
+- **download:** seção Mídias com CTA para /midias ([3ff4c28](https://github.com/Piano-Louvor-JA/site/commit/3ff4c2880904975636f2d926ade2ce24b435c9fe))
+
+### Bug Fixes
+
+- usa node:sqlite no Content para o build Hostinger ([9f1a59c](https://github.com/Piano-Louvor-JA/site/commit/9f1a59c70c8abdc17866636f4a77eca04b5584b2))
+
+### Miscellaneous Chores
+
+- sync main v1.9.0 into staging ([495a3e0](https://github.com/Piano-Louvor-JA/site/commit/495a3e047fe917d57fa0eaf56c12c89b89d00106))
+
 ## [1.9.0](https://github.com/Piano-Louvor-JA/site/compare/v1.8.0...v1.9.0) (2026-11-18)
 
 ### Features
