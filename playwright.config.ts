@@ -20,7 +20,7 @@ export default defineConfig({
   webServer: {
     // SSG: serve .output/public estático (gerado por `pnpm generate`),
     // nunca `nuxi preview` (SSR) — E2E valida os arquivos reais do build.
-    command: 'node e2e/static-server.cjs .output/public',
+    command: 'node e2e/static-server.mjs .output/public',
     url: 'http://localhost:3001',
     timeout: 120_000,
     reuseExistingServer: !process.env.CI,

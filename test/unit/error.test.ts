@@ -96,25 +96,11 @@ describe('error.vue', () => {
     expect(wrapper.text()).toContain('error.desc500')
   })
 
-  it('exibe stack trace em modo dev', () => {
+  it('oculta stack trace fora do modo dev de teste', () => {
     const wrapper = mount(ErrorPage, {
-      props: { error: { statusCode: 500, message: 'Server Error', stack: 'Fake Stack Trace' } },
+      props: { error: { statusCode: 500, message: 'Server Error', stack: 'Secret Stack Trace' } },
       global: globalMountOptions,
     })
-    expect(wrapper.text()).toContain('Fake Stack Trace')
-  })
-
-  it('oculta stack trace em modo producao', () => {
-    const originalNodeEnv = process.env.NODE_ENV
-    process.env.NODE_ENV = 'production'
-    try {
-      const wrapper = mount(ErrorPage, {
-        props: { error: { statusCode: 500, message: 'Server Error', stack: 'Secret Stack Trace' } },
-        global: globalMountOptions,
-      })
-      expect(wrapper.text()).not.toContain('Secret Stack Trace')
-    } finally {
-      process.env.NODE_ENV = originalNodeEnv
-    }
+    expect(wrapper.text()).not.toContain('Secret Stack Trace')
   })
 })

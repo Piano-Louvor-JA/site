@@ -5,9 +5,10 @@
  * - Rotas HTML sem arquivo → 200.html, como o fallback do hosting SSG Nuxt
  * - Assets ausentes continuam 404
  */
-const http = require('node:http')
-const fs = require('node:fs')
-const path = require('node:path')
+/* global process, URL */
+import http from 'node:http'
+import fs from 'node:fs'
+import path from 'node:path'
 
 const ROOT = path.resolve(process.argv[2] || '.output/public')
 const PORT = Number(process.env.PORT || 3001)
