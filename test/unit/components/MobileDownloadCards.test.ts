@@ -96,16 +96,16 @@ describe('MobileDownloadCards', () => {
     expect(cards[0].text()).toContain('Android')
   })
 
-  it('renders download button with correct href', () => {
+  it('renders download URL and real asset size', () => {
     const wrapper = mount(MobileDownloadCards, {
       props: { mobileData: mobileWithAsset, appUrl: APP_URL },
       global: { stubs: ['i'] },
     })
     const btn = wrapper.find('.download-card__btn')
-    expect(btn.exists()).toBe(true)
     expect(btn.attributes('href')).toBe(
       'https://github.com/Piano-Louvor-JA/apk/releases/download/v0.1.53/louvorja-piano-0.1.19.apk',
     )
+    expect(wrapper.find('.download-card__size').text()).toBe('66.8 MB')
   })
 
   it('displays version tag when available', () => {
