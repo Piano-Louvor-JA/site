@@ -54,25 +54,20 @@ export default defineNuxtConfig({
       ignore: ['/admin', '/admin/**'],
       crawlLinks: false,
       routes: [
-        '/',
-        '/en',
-        '/es',
-        '/docs',
-        '/en/docs',
-        '/es/docs',
-        // Páginas estáticas enumerated (crawlLinks:false não as descobre;
-        // antes eram SSR on-demand no Nitro do Hostinger)
-        '/privacy',
-        '/terms',
-        '/contact',
-        '/download',
-        '/releases',
+        // SPEC piano-site-telemetria-v2 RF-P1: SEO completo — TODAS as rotas
+        // públicas x TODOS os locales (pt-BR default sem prefixo; en/es/ru/uk/fr
+        // prefixados). Fonte única espelhada no sitemap.xml.ts; crawler não
+        // depende mais de render client-side nas páginas localizadas.
+        ...['/', '/download', '/releases', '/docs', '/contact', '/privacy', '/terms'].flatMap(
+          (route) => [
+            route,
+            ...['/en', '/es', '/ru', '/uk', '/fr'].map((l) => `${l}${route === '/' ? '' : route}`),
+          ],
+        ),
         '/conduta',
         '/midias',
         '/ranking',
         '/testers',
-        ...['privacy', 'terms', 'contact', 'download', 'releases'].map((r) => `/en/${r}`),
-        ...['privacy', 'terms', 'contact', 'download', 'releases'].map((r) => `/es/${r}`),
         '/200.html',
         '/404.html',
         // llms-full.txt e sitemap.xml viram arquivos estáticos em public/ via hook
