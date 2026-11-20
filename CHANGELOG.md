@@ -3,6 +3,35 @@
 All notable changes to this project are documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.11.0](https://github.com/Piano-Louvor-JA/site/compare/v1.10.0...v1.11.0) (2026-11-20)
+
+### Features
+
+- **telemetria:** geo-visit via API + prerender SEO 6 locales ([1236460](https://github.com/Piano-Louvor-JA/site/commit/12364609ff82f0e12c80b8de80596d45ea4a0ed7))
+
+### Bug Fixes
+
+- **admin:** gráfico timeseries aponta pra API do PIANO (rota Nitro não existe em SSG) ([419b044](https://github.com/Piano-Louvor-JA/site/commit/419b0446020abda1192cd6ad91dcf3ef102d4ab2))
+- **admin:** moderação comunidade via API direta (fim do 404 SSG) ([7e7e6fd](https://github.com/Piano-Louvor-JA/site/commit/7e7e6fd5e44c703e869d6895da9b5f5368642501))
+- **ci:** retain semantic-release compatible with Node 24 ([daf9b6e](https://github.com/Piano-Louvor-JA/site/commit/daf9b6e7a959e85921efb3bd4ea44e348aade906))
+- **docs:** corrige gates de review do PR [#122](https://github.com/Piano-Louvor-JA/site/issues/122) — SSG, SEO, E2E e i18n ([fcc7505](https://github.com/Piano-Louvor-JA/site/commit/fcc75056c064289c05fcfc42f1873f28251d1ada))
+- **download:** exibir tamanho real do apk android ([5b5e024](https://github.com/Piano-Louvor-JA/site/commit/5b5e0245e394ec1e191562175fe178f8ecb40b8d))
+- **quality:** libera gate de lint ([0afcba0](https://github.com/Piano-Louvor-JA/site/commit/0afcba0cd7d7c1890b9c9ff788284c1d4d802f1d))
+
+### Tests
+
+- **admin:** assert configured API timeseries endpoint ([0a706b7](https://github.com/Piano-Louvor-JA/site/commit/0a706b7df9e9bddf58d611dbdd7aa254ae62439f))
+- **site:** cover telemetry and Nuxt development error paths ([5fc058a](https://github.com/Piano-Louvor-JA/site/commit/5fc058a4fa2c9321a8898871c131b327ff77930a))
+
+### Styles
+
+- prettier (CI format check) ([a491b58](https://github.com/Piano-Louvor-JA/site/commit/a491b58bd3996a179abc934bff1f5bb460e67600))
+
+### Miscellaneous Chores
+
+- **deps:** bump SonarSource/sonarqube-scan-action from 8.4.1 to 8.5.0 ([e8f1183](https://github.com/Piano-Louvor-JA/site/commit/e8f118365336b3111106118eb6c6a91a8441836c))
+- **deps:** bump the npm-dependencies group with 26 updates ([d3feddc](https://github.com/Piano-Louvor-JA/site/commit/d3feddc776277a01014a5f03e03f0e2724bddcc3))
+
 ## [1.10.0](https://github.com/Piano-Louvor-JA/site/compare/v1.9.0...v1.10.0) (2026-11-19)
 
 ### Features
