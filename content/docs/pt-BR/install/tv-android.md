@@ -162,9 +162,9 @@ Faça um teste completo; não teste somente a instalação.
 
 ## Relacionados
 
-- [Instalar o APK no Android](/docs/pt-BR/install/android-apk)
-- [Usar no navegador e instalar como app](/docs/pt-BR/install/web-pwa)
-- [Usar o PIANO em TV Samsung](/docs/pt-BR/install/tv-samsung-tizen)
-- [Usar o PIANO em TV LG webOS](/docs/pt-BR/install/tv-lg-webos)
+- [Instalar o APK no Android](/docs/install/android-apk)
+- [Usar no navegador e instalar como app](/docs/install/web-pwa)
+- [Usar o PIANO em TV Samsung](/docs/install/tv-samsung-tizen)
+- [Usar o PIANO em TV LG webOS](/docs/install/tv-lg-webos)
 
-<!-- VERIFICAR: confirmar o formato e o canal específico do asset Android TV publicado pelo receiver, além de compatibilidade por marca/modelo. -->
+O receiver Palco é distribuído como **APK para Android TV/Google TV**, publicado no canal oficial de downloads da página [download](/download). A instalação por APK cobre Android TV, Google TV e caixas/TVs com Android compatíveis; modelos com Android TV antigo podem exigir a versão de navegador (app web) quando o APK não instalar.

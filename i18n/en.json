@@ -432,7 +432,11 @@
         "answer": "The project is open-source and accepts contributions on GitHub. You can report bugs, suggest features, submit pull requests, or help translate to other languages."
       }
     },
-    "sidebarLabel": "Documentation sections"
+    "sidebarLabel": "Documentation sections",
+    "guides": {
+      "title": "Complete guides",
+      "lead": "Every tool in the ecosystem explained step by step, by platform."
+    }
   },
   "footer": {
     "tagline": "Web worship service manager. Free and open-source.",

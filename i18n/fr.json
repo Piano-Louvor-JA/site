@@ -475,7 +475,11 @@
         "answer": "Le projet est open-source et accepte les contributions sur GitHub. Vous pouvez signaler des bugs, suggérer des fonctionnalités, soumettre des pull requests ou aider à traduire l'application dans d'autres langues."
       }
     },
-    "sidebarLabel": "Sections de la documentation"
+    "sidebarLabel": "Sections de la documentation",
+    "guides": {
+      "title": "Guides complets",
+      "lead": "Chaque outil de l’écosystème expliqué étape par étape, par plateforme."
+    }
   },
   "privacy": {
     "title": "Politique de confidentialité",

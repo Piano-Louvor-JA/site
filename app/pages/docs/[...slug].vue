@@ -8,7 +8,10 @@
 
   // Slug pt-BR canônico — en/es caem no conteúdo pt-BR (fallback) até serem traduzidos
   const localeDir = computed(() => (locale.value === 'pt-BR' ? 'pt-BR' : 'pt-BR'))
-  const slugPath = computed(() => String(route.params.slug ?? ''))
+  const slugPath = computed(() => {
+    const slug = route.params.slug
+    return Array.isArray(slug) ? slug.join('/') : String(slug ?? '')
+  })
   const collectionName = computed<keyof Collections>(
     () => `docs_${localeDir.value.replace('-', '')}` as keyof Collections,
   )
@@ -23,7 +26,8 @@
     `docs-${slugPath.value}-${locale.value}`,
     () =>
       queryCollection(collectionName.value)
-        .path(`/docs/${localeDir.value}/${slugPath.value}`)
+        // content v3 lowercases o path no banco — consultar sempre em minúsculas
+        .path(`/docs/${localeDir.value.toLowerCase()}/${slugPath.value}`)
         .first() as unknown as Promise<DocPage | null>,
   )
 
@@ -52,7 +56,7 @@
   })
 
   const SITE_URL = 'https://pianolouvorja.com.br'
-  const REPO_BLOB = 'https://github.com/Piano-Louvor-JA/site/blob/staging/content/docs/pt-BR'
+  const REPO_BLOB = 'https://github.com/Piano-Louvor-JA/site/blob/main/content/docs/pt-BR'
 
   const breadcrumbJsonLd = computed(() => ({
     '@context': 'https://schema.org',
@@ -80,10 +84,76 @@
     mainEntityOfPage: `${SITE_URL}/docs/${docSlug.value}`,
   }))
 
+  // HowTo para guias passo-a-passo (instalações, primeiro uso, palco); FAQPage para faq/troubleshooting
+  const HOWTO_SLUGS = /^(install\/|getting-started$|palco-multi-device$)/
+  const FAQ_SLUGS = /^(faq|troubleshooting)$/
+  const faqItems = computed(() => {
+    const links = page.value?.body?.toc?.links ?? []
+    return links.map((link, i) => ({
+      '@type': 'Question',
+      position: i + 1,
+      name: link.text,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: `${page.value!.title} — ${link.text} (ver seção nesta página)`,
+      },
+    }))
+  })
+
+  const extraJsonLd = computed(() => {
+    if (FAQ_SLUGS.test(docSlug.value)) {
+      return {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: faqItems.value.length
+          ? faqItems.value
+          : [
+              {
+                '@type': 'Question',
+                name: page.value!.title,
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: page.value!.description ?? page.value!.title,
+                },
+              },
+            ],
+      }
+    }
+    if (HOWTO_SLUGS.test(docSlug.value)) {
+      const links = page.value?.body?.toc?.links ?? []
+      const steps = (links.length ? links : [{ id: 'inicio', text: page.value!.title }]).map(
+        (link, i) => ({
+          '@type': 'HowToStep',
+          position: i + 1,
+          name: link.text,
+          text: `Passo ${i + 1}: ${link.text} — ver seção #${link.id} nesta página`,
+          url: `${SITE_URL}/docs/${docSlug.value}#${link.id}`,
+        }),
+      )
+      return {
+        '@context': 'https://schema.org',
+        '@type': 'HowTo',
+        name: `Como usar o PIANO — ${page.value!.title}`,
+        description: page.value!.description,
+        inLanguage: locale.value,
+        step: steps,
+      }
+    }
+    return null
+  })
+
   useHead({
     script: [
       { type: 'application/ld+json', innerHTML: JSON.stringify(breadcrumbJsonLd.value) },
       { type: 'application/ld+json', innerHTML: JSON.stringify(articleJsonLd.value) },
+      ...(extraJsonLd.value
+        ? [
+            {
+              type: 'application/ld+json' as const,
+              innerHTML: JSON.stringify(extraJsonLd.value),
+            },
+          ]
+        : []),
     ],
   })
 

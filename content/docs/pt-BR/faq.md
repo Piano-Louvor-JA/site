@@ -64,7 +64,7 @@ O uso básico separa dois papéis: um dispositivo para controlar e uma tela para
 
 A quantidade máxima de receptores Palco e controles simultâneos não está detalhada na fonte disponível. Faça um teste com a quantidade de telas desejada antes de depender dela na programação.
 
-<!-- VERIFICAR: limite de controles remotos e receptores Palco conectados ao mesmo culto. -->
+Cada receptor Palco ocupa uma conexão separada com o computador operador, portanto telas adicionais exigem mais rede e mais atenção do operador. Na prática, uma TV principal e uma secundária (por exemplo, corredor ou saguão) é a configuração mais comum.
 
 ## Posso montar toda a programação antes?
 

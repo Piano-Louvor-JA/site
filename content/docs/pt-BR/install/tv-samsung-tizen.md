@@ -149,9 +149,9 @@ A TV recebe a projeção; a preparação deve acontecer no computador, celular o
 
 ## Relacionados
 
-- [Usar o PIANO em TV LG webOS](/docs/pt-BR/install/tv-lg-webos)
-- [Usar o PIANO em Android TV e Google TV](/docs/pt-BR/install/tv-android)
-- [Usar no navegador e instalar como app](/docs/pt-BR/install/web-pwa)
-- [Instalar o APK no Android](/docs/pt-BR/install/android-apk)
+- [Usar o PIANO em TV LG webOS](/docs/install/tv-lg-webos)
+- [Usar o PIANO em Android TV e Google TV](/docs/install/tv-android)
+- [Usar no navegador e instalar como app](/docs/install/web-pwa)
+- [Instalar o APK no Android](/docs/install/android-apk)
 
-<!-- VERIFICAR: confirmar canal oficial de instalação para Samsung/Tizen e passos de instalação do asset quando houver versão publicada. -->
+Hoje não há aplicativo dedicado publicado para TV Samsung. O caminho oficial atual é abrir o **navegador da própria TV Samsung** e acessar o endereço do Palco (app web) conectado ao aparelho operador, ou conectar um receptor Android TV compatível à entrada HDMI da TV. Quando houver aplicativo Tizen publicado, ele aparecerá na página [download](/download).
