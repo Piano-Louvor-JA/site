@@ -94,7 +94,7 @@
     "lint-staged": "^17.6.1",
     "prettier": "^3.10.1",
     "sass": "^1.108.2",
-    "semantic-release": "^26.0.1",
+    "semantic-release": "^25.0.9",
     "storybook": "^10.6.7",
     "typescript": "npm:@typescript/typescript6@^6.0.2",
     "typescript-eslint": "^8.73.0",
