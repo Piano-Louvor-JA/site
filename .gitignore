@@ -37,3 +37,7 @@ service-account.json
 
 # artefato gerado pelo @nuxt/content (nao commitar)
 content/docs-index.json
+
+# Gerados no build (hook nitro:build:before) — nunca commitar
+/public/llms-full.txt
+/public/sitemap.xml

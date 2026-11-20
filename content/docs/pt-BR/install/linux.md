@@ -159,6 +159,6 @@ Depois de testar o AppImage, mantenha-o em uma pasta que a equipe reconheça.
 
 ## Relacionados
 
-- [Instalar no Windows](/docs/pt-BR/install/windows)
-- [Usar no navegador e instalar como app](/docs/pt-BR/install/web-pwa)
-- [Usar o PIANO em Android TV e Google TV](/docs/pt-BR/install/tv-android)
+- [Instalar no Windows](/docs/install/windows)
+- [Usar no navegador e instalar como app](/docs/install/web-pwa)
+- [Usar o PIANO em Android TV e Google TV](/docs/install/tv-android)

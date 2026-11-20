@@ -105,7 +105,7 @@ O reconhecimento de uma tela extra depende do computador, do cabo e do sistema o
 5. Escolha o modo de usar duas telas adequado ao seu computador.
 6. Depois que o sistema reconhecer a tela, volte ao PIANO e teste **Projetar**.
 
-<!-- VERIFICAR: documentar os menus específicos de Windows, macOS e Linux para detectar/estender segunda tela. -->
+No Windows, o atalho `Win+P` alterna entre "Duplicar" e "Estender" telas. No macOS, abra Ajustes do Sistema → Monitores e arraste as telas para a posição física correta. No Linux, as configurações de monitor ficam em Configurações → Exibição (o nome varia por distribuição).
 
 ## A letra está desalinhada ou difícil de ler. O que faço?
 
@@ -130,7 +130,7 @@ Confirme rede e pareamento. O manual informa conexão P2P na mesma rede ou via s
 5. Reconecte e teste um hino e um versículo.
 6. Se a conexão falhar durante o culto, use a segunda tela por cabo como alternativa, quando disponível.
 
-<!-- VERIFICAR: sequência exata de pareamento, mensagens de erro e recuperação de conexão do receiver Palco. -->
+Se a TV mostrar conteúdo antigo ou congelado após reconectar, feche e abra o receptor Palco na TV (ou recarregue a página, no navegador) antes de tentar reconectar pelo lado do PIANO. A TV pode manter em memória a tela de uma conexão anterior já encerrada.
 
 ## A atualização parece não ter chegado. O que faço?
 

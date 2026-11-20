@@ -35,9 +35,10 @@ test.describe('Newsletter — fluxo E2E', () => {
       }),
     )
 
-    await page.goto('/')
-    // Esperar hidratação completa para evitar hydration mismatch
-    await page.waitForLoadState('networkidle')
+    await page.goto('/', { waitUntil: 'load' })
+    // Esperar hidratação (networkidle nunca dispara em site estático:
+    // /api/github/total-downloads 404 dispara retries infinitos)
+    await page.waitForTimeout(1500)
 
     const emailInput = page.locator('[data-testid="newsletter-email"]')
     await expect(emailInput).toBeVisible()
