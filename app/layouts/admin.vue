@@ -9,6 +9,7 @@
     { to: '/admin', label: 'Dashboard', icon: 'ti-layout-dashboard' },
     { to: '/admin/infra', label: 'Infra', icon: 'ti-server-2' },
     { to: '/admin/conteudo', label: 'Conteúdo', icon: 'ti-music' },
+    { to: '/admin/documentacao', label: 'Documentação', icon: 'ti-book' },
     { to: '/admin/comunidade', label: 'Comunidade', icon: 'ti-users-group' },
     { to: '/admin/gestao', label: 'Gestão', icon: 'ti-settings' },
     { to: '/admin/newsletter', label: 'Newsletter', icon: 'ti-mail' },
