@@ -54,7 +54,7 @@ describe('useTimeseries', () => {
     const { refresh } = useTimeseries()
     await refresh()
     expect(mockFetch).toHaveBeenCalledWith(
-      '/api/admin/timeseries',
+      'https://api-stg.pianolouvorja.com.br/v1/geo/timeseries',
       expect.objectContaining({
         query: { period: '30d' },
         headers: { Authorization: 'Bearer tok-123' },
@@ -70,7 +70,7 @@ describe('useTimeseries', () => {
     const { refresh, data } = useTimeseries()
     await refresh()
     expect(mockFetch).toHaveBeenCalledWith(
-      '/api/admin/timeseries',
+      'https://api-stg.pianolouvorja.com.br/v1/geo/timeseries',
       expect.objectContaining({ headers: {} }),
     )
     expect(data.value).toEqual(sample)
@@ -98,7 +98,7 @@ describe('useTimeseries', () => {
     expect(period.value).toBe('12m')
     await new Promise((r) => setTimeout(r, 10))
     expect(mockFetch).toHaveBeenCalledWith(
-      '/api/admin/timeseries',
+      'https://api-stg.pianolouvorja.com.br/v1/geo/timeseries',
       expect.objectContaining({ query: { period: '12m' } }),
     )
   })
