@@ -142,9 +142,9 @@ Prepare mídias e hinos antes. O PIANO salva downloads, progresso e configuraç�
 
 ## Relacionados
 
-- [Usar o PIANO em TV Samsung](/docs/pt-BR/install/tv-samsung-tizen)
-- [Usar o PIANO em Android TV e Google TV](/docs/pt-BR/install/tv-android)
-- [Usar no navegador e instalar como app](/docs/pt-BR/install/web-pwa)
-- [Instalar o APK no Android](/docs/pt-BR/install/android-apk)
+- [Usar o PIANO em TV Samsung](/docs/install/tv-samsung-tizen)
+- [Usar o PIANO em Android TV e Google TV](/docs/install/tv-android)
+- [Usar no navegador e instalar como app](/docs/install/web-pwa)
+- [Instalar o APK no Android](/docs/install/android-apk)
 
-<!-- VERIFICAR: confirmar canal oficial de instalação para LG/webOS e disponibilidade pela LG Content Store quando houver versão publicada. -->
+Hoje não há publicação confirmada do Palco na **LG Content Store**. O caminho oficial atual é o canal de downloads da página [download](/download) (asset webOS, quando publicado) ou o **navegador da própria TV LG** abrindo o app web do Palco conectado ao aparelho operador. Quando a LG Content Store passar a distribuir o app, este guia será atualizado com os passos da loja.

@@ -147,6 +147,6 @@ Defina uma pessoa para operar e outra para conferir a tela da igreja.
 
 ## Relacionados
 
-- [Instalar no macOS](/docs/pt-BR/install/macos)
-- [Usar no navegador e instalar como app](/docs/pt-BR/install/web-pwa)
-- [Usar o PIANO em Android TV e Google TV](/docs/pt-BR/install/tv-android)
+- [Instalar no macOS](/docs/install/macos)
+- [Usar no navegador e instalar como app](/docs/install/web-pwa)
+- [Usar o PIANO em Android TV e Google TV](/docs/install/tv-android)

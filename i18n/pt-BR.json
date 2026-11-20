@@ -432,7 +432,11 @@
         "answer": "O projeto é open-source e aceita contribuições no GitHub. Você pode reportar bugs, sugerir funcionalidades, enviar pull requests ou ajudar na tradução para outros idiomas."
       }
     },
-    "sidebarLabel": "Seções da documentação"
+    "sidebarLabel": "Seções da documentação",
+    "guides": {
+      "title": "Guias completos",
+      "lead": "Cada ferramenta do ecossistema explicada passo a passo, por plataforma."
+    }
   },
   "footer": {
     "tagline": "Gerenciador de culto web. Gratuito e open-source.",

@@ -18,7 +18,9 @@ export default defineConfig({
     },
   ],
   webServer: {
-    command: 'npx nuxi preview --port 3001',
+    // SSG: serve .output/public estático (gerado por `pnpm generate`),
+    // nunca `nuxi preview` (SSR) — E2E valida os arquivos reais do build.
+    command: 'node e2e/static-server.cjs .output/public',
     url: 'http://localhost:3001',
     timeout: 120_000,
     reuseExistingServer: !process.env.CI,

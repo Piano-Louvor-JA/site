@@ -424,6 +424,10 @@
         "question": "¿Cómo puedo contribuir al proyecto?",
         "answer": "El proyecto es de código abierto y acepta contribuciones en GitHub. Puede reportar errores, sugerir funciones o enviar código."
       }
+    },
+    "guides": {
+      "title": "Guías completas",
+      "lead": "Cada herramienta del ecosistema explicada paso a paso, por plataforma."
     }
   },
   "footer": {

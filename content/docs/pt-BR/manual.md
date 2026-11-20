@@ -17,9 +17,7 @@ O texto-base completo pode ser consultado no repositório do site:
 
 - [Abrir o manual em Markdown no GitHub](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md)
 
-A cópia publicada no repositório é útil para leitura direta, impressão, revisão do conteúdo e acesso quando a navegação da documentação não estiver disponível.
-
-<!-- VERIFICAR: confirmar branch pública canônica do repositório antes de publicar o link GitHub. -->
+A cópia publicada no repositório é útil para leitura direta, impressão, revisão do conteúdo e acesso quando a navegação da documentação não estiver disponível. A branch `main` é a versão publicada do site; alterações futuras entram por pull request e o link continua apontando para a versão mais recente.
 
 ## Como o aplicativo organiza o culto?
 

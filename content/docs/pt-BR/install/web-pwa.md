@@ -150,7 +150,7 @@ A organização do culto é igual: prepare antes e avance durante a programaçã
 
 ## Relacionados
 
-- [Instalar no Windows](/docs/pt-BR/install/windows)
-- [Instalar o APK no Android](/docs/pt-BR/install/android-apk)
-- [Usar o PIANO em TV Samsung](/docs/pt-BR/install/tv-samsung-tizen)
-- [Usar o PIANO em TV LG webOS](/docs/pt-BR/install/tv-lg-webos)
+- [Instalar no Windows](/docs/install/windows)
+- [Instalar o APK no Android](/docs/install/android-apk)
+- [Usar o PIANO em TV Samsung](/docs/install/tv-samsung-tizen)
+- [Usar o PIANO em TV LG webOS](/docs/install/tv-lg-webos)

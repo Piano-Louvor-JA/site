@@ -148,6 +148,6 @@ Use o Palco quando uma TV conectada à rede será a tela da congregação.
 
 ## Relacionados
 
-- [Instalar no Windows](/docs/pt-BR/install/windows)
-- [Instalar no Linux](/docs/pt-BR/install/linux)
-- [Usar no navegador e instalar como app](/docs/pt-BR/install/web-pwa)
+- [Instalar no Windows](/docs/install/windows)
+- [Instalar no Linux](/docs/install/linux)
+- [Usar no navegador e instalar como app](/docs/install/web-pwa)

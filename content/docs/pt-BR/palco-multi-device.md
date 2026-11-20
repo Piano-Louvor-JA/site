@@ -49,9 +49,9 @@ Para usar o pareamento local, coloque o dispositivo de controle e o receptor Pal
 5. Confirme que os dois dispositivos permanecem conectados durante o teste.
 6. Deixe o carregador próximo do celular que será usado como controle.
 
-O manual informa duas formas de pareamento: **P2P na mesma rede** e **via servidor**, em abas separadas de pareamento. O uso detalhado das telas e os códigos de conexão precisam ser confirmado na versão instalada.
+O manual informa duas formas de pareamento: **P2P na mesma rede** e **via servidor**, em abas separadas de pareamento. O uso detalhado das telas e os códigos de conexão precisam ser confirmados na versão instalada.
 
-<!-- VERIFICAR: informar a sequência exata de telas, código/QR, nome do receiver e requisitos do pareamento P2P e via servidor. -->
+**Como funciona por baixo (para a equipe técnica):** o receptor Palco é quem conecta ao computador operador, nunca o contrário. O PIANO abre uma conexão WebSocket própria na rede local (P2P) ou via servidor intermediário; não usa Chromecast nem AirPlay. Cada TV adicional ocupa um "slot" próprio de conexão, o que permite várias telas ao mesmo tempo sem interferirem entre si.
 
 ## Como pareio o celular ou outro controle?
 
@@ -78,7 +78,7 @@ O receptor Palco conecta-se à rede e exibe a projeção. Ele é útil quando a 
 6. Avance um slide e confirme a atualização na TV.
 7. Teste também um versículo bíblico, o relógio e a contagem regressiva.
 
-<!-- VERIFICAR: registrar o nome do app/receptor, plataformas compatíveis, tela de seleção e como conectar mais de uma TV simultaneamente. -->
+O receptor Palco existe para TV LG (webOS), TV Samsung (Tizen), Android TV/Google TV e navegadores. Cada receptor adicional aparece como uma tela separada: para usar mais de uma TV ao mesmo tempo, conecte cada receptor ao computador operador e escolha para qual tela cada item é projetado — uma TV pode mostrar a letra enquanto outra mostra o relógio ou a contagem regressiva.
 
 ## Como projeto um hino no Palco?
 
