@@ -37,6 +37,7 @@ overrides:
   sass-embedded: '-'
   sass-embedded-linux-x64: '-'
   sass-embedded-linux-musl-x64: '-'
+  better-sqlite3: '-'
   '@modelcontextprotocol/sdk': '>=1.31.0'
   '@simple-git/argv-parser': '>=2.0.1'
   '@vue/server-renderer': '>=3.5.42'
@@ -70,9 +71,6 @@ importers:
       apexcharts:
         specifier: ^8.8.1
         version: 8.8.1
-      better-sqlite3:
-        specifier: ^13.2.0
-        version: 13.2.0
       firebase:
         specifier: ^13.2.0
         version: 13.2.0(@types/react@19.2.17)(react@19.3.1)(supports-color@10.2.2)
@@ -2037,7 +2035,7 @@ packages:
       '@electric-sql/pglite': '*'
       '@libsql/client': '*'
       '@valibot/to-json-schema': ^1.5.0
-      better-sqlite3: ^12.5.0 || ^13.0.0
+      better-sqlite3: '*'
       sqlite3: '*'
       valibot: ^1.2.0
     peerDependenciesMeta:
@@ -16399,6 +16397,7 @@ snapshots:
   better-sqlite3@13.2.0:
     dependencies:
       node-addon-api: 8.9.2
+    optional: true
 
   bignumber.js@9.3.1: {}
 
@@ -20229,7 +20228,8 @@ snapshots:
   node-addon-api@7.1.1:
     optional: true
 
-  node-addon-api@8.9.2: {}
+  node-addon-api@8.9.2:
+    optional: true
 
   node-domexception@1.0.0: {}
 

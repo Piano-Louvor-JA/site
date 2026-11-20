@@ -971,6 +971,11 @@
       },
       "apkNote": "Installez l'APK en autorisant les applications de sources inconnues dans les paramètres Android."
     },
+    "midias": {
+      "title": "Médias du LouvorJA",
+      "description": "Téléchargez recueils, audio et packs directement depuis le Google Drive de la communauté — sans dépendre de l'API, hors ligne et gratuit.",
+      "cta": "Ouvrir les Médias"
+    },
     "systemRequirements": {
       "title": "Configuration requise",
       "desktop": "Desktop : 4 Go de RAM, 500 Mo d'espace disque, GPU avec prise en charge de WebGL",

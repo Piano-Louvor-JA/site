@@ -3,6 +3,50 @@
 All notable changes to this project are documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.10.0](https://github.com/Piano-Louvor-JA/site/compare/v1.9.0...v1.10.0) (2026-11-19)
+
+### Features
+
+- **download:** seção Mídias com CTA para /midias ([3ff4c28](https://github.com/Piano-Louvor-JA/site/commit/3ff4c2880904975636f2d926ade2ce24b435c9fe))
+
+### Bug Fixes
+
+- usa node:sqlite no Content para o build Hostinger ([9f1a59c](https://github.com/Piano-Louvor-JA/site/commit/9f1a59c70c8abdc17866636f4a77eca04b5584b2))
+
+### Miscellaneous Chores
+
+- sync main v1.9.0 into staging ([495a3e0](https://github.com/Piano-Louvor-JA/site/commit/495a3e047fe917d57fa0eaf56c12c89b89d00106))
+
+## [1.9.0](https://github.com/Piano-Louvor-JA/site/compare/v1.8.0...v1.9.0) (2026-11-18)
+
+### Features
+
+- **i18n:** add russian ukrainian and french locales ([a38b8dd](https://github.com/Piano-Louvor-JA/site/commit/a38b8dd3010f47e6e54748502513f98858446c54))
+- **seo:** international sitemap hreflang x-default and llms.txt for ru uk fr ([d3b0159](https://github.com/Piano-Louvor-JA/site/commit/d3b01595793cc921019667db34349db6fe9e0661))
+
+### Bug Fixes
+
+- **admin:** painel gestao chama a API direto (client-side) + CSS do login ([fbbf715](https://github.com/Piano-Louvor-JA/site/commit/fbbf7156d564677452ad59d2a2b196087fd5dcaa)), references [#43474e](https://github.com/Piano-Louvor-JA/site/issues/43474e)
+- **admin:** pendentes da comunidade via sheet gviz pública (rota Nitro 404 em SSG) ([758c745](https://github.com/Piano-Louvor-JA/site/commit/758c7453f6c98dc7135beb11973e704d84a0edb7))
+- **ci:** passa GITHUB_TOKEN no prerender e evita 500 no SSG ([c736a2a](https://github.com/Piano-Louvor-JA/site/commit/c736a2ac1c940866bd98787c73a0e4c1415dc115))
+- **downloads:** expor somente apk universal ([900438a](https://github.com/Piano-Louvor-JA/site/commit/900438aa54b94dafe26967da8a9be5fb47fbbb12))
+- **security:** ignora GHSA-fc5q-39xc-vjpf (picomatch ReDoS) até o fix sair ([94d9417](https://github.com/Piano-Louvor-JA/site/commit/94d94174918ac64668c2785af3500738a6aa5618))
+
+### Tests
+
+- **api:** cobre branches de pianoApiBase em usePianoApi ([ac4c0a5](https://github.com/Piano-Louvor-JA/site/commit/ac4c0a5cb3293ccd9bfa743c0b88374b1742e330))
+- **downloads:** alinhar testes legados ao contrato apk universal ([c736cbb](https://github.com/Piano-Louvor-JA/site/commit/c736cbb114a7ce52a64b8b0b6c8a51e88dbeb977))
+
+### Styles
+
+- **admin:** formata mensagem de env da Comunidade (CI [#127](https://github.com/Piano-Louvor-JA/site/issues/127)) ([1be2224](https://github.com/Piano-Louvor-JA/site/commit/1be2224e5778d902dda321d6f59d9bbbab8becb4))
+- **i18n:** format translated locale files with prettier ([30c4040](https://github.com/Piano-Louvor-JA/site/commit/30c4040197a288495c121dad71a4924d11ffd120))
+- prettier no teste de downloads ([5929e51](https://github.com/Piano-Louvor-JA/site/commit/5929e51f976ec16983b8d76c8a577edd52afb44a))
+
+### Miscellaneous Chores
+
+- remove artefato gerado docs-index.json do commit (review P1) e gitignore ([1d365fb](https://github.com/Piano-Louvor-JA/site/commit/1d365fb07dd5a7cc884c6aadfe3cfc29796abbba))
+
 ## [1.8.0](https://github.com/Piano-Louvor-JA/site/compare/v1.7.0...v1.8.0) (2026-11-15)
 
 ### Features

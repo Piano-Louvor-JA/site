@@ -57,6 +57,9 @@ overrides:
   sass-embedded: '-'
   sass-embedded-linux-x64: '-'
   sass-embedded-linux-musl-x64: '-'
+  # Hostinger: prebuild do better-sqlite3 exige GLIBC_2.29; o build host é mais antigo.
+  # @nuxt/content usa node:sqlite via content.experimental.sqliteConnector = 'native'.
+  better-sqlite3: '-'
   # GHSA de out/2026 — fixes publicados, overrides com range >=:
   '@modelcontextprotocol/sdk': '>=1.31.0'
   '@simple-git/argv-parser': '>=2.0.1'
