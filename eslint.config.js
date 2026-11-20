@@ -80,6 +80,7 @@ export default [
         HTMLElement: 'readonly',
         HTMLInputElement: 'readonly',
         File: 'readonly',
+        FileReader: 'readonly',
         URL: 'readonly',
         Event: 'readonly',
         IntersectionObserver: 'readonly',
