@@ -91,6 +91,19 @@ describe('useTimeseries', () => {
     expect(error.value).toBe('Erro ao buscar séries temporais')
   })
 
+  it.each([undefined, ''])('usa API de produção sem base configurada (%s)', async (base) => {
+    vi.stubGlobal('useRuntimeConfig', () => ({ public: { pianoApiBase: base } }))
+    mockFetch.mockResolvedValue(sample)
+    await useTimeseries().refresh()
+    expect(mockFetch).toHaveBeenCalledWith(
+      'https://api.pianolouvorja.com.br/v1/geo/timeseries',
+      expect.objectContaining({ query: { period: '30d' } }),
+    )
+    vi.stubGlobal('useRuntimeConfig', () => ({
+      public: { pianoApiBase: 'https://api-stg.pianolouvorja.com.br' },
+    }))
+  })
+
   it('setPeriod atualiza period e dispara refresh', async () => {
     mockFetch.mockResolvedValue(sample)
     const { period, setPeriod } = useTimeseries()

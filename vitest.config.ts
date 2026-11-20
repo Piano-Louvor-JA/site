@@ -53,6 +53,8 @@ function mockImportMetaUnit(): Plugin {
         )
         transformed = transformed.replace(/import\.meta\.client/g, 'true')
         transformed = transformed.replace(/import\.meta\.server/g, 'false')
+        // Nuxt expõe .dev; Vitest controla o equivalente do Vite via vi.stubEnv.
+        transformed = transformed.replace(/import\.meta\.dev/g, 'import.meta.env.DEV')
         return {
           code: transformed,
           map: null as never,

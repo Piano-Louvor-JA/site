@@ -1,9 +1,11 @@
-import { describe, it, expect, vi } from 'vitest'
+import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest'
 import { mount } from '@vue/test-utils'
 
 import ErrorPage from '~/error.vue'
 
 describe('error.vue', () => {
+  beforeEach(() => vi.stubEnv('DEV', false))
+  afterEach(() => vi.unstubAllEnvs())
   const globalMountOptions = {
     mocks: {
       $t: (msg: string) => msg,
@@ -94,6 +96,20 @@ describe('error.vue', () => {
       global: globalMountOptions,
     })
     expect(wrapper.text()).toContain('error.desc500')
+  })
+
+  it('mostra stack apenas em desenvolvimento e com stack disponível', () => {
+    vi.stubEnv('DEV', true)
+    const wrapper = mount(ErrorPage, {
+      props: { error: { statusCode: 500, message: 'Erro', stack: 'Debug Stack' } },
+      global: globalMountOptions,
+    })
+    expect(wrapper.find('.error-page__dev-info').text()).toContain('Debug Stack')
+    const withoutStack = mount(ErrorPage, {
+      props: { error: { statusCode: 500, message: 'Erro' } as any },
+      global: globalMountOptions,
+    })
+    expect(withoutStack.find('.error-page__dev-info').exists()).toBe(false)
   })
 
   it('oculta stack trace fora do modo dev de teste', () => {
