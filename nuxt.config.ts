@@ -4,6 +4,12 @@ export default defineNuxtConfig({
 
   modules: ['@nuxtjs/i18n', 'nuxt-gtag', '@nuxt/content'],
 
+  // Hostinger (glibc < 2.29) não carrega o binário nativo do better-sqlite3.
+  // Node >=22.5 (engines do site: >=24.6) já traz node:sqlite — sem addon nativo.
+  content: {
+    experimental: { sqliteConnector: 'native' },
+  },
+
   gtag: {
     id: process.env.GOOGLE_ANALYTICS_ID || '',
     loadingStrategy: 'async',
