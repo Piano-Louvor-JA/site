@@ -88,9 +88,9 @@ export default defineNuxtConfig({
   app: {
     head: {
       link: [
-        { rel: 'icon', type: 'image/svg+xml', href: '/ico/favicon.svg' },
+        { rel: 'icon', type: 'image/svg+xml', href: '/brand/logo-louvor-ja.svg' },
         { rel: 'icon', href: '/favicon.ico', sizes: 'any' },
-        { rel: 'apple-touch-icon', href: '/ico/favicon.png' },
+        { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' },
       ],
       // Anti-FOUC: aplica data-theme antes da hidratação (default dark)
       script: [
