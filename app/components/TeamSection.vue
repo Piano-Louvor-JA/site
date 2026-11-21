@@ -1,9 +1,45 @@
 <script setup lang="ts">
   import { teamAreas, teamMembers, teamOrgUrl } from '~/data/team'
+  import { useRoster, type RosterMember } from '~/composables/useRoster'
 
-  const activeMember = ref<(typeof teamMembers)[number] | null>(null)
+  /**
+   * People dinâmico (SPEC Comunidade Orgânica D3/AC1): roster staff da API.
+   * Fallback hardcoded team.ts enquanto env NUXT_PUBLIC_PIANO_API_BASE
+   * não está confirmada em produção (regra: nunca remover fallback sem
+   * garantir a env na mesma onda). Pending → lista oculta (sem fake).
+   */
+  const { members: rosterMembers, pending: rosterPending } = useRoster('staff')
 
-  function openMember(member: (typeof teamMembers)[number]): void {
+  type DisplayMember = {
+    login: string
+    name: string
+    avatar: string
+    profileUrl: string
+    links?: { label: string; url: string }[]
+    bio?: string | null
+  }
+
+  function fromRoster(m: RosterMember): DisplayMember {
+    const known = teamMembers.find((t) => t.login === m.github)
+    return {
+      login: m.github ?? m.id,
+      name: m.name,
+      avatar: m.avatar_url ?? `https://github.com/${m.github ?? 'ghost'}.png?size=96`,
+      profileUrl: m.github ? `https://github.com/${m.github}` : '',
+      links: known?.links,
+      bio: m.bio,
+    }
+  }
+
+  const people = computed<DisplayMember[]>(() =>
+    rosterPending.value
+      ? []
+      : rosterMembers.value.map(fromRoster),
+  )
+
+  const activeMember = ref<DisplayMember | null>(null)
+
+  function openMember(member: DisplayMember): void {
     activeMember.value = member
   }
 
@@ -53,7 +89,7 @@
           {{ $t('team.people.title') }}
         </h3>
         <ul class="team__people-list">
-          <li v-for="member in teamMembers" :key="member.login" class="team__person">
+          <li v-for="member in people" :key="member.login" class="team__person">
             <div class="team__person-card">
               <img
                 :src="member.avatar"

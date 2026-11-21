@@ -9,6 +9,7 @@ const ROUTES: Array<{ path: string; changefreq: string; priority: string }> = [
   { path: '/download', changefreq: 'monthly', priority: '0.9' },
   { path: '/releases', changefreq: 'weekly', priority: '0.8' },
   { path: '/docs', changefreq: 'monthly', priority: '0.7' },
+  { path: '/comunidade', changefreq: 'weekly', priority: '0.6' },
   { path: '/contact', changefreq: 'yearly', priority: '0.6' },
   { path: '/privacy', changefreq: 'yearly', priority: '0.3' },
   { path: '/terms', changefreq: 'yearly', priority: '0.3' },

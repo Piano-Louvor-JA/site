@@ -1,6 +1,7 @@
 <script setup lang="ts">
   import { type TesterProfile } from '~/data/testers'
   import { useTestersRoster, useTestersReports } from '~/composables/useTesters'
+  import { useRoster } from '~/composables/useRoster'
   import type { TesterReport } from '~/utils/testers-sheet'
 
   const { t } = useI18n()
@@ -28,6 +29,34 @@
   }
 
   const { testers, sheetBios } = useTestersRoster()
+
+  // Roster tester da API (SPEC Comunidade Orgânica D3): fonte prioritária;
+  // gviz da sheet continua como fallback durante a transição. Dedupe por
+  // github/login — API vence quando o mesmo id existe nos dois.
+  const { members: apiTesters, error: apiError } = useRoster('tester')
+
+  const apiTesterNames = computed<string[]>(() =>
+    apiError.value ? [] : apiTesters.value.map((m) => m.name),
+  )
+
+  // exposto p/ inspeção/teste do estado da integração API
+  defineExpose({ apiTesterNames, apiError })
+
+  const rosterTesters = computed<TesterProfile[]>(() => {
+    const sheetIds = new Set(testers.value.map((t) => t.id))
+    const fromApi = apiError.value
+      ? []
+      : apiTesters.value
+          .filter((m) => !sheetIds.has(m.github ?? ''))
+          .map((m) => ({
+            id: m.github ?? m.id,
+            name: m.name,
+            avatar: m.avatar_url ?? `https://github.com/${m.github ?? 'ghost'}.png?size=96`,
+            focus: ['community'] as TesterProfile['focus'],
+            links: m.github ? [{ label: 'GitHub', url: `https://github.com/${m.github}` }] : [],
+          }))
+    return [...fromApi, ...testers.value]
+  })
 
   const { positiveReports, enabled, pending, hasReports } = useTestersReports()
 
@@ -61,7 +90,7 @@
       </div>
 
       <div class="testers__grid">
-        <article v-for="tester in testers" :key="tester.id" class="testers__card">
+        <article v-for="tester in rosterTesters" :key="tester.id" class="testers__card">
           <img
             :src="tester.avatar"
             :alt="$t('testers.gallery.avatarAlt', { name: tester.name })"

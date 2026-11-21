@@ -15,6 +15,7 @@
     "download": "Download",
     "releases": "Releases",
     "testers": "Testers",
+    "comunidade": "Community",
     "toggleTheme": "Toggle light/dark theme"
   },
   "hero": {
@@ -1107,6 +1108,21 @@
         "share": "Share with your community"
       },
       "button": "Start contributing"
+    }
+  },
+  "comunidade": {
+    "eyebrow": "Community",
+    "title": "The living body of the project",
+    "subtitle": "Approved developers, testers, content producers and curators — the people who build and sustain PIANO LouvorJA, updated straight from the source.",
+    "error": "Could not load the community right now. Please try again shortly.",
+    "avatarAlt": "Avatar of {name}",
+    "profile": "View GitHub profile",
+    "roles": {
+      "staff": "Team",
+      "dev": "Dev",
+      "tester": "Tester",
+      "conteudo": "Content",
+      "curador": "Curator"
     }
   },
   "community": {
