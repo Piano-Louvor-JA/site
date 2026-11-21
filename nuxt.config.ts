@@ -58,12 +58,19 @@ export default defineNuxtConfig({
         // públicas x TODOS os locales (pt-BR default sem prefixo; en/es/ru/uk/fr
         // prefixados). Fonte única espelhada no sitemap.xml.ts; crawler não
         // depende mais de render client-side nas páginas localizadas.
-        ...['/', '/download', '/releases', '/docs', '/contact', '/privacy', '/terms'].flatMap(
-          (route) => [
-            route,
-            ...['/en', '/es', '/ru', '/uk', '/fr'].map((l) => `${l}${route === '/' ? '' : route}`),
-          ],
-        ),
+        ...[
+          '/',
+          '/download',
+          '/releases',
+          '/docs',
+          '/comunidade',
+          '/contact',
+          '/privacy',
+          '/terms',
+        ].flatMap((route) => [
+          route,
+          ...['/en', '/es', '/ru', '/uk', '/fr'].map((l) => `${l}${route === '/' ? '' : route}`),
+        ]),
         '/conduta',
         '/midias',
         '/ranking',

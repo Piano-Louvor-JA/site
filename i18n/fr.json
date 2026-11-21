@@ -11,6 +11,7 @@
     "download": "Télécharger",
     "releases": "Versions",
     "testers": "Testeurs",
+    "comunidade": "Communauté",
     "toggleTheme": "Basculer le thème clair/sombre"
   },
   "meta": {
@@ -1031,6 +1032,21 @@
       "downloadLabel": "Télécharger l'ISO (x86_64)",
       "unavailable": "ISO temporairement indisponible",
       "communityLink": "Communauté VoidBR"
+    }
+  },
+  "comunidade": {
+    "eyebrow": "Communauté",
+    "title": "Le corps vivant du projet",
+    "subtitle": "Développeurs, testeurs, producteurs de contenu et conservateurs approuvés — ceux qui construisent et font vivre PIANO LouvorJA, mis à jour directement à la source.",
+    "error": "Impossible de charger la communauté pour le moment. Réessayez dans quelques instants.",
+    "avatarAlt": "Avatar de {name}",
+    "profile": "Voir le profil GitHub",
+    "roles": {
+      "staff": "Équipe",
+      "dev": "Dev",
+      "tester": "Testeur",
+      "conteudo": "Contenu",
+      "curador": "Conservateur"
     }
   },
   "community": {
