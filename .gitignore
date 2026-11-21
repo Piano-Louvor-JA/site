@@ -41,3 +41,6 @@ content/docs-index.json
 # Gerados no build (hook nitro:build:before) — nunca commitar
 /public/llms-full.txt
 /public/sitemap.xml
+
+# evidência local de screenshots (gerada, não versionada)
+.evidence/
