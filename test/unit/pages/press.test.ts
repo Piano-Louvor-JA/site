@@ -1,4 +1,4 @@
-import { describe, expect, it } from 'vitest'
+import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { mount } from '@vue/test-utils'
 import { createI18n } from 'vue-i18n'
 import PressPage from '~/pages/institucional/press.vue'
@@ -14,13 +14,17 @@ const LOCALES = ['pt', 'en', 'es', 'fr', 'ru', 'uk'] as const
 
 const METRICS_RE =
   /\d{2,}(?:[.,]\d+)?\s*(downloads?|instala[çc][õo]es|installs?|usu[áa]rios|users)/i
+const renderText = (text: string) =>
+  text.replace("app{'@'}pianolouvorja.com.br", 'app@pianolouvorja.com.br')
+
+beforeEach(() => vi.stubGlobal('useAppHead', vi.fn()))
 
 function mountPage(locale: string, messages: Record<string, unknown>) {
   const i18n = createI18n({ legacy: false, locale, messages: { [locale]: messages } })
   return mount(PressPage, {
     global: {
       plugins: [i18n],
-      mocks: { $t: i18n.global.t },
+      mocks: { $t: i18n.global.t, $tm: i18n.global.tm },
       stubs: { RouterLink: { template: '<a><slot /></a>' } },
     },
   })
@@ -33,14 +37,14 @@ describe('Press kit', () => {
       const wrapper = mountPage(locale, messages as unknown as Record<string, unknown>)
       expect(wrapper.find('[data-testid="press-page"]').exists()).toBe(true)
       const press = messages.press!
-      expect(wrapper.text()).toContain(press.about)
+      expect(wrapper.text()).toContain(renderText(press.about))
       for (const point of press.keyPoints) {
-        expect(wrapper.text()).toContain(point)
+        expect(wrapper.text()).toContain(renderText(point))
       }
       for (const item of press.where.items) {
         expect(wrapper.text()).toContain(item)
       }
-      expect(wrapper.text()).toContain(press.contact)
+      expect(wrapper.text()).toContain(renderText(press.contact))
       // Botão imprimir
       const btn = wrapper.find('[data-testid="press-print-btn"]')
       expect(btn.exists()).toBe(true)

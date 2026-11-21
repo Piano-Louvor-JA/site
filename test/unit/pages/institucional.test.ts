@@ -1,4 +1,4 @@
-import { describe, expect, it } from 'vitest'
+import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { mount } from '@vue/test-utils'
 import { createI18n } from 'vue-i18n'
 import InstitucionalPage from '~/pages/institucional.vue'
@@ -14,6 +14,10 @@ const LOCALES = ['pt', 'en', 'es', 'fr', 'ru', 'uk'] as const
 
 const METRICS_RE =
   /\d{2,}(?:[.,]\d+)?\s*(downloads?|instala[çc][õo]es|installs?|usu[áa]rios|users)/i
+const renderText = (text: string) =>
+  text.replace("app{'@'}pianolouvorja.com.br", 'app@pianolouvorja.com.br')
+
+beforeEach(() => vi.stubGlobal('useAppHead', vi.fn()))
 
 function mountPage(locale: string, messages: Record<string, unknown>) {
   const i18n = createI18n({ legacy: false, locale, messages: { [locale]: messages } })
@@ -36,7 +40,7 @@ describe('Página institucional', () => {
       // S1–S4 renderizadas com title/body do catálogo
       for (const key of ['s1', 's2', 's3', 's4'] as const) {
         expect(wrapper.text()).toContain(inst[key].title)
-        expect(wrapper.text()).toContain(inst[key].body)
+        expect(wrapper.text()).toContain(renderText(inst[key].body))
       }
       // CTA press presente
       expect(wrapper.text()).toContain(inst.cta.press)

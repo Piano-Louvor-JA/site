@@ -1,4 +1,4 @@
-import { describe, expect, it } from 'vitest'
+import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { mount } from '@vue/test-utils'
 import { createI18n } from 'vue-i18n'
 import TheHeader from '~/components/TheHeader.vue'
@@ -11,6 +11,17 @@ import uk from '../../../i18n/uk.json'
 
 const CATALOGS = { pt: pt, en, es, fr, ru, uk } as const
 const LOCALES = ['pt', 'en', 'es', 'fr', 'ru', 'uk'] as const
+
+beforeEach(() => {
+  vi.stubGlobal('useTheme', () => ({
+    theme: { value: 'dark' },
+    toggleTheme: vi.fn(),
+    initTheme: vi.fn(),
+  }))
+  vi.stubGlobal('useRoute', () => ({ path: '/' }))
+  vi.stubGlobal('useRuntimeConfig', () => ({ public: { asaasDonateUrl: '' } }))
+  vi.stubGlobal('useLocalePath', () => (href: string) => href)
+})
 
 describe('TheHeader — link institucional', () => {
   for (const locale of LOCALES) {

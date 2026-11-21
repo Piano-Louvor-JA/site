@@ -1286,7 +1286,7 @@
     },
     "s4": {
       "title": "Institutional contact",
-      "body": "For partnerships, institutional questions and support for adopting the tool in your field, reach the team at app@pianolouvorja.com.br or through the contact page."
+      "body": "For partnerships, institutional questions and support for adopting the tool in your field, reach the team at app{'@'}pianolouvorja.com.br or through the contact page."
     },
     "cta": {
       "press": "View the press kit"
@@ -1311,10 +1311,10 @@
         "Official website: https://pianolouvorja.com.br",
         "App download: https://pianolouvorja.com.br/download",
         "Documentation: https://pianolouvorja.com.br/docs",
-        "Contact: app@pianolouvorja.com.br"
+        "Contact: app{'@'}pianolouvorja.com.br"
       ]
     },
-    "contact": "Institutional contact: app@pianolouvorja.com.br",
+    "contact": "Institutional contact: app{'@'}pianolouvorja.com.br",
     "printCta": "Print / save as PDF",
     "footer": "PIANO LouvorJA · https://pianolouvorja.com.br"
   }

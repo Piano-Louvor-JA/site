@@ -1278,7 +1278,7 @@
     },
     "s4": {
       "title": "Contacto institucional",
-      "body": "Para asociaciones, consultas institucionales y apoyo en la adopción de la herramienta en el campo, escríbanos a app@pianolouvorja.com.br o por la página de contacto."
+      "body": "Para asociaciones, consultas institucionales y apoyo en la adopción de la herramienta en el campo, escríbanos a app{'@'}pianolouvorja.com.br o por la página de contacto."
     },
     "cta": {
       "press": "Ver el press kit"
@@ -1303,10 +1303,10 @@
         "Sitio oficial: https://pianolouvorja.com.br",
         "Descarga de la app: https://pianolouvorja.com.br/download",
         "Documentación: https://pianolouvorja.com.br/docs",
-        "Contacto: app@pianolouvorja.com.br"
+        "Contacto: app{'@'}pianolouvorja.com.br"
       ]
     },
-    "contact": "Contacto institucional: app@pianolouvorja.com.br",
+    "contact": "Contacto institucional: app{'@'}pianolouvorja.com.br",
     "printCta": "Imprimir / guardar en PDF",
     "footer": "PIANO LouvorJA · https://pianolouvorja.com.br"
   }

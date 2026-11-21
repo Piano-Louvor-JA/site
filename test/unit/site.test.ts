@@ -43,8 +43,8 @@ describe('siteConfig', () => {
 })
 
 describe('navLinks', () => {
-  it('has exactly 4 links', () => {
-    expect(navLinks.length).toBe(4)
+  it('has exactly 5 links', () => {
+    expect(navLinks.length).toBe(5)
   })
 
   it('every link has i18nKey starting with nav.', () => {
