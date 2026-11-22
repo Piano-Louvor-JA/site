@@ -12,8 +12,8 @@ async function pngSize(filename: string) {
 }
 
 describe('favicon assets', () => {
-  it('keeps the official SVG source', async () => {
-    await expect(stat(asset('brand/logo-louvor-ja.svg'))).resolves.toBeDefined()
+  it('keeps the official PIANO app icon source', async () => {
+    await expect(stat(asset('brand/piano-icon.png'))).resolves.toBeDefined()
   })
 
   it('ships a three-image ICO fallback', async () => {

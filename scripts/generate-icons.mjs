@@ -4,7 +4,7 @@ import sharp from 'sharp'
 import pngToIco from 'png-to-ico'
 
 const root = process.cwd()
-const source = path.join(root, 'public/brand/logo-louvor-ja.svg')
+const source = path.join(root, 'public/brand/piano-icon.png')
 const output = (...parts) => path.join(root, 'public', ...parts)
 const background = '#0a1733'
 

@@ -88,7 +88,7 @@ export default defineNuxtConfig({
   app: {
     head: {
       link: [
-        { rel: 'icon', type: 'image/svg+xml', href: '/brand/logo-louvor-ja.svg' },
+        { rel: 'icon', href: '/brand/piano-icon.png', type: 'image/png', sizes: '512x512' },
         { rel: 'icon', href: '/favicon.ico', sizes: 'any' },
         { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' },
       ],
