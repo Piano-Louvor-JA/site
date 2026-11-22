@@ -33,19 +33,19 @@ PIANO, operatör ekranını kilise ekranından ayırır. Operatör tarafında ek
 
 Orijinal kılavuzun ilgili bölümüne ulaşmak için aşağıdaki bağlantıları kullanın.
 
-| Bölüm                    | Ne öğrenirsiniz                                                                       | Doğrudan bağlantı                                                                                                                                                     |
-| ----------------------- | ----------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Ana fikir               | Operatör ekranı ile kilise ekranının ayrımı; veriler yerel olarak kaydedilir.        | [Bölümü aç](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#a-ideia-central-do-aplicativo)                                  |
-| Ekranı tanıma           | Gezinme, arayüz yakınlaştırma, saat ve hesap.                                        | [Bölümü aç](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#conhecendo-a-tela)                                              |
-| Medya Merkezi           | Arama, indirmeler, sözler, slaytlar, kapak, sonraki cümle, ses ve müzik düzenleyici. | [Bölümü aç](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#1-central-de-m%C3%ADdia--hinos-letras-e-slides)                 |
-| Liturji                 | İbadet sırası, kategoriler, müzikler, dosyalar, bağlantılar, notlar ve tamamlanan öğeler. | [Bölümü aç](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#2-liturgia--monte-o-culto-inteiro-antes)                        |
-| Kutsal Kitap            | Sürümler, kitaplar, bölümler, ayetler ve projeksiyon.                                | [Bölümü aç](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#3-b%C3%ADblia)                                                  |
-| Yardımcı araçlar        | Saat, zamanlayıcı, geri sayım, işaretler ve kuralar.                                 | [Bölümü aç](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#4-utilit%C3%A1rios--rel%C3%B3gio-tempo-e-sorteios)              |
-| Topluluk                | Sıralama ve paylaşılan içerik.                                                       | [Bölümü aç](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#5-comunidade)                                                   |
-| Ayarlar                 | Projeksiyon stili, Kutsal Kitap, harici oynatıcı, yedekleme, hesap ve eski medya.    | [Bölümü aç](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#6-configura%C3%A7%C3%B5es--deixe-a-tela-da-igreja-do-seu-jeito) |
-| Uzaktan kontrol ve Sahne | Eşleştirme, uzak komutlar ve TV için alıcı.                                          | [Bölümü aç](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#7-controle-remoto-e-palco)                                      |
-| Faydalı özellikler      | Yakınlaştırma, `.slja` dosyaları, ses geçişi, kapak, işaretler ve kısayollar.        | [Bölümü aç](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#recursos-que-passam-despercebidos-e-ajudam-muito)               |
-| Sık karşılaşılan sorunlar | Katalog, oynatıcı, projeksiyon, başlangıç, yakınlaştırma ve indirme.                 | [Bölümü aç](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#problemas-comuns)                                               |
+| Bölüm                     | Ne öğrenirsiniz                                                                           | Doğrudan bağlantı                                                                                                                                                   |
+| ------------------------- | ----------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Ana fikir                 | Operatör ekranı ile kilise ekranının ayrımı; veriler yerel olarak kaydedilir.             | [Bölümü aç](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#a-ideia-central-do-aplicativo)                                  |
+| Ekranı tanıma             | Gezinme, arayüz yakınlaştırma, saat ve hesap.                                             | [Bölümü aç](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#conhecendo-a-tela)                                              |
+| Medya Merkezi             | Arama, indirmeler, sözler, slaytlar, kapak, sonraki cümle, ses ve müzik düzenleyici.      | [Bölümü aç](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#1-central-de-m%C3%ADdia--hinos-letras-e-slides)                 |
+| Liturji                   | İbadet sırası, kategoriler, müzikler, dosyalar, bağlantılar, notlar ve tamamlanan öğeler. | [Bölümü aç](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#2-liturgia--monte-o-culto-inteiro-antes)                        |
+| Kutsal Kitap              | Sürümler, kitaplar, bölümler, ayetler ve projeksiyon.                                     | [Bölümü aç](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#3-b%C3%ADblia)                                                  |
+| Yardımcı araçlar          | Saat, zamanlayıcı, geri sayım, işaretler ve kuralar.                                      | [Bölümü aç](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#4-utilit%C3%A1rios--rel%C3%B3gio-tempo-e-sorteios)              |
+| Topluluk                  | Sıralama ve paylaşılan içerik.                                                            | [Bölümü aç](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#5-comunidade)                                                   |
+| Ayarlar                   | Projeksiyon stili, Kutsal Kitap, harici oynatıcı, yedekleme, hesap ve eski medya.         | [Bölümü aç](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#6-configura%C3%A7%C3%B5es--deixe-a-tela-da-igreja-do-seu-jeito) |
+| Uzaktan kontrol ve Sahne  | Eşleştirme, uzak komutlar ve TV için alıcı.                                               | [Bölümü aç](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#7-controle-remoto-e-palco)                                      |
+| Faydalı özellikler        | Yakınlaştırma, `.slja` dosyaları, ses geçişi, kapak, işaretler ve kısayollar.             | [Bölümü aç](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#recursos-que-passam-despercebidos-e-ajudam-muito)               |
+| Sık karşılaşılan sorunlar | Katalog, oynatıcı, projeksiyon, başlangıç, yakınlaştırma ve indirme.                      | [Bölümü aç](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#problemas-comuns)                                               |
 
 ## Başlangıç adımlarını nerede görürüm?
 
@@ -59,35 +59,35 @@ Dokümantasyon, ekibin ibadet öncesi veya sırasında gereken konuyu hızlıca 
 
 ### Kurulum ve hazırlık
 
-| Sayfa                                              | Ne için                                                            |
-| --------------------------------------------------- | ------------------------------------------------------------------- |
-| [PIANO ile ilk ibadet](/docs/getting-started) | Hazırlıktan projeksiyona kadar eksiksiz yol.                        |
+| Sayfa                                              | Ne için                                                               |
+| -------------------------------------------------- | --------------------------------------------------------------------- |
+| [PIANO ile ilk ibadet](/docs/getting-started)      | Hazırlıktan projeksiyona kadar eksiksiz yol.                          |
 | [Sık sorulan sorular](/docs/faq)                   | Erişim, internet, cihazlar, yedekleme ve güncelleme hakkında sorular. |
-| [Sık karşılaşılan sorunlar](/docs/troubleshooting)           | Bir şey çalışmadığında kontrol listesi ve çözümler.                      |
+| [Sık karşılaşılan sorunlar](/docs/troubleshooting) | Bir şey çalışmadığında kontrol listesi ve çözümler.                   |
 
 ### İbadette kullanım
 
-| Sayfa                                              | Ne için                                                |
-| --------------------------------------------------- | ------------------------------------------------------------- |
-| [PIANO ile ilk ibadet](/docs/getting-started) | İlahi arama, indirme, liturji, Kutsal Kitap ve projeksiyon.         |
-| [Klavye kısayolları](/docs/shortcuts)               | Program sırasında oynatıcı, arama ve projeksiyon için komutlar. |
-| [Sık sorulan sorular](/docs/faq)                   | Çevrimdışı kullanım, liturji, ses ve yerel veriler.                  |
+| Sayfa                                         | Ne için                                                         |
+| --------------------------------------------- | --------------------------------------------------------------- |
+| [PIANO ile ilk ibadet](/docs/getting-started) | İlahi arama, indirme, liturji, Kutsal Kitap ve projeksiyon.     |
+| [Klavye kısayolları](/docs/shortcuts)         | Program sırasında oynatıcı, arama ve projeksiyon için komutlar. |
+| [Sık sorulan sorular](/docs/faq)              | Çevrimdışı kullanım, liturji, ses ve yerel veriler.             |
 
 ### TV, projeksiyon ve kontrol
 
-| Sayfa                                                          | Ne için                                                        |
-| --------------------------------------------------------------- | --------------------------------------------------------------------- |
+| Sayfa                                                 | Ne için                                                                |
+| ----------------------------------------------------- | ---------------------------------------------------------------------- |
 | [Sahne Modu ve çoklu cihaz](/docs/palco-multi-device) | Telefon/bilgisayardan kontrol ve TV, projektör veya Sahne'de gösterim. |
-| [Sık karşılaşılan sorunlar](/docs/troubleshooting)                       | Projeksiyon görünmüyor, ikinci ekran ve Sahne bağlantısı.                    |
-| [Klavye kısayolları](/docs/shortcuts)                           | Projeksiyonu daha hızlı değiştirme ve kapatma.                        |
+| [Sık karşılaşılan sorunlar](/docs/troubleshooting)    | Projeksiyon görünmüyor, ikinci ekran ve Sahne bağlantısı.              |
+| [Klavye kısayolları](/docs/shortcuts)                 | Projeksiyonu daha hızlı değiştirme ve kapatma.                         |
 
 ### Sorular ve destek
 
-| Sayfa                                    | Ne için                                      |
-| ----------------------------------------- | --------------------------------------------------- |
-| [Sık sorulan sorular](/docs/faq)         | Kullanım, gizlilik ve destek hakkında hızlı yanıtlar. |
-| [Sık karşılaşılan sorunlar](/docs/troubleshooting) | Belirtiye göre düzenlenmiş çözümler.                   |
-| [Klavye kısayolları](/docs/shortcuts)     | Ekip için hızlı başvuru kaynağı.                    |
+| Sayfa                                              | Ne için                                               |
+| -------------------------------------------------- | ----------------------------------------------------- |
+| [Sık sorulan sorular](/docs/faq)                   | Kullanım, gizlilik ve destek hakkında hızlı yanıtlar. |
+| [Sık karşılaşılan sorunlar](/docs/troubleshooting) | Belirtiye göre düzenlenmiş çözümler.                  |
+| [Klavye kısayolları](/docs/shortcuts)              | Ekip için hızlı başvuru kaynağı.                      |
 
 ## PIANO cihaza ne kaydeder?
 

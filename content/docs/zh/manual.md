@@ -33,19 +33,19 @@ PIANO 将操作员屏幕与教会屏幕分开。在操作员端，团队可以�
 
 使用以下链接可直达原始手册的相应章节。
 
-| 章节         | 学习内容                                                       | 直达链接                                                                                                                                                              |
-| ----------------------- | ------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 核心理念           | 操作员屏幕与教会屏幕的分离；数据本地保存。         | [打开章节](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#a-ideia-central-do-aplicativo)                                  |
-| 认识界面       | 导航、界面缩放、时钟和账户。                                      | [打开章节](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#conhecendo-a-tela)                                              |
-| 媒体中心        | 搜索、下载、歌词、幻灯片、封面、下一句、音频和音乐编辑器。     | [打开章节](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#1-central-de-m%C3%ADdia--hinos-letras-e-slides)                 |
-| 礼仪                | 聚会流程、分类、歌曲、文件、链接、笔记和已完成项目。 | [打开章节](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#2-liturgia--monte-o-culto-inteiro-antes)                        |
-| 圣经                  | 版本、书卷、章节、经文和投影。                                  | [打开章节](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#3-b%C3%ADblia)                                                  |
-| 实用工具             | 时钟、计时器、倒计时、标记和抽奖。                      | [打开章节](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#4-utilit%C3%A1rios--rel%C3%B3gio-tempo-e-sorteios)              |
-| 社区              | 排行榜和共享内容。                                                   | [打开章节](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#5-comunidade)                                                   |
-| 设置           | 投影样式、圣经、外部播放器、备份、账户和旧版媒体。           | [打开章节](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#6-configura%C3%A7%C3%B5es--deixe-a-tela-da-igreja-do-seu-jeito) |
-| 遥控与大屏幕模式 | 配对、远程命令和电视接收端。                                    | [打开章节](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#7-controle-remoto-e-palco)                                      |
-| 实用功能          | 缩放、`.slja` 文件、音频过渡、封面、标记和快捷键。                 | [打开章节](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#recursos-que-passam-despercebidos-e-ajudam-muito)               |
-| 常见问题        | 目录、播放器、投影、启动、缩放和下载。                                | [打开章节](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#problemas-comuns)                                               |
+| 章节             | 学习内容                                                   | 直达链接                                                                                                                                                           |
+| ---------------- | ---------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 核心理念         | 操作员屏幕与教会屏幕的分离；数据本地保存。                 | [打开章节](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#a-ideia-central-do-aplicativo)                                  |
+| 认识界面         | 导航、界面缩放、时钟和账户。                               | [打开章节](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#conhecendo-a-tela)                                              |
+| 媒体中心         | 搜索、下载、歌词、幻灯片、封面、下一句、音频和音乐编辑器。 | [打开章节](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#1-central-de-m%C3%ADdia--hinos-letras-e-slides)                 |
+| 礼仪             | 聚会流程、分类、歌曲、文件、链接、笔记和已完成项目。       | [打开章节](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#2-liturgia--monte-o-culto-inteiro-antes)                        |
+| 圣经             | 版本、书卷、章节、经文和投影。                             | [打开章节](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#3-b%C3%ADblia)                                                  |
+| 实用工具         | 时钟、计时器、倒计时、标记和抽奖。                         | [打开章节](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#4-utilit%C3%A1rios--rel%C3%B3gio-tempo-e-sorteios)              |
+| 社区             | 排行榜和共享内容。                                         | [打开章节](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#5-comunidade)                                                   |
+| 设置             | 投影样式、圣经、外部播放器、备份、账户和旧版媒体。         | [打开章节](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#6-configura%C3%A7%C3%B5es--deixe-a-tela-da-igreja-do-seu-jeito) |
+| 遥控与大屏幕模式 | 配对、远程命令和电视接收端。                               | [打开章节](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#7-controle-remoto-e-palco)                                      |
+| 实用功能         | 缩放、`.slja` 文件、音频过渡、封面、标记和快捷键。         | [打开章节](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#recursos-que-passam-despercebidos-e-ajudam-muito)               |
+| 常见问题         | 目录、播放器、投影、启动、缩放和下载。                     | [打开章节](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#problemas-comuns)                                               |
 
 ## 在哪里查看入门指南？
 
@@ -59,35 +59,35 @@ PIANO 将操作员屏幕与教会屏幕分开。在操作员端，团队可以�
 
 ### 安装与准备
 
-| 页面                                              | 用途                                                      |
-| --------------------------------------------------- | ------------------------------------------------------------------- |
-| [使用 PIANO 的第一次聚会](/docs/getting-started) | 从准备到投影的完整流程。                         |
-| [常见问题解答](/docs/faq)                   | 关于访问、网络、设备、备份和更新的疑问。 |
-| [常见问题](/docs/troubleshooting)           | 出现问题时的检查清单和解决方案。                      |
+| 页面                                             | 用途                                     |
+| ------------------------------------------------ | ---------------------------------------- |
+| [使用 PIANO 的第一次聚会](/docs/getting-started) | 从准备到投影的完整流程。                 |
+| [常见问题解答](/docs/faq)                        | 关于访问、网络、设备、备份和更新的疑问。 |
+| [常见问题](/docs/troubleshooting)                | 出现问题时的检查清单和解决方案。         |
 
 ### 聚会中的使用
 
-| 页面                                              | 用途                                                |
-| --------------------------------------------------- | ------------------------------------------------------------- |
-| [使用 PIANO 的第一次聚会](/docs/getting-started) | 诗歌搜索、下载、礼仪、圣经和投影。         |
-| [键盘快捷键](/docs/shortcuts)               | 聚会期间用于播放器、搜索和投影的命令。 |
-| [常见问题解答](/docs/faq)                   | 离线使用、礼仪、音频和本地数据。                  |
+| 页面                                             | 用途                                   |
+| ------------------------------------------------ | -------------------------------------- |
+| [使用 PIANO 的第一次聚会](/docs/getting-started) | 诗歌搜索、下载、礼仪、圣经和投影。     |
+| [键盘快捷键](/docs/shortcuts)                    | 聚会期间用于播放器、搜索和投影的命令。 |
+| [常见问题解答](/docs/faq)                        | 离线使用、礼仪、音频和本地数据。       |
 
 ### 电视、投影与控制
 
-| 页面                                                          | 用途                                                        |
-| --------------------------------------------------------------- | --------------------------------------------------------------------- |
+| 页面                                           | 用途                                                 |
+| ---------------------------------------------- | ---------------------------------------------------- |
 | [大屏幕模式与多设备](/docs/palco-multi-device) | 通过手机/电脑控制，并在电视、投影仪或 Palco 上显示。 |
-| [常见问题](/docs/troubleshooting)                       | 投影缺失、第二屏幕和 Palco 连接问题。                    |
-| [键盘快捷键](/docs/shortcuts)                           | 更快速地切换和结束投影。                        |
+| [常见问题](/docs/troubleshooting)              | 投影缺失、第二屏幕和 Palco 连接问题。                |
+| [键盘快捷键](/docs/shortcuts)                  | 更快速地切换和结束投影。                             |
 
 ### 疑问与支持
 
-| 页面                                    | 用途                                      |
-| ----------------------------------------- | --------------------------------------------------- |
+| 页面                              | 用途                             |
+| --------------------------------- | -------------------------------- |
 | [常见问题解答](/docs/faq)         | 关于使用、隐私和支持的快速解答。 |
-| [常见问题](/docs/troubleshooting) | 按症状分类整理的解决方案。                   |
-| [键盘快捷键](/docs/shortcuts)     | 团队快速参考。                    |
+| [常见问题](/docs/troubleshooting) | 按症状分类整理的解决方案。       |
+| [键盘快捷键](/docs/shortcuts)     | 团队快速参考。                   |
 
 ## PIANO 会在设备上保存什么？
 

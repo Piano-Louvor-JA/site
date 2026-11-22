@@ -33,19 +33,19 @@ toc: true
 
 استخدم الروابط أدناه للوصول إلى القسم المقابل في الدليل الأصلي.
 
-| القسم | ما ستتعلمه | الرابط المباشر |
-| ----------------------- | ------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| الفكرة الأساسية | الفصل بين شاشة المشغّل وشاشة الكنيسة؛ حفظ البيانات محليًا. | [فتح القسم](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#a-ideia-central-do-aplicativo) |
-| التعرّف على الشاشة | التنقل، تكبير الواجهة، الساعة والحساب. | [فتح القسم](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#conhecendo-a-tela) |
-| مركز الوسائط | البحث، التنزيلات، الكلمات، الشرائح، الغلاف، العبارة التالية، الصوت ومحرّر الموسيقى. | [فتح القسم](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#1-central-de-m%C3%ADdia--hinos-letras-e-slides) |
-| الطقس | ترتيب العبادة، الفئات، الترانيم، الملفات، الروابط، الملاحظات والعناصر المكتملة. | [فتح القسم](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#2-liturgia--monte-o-culto-inteiro-antes) |
-| الكتاب المقدس | الإصدارات، الأسفار، الفصول، الآيات والإسقاط. | [فتح القسم](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#3-b%C3%ADblia) |
-| الأدوات المساعدة | الساعة، المؤقّت، العدّ التنازلي، العلامات وعمليات السحب. | [فتح القسم](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#4-utilit%C3%A1rios--rel%C3%B3gio-tempo-e-sorteios) |
-| المجتمع | الترتيب والمحتوى المشترك. | [فتح القسم](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#5-comunidade) |
-| الإعدادات | نمط الإسقاط، الكتاب المقدس، المشغّل الخارجي، النسخ الاحتياطي، الحساب والوسائط القديمة. | [فتح القسم](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#6-configura%C3%A7%C3%B5es--deixe-a-tela-da-igreja-do-seu-jeito) |
-| جهاز التحكم عن بُعد وPalco | الاقتران، أوامر التحكم عن بُعد والمستقبل للتلفاز. | [فتح القسم](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#7-controle-remoto-e-palco) |
-| ميزات مفيدة | التكبير، ملفات `.slja`، انتقال الصوت، الغلاف، العلامات والاختصارات. | [فتح القسم](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#recursos-que-passam-despercebidos-e-ajudam-muito) |
-| المشكلات الشائعة | الكتالوج، المشغّل، الإسقاط، التشغيل، التكبير والتنزيل. | [فتح القسم](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#problemas-comuns) |
+| القسم                     | ما ستتعلمه                                                                            | الرابط المباشر                                                                                                                                                      |
+| ------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| الفكرة الأساسية           | الفصل بين شاشة المشغّل وشاشة الكنيسة؛ حفظ البيانات محليًا.                              | [فتح القسم](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#a-ideia-central-do-aplicativo)                                  |
+| التعرّف على الشاشة         | التنقل، تكبير الواجهة، الساعة والحساب.                                                | [فتح القسم](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#conhecendo-a-tela)                                              |
+| مركز الوسائط              | البحث، التنزيلات، الكلمات، الشرائح، الغلاف، العبارة التالية، الصوت ومحرّر الموسيقى.    | [فتح القسم](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#1-central-de-m%C3%ADdia--hinos-letras-e-slides)                 |
+| الطقس                     | ترتيب العبادة، الفئات، الترانيم، الملفات، الروابط، الملاحظات والعناصر المكتملة.       | [فتح القسم](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#2-liturgia--monte-o-culto-inteiro-antes)                        |
+| الكتاب المقدس             | الإصدارات، الأسفار، الفصول، الآيات والإسقاط.                                          | [فتح القسم](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#3-b%C3%ADblia)                                                  |
+| الأدوات المساعدة          | الساعة، المؤقّت، العدّ التنازلي، العلامات وعمليات السحب.                                | [فتح القسم](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#4-utilit%C3%A1rios--rel%C3%B3gio-tempo-e-sorteios)              |
+| المجتمع                   | الترتيب والمحتوى المشترك.                                                             | [فتح القسم](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#5-comunidade)                                                   |
+| الإعدادات                 | نمط الإسقاط، الكتاب المقدس، المشغّل الخارجي، النسخ الاحتياطي، الحساب والوسائط القديمة. | [فتح القسم](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#6-configura%C3%A7%C3%B5es--deixe-a-tela-da-igreja-do-seu-jeito) |
+| جهاز التحكم عن بُعد وPalco | الاقتران، أوامر التحكم عن بُعد والمستقبل للتلفاز.                                      | [فتح القسم](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#7-controle-remoto-e-palco)                                      |
+| ميزات مفيدة               | التكبير، ملفات `.slja`، انتقال الصوت، الغلاف، العلامات والاختصارات.                   | [فتح القسم](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#recursos-que-passam-despercebidos-e-ajudam-muito)               |
+| المشكلات الشائعة          | الكتالوج، المشغّل، الإسقاط، التشغيل، التكبير والتنزيل.                                 | [فتح القسم](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#problemas-comuns)                                               |
 
 ## أين أرى خطوات البداية الأولى؟
 
@@ -59,35 +59,35 @@ toc: true
 
 ### التثبيت والتحضير
 
-| الصفحة | الغرض |
-| --------------------------------------------------- | ------------------------------------------------------------------- |
-| [أول عبادة مع PIANO](/docs/getting-started) | المسار الكامل من التحضير حتى الإسقاط. |
-| [الأسئلة الشائعة](/docs/faq) | استفسارات حول الوصول، الإنترنت، الأجهزة، النسخ الاحتياطي والتحديث. |
-| [المشكلات الشائعة](/docs/troubleshooting) | قائمة تحقق وحلول عندما يتعطّل شيء ما. |
+| الصفحة                                      | الغرض                                                              |
+| ------------------------------------------- | ------------------------------------------------------------------ |
+| [أول عبادة مع PIANO](/docs/getting-started) | المسار الكامل من التحضير حتى الإسقاط.                              |
+| [الأسئلة الشائعة](/docs/faq)                | استفسارات حول الوصول، الإنترنت، الأجهزة، النسخ الاحتياطي والتحديث. |
+| [المشكلات الشائعة](/docs/troubleshooting)   | قائمة تحقق وحلول عندما يتعطّل شيء ما.                               |
 
 ### الاستخدام في العبادة
 
-| الصفحة | الغرض |
-| --------------------------------------------------- | ------------------------------------------------------------- |
+| الصفحة                                      | الغرض                                                    |
+| ------------------------------------------- | -------------------------------------------------------- |
 | [أول عبادة مع PIANO](/docs/getting-started) | البحث عن ترنيمة، التنزيل، الطقس، الكتاب المقدس والإسقاط. |
-| [اختصارات لوحة المفاتيح](/docs/shortcuts) | أوامر للمشغّل والبحث والإسقاط أثناء البرنامج. |
-| [الأسئلة الشائعة](/docs/faq) | الاستخدام دون اتصال، الطقس، الصوت والبيانات المحلية. |
+| [اختصارات لوحة المفاتيح](/docs/shortcuts)   | أوامر للمشغّل والبحث والإسقاط أثناء البرنامج.             |
+| [الأسئلة الشائعة](/docs/faq)                | الاستخدام دون اتصال، الطقس، الصوت والبيانات المحلية.     |
 
 ### التلفاز والإسقاط والتحكم
 
-| الصفحة | الغرض |
-| --------------------------------------------------------------- | --------------------------------------------------------------------- |
+| الصفحة                                                  | الغرض                                                            |
+| ------------------------------------------------------- | ---------------------------------------------------------------- |
 | [وضع Palco والأجهزة المتعددة](/docs/palco-multi-device) | التحكم عبر الهاتف/الحاسوب والعرض على تلفاز أو جهاز عرض أو Palco. |
-| [المشكلات الشائعة](/docs/troubleshooting) | غياب الإسقاط، الشاشة الثانية واتصال Palco. |
-| [اختصارات لوحة المفاتيح](/docs/shortcuts) | تبديل الإسقاط وإنهائه بسرعة أكبر. |
+| [المشكلات الشائعة](/docs/troubleshooting)               | غياب الإسقاط، الشاشة الثانية واتصال Palco.                       |
+| [اختصارات لوحة المفاتيح](/docs/shortcuts)               | تبديل الإسقاط وإنهائه بسرعة أكبر.                                |
 
 ### الأسئلة والدعم
 
-| الصفحة | الغرض |
-| ----------------------------------------- | --------------------------------------------------- |
-| [الأسئلة الشائعة](/docs/faq) | إجابات سريعة حول الاستخدام والخصوصية والدعم. |
-| [المشكلات الشائعة](/docs/troubleshooting) | حلول منظّمة حسب العَرَض. |
-| [اختصارات لوحة المفاتيح](/docs/shortcuts) | مرجع سريع للفريق. |
+| الصفحة                                    | الغرض                                        |
+| ----------------------------------------- | -------------------------------------------- |
+| [الأسئلة الشائعة](/docs/faq)              | إجابات سريعة حول الاستخدام والخصوصية والدعم. |
+| [المشكلات الشائعة](/docs/troubleshooting) | حلول منظّمة حسب العَرَض.                        |
+| [اختصارات لوحة المفاتيح](/docs/shortcuts) | مرجع سريع للفريق.                            |
 
 ## ماذا يحفظ PIANO على الجهاز؟
 

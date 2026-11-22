@@ -66,13 +66,13 @@ Programın başlamasını henüz yüklenmemiş içeriğe bağlı beklemeyin. İl
 
 Kilisenin kullanım türüne göre seçin.
 
-| Durum                                                              | En iyi seçim                                  |
-| ----------------------------------------------------------------- | --------------------------------------------- |
-| Hızlı test etmek veya ödünç bilgisayar kullanmak                   | `app.pianolouvorja.com.br` tarayıcıda         |
-| Her zaman aynı bilgisayarda, geleneksel program yüklemeden kullanmak | Chrome veya Edge ile yüklenen PWA            |
-| İki monitörlü projeksiyon ve kilisenin sabit rutini                | Windows, macOS veya Linux uygulaması          |
-| Telefon veya tabletten kontrol                                     | Tarayıcıda PWA veya ana ekrana eklenmiş       |
-| Projeksiyonu almak için ağa bağlı TV                               | Uyumlu cihazda Sahne                          |
+| Durum                                                                | En iyi seçim                            |
+| -------------------------------------------------------------------- | --------------------------------------- |
+| Hızlı test etmek veya ödünç bilgisayar kullanmak                     | `app.pianolouvorja.com.br` tarayıcıda   |
+| Her zaman aynı bilgisayarda, geleneksel program yüklemeden kullanmak | Chrome veya Edge ile yüklenen PWA       |
+| İki monitörlü projeksiyon ve kilisenin sabit rutini                  | Windows, macOS veya Linux uygulaması    |
+| Telefon veya tabletten kontrol                                       | Tarayıcıda PWA veya ana ekrana eklenmiş |
+| Projeksiyonu almak için ağa bağlı TV                                 | Uyumlu cihazda Sahne                    |
 
 Yüklü sürüm, ekip operatör ekranının kilise ekranından ayrı olduğu, istikrarlı bir çalışma gerektirdiğinde tercih edilir.
 

@@ -33,19 +33,19 @@ PIANO는 운영자 화면과 교회 화면을 분리합니다. 운영자 화면�
 
 아래 링크를 사용하여 원본 매뉴얼의 해당 섹션으로 이동하세요.
 
-| 섹션                    | 학습 내용                                                                          | 바로가기                                                                                                                                                              |
-| ----------------------- | ----------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 핵심 개념           | 운영자 화면과 교회 화면의 분리; 데이터의 로컬 저장.         | [섹션 열기](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#a-ideia-central-do-aplicativo)                                  |
-| 화면 살펴보기       | 탐색, 인터페이스 확대/축소, 시계 및 계정.                                      | [섹션 열기](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#conhecendo-a-tela)                                              |
-| 미디어 센터        | 검색, 다운로드, 가사, 슬라이드, 표지, 다음 문구, 오디오 및 음악 편집기.     | [섹션 열기](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#1-central-de-m%C3%ADdia--hinos-letras-e-slides)                 |
-| 예배 순서                | 예배 순서, 카테고리, 음악, 파일, 링크, 메모 및 완료된 항목. | [섹션 열기](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#2-liturgia--monte-o-culto-inteiro-antes)                        |
-| 성경                  | 번역본, 책, 장, 절 및 프로젝션.                                  | [섹션 열기](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#3-b%C3%ADblia)                                                  |
-| 유틸리티             | 시계, 타이머, 카운트다운, 마커 및 추첨.                      | [섹션 열기](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#4-utilit%C3%A1rios--rel%C3%B3gio-tempo-e-sorteios)              |
-| 커뮤니티              | 랭킹 및 공유된 콘텐츠.                                                   | [섹션 열기](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#5-comunidade)                                                   |
-| 설정           | 프로젝션 스타일, 성경, 외부 플레이어, 백업, 계정 및 기존 미디어.           | [섹션 열기](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#6-configura%C3%A7%C3%B5es--deixe-a-tela-da-igreja-do-seu-jeito) |
-| 리모컨 및 Palco | 페어링, 원격 명령 및 TV용 수신기.                                    | [섹션 열기](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#7-controle-remoto-e-palco)                                      |
-| 유용한 기능          | 확대/축소, `.slja` 파일, 오디오 전환, 표지, 마커 및 단축키.                 | [섹션 열기](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#recursos-que-passam-despercebidos-e-ajudam-muito)               |
-| 일반적인 문제        | 카탈로그, 플레이어, 프로젝션, 시작, 확대/축소 및 다운로드.                                | [섹션 열기](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#problemas-comuns)                                               |
+| 섹션            | 학습 내용                                                               | 바로가기                                                                                                                                                            |
+| --------------- | ----------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 핵심 개념       | 운영자 화면과 교회 화면의 분리; 데이터의 로컬 저장.                     | [섹션 열기](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#a-ideia-central-do-aplicativo)                                  |
+| 화면 살펴보기   | 탐색, 인터페이스 확대/축소, 시계 및 계정.                               | [섹션 열기](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#conhecendo-a-tela)                                              |
+| 미디어 센터     | 검색, 다운로드, 가사, 슬라이드, 표지, 다음 문구, 오디오 및 음악 편집기. | [섹션 열기](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#1-central-de-m%C3%ADdia--hinos-letras-e-slides)                 |
+| 예배 순서       | 예배 순서, 카테고리, 음악, 파일, 링크, 메모 및 완료된 항목.             | [섹션 열기](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#2-liturgia--monte-o-culto-inteiro-antes)                        |
+| 성경            | 번역본, 책, 장, 절 및 프로젝션.                                         | [섹션 열기](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#3-b%C3%ADblia)                                                  |
+| 유틸리티        | 시계, 타이머, 카운트다운, 마커 및 추첨.                                 | [섹션 열기](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#4-utilit%C3%A1rios--rel%C3%B3gio-tempo-e-sorteios)              |
+| 커뮤니티        | 랭킹 및 공유된 콘텐츠.                                                  | [섹션 열기](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#5-comunidade)                                                   |
+| 설정            | 프로젝션 스타일, 성경, 외부 플레이어, 백업, 계정 및 기존 미디어.        | [섹션 열기](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#6-configura%C3%A7%C3%B5es--deixe-a-tela-da-igreja-do-seu-jeito) |
+| 리모컨 및 Palco | 페어링, 원격 명령 및 TV용 수신기.                                       | [섹션 열기](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#7-controle-remoto-e-palco)                                      |
+| 유용한 기능     | 확대/축소, `.slja` 파일, 오디오 전환, 표지, 마커 및 단축키.             | [섹션 열기](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#recursos-que-passam-despercebidos-e-ajudam-muito)               |
+| 일반적인 문제   | 카탈로그, 플레이어, 프로젝션, 시작, 확대/축소 및 다운로드.              | [섹션 열기](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#problemas-comuns)                                               |
 
 ## 시작하기는 어디서 볼 수 있나요?
 
@@ -59,35 +59,35 @@ PIANO를 처음 사용하는 경우 이 가이드부터 시작하세요.
 
 ### 설치 및 준비
 
-| 페이지                                              | 용도                                                      |
-| --------------------------------------------------- | ------------------------------------------------------------------- |
-| [PIANO로 하는 첫 예배](/docs/getting-started) | 준비부터 프로젝션까지의 전체 과정.                         |
+| 페이지                                        | 용도                                                |
+| --------------------------------------------- | --------------------------------------------------- |
+| [PIANO로 하는 첫 예배](/docs/getting-started) | 준비부터 프로젝션까지의 전체 과정.                  |
 | [자주 묻는 질문](/docs/faq)                   | 접속, 인터넷, 기기, 백업 및 업데이트에 관한 궁금증. |
-| [일반적인 문제](/docs/troubleshooting)           | 문제가 발생했을 때의 체크리스트와 해결 방법.                      |
+| [일반적인 문제](/docs/troubleshooting)        | 문제가 발생했을 때의 체크리스트와 해결 방법.        |
 
 ### 예배 중 사용
 
-| 페이지                                              | 용도                                                |
-| --------------------------------------------------- | ------------------------------------------------------------- |
-| [PIANO로 하는 첫 예배](/docs/getting-started) | 찬송가 검색, 다운로드, 예배 순서, 성경 및 프로젝션.         |
-| [키보드 단축키](/docs/shortcuts)               | 프로그램 진행 중 플레이어, 검색 및 프로젝션 명령. |
-| [자주 묻는 질문](/docs/faq)                   | 오프라인 사용, 예배 순서, 오디오 및 로컬 데이터.                  |
+| 페이지                                        | 용도                                                |
+| --------------------------------------------- | --------------------------------------------------- |
+| [PIANO로 하는 첫 예배](/docs/getting-started) | 찬송가 검색, 다운로드, 예배 순서, 성경 및 프로젝션. |
+| [키보드 단축키](/docs/shortcuts)              | 프로그램 진행 중 플레이어, 검색 및 프로젝션 명령.   |
+| [자주 묻는 질문](/docs/faq)                   | 오프라인 사용, 예배 순서, 오디오 및 로컬 데이터.    |
 
 ### TV, 프로젝션 및 제어
 
-| 페이지                                                          | 용도                                                        |
-| --------------------------------------------------------------- | --------------------------------------------------------------------- |
+| 페이지                                              | 용도                                                     |
+| --------------------------------------------------- | -------------------------------------------------------- |
 | [Palco 모드 및 다중 기기](/docs/palco-multi-device) | 휴대폰/컴퓨터로 제어하고 TV, 프로젝터 또는 Palco에 표시. |
-| [일반적인 문제](/docs/troubleshooting)                       | 프로젝션 미표시, 두 번째 화면 및 Palco 연결.                    |
-| [키보드 단축키](/docs/shortcuts)                           | 프로젝션을 더 빠르게 전환하고 종료.                        |
+| [일반적인 문제](/docs/troubleshooting)              | 프로젝션 미표시, 두 번째 화면 및 Palco 연결.             |
+| [키보드 단축키](/docs/shortcuts)                    | 프로젝션을 더 빠르게 전환하고 종료.                      |
 
 ### 질문 및 지원
 
-| 페이지                                    | 용도                                      |
-| ----------------------------------------- | --------------------------------------------------- |
-| [자주 묻는 질문](/docs/faq)         | 사용, 개인정보 및 지원에 관한 빠른 답변. |
-| [일반적인 문제](/docs/troubleshooting) | 증상별로 정리된 해결 방법.                   |
-| [키보드 단축키](/docs/shortcuts)     | 팀을 위한 빠른 참조.                    |
+| 페이지                                 | 용도                                     |
+| -------------------------------------- | ---------------------------------------- |
+| [자주 묻는 질문](/docs/faq)            | 사용, 개인정보 및 지원에 관한 빠른 답변. |
+| [일반적인 문제](/docs/troubleshooting) | 증상별로 정리된 해결 방법.               |
+| [키보드 단축키](/docs/shortcuts)       | 팀을 위한 빠른 참조.                     |
 
 ## PIANO는 기기에 무엇을 저장하나요?
 

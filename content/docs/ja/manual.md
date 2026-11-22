@@ -33,19 +33,19 @@ PIANO はオペレーター画面と教会(会衆)画面を分けています。
 
 以下のリンクから、オリジナルマニュアルの該当セクションに移動できます。
 
-| セクション                     | 学べる内容                                                                       | 直接リンク                                                                                                                                                            |
-| ------------------------------ | -------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 基本コンセプト                 | オペレーター画面と教会画面の分離。データはローカルに保存。                       | [セクションを開く](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#a-ideia-central-do-aplicativo)                             |
-| 画面の見方                     | ナビゲーション、インターフェースのズーム、時計とアカウント。                     | [セクションを開く](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#conhecendo-a-tela)                                         |
-| メディアセンター               | 検索、ダウンロード、歌詞、スライド、カバー画像、次のフレーズ、オーディオ、楽曲エディター。 | [セクションを開く](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#1-central-de-m%C3%ADdia--hinos-letras-e-slides)            |
-| 礼拝式次第                     | 礼拝の順序、カテゴリー、楽曲、ファイル、リンク、メモ、完了項目。                 | [セクションを開く](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#2-liturgia--monte-o-culto-inteiro-antes)                   |
-| 聖書                           | 訳、書巻、章、節、映写。                                                         | [セクションを開く](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#3-b%C3%ADblia)                                              |
-| ユーティリティ                 | 時計タイマー、カウントダウン、マーク、抽選。                                     | [セクションを開く](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#4-utilit%C3%A1rios--rel%C3%B3gio-tempo-e-sorteios)         |
-| コミュニティ                   | ランキングと共有コンテンツ。                                                     | [セクションを開く](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#5-comunidade)                                               |
-| 設定                           | 映写のスタイル、聖書、外部プレイヤー、バックアップ、アカウント、旧メディア。     | [セクションを開く](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#6-configura%C3%A7%C3%B5es--deixe-a-tela-da-igreja-do-seu-jeito) |
-| リモコン操作とステージ         | ペアリング、リモートコマンド、テレビ用レシーバー。                               | [セクションを開く](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#7-controle-remoto-e-palco)                                  |
-| 役立つ機能                     | ズーム、`.slja` ファイル、オーディオの切り替え、カバー画像、マーク、ショートカット。 | [セクションを開く](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#recursos-que-passam-despercebidos-e-ajudam-muito)           |
-| よくある問題                   | カタログ、プレイヤー、映写、起動、ズーム、ダウンロード。                         | [セクションを開く](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#problemas-comuns)                                            |
+| セクション             | 学べる内容                                                                                 | 直接リンク                                                                                                                                                                 |
+| ---------------------- | ------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 基本コンセプト         | オペレーター画面と教会画面の分離。データはローカルに保存。                                 | [セクションを開く](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#a-ideia-central-do-aplicativo)                                  |
+| 画面の見方             | ナビゲーション、インターフェースのズーム、時計とアカウント。                               | [セクションを開く](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#conhecendo-a-tela)                                              |
+| メディアセンター       | 検索、ダウンロード、歌詞、スライド、カバー画像、次のフレーズ、オーディオ、楽曲エディター。 | [セクションを開く](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#1-central-de-m%C3%ADdia--hinos-letras-e-slides)                 |
+| 礼拝式次第             | 礼拝の順序、カテゴリー、楽曲、ファイル、リンク、メモ、完了項目。                           | [セクションを開く](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#2-liturgia--monte-o-culto-inteiro-antes)                        |
+| 聖書                   | 訳、書巻、章、節、映写。                                                                   | [セクションを開く](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#3-b%C3%ADblia)                                                  |
+| ユーティリティ         | 時計タイマー、カウントダウン、マーク、抽選。                                               | [セクションを開く](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#4-utilit%C3%A1rios--rel%C3%B3gio-tempo-e-sorteios)              |
+| コミュニティ           | ランキングと共有コンテンツ。                                                               | [セクションを開く](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#5-comunidade)                                                   |
+| 設定                   | 映写のスタイル、聖書、外部プレイヤー、バックアップ、アカウント、旧メディア。               | [セクションを開く](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#6-configura%C3%A7%C3%B5es--deixe-a-tela-da-igreja-do-seu-jeito) |
+| リモコン操作とステージ | ペアリング、リモートコマンド、テレビ用レシーバー。                                         | [セクションを開く](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#7-controle-remoto-e-palco)                                      |
+| 役立つ機能             | ズーム、`.slja` ファイル、オーディオの切り替え、カバー画像、マーク、ショートカット。       | [セクションを開く](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#recursos-que-passam-despercebidos-e-ajudam-muito)               |
+| よくある問題           | カタログ、プレイヤー、映写、起動、ズーム、ダウンロード。                                   | [セクションを開く](https://github.com/Piano-Louvor-JA/site/blob/main/content/user-manual/manual-usuario.md#problemas-comuns)                                               |
 
 ## はじめにのガイドはどこで見られますか?
 
@@ -59,35 +59,35 @@ PIANO を初めてプログラムで使用する場合は、このガイドか�
 
 ### インストールと準備
 
-| ページ                                                | 用途                                                                     |
-| ----------------------------------------------------- | ------------------------------------------------------------------------ |
-| [PIANO での初めての礼拝](/docs/getting-started)       | 準備から映写までの完全な手順。                                           |
-| [よくある質問](/docs/faq)                             | アクセス、インターネット、デバイス、バックアップ、更新に関する疑問。     |
-| [よくある問題](/docs/troubleshooting)                 | うまく動作しないときのチェックリストと解決策。                           |
+| ページ                                          | 用途                                                                 |
+| ----------------------------------------------- | -------------------------------------------------------------------- |
+| [PIANO での初めての礼拝](/docs/getting-started) | 準備から映写までの完全な手順。                                       |
+| [よくある質問](/docs/faq)                       | アクセス、インターネット、デバイス、バックアップ、更新に関する疑問。 |
+| [よくある問題](/docs/troubleshooting)           | うまく動作しないときのチェックリストと解決策。                       |
 
 ### 礼拝での使用
 
-| ページ                                                | 用途                                                       |
-| ----------------------------------------------------- | ---------------------------------------------------------- |
-| [PIANO での初めての礼拝](/docs/getting-started)       | 賛美歌の検索、ダウンロード、礼拝式次第、聖書、映写。       |
-| [キーボードショートカット](/docs/shortcuts)           | プログラム中のプレイヤー、検索、映写の操作。               |
-| [よくある質問](/docs/faq)                             | オフライン利用、礼拝式次第、オーディオ、ローカルデータ。   |
+| ページ                                          | 用途                                                     |
+| ----------------------------------------------- | -------------------------------------------------------- |
+| [PIANO での初めての礼拝](/docs/getting-started) | 賛美歌の検索、ダウンロード、礼拝式次第、聖書、映写。     |
+| [キーボードショートカット](/docs/shortcuts)     | プログラム中のプレイヤー、検索、映写の操作。             |
+| [よくある質問](/docs/faq)                       | オフライン利用、礼拝式次第、オーディオ、ローカルデータ。 |
 
 ### テレビ、映写、操作
 
-| ページ                                                                  | 用途                                                                             |
-| ----------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| [ステージモードと複数デバイス](/docs/palco-multi-device)               | スマホ/パソコンからの操作、テレビ・プロジェクター・ステージでの表示。           |
-| [よくある問題](/docs/troubleshooting)                                   | 映写が表示されない、セカンドスクリーン、ステージの接続に関する問題。           |
-| [キーボードショートカット](/docs/shortcuts)                             | 映写の切り替えや終了をより素早く行う方法。                                       |
+| ページ                                                   | 用途                                                                  |
+| -------------------------------------------------------- | --------------------------------------------------------------------- |
+| [ステージモードと複数デバイス](/docs/palco-multi-device) | スマホ/パソコンからの操作、テレビ・プロジェクター・ステージでの表示。 |
+| [よくある問題](/docs/troubleshooting)                    | 映写が表示されない、セカンドスクリーン、ステージの接続に関する問題。  |
+| [キーボードショートカット](/docs/shortcuts)              | 映写の切り替えや終了をより素早く行う方法。                            |
 
 ### 質問とサポート
 
-| ページ                                      | 用途                                                     |
-| ------------------------------------------- | -------------------------------------------------------- |
-| [よくある質問](/docs/faq)                   | 利用、プライバシー、サポートに関する簡単な回答。         |
-| [よくある問題](/docs/troubleshooting)       | 症状別に整理された解決策。                               |
-| [キーボードショートカット](/docs/shortcuts) | チーム向けのクイックリファレンス。                       |
+| ページ                                      | 用途                                             |
+| ------------------------------------------- | ------------------------------------------------ |
+| [よくある質問](/docs/faq)                   | 利用、プライバシー、サポートに関する簡単な回答。 |
+| [よくある問題](/docs/troubleshooting)       | 症状別に整理された解決策。                       |
+| [キーボードショートカット](/docs/shortcuts) | チーム向けのクイックリファレンス。               |
 
 ## PIANO は端末に何を保存しますか?
 

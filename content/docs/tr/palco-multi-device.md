@@ -17,10 +17,10 @@ Sahne, ibadetin yansıtılmasını ağ üzerinden alan ekrandır. Projektörden 
 
 PIANO iki işlevle çalışır:
 
-| İşlev                          | Yapılan iş                                                                        |
-| ------------------------------ | --------------------------------------------------------------------------------- |
-| Operatör veya uzak kumanda     | İlahileri arar, öğeleri açar, slaytları ilerletir ve yansıtmaları açar veya kapatır. |
-| Sahne, TV veya projektör       | Cemaate yönelik içeriği görüntüler.                                                |
+| İşlev                      | Yapılan iş                                                                           |
+| -------------------------- | ------------------------------------------------------------------------------------ |
+| Operatör veya uzak kumanda | İlahileri arar, öğeleri açar, slaytları ilerletir ve yansıtmaları açar veya kapatır. |
+| Sahne, TV veya projektör   | Cemaate yönelik içeriği görüntüler.                                                  |
 
 Yansıtma ekranı, işlem ekranı olarak kullanılmamalıdır. Bu ekranda yalnızca kilise için seçilen içerik ve görsel stil görünür.
 
@@ -28,13 +28,13 @@ Yansıtma ekranı, işlem ekranı olarak kullanılmamalıdır. Bu ekranda yalnı
 
 TV veya projektör, etkin modülün yansıtmasını alır. Bilgisayar veya telefon, ibadeti yönetmek için gereken düğmeleri ve listeleri saklı tutar.
 
-| İçerik           | TV, projektör veya Sahne                                                          | Kontrol bilgisayarı veya telefonu                             |
-| ---------------- | --------------------------------------------------------------------------------- | ------------------------------------------------------------- |
-| İlahi            | Şarkı sözü, slaytlar, kapak ve yansıtmaya göre bir sonraki dizenin önizlemesi      | Arama, ilahi seçimi, oynatıcı, ses ve slayt ilerletme           |
-| İncil            | Kendi stiliyle seçilmiş ayet                                                       | Sürüm, kitap, bölüm, ayet seçimi ve kontroller                 |
-| Liturji          | Etkin öğenin yansıtılan içeriği                                                    | İbadet sırası, kategoriler, tamamlanan öğeler ve notlar        |
-| Saat ve süre     | Saat, zamanlayıcı veya geri sayım                                                  | Renk, biçim, başlatma, duraklatma, işaretler ve sıfırlama ayarı |
-| Kura/çekiliş     | Sonuç, ses ve animasyon                                                            | İsim, numara veya öğe listesi ve kura komutu                   |
+| İçerik       | TV, projektör veya Sahne                                                      | Kontrol bilgisayarı veya telefonu                               |
+| ------------ | ----------------------------------------------------------------------------- | --------------------------------------------------------------- |
+| İlahi        | Şarkı sözü, slaytlar, kapak ve yansıtmaya göre bir sonraki dizenin önizlemesi | Arama, ilahi seçimi, oynatıcı, ses ve slayt ilerletme           |
+| İncil        | Kendi stiliyle seçilmiş ayet                                                  | Sürüm, kitap, bölüm, ayet seçimi ve kontroller                  |
+| Liturji      | Etkin öğenin yansıtılan içeriği                                               | İbadet sırası, kategoriler, tamamlanan öğeler ve notlar         |
+| Saat ve süre | Saat, zamanlayıcı veya geri sayım                                             | Renk, biçim, başlatma, duraklatma, işaretler ve sıfırlama ayarı |
+| Kura/çekiliş | Sonuç, ses ve animasyon                                                       | İsim, numara veya öğe listesi ve kura komutu                    |
 
 Liturji notları ekibe yöneliktir ve kilise ekranında görünmemelidir.
 

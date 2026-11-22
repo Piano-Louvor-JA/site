@@ -25,14 +25,14 @@ Operatör bilgisayarına bağlı bir klavye kullanın. Önce ilahiyi, litürjiyi
 
 Bir ilahiyi veya sesi takip ederken bu kısayolları kullanın. Bunlar, duraklatmak, ilerlemek veya sesi ayarlamak için yalnızca ekran değiştirmenizi önler.
 
-| Eylem           | Kısayol  | Ne zaman kullanılır                                                                     |
-| --------------- | -------- | ---------------------------------------------------------------------------------------- |
-| Oynat/Duraklat  | `Boşluk` | Prova, giriş veya ibadet sırasında bir ilahinin sesini başlatmak veya duraklatmak için. |
-| Sonraki parça   | `→`      | Program veya test gerektirdiğinde bir sonraki parçaya geçmek için.                      |
-| Önceki parça    | `←`      | Ekip tekrar etmesi veya seçimi düzeltmesi gerektiğinde önceki parçaya dönmek için.      |
-| Sesi artır      | `↑`      | Ses çıkışının doğru olduğunu doğruladıktan sonra oynatıcının sesini yükseltmek için.    |
-| Sesi azalt      | `↓`      | Müziği bölmeden oynatıcının sesini düşürmek için.                                       |
-| Tam ekran modu  | `F`      | Bir konferans veya takip sırasında oynatıcıyı tam ekranda kullanmak için.               |
+| Eylem          | Kısayol  | Ne zaman kullanılır                                                                     |
+| -------------- | -------- | --------------------------------------------------------------------------------------- |
+| Oynat/Duraklat | `Boşluk` | Prova, giriş veya ibadet sırasında bir ilahinin sesini başlatmak veya duraklatmak için. |
+| Sonraki parça  | `→`      | Program veya test gerektirdiğinde bir sonraki parçaya geçmek için.                      |
+| Önceki parça   | `←`      | Ekip tekrar etmesi veya seçimi düzeltmesi gerektiğinde önceki parçaya dönmek için.      |
+| Sesi artır     | `↑`      | Ses çıkışının doğru olduğunu doğruladıktan sonra oynatıcının sesini yükseltmek için.    |
+| Sesi azalt     | `↓`      | Müziği bölmeden oynatıcının sesini düşürmek için.                                       |
+| Tam ekran modu | `F`      | Bir konferans veya takip sırasında oynatıcıyı tam ekranda kullanmak için.               |
 
 Arama alanına yazarken veya not düzenlerken ok tuşlarını kullanmaktan kaçının. Bu durumda kısayollar oynatıcıyı kontrol etmek yerine imleci hareket ettirebilir.
 
@@ -40,10 +40,10 @@ Arama alanına yazarken veya not düzenlerken ok tuşlarını kullanmaktan kaç�
 
 İbadet sırasında projeksiyonu göstermek, sonlandırmak veya kontrol ile projeksiyon arasında hızlıca geçiş yapmak için bu komutları kullanın.
 
-| Eylem                                      | Kısayol      | Ne zaman kullanılır                                                                                          |
-| ------------------------------------------ | ------------ | ------------------------------------------------------------------------------------------------------------- |
-| Projeksiyonu aç/kapat                      | `P`          | Ekranı fonksiyonel yapmak için butonu aramadan mevcut içeriğin projeksiyonunu açmak veya kapatmak için.       |
-| Projeksiyonu sonlandır                     | `ESC`        | Bir ilahi, ayet veya özellik bittiğinde projeksiyonu kapatmak için; uygulama onay ister.                       |
+| Eylem                                      | Kısayol      | Ne zaman kullanılır                                                                                                                  |
+| ------------------------------------------ | ------------ | ------------------------------------------------------------------------------------------------------------------------------------ |
+| Projeksiyonu aç/kapat                      | `P`          | Ekranı fonksiyonel yapmak için butonu aramadan mevcut içeriğin projeksiyonunu açmak veya kapatmak için.                              |
+| Projeksiyonu sonlandır                     | `ESC`        | Bir ilahi, ayet veya özellik bittiğinde projeksiyonu kapatmak için; uygulama onay ister.                                             |
 | Masaüstü uygulamada operatör ↔ projeksiyon | `Ctrl+Alt+P` | Her iki ekranı da kontrol etmeniz gerektiğinde masaüstü uygulamasında operatör penceresi ile projeksiyon arasında geçiş yapmak için. |
 
 `ESC` tuşunu kullanmadan önce kürsüde veya şarkı söyleyen kişileri uyarın. Komut, yanlışlıkla kapanmaları azaltmak için tam olarak bu nedenle projeksiyonu sonlandırır ve onay ister.
@@ -52,8 +52,8 @@ Arama alanına yazarken veya not düzenlerken ok tuşlarını kullanmaktan kaç�
 
 Hızlı arama, litürji ibadetten hemen önce değiştiğinde Adventist İlahi Kitabı'ndan bir ilahiyi, kutsal bir derlemeyi veya başka bir içeriği bulmak için yararlıdır.
 
-| Eylem       | Kısayol  | Ne zaman kullanılır                                                                       |
-| ----------- | -------- | ------------------------------------------------------------------------------------------ |
+| Eylem       | Kısayol  | Ne zaman kullanılır                                                                                    |
+| ----------- | -------- | ------------------------------------------------------------------------------------------------------ |
 | Hızlı arama | `Ctrl+K` | Menülerde gezinmeden aramayı açıp ilahi numarasını, başlığını veya sözlerinin bir kısmını yazmak için. |
 
 1. `Ctrl+K` tuşuna basın.
