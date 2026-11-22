@@ -48,6 +48,8 @@ vi.stubGlobal('useI18n', () => ({
       { code: 'ko', iso: 'ko', name: '한국어' },
       { code: 'zh', iso: 'zh-Hans', name: '简体中文' },
       { code: 'tr', iso: 'tr', name: 'Türkçe' },
+      { code: 'ar', iso: 'ar', name: 'العربية', dir: 'rtl' },
+      { code: 'hi', iso: 'hi', name: 'हिन्दी', dir: 'ltr' },
     ],
   },
   setLocale: mockSetLocale,
