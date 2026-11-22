@@ -83,7 +83,7 @@ describe('useAppHead', () => {
     useAppHead()
     const arg = useHeadMock.mock.calls[0][0]
     const alternates = arg.link.filter((l: any) => l.rel === 'alternate' && l.hreflang)
-    expect(alternates.length).toBe(7)
+    expect(alternates.length).toBe(11)
     const hreflangs = alternates.map((a: any) => a.hreflang)
     expect(hreflangs).toContain('pt-BR')
     expect(hreflangs).toContain('en')
@@ -91,6 +91,10 @@ describe('useAppHead', () => {
     expect(hreflangs).toContain('ru')
     expect(hreflangs).toContain('uk')
     expect(hreflangs).toContain('fr')
+    expect(hreflangs).toContain('ja')
+    expect(hreflangs).toContain('ko')
+    expect(hreflangs).toContain('zh')
+    expect(hreflangs).toContain('tr')
     expect(hreflangs).toContain('x-default')
   })
 
