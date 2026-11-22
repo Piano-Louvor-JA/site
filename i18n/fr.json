@@ -414,7 +414,11 @@
         ]
       },
       "modules": {
-        "media": ["Lecteur avec 3 modes", "Recueils de cantiques et albums", "Mode accompagnement"],
+        "media": [
+          "Lecteur avec 3 modes",
+          "Recueils de cantiques et albums",
+          "Mode accompagnement"
+        ],
         "hymnal": [
           "Recherche rapide par numéro ou titre",
           "Lecture en séquence",
@@ -425,16 +429,36 @@
           "Glisser-déposer dans la playlist",
           "Mode accompagnement avec paroles"
         ],
-        "liturgy": ["13 types d'éléments", "Glisser-déposer", "Chronomètre par élément"],
-        "bible": ["Versions multiples", "Recherche rapide", "Projection directe"],
-        "projection": ["Sortie indépendante", "Multi-écrans", "Contrôle total"],
+        "liturgy": [
+          "13 types d'éléments",
+          "Glisser-déposer",
+          "Chronomètre par élément"
+        ],
+        "bible": [
+          "Versions multiples",
+          "Recherche rapide",
+          "Projection directe"
+        ],
+        "projection": [
+          "Sortie indépendante",
+          "Multi-écrans",
+          "Contrôle total"
+        ],
         "streaming": [
           "CSS personnalisé pour les paroles",
           "Intégration avec OBS et vMix",
           "Sortie vers YouTube et Facebook"
         ],
-        "tools": ["Horloge et chronomètre", "Minuteur à rebours", "Tirage au sort"],
-        "settings": ["Apparence", "Projection", "Multi-écrans"]
+        "tools": [
+          "Horloge et chronomètre",
+          "Minuteur à rebours",
+          "Tirage au sort"
+        ],
+        "settings": [
+          "Apparence",
+          "Projection",
+          "Multi-écrans"
+        ]
       }
     },
     "faq": {
@@ -575,7 +599,9 @@
       },
       "cookies": {
         "title": "8. Cookies",
-        "body": ["Nous n'utilisons pas de cookies tiers, d'analyse ou de publicité."],
+        "body": [
+          "Nous n'utilisons pas de cookies tiers, d'analyse ou de publicité."
+        ],
         "table": {
           "header": {
             "cookie": "Cookie",
@@ -844,7 +870,9 @@
         "conteudo": "Contenu",
         "curador": "Curateur",
         "staff": "Équipe"
-      }
+      },
+      "title": "Communauté",
+      "tabsAriaLabel": "Onglets du panneau de communauté"
     }
   },
   "contributors": {

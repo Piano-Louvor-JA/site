@@ -11,7 +11,8 @@
     middleware: 'auth',
   })
 
-  useHead({ title: 'Comunidade · Piano Louvor JA' })
+  const { t } = useI18n()
+  useHead({ title: () => `${t('admin.comunidade.title')} · Piano Louvor JA` })
 
   type HubTab = 'pendentes' | 'membros' | 'equipe'
   const TABS: HubTab[] = ['pendentes', 'membros', 'equipe']
@@ -36,23 +37,26 @@
     await router.push({ path: route.path, query: { ...route.query, tab } })
   }
 
-  const tabs = [
-    { value: 'pendentes' as const, label: 'Pendentes' },
-    { value: 'membros' as const, label: 'Membros' },
-    { value: 'equipe' as const, label: 'Equipe' },
-  ]
+  const tabs = computed(() => [
+    { value: 'pendentes' as const, label: t('admin.comunidade.tab') },
+    { value: 'membros' as const, label: t('admin.comunidade.tabMembros') },
+    { value: 'equipe' as const, label: t('admin.comunidade.tabEquipe') },
+  ])
 </script>
 
 <template>
   <div class="admin-comunidade">
     <header class="admin-comunidade__header">
-      <h1>Comunidade</h1>
+      <h1>{{ $t('admin.comunidade.title') }}</h1>
       <p class="admin-comunidade__sub">
-        Moderação de pendentes, gestão de membros e equipe — em um só painel.
+        {{ $t('admin.comunidade.subtitulo') }}
       </p>
     </header>
 
-    <nav class="admin-comunidade__tabs" aria-label="Abas do painel de comunidade">
+    <nav
+      class="admin-comunidade__tabs"
+      :aria-label="$t('admin.comunidade.tabsAriaLabel')"
+    >
       <button
         v-for="t in tabs"
         :key="t.value"
