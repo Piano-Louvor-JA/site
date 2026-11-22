@@ -2,7 +2,7 @@
   import type { Collections, PageCollectionItemBase } from '@nuxt/content'
   // auto-import do módulo, exposto via virtual #imports (eslint-safe)
   import { queryCollection } from '#imports'
-  import { docDirFor } from '~/utils/docs-locale'
+  import { docDirFor, docLinkFor } from '~/utils/docs-locale'
 
   const route = useRoute()
   const { locale, t } = useI18n()
@@ -234,7 +234,7 @@
             :class="{
               'doc-sidebar__link--active': item.stem.endsWith(slugPath.replace(/^docs\//, '')),
             }"
-            :to="`/docs/${item.stem.replace(/^.*docs\/pt-BR\/?/, '')}`"
+            :to="docLinkFor(item.stem, usedDir)"
           >
             <i :class="['ti', platformIcons[item.platform ?? 'web'] ?? 'ti-file-text']" />
             <span>{{ item.title }}</span>

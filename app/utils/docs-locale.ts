@@ -31,3 +31,13 @@ export function docDirFor(
 export function docCollectionFor(locale: string): string {
   return `docs_${docDirFor(locale).replace('-', '')}`
 }
+
+/**
+ * Onda 3 P2 — link de navegação do sidebar a partir do stem da coleção.
+ * Corrige regressão: regex fixa em docs/pt-BR/ gerava /docs/docs/<locale>/...
+ * quando o conteúdo vinha da coleção do locale (stem docs/es/faq).
+ */
+export function docLinkFor(stem: string, locale: string): string {
+  const dir = docDirFor(locale)
+  return `/docs/${stem.replace(new RegExp(`^.*docs/${dir}/?`), '')}`
+}
