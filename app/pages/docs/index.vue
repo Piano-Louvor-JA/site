@@ -1,6 +1,10 @@
 <script setup lang="ts">
   const { t } = useI18n()
   const { raw } = useLocaleMessages()
+  const localePath = useLocalePath()
+
+  // Onda 3 routing: prefixa /xx conforme locale — em /es/docs os cards linkam
+  // /es/docs/*, nunca a rota pt-BR (sem prefixo).
 
   // Module sections — maps to docs.sections.* i18n keys
   const moduleSections = [
@@ -292,7 +296,7 @@
               v-for="guide in guideCards"
               :key="guide.to"
               class="doc-guide-card"
-              :to="guide.to"
+              :to="localePath(guide.to)"
               :data-testid="`docs-guide-${guide.testid}`"
             >
               <i :class="['ti', guide.icon]" />

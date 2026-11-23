@@ -361,6 +361,14 @@
           {
             "action": "Cerrar ventana/cancelar",
             "shortcut": "Esc"
+          },
+          {
+            "action": "Cerrar la proyección",
+            "shortcut": "ESC"
+          },
+          {
+            "action": "Alternar operador ↔ proyección (aplicación de escritorio)",
+            "shortcut": "Ctrl+Alt+P"
           }
         ]
       },
