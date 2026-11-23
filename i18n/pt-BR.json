@@ -15,6 +15,7 @@
     "download": "Baixar",
     "releases": "Versões",
     "testers": "Testadores",
+    "comunidade": "Comunidade",
     "toggleTheme": "Alternar tema claro/escuro",
     "institucional": "Institucional"
   },
@@ -1151,6 +1152,21 @@
         "share": "Compartilhar com sua comunidade"
       },
       "button": "Começar a contribuir"
+    }
+  },
+  "comunidade": {
+    "eyebrow": "Comunidade",
+    "title": "O corpo vivo do projeto",
+    "subtitle": "Devs, testadores, produtores de conteúdo e curadores aprovados — quem constrói e sustenta o PIANO LouvorJA, atualizado direto da fonte.",
+    "error": "Não foi possível carregar a comunidade agora. Tente novamente em instantes.",
+    "avatarAlt": "Avatar de {name}",
+    "profile": "Ver perfil no GitHub",
+    "roles": {
+      "staff": "Equipe",
+      "dev": "Dev",
+      "tester": "Testador",
+      "conteudo": "Conteúdo",
+      "curador": "Curador"
     }
   },
   "community": {

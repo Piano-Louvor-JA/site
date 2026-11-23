@@ -16,6 +16,7 @@
     "releases": "릴리스",
     "testers": "테스터",
     "toggleTheme": "라이트/다크 테마 전환",
+    "comunidade": "커뮤니티",
     "institucional": "교회 안내"
   },
   "hero": {
@@ -1286,6 +1287,21 @@
     "downloadButton": "Google Drive에서 미디어 열기",
     "unavailable": "미디어 링크는 곧 게시됩니다.",
     "footerLink": "미디어"
+  },
+  "comunidade": {
+    "eyebrow": "커뮤니티",
+    "title": "프로젝트를 함께 만드는 사람들",
+    "subtitle": "승인된 개발자, 테스터, 콘텐츠 제작자와 큐레이터입니다. PIANO LouvorJA를 만들고 지탱하는 사람들의 정보를 원본에서 직접 가져옵니다.",
+    "error": "지금은 커뮤니티를 불러올 수 없습니다. 잠시 후 다시 시도해 주세요.",
+    "avatarAlt": "{name}의 아바타",
+    "profile": "GitHub 프로필 보기",
+    "roles": {
+      "staff": "팀",
+      "dev": "개발자",
+      "tester": "테스터",
+      "conteudo": "콘텐츠",
+      "curador": "큐레이터"
+    }
   },
   "institucional": {
     "meta": {

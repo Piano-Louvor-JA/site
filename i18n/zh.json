@@ -16,6 +16,7 @@
     "releases": "版本发布",
     "testers": "测试者",
     "toggleTheme": "切换浅色/深色主题",
+    "comunidade": "社区",
     "institucional": "教会介绍"
   },
   "hero": {
@@ -1272,6 +1273,21 @@
     "downloadButton": "在 Google Drive 上打开媒体",
     "unavailable": "媒体链接即将发布。",
     "footerLink": "媒体"
+  },
+  "comunidade": {
+    "eyebrow": "社区",
+    "title": "共同建设项目的人们",
+    "subtitle": "已批准的开发者、测试者、内容制作者和策展人——共同建设和支持 PIANO LouvorJA 的人们，信息直接从源头更新。",
+    "error": "暂时无法加载社区。请稍后重试。",
+    "avatarAlt": "{name} 的头像",
+    "profile": "查看 GitHub 个人资料",
+    "roles": {
+      "staff": "团队",
+      "dev": "开发者",
+      "tester": "测试者",
+      "conteudo": "内容",
+      "curador": "策展人"
+    }
   },
   "institucional": {
     "meta": {

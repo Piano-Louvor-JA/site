@@ -74,8 +74,8 @@ describe('navLinks', () => {
 })
 
 describe('secondaryNavLinks', () => {
-  it('has exactly 5 links', () => {
-    expect(secondaryNavLinks.length).toBe(5)
+  it('has exactly 6 links', () => {
+    expect(secondaryNavLinks.length).toBe(6)
   })
 
   it('every link has i18nKey starting with nav.', () => {

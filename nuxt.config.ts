@@ -75,6 +75,7 @@ export default defineNuxtConfig({
           '/download',
           '/releases',
           '/docs',
+          '/comunidade',
           '/contact',
           '/privacy',
           '/terms',

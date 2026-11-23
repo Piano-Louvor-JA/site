@@ -16,6 +16,7 @@
     "releases": "Sürümler",
     "testers": "Testçiler",
     "toggleTheme": "Açık/koyu tema değiştir",
+    "comunidade": "Topluluk",
     "institucional": "Kiliseler için"
   },
   "hero": {
@@ -1298,6 +1299,21 @@
     "downloadButton": "Medyayı Google Drive'da aç",
     "unavailable": "Medya bağlantısı yakında.",
     "footerLink": "Medya"
+  },
+  "comunidade": {
+    "eyebrow": "Topluluk",
+    "title": "Projeye hayat veren insanlar",
+    "subtitle": "Onaylı geliştiriciler, test uzmanları, içerik üreticileri ve küratörler: PIANO LouvorJA’yı geliştiren ve yaşatan insanların bilgileri doğrudan kaynaktan güncellenir.",
+    "error": "Topluluk şu anda yüklenemedi. Lütfen biraz sonra yeniden deneyin.",
+    "avatarAlt": "{name} adlı kişinin avatarı",
+    "profile": "GitHub profilini aç",
+    "roles": {
+      "staff": "Ekip",
+      "dev": "Geliştirici",
+      "tester": "Test uzmanı",
+      "conteudo": "İçerik",
+      "curador": "Küratör"
+    }
   },
   "institucional": {
     "meta": {
