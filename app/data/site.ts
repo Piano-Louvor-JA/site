@@ -26,6 +26,7 @@ export const navLinks: NavLink[] = [
   { i18nKey: 'nav.download', href: '/download' },
   { i18nKey: 'nav.releases', href: '/releases' },
   { i18nKey: 'nav.docs', href: '/docs' },
+  { i18nKey: 'nav.institucional', href: '/institucional' },
 ]
 
 /** Links secundários — exibidos no footer, não no header (evita overflow) */

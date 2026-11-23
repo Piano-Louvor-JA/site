@@ -16,7 +16,8 @@
     "releases": "릴리스",
     "testers": "테스터",
     "toggleTheme": "라이트/다크 테마 전환",
-    "comunidade": "커뮤니티"
+    "comunidade": "커뮤니티",
+    "institucional": "교회 안내"
   },
   "hero": {
     "badge": "신규: 웹 앱(PWA) 출시",
@@ -1267,5 +1268,58 @@
       "conteudo": "콘텐츠",
       "curador": "큐레이터"
     }
+  },
+  "institucional": {
+    "meta": {
+      "title": "PIANO LouvorJA — 교회 지도자를 위한 안내",
+      "description": "교회를 위한 무료 도구입니다. 동기화된 가사 투사, 반주와 보컬 음원, 도입 자료를 확인하세요."
+    },
+    "title": "여러분의 교회를 위한 PIANO LouvorJA",
+    "lede": "자원봉사자들이 만드는 무료 예배 지원 도구입니다. 교회 컴퓨터에서 동기화된 가사, 반주와 보컬 음원을 사용할 수 있습니다.",
+    "s1": {
+      "title": "PIANO 소개",
+      "body": "PIANO LouvorJA는 LouvorJA를 바탕으로 자원봉사자들이 만드는 무료 예배 지원 앱입니다. 가사 투사, 반주와 보컬 음원을 제공합니다. 악보를 연주하는 앱은 아닙니다. Piano는 프로젝트의 코드명입니다."
+    },
+    "s2": {
+      "title": "교회에서 사용하는 방법",
+      "body": "예배당 컴퓨터의 브라우저나 데스크톱 앱에서 실행합니다. 다운로드 페이지에서 플랫폼을 선택하고 문서의 안내를 따르세요. 전문 지식 없이도 설치할 수 있습니다."
+    },
+    "s3": {
+      "title": "지역 교회에 소개하기",
+      "body": "장로와 목회자에게 나눌 수 있는 인쇄용 소개 자료를 준비했습니다. 교회 회의, 주보와 지역 소통 모임에서 공유하여 다른 교회에도 알려 주세요."
+    },
+    "s4": {
+      "title": "기관 문의",
+      "body": "협력, 기관 관련 질문과 도입 지원은 문의 페이지 또는 app{'@'}pianolouvorja.com.br로 연락해 주세요."
+    },
+    "cta": {
+      "press": "소개 자료 보기"
+    }
+  },
+  "press": {
+    "meta": {
+      "title": "소개 자료 — PIANO LouvorJA",
+      "description": "PIANO LouvorJA의 소개, 주요 기능, 공식 링크와 연락처를 담은 인쇄용 자료입니다."
+    },
+    "title": "PIANO LouvorJA 소개 자료",
+    "lede": "장로와 목회자에게 인쇄하여 나눌 수 있는 자료입니다.",
+    "about": "PIANO LouvorJA는 LouvorJA를 바탕으로 자원봉사자들이 만드는 무료 예배 지원 앱입니다. 가사 투사, 반주와 보컬 음원을 제공합니다. 악보를 연주하는 앱은 아닙니다. Piano는 프로젝트의 코드명입니다.",
+    "keyPoints": [
+      "예배 중 투사할 수 있는 찬송가와 노래의 동기화된 가사",
+      "반주와 보컬 음원으로 음악 지원",
+      "모든 교회가 이용할 수 있는 무료 자원봉사 프로젝트"
+    ],
+    "where": {
+      "title": "공식 링크",
+      "items": [
+        "공식 사이트: https://pianolouvorja.com.br",
+        "앱 다운로드: https://pianolouvorja.com.br/download",
+        "문서: https://pianolouvorja.com.br/docs",
+        "문의: app{'@'}pianolouvorja.com.br"
+      ]
+    },
+    "contact": "기관 문의: app{'@'}pianolouvorja.com.br",
+    "printCta": "인쇄 / PDF로 저장",
+    "footer": "PIANO LouvorJA · https://pianolouvorja.com.br"
   }
 }

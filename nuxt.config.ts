@@ -79,6 +79,8 @@ export default defineNuxtConfig({
           '/contact',
           '/privacy',
           '/terms',
+          '/institucional',
+          '/institucional/press',
         ].flatMap((route) => [
           route,
           ...['/en', '/es', '/ru', '/uk', '/fr', '/ja', '/ko', '/zh', '/tr', '/ar', '/hi'].map(
@@ -183,6 +185,8 @@ export default defineNuxtConfig({
           ['/releases', 'weekly', '0.8'],
           ['/docs', 'monthly', '0.7'],
           ['/contact', 'yearly', '0.6'],
+          ['/institucional', 'monthly', '0.6'],
+          ['/institucional/press', 'monthly', '0.5'],
           ['/privacy', 'yearly', '0.3'],
           ['/terms', 'yearly', '0.3'],
         ] as const

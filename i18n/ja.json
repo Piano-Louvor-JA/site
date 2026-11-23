@@ -16,7 +16,8 @@
     "releases": "リリース",
     "testers": "テスター",
     "toggleTheme": "ライト/ダークテーマの切り替え",
-    "comunidade": "コミュニティ"
+    "comunidade": "コミュニティ",
+    "institucional": "教会向け案内"
   },
   "hero": {
     "badge": "新着：ウェブアプリ（PWA）公開",
@@ -1269,5 +1270,58 @@
       "conteudo": "コンテンツ",
       "curador": "キュレーター"
     }
+  },
+  "institucional": {
+    "meta": {
+      "title": "PIANO LouvorJA — 教会のリーダーの皆様へ",
+      "description": "教会向けの無料ツール。投影用の同期歌詞、伴奏、歌入り音源と導入資料をご紹介します。"
+    },
+    "title": "あなたの教会のための PIANO LouvorJA",
+    "lede": "有志が開発する無料の礼拝支援ツールです。教会のパソコンで同期歌詞、伴奏、歌入り音源を利用できます。",
+    "s1": {
+      "title": "PIANO とは",
+      "body": "PIANO LouvorJA は LouvorJA を基に有志が開発する無料の礼拝支援アプリです。投影用の同期歌詞、伴奏、歌入り音源を提供します。楽譜を演奏するアプリではありません。「Piano」はプロジェクトのコードネームです。"
+    },
+    "s2": {
+      "title": "教会での使い方",
+      "body": "会堂のパソコンで、ブラウザーまたはデスクトップアプリから使えます。ダウンロードページで環境を選び、ドキュメントの手順に従ってください。専門知識は必要ありません。"
+    },
+    "s3": {
+      "title": "地域の教会に紹介する",
+      "body": "長老や牧師に配布できる印刷用の紹介資料を用意しました。役員会、週報、地域の連絡グループで紹介し、ほかの教会にもお知らせください。"
+    },
+    "s4": {
+      "title": "団体向けのお問い合わせ",
+      "body": "連携、団体からのご質問、導入支援については、お問い合わせページまたは app{'@'}pianolouvorja.com.br にご連絡ください。"
+    },
+    "cta": {
+      "press": "紹介資料を見る"
+    }
+  },
+  "press": {
+    "meta": {
+      "title": "紹介資料 — PIANO LouvorJA",
+      "description": "PIANO LouvorJA の概要、主な特長、公式リンク、お問い合わせ先をまとめた印刷用資料です。"
+    },
+    "title": "PIANO LouvorJA 紹介資料",
+    "lede": "長老や牧師への配布用に印刷できる資料です。",
+    "about": "PIANO LouvorJA は LouvorJA を基に有志が開発する無料の礼拝支援アプリです。投影用の同期歌詞、伴奏、歌入り音源を提供します。楽譜を演奏するアプリではありません。「Piano」はプロジェクトのコードネームです。",
+    "keyPoints": [
+      "礼拝で投影できる賛美歌と歌の同期歌詞",
+      "伴奏と歌入り音源で音楽を支援",
+      "どの教会でも利用できる無料の有志プロジェクト"
+    ],
+    "where": {
+      "title": "公式リンク",
+      "items": [
+        "公式サイト: https://pianolouvorja.com.br",
+        "ダウンロード: https://pianolouvorja.com.br/download",
+        "ドキュメント: https://pianolouvorja.com.br/docs",
+        "お問い合わせ: app{'@'}pianolouvorja.com.br"
+      ]
+    },
+    "contact": "団体向けのお問い合わせ: app{'@'}pianolouvorja.com.br",
+    "printCta": "印刷 / PDF に保存",
+    "footer": "PIANO LouvorJA · https://pianolouvorja.com.br"
   }
 }

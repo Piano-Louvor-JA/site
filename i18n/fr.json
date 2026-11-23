@@ -12,7 +12,8 @@
     "releases": "Versions",
     "testers": "Testeurs",
     "comunidade": "Communauté",
-    "toggleTheme": "Basculer le thème clair/sombre"
+    "toggleTheme": "Basculer le thème clair/sombre",
+    "institucional": "Dirigeants"
   },
   "meta": {
     "title": "PIANO LouvorJA — Gestionnaire de culte web",
@@ -1279,5 +1280,58 @@
       },
       "button": "Commencer à contribuer"
     }
+  },
+  "institucional": {
+    "meta": {
+      "title": "PIANO LouvorJA — Pour les dirigeants d'église",
+      "description": "Découvrez PIANO LouvorJA : paroles synchronisées pour la projection, playback et versions chantées pour le culte. Matériel institutionnel et de partage pour les dirigeants d'église."
+    },
+    "title": "PIANO LouvorJA pour votre église",
+    "lede": "Un outil gratuit, conçu par des bénévoles, pour le culte : paroles de cantiques synchronisées pour la projection, playback et versions chantées, directement dans le navigateur de l'ordinateur de l'église.",
+    "s1": {
+      "title": "Qu'est-ce que PIANO",
+      "body": "PIANO LouvorJA est un fork gratuit et bénévole du projet LouvorJA, dédié au culte : paroles de cantiques et chants synchronisées pour la projection, playback et versions chantées. À noter : l'application ne joue pas de partitions — « Piano » est simplement le nom de code du projet."
+    },
+    "s2": {
+      "title": "Comment l'utiliser à l'église",
+      "body": "Il fonctionne sur l'ordinateur du temple, dans le navigateur (Web App) ou dans l'application de bureau. L'installation ne prend que quelques minutes et ne demande aucune connaissance technique : rendez-vous sur la page de téléchargement, choisissez votre plateforme et suivez le guide pas à pas de la documentation."
+    },
+    "s3": {
+      "title": "Comment le partager dans votre champ",
+      "body": "Nous avons préparé un press kit prêt à imprimer et à partager avec les anciens et les pasteurs locaux. Aidez d'autres congrégations à découvrir l'outil : partagez ce matériel lors des réunions d'officiers, dans les bulletins et les groupes de communication du champ."
+    },
+    "s4": {
+      "title": "Contact institutionnel",
+      "body": "Pour tout partenariat, question institutionnelle ou accompagnement dans l'adoption de l'outil par votre champ, contactez l'équipe à app{'@'}pianolouvorja.com.br ou via la page de contact."
+    },
+    "cta": {
+      "press": "Voir le press kit"
+    }
+  },
+  "press": {
+    "meta": {
+      "title": "Press kit — PIANO LouvorJA",
+      "description": "Matériel de partage de PIANO LouvorJA, prêt à imprimer et à partager avec les anciens et les pasteurs locaux : présentation, message clé, où le trouver et contact institutionnel."
+    },
+    "title": "Press kit de PIANO LouvorJA",
+    "lede": "Matériel prêt à imprimer, à partager avec les anciens et les pasteurs locaux.",
+    "about": "PIANO LouvorJA est un fork gratuit et bénévole du projet LouvorJA, dédié au culte : paroles de cantiques et chants synchronisées pour la projection, playback et versions chantées. L'application ne joue pas de partitions — « Piano » est simplement le nom de code du projet.",
+    "keyPoints": [
+      "Paroles de cantiques et chants synchronisées pour la projection pendant le culte",
+      "Playback et versions chantées pour l'accompagnement musical",
+      "Un projet bénévole et gratuit, accessible à toutes les congrégations"
+    ],
+    "where": {
+      "title": "Où le trouver",
+      "items": [
+        "Site officiel : https://pianolouvorja.com.br",
+        "Téléchargement de l'app : https://pianolouvorja.com.br/download",
+        "Documentation : https://pianolouvorja.com.br/docs",
+        "Contact : app{'@'}pianolouvorja.com.br"
+      ]
+    },
+    "contact": "Contact institutionnel : app{'@'}pianolouvorja.com.br",
+    "printCta": "Imprimer / enregistrer en PDF",
+    "footer": "PIANO LouvorJA · https://pianolouvorja.com.br"
   }
 }
