@@ -109,9 +109,9 @@ export default defineNuxtConfig({
   app: {
     head: {
       link: [
-        { rel: 'icon', type: 'image/svg+xml', href: '/ico/favicon.svg' },
+        { rel: 'icon', href: '/brand/piano-icon.png', type: 'image/png', sizes: '512x512' },
         { rel: 'icon', href: '/favicon.ico', sizes: 'any' },
-        { rel: 'apple-touch-icon', href: '/ico/favicon.png' },
+        { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' },
       ],
       // Anti-FOUC: aplica data-theme antes da hidratação (default dark)
       script: [
