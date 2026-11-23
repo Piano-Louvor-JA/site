@@ -21,6 +21,16 @@ export function useAppHead(options: AppHeadOptions = {}) {
   const { t, locale, locales } = useI18n()
   const defaultLocale = 'pt-BR'
 
+  // Direção do texto do locale ativo (ex.: ar → rtl). Locales sem `dir`
+  // configurado no nuxt.config não emitem o atributo (default do navegador: ltr),
+  // preservando o HTML das rotas já publicadas (B8).
+  const htmlDir = computed(() => {
+    const active = (locales.value as Array<{ code: string; dir?: 'ltr' | 'rtl' | 'auto' }>).find(
+      (l) => l.code === locale.value,
+    )
+    return active?.dir
+  })
+
   const pageTitle = computed(() =>
     options.title ? `${options.title} — ${SITE_NAME}` : t('meta.title'),
   )
@@ -113,6 +123,9 @@ export function useAppHead(options: AppHeadOptions = {}) {
   useHead({
     htmlAttrs: {
       lang: locale,
+      // undefined (locales sem dir no nuxt.config) é omitido pelo unhead na
+      // renderização — HTML das rotas já publicadas fica byte-idêntico (B8)
+      dir: htmlDir,
     },
     title: pageTitle,
     meta: [
