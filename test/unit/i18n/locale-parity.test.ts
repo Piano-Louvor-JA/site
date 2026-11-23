@@ -5,6 +5,10 @@ import es from '../../../i18n/es.json'
 import ru from '../../../i18n/ru.json'
 import uk from '../../../i18n/uk.json'
 import fr from '../../../i18n/fr.json'
+import ja from '../../../i18n/ja.json'
+import ko from '../../../i18n/ko.json'
+import zh from '../../../i18n/zh.json'
+import tr from '../../../i18n/tr.json'
 import rawPtBR from '../../../assets/i18n/pt-BR.json'
 import rawEn from '../../../assets/i18n/en.json'
 import rawEs from '../../../assets/i18n/es.json'
@@ -39,6 +43,10 @@ const RUNTIME_LOCALES: Record<string, Messages> = {
   ru: ru as Messages,
   uk: uk as Messages,
   fr: fr as Messages,
+  ja: ja as Messages,
+  ko: ko as Messages,
+  zh: zh as Messages,
+  tr: tr as Messages,
 }
 
 const RAW_LOCALES: Record<string, Messages> = {
@@ -58,7 +66,7 @@ describe('i18n locale parity contract', () => {
     expect(baseKeys.length).toBeGreaterThanOrEqual(600)
   })
 
-  for (const locale of ['en', 'es', 'ru', 'uk', 'fr']) {
+  for (const locale of ['en', 'es', 'ru', 'uk', 'fr', 'ja', 'ko', 'zh', 'tr']) {
     it(`runtime locale ${locale} has exactly the same keys as pt-BR`, () => {
       const flat = flatten(RUNTIME_LOCALES[locale])
       expect(Object.keys(flat).sort()).toEqual(baseKeys)
@@ -75,14 +83,16 @@ describe('i18n locale parity contract', () => {
     })
   }
 
-  for (const locale of ['ru', 'uk', 'fr']) {
+  for (const locale of ['ru', 'uk', 'fr', 'ja', 'ko', 'zh', 'tr']) {
     it(`runtime locale ${locale} preserves placeholders from pt-BR`, () => {
       const flat = flatten(RUNTIME_LOCALES[locale])
       for (const key of baseKeys) {
         expect(placeholders(flat[key]).sort()).toEqual(placeholders(baseFlat[key]).sort())
       }
     })
+  }
 
+  for (const locale of ['ru', 'uk', 'fr']) {
     it(`raw locale ${locale} preserves placeholders from pt-BR`, () => {
       const flat = flatten(RAW_LOCALES[locale])
       for (const key of rawBaseKeys) {
