@@ -27,6 +27,14 @@ export default defineNuxtConfig({
       { code: 'ko', language: 'ko', name: '한국어', file: 'ko.json' },
       { code: 'zh', language: 'zh-Hans', name: '简体中文', file: 'zh.json' },
       { code: 'tr', language: 'tr', name: 'Türkçe', file: 'tr.json' },
+      {
+        code: 'ar',
+        language: 'ar',
+        name: 'العربية',
+        file: 'ar.json',
+        dir: 'rtl',
+      },
+      { code: 'hi', language: 'hi', name: 'हिन्दी', file: 'hi.json', dir: 'ltr' },
     ],
     defaultLocale: 'pt-BR',
     strategy: 'prefix_except_default',
@@ -74,7 +82,7 @@ export default defineNuxtConfig({
           '/institucional/press',
         ].flatMap((route) => [
           route,
-          ...['/en', '/es', '/ru', '/uk', '/fr', '/ja', '/ko', '/zh', '/tr'].map(
+          ...['/en', '/es', '/ru', '/uk', '/fr', '/ja', '/ko', '/zh', '/tr', '/ar', '/hi'].map(
             (l) => `${l}${route === '/' ? '' : route}`,
           ),
         ]),
@@ -177,7 +185,20 @@ export default defineNuxtConfig({
           ['/privacy', 'yearly', '0.3'],
           ['/terms', 'yearly', '0.3'],
         ] as const
-        const locales = ['', '/en', '/es', '/ru', '/uk', '/fr', '/ja', '/ko', '/zh', '/tr']
+        const locales = [
+          '',
+          '/en',
+          '/es',
+          '/ru',
+          '/uk',
+          '/fr',
+          '/ja',
+          '/ko',
+          '/zh',
+          '/tr',
+          '/ar',
+          '/hi',
+        ]
         const baseUrls = siteRoutes.flatMap(([path, changefreq, priority]) =>
           locales.map((locale) => {
             const loc = `${siteUrl}${locale}${path === '/' ? (locale ? '' : '/') : path}`

@@ -13,7 +13,20 @@ export const ROUTES: Array<{ path: string; changefreq: string; priority: string 
   { path: '/terms', changefreq: 'yearly', priority: '0.3' },
 ]
 
-export const LOCALES = ['', '/en', '/es', '/ru', '/uk', '/fr', '/ja', '/ko', '/zh', '/tr']
+export const LOCALES = [
+  '',
+  '/en',
+  '/es',
+  '/ru',
+  '/uk',
+  '/fr',
+  '/ja',
+  '/ko',
+  '/zh',
+  '/tr',
+  '/ar',
+  '/hi',
+]
 
 /** Sitemap XML completo (rotas × locales + docs). `docPages` vem do índice do build. */
 export function buildSitemap(
