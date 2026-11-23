@@ -53,10 +53,7 @@
       </p>
     </header>
 
-    <nav
-      class="admin-comunidade__tabs"
-      :aria-label="$t('admin.comunidade.tabsAriaLabel')"
-    >
+    <nav class="admin-comunidade__tabs" :aria-label="$t('admin.comunidade.tabsAriaLabel')">
       <button
         v-for="t in tabs"
         :key="t.value"
