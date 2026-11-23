@@ -7,6 +7,8 @@ export const ROUTES: Array<{ path: string; changefreq: string; priority: string 
   { path: '/releases', changefreq: 'weekly', priority: '0.8' },
   { path: '/docs', changefreq: 'monthly', priority: '0.7' },
   { path: '/contact', changefreq: 'yearly', priority: '0.6' },
+  { path: '/institucional', changefreq: 'monthly', priority: '0.6' },
+  { path: '/institucional/press', changefreq: 'monthly', priority: '0.5' },
   { path: '/privacy', changefreq: 'yearly', priority: '0.3' },
   { path: '/terms', changefreq: 'yearly', priority: '0.3' },
 ]

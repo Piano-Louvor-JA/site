@@ -15,7 +15,8 @@
     "download": "İndir",
     "releases": "Sürümler",
     "testers": "Testçiler",
-    "toggleTheme": "Açık/koyu tema değiştir"
+    "toggleTheme": "Açık/koyu tema değiştir",
+    "institucional": "Kiliseler için"
   },
   "hero": {
     "badge": "Yeni: web uygulaması (PWA) yayında",
@@ -1297,5 +1298,58 @@
     "downloadButton": "Medyayı Google Drive'da aç",
     "unavailable": "Medya bağlantısı yakında.",
     "footerLink": "Medya"
+  },
+  "institucional": {
+    "meta": {
+      "title": "PIANO LouvorJA — Kilise önderleri için",
+      "description": "Kiliseler için ücretsiz araç: yansıtma için eşzamanlı sözler, eşlik ve vokalli kayıtlar, tanıtım ve kurulum belgeleri."
+    },
+    "title": "Kiliseniz için PIANO LouvorJA",
+    "lede": "Gönüllülerin geliştirdiği ücretsiz ibadet aracı. Kilise bilgisayarında eşzamanlı ilahi sözleri, eşlik ve vokalli kayıtlar sunar.",
+    "s1": {
+      "title": "PIANO nedir",
+      "body": "PIANO LouvorJA, LouvorJA temelinde gönüllülerce geliştirilen ücretsiz bir ibadet uygulamasıdır. Yansıtma için eşzamanlı ilahi sözleri, eşlik ve vokalli kayıtlar sunar. Uygulama nota çalmaz; Piano yalnızca projenin kod adıdır."
+    },
+    "s2": {
+      "title": "Kilisede nasıl kullanılır",
+      "body": "Kilise bilgisayarında tarayıcıdan veya masaüstü uygulamasından çalışır. İndirme sayfasından platformunuzu seçin ve belgelerdeki adımları izleyin. Teknik uzmanlık gerekmez."
+    },
+    "s3": {
+      "title": "Bölgenizde nasıl tanıtılır",
+      "body": "İhtiyarlar ve pastörlerle paylaşabileceğiniz, yazdırılmaya hazır tanıtım materyali hazırladık. Diğer toplulukların da aracı keşfetmesi için toplantılarda, bültenlerde ve bölgenizdeki iletişim gruplarında paylaşın."
+    },
+    "s4": {
+      "title": "Kurumsal iletişim",
+      "body": "İş birliği, kurumsal sorular ve kullanım desteği için iletişim sayfasından veya app{'@'}pianolouvorja.com.br adresinden ekibe ulaşın."
+    },
+    "cta": {
+      "press": "Tanıtım dosyasını aç"
+    }
+  },
+  "press": {
+    "meta": {
+      "title": "Tanıtım dosyası — PIANO LouvorJA",
+      "description": "PIANO LouvorJA için yazdırılabilir tanıtım materyali: uygulama, temel özellikler, resmi bağlantılar ve iletişim bilgileri."
+    },
+    "title": "PIANO LouvorJA tanıtım dosyası",
+    "lede": "İhtiyarlar ve pastörlerle paylaşmak için yazdırılmaya hazır materyal.",
+    "about": "PIANO LouvorJA, LouvorJA temelinde gönüllülerce geliştirilen ücretsiz bir ibadet uygulamasıdır. Yansıtma için eşzamanlı ilahi sözleri, eşlik ve vokalli kayıtlar sunar. Uygulama nota çalmaz; Piano yalnızca projenin kod adıdır.",
+    "keyPoints": [
+      "İbadette yansıtma için eşzamanlı ilahi ve şarkı sözleri",
+      "Müzik eşliği için eşlik ve vokalli kayıtlar",
+      "Her topluluğun erişebildiği ücretsiz gönüllü projesi"
+    ],
+    "where": {
+      "title": "Resmi bağlantılar",
+      "items": [
+        "Resmi site: https://pianolouvorja.com.br",
+        "Uygulamayı indir: https://pianolouvorja.com.br/download",
+        "Belgeler: https://pianolouvorja.com.br/docs",
+        "İletişim: app{'@'}pianolouvorja.com.br"
+      ]
+    },
+    "contact": "Kurumsal iletişim: app{'@'}pianolouvorja.com.br",
+    "printCta": "Yazdır / PDF olarak kaydet",
+    "footer": "PIANO LouvorJA · https://pianolouvorja.com.br"
   }
 }

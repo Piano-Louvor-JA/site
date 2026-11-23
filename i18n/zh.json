@@ -15,7 +15,8 @@
     "download": "下载",
     "releases": "版本发布",
     "testers": "测试者",
-    "toggleTheme": "切换浅色/深色主题"
+    "toggleTheme": "切换浅色/深色主题",
+    "institucional": "教会介绍"
   },
   "hero": {
     "badge": "新功能：网页应用（PWA）已上线",
@@ -1271,5 +1272,58 @@
     "downloadButton": "在 Google Drive 上打开媒体",
     "unavailable": "媒体链接即将发布。",
     "footerLink": "媒体"
+  },
+  "institucional": {
+    "meta": {
+      "title": "PIANO LouvorJA — 致教会领袖",
+      "description": "免费的教会敬拜辅助工具：同步歌词投影、伴奏和演唱音源，以及教会使用与推广资料。"
+    },
+    "title": "为您的教会提供 PIANO LouvorJA",
+    "lede": "由志愿者开发的免费敬拜辅助工具。可在教会电脑上使用同步歌词投影、伴奏和演唱音源。",
+    "s1": {
+      "title": "什么是 PIANO",
+      "body": "PIANO LouvorJA 是基于 LouvorJA、由志愿者维护的免费敬拜辅助应用，提供同步歌词投影、伴奏和演唱音源。本应用不演奏乐谱；Piano 只是项目代号。"
+    },
+    "s2": {
+      "title": "如何在教会使用",
+      "body": "在教堂电脑的浏览器或桌面应用中运行。请前往下载页面，选择您的平台并按照文档中的步骤操作，无需专业技术知识。"
+    },
+    "s3": {
+      "title": "向本地区教会介绍",
+      "body": "我们准备了可打印并与长老、牧师分享的宣传资料。欢迎在教会会议、周报和地区沟通群中分享，让更多教会了解本工具。"
+    },
+    "s4": {
+      "title": "机构联系",
+      "body": "如需合作、机构咨询或使用支持，请通过联系页面或 app{'@'}pianolouvorja.com.br 联系团队。"
+    },
+    "cta": {
+      "press": "查看宣传资料"
+    }
+  },
+  "press": {
+    "meta": {
+      "title": "宣传资料 — PIANO LouvorJA",
+      "description": "可打印的 PIANO LouvorJA 宣传资料，包括项目介绍、主要功能、官方链接和联系方式。"
+    },
+    "title": "PIANO LouvorJA 宣传资料",
+    "lede": "可打印并与长老、牧师分享的介绍资料。",
+    "about": "PIANO LouvorJA 是基于 LouvorJA、由志愿者维护的免费敬拜辅助应用，提供同步歌词投影、伴奏和演唱音源。本应用不演奏乐谱；Piano 只是项目代号。",
+    "keyPoints": [
+      "敬拜期间可用于投影的赞美诗和歌曲同步歌词",
+      "用于音乐伴奏的伴奏和演唱音源",
+      "任何教会均可使用的免费志愿者项目"
+    ],
+    "where": {
+      "title": "官方链接",
+      "items": [
+        "官方网站: https://pianolouvorja.com.br",
+        "应用下载: https://pianolouvorja.com.br/download",
+        "文档: https://pianolouvorja.com.br/docs",
+        "联系: app{'@'}pianolouvorja.com.br"
+      ]
+    },
+    "contact": "机构联系: app{'@'}pianolouvorja.com.br",
+    "printCta": "打印 / 另存为 PDF",
+    "footer": "PIANO LouvorJA · https://pianolouvorja.com.br"
   }
 }
