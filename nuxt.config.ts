@@ -162,9 +162,13 @@ export default defineNuxtConfig({
         }
         const pages = walk(base)
         if (pages.length === 0) return
-        // Rotas de docs: só pt-BR (default, sem prefixo) — en/es são ciclo futuro
-        // (coleção content só tem pt-BR; prerender de /en/docs/* gera 404 real)
-        const docRoutes = pages.map((p) => `/docs/${p.slug}`)
+        // Onda 3: docs pt-BR sem prefixo + 11 locales explicitamente prerenderizadas.
+        // Mantém rotas SSG 200 mesmo enquanto um locale cai no fallback pt-BR (SPEC AC2/AC4).
+        const docLocales = ['en', 'es', 'ru', 'uk', 'fr', 'ja', 'ko', 'zh', 'tr', 'ar', 'hi']
+        const docRoutes = [
+          ...pages.map((p) => `/docs/${p.slug}`),
+          ...docLocales.flatMap((locale) => pages.map((p) => `/${locale}/docs/${p.slug}`)),
+        ]
         nitro.options.prerender.routes.push(...docRoutes)
         // Índice p/ sitemap.xml ler lastmod (runtime Nitro roda fora do repo root às vezes)
         const idxPath = resolve('./content/docs-index.json')
