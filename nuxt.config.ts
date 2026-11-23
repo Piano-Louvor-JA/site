@@ -23,6 +23,18 @@ export default defineNuxtConfig({
       { code: 'ru', language: 'ru', name: 'Русский', file: 'ru.json' },
       { code: 'uk', language: 'uk', name: 'Українська', file: 'uk.json' },
       { code: 'fr', language: 'fr', name: 'Français', file: 'fr.json' },
+      { code: 'ja', language: 'ja', name: '日本語', file: 'ja.json' },
+      { code: 'ko', language: 'ko', name: '한국어', file: 'ko.json' },
+      { code: 'zh', language: 'zh-Hans', name: '简体中文', file: 'zh.json' },
+      { code: 'tr', language: 'tr', name: 'Türkçe', file: 'tr.json' },
+      {
+        code: 'ar',
+        language: 'ar',
+        name: 'العربية',
+        file: 'ar.json',
+        dir: 'rtl',
+      },
+      { code: 'hi', language: 'hi', name: 'हिन्दी', file: 'hi.json', dir: 'ltr' },
     ],
     defaultLocale: 'pt-BR',
     strategy: 'prefix_except_default',
@@ -61,7 +73,9 @@ export default defineNuxtConfig({
         ...['/', '/download', '/releases', '/docs', '/contact', '/privacy', '/terms'].flatMap(
           (route) => [
             route,
-            ...['/en', '/es', '/ru', '/uk', '/fr'].map((l) => `${l}${route === '/' ? '' : route}`),
+            ...['/en', '/es', '/ru', '/uk', '/fr', '/ja', '/ko', '/zh', '/tr', '/ar', '/hi'].map(
+              (l) => `${l}${route === '/' ? '' : route}`,
+            ),
           ],
         ),
         '/conduta',
@@ -161,7 +175,20 @@ export default defineNuxtConfig({
           ['/privacy', 'yearly', '0.3'],
           ['/terms', 'yearly', '0.3'],
         ] as const
-        const locales = ['', '/en', '/es', '/ru', '/uk', '/fr']
+        const locales = [
+          '',
+          '/en',
+          '/es',
+          '/ru',
+          '/uk',
+          '/fr',
+          '/ja',
+          '/ko',
+          '/zh',
+          '/tr',
+          '/ar',
+          '/hi',
+        ]
         const baseUrls = siteRoutes.flatMap(([path, changefreq, priority]) =>
           locales.map((locale) => {
             const loc = `${siteUrl}${locale}${path === '/' ? (locale ? '' : '/') : path}`
