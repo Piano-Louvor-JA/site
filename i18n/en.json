@@ -15,7 +15,8 @@
     "download": "Download",
     "releases": "Releases",
     "testers": "Testers",
-    "toggleTheme": "Toggle light/dark theme"
+    "toggleTheme": "Toggle light/dark theme",
+    "support": "Support"
   },
   "hero": {
     "badge": "New: Web App (PWA) Available",
@@ -1263,5 +1264,53 @@
     "downloadButton": "Open media on Google Drive",
     "unavailable": "Media links will be published soon.",
     "footerLink": "Media"
+  },
+  "tickets": {
+    "nav": "Support",
+    "sending": "Sending…",
+    "loading": "Loading…",
+    "error": {
+      "api": "API unavailable. Try again."
+    },
+    "intake": {
+      "title": "Support Center",
+      "description": "Open a request or check status by protocol.",
+      "name": "Name",
+      "email": "Email",
+      "subject": "Subject",
+      "message": "Message",
+      "consent": "I agree with the processing of my data for support (LGPD).",
+      "consentRequired": "Consent is required.",
+      "submit": "Send request",
+      "successTitle": "Request registered!",
+      "successHint": "Keep your protocol to check status.",
+      "newRequest": "New request",
+      "statusTitle": "Check status",
+      "statusPlaceholder": "PRC-XXXXXXXX",
+      "statusCheck": "Check",
+      "statusNotFound": "Protocol not found.",
+      "portalLink": "Go to my tickets"
+    },
+    "portal": {
+      "title": "My Tickets",
+      "description": "Track your requests and reply to the team.",
+      "newTicket": "New ticket",
+      "priority": "Priority",
+      "create": "Create ticket",
+      "empty": "No tickets yet.",
+      "reply": "Reply"
+    },
+    "admin": {
+      "title": "Admin — Tickets",
+      "description": "Triage queue and ticket management.",
+      "intakeQueue": "Triage queue",
+      "intakeEmpty": "No pending requests.",
+      "triage": "Triage & convert",
+      "ticketsTitle": "Tickets",
+      "changeStatus": "Change status",
+      "aiAsk": "AI suggestion",
+      "aiNone": "No suggestion (limited AI)",
+      "aiDisabled": "AI disabled for this tenant"
+    }
   }
 }

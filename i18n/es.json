@@ -15,7 +15,8 @@
     "download": "Descargar",
     "releases": "Versiones",
     "testers": "Probadores",
-    "toggleTheme": "Alternar tema claro/oscuro"
+    "toggleTheme": "Alternar tema claro/oscuro",
+    "support": "Soporte"
   },
   "hero": {
     "badge": "Nuevo: Web App (PWA) Disponible",
@@ -1255,5 +1256,53 @@
     "downloadButton": "Abrir medios en Google Drive",
     "unavailable": "Los enlaces de medios se publicarán pronto.",
     "footerLink": "Medios"
+  },
+  "tickets": {
+    "nav": "Soporte",
+    "sending": "Enviando…",
+    "loading": "Cargando…",
+    "error": {
+      "api": "API no disponible. Intente de nuevo."
+    },
+    "intake": {
+      "title": "Centro de Soporte",
+      "description": "Abra una solicitud o consulte el estado por protocolo.",
+      "name": "Nombre",
+      "email": "Correo",
+      "subject": "Asunto",
+      "message": "Mensaje",
+      "consent": "Acepto el tratamiento de mis datos para atención (LGPD).",
+      "consentRequired": "Se requiere aceptar el consentimiento.",
+      "submit": "Enviar solicitud",
+      "successTitle": "¡Solicitud registrada!",
+      "successHint": "Guarde su protocolo para consultar el estado.",
+      "newRequest": "Nueva solicitud",
+      "statusTitle": "Consultar estado",
+      "statusPlaceholder": "PRC-XXXXXXXX",
+      "statusCheck": "Consultar",
+      "statusNotFound": "Protocolo no encontrado.",
+      "portalLink": "Ir a mis tickets"
+    },
+    "portal": {
+      "title": "Mis Tickets",
+      "description": "Siga sus solicitudes y responda al equipo.",
+      "newTicket": "Nuevo ticket",
+      "priority": "Prioridad",
+      "create": "Crear ticket",
+      "empty": "Aún no hay tickets.",
+      "reply": "Responder"
+    },
+    "admin": {
+      "title": "Admin — Tickets",
+      "description": "Cola de triaje y gestión de tickets.",
+      "intakeQueue": "Cola de triaje",
+      "intakeEmpty": "Sin solicitudes pendientes.",
+      "triage": "Triar y convertir",
+      "ticketsTitle": "Tickets",
+      "changeStatus": "Cambiar estado",
+      "aiAsk": "Sugerencia IA",
+      "aiNone": "Sin sugerencia (IA limitada)",
+      "aiDisabled": "IA desactivada para este tenant"
+    }
   }
 }

@@ -11,7 +11,8 @@
     "download": "Télécharger",
     "releases": "Versions",
     "testers": "Testeurs",
-    "toggleTheme": "Basculer le thème clair/sombre"
+    "toggleTheme": "Basculer le thème clair/sombre",
+    "support": "Assistance"
   },
   "meta": {
     "title": "PIANO LouvorJA — Gestionnaire de culte web",
@@ -1262,6 +1263,54 @@
         "share": "Partager avec votre communauté"
       },
       "button": "Commencer à contribuer"
+    }
+  },
+  "tickets": {
+    "nav": "Assistance",
+    "sending": "Envoi…",
+    "loading": "Chargement…",
+    "error": {
+      "api": "API indisponible. Réessayez."
+    },
+    "intake": {
+      "title": "Centre d'assistance",
+      "description": "Ouvrez une demande ou consultez le statut par protocole.",
+      "name": "Nom",
+      "email": "E-mail",
+      "subject": "Sujet",
+      "message": "Message",
+      "consent": "J’accepte le traitement de mes données pour le support (LGPD).",
+      "consentRequired": "Le consentement est requis.",
+      "submit": "Envoyer la demande",
+      "successTitle": "Demande enregistrée !",
+      "successHint": "Conservez votre protocole pour suivre le statut.",
+      "newRequest": "Nouvelle demande",
+      "statusTitle": "Vérifier le statut",
+      "statusPlaceholder": "PRC-XXXXXXXX",
+      "statusCheck": "Vérifier",
+      "statusNotFound": "Protocole introuvable.",
+      "portalLink": "Accéder à mes tickets"
+    },
+    "portal": {
+      "title": "Mes tickets",
+      "description": "Suivez vos demandes et répondez à l’équipe.",
+      "newTicket": "Nouveau ticket",
+      "priority": "Priorité",
+      "create": "Créer un ticket",
+      "empty": "Aucun ticket pour le moment.",
+      "reply": "Répondre"
+    },
+    "admin": {
+      "title": "Admin — Tickets",
+      "description": "File de triage et gestion des tickets.",
+      "intakeQueue": "File de triage",
+      "intakeEmpty": "Aucune demande en attente.",
+      "triage": "Trier et convertir",
+      "ticketsTitle": "Tickets",
+      "changeStatus": "Changer le statut",
+      "aiAsk": "Suggestion IA",
+      "aiNone": "Aucune suggestion (IA limitée)",
+      "aiDisabled": "IA désactivée pour ce tenant"
     }
   }
 }
