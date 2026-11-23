@@ -1,0 +1,1301 @@
+{
+  "meta": {
+    "title": "PIANO LouvorJA — ibadet yönetim aracı",
+    "description": "İbadet yönetimi web platformu: ilahi kitapları, İncil, ibadet programı, çoklu ekran projeksiyon ve daha fazlası. Ücretsiz ve açık kaynak."
+  },
+  "nav": {
+    "features": "Özellikler",
+    "platforms": "Platformlar",
+    "about": "Hakkında",
+    "howItWorks": "Nasıl çalışır",
+    "docs": "Dokümanlar",
+    "contact": "İletişim",
+    "openApp": "Uygulamayı aç",
+    "language": "Dil",
+    "download": "İndir",
+    "releases": "Sürümler",
+    "testers": "Testçiler",
+    "toggleTheme": "Açık/koyu tema değiştir"
+  },
+  "hero": {
+    "badge": "Yeni: web uygulaması (PWA) yayında",
+    "title": "İbadet yönetim aracı",
+    "titleHighlight": "basit",
+    "subtitle": "İlahi kitapları, ibadet programı, İncil ve projeksiyonu tek yerden yönetin. Herhangi bir cihazdan erişin, kurulum gerekmez.",
+    "ctaPrimary": "Uygulamayı aç",
+    "ctaSecondary": "Platformları gör",
+    "meta": {
+      "noInstall": "Kurulum yok",
+      "anyDevice": "Her cihaz",
+      "openSource": "Açık kaynak"
+    },
+    "preview": {
+      "currentHymn": "Şu anki ilahi",
+      "currentHymnTitle": "#15 — Divino Comigo",
+      "active": "Aktif",
+      "next": "Sıradaki",
+      "nextTitle": "Karşılama ve Övgü",
+      "elapsedTime": "Geçen süre"
+    },
+    "titleHighlight2": "ve eksiksiz"
+  },
+  "stats": {
+    "features": "ekosistem özelliği",
+    "free": "Ücretsiz",
+    "installs": "Kurulum",
+    "offline": "Çevrimdışı çalışır"
+  },
+  "platforms": {
+    "eyebrow": "Çoklu platform",
+    "title": "İhtiyacınız olan her yerde",
+    "description": "Maksimum verimlilik için masaüstü uygulamasını, hızlı alternatif olarak tarayıcıyı veya telefonunuzda Android uygulamasını kullanın.",
+    "desktop": {
+      "badge": "Önerilen",
+      "title": "Yerel masaüstü",
+      "subtitle": "Linux, macOS ve Windows",
+      "description": "Tam deneyim: çoklu ekran, bağımsız projeksiyon ve klavye kısayolları.",
+      "feature1": "Çoklu ekran projeksiyonu",
+      "feature2": "Tamamen çevrimdışı mod",
+      "feature3": "Klavye kısayolları",
+      "cta": "Daha fazla bilgi"
+    },
+    "web": {
+      "badge": "Anında erişim",
+      "title": "Web (tarayıcı)",
+      "subtitle": "Herhangi bir PC veya dizüstü bilgisayar",
+      "description": "Doğrudan tarayıcıdan erişin. Hızlı kullanım veya uygulama kurulmamışken alternatif için ideal.",
+      "feature1": "Kurulum gerekmez",
+      "feature2": "Her sistemde çalışır",
+      "feature3": "Otomatik güncelleme",
+      "cta": "Tarayıcıda aç"
+    },
+    "mobile": {
+      "badge": "Yeni",
+      "title": "Mobil",
+      "subtitle": "Android yayında",
+      "description": "Yerel Android uygulaması artık yayında. Dijital sahneyi doğrudan telefonunuzdan kontrol edin.",
+      "feature1": "Yerel Android yayında",
+      "feature2": "Dijital sahne kontrolü",
+      "feature3": "iOS geliştirme aşamasında",
+      "cta": "Uygulamayı indir"
+    }
+  },
+  "notifyModal": {
+    "title": "İlk siz haberdar olun",
+    "subtitle": "E-posta adresinizi girin; mobil uygulama yayına girdiğinde sizi hemen haberdar edelim.",
+    "placeholder": "eposta{'@'}adresiniz.com",
+    "button": "Yayınlanınca beni haberdar et",
+    "loading": "Gönderiliyor...",
+    "success": "Hazır! Yayınlandığında ilk siz haberdar olacaksınız.",
+    "errors": {
+      "invalidEmail": "Geçerli bir e-posta adresi girin.",
+      "alreadySubscribed": "Bu e-posta zaten kayıtlı.",
+      "rateLimited": "Çok fazla deneme. Lütfen daha sonra tekrar deneyin.",
+      "serviceUnavailable": "Servis geçici olarak kullanılamıyor. Lütfen daha sonra tekrar deneyin.",
+      "subscribeFailed": "Abonelik başarısız. Lütfen tekrar deneyin.",
+      "generic": "Bir sorun oluştu. Lütfen tekrar deneyin."
+    }
+  },
+  "features": {
+    "eyebrow": "Özellikler",
+    "title": "İbadet için gereken her şey",
+    "description": "İbadetin her yönünü yöneten eksiksiz, entegre araç takımı.",
+    "items": {
+      "media": {
+        "title": "Medya merkezi",
+        "description": "Üç oynatma moduyla albümleri, ilahi kitaplarını ve derlemeleri yönetin."
+      },
+      "liturgy": {
+        "title": "İbadet programı",
+        "description": "13 öğe türü, sürükle-bırak, kopyalama ve geri sayımla ibadet programı oluşturun."
+      },
+      "bible": {
+        "title": "İncil",
+        "description": "Çoklu çeviri, hızlı arama, favoriler ve doğrudan projeksiyon."
+      },
+      "projection": {
+        "title": "Çoklu ekran projeksiyonu",
+        "description": "Projeksiyon veya yardımcı TV için tam kontrollü bağımsız çıktı."
+      },
+      "tools": {
+        "title": "Araçlar",
+        "description": "Saat, kronometre, zamanlayıcı ve çekiliş ibadete entegre."
+      },
+      "player": {
+        "title": "Gelişmiş oynatıcı",
+        "description": "Normal oynatma, eşlik modu ve senkronize şarkı sözü slaytları."
+      },
+      "settings": {
+        "title": "Ayarlar",
+        "description": "Görünüm, projeksiyon, çoklu ekran ve tamamen özelleştirilebilir tercihler."
+      },
+      "offline": {
+        "title": "Yerel veri",
+        "description": "Masaüstü uygulaması medyayı indirdikten sonra %100 çevrimdışı çalışır. Web sürümü internet bağlantısı gerektirir."
+      }
+    }
+  },
+  "about": {
+    "eyebrow": "Proje hakkında",
+    "title": "Topluluk tarafından, topluluk için",
+    "text1": "{name}, ibadet yönetimini kolaylaştırmayı amaçlayan işbirlikçi bir açık kaynak projesidir.",
+    "text2": "Piano ekibi tarafından geliştirilen platform, topluluk katkılarıyla büyümeye devam ediyor. Ücretsiz, reklamsız ve veri toplamayan.",
+    "forkCredit": "PIANO LouvorJA, LouvorJA projesinin (github.com/louvorja) bir çatalıdır ve 2019'dan beri topluluk tarafından sürdürülmektedir. Bu projeyi mümkün kılan özgün geliştiricilere ve katkıcılarına teşekkür ederiz.",
+    "openSource": "Açık kaynak",
+    "stats": {
+      "free": "Ücretsiz",
+      "installs": "Kurulum",
+      "offline": "PWA çevrimdışı"
+    }
+  },
+  "how": {
+    "eyebrow": "Nasıl çalışır",
+    "title": "Birkaç dakikada başlayın",
+    "description": "İbadetinizi düzenlemek için dört basit adım.",
+    "steps": {
+      "1": {
+        "title": "Uygulamayı açın",
+        "desc": "Tarayıcıdan erişin veya masaüstü sürümünü indirin. Kayıt gerekmez."
+      },
+      "2": {
+        "title": "İlahi kitaplarını içe aktarın",
+        "desc": "Albümleri, ilahi kitaplarını ve derlemeleri medya merkezine ekleyin."
+      },
+      "3": {
+        "title": "İbadet programı oluşturun",
+        "desc": "Zaman takibi olan ibadet programı oluşturmak için öğeleri sürükleyin."
+      },
+      "4": {
+        "title": "Projeksiyon yapın ve yönetin",
+        "desc": "İlahileri, ayetleri ve slaytları göstermek için çoklu ekran projeksiyonu kullanın."
+      }
+    }
+  },
+  "cta": {
+    "title": "Başlamaya hazır mısınız?",
+    "subtitle": "PIANO LouvorJA'yı hemen açın ve ibadetinizi birkaç dakikada düzenleyin. Ücretsiz, kayıt gerektirmez.",
+    "button": "Uygulamayı aç",
+    "meta": {
+      "free": "%100 ücretsiz",
+      "noInstall": "Kurulum yok",
+      "openSource": "Açık kaynak"
+    }
+  },
+  "contact": {
+    "eyebrow": "İletişime geçin",
+    "title": "Bize ulaşın",
+    "description": "Sorunuz, öneriniz veya hata mı buldunuz? Bize yazın, en kısa sürede yanıt veriyoruz.",
+    "form": {
+      "name": "Ad",
+      "namePlaceholder": "Adınız",
+      "email": "E-posta",
+      "emailPlaceholder": "eposta{'@'}adresiniz.com",
+      "subject": "Konu",
+      "subjectPlaceholder": "Neden ilgili?",
+      "message": "Mesaj",
+      "messagePlaceholder": "Mesajınızı yazın...",
+      "submit": "Mesajı gönder",
+      "sending": "Gönderiliyor...",
+      "success": "Mesaj başarıyla gönderildi! En kısa sürede yanıtlayacağız.",
+      "error": "Gönderim hatası. Tekrar deneyin veya doğrudan app{'@'}pianolouvorja.com.br adresine yazın",
+      "typeLabel": "Konu",
+      "type": {
+        "general": "Genel soru / iletişim",
+        "tester": "Testçi olmak istiyorum",
+        "developer": "Geliştirici olmak istiyorum",
+        "bug": "Hata bildir veya iyileştirme öner"
+      },
+      "focusLabel": "PIANO'yu nerede kullanıyorsunuz?",
+      "focus": {
+        "app-desktop": "Masaüstü uygulaması (Electron)",
+        "web-pwa": "Web / PWA",
+        "api": "API",
+        "mobile-flutter": "Mobil (Flutter)",
+        "tv-receiver": "TV / alıcı",
+        "docs": "Dokümanlar",
+        "qa": "Test / QA",
+        "design": "Tasarım / UI-UX"
+      },
+      "bio": "Kısa tanıtım",
+      "bioPlaceholder": "Kendinizle ilgili 1-2 cümle...",
+      "links": "Bağlantılar (site, sosyal medya)",
+      "linksPlaceholder": "Satır başına bir bağlantı (isteğe bağlı)",
+      "avatar": "Avatar (isteğe bağlı)",
+      "avatarPlaceholder": "Resim yükle (JPG/PNG)",
+      "avatarPreview": "Avatar önizleme",
+      "removeAvatar": "Avatarı kaldır",
+      "github": "GitHub",
+      "githubPlaceholder": "Kullanıcı adı veya GitHub bağlantısı",
+      "portfolio": "LinkedIn veya portfolyo",
+      "portfolioPlaceholder": "Bağlantı (isteğe bağlı)",
+      "areas": "İlgi alanları",
+      "availability": "Uygunluk",
+      "availabilityPlaceholder": "Örn: akşamları ve hafta sonları, haftada yaklaşık 5 saat...",
+      "stack": "Teknoloji yığını ve deneyim",
+      "stackPlaceholder": "Bildiğiniz teknolojiler, önceki deneyimler...",
+      "motivation": "Neden katkı vermek istiyorsunuz?",
+      "motivationPlaceholder": "Motivasyonunuzu kısaca anlatın (en az 20 karakter)...",
+      "testerEmail": "Testçi e-postası (kayıtlıysa)",
+      "testerEmailPlaceholder": "İsteğe bağlı — raporu kaydınızla ilişkilendirir",
+      "reportTypeLabel": "Rapor türü",
+      "reportType": {
+        "bug": "Hata (bir şey düzgün çalışmıyor)",
+        "feature": "İyileştirme önerisi",
+        "other": "Diğer"
+      },
+      "version": "Uygulama sürümü",
+      "versionPlaceholder": "Örn 1.4.2 (web/masaüstü/mobil)",
+      "module": "Etkilenen modül",
+      "modulePlaceholder": "Örn: ilahi kitabı, ibadet programı, projeksiyon...",
+      "description": "Açıklama",
+      "descriptionPlaceholder": "Ne oldu? Ne bekliyordunuz? (en az 20 karakter)",
+      "steps": "Yeniden oluşturma adımları",
+      "stepsPlaceholder": "1. Şurayı aç... 2. Şuna dokun... (isteğe bağlı)",
+      "attachment": "Ek (ekran görüntüsü/log)",
+      "attachmentPlaceholder": "Resim, PDF, TXT veya JSON",
+      "removeAttachment": "Eki kaldır"
+    },
+    "direct": "veya doğrudan e-posta gönderin:",
+    "responseTime": "Ortalama yanıt süresi: 24-48 saat"
+  },
+  "docs": {
+    "title": "Dokümanlar",
+    "subtitle": "PIANO LouvorJA'da ustalaşmak için gereken her şey",
+    "search": "Dokümanlarda ara...",
+    "sections": {
+      "gettingStarted": {
+        "title": "Başlangıç",
+        "description": "İlk kurulum ve uygulamanın ilk adımları."
+      },
+      "media": {
+        "title": "Medya merkezi",
+        "description": "Albümleri, ilahi kitaplarını ve şarkı derlemelerini yönetin."
+      },
+      "hymnal": {
+        "title": "İlahi kitabı",
+        "description": "Yedinci Gün Adventist ilahilerinde arama, oynatma ve dışa aktarma."
+      },
+      "collections": {
+        "title": "Derlemeler",
+        "description": "Her ortam için özel derlemeler ve çalma listeleri oluşturun ve yönetin."
+      },
+      "liturgy": {
+        "title": "İbadet programı",
+        "description": "Eksiksiz ibadet programları oluşturun ve düzenleyin."
+      },
+      "bible": {
+        "title": "İncil",
+        "description": "Arama, favoriler ve ayet projeksiyonu."
+      },
+      "projection": {
+        "title": "Çoklu ekran projeksiyonu",
+        "description": "Yardımcı ekranları ve projeksiyonu ayarlayın."
+      },
+      "streaming": {
+        "title": "Yayın",
+        "description": "Çevrimiçi ibadetler için OBS, vMix ve yayın platformu entegrasyonları."
+      },
+      "tools": {
+        "title": "Araçlar",
+        "description": "Saat, kronometre, zamanlayıcı ve çekiliş."
+      },
+      "settings": {
+        "title": "Ayarlar",
+        "description": "Görünümü, projeksiyonu ve tercihleri özelleştirin."
+      },
+      "shortcuts": {
+        "title": "Klavye kısayolları",
+        "description": "İş akışınızı kısayollarla hızlandırın."
+      },
+      "faq": {
+        "title": "SSS",
+        "description": "Sıkça sorulan sorular"
+      }
+    },
+    "content": {
+      "gettingStarted": {
+        "intro": "PIANO LouvorJA, modern tarayıcısı olan her cihazda çalışan bir web uygulamasıdır. Kurulum gerekmez — tarayıcıda açmanız yeterli.",
+        "steps": [
+          "Uygulamayı masaüstü veya mobil cihazınızdaki tarayıcıda açın.",
+          "Daha iyi bir deneyim için tarayıcı menüsünden ana ekrana ekleyin.",
+          "Hazır! İbadetinizi düzenlemeye başlayın."
+        ],
+        "tip": "En iyi ibadet deneyimi için çift monitörlü masaüstü bilgisayar kullanın: biri kontrol, biri projeksiyon için."
+      },
+      "shortcuts": {
+        "table": {
+          "action": "Eylem",
+          "shortcut": "Kısayol"
+        },
+        "items": [
+          {
+            "action": "Oynat/duraklat",
+            "shortcut": "Boşluk"
+          },
+          {
+            "action": "Sonraki parça",
+            "shortcut": "→"
+          },
+          {
+            "action": "Önceki parça",
+            "shortcut": "←"
+          },
+          {
+            "action": "Ses +",
+            "shortcut": "↑"
+          },
+          {
+            "action": "Ses -",
+            "shortcut": "↓"
+          },
+          {
+            "action": "Tam ekran modu",
+            "shortcut": "F"
+          },
+          {
+            "action": "Projeksiyonu aç/kapat",
+            "shortcut": "P"
+          },
+          {
+            "action": "Hızlı arama",
+            "shortcut": "Ctrl+K"
+          },
+          {
+            "action": "Projeksiyonu kapat",
+            "shortcut": "ESC"
+          },
+          {
+            "action": "Operatör ↔ projeksiyon geçişi (masaüstü uygulaması)",
+            "shortcut": "Ctrl+Alt+P"
+          }
+        ]
+      },
+      "modules": {
+        "media": ["3 modlu oynatıcı", "İlahi kitapları ve albümler", "Eşlik modu"],
+        "hymnal": [
+          "Numaraya veya başlığa göre hızlı arama",
+          "Sıralı oynatma",
+          "PDF dışa aktarma veya yazdırma"
+        ],
+        "collections": [
+          "Çevrimiçi ve özel derlemeler",
+          "Sürükle-bırak ile çalma listesi",
+          "Şarkı sözleriyle eşlik modu"
+        ],
+        "liturgy": ["13 öğe türü", "Sürükle-bırak", "Öğe başına geri sayım"],
+        "bible": ["Çoklu çeviri", "Hızlı arama", "Doğrudan projeksiyon"],
+        "projection": ["Bağımsız çıktı", "Çoklu ekran", "Tam kontrol"],
+        "streaming": [
+          "Özel CSS ile şarkı sözü gösterimi",
+          "OBS ve vMix entegrasyonu",
+          "YouTube ve Facebook çıktısı"
+        ],
+        "tools": ["Saat ve kronometre", "Geri sayım zamanlayıcı", "Çekiliş"],
+        "settings": ["Görünüm", "Projeksiyon", "Çoklu ekran"]
+      }
+    },
+    "faq": {
+      "cost": {
+        "question": "PIANO LouvorJA gerçekten ücretsiz mi?",
+        "answer": "Evet! PIANO LouvorJA %100 ücretsiz ve açık kaynaklıdır. Abonelik, reklam veya veri toplama yoktur. Tüm kod GitHub'da herkese açıktır."
+      },
+      "offline": {
+        "question": "İnternetsiz çalışır mı?",
+        "answer": "Masaüstü uygulaması medyayı indirdikten sonra %100 çevrimdışı çalışır. Web sürümü internet bağlantısı gerektirir. APK uygulaması da içerik cihaza indirilmiş ve cihazlar aynı ağda olduğu sürece çevrimdışı çalışır."
+      },
+      "devices": {
+        "question": "Hangi cihazlarda kullanabilirim?",
+        "answer": "PIANO, modern tarayıcısı olan her cihazda çalışır: masaüstü (Linux, macOS, Windows), tablet ve telefon. En iyi çoklu ekran projeksiyon deneyimi için masaüstü bilgisayar öneririz."
+      },
+      "data": {
+        "question": "Verilerim nerede saklanıyor?",
+        "answer": "Masaüstü uygulaması verileri (ilahiler, ibadet programları, ayarlar) cihazınızda yerel olarak saklar. Web sürümü internet bağlantısı gerektirir ve kalıcı veri saklamaz. İletişim formunu gönderdiğinizde bilgileriniz (ad, e-posta, mesaj) yanıt vermemiz için Web3Forms üzerinden iletilir. Ayrıntılar için gizlilik politikamıza bakın."
+      },
+      "privacy": {
+        "question": "Gizliliğim nasıl korunuyor?",
+        "answer": "PIANO LouvorJA GDPR ve LGPD'ye (Brezilya Genel Veri Koruma Kanunu) uyar. Bu site izleme, analitik veya reklam çerezi kullanmaz — yalnızca tercih ettiğiniz dili hatırlayan teknik bir çerez kullanır. Verilerinizi pazarlama amacıyla üçüncü taraflara satmayız veya paylaşmayız. Daha fazla bilgi için gizlilik politikasına bakın."
+      },
+      "support": {
+        "question": "Destek nasıl alır veya sorun bildiririm?",
+        "answer": "İletişim sayfasındaki form aracılığıyla bize ulaşabilir veya doğrudan GitHub depomuzda konu açabilirsiniz. İbadet sırasındaki acil sorunlar için aşağıdaki sorun giderme SSS'sine bakın."
+      },
+      "updates": {
+        "question": "Uygulama nasıl güncellenir?",
+        "answer": "PIANO LouvorJA bir web uygulamasıdır. Güncellemeler sayfayı yeniden yüklediğinizde otomatik uygulanır. Manuel indirme veya kurulum gerekmez; her zaman en son sürümü kullanırsınız."
+      },
+      "troubleshooting": {
+        "question": "Uygulama yüklenmezse veya hata gösterirse ne yapmalıyım?",
+        "answer": "1) Sayfayı yeniden yükleyin (Ctrl+F5 önbelleği temizler). 2) İlk erişimde internet bağlantınızı kontrol edin. 3) Tarayıcı ayarlarından site verilerini temizleyin. 4) Eklenti çakışmalarını elemek için gizli modu deneyin. 5) Sorun sürerse, iletişim formu veya GitHub üzerinden tarayıcı ve cihaz bilgileriyle bildirin."
+      },
+      "contribute": {
+        "question": "Projeye nasıl katkı verebilirim?",
+        "answer": "Proje açık kaynaklıdır ve GitHub üzerinden katkı kabul eder. Hata bildirebilir, özellik önerebilir, çekme isteği gönderebilir veya diğer dillere çeviriye yardım edebilirsiniz."
+      }
+    },
+    "sidebarLabel": "Doküman bölümleri",
+    "guides": {
+      "title": "Eksiksiz kılavuzlar",
+      "lead": "Ekosistemdeki her araç için platform bazlı, adım adım anlatımlar."
+    }
+  },
+  "footer": {
+    "tagline": "Web tabanlı ibadet yönetim aracı. Ücretsiz ve açık kaynak.",
+    "navLabel": "Alt bilgi gezinmesi",
+    "navTitle": "Gezinme",
+    "product": "Ürün",
+    "resources": "Kaynaklar",
+    "company": "Şirket",
+    "links": {
+      "features": "Özellikler",
+      "platforms": "Platformlar",
+      "download": "İndir",
+      "releases": "Sürümler",
+      "howItWorks": "Nasıl çalışır",
+      "docs": "Dokümanlar",
+      "contact": "İletişim",
+      "github": "GitHub",
+      "app": "Uygulamayı aç"
+    },
+    "copyright": "Piano ekibi tarafından inançla ve özenle yapıldı.",
+    "developedBy": "Geliştiren",
+    "team": "Piano ekibi",
+    "rights": "Tüm hakları saklıdır.",
+    "forkedFrom": "Şuradan çatallanmıştır:",
+    "originalProject": "özgün LouvorJA projesi",
+    "legalNavLabel": "Hukuki bağlantılar",
+    "legalNavTitle": "Hukuki",
+    "moreNavLabel": "Daha fazla bağlantı",
+    "moreNavTitle": "Daha fazla",
+    "privacy": "Gizlilik Politikası",
+    "terms": "Kullanım Koşulları",
+    "conduct": "Davranış Kuralları",
+    "ranking": "Sıralama",
+    "midias": "Medya"
+  },
+  "common": {
+    "loading": "Yükleniyor...",
+    "error": "Hata",
+    "close": "Kapat",
+    "back": "Geri",
+    "learnMore": "Daha fazla bilgi",
+    "skipToContent": "İçeriğe atla",
+    "allRightsReserved": "Tüm hakları saklıdır."
+  },
+  "privacy": {
+    "title": "Gizlilik Politikası",
+    "metaDescription": "PIANO LouvorJA'nın kişisel verilerinizi LGPD (Brezilya GDPR) uyarınca nasıl işlediği.",
+    "lastUpdated": "Son güncelleme: 30 Temmuz 2026",
+    "tocLabel": "İçindekiler",
+    "intro": "Bu gizlilik politikası, PIANO LouvorJA'nın bu site üzerinden toplanan kişisel verileri nasıl işlediğini açıklar. Brezilya Genel Veri Koruma Kanunu'na (LGPD — 13.709/2018 sayılı Kanun) uymayı ve gizliliğinizi korumayı taahhüt ederiz.",
+    "sections": {
+      "data": {
+        "title": "1. Topladığımız veriler",
+        "body": [
+          "1.1 Sizin sağladığınız veriler",
+          "İletişim formunu doldurduğunuzda şunları toplarız:",
+          "Ad",
+          "E-posta adresi",
+          "Mesaj konusu",
+          "Mesaj içeriği",
+          "1.2 Teknik veriler",
+          "Teknik çerez piano_lang: yalnızca dil tercihinizi saklar. Hiçbir kişisel tanımlayıcı içermez.",
+          "İzleme, analitik, reklam veya profil oluşturma çerezi kullanmıyoruz."
+        ]
+      },
+      "purpose": {
+        "title": "2. İşleme amaçları",
+        "body": [
+          "İletişim formu verileri yalnızca şunlar için kullanılır:",
+          "Talebinize yanıt vermek",
+          "Teknik destek sağlamak",
+          "Talep ettiğiniz iletişimi göndermek",
+          "Hukuki dayanak: LGPD madde 7, IX (meşru menfaat ve talebinize yanıt)."
+        ]
+      },
+      "sharing": {
+        "title": "3. Veri paylaşımı",
+        "body": [
+          "3.1 Web3Forms",
+          "İletişim formu gönderimlerini işlemek için Web3Forms (ABD) kullanır. Veriler, e-postamıza iletilmek üzere Web3Forms'a aktarılır.",
+          "Alt işleyici: Web3Forms",
+          "Ülke: ABD",
+          "Amaç: mesaj iletme",
+          "3.2 Barındırma sağlayıcısı",
+          "Bu site, teknik erişim verileri (IP, zaman damgası, kullanıcı aracısı) kaydedebilen bulut altyapı sağlayıcısında barındırılır.",
+          "3.3 Verileri şu taraflarla paylaşmayız",
+          "Reklam şirketleri",
+          "Sosyal ağlar",
+          "Veri simsarları",
+          "Pazarlama amacıyla üçüncü taraflar"
+        ]
+      },
+      "international": {
+        "title": "4. Uluslararası aktarım",
+        "body": [
+          "İletişim formu verileri ABD'de bulunan Web3Forms tarafından işlenir. Bu uluslararası aktarım, form servisini sağlamak için gerekli olup LGPD madde 33'teki hukuki varsayıma uygundur."
+        ]
+      },
+      "rights": {
+        "title": "5. Haklarınız (LGPD madde 18)",
+        "body": [
+          "Kişisel verilerinizle ilgili şu haklara sahipsiniz:",
+          "İşlemenin varolup olmadığının teyidi",
+          "Verilere erişim",
+          "Eksik, hatalı veya güncel olmayan verilerin düzeltilmesi",
+          "Gereksiz verilerin anonimleştirilmesi, engellenmesi veya silinmesi",
+          "Veri taşınabilirliği",
+          "Kişisel verilerin silinmesi",
+          "Bilgi paylaşımı",
+          "Haklarınızı nasıl kullanırsınız",
+          "privacidade{'@'}pianolouvorja.com.br adresine şu bilgilerle e-posta gönderin:",
+          "Ad soyad",
+          "Kullanmak istediğiniz hakkın açıklaması",
+          "Kayıtlı e-posta adresi",
+          "Yanıt süresi: 15 takvim günü (LGPD madde 19)."
+        ]
+      },
+      "security": {
+        "title": "6. Güvenlik önlemleri",
+        "body": [
+          "Şunları içeren teknik ve idari önlemler alıyoruz:",
+          "Tüm iletişimde HTTPS/TLS şifrelemesi",
+          "Parola saklanmaz (oturum açma sistemi yok)",
+          "Veri minimizasyonu (yalnızca gerekli veriler toplanır)",
+          "Kişisel tanımlayıcı içermeyen teknik çerez",
+          "Ekibin veri erişiminin kısıtlanması"
+        ]
+      },
+      "retention": {
+        "title": "7. Veri saklama",
+        "body": [
+          "İletişim formu: yanıta kadar saklanır, ardından geçmiş amacıyla en fazla 12 ay tutulur ve silinir.",
+          "Erişim kayıtları: barındırma sağlayıcısının politikasına göre.",
+          "Yerel uygulama verileri: siz silene kadar cihazınızda kalır."
+        ]
+      },
+      "cookies": {
+        "title": "8. Çerezler",
+        "body": ["Üçüncü taraf, analitik veya reklam çerezi kullanmıyoruz."],
+        "table": {
+          "header": {
+            "cookie": "Çerez",
+            "type": "Tür",
+            "purpose": "Amaç",
+            "duration": "Süre"
+          },
+          "rows": [
+            {
+              "name": "piano_lang",
+              "type": "Teknik",
+              "purpose": "Tercih edilen dili hatırlar",
+              "duration": "Oturum"
+            }
+          ]
+        }
+      },
+      "children": {
+        "title": "9. Çocuklar ve reşit olmayanlar",
+        "body": [
+          "Bu uygulama çocuklara yönelik değildir ve 18 yaşından küçüklerden bilerek veri toplamaz. İçerik (ilahiler, ibadet programları, İncil metinleri) dini niteliktedir; hassas veri toplama içermez."
+        ]
+      },
+      "changes": {
+        "title": "10. Politika değişiklikleri",
+        "body": [
+          "Bu politikayı dilediğimiz zaman güncelleyebiliriz. En güncel sürüm her zaman bu sayfada, güncelleme tarihi en üstte gösterilir. Düzenli olarak kontrol etmenizi öneririz."
+        ]
+      },
+      "dpo": {
+        "title": "11. Veri Koruma Görevlisi (DPO)",
+        "body": [
+          "LGPD madde 41 uyarınca sorularınız için privacidade{'@'}pianolouvorja.com.br adresine yazabilirsiniz."
+        ]
+      },
+      "anpd": {
+        "title": "12. Veri koruma otoritesi",
+        "body": [
+          "Şikayet için ANPD'ye (Ulusal Veri Koruma Otoritesi) başvurabilirsiniz:",
+          "Web sitesi: {link}",
+          "E-posta: ouvidoria{'@'}anpd.gov.br"
+        ],
+        "link": {
+          "url": "https://www.gov.br/anpd",
+          "text": "www.gov.br/anpd"
+        }
+      }
+    }
+  },
+  "terms": {
+    "title": "Kullanım Koşulları",
+    "metaDescription": "PIANO LouvorJA kullanım koşulları ve şartları.",
+    "lastUpdated": "Son güncelleme: 30 Temmuz 2026",
+    "tocLabel": "İçindekiler",
+    "intro": "PIANO LouvorJA'ya hoş geldiniz. Bu siteyi ve uygulamayı ziyaret edip kullanarak bu kullanım koşullarını kabul etmiş olursunuz. Lütfen dikkatlice okuyun.",
+    "sections": {
+      "acceptance": {
+        "title": "1. Koşulların kabulü",
+        "body": [
+          "PIANO LouvorJA'yı kullanarak bu koşulları eksiksiz kabul edersiniz. Herhangi bir koşula katılmıyorsanız uygulamayı kullanmayın."
+        ]
+      },
+      "service": {
+        "title": "2. Hizmetin niteliği",
+        "body": [
+          "PIANO LouvorJA, ibadet yönetimine yardımcı olan ücretsiz ve açık kaynaklı bir web uygulamasıdır; şunları içerir:",
+          "Dijital ilahi kitapları ve müzik oynatma",
+          "İbadet programı ve zaman yönetimi",
+          "Şarkı sözü ve İncil metni projeksiyonu",
+          "Yardımcı araçlar (zamanlayıcı, çekiliş vb.)",
+          "Uygulama dini ve topluluk amaçlıdır; ticari amacı yoktur."
+        ]
+      },
+      "license": {
+        "title": "3. Lisans",
+        "body": [
+          "3.1 Yazılım",
+          "Kaynak kod açık kaynak lisansıyla dağıtılır. Ayrıntılar için {link}.",
+          "3.2 İçerik",
+          "Metin içeriği (ilahiler, şarkı sözleri, eserler) ilgili telif hakkı sahiplerine aittir. PIANO LouvorJA:",
+          "içeriğin yazarlığını iddia etmez",
+          "içeriği doğrudan ticarileştirmez",
+          "9.610/98 sayılı Kanun uyarınca telif hakkına saygı gösterir"
+        ],
+        "link": {
+          "url": "https://github.com/Piano-Louvor-JA",
+          "text": "GitHub deposu"
+        }
+      },
+      "user": {
+        "title": "4. Kullanıcı sorumlulukları",
+        "body": [
+          "PIANO LouvorJA'yı kullanarak şunları kabul edersiniz:",
+          "Uygulamayı etik bir şekilde ve geçerli yasalara uygun olarak kullanmak",
+          "Yasadışı, iftira atıcı veya üçüncü taraf haklarını ihlal eden amaçlarla kullanmamak",
+          "Gösterilen eserlerin telif hakkına saygı göstermek",
+          "Güvenliği veya kullanılabilirliği bozmaya teşebbüs etmemek"
+        ]
+      },
+      "responsibility": {
+        "title": "5. Sorumluluk",
+        "body": [
+          "5.1 Hizmetin niteliği",
+          "PIANO LouvorJA \"olduğu gibi\" sunulur; hiçbir türde garanti verilmez. Şunları garanti etmiyoruz:",
+          "Hizmetin kesintisiz, güvenli veya hatasız olacağı",
+          "Sonuçların doğru veya güvenilir olacağı",
+          "Herhangi bir hata veya kusurun düzeltileceği",
+          "5.2 Sorumluluk sınırlaması",
+          "Yasanın izin verdiği en geniş ölçüde PIANO LouvorJA şu konulardan sorumlu değildir:",
+          "Doğrudan, dolaylı, arızi veya sonuçsal zararlar",
+          "Veri kaybı (düzenli yedekleme yapın)",
+          "Kritik kullanım anlarındaki hizmet kesintileri",
+          "Üçüncü taraf içeriği veya harici bağlantılar"
+        ]
+      },
+      "ip": {
+        "title": "6. Fikri mülkiyet",
+        "body": [
+          "6.1 Yazılım",
+          "Kaynak kod telif hakkı korumasındadır ve açık kaynak lisansıyla dağıtılır.",
+          "6.2 Markalar",
+          "\"PIANO LouvorJA\" ve \"LouvorJA\" proje markalarıdır. İzin alınmadan kullanılamaz.",
+          "6.3 Üçüncü taraf içeriği",
+          "İlahiler, şarkı sözleri ve eserler ilgili yazarlarına ve yayıncılarına aittir. Bunları derlemek herhangi bir fikri mülkiyet devri oluşturmaz."
+        ]
+      },
+      "donations": {
+        "title": "7. Bağış ve katkı",
+        "body": [
+          "PIANO LouvorJA ücretsiz ve açık kaynaklıdır. GitHub üzerinden gönüllü katkılar (çekme isteği, konu, çeviri) kabul edilir. Olağan bağışlar tüketici ilişkisi oluşturmaz ve hiçbir avantaj garantisi vermez."
+        ]
+      },
+      "privacy": {
+        "title": "8. Gizlilik ve veriler",
+        "body": [
+          "Kişisel verilerin işlenmesi, bu koşulların ayrılmaz bir parçası olan {link} tabidir."
+        ],
+        "link": {
+          "url": "/privacy",
+          "text": "Gizlilik Politikası"
+        }
+      },
+      "modifications": {
+        "title": "9. Değişiklikler",
+        "body": [
+          "Bu koşulları dilediğimiz zaman değiştirebiliriz. Değişiklikler yayından hemen sonra yürürlüğe girer. Kullanıcıların düzenli olarak kontrol etmesi kendi sorumluluğundadır."
+        ]
+      },
+      "termination": {
+        "title": "10. Sonlandırma",
+        "body": [
+          "Uygulamayı kullanmayı dilediğiniz an bırakabilirsiniz. Hesap sistemi olmadığından resmi bir iptal gerekmez."
+        ]
+      },
+      "law": {
+        "title": "11. Uygulanacak yasa",
+        "body": [
+          "Bu koşullar Brezilya Federal Cumhuriyeti yasalarına tabidir. Herhangi bir uyuşmazlık kullanıcının ikametgâhı mahkemesinde çözülür."
+        ]
+      },
+      "misc": {
+        "title": "12. Son hükümler",
+        "body": [
+          "Bu koşullardan herhangi biri geçersiz veya uygulanamaz bulunursa, geri kalan hükümler tam olarak yürürlükte kalır. Herhangi bir ihlale tolerans gösterilmesi gelecekteki haklardan feragat anlamına gelmez."
+        ]
+      }
+    }
+  },
+  "error": {
+    "title": "Sayfa bulunamadı",
+    "serverErrorTitle": "Sunucu hatası",
+    "errorCode404": "404",
+    "errorCode500": "500",
+    "desc404": "Aradığınız sayfa mevcut değil veya taşınmış.",
+    "desc500": "Sunucularımızda bir sorun oluştu. Ekip bilgilendirildi — lütfen daha sonra tekrar deneyin.",
+    "backHome": "Ana sayfaya dön",
+    "reportIssue": "Sorun bildir",
+    "metaDesc404": "Sayfa bulunamadı — PIANO LouvorJA",
+    "metaDesc500": "Sunucu hatası — PIANO LouvorJA"
+  },
+  "newsletter": {
+    "title": "Proje güncellemelerini alın",
+    "subtitle": "Yeni sürümler, özellikler ve iyileştirmeler hakkında bildirim alın. Spam yok.",
+    "placeholder": "E-posta adresiniz",
+    "button": "Abone ol",
+    "loading": "Abone olunuyor...",
+    "success": "Abonelik onaylandı! Güncellemeleri e-postanızda alacaksınız.",
+    "errors": {
+      "invalidEmail": "Geçersiz e-posta. Lütfen kontrol edip tekrar deneyin.",
+      "alreadySubscribed": "Bu e-posta zaten abone.",
+      "generic": "Abonelik başarısız. Lütfen tekrar deneyin.",
+      "rateLimited": "Çok fazla deneme. Lütfen birkaç dakika sonra tekrar deneyin.",
+      "serviceUnavailable": "Servis kullanılamıyor. Lütfen daha sonra tekrar deneyin.",
+      "unknownError": "Bir sorun oluştu. Lütfen tekrar deneyin."
+    }
+  },
+  "welcomePopup": {
+    "title": "PianoLouvorJA'yı ücretsiz indirin",
+    "description": "Yedinci Gün Adventist ilahilerini masaüstü ve mobil cihazlarda çalın. AppImage, web uygulaması ve daha fazlası — platformunuzu seçin.",
+    "close": "Kapat",
+    "cta": "İndirme seçeneklerini gör",
+    "secondaryCta": "Gezmeye devam et"
+  },
+  "cookieBanner": {
+    "message": "Deneyiminizi iyileştirmek için çerez kullanıyoruz. Göz atmaya devam ederek gizlilik politikamızı kabul etmiş olursunuz.",
+    "accept": "Anladım ve kabul ediyorum",
+    "reject": "Reddet",
+    "privacyLink": "Gizlilik politikasını oku"
+  },
+  "admin": {
+    "title": "Panel",
+    "loginTitle": "Kısıtlı erişim",
+    "loginSubtitle": "Panele erişmek için giriş yapın",
+    "email": "E-posta",
+    "emailPlaceholder": "admin{'@'}pianolouvorja.com.br",
+    "password": "Parola",
+    "passwordPlaceholder": "Parolanızı girin",
+    "loginButton": "Giriş yap",
+    "loginError": "Geçersiz e-posta veya parola",
+    "loggingIn": "Giriş yapılıyor...",
+    "logout": "Çıkış yap",
+    "welcome": "Hoş geldiniz, {email}",
+    "dashboard": "Panel",
+    "stats": "İstatistikler",
+    "backToSite": "Siteye dön",
+    "refresh": "Yenile",
+    "updatedAgo": "{min} dakika önce güncellendi",
+    "updatedAt": "Az önce güncellendi",
+    "downloads": "İndirme",
+    "stars": "Yıldız",
+    "forks": "Çatal (fork)",
+    "subscribers": "Abone",
+    "donations": "Bağış",
+    "visits": "Ziyaret (30 gün)",
+    "recentActivity": "Son etkinlik",
+    "quickLinks": "Hızlı bağlantılar",
+    "noData": "Veri mevcut değil",
+    "loading": "Yükleniyor...",
+    "comunidade": {
+      "tab": "Bekleyenler",
+      "tabMembros": "Üyeler",
+      "tabEquipe": "Ekip",
+      "subtitulo": "Bekleyen içerikleri, üyeleri ve ekibi tek panelden yönetin.",
+      "filtroStatus": "Durum",
+      "todos": "Tümü",
+      "carregando": "Yükleniyor…",
+      "recarregar": "↻ Yenile",
+      "carregarMais": "Daha fazla yükle",
+      "erroCarregar": "Yüklenemedi",
+      "semMembros": "Bu filtreye uygun üye yok.",
+      "semEquipe": "Ekip üyesi bulunamadı.",
+      "roles": "Roller",
+      "salvar": "Kaydet",
+      "salvando": "Kaydediliyor…",
+      "salvoOk": "Roller güncellendi ✓",
+      "erroSalvar": "Kaydedilemedi",
+      "aprovar": "Onayla",
+      "aprovadoOk": "Üye onaylandı ✓",
+      "inativar": "Devre dışı bırak",
+      "inativadoOk": "Üye devre dışı bırakıldı ✓",
+      "reativar": "Yeniden etkinleştir",
+      "gm": "GM (yönetici)",
+      "role": {
+        "dev": "Geliştirici",
+        "tester": "Test uzmanı",
+        "conteudo": "İçerik",
+        "curador": "Küratör",
+        "staff": "Ekip"
+      },
+      "title": "Topluluk",
+      "tabsAriaLabel": "Topluluk paneli sekmeleri"
+    }
+  },
+  "download": {
+    "metaTitle": "İndir — PIANO LouvorJA",
+    "metaDescription": "Masaüstü (Linux, Windows, macOS) için PIANO LouvorJA indirin, web uygulamasını tarayıcıda kullanın veya mobil yol haritasını görün.",
+    "heroEyebrow": "İndir",
+    "heroTitle": "PIANO LouvorJA'yı edinin",
+    "heroSubtitle": "Size en uygun seçeneği seçin. Tam donanımlı yerel masaüstü, anında web uygulaması veya yakında gelecek mobil sürüm.",
+    "heroWebCta": "Web uygulamasını kullan",
+    "heroGithubCta": "GitHub'da gör",
+    "platformsTitle": "Platformunuzu seçin",
+    "platformsSubtitle": "Her platformun kendi avantajları var",
+    "desktop": {
+      "badge": "Önerilen",
+      "title": "Yerel masaüstü",
+      "description": "Tam donanımlı Electron uygulaması: bağımsız çoklu ekran projeksiyonu, tam çevrimdışı mod ve klavye kısayolları.",
+      "linux": {
+        "name": "Linux",
+        "format": "AppImage",
+        "arch": "x64",
+        "downloadLabel": "AppImage indir",
+        "hint": "İndirdikten sonra çalıştırma izni verin (chmod +x) ve çalıştırın. FUSE kurulu olmalıdır. Alternatif: flatpak install ile Flatpak'e dönüştürün."
+      },
+      "windows": {
+        "name": "Windows",
+        "format": "NSIS yükleyici (.exe)",
+        "arch": "x64",
+        "downloadLabel": "Windows sürümünü indir",
+        "hint": "Yükleyiciyi çalıştırın ve adımları izleyin."
+      },
+      "macos": {
+        "name": "macOS",
+        "format": "Disk görüntüsü (.dmg)",
+        "arch": "x64 / arm64 (Apple Silicon)",
+        "downloadLabel": "macOS sürümünü indir",
+        "hint": ".dmg dosyasını açın ve uygulamayı Uygulamalar klasörüne sürükleyin."
+      },
+      "features": {
+        "multiScreen": "Bağımsız çoklu ekran projeksiyonu",
+        "offline": "%100 çevrimdışı çalışır",
+        "shortcuts": "Özel klavye kısayolları",
+        "autoUpdate": "Otomatik güncelleme"
+      },
+      "buildFromSource": "Kaynak koddan mı derlemek istersiniz?",
+      "buildFromSourceLink": "GitHub'daki talimatlara bakın",
+      "otherArch": "{arch} sürümünü indir",
+      "detectedArchitecture": "Algılanan mimari: {architecture}"
+    },
+    "web": {
+      "badge": "Anında",
+      "title": "Web uygulaması",
+      "description": "Doğrudan tarayıcıda kullanın. Kurulum yok, her işletim sisteminde çalışır. Hızlı kullanım veya uygulama kurulmamışken ideal.",
+      "cta": "Web uygulamasını aç",
+      "features": {
+        "noInstall": "Kurulum gerekmez",
+        "anyOs": "Her işletim sistemi",
+        "autoUpdate": "Otomatik güncelleme",
+        "pwa": "Tarayıcıdan erişim"
+      }
+    },
+    "mobile": {
+      "badge": "Yayında",
+      "title": "Mobil",
+      "description": "Android uygulamasını indirin, PIANO'yu yanınızda taşıyın — sahneyi doğrudan telefonunuzdan kontrol edin.",
+      "platforms": "Android ve iOS",
+      "features": {
+        "nativeAndroid": "Yerel Android (planlandı)",
+        "nativeIos": "Yerel iOS (planlandı)",
+        "cloudSync": "Bulut senkronizasyonu (planlandı)",
+        "remote": "Masaüstünden uzaktan kontrol",
+        "network": "Yerel ağ senkronizasyonu",
+        "offline": "Çevrimdışı çalışır"
+      },
+      "useWebInstead": "Telefonda web uygulamasını kullan",
+      "noAssets": "Mobil indirmeler yakında.",
+      "android": {
+        "name": "Android",
+        "format": ".apk paketi",
+        "arch": "Evrensel (arm64, armv7, x86_64)",
+        "downloadLabel": "APK indir",
+        "hint": "Bilinmeyen kaynaklara izin verdikten sonra APK'yı yükleyin."
+      },
+      "ios": {
+        "name": "iOS",
+        "format": "TestFlight uygulaması",
+        "arch": "Evrensel",
+        "downloadLabel": "TestFlight'ı aç",
+        "hint": "TestFlight davetiyesi gerekir."
+      },
+      "apkNote": "APK yüklemek için Android ayarlarından bilinmeyen kaynaklu uygulamalara izin verin."
+    },
+    "midias": {
+      "title": "LouvorJA Medya",
+      "description": "Derlemeleri, ses dosyalarını ve kaynak paketlerini doğrudan topluluk Google Drive'dan indirin — API bağımlılığı yok, çevrimdışı, ücretsiz.",
+      "cta": "Medyayı aç"
+    },
+    "systemRequirements": {
+      "title": "Sistem gereksinimleri",
+      "desktop": "Masaüstü: 4GB RAM, 500MB disk alanı, WebGL destekli GPU",
+      "web": "Web: modern tarayıcı (Chrome, Firefox, Edge, Safari), ilk erişimde internet bağlantısı"
+    },
+    "tv": {
+      "badge": "Yeni",
+      "title": "TV / Dijital sahne",
+      "description": "Herhangi bir akıllı TV'yi sahne alıcısına dönüştürün. Android uygulamasıyla (APK) kontrol edin — web ve masaüstü kontrolü yakında.",
+      "noAssets": "TV kurulum paketleri yakında.",
+      "features": {
+        "realtime": "Gerçek zamanlı yansıtma",
+        "multicast": "Aynı anda birden fazla TV",
+        "autodiscover": "Otomatik ağ keşfi",
+        "nativeLg": "webOS (LG) yerel uygulaması",
+        "bigScreen": "Büyük ekran için optimize",
+        "remoteControl": "Palco uzaktan kontrol"
+      },
+      "webos": {
+        "name": "LG webOS TV",
+        "format": ".ipk paketi",
+        "arch": "arm",
+        "downloadLabel": "webOS sürümünü indir",
+        "hint": "Geliştirici modu veya LG Device Manager ile yan yükleme."
+      },
+      "androidtv": {
+        "name": "Android TV",
+        "format": ".apk paketi",
+        "arch": "arm64",
+        "downloadLabel": "Android TV sürümünü indir",
+        "hint": "APK'yı dosya yöneticisi veya ADB ile yan yükleyin."
+      },
+      "downloadGeneric": "İndir",
+      "tizen": {
+        "name": "Samsung Tizen TV",
+        "format": ".tpk paketi",
+        "hint": "USB veya Tizen Studio Device Manager ile kurun."
+      },
+      "useDesktopInstead": "Desteklenmeyen TV'ler için tarayıcı tam ekran moduyla Palco'ya erişin."
+    },
+    "voidbr": {
+      "eyebrow": "Ortak Linux dağıtımı",
+      "title": "VoidBR LouvorJA Piano",
+      "subtitle": "PIANO LouvorJA önceden yüklü gelen eksiksiz bir Linux dağıtımı — VoidBR topluluğu tarafından, kiliselerin yasal yazılıma kolayca geçmesi için hazırlandı.",
+      "description": "Canlı başlatılabilir sistem: USB'den başlatın, kullanın ve kurun; PIANO ve ilahiler hazır ayarlanmış halde.",
+      "feature1": "Önceden yüklü ve güncel PIANO LouvorJA",
+      "feature2": "%100 yasal ve ücretsiz — sıfır korsanlık",
+      "feature3": "Void Linux tabanı, hafif ve kararlı",
+      "downloadLabel": "ISO indir (x86_64)",
+      "unavailable": "ISO geçici olarak kullanılamıyor",
+      "communityLink": "VoidBR topluluğu"
+    }
+  },
+  "contributors": {
+    "title": "PIANO'yu mümkün kılanlar",
+    "subtitle": "PIANO LouvorJA, zamanını ve bilgisini adamış bu kişiler sayesinde var.",
+    "contributions": "katkı",
+    "viewAll": "GitHub'da tümünü gör",
+    "ctaTitle": "Projeye katkı verin",
+    "ctaText": "PIANO açık kaynaklıdır ve toplulukla birlikte büyür. Kod katkısı verebilir, hata bildirebilir, özellik önerebilir, çeviriye yardım edebilir veya projeyi paylaşabilirsiniz.",
+    "ctaWays": {
+      "code": "GitHub'da çekme isteği gönderin",
+      "bugs": "Hata bildirin ve iyileştirme önerin",
+      "translate": "Çeviriye yardım edin",
+      "share": "Topluluğunuzla paylaşın"
+    },
+    "ctaButton": "Katkıya başla",
+    "loading": "Katkıcılar yükleniyor...",
+    "error": "Katkıcılar şu anda yüklenemiyor."
+  },
+  "releases": {
+    "metaTitle": "Sürüm notları — PIANO LouvorJA",
+    "metaDescription": "PIANO LouvorJA sürüm geçmişi ve değişiklikleri. Yeni özellikleri, iyileştirmeleri ve düzeltmeleri takip edin.",
+    "title": "Sürüm notları",
+    "subtitle": "PIANO LouvorJA'daki her güncellemeyi öğrenin. Yeni özellikler, iyileştirmeler ve düzeltmeler.",
+    "latest": "En son",
+    "version": "Sürüm",
+    "released": "Yayın tarihi",
+    "highlights": "Öne çıkanlar",
+    "pullRequests": "PR",
+    "changelog": "Değişiklik günlüğü",
+    "download": "Sürümü indir",
+    "allVersions": "Tüm sürümler",
+    "loading": "Sürümler yükleniyor...",
+    "error": "Sürümler şu anda yüklenemiyor.",
+    "noReleases": "Henüz sürüm yayınlanmadı.",
+    "products": {
+      "web": "Web",
+      "desktop": "Masaüstü",
+      "mobile": "Mobil",
+      "tv": "Akıllı TV"
+    },
+    "repos": {
+      "web": "Web (site)",
+      "app": "Uygulama (masaüstü)",
+      "api": "API",
+      "site": "Web sitesi",
+      "palco-receiver": "TV için Palco",
+      "apk": "Mobil uygulama (APK)"
+    },
+    "filterLabel": "Ürüne göre filtrele",
+    "filterAll": "Tümü",
+    "filterEmpty": "Bu ürün için henüz sürüm yok."
+  },
+  "tvSupport": {
+    "eyebrow": "Yol haritası",
+    "title": "TV'niz kilise sahneniz olsun",
+    "description": "İbadeti telefonunuzdan yönetin; akıllı TV ilahileri ve ibadet programını dijital sahne olarak gösterir — projektörü veya bilgisayarı olmayan gruplar için ideal.",
+    "lgBrand": "webOS (LG)",
+    "lgStatus": "Geliştirme aşamasında",
+    "samsungBrand": "Tizen (Samsung)",
+    "samsungStatus": "Geliştirme aşamasında",
+    "rokuBrand": "Roku TV",
+    "rokuStatus": "Planlandı",
+    "androidTvBrand": "Android TV / Google TV",
+    "androidTvStatus": "Planlandı",
+    "chromecastBrand": "Chromecast",
+    "chromecastStatus": "Planlandı",
+    "cta": "Takipte kalın",
+    "appleTvBrand": "Apple TV",
+    "appleTvStatus": "Planlandı",
+    "statusAvailable": "Yayında",
+    "downloadCta": "Hemen indir"
+  },
+  "team": {
+    "eyebrow": "Ekibimiz",
+    "title": "Projenin arkasındaki profesyoneller",
+    "subtitle": "PIANO LouvorJA, uzmanlık alanlarına göre organize olmuş ve tek bir ortak hedefe — topluluğa mükemmel hizmet etmeye — adanmış özverili bir ekip tarafından kuruluyor.",
+    "areas": {
+      "leadership": {
+        "title": "Liderlik ve Vizyon",
+        "description": "Proje yönü, ürün yol haritası ve PIANO'nun hizmet ettiği topluluklarla ilişkiler."
+      },
+      "desktop": {
+        "title": "Masaüstü Uygulaması",
+        "description": "İbadet projeksiyonu için çoklu ekranlı Electron uygulaması: medya çıktısı, sahne gösterimi ve uzaktan kontrol."
+      },
+      "web": {
+        "title": "Web Uygulaması",
+        "description": "Tarayıcıdan hızlı erişilebilen ibadet yönetimi web uygulaması (internet bağlantısı gerektirir)."
+      },
+      "api": {
+        "title": "API ve Altyapı",
+        "description": "İlahi kitaplarını, çalma listelerini ve cihazlar arası senkronizasyonu destekleyen genel API ve arka uç servisleri."
+      },
+      "site": {
+        "title": "Web Sitesi ve İçerik",
+        "description": "Dijital kimlik, dokümantasyon ve iletişim: çok dilli site, sürümler ve kaynaklar."
+      },
+      "quality": {
+        "title": "Kalite ve CI",
+        "description": "Her sürümün kararlılığını garanti eden pipeline otomasyonu, testler ve kod incelemesi."
+      },
+      "distro": {
+        "title": "VoidBR Linux Dağıtımı",
+        "description": "VoidBR LouvorJA Piano canlı ISO'sunun bakımı: PIANO ve ilahilerle önceden yüklü, eksiksiz başlatılabilir sistem — kiliseler için yasal, basit ve çevrimdışı kurulum."
+      }
+    },
+    "people": {
+      "title": "Projeyi inşa edenler",
+      "avatarAlt": "{name} adlı kişinin GitHub avatarı",
+      "more": "Daha fazla bilgi"
+    },
+    "members": {
+      "ezequiasfonseca": {
+        "role": "Kurucu · Liderlik ve Masaüstü Uygulaması",
+        "bio": "Altyapı, Linux sistem yönetimi, DevOps ve tam yığın geliştirme dahil 15 yıllık deneyime sahip kıdemli yazılım mühendisi. PIANO LouvorJA kurucusu; ürün vizyonuna ve masaüstü uygulamasına liderlik ediyor."
+      },
+      "rafaumeu": {
+        "role": "Teknik Lider · Site, API ve QA",
+        "bio": "PIANO LouvorJA ekosistemine odaklanan tam yığın geliştirici: site, API, PWA ve kalite otomasyonu. CI/CD, testler ve projenin çoklu cihaz deneyiminden sorumlu."
+      },
+      "rafaelji": {
+        "role": "Masaüstü Uygulaması ve Mac",
+        "bio": "2015'ten beri kod yazıyor; arka uç, ön yüz ve mobil deneyimi var — şu anda React ön yüzüne odaklı. Üç kişisel proje yürütüyor: Alva (Sabbath School uygulaması), Appentecostes (13 dilde gerçek zamanlı AI vaaz çevirisi) ve FatIA (sosyal medya için AI video klipleri)."
+      },
+      "educharquero": {
+        "role": "Linux, Web Uygulaması ve PWA",
+        "bio": "Bilgisayar ağları mezunu, eğitim yüksek lisansı. Kurumin döneminden beri Linux kullanıcısı, on yılların altyapı deneyimi, conectux.com.br sahibi."
+      },
+      "vcatafesta": {
+        "role": "VoidBR Dağıtımı · LouvorJA Piano ISO",
+        "bio": "VoidBR topluluğunun (Void Linux Brazil) ve Chililinux projesinin (LFS tabanlı GNU/Linux) kurucusu. Temel Linux geliştiricisi — özel çekirdek, otomasyon ve paketleme — kiliselerin yasal yazılıma kolayca geçmesini sağlayan, PIANO'yu önceden yüklü ve güncel tutan VoidBR LouvorJA Piano ISO'sunu sürdürüyor."
+      },
+      "elomarxa": {
+        "role": "Dijital Tasarım, UI ve UX",
+        "bio": "Görsel varlık üretiminde deneyimli ve UI/UX becerilerini sürekli geliştiren dijital tasarımcı."
+      }
+    },
+    "work": {
+      "title": "Çalışma şeklimiz",
+      "text": "Açık kaynak, akran incelemesi ve sürekli teslim: her alan, otomatik entegrasyon ve dağıtımla kendi deposunu kurumsal çatıda tutar."
+    },
+    "cta": "GitHub'da organizasyonu keşfedin",
+    "modal": {
+      "close": "Kapat"
+    },
+    "contribute": {
+      "title": "Projeye katkı verin",
+      "text": "PIANO açık kaynaklıdır ve toplulukla birlikte büyür. Kod katkısı verebilir, hata bildirebilir, özellik önerebilir, çeviriye yardım edebilir veya projeyi paylaşabilirsiniz.",
+      "ways": {
+        "code": "GitHub'da çekme isteği gönderin",
+        "bugs": "Hata bildirin ve iyileştirme önerin",
+        "translate": "Çeviriye yardım edin",
+        "share": "Topluluğunuzla paylaşın"
+      },
+      "button": "Katkıya başla"
+    }
+  },
+  "community": {
+    "spot": "Bu yer sizin — gelin test edin",
+    "eyebrow": "Topluluk",
+    "title": "Kullanan, test eden ve katkı verenler",
+    "subtitle": "PIANO LouvorJA'nın büyümesine yardım eden testçiler, meraklılar ve önericiler. Katılmak ister misiniz?",
+    "roles": {
+      "tester": "Testçi",
+      "enthusiast": "Meraklı",
+      "suggester": "Önerici"
+    },
+    "since": "{since} tarihinden beri",
+    "link": "Profili gör",
+    "cta": "Topluluğa katıl",
+    "channels": {
+      "whatsapp-support": "Destek grubu (WhatsApp)",
+      "dev-form": "Geliştirici ol",
+      "telegram-community": "Telegram topluluğu"
+    }
+  },
+  "testers": {
+    "eyebrow": "Test topluluğu",
+    "title": "Testçiler",
+    "subtitle": "PIANO LouvorJA'yı gerçek ibadet koşullarında test edip bulduklarını bildirenler — uygulamanın kiliseniz için istikrarlı kalması böyle sağlanıyor.",
+    "gallery": {
+      "avatarAlt": "{name} adlı kişinin avatarı",
+      "more": "Daha fazla bilgi"
+    },
+    "modal": {
+      "close": "Kapat"
+    },
+    "focus": {
+      "vm": "Sanal makine",
+      "install": "Kurulum",
+      "web": "Web",
+      "desktop": "Masaüstü",
+      "mobile": "Mobil",
+      "tv": "TV / Sahne",
+      "community": "Topluluk"
+    },
+    "members": {
+      "natan": {
+        "bio": "Void Linux üzerinde PIANO'yu test ediyor ve sıfırdan kurulumu doğruluyor."
+      }
+    },
+    "reports": {
+      "title": "Son test raporları",
+      "loading": "Raporlar yükleniyor…",
+      "empty": "Henüz rapor yok.",
+      "comingSoon": "Yakında: doğrudan test formundan gelen raporlar.",
+      "anonymous": "Anonim"
+    },
+    "cta": {
+      "title": "PIANO'yu test etmek ister misiniz?",
+      "button": "Testçi ol",
+      "bug": "Hata bildir"
+    }
+  },
+  "donate": {
+    "title": "Projeyi destekleyin",
+    "subtitle": "PIANO LouvorJA ücretsizdir. Bağışınız projeyi canlı ve reklamsız tutmamıza yardım eder.",
+    "button": "Bağış yap",
+    "pix": "Pix",
+    "boleto": "Havale",
+    "card": "Kredi kartı"
+  },
+  "conduct": {
+    "title": "Topluluk Davranış Kuralları",
+    "metaDescription": "LouvorJA topluluğunun ilkeleri, moderasyonu ve itirazları — Yedinci Gün Adventist müzik ilkelerine dayanır.",
+    "lastUpdated": "Sürüm 1.0 — Kasım 2026",
+    "tocLabel": "Bu sayfanın içindekiler",
+    "intro": "LouvorJA topluluğu, üyelerinin Tanrı'yı yücelten ve kiliseyi eden piyanistik ibadet içerikleri oluşturmasına, paylaşmasına ve kutlamasına olanak tanımak için var. Bu kurallar, Yedinci Gün Adventist Kilisesi'nin resmi ilkelerine — özellikle Müzik Üzerine Adventist İlkeleri (Yıllık Konsey, 2004), 28 Temel İnanç ve Kilise El Kitabı'na — dayanır.",
+    "purposeQuote": "\"Öyleyse ister yiyin ister için, her ne yaparsanız, Tanrı'nın yüceliği için yapın.\" — 1. Korintliler 10:31",
+    "sections": {
+      "celebrate": {
+        "title": "1. Neyi kutluyoruz",
+        "body": [
+          "Tanrı'yı yücelten, yüce ve en iyiye yönelen (Flp 4:8), gerçek bir ruhsal mesaj taşıyan, dengeli, özgün ve kültürel çeşitlilikteki içerikler — müzik tarzı dışlama nedeni değildir; içerik ve mesajdır. Üyeler arasında saygı: zevk farkları çatışma nedeni değildir."
+        ]
+      },
+      "notAllowed": {
+        "title": "2. İzin verilmeyen içerik",
+        "body": [
+          "Öğretisel: sözler veya mesajlar Kutsal Kitap'a ya da 28 Temel İnanç'a aykırı.",
+          "Uygunsuz: şehvet, öfke, umutsuzluk, kızgınlık veya nefreti kışkırtan — saldırgan, müstehcen, şiddet içeren veya küfür içeren içerik.",
+          "Telif: intihal veya korunan eserlerin izinsiz kullanımı — ilahilerin telif sahipleri vardır.",
+          "Spam: reklam, kendi reklamı, ibadetle ilgisiz içerik.",
+          "Davranış: diğer üyelere taciz, kişisel saldırı, ayrımcılık veya zulüm."
+        ]
+      },
+      "moderation": {
+        "title": "3. Moderasyon: bildirim ve uyarılar",
+        "body": [
+          "Temel ilke: gizlemek silmek değildir. Şüpheli içerik önce görünümden gizlenir; yalnızca incelemeden sonra kalıcı olarak silinir.",
+          "İlk hafif bildirim (spam/diğer): içerik \"incelemede\" olarak işaretlenir, görünür kalır ve oyun yöneticileri kuyruğuna girer.",
+          "3 bildirim veya 1 ciddi bildirim (öğretisel, uygunsuz, telif): otomatik olarak en yüksek öncelikle gizlenir.",
+          "Oyun yöneticileri 7 gün içinde inceler: uygun içerik gerekçesiyle geri döner; silinen içerik yazarına bu kuralların gerekçesi ve yönlendirmesiyle uyarı getirir.",
+          "Uyarılar: 1. resmi uyarı + içerik silme; 2. 7 gün yayını askıya alma; 3. yayını yasaklama (hesap görüntüleme iznini korur). Silme, yazarlığı veya meşru yoldan kazanılan puanları silmez. Her uyarı geliştiricilere itiraz edilebilir; ciddi vakalar ekibe iletilir."
+        ]
+      },
+      "gameMasters": {
+        "title": "4. Oyun yöneticileri",
+        "body": [
+          "Yitro modelini (Çıkış 18) izleyerek, geliştirici ekibin davet ettiği iki-üç üye inceleme kuyruğunu, uyarıları ve yeni üyelerin yönlendirilmesini üstlenir. Bu kuralları birebir uygularlar; değişiklikler geliştiricilere iletilir. Ciddi vakalar geliştirici ekibe sunulur. Karar sırası: önce topluluğu korumak; sonra yaratıcıyı korumak."
+        ]
+      },
+      "transparency": {
+        "title": "5. Şeffaflık ve itiraz",
+        "body": [
+          "Bu kurallar açıktır ve uygulamanın topluluk bölümünde görülebilir.",
+          "Her yazar neyin silindiğini, nedenini (hangi kural) ve nasıl itiraz edeceğini bilir.",
+          "Değişiklikler geliştirici ekip + liderlik tarafından, oyun yöneticileriyle istişare edilerek yapılır.",
+          "Hiçbir içerik sessizce silinmez."
+        ]
+      },
+      "invitation": {
+        "title": "6. Bir davet",
+        "body": [
+          "Topluluk bir hizmet yeridir. Mükemmellikle yayınlayın, adaletle bildirin, merhametle inceleyin."
+        ],
+        "quote": "\"Rab'be yeni bir ezgi söyleyin, bütün dünya Rab'be ezgi söylesin.\" — Mezmur 96:1"
+      }
+    }
+  },
+  "ranking": {
+    "title": "Topluluk sıralaması",
+    "metaDescription": "PIANO LouvorJA topluluğunun katkıcılarının açık ve şeffaf sıralaması — yayınlanan, kullanılan ve senkronize edilen derlemeler.",
+    "subtitle": "Topluluk katkıları — açık ve şeffaf",
+    "tabsLabel": "Sıralama dönemi",
+    "tabAll": "Tümü",
+    "tabWeek": "Haftalık",
+    "errorText": "Sıralama şu anda yüklenemiyor.",
+    "retry": "Tekrar dene",
+    "empty": "Henüz kayıtlı puan yok.",
+    "footerLink": "Sıralama"
+  },
+  "midias": {
+    "title": "LouvorJA Medya",
+    "metaDescription": "LouvorJA PIANO medyalarını ve derlemelerini doğrudan Google Drive'dan indirin — API bağımlılığı yok, çevrimdışı, ücretsiz.",
+    "subtitle": "Topluluk derlemeleri ve ses",
+    "description": "LouvorJA PIANO medya dosyaları (derlemeler, ses ve kaynak paketleri) topluluk Google Drive'da barındırılır. Aşağıdaki düğmeyle indirin ve uygulamada içe aktarın.",
+    "noteOffline": "Çevrimdışı çalışır: uygulamada içe aktardıktan sonra her şey cihazınızda saklanır.",
+    "noteBackup": "Ağ bağlantısı güvenilir olmayan kiliseler için ideal — bir kez indirin, her zaman kullanın.",
+    "downloadButton": "Medyayı Google Drive'da aç",
+    "unavailable": "Medya bağlantısı yakında.",
+    "footerLink": "Medya"
+  }
+}
