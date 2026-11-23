@@ -1,6 +1,7 @@
 import { describe, it, vi } from 'vitest'
 import { mount, flushPromises } from '@vue/test-utils'
-import { writeFileSync } from 'node:fs'
+import { mkdirSync, writeFileSync } from 'node:fs'
+import { resolve } from 'node:path'
 
 /**
  * EVIDÊNCIA (não é teste de comportamento — falha nunca): monta as abas do
@@ -78,7 +79,9 @@ const CSS = `
 `
 
 function dump(name: string, html: string) {
-  const out = `/home/rafaelejosi/.hermes/kanban/boards/erp-platform/workspaces/t_aad19b38/wt/site/.evidence/${name}.html`
+  const directory = resolve('.evidence')
+  mkdirSync(directory, { recursive: true })
+  const out = resolve(directory, `${name}.html`)
   writeFileSync(
     out,
     `<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><title>${name}</title><style>${CSS}</style></head><body><div id="app">${html}</div></body></html>`,
