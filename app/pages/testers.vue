@@ -43,19 +43,17 @@
   defineExpose({ apiTesterNames, apiError })
 
   const rosterTesters = computed<TesterProfile[]>(() => {
-    const sheetIds = new Set(testers.value.map((t) => t.id))
     const fromApi = apiError.value
       ? []
-      : apiTesters.value
-          .filter((m) => !sheetIds.has(m.github ?? ''))
-          .map((m) => ({
-            id: m.github ?? m.id,
-            name: m.name,
-            avatar: m.avatar_url ?? `https://github.com/${m.github ?? 'ghost'}.png?size=96`,
-            focus: ['community'] as TesterProfile['focus'],
-            links: m.github ? [{ label: 'GitHub', url: `https://github.com/${m.github}` }] : [],
-          }))
-    return [...fromApi, ...testers.value]
+      : apiTesters.value.map((m) => ({
+          id: m.github ?? m.id,
+          name: m.name,
+          avatar: m.avatar_url ?? `https://github.com/${m.github ?? 'ghost'}.png?size=96`,
+          focus: ['community'] as TesterProfile['focus'],
+          links: m.github ? [{ label: 'GitHub', url: `https://github.com/${m.github}` }] : [],
+        }))
+    const apiIds = new Set(fromApi.map((tester) => tester.id))
+    return [...fromApi, ...testers.value.filter((tester) => !apiIds.has(tester.id))]
   })
 
   const { positiveReports, enabled, pending, hasReports } = useTestersReports()

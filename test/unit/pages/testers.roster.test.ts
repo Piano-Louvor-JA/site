@@ -94,4 +94,14 @@ describe('página /testers lê roster tester da API (SPEC Comunidade D3)', () =>
     const html = wrapper.html()
     expect(html.split('Tester Da Sheet').length - 1).toBe(1)
   })
+  it('a API tem prioridade sobre a sheet quando o login é o mesmo', async () => {
+    fetchMock.mockResolvedValue({
+      data: [{ ...tester, name: 'Nome Atualizado na API', github: 'sheettester' }],
+    })
+    const wrapper = mountPage()
+    await flushPromises()
+    expect(wrapper.text()).toContain('Nome Atualizado na API')
+    expect(wrapper.text()).not.toContain('Tester Da Sheet')
+    expect(wrapper.findAll('.testers__card')).toHaveLength(1)
+  })
 })
