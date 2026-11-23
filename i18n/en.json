@@ -814,7 +814,41 @@
     "recentActivity": "Recent Activity",
     "quickLinks": "Quick Links",
     "noData": "Data unavailable",
-    "loading": "Loading..."
+    "loading": "Loading...",
+    "comunidade": {
+      "tab": "Pending",
+      "tabMembros": "Members",
+      "tabEquipe": "Team",
+      "subtitulo": "Pending moderation, member and team management — in one panel.",
+      "filtroStatus": "Status",
+      "todos": "All",
+      "carregando": "Loading…",
+      "recarregar": "↻ Reload",
+      "carregarMais": "Load more",
+      "erroCarregar": "Failed to load",
+      "semMembros": "No members in this filter.",
+      "semEquipe": "No staff members found.",
+      "roles": "Roles",
+      "salvar": "Save",
+      "salvando": "Saving…",
+      "salvoOk": "Roles updated ✓",
+      "erroSalvar": "Failed to save",
+      "aprovar": "Approve",
+      "aprovadoOk": "Member approved ✓",
+      "inativar": "Deactivate",
+      "inativadoOk": "Member deactivated ✓",
+      "reativar": "Reactivate",
+      "gm": "GM (administrator)",
+      "role": {
+        "dev": "Developer",
+        "tester": "Tester",
+        "conteudo": "Content",
+        "curador": "Curator",
+        "staff": "Staff"
+      },
+      "title": "Community",
+      "tabsAriaLabel": "Community panel tabs"
+    }
   },
   "download": {
     "metaTitle": "Download — PIANO LouvorJA",

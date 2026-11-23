@@ -814,7 +814,41 @@
     "recentActivity": "Actividad Reciente",
     "quickLinks": "Enlaces Rápidos",
     "noData": "Datos no disponibles",
-    "loading": "Cargando..."
+    "loading": "Cargando...",
+    "comunidade": {
+      "tab": "Pendientes",
+      "tabMembros": "Miembros",
+      "tabEquipe": "Equipo",
+      "subtitulo": "Moderación de pendientes, gestión de miembros y equipo — en un panel.",
+      "filtroStatus": "Estado",
+      "todos": "Todos",
+      "carregando": "Cargando…",
+      "recarregar": "↻ Recargar",
+      "carregarMais": "Cargar más",
+      "erroCarregar": "Error al cargar",
+      "semMembros": "No hay miembros en este filtro.",
+      "semEquipe": "No se encontraron miembros del equipo.",
+      "roles": "Roles",
+      "salvar": "Guardar",
+      "salvando": "Guardando…",
+      "salvoOk": "Roles actualizados ✓",
+      "erroSalvar": "Error al guardar",
+      "aprovar": "Aprobar",
+      "aprovadoOk": "Miembro aprobado ✓",
+      "inativar": "Desactivar",
+      "inativadoOk": "Miembro desactivado ✓",
+      "reativar": "Reactivar",
+      "gm": "GM (administrador)",
+      "role": {
+        "dev": "Desarrollador",
+        "tester": "Tester",
+        "conteudo": "Contenido",
+        "curador": "Curador",
+        "staff": "Equipo"
+      },
+      "title": "Comunidad",
+      "tabsAriaLabel": "Pestañas del panel de comunidad"
+    }
   },
   "download": {
     "metaTitle": "Descargar — PIANO LouvorJA",

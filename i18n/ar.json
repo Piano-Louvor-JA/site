@@ -804,7 +804,41 @@
     "recentActivity": "النشاط الأخير",
     "quickLinks": "روابط سريعة",
     "noData": "البيانات غير متاحة",
-    "loading": "جارٍ التحميل..."
+    "loading": "جارٍ التحميل...",
+    "comunidade": {
+      "tab": "قيد الانتظار",
+      "tabMembros": "الأعضاء",
+      "tabEquipe": "الفريق",
+      "subtitulo": "إدارة المحتوى قيد المراجعة والأعضاء والفريق من لوحة واحدة.",
+      "filtroStatus": "الحالة",
+      "todos": "الكل",
+      "carregando": "جارٍ التحميل…",
+      "recarregar": "↻ إعادة التحميل",
+      "carregarMais": "تحميل المزيد",
+      "erroCarregar": "تعذّر التحميل",
+      "semMembros": "لا يوجد أعضاء يطابقون عامل التصفية.",
+      "semEquipe": "لم يُعثر على أعضاء من الطاقم.",
+      "roles": "الأدوار",
+      "salvar": "حفظ",
+      "salvando": "جارٍ الحفظ…",
+      "salvoOk": "حُدّثت الأدوار ✓",
+      "erroSalvar": "تعذّر الحفظ",
+      "aprovar": "اعتماد",
+      "aprovadoOk": "اعتُمد العضو ✓",
+      "inativar": "تعطيل",
+      "inativadoOk": "عُطّل العضو ✓",
+      "reativar": "إعادة تفعيل",
+      "gm": "GM (مسؤول)",
+      "role": {
+        "dev": "مطوّر",
+        "tester": "مختبِر",
+        "conteudo": "محتوى",
+        "curador": "قيّم",
+        "staff": "طاقم"
+      },
+      "title": "المجتمع",
+      "tabsAriaLabel": "علامات تبويب لوحة المجتمع"
+    }
   },
   "download": {
     "metaTitle": "تنزيل — PIANO LouvorJA",
