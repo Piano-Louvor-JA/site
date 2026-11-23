@@ -6,6 +6,7 @@
 
   const route = useRoute()
   const { locale, t } = useI18n()
+  const localePath = useLocalePath()
 
   // Onda 3: docs localizadas por coleção; locale sem conteúdo → fallback pt-BR (AC4)
   const localeDir = computed(() => docDirFor(locale.value))
@@ -202,7 +203,7 @@
     <section class="doc-hero">
       <div class="doc-hero__container">
         <nav class="doc-breadcrumb" :aria-label="t('docs.breadcrumb') || 'Você está em'">
-          <NuxtLink to="/docs">{{ t('nav.docs') }}</NuxtLink>
+          <NuxtLink :to="localePath('/docs')">{{ t('nav.docs') }}</NuxtLink>
           <span aria-hidden="true">/</span>
           <span>{{ page?.title }}</span>
         </nav>

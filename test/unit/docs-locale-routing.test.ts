@@ -58,3 +58,33 @@ describe('docs localizadas — link do sidebar (P2 regressão)', () => {
     }
   })
 })
+
+// Onda 3 P2b — rota interna /docs/* deve ser prefixada pelo locale ativo
+// (strategy prefix_except_default): em /es/docs os cards linkam /es/docs/*,
+// nunca a rota pt-BR sem prefixo. Mesma semântica do localePath do nuxt-i18n.
+function localePathFor(path: string, locale: string, defaultLocale = 'pt-BR'): string {
+  if (!path.startsWith('/')) return path
+  if (locale === defaultLocale) return path
+  return `/${locale}${path}`
+}
+
+describe('docs localizadas — localePath dos links internos (P2b)', () => {
+  it('pt-BR (default) mantém /docs/* sem prefixo', () => {
+    expect(localePathFor('/docs/getting-started', 'pt-BR')).toBe('/docs/getting-started')
+    expect(localePathFor('/docs', 'pt-BR')).toBe('/docs')
+  })
+
+  it('locale traduzida prefixa os cards do índice', () => {
+    expect(localePathFor('/docs/getting-started', 'es')).toBe('/es/docs/getting-started')
+    expect(localePathFor('/docs/install/windows', 'ja')).toBe('/ja/docs/install/windows')
+    expect(localePathFor('/docs', 'ar')).toBe('/ar/docs')
+  })
+
+  it('todos os 11 locales não-default prefixam; pt-BR nunca', () => {
+    for (const loc of AVAILABLE) {
+      const link = localePathFor('/docs/faq', loc)
+      if (loc === 'pt-BR') expect(link).toBe('/docs/faq')
+      else expect(link).toBe(`/${loc}/docs/faq`)
+    }
+  })
+})
