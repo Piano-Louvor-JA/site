@@ -741,5 +741,39 @@
     "cta": "Unirse al grupo",
     "whatsapp": "Soporte en WhatsApp",
     "telegram": "Devs en Telegram"
+  },
+  "admin": {
+    "comunidade": {
+      "tab": "Pendientes",
+      "tabMembros": "Miembros",
+      "tabEquipe": "Equipo",
+      "subtitulo": "Moderación de pendientes, gestión de miembros y equipo — en un panel.",
+      "filtroStatus": "Estado",
+      "todos": "Todos",
+      "carregando": "Cargando…",
+      "recarregar": "↻ Recargar",
+      "carregarMais": "Cargar más",
+      "erroCarregar": "Error al cargar",
+      "semMembros": "No hay miembros en este filtro.",
+      "semEquipe": "No se encontraron miembros del equipo.",
+      "roles": "Roles",
+      "salvar": "Guardar",
+      "salvando": "Guardando…",
+      "salvoOk": "Roles actualizados ✓",
+      "erroSalvar": "Error al guardar",
+      "aprovar": "Aprobar",
+      "aprovadoOk": "Miembro aprobado ✓",
+      "inativar": "Desactivar",
+      "inativadoOk": "Miembro desactivado ✓",
+      "reativar": "Reactivar",
+      "gm": "GM (administrador)",
+      "role": {
+        "dev": "Desarrollador",
+        "tester": "Tester",
+        "conteudo": "Contenido",
+        "curador": "Curador",
+        "staff": "Equipo"
+      }
+    }
   }
 }

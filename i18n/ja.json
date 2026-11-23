@@ -805,7 +805,41 @@
     "recentActivity": "最近のアクティビティ",
     "quickLinks": "クイックリンク",
     "noData": "データを取得できません",
-    "loading": "読み込み中..."
+    "loading": "読み込み中...",
+    "comunidade": {
+      "tab": "保留中",
+      "tabMembros": "メンバー",
+      "tabEquipe": "チーム",
+      "subtitulo": "審査待ちの内容、メンバー、チームを一つの画面で管理します。",
+      "filtroStatus": "状態",
+      "todos": "すべて",
+      "carregando": "読み込み中…",
+      "recarregar": "↻ 再読み込み",
+      "carregarMais": "さらに読み込む",
+      "erroCarregar": "読み込みに失敗しました",
+      "semMembros": "この条件に合うメンバーはいません。",
+      "semEquipe": "スタッフが見つかりません。",
+      "roles": "役割",
+      "salvar": "保存",
+      "salvando": "保存中…",
+      "salvoOk": "役割を更新しました ✓",
+      "erroSalvar": "保存に失敗しました",
+      "aprovar": "承認",
+      "aprovadoOk": "メンバーを承認しました ✓",
+      "inativar": "無効化",
+      "inativadoOk": "メンバーを無効化しました ✓",
+      "reativar": "再有効化",
+      "gm": "GM（管理者）",
+      "role": {
+        "dev": "開発者",
+        "tester": "テスター",
+        "conteudo": "コンテンツ",
+        "curador": "キュレーター",
+        "staff": "スタッフ"
+      },
+      "title": "コミュニティ",
+      "tabsAriaLabel": "コミュニティ管理のタブ"
+    }
   },
   "download": {
     "metaTitle": "ダウンロード — PIANO LouvorJA",

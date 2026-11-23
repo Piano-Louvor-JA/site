@@ -815,7 +815,41 @@
     "recentActivity": "Atividade Recente",
     "quickLinks": "Links Rapidos",
     "noData": "Dados indisponiveis",
-    "loading": "Carregando..."
+    "loading": "Carregando...",
+    "comunidade": {
+      "tab": "Pendentes",
+      "tabMembros": "Membros",
+      "tabEquipe": "Equipe",
+      "subtitulo": "Moderação de pendentes, gestão de membros e equipe — em um só painel.",
+      "filtroStatus": "Status",
+      "todos": "Todos",
+      "carregando": "Carregando…",
+      "recarregar": "↻ Recarregar",
+      "carregarMais": "Carregar mais",
+      "erroCarregar": "Erro ao carregar",
+      "semMembros": "Nenhum membro neste filtro.",
+      "semEquipe": "Nenhum membro staff encontrado.",
+      "roles": "Papéis",
+      "salvar": "Salvar",
+      "salvando": "Salvando…",
+      "salvoOk": "Papéis atualizados ✓",
+      "erroSalvar": "Erro ao salvar",
+      "aprovar": "Aprovar",
+      "aprovadoOk": "Membro aprovado ✓",
+      "inativar": "Inativar",
+      "inativadoOk": "Membro inativado ✓",
+      "reativar": "Reativar",
+      "gm": "GM (administrador)",
+      "role": {
+        "dev": "Desenvolvedor",
+        "tester": "Testador",
+        "conteudo": "Conteúdo",
+        "curador": "Curador",
+        "staff": "Equipe"
+      },
+      "title": "Comunidade",
+      "tabsAriaLabel": "Abas do painel da comunidade"
+    }
   },
   "download": {
     "metaTitle": "Baixar — PIANO LouvorJA",

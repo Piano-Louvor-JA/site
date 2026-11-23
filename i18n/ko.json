@@ -803,7 +803,41 @@
     "recentActivity": "최근 활동",
     "quickLinks": "빠른 링크",
     "noData": "데이터를 사용할 수 없습니다",
-    "loading": "로딩 중..."
+    "loading": "로딩 중...",
+    "comunidade": {
+      "tab": "대기 중",
+      "tabMembros": "회원",
+      "tabEquipe": "팀",
+      "subtitulo": "검토 대기 항목, 회원과 팀을 한 화면에서 관리합니다.",
+      "filtroStatus": "상태",
+      "todos": "전체",
+      "carregando": "불러오는 중…",
+      "recarregar": "↻ 새로고침",
+      "carregarMais": "더 불러오기",
+      "erroCarregar": "불러오지 못했습니다",
+      "semMembros": "이 조건에 맞는 회원이 없습니다.",
+      "semEquipe": "스태프를 찾을 수 없습니다.",
+      "roles": "역할",
+      "salvar": "저장",
+      "salvando": "저장 중…",
+      "salvoOk": "역할을 업데이트했습니다 ✓",
+      "erroSalvar": "저장하지 못했습니다",
+      "aprovar": "승인",
+      "aprovadoOk": "회원을 승인했습니다 ✓",
+      "inativar": "비활성화",
+      "inativadoOk": "회원을 비활성화했습니다 ✓",
+      "reativar": "다시 활성화",
+      "gm": "GM (관리자)",
+      "role": {
+        "dev": "개발자",
+        "tester": "테스터",
+        "conteudo": "콘텐츠",
+        "curador": "큐레이터",
+        "staff": "스태프"
+      },
+      "title": "커뮤니티",
+      "tabsAriaLabel": "커뮤니티 관리 탭"
+    }
   },
   "download": {
     "metaTitle": "다운로드 — PIANO LouvorJA",

@@ -805,7 +805,41 @@
     "recentActivity": "हालिया गतिविधि",
     "quickLinks": "त्वरित लिंक",
     "noData": "डेटा अनुपलब्ध",
-    "loading": "लोड हो रहा है..."
+    "loading": "लोड हो रहा है...",
+    "comunidade": {
+      "tab": "लंबित",
+      "tabMembros": "सदस्य",
+      "tabEquipe": "टीम",
+      "subtitulo": "लंबित समीक्षा, सदस्य और टीम का प्रबंधन एक ही पैनल में करें।",
+      "filtroStatus": "स्थिति",
+      "todos": "सभी",
+      "carregando": "लोड हो रहा है…",
+      "recarregar": "↻ फिर लोड करें",
+      "carregarMais": "और लोड करें",
+      "erroCarregar": "लोड नहीं हो सका",
+      "semMembros": "इस फ़िल्टर में कोई सदस्य नहीं है।",
+      "semEquipe": "कोई स्टाफ सदस्य नहीं मिला।",
+      "roles": "भूमिकाएँ",
+      "salvar": "सहेजें",
+      "salvando": "सहेजा जा रहा है…",
+      "salvoOk": "भूमिकाएँ अपडेट हुईं ✓",
+      "erroSalvar": "सहेजा नहीं जा सका",
+      "aprovar": "अनुमोदित करें",
+      "aprovadoOk": "सदस्य अनुमोदित हुआ ✓",
+      "inativar": "निष्क्रिय करें",
+      "inativadoOk": "सदस्य निष्क्रिय हुआ ✓",
+      "reativar": "फिर सक्रिय करें",
+      "gm": "GM (प्रशासक)",
+      "role": {
+        "dev": "डेवलपर",
+        "tester": "परीक्षक",
+        "conteudo": "सामग्री",
+        "curador": "क्यूरेटर",
+        "staff": "स्टाफ"
+      },
+      "title": "समुदाय",
+      "tabsAriaLabel": "समुदाय पैनल के टैब"
+    }
   },
   "download": {
     "metaTitle": "डाउनलोड — PIANO LouvorJA",

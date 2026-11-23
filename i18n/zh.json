@@ -791,7 +791,41 @@
     "recentActivity": "最近活动",
     "quickLinks": "快速链接",
     "noData": "数据不可用",
-    "loading": "加载中..."
+    "loading": "加载中...",
+    "comunidade": {
+      "tab": "待处理",
+      "tabMembros": "成员",
+      "tabEquipe": "团队",
+      "subtitulo": "在同一面板中管理待审核内容、成员和团队。",
+      "filtroStatus": "状态",
+      "todos": "全部",
+      "carregando": "正在加载…",
+      "recarregar": "↻ 重新加载",
+      "carregarMais": "加载更多",
+      "erroCarregar": "加载失败",
+      "semMembros": "没有符合条件的成员。",
+      "semEquipe": "未找到工作人员。",
+      "roles": "角色",
+      "salvar": "保存",
+      "salvando": "正在保存…",
+      "salvoOk": "角色已更新 ✓",
+      "erroSalvar": "保存失败",
+      "aprovar": "批准",
+      "aprovadoOk": "成员已批准 ✓",
+      "inativar": "停用",
+      "inativadoOk": "成员已停用 ✓",
+      "reativar": "重新启用",
+      "gm": "GM（管理员）",
+      "role": {
+        "dev": "开发者",
+        "tester": "测试者",
+        "conteudo": "内容",
+        "curador": "策展人",
+        "staff": "工作人员"
+      },
+      "title": "社区",
+      "tabsAriaLabel": "社区管理面板选项卡"
+    }
   },
   "download": {
     "metaTitle": "下载 — PIANO LouvorJA",

@@ -815,7 +815,41 @@
     "recentActivity": "Son etkinlik",
     "quickLinks": "Hızlı bağlantılar",
     "noData": "Veri mevcut değil",
-    "loading": "Yükleniyor..."
+    "loading": "Yükleniyor...",
+    "comunidade": {
+      "tab": "Bekleyenler",
+      "tabMembros": "Üyeler",
+      "tabEquipe": "Ekip",
+      "subtitulo": "Bekleyen içerikleri, üyeleri ve ekibi tek panelden yönetin.",
+      "filtroStatus": "Durum",
+      "todos": "Tümü",
+      "carregando": "Yükleniyor…",
+      "recarregar": "↻ Yenile",
+      "carregarMais": "Daha fazla yükle",
+      "erroCarregar": "Yüklenemedi",
+      "semMembros": "Bu filtreye uygun üye yok.",
+      "semEquipe": "Ekip üyesi bulunamadı.",
+      "roles": "Roller",
+      "salvar": "Kaydet",
+      "salvando": "Kaydediliyor…",
+      "salvoOk": "Roller güncellendi ✓",
+      "erroSalvar": "Kaydedilemedi",
+      "aprovar": "Onayla",
+      "aprovadoOk": "Üye onaylandı ✓",
+      "inativar": "Devre dışı bırak",
+      "inativadoOk": "Üye devre dışı bırakıldı ✓",
+      "reativar": "Yeniden etkinleştir",
+      "gm": "GM (yönetici)",
+      "role": {
+        "dev": "Geliştirici",
+        "tester": "Test uzmanı",
+        "conteudo": "İçerik",
+        "curador": "Küratör",
+        "staff": "Ekip"
+      },
+      "title": "Topluluk",
+      "tabsAriaLabel": "Topluluk paneli sekmeleri"
+    }
   },
   "download": {
     "metaTitle": "İndir — PIANO LouvorJA",

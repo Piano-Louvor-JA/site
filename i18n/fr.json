@@ -815,7 +815,41 @@
     "recentActivity": "Activité récente",
     "quickLinks": "Liens rapides",
     "noData": "Données indisponibles",
-    "loading": "Chargement..."
+    "loading": "Chargement...",
+    "comunidade": {
+      "tab": "En attente",
+      "tabMembros": "Membres",
+      "tabEquipe": "Équipe",
+      "subtitulo": "Modération des candidatures, gestion des membres et de l’équipe — en un seul panneau.",
+      "filtroStatus": "Statut",
+      "todos": "Tous",
+      "carregando": "Chargement…",
+      "recarregar": "↻ Recharger",
+      "carregarMais": "Charger plus",
+      "erroCarregar": "Échec du chargement",
+      "semMembros": "Aucun membre dans ce filtre.",
+      "semEquipe": "Aucun membre staff trouvé.",
+      "roles": "Rôles",
+      "salvar": "Enregistrer",
+      "salvando": "Enregistrement…",
+      "salvoOk": "Rôles mis à jour ✓",
+      "erroSalvar": "Échec de l’enregistrement",
+      "aprovar": "Approuver",
+      "aprovadoOk": "Membre approuvé ✓",
+      "inativar": "Désactiver",
+      "inativadoOk": "Membre désactivé ✓",
+      "reativar": "Réactiver",
+      "gm": "GM (administrateur)",
+      "role": {
+        "dev": "Développeur",
+        "tester": "Testeur",
+        "conteudo": "Contenu",
+        "curador": "Curateur",
+        "staff": "Équipe"
+      },
+      "title": "Communauté",
+      "tabsAriaLabel": "Onglets du panneau de communauté"
+    }
   },
   "contributors": {
     "title": "Ceux qui font vivre PIANO",
