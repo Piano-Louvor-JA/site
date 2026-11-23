@@ -164,9 +164,40 @@ describe('renderTemplate — i18n', () => {
     expect(html).toContain('alabanza')
   })
 
-  it('unknown locale falls back to pt-BR', () => {
+  it('fr has French strings (não é mais fallback: fr é locale do site)', () => {
     const html = renderTemplate('release', params('fr'))
+    expect(html).toContain('Se désabonner')
+    expect(html).toContain('Tous droits réservés')
+  })
+
+  it('unknown locale still falls back to pt-BR', () => {
+    const html = renderTemplate('release', params('xx-YY'))
     expect(html).toContain('Cancelar inscri')
+  })
+
+  it('todos os 12 locales renderizam strings próprias no rodapé', () => {
+    const probes: Record<string, string> = {
+      'pt-BR': 'Cancelar inscri',
+      en: 'Unsubscribe',
+      es: 'Cancelar suscripci',
+      ru: 'Отписаться',
+      uk: 'Відписатися',
+      fr: 'Se désabonner',
+      ja: '配信を停止する',
+      ko: '구독 취소',
+      zh: '取消订阅',
+      tr: 'Abonelikten çık',
+      ar: 'إلغاء الاشتراك',
+      hi: 'सदस्यता रद्द करें',
+    }
+    for (const [locale, probe] of Object.entries(probes)) {
+      const html = renderTemplate('release', params(locale))
+      expect(html, `${locale} deveria conter "${probe}"`).toContain(probe)
+      // Piano LouvorJA permanece em alfabeto latino em todos os idiomas
+      expect(html, `${locale} deveria manter Piano LouvorJA latino`).toContain('Piano LouvorJA')
+      // URL de unsubscribe intacta
+      expect(html, `${locale} unsubscribeUrl intacta`).toContain('https://example.com/unsub')
+    }
   })
 
   it('release badge is localized', () => {
@@ -184,5 +215,39 @@ describe('renderTemplate — i18n', () => {
     if (badgeText) {
       expect(html).toContain(badgeText[1])
     }
+  })
+})
+
+describe('renderTemplate — RTL (ar)', () => {
+  const params = {
+    subject: 'Test',
+    body: '# Hello',
+    unsubscribeUrl: 'https://example.com/unsub',
+    locale: 'ar',
+  }
+
+  it('e-mail ar recebe dir="rtl" no elemento raiz', () => {
+    const html = renderTemplate('release', params)
+    expect(html).toContain('dir="rtl"')
+  })
+
+  it('e-mail ar tem text-align right no container', () => {
+    const html = renderTemplate('release', params)
+    expect(html).toMatch(/text-align:\s*right/)
+  })
+
+  it('demais locales NÃO recebem dir="rtl"', () => {
+    for (const locale of ['pt-BR', 'en', 'es', 'ru', 'uk', 'fr', 'ja', 'ko', 'zh', 'tr', 'hi']) {
+      const html = renderTemplate('release', { ...params, locale })
+      expect(html, `${locale} não deveria ter dir="rtl"`).not.toContain('dir="rtl"')
+    }
+  })
+
+  it('layout estrutural (logo, badge, unsubscribe) preservado no RTL', () => {
+    const html = renderTemplate('release', params)
+    expect(html).toContain('logo-louvor-ja.svg')
+    expect(html).toContain('Piano LouvorJA')
+    expect(html).toContain('إلغاء الاشتراك')
+    expect(html).toContain('https://example.com/unsub')
   })
 })
