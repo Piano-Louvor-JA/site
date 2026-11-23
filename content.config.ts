@@ -37,5 +37,16 @@ export default defineContentConfig({
       source: 'docs/es/**',
       schema: frontmatter,
     }),
+    // Onda 3 — docs localizadas (SPEC piano-site-i18n-onda3): coleções nascem vazias;
+    // fallback pt-BR via docDirFor() quando a locale ainda não tem páginas.
+    docs_ru: defineCollection({ type: 'page', source: 'docs/ru/**', schema: frontmatter }),
+    docs_uk: defineCollection({ type: 'page', source: 'docs/uk/**', schema: frontmatter }),
+    docs_fr: defineCollection({ type: 'page', source: 'docs/fr/**', schema: frontmatter }),
+    docs_ja: defineCollection({ type: 'page', source: 'docs/ja/**', schema: frontmatter }),
+    docs_ko: defineCollection({ type: 'page', source: 'docs/ko/**', schema: frontmatter }),
+    docs_zh: defineCollection({ type: 'page', source: 'docs/zh/**', schema: frontmatter }),
+    docs_tr: defineCollection({ type: 'page', source: 'docs/tr/**', schema: frontmatter }),
+    docs_ar: defineCollection({ type: 'page', source: 'docs/ar/**', schema: frontmatter }),
+    docs_hi: defineCollection({ type: 'page', source: 'docs/hi/**', schema: frontmatter }),
   },
 })
