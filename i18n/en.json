@@ -438,8 +438,67 @@
     "sidebarLabel": "Documentation sections",
     "guides": {
       "title": "Complete guides",
-      "lead": "Every tool in the ecosystem explained step by step, by platform."
-    }
+      "lead": "Every tool in the ecosystem explained step by step, by platform.",
+      "cards": {
+        "gettingStarted": {
+          "title": "Your first service in 15 minutes",
+          "desc": "From download to projection: the full flow."
+        },
+        "windows": {
+          "title": "Install on Windows",
+          "desc": "Microsoft Store or EXE installer."
+        },
+        "macos": {
+          "title": "Install on macOS",
+          "desc": "DMG for Apple Silicon or Intel."
+        },
+        "linux": {
+          "title": "Install on Linux",
+          "desc": "AppImage, Snap or Flatpak."
+        },
+        "android": {
+          "title": "Install on Android (APK)",
+          "desc": "Phones and TV boxes."
+        },
+        "pwa": {
+          "title": "Use in your browser (PWA)",
+          "desc": "Nothing to install."
+        },
+        "tvSamsung": {
+          "title": "Samsung TV (Tizen)",
+          "desc": "Projection via Stage."
+        },
+        "tvLg": {
+          "title": "LG TV (webOS)",
+          "desc": "Projection via Stage."
+        },
+        "tvAndroid": {
+          "title": "Android TV / Google TV",
+          "desc": "APK or TV box."
+        },
+        "palco": {
+          "title": "Multi-device Stage",
+          "desc": "Phone controls, TV projects."
+        },
+        "faq": {
+          "title": "Frequently asked questions",
+          "desc": "Free, offline, private."
+        },
+        "troubleshooting": {
+          "title": "Troubleshooting",
+          "desc": "Diagnosis by symptom."
+        },
+        "shortcuts": {
+          "title": "Keyboard shortcuts",
+          "desc": "Full table by context."
+        },
+        "manual": {
+          "title": "Complete manual",
+          "desc": "Every tool, section by section."
+        }
+      }
+    },
+    "editOnGithub": "Edit this page on GitHub"
   },
   "footer": {
     "tagline": "Web worship service manager. Free and open-source.",

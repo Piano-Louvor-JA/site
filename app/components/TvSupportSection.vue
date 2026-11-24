@@ -2,6 +2,7 @@
   import { useTvBrands } from '~/composables/useTvBrands'
 
   const tvBrands = useTvBrands()
+  const localePath = useLocalePath()
 
   function statusLabel(brand: { id: string; status: string }): string {
     if (brand.status === 'available') return `tvSupport.statusAvailable`
@@ -48,7 +49,7 @@
         </div>
       </div>
 
-      <a href="/download#tv" class="tv-support__cta">
+      <a :href="localePath('/download#tv')" class="tv-support__cta">
         {{ $t('tvSupport.cta') }}
         <i class="ti ti-arrow-right" aria-hidden="true" />
       </a>

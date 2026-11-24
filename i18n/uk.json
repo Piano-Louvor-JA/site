@@ -438,8 +438,67 @@
     "sidebarLabel": "Документація",
     "guides": {
       "title": "Повні керівництва",
-      "lead": "Кожен інструмент екосистеми пояснений покроково, за платформами."
-    }
+      "lead": "Кожен інструмент екосистеми пояснений покроково, за платформами.",
+      "cards": {
+        "gettingStarted": {
+          "title": "Перший богослужбовий захід за 15 хвилин",
+          "desc": "Від завантаження до проєкції: повний процес."
+        },
+        "windows": {
+          "title": "Встановлення на Windows",
+          "desc": "Microsoft Store або EXE-інсталятор."
+        },
+        "macos": {
+          "title": "Встановлення на macOS",
+          "desc": "DMG для Apple Silicon чи Intel."
+        },
+        "linux": {
+          "title": "Встановлення на Linux",
+          "desc": "AppImage, Snap чи Flatpak."
+        },
+        "android": {
+          "title": "Встановлення на Android (APK)",
+          "desc": "Смартфон і TV Box."
+        },
+        "pwa": {
+          "title": "Використання в браузері (PWA)",
+          "desc": "Без встановлення."
+        },
+        "tvSamsung": {
+          "title": "Samsung TV (Tizen)",
+          "desc": "Проєкція через Palco."
+        },
+        "tvLg": {
+          "title": "LG TV (webOS)",
+          "desc": "Проєкція через Palco."
+        },
+        "tvAndroid": {
+          "title": "Android TV / Google TV",
+          "desc": "APK або TV Box."
+        },
+        "palco": {
+          "title": "Palco на кілька пристроїв",
+          "desc": "Телефон керує, ТВ проєктує."
+        },
+        "faq": {
+          "title": "Часті запитання",
+          "desc": "Безкоштовно, офлайн, приватність."
+        },
+        "troubleshooting": {
+          "title": "Вирішення проблем",
+          "desc": "Діагностика за симптомом."
+        },
+        "shortcuts": {
+          "title": "Гарячі клавіші",
+          "desc": "Повна таблиця за контекстом."
+        },
+        "manual": {
+          "title": "Повний посібник",
+          "desc": "Усі інструменти, розділ за розділом."
+        }
+      }
+    },
+    "editOnGithub": "Редагувати цю сторінку на GitHub"
   },
   "common": {
     "loading": "Завантаження...",

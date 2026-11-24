@@ -10,11 +10,12 @@
 
   // Onda 3: docs localizadas por coleção; locale sem conteúdo → fallback pt-BR (AC4)
   const localeDir = computed(() => docDirFor(locale.value))
-  const usedDir = ref('pt-BR')
   const slugPath = computed(() => {
     const slug = route.params.slug
     return Array.isArray(slug) ? slug.join('/') : String(slug ?? '')
   })
+  // Preserve the actual content directory when hydrating cached SSR data.
+  const usedDir = useState<string>(`docs-dir-${locale.value}-${slugPath.value}`, () => 'pt-BR')
   type DocPage = PageCollectionItemBase & {
     reviewed_at?: string
     toc?: boolean
@@ -76,7 +77,7 @@
   })
 
   const SITE_URL = 'https://pianolouvorja.com.br'
-  const REPO_BLOB = 'https://github.com/Piano-Louvor-JA/site/blob/main/content/docs/pt-BR'
+  const REPO_BLOB = 'https://github.com/Piano-Louvor-JA/site/blob/main/content/docs'
 
   const breadcrumbJsonLd = computed(() => ({
     '@context': 'https://schema.org',
@@ -177,9 +178,9 @@
     ],
   })
 
-  const editUrl = computed(() => `${REPO_BLOB}/${docSlug.value}.md`)
+  const editUrl = computed(() => `${REPO_BLOB}/${usedDir.value}/${docSlug.value}.md`)
 
-  const isFallback = computed(() => docDirFor(locale.value) !== locale.value)
+  const isFallback = computed(() => usedDir.value !== locale.value)
 
   // Ícones por plataforma (Tabler, já usado no site)
   const platformIcons: Record<string, string> = {

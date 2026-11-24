@@ -481,8 +481,67 @@
     "sidebarLabel": "Sections de la documentation",
     "guides": {
       "title": "Guides complets",
-      "lead": "Chaque outil de l’écosystème expliqué étape par étape, par plateforme."
-    }
+      "lead": "Chaque outil de l’écosystème expliqué étape par étape, par plateforme.",
+      "cards": {
+        "gettingStarted": {
+          "title": "Premier culte en 15 minutes",
+          "desc": "Du téléchargement à la projection : flux complet."
+        },
+        "windows": {
+          "title": "Installer sur Windows",
+          "desc": "Microsoft Store ou installateur EXE."
+        },
+        "macos": {
+          "title": "Installer sur macOS",
+          "desc": "DMG Apple Silicon ou Intel."
+        },
+        "linux": {
+          "title": "Installer sur Linux",
+          "desc": "AppImage, Snap ou Flathub."
+        },
+        "android": {
+          "title": "Installer sur Android (APK)",
+          "desc": "Mobile et TV Box."
+        },
+        "pwa": {
+          "title": "Utiliser dans le navigateur (PWA)",
+          "desc": "Sans rien installer."
+        },
+        "tvSamsung": {
+          "title": "TV Samsung (Tizen)",
+          "desc": "Projection via Palco."
+        },
+        "tvLg": {
+          "title": "TV LG (webOS)",
+          "desc": "Projection via Palco."
+        },
+        "tvAndroid": {
+          "title": "Android TV / Google TV",
+          "desc": "APK ou TV Box."
+        },
+        "palco": {
+          "title": "Palco multi-appareils",
+          "desc": "Le mobile contrôle, la TV projette."
+        },
+        "faq": {
+          "title": "Questions fréquentes",
+          "desc": "Gratuit, hors ligne, confidentialité."
+        },
+        "troubleshooting": {
+          "title": "Résolution de problèmes",
+          "desc": "Diagnostic par symptôme."
+        },
+        "shortcuts": {
+          "title": "Raccourcis clavier",
+          "desc": "Tableau complet par contexte."
+        },
+        "manual": {
+          "title": "Manuel complet",
+          "desc": "Tous les outils, section par section."
+        }
+      }
+    },
+    "editOnGithub": "Modifier cette page sur GitHub"
   },
   "privacy": {
     "title": "Politique de confidentialité",

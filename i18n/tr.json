@@ -438,8 +438,67 @@
     "sidebarLabel": "Doküman bölümleri",
     "guides": {
       "title": "Eksiksiz kılavuzlar",
-      "lead": "Ekosistemdeki her araç için platform bazlı, adım adım anlatımlar."
-    }
+      "lead": "Ekosistemdeki her araç için platform bazlı, adım adım anlatımlar.",
+      "cards": {
+        "gettingStarted": {
+          "title": "15 dakikada ilk ibadet",
+          "desc": "İndirmeden projeksiyona: tam akış."
+        },
+        "windows": {
+          "title": "Windows'a kurulum",
+          "desc": "Microsoft Store veya EXE kurulum dosyası."
+        },
+        "macos": {
+          "title": "macOS'a kurulum",
+          "desc": "Apple Silicon veya Intel için DMG."
+        },
+        "linux": {
+          "title": "Linux'a kurulum",
+          "desc": "AppImage, Snap veya Flatpak."
+        },
+        "android": {
+          "title": "Android'e kurulum (APK)",
+          "desc": "Telefon ve TV Box."
+        },
+        "pwa": {
+          "title": "Tarayıcıda kullanma (PWA)",
+          "desc": "Kurulum gerektirmez."
+        },
+        "tvSamsung": {
+          "title": "Samsung TV (Tizen)",
+          "desc": "Palco ile projeksiyon."
+        },
+        "tvLg": {
+          "title": "LG TV (webOS)",
+          "desc": "Palco ile projeksiyon."
+        },
+        "tvAndroid": {
+          "title": "Android TV / Google TV",
+          "desc": "APK veya TV Box."
+        },
+        "palco": {
+          "title": "Çok cihazlı Palco",
+          "desc": "Telefon kontrol eder, TV yansıtır."
+        },
+        "faq": {
+          "title": "Sıkça sorulan sorular",
+          "desc": "Ücretsiz, çevrimdışı, gizlilik."
+        },
+        "troubleshooting": {
+          "title": "Sorun giderme",
+          "desc": "Belirtiye göre teşhis."
+        },
+        "shortcuts": {
+          "title": "Klavye kısayolları",
+          "desc": "Bağlama göre tam tablo."
+        },
+        "manual": {
+          "title": "Eksiksiz kılavuz",
+          "desc": "Tüm araçlar, bölüm bölüm."
+        }
+      }
+    },
+    "editOnGithub": "Bu sayfayı GitHub’da düzenle"
   },
   "footer": {
     "tagline": "Web tabanlı ibadet yönetim aracı. Ücretsiz ve açık kaynak.",

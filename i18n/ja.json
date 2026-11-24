@@ -430,8 +430,67 @@
     "sidebarLabel": "ドキュメントのセクション",
     "guides": {
       "title": "完全ガイド",
-      "lead": "エコシステムのすべてのツールを、プラットフォーム別に順を追って解説します。"
-    }
+      "lead": "エコシステムのすべてのツールを、プラットフォーム別に順を追って解説します。",
+      "cards": {
+        "gettingStarted": {
+          "title": "15分で初めての礼拝",
+          "desc": "ダウンロードから投影まで：完全な流れ。"
+        },
+        "windows": {
+          "title": "Windows にインストール",
+          "desc": "Microsoft Store または EXE インストーラー。"
+        },
+        "macos": {
+          "title": "macOS にインストール",
+          "desc": "Apple Silicon または Intel 用 DMG。"
+        },
+        "linux": {
+          "title": "Linux にインストール",
+          "desc": "AppImage、Snap または Flatpak。"
+        },
+        "android": {
+          "title": "Android にインストール (APK)",
+          "desc": "スマートフォンと TV Box。"
+        },
+        "pwa": {
+          "title": "ブラウザで利用 (PWA)",
+          "desc": "インストール不要。"
+        },
+        "tvSamsung": {
+          "title": "Samsung TV (Tizen)",
+          "desc": "Palco 経由で投影。"
+        },
+        "tvLg": {
+          "title": "LG TV (webOS)",
+          "desc": "Palco 経由で投影。"
+        },
+        "tvAndroid": {
+          "title": "Android TV / Google TV",
+          "desc": "APK または TV Box。"
+        },
+        "palco": {
+          "title": "マルチデバイス Palco",
+          "desc": "スマホが操作、TV が投影。"
+        },
+        "faq": {
+          "title": "よくある質問",
+          "desc": "無料、オフライン、プライバシー保護。"
+        },
+        "troubleshooting": {
+          "title": "トラブルシューティング",
+          "desc": "症状ごとの診断。"
+        },
+        "shortcuts": {
+          "title": "キーボードショートカット",
+          "desc": "状況別の完全な一覧。"
+        },
+        "manual": {
+          "title": "完全マニュアル",
+          "desc": "すべてのツールを項目ごとに。"
+        }
+      }
+    },
+    "editOnGithub": "このページをGitHubで編集"
   },
   "footer": {
     "tagline": "ウェブ礼拝マネージャー。無料・オープンソース。",
