@@ -1,8 +1,4 @@
-/**
- * central-tickets B2 — cliente da API de tickets (SPEC-B2.md §2.1).
- * Client-side direto (site é SSG): fetch + Bearer Firebase ID token.
- * 401 → UnauthorizedError (UI trata sessão expirada). Sem proxy Nitro.
- */
+/** Client-side adapter for the existing /v1/tickets API. */
 import { useFirebaseAuth } from './useFirebaseAuth'
 
 export class UnauthorizedError extends Error {
@@ -11,176 +7,114 @@ export class UnauthorizedError extends Error {
     this.name = 'UnauthorizedError'
   }
 }
-
 export class NotAuthenticatedError extends Error {
   constructor() {
     super('Usuário não autenticado')
     this.name = 'NotAuthenticatedError'
   }
 }
-
+export type Priority = 'P1' | 'P2' | 'P3' | 'P4'
 export type IntakeCreateInput = {
-  name: string
-  email: string
+  requester_name: string
+  requester_email: string
   subject: string
   message: string
+  consent_lgpd: true
 }
-
 export type TicketCreateInput = {
   subject: string
-  priority: 'P1' | 'P2' | 'P3' | 'P4'
-  message: string
+  priority: Priority
+  description: string
+  category?: string
 }
-
 export type Ticket = {
-  id: number
-  public_ref: string
+  id: string
+  tenant_id: string
   subject: string
   priority: string
   status: string
+  description?: string
   first_response_due_at?: string | null
-  resolve_due_at?: string | null
+  resolution_due_at?: string | null
 }
-
 export type TicketMessage = {
-  id: number
-  ticket_id: number
+  id: string
   author_type: string
-  author_uid: string | null
+  author_ref: string
   body: string
+  visibility: string
   created_at?: string
 }
-
 export type IntakeItem = {
-  id: number
+  id: string
   protocol: string
-  name: string
-  email: string
+  requester_name: string
   subject: string
-  message: string
   status: string
+  tenant_id: string | null
 }
-
 export type KbArticle = {
-  id?: number
-  slug: string
+  id: string
   title: string
-  content?: string
+  scope: string
+  tenant_id: string | null
+  version: number
 }
-
 type GetToken = () => Promise<string | null>
 
-async function request(
-  base: string,
-  path: string,
-  init: RequestInit & { auth?: boolean },
-  getToken: GetToken,
-): Promise<unknown> {
-  const headers: Record<string, string> = {
-    'Content-Type': 'application/json',
-    ...(init.headers as Record<string, string> | undefined),
-  }
-  if (init.auth !== false) {
-    const token = await getToken()
-    if (!token) throw new NotAuthenticatedError()
-    headers.Authorization = `Bearer ${token}`
-  }
-  const res = await fetch(`${base}${path}`, { ...init, headers })
-  if (res.status === 401) throw new UnauthorizedError()
-  if (!res.ok) {
-    const body = (await res.json().catch(() => ({}))) as { error?: string }
-    throw new Error(body.error ?? `API error ${res.status}`)
-  }
-  return res.json()
-}
-
-/**
- * @param opts.getToken injetável para testes; default usa useFirebaseAuth().
- */
 export function useTicketsApi(opts: { getToken?: GetToken } = {}) {
-  const config = useRuntimeConfig()
-  const base = config.public.pianoApiBase as string
-  const getToken: GetToken = opts.getToken ?? (() => useFirebaseAuth().getToken())
-
-  const json = (method: string) => ({ method })
-
+  const base = String(useRuntimeConfig().public.pianoApiBase).replace(/\/$/, '')
+  const getToken = opts.getToken ?? (() => useFirebaseAuth().getToken())
+  async function request<T>(
+    path: string,
+    method = 'GET',
+    body?: unknown,
+    authenticated = true,
+  ): Promise<T> {
+    const headers: Record<string, string> = { 'Content-Type': 'application/json' }
+    if (authenticated) {
+      const token = await getToken()
+      if (!token) throw new NotAuthenticatedError()
+      headers.Authorization = `Bearer ${token}`
+    }
+    const res = await fetch(`${base}/v1/tickets${path}`, {
+      method,
+      headers,
+      ...(body === undefined ? {} : { body: JSON.stringify(body) }),
+    })
+    if (res.status === 401) throw new UnauthorizedError()
+    if (!res.ok) {
+      const error = (await res.json().catch(() => ({}))) as { error?: string }
+      throw new Error(error.error ?? `API error ${res.status}`)
+    }
+    return res.json() as Promise<T>
+  }
+  const ticketPath = (id: string) => `/portal/tickets/${encodeURIComponent(id)}`
   return {
-    // público — sem Bearer
     createIntake: (input: IntakeCreateInput) =>
-      request(
-        base,
-        '/v1/tickets-intake',
-        { method: 'POST', body: JSON.stringify(input), auth: false },
-        getToken,
-      ) as Promise<{ id: number; protocol: string }>,
-    intakeStatus: (protocol: string) =>
-      request(
-        base,
-        `/v1/tickets-intake/status/${encodeURIComponent(protocol)}`,
-        { method: 'GET', auth: false },
-        getToken,
-      ) as Promise<{ protocol: string; status: string }>,
-
-    // portal autenticado
-    listTickets: () =>
-      request(base, '/v1/tickets', json('GET'), getToken) as Promise<{ items: Ticket[] }>,
+      request<{ protocol: string }>('/public/intake', 'POST', input, false),
+    listTickets: () => request<{ data: Ticket[] }>('/portal/tickets'),
     createTicket: (input: TicketCreateInput) =>
-      request(
-        base,
-        '/v1/tickets',
-        { method: 'POST', body: JSON.stringify(input) },
-        getToken,
-      ) as Promise<{ id: number; public_ref: string; status: string }>,
-    getTicket: (id: number) =>
-      request(base, `/v1/tickets/${id}`, json('GET'), getToken) as Promise<Ticket>,
-    listMessages: (id: number) =>
-      request(base, `/v1/tickets/${id}/messages`, json('GET'), getToken) as Promise<{
-        items: TicketMessage[]
-      }>,
-    postMessage: (id: number, body: string) =>
-      request(
-        base,
-        `/v1/tickets/${id}/messages`,
-        { method: 'POST', body: JSON.stringify({ body }) },
-        getToken,
-      ) as Promise<{ id: number }>,
-
-    // agent+
-    setStatus: (id: number, status: string) =>
-      request(
-        base,
-        `/v1/tickets/${id}/status`,
-        { method: 'POST', body: JSON.stringify({ status }) },
-        getToken,
-      ) as Promise<unknown>,
-    listIntake: () =>
-      request(base, '/v1/tickets/intake', json('GET'), getToken) as Promise<{
-        items: IntakeItem[]
-      }>,
-    triageIntake: (id: number, input: { priority: string; note?: string }) =>
-      request(
-        base,
-        `/v1/tickets-intake/${id}/triage`,
-        { method: 'POST', body: JSON.stringify(input) },
-        getToken,
-      ) as Promise<{ ticket_id?: number }>,
-    aiSuggestion: (id: number) =>
-      request(
-        base,
-        `/v1/tickets/${id}/ai-suggestion`,
-        { method: 'POST', body: JSON.stringify({ opt_in: true }) },
-        getToken,
-      ) as Promise<{ suggestion: string | null; confidence: number; reason?: string }>,
-
-    // KB (autenticada client role)
-    listKb: () =>
-      request(base, '/v1/tickets-kb', json('GET'), getToken) as Promise<{ items: KbArticle[] }>,
-    getKbArticle: (slug: string) =>
-      request(
-        base,
-        `/v1/tickets-kb/${encodeURIComponent(slug)}`,
-        json('GET'),
-        getToken,
-      ) as Promise<KbArticle>,
+      request<{ id: string; tenant_id: string }>('/portal/tickets', 'POST', input),
+    getTicket: (id: string) => request<Ticket>(ticketPath(id)),
+    listMessages: (id: string) => request<{ data: TicketMessage[] }>(`${ticketPath(id)}/messages`),
+    postMessage: (id: string, body: string) =>
+      request<{ id: string }>(`${ticketPath(id)}/messages`, 'POST', { body, visibility: 'public' }),
+    listIntake: () => request<{ data: IntakeItem[] }>('/admin/triage'),
+    triageIntake: (id: string, input: { tenant_id: string; note?: string }) =>
+      request<{ ticket_id: string }>(
+        `/admin/triage/${encodeURIComponent(id)}/convert`,
+        'POST',
+        input,
+      ),
+    aiSuggestion: (draft: string) =>
+      request<{
+        suggestion: string
+        decision: 'draft' | 'blocked'
+        blockedReasons: string[]
+        requiresHumanReview: true
+        runId: string
+      }>('/ai/suggest', 'POST', { draft }),
+    listKb: () => request<{ data: KbArticle[] }>('/kb', 'GET', undefined, false),
   }
 }

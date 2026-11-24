@@ -1,7 +1,7 @@
 <script setup lang="ts">
   import { ref, onMounted } from 'vue'
   import { useI18n } from 'vue-i18n'
-  import { useTicketsApi } from '~/composables/useTicketsApi'
+  import { useTicketsApi, type Ticket, type TicketMessage } from '~/composables/useTicketsApi'
 
   definePageMeta({ middleware: 'auth' })
 
@@ -10,21 +10,12 @@
 
   useAppHead({ title: t('tickets.portal.title'), path: '/suporte/meus-tickets' })
 
-  type TicketRow = {
-    id: number
-    public_ref: string
-    subject: string
-    priority: string
-    status: string
-    first_response_due_at?: string | null
-  }
-  type MessageRow = { id: number; author_type: string; body: string; created_at?: string }
-
-  const tickets = ref<TicketRow[]>([])
+  const tickets = ref<Ticket[]>([])
   const loading = ref(true)
   const error = ref('')
-  const openDetail = ref<number | null>(null)
-  const messages = ref<MessageRow[]>([])
+  const openDetail = ref<string | null>(null)
+  const detail = ref<Ticket | null>(null)
+  const messages = ref<TicketMessage[]>([])
   const reply = ref('')
   const sending = ref(false)
 
@@ -42,7 +33,7 @@
     error.value = ''
     try {
       const r = await api.listTickets()
-      tickets.value = r.items ?? []
+      tickets.value = r.data ?? []
     } catch (e) {
       error.value = e instanceof Error ? e.message : t('tickets.error.api')
     } finally {
@@ -50,7 +41,7 @@
     }
   }
 
-  async function toggleDetail(id: number) {
+  async function toggleDetail(id: string) {
     if (openDetail.value === id) {
       openDetail.value = null
       return
@@ -58,9 +49,12 @@
     openDetail.value = id
     messages.value = []
     try {
-      const r = await api.listMessages(id)
-      messages.value = r.items ?? []
-    } catch {
+      const [ticket, r] = await Promise.all([api.getTicket(id), api.listMessages(id)])
+      if (openDetail.value !== id) return
+      detail.value = ticket
+      messages.value = r.data.filter((message) => message.visibility === 'public')
+    } catch (e) {
+      error.value = e instanceof Error ? e.message : t('tickets.error.api')
       messages.value = []
     }
   }
@@ -72,7 +66,7 @@
       await api.postMessage(openDetail.value, reply.value.trim())
       reply.value = ''
       const r = await api.listMessages(openDetail.value)
-      messages.value = r.items ?? []
+      messages.value = r.data.filter((message) => message.visibility === 'public')
     } catch (e) {
       error.value = e instanceof Error ? e.message : t('tickets.error.api')
     } finally {
@@ -84,7 +78,11 @@
     creating.value = true
     error.value = ''
     try {
-      await api.createTicket({ ...newTicket.value })
+      await api.createTicket({
+        subject: newTicket.value.subject,
+        priority: newTicket.value.priority,
+        description: newTicket.value.message,
+      })
       showForm.value = false
       newTicket.value = { subject: '', priority: 'P3', message: '' }
       await load()
@@ -117,7 +115,7 @@
       <form v-if="showForm" class="tickets-form" @submit.prevent="create">
         <label>
           {{ $t('tickets.intake.subject') }}
-          <input v-model="newTicket.subject" required minlength="3" maxlength="200" />
+          <input v-model="newTicket.subject" required minlength="3" maxlength="150" />
         </label>
         <label>
           {{ $t('tickets.portal.priority') }}
@@ -130,7 +128,7 @@
         </label>
         <label>
           {{ $t('tickets.intake.message') }}
-          <textarea v-model="newTicket.message" required rows="5" />
+          <textarea v-model="newTicket.message" required minlength="5" maxlength="10000" rows="5" />
         </label>
         <button type="submit" :disabled="creating">
           {{ creating ? $t('tickets.sending') : $t('tickets.portal.create') }}
@@ -155,13 +153,16 @@
             :aria-expanded="openDetail === tk.id"
             @click="toggleDetail(tk.id)"
           >
-            <span class="tickets-ref">{{ tk.public_ref }}</span>
+            <span class="tickets-ref">{{ tk.id }}</span>
             <span>{{ tk.subject }}</span>
             <span class="tickets-badge" :data-priority="tk.priority">{{ tk.priority }}</span>
             <span class="tickets-badge" :data-status="tk.status">{{ tk.status }}</span>
           </button>
 
           <div v-if="openDetail === tk.id" class="tickets-detail">
+            <p v-if="detail?.id === tk.id">
+              {{ detail.description }}
+            </p>
             <ul class="tickets-messages">
               <li
                 v-for="m in messages"
@@ -173,7 +174,12 @@
               </li>
             </ul>
             <form class="tickets-reply" @submit.prevent="sendReply">
-              <textarea v-model="reply" rows="3" :aria-label="$t('tickets.portal.reply')" />
+              <textarea
+                v-model="reply"
+                maxlength="10000"
+                rows="3"
+                :aria-label="$t('tickets.portal.reply')"
+              />
               <button type="submit" :disabled="sending || !reply.trim()">
                 {{ $t('tickets.portal.reply') }}
               </button>

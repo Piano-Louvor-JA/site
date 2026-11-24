@@ -16,7 +16,9 @@
     "releases": "Releases",
     "testers": "Testers",
     "toggleTheme": "Toggle light/dark theme",
-    "support": "Support"
+    "support": "Support",
+    "comunidade": "Community",
+    "institucional": "Leaders"
   },
   "hero": {
     "badge": "New: Web App (PWA) Available",
@@ -814,7 +816,41 @@
     "recentActivity": "Recent Activity",
     "quickLinks": "Quick Links",
     "noData": "Data unavailable",
-    "loading": "Loading..."
+    "loading": "Loading...",
+    "comunidade": {
+      "tab": "Pending",
+      "tabMembros": "Members",
+      "tabEquipe": "Team",
+      "subtitulo": "Pending moderation, member and team management — in one panel.",
+      "filtroStatus": "Status",
+      "todos": "All",
+      "carregando": "Loading…",
+      "recarregar": "↻ Reload",
+      "carregarMais": "Load more",
+      "erroCarregar": "Failed to load",
+      "semMembros": "No members in this filter.",
+      "semEquipe": "No staff members found.",
+      "roles": "Roles",
+      "salvar": "Save",
+      "salvando": "Saving…",
+      "salvoOk": "Roles updated ✓",
+      "erroSalvar": "Failed to save",
+      "aprovar": "Approve",
+      "aprovadoOk": "Member approved ✓",
+      "inativar": "Deactivate",
+      "inativadoOk": "Member deactivated ✓",
+      "reativar": "Reactivate",
+      "gm": "GM (administrator)",
+      "role": {
+        "dev": "Developer",
+        "tester": "Tester",
+        "conteudo": "Content",
+        "curador": "Curator",
+        "staff": "Staff"
+      },
+      "title": "Community",
+      "tabsAriaLabel": "Community panel tabs"
+    }
   },
   "download": {
     "metaTitle": "Download — PIANO LouvorJA",
@@ -1274,7 +1310,7 @@
     },
     "intake": {
       "title": "Support Center",
-      "description": "Open a request or check status by protocol.",
+      "description": "Send a support request.",
       "name": "Name",
       "email": "Email",
       "subject": "Subject",
@@ -1283,12 +1319,8 @@
       "consentRequired": "Consent is required.",
       "submit": "Send request",
       "successTitle": "Request registered!",
-      "successHint": "Keep your protocol to check status.",
+      "successHint": "Keep this reference when contacting the team.",
       "newRequest": "New request",
-      "statusTitle": "Check status",
-      "statusPlaceholder": "PRC-XXXXXXXX",
-      "statusCheck": "Check",
-      "statusNotFound": "Protocol not found.",
       "portalLink": "Go to my tickets"
     },
     "portal": {
@@ -1302,15 +1334,80 @@
     },
     "admin": {
       "title": "Admin — Tickets",
-      "description": "Triage queue and ticket management.",
+      "description": "Triage queue and organization tickets.",
       "intakeQueue": "Triage queue",
       "intakeEmpty": "No pending requests.",
       "triage": "Triage & convert",
       "ticketsTitle": "Tickets",
-      "changeStatus": "Change status",
-      "aiAsk": "AI suggestion",
-      "aiNone": "No suggestion (limited AI)",
-      "aiDisabled": "AI disabled for this tenant"
+      "tenant": "Organization ID"
     }
+  },
+  "comunidade": {
+    "eyebrow": "Community",
+    "title": "The living body of the project",
+    "subtitle": "Approved developers, testers, content producers and curators — the people who build and sustain PIANO LouvorJA, updated straight from the source.",
+    "error": "Could not load the community right now. Please try again shortly.",
+    "avatarAlt": "Avatar of {name}",
+    "profile": "View GitHub profile",
+    "roles": {
+      "staff": "Team",
+      "dev": "Dev",
+      "tester": "Tester",
+      "conteudo": "Content",
+      "curador": "Curator"
+    }
+  },
+  "institucional": {
+    "meta": {
+      "title": "PIANO LouvorJA — For church leaders",
+      "description": "Discover PIANO LouvorJA: synchronized lyrics for projection, backing tracks and sung versions for the worship service. Institutional and outreach material for church leaders."
+    },
+    "title": "PIANO LouvorJA for your church",
+    "lede": "A free, volunteer-built tool for worship: synchronized hymn lyrics for projection, backing tracks and sung versions, right in your church computer's browser.",
+    "s1": {
+      "title": "What is PIANO",
+      "body": "PIANO LouvorJA is a free, volunteer-driven fork of the LouvorJA project, focused on the worship service: synchronized hymn and song lyrics for projection, backing tracks and sung versions. Please note: the app does not play sheet music — \"Piano\" is simply the project's codename."
+    },
+    "s2": {
+      "title": "How to use it in church",
+      "body": "It runs on the sanctuary computer, in the browser (Web App) or in the desktop app. Setup takes just a few minutes and requires no technical knowledge: visit the download page, choose your platform and follow the step-by-step guide in the documentation."
+    },
+    "s3": {
+      "title": "How to share it in your field",
+      "body": "We have prepared a press kit ready to print and share with local elders and pastors. Help other congregations discover the tool: share the material at officers' meetings, in bulletins and in your field's communication groups."
+    },
+    "s4": {
+      "title": "Institutional contact",
+      "body": "For partnerships, institutional questions and support for adopting the tool in your field, reach the team at app{'@'}pianolouvorja.com.br or through the contact page."
+    },
+    "cta": {
+      "press": "View the press kit"
+    }
+  },
+  "press": {
+    "meta": {
+      "title": "Press kit — PIANO LouvorJA",
+      "description": "Outreach material for PIANO LouvorJA, ready to print and share with local elders and pastors: what it is, key message, where to find it and institutional contact."
+    },
+    "title": "PIANO LouvorJA press kit",
+    "lede": "Ready-to-print material to share with local elders and pastors.",
+    "about": "PIANO LouvorJA is a free, volunteer-driven fork of the LouvorJA project, focused on the worship service: synchronized hymn and song lyrics for projection, backing tracks and sung versions. The app does not play sheet music — \"Piano\" is simply the project's codename.",
+    "keyPoints": [
+      "Synchronized hymn and song lyrics for projection during the service",
+      "Backing tracks and sung versions for musical accompaniment",
+      "A free, volunteer-run project accessible to any congregation"
+    ],
+    "where": {
+      "title": "Where to find it",
+      "items": [
+        "Official website: https://pianolouvorja.com.br",
+        "App download: https://pianolouvorja.com.br/download",
+        "Documentation: https://pianolouvorja.com.br/docs",
+        "Contact: app{'@'}pianolouvorja.com.br"
+      ]
+    },
+    "contact": "Institutional contact: app{'@'}pianolouvorja.com.br",
+    "printCta": "Print / save as PDF",
+    "footer": "PIANO LouvorJA · https://pianolouvorja.com.br"
   }
 }

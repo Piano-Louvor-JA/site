@@ -1,0 +1,467 @@
+<template>
+  <div class="pendentes-tab">
+    <div v-if="feedback" class="pendentes-tab__feedback" :class="{ '--erro': !feedback.ok }">
+      {{ feedback.msg }}
+    </div>
+
+    <nav class="pendentes-tab__subtabs">
+      <button
+        v-for="st in subtabs"
+        :key="st.value"
+        class="pendentes-tab__subtab"
+        :class="{ '--ativa': activeTab === st.value }"
+        @click="activeTab = st.value"
+      >
+        {{ st.label }}
+        <span class="pendentes-tab__badge">{{ st.count() }}</span>
+      </button>
+      <button class="pendentes-tab__recarregar" :disabled="loading" @click="carregar">
+        {{ loading ? 'Carregando…' : '↻ Recarregar' }}
+      </button>
+    </nav>
+
+    <p v-if="loading && !listasVazias" class="pendentes-tab__loading" role="status">
+      Carregando pendentes…
+    </p>
+
+    <!-- Testadores -->
+    <section v-if="activeTab === 'testers' && !erroCarregar" class="pendentes-tab__lista">
+      <p v-if="!testers.length" class="pendentes-tab__vazio">Nenhum testador pendente.</p>
+      <article v-for="t in testers" :key="`t${t.row}`" class="pendentes-tab__card">
+        <h3>{{ t.nome }}</h3>
+        <p class="pendentes-tab__email">
+          {{ t.email }}
+        </p>
+        <dl>
+          <div>
+            <dt>Foco</dt>
+            <dd>{{ t.foco || '—' }}</dd>
+          </div>
+          <div>
+            <dt>Bio</dt>
+            <dd>{{ t.bio || '—' }}</dd>
+          </div>
+          <div>
+            <dt>Links</dt>
+            <dd>{{ t.links || '—' }}</dd>
+          </div>
+        </dl>
+        <div class="pendentes-tab__acoes">
+          <button
+            class="pendentes-tab__aprovar"
+            :disabled="processando === `testadores:${t.row}`"
+            @click="revisar('testadores', t.row, 'aprovar')"
+          >
+            ✓ Aprovar
+          </button>
+          <button
+            class="pendentes-tab__rejeitar"
+            :disabled="processando === `testadores:${t.row}`"
+            @click="revisar('testadores', t.row, 'rejeitar')"
+          >
+            ✕ Rejeitar
+          </button>
+        </div>
+      </article>
+    </section>
+
+    <!-- Desenvolvedores -->
+    <section v-if="activeTab === 'devs' && !erroCarregar" class="pendentes-tab__lista">
+      <p v-if="!devs.length" class="pendentes-tab__vazio">Nenhum dev pendente.</p>
+      <article v-for="d in devs" :key="`d${d.row}`" class="pendentes-tab__card">
+        <h3>{{ d.nome }}</h3>
+        <p class="pendentes-tab__email">
+          {{ d.email }}
+        </p>
+        <dl>
+          <div>
+            <dt>GitHub</dt>
+            <dd>{{ d.github || '—' }}</dd>
+          </div>
+          <div>
+            <dt>Portfólio</dt>
+            <dd>{{ d.portfolio || '—' }}</dd>
+          </div>
+          <div>
+            <dt>Stack</dt>
+            <dd>{{ d.stack || '—' }}</dd>
+          </div>
+          <div>
+            <dt>Áreas</dt>
+            <dd>{{ d.areas || '—' }}</dd>
+          </div>
+          <div>
+            <dt>Disponibilidade</dt>
+            <dd>{{ d.disponibilidade || '—' }}</dd>
+          </div>
+          <div>
+            <dt>Bio</dt>
+            <dd>{{ d.bio || '—' }}</dd>
+          </div>
+        </dl>
+        <div class="pendentes-tab__acoes">
+          <button
+            class="pendentes-tab__aprovar"
+            :disabled="processando === `desenvolvedores:${d.row}`"
+            @click="revisar('desenvolvedores', d.row, 'aprovar')"
+          >
+            ✓ Aprovar
+          </button>
+          <button
+            class="pendentes-tab__rejeitar"
+            :disabled="processando === `desenvolvedores:${d.row}`"
+            @click="revisar('desenvolvedores', d.row, 'rejeitar')"
+          >
+            ✕ Rejeitar
+          </button>
+        </div>
+      </article>
+    </section>
+
+    <!-- Relatos -->
+    <section v-if="activeTab === 'relatos' && !erroCarregar" class="pendentes-tab__lista">
+      <p v-if="!relatos.length" class="pendentes-tab__vazio">Nenhum relato novo.</p>
+      <article v-for="r in relatos" :key="`r${r.row}`" class="pendentes-tab__card">
+        <h3>{{ r.tipo }} — {{ r.modulo || 'geral' }}</h3>
+        <p class="pendentes-tab__email">{{ r.nome }} · {{ r.email }} · v{{ r.versao || '?' }}</p>
+        <dl>
+          <div>
+            <dt>Descrição</dt>
+            <dd>{{ r.descricao || '—' }}</dd>
+          </div>
+          <div>
+            <dt>Passos</dt>
+            <dd>{{ r.passos || '—' }}</dd>
+          </div>
+        </dl>
+        <div class="pendentes-tab__acoes">
+          <button
+            class="pendentes-tab__aprovar"
+            :disabled="processando === `relatos:${r.row}`"
+            @click="revisar('relatos', r.row, 'resolver')"
+          >
+            ✓ Resolver
+          </button>
+          <button
+            class="pendentes-tab__rejeitar"
+            :disabled="processando === `relatos:${r.row}`"
+            @click="revisar('relatos', r.row, 'rejeitar')"
+          >
+            ✕ Descartar
+          </button>
+        </div>
+      </article>
+    </section>
+  </div>
+</template>
+
+<script setup lang="ts">
+  /**
+   * Aba Pendentes do hub /admin/comunidade — fluxo de moderação via Sheet
+   * (SPEC piano-admin-comunidade-moderacao v2.0.0 / PR #274), intocado:
+   * leitura gviz + revisão na API do PIANO. Sheet continua sendo inbox.
+   */
+  import { ref, computed, onMounted } from 'vue'
+  import { parseCommunityPending } from '~/utils/community-pending'
+
+  const { getToken } = useFirebaseAuth()
+  const config = useRuntimeConfig()
+  const sheetUrl = String(config.public.testersSheetUrl ?? '').trim()
+
+  interface PendenteBase {
+    row: number
+    tab: string
+    nome: string
+    email: string
+    status: string
+  }
+  interface TesterPendente extends PendenteBase {
+    bio: string
+    foco: string
+    links: string
+  }
+  interface DevPendente extends PendenteBase {
+    bio: string
+    github: string
+    portfolio: string
+    areas: string
+    disponibilidade: string
+    stack: string
+  }
+  interface RelatoNovo extends PendenteBase {
+    tipo: string
+    versao: string
+    modulo: string
+    descricao: string
+    passos: string
+  }
+
+  type SubTab = 'testers' | 'devs' | 'relatos'
+  const activeTab = ref<SubTab>('testers')
+
+  const testers = ref<TesterPendente[]>([])
+  const devs = ref<DevPendente[]>([])
+  const relatos = ref<RelatoNovo[]>([])
+  const loading = ref(false)
+  /** true somente quando o carregamento FALHOU — oculta listas (SPEC §4: estado honesto) */
+  const erroCarregar = ref(false)
+  const feedback = ref<{ ok: boolean; msg: string } | null>(null)
+  const processando = ref<string | null>(null) // `${tab}:${row}`
+
+  const listasVazias = computed(
+    () => !testers.value.length && !devs.value.length && !relatos.value.length,
+  )
+
+  async function carregar() {
+    loading.value = true
+    feedback.value = null
+    erroCarregar.value = false
+    if (!sheetUrl) {
+      erroCarregar.value = true
+      feedback.value = {
+        ok: false,
+        msg: 'Planilha de testadores não configurada (NUXT_PUBLIC_TESTERS_SHEET_URL)',
+      }
+      loading.value = false
+      return
+    }
+    try {
+      const sep = sheetUrl.includes('?') ? '&' : '?'
+      const fetchSheet = (sheet: string) =>
+        $fetch(`${sheetUrl}${sep}sheet=${encodeURIComponent(sheet)}`, { responseType: 'text' })
+      const [testersCsv, devsCsv, relatosCsv] = await Promise.all([
+        fetchSheet('testadores'),
+        fetchSheet('desenvolvedores'),
+        fetchSheet('relatos'),
+      ])
+      const res = parseCommunityPending(
+        typeof testersCsv === 'string' ? testersCsv : '',
+        typeof devsCsv === 'string' ? devsCsv : '',
+        typeof relatosCsv === 'string' ? relatosCsv : '',
+      )
+      testers.value = res.testers
+      devs.value = res.devs
+      relatos.value = res.relatos
+    } catch {
+      erroCarregar.value = true
+      testers.value = []
+      devs.value = []
+      relatos.value = []
+      feedback.value = { ok: false, msg: 'Erro ao carregar pendentes' }
+    } finally {
+      loading.value = false
+    }
+  }
+
+  onMounted(carregar)
+
+  async function revisar(tab: string, row: number, acao: 'aprovar' | 'rejeitar' | 'resolver') {
+    processando.value = `${tab}:${row}`
+    feedback.value = null
+    try {
+      const token = await getToken()
+      // Escrita server-side na API do PIANO — o site é SSG, sem rota Nitro.
+      const apiBase =
+        String(config.public.pianoApiBase ?? '').replace(/\/$/, '') ||
+        'https://api.pianolouvorja.com.br'
+      const res = await globalThis.$fetch<{
+        ok: boolean
+        emailEnviado: boolean
+        emailErro?: string
+      }>(`${apiBase}/v1/custom/admin/community/review`, {
+        method: 'POST',
+        headers: token ? { Authorization: `Bearer ${token}` } : {},
+        body: { tab, row, acao },
+      })
+      const acaoLabel =
+        acao === 'resolver' ? 'resolvido' : acao === 'aprovar' ? 'aprovado' : 'rejeitado'
+      feedback.value = {
+        ok: true,
+        msg: res.emailEnviado
+          ? `${acaoLabel} ✓ — email enviado`
+          : res.emailErro
+            ? `${acaoLabel} ✓ — mas email falhou: ${res.emailErro}`
+            : `${acaoLabel} ✓ — sem email`,
+      }
+      await carregar()
+    } catch (err: unknown) {
+      // erro HTTP estruturado — status/mensagem do backend, não engolir
+      const status =
+        typeof err === 'object' && err !== null && 'statusCode' in err
+          ? (err as { statusCode?: number }).statusCode
+          : undefined
+      const msg =
+        typeof err === 'object' && err !== null && ('statusMessage' in err || 'message' in err)
+          ? (err as { statusMessage?: string; message?: string }).statusMessage ||
+            (err as { message?: string }).message
+          : undefined
+      feedback.value = {
+        ok: false,
+        msg: status ? `Erro ${status}${msg ? `: ${msg}` : ''}` : 'Erro ao processar',
+      }
+    } finally {
+      processando.value = null
+    }
+  }
+
+  const subtabs = [
+    { value: 'testers' as const, label: 'Testadores', count: () => testers.value.length },
+    { value: 'devs' as const, label: 'Desenvolvedores', count: () => devs.value.length },
+    { value: 'relatos' as const, label: 'Relatos', count: () => relatos.value.length },
+  ]
+</script>
+
+<style scoped lang="scss">
+  .pendentes-tab {
+    display: grid;
+    gap: 16px;
+
+    &__feedback {
+      padding: 10px 14px;
+      border-radius: 8px;
+      background: rgba(34, 197, 94, 0.12);
+      color: #16a34a;
+      font-size: 0.9rem;
+
+      &.--erro {
+        background: rgba(239, 68, 68, 0.12);
+        color: #dc2626;
+      }
+    }
+
+    &__subtabs {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    &__subtab {
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--color-border, #353534);
+      background: transparent;
+      color: inherit;
+      cursor: pointer;
+      font-size: 0.9rem;
+
+      &.--ativa {
+        background: var(--piano-accent);
+        border-color: var(--piano-accent);
+        color: #ffffff;
+        font-weight: 600;
+      }
+    }
+
+    &__badge {
+      display: inline-block;
+      min-width: 20px;
+      padding: 1px 6px;
+      border-radius: 999px;
+      background: var(--piano-accent-soft);
+      font-size: 0.75rem;
+      text-align: center;
+      margin-left: 4px;
+    }
+
+    &__recarregar {
+      margin-left: auto;
+      padding: 8px 14px;
+      border-radius: 8px;
+      border: 1px solid var(--color-border, #353534);
+      background: transparent;
+      color: inherit;
+      cursor: pointer;
+      font-size: 0.85rem;
+
+      &:disabled {
+        opacity: 0.5;
+        cursor: default;
+      }
+    }
+
+    &__loading,
+    &__vazio {
+      color: var(--color-text-muted, #8a93a1);
+      text-align: center;
+      padding: 40px 0;
+      margin: 0;
+    }
+
+    &__lista {
+      display: grid;
+      gap: 12px;
+    }
+
+    &__card {
+      border: 1px solid var(--color-border, #353534);
+      border-radius: 12px;
+      padding: 16px;
+
+      h3 {
+        margin: 0 0 2px;
+        font-size: 1.05rem;
+      }
+    }
+
+    &__email {
+      color: var(--piano-accent-text);
+      font-size: 0.85rem;
+      margin: 0 0 10px;
+    }
+
+    dl {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 8px;
+      margin: 0 0 14px;
+      font-size: 0.85rem;
+    }
+
+    dt {
+      color: var(--color-text-muted, #8a93a1);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    dd {
+      margin: 2px 0 0;
+      word-break: break-word;
+    }
+
+    &__acoes {
+      display: flex;
+      gap: 8px;
+    }
+
+    &__aprovar,
+    &__rejeitar {
+      padding: 8px 16px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.85rem;
+    }
+
+    &__aprovar {
+      background: #16a34a;
+      color: white;
+
+      &:disabled {
+        opacity: 0.5;
+      }
+    }
+
+    &__rejeitar {
+      background: transparent;
+      color: #dc2626;
+      border: 1px solid #dc2626;
+
+      &:disabled {
+        opacity: 0.5;
+      }
+    }
+  }
+</style>

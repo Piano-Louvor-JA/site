@@ -6,13 +6,29 @@ export const ROUTES: Array<{ path: string; changefreq: string; priority: string 
   { path: '/download', changefreq: 'monthly', priority: '0.9' },
   { path: '/releases', changefreq: 'weekly', priority: '0.8' },
   { path: '/docs', changefreq: 'monthly', priority: '0.7' },
+  { path: '/comunidade', changefreq: 'weekly', priority: '0.6' },
   { path: '/contact', changefreq: 'yearly', priority: '0.6' },
   { path: '/suporte', changefreq: 'monthly', priority: '0.6' },
+  { path: '/institucional', changefreq: 'monthly', priority: '0.6' },
+  { path: '/institucional/press', changefreq: 'monthly', priority: '0.5' },
   { path: '/privacy', changefreq: 'yearly', priority: '0.3' },
   { path: '/terms', changefreq: 'yearly', priority: '0.3' },
 ]
 
-export const LOCALES = ['', '/en', '/es', '/ru', '/uk', '/fr']
+export const LOCALES = [
+  '',
+  '/en',
+  '/es',
+  '/ru',
+  '/uk',
+  '/fr',
+  '/ja',
+  '/ko',
+  '/zh',
+  '/tr',
+  '/ar',
+  '/hi',
+]
 
 /** Sitemap XML completo (rotas × locales + docs). `docPages` vem do índice do build. */
 export function buildSitemap(

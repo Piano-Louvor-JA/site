@@ -16,7 +16,9 @@
     "releases": "Versões",
     "testers": "Testadores",
     "toggleTheme": "Alternar tema claro/escuro",
-    "support": "Suporte"
+    "support": "Suporte",
+    "comunidade": "Comunidade",
+    "institucional": "Institucional"
   },
   "hero": {
     "badge": "Novo: Web App (PWA) Disponível",
@@ -814,7 +816,41 @@
     "recentActivity": "Atividade Recente",
     "quickLinks": "Links Rapidos",
     "noData": "Dados indisponiveis",
-    "loading": "Carregando..."
+    "loading": "Carregando...",
+    "comunidade": {
+      "tab": "Pendentes",
+      "tabMembros": "Membros",
+      "tabEquipe": "Equipe",
+      "subtitulo": "Moderação de pendentes, gestão de membros e equipe — em um só painel.",
+      "filtroStatus": "Status",
+      "todos": "Todos",
+      "carregando": "Carregando…",
+      "recarregar": "↻ Recarregar",
+      "carregarMais": "Carregar mais",
+      "erroCarregar": "Erro ao carregar",
+      "semMembros": "Nenhum membro neste filtro.",
+      "semEquipe": "Nenhum membro staff encontrado.",
+      "roles": "Papéis",
+      "salvar": "Salvar",
+      "salvando": "Salvando…",
+      "salvoOk": "Papéis atualizados ✓",
+      "erroSalvar": "Erro ao salvar",
+      "aprovar": "Aprovar",
+      "aprovadoOk": "Membro aprovado ✓",
+      "inativar": "Inativar",
+      "inativadoOk": "Membro inativado ✓",
+      "reativar": "Reativar",
+      "gm": "GM (administrador)",
+      "role": {
+        "dev": "Desenvolvedor",
+        "tester": "Testador",
+        "conteudo": "Conteúdo",
+        "curador": "Curador",
+        "staff": "Equipe"
+      },
+      "title": "Comunidade",
+      "tabsAriaLabel": "Abas do painel da comunidade"
+    }
   },
   "download": {
     "metaTitle": "Baixar — PIANO LouvorJA",
@@ -1274,7 +1310,7 @@
     },
     "intake": {
       "title": "Central de Suporte",
-      "description": "Abra uma solicitação ou consulte o status pelo protocolo.",
+      "description": "Envie uma solicitação de suporte.",
       "name": "Nome",
       "email": "E-mail",
       "subject": "Assunto",
@@ -1283,12 +1319,8 @@
       "consentRequired": "É necessário aceitar o consentimento.",
       "submit": "Enviar solicitação",
       "successTitle": "Solicitação registrada!",
-      "successHint": "Guarde seu protocolo para consultar o status.",
+      "successHint": "Guarde o protocolo para referência ao falar com a equipe.",
       "newRequest": "Nova solicitação",
-      "statusTitle": "Consultar status",
-      "statusPlaceholder": "PRC-XXXXXXXX",
-      "statusCheck": "Consultar",
-      "statusNotFound": "Protocolo não encontrado.",
       "portalLink": "Acessar meus tickets"
     },
     "portal": {
@@ -1302,15 +1334,80 @@
     },
     "admin": {
       "title": "Admin — Tickets",
-      "description": "Fila de triagem e gestão de tickets.",
+      "description": "Fila de triagem e tickets da organização.",
       "intakeQueue": "Fila de triagem",
       "intakeEmpty": "Nenhuma solicitação pendente.",
       "triage": "Triar e converter",
       "ticketsTitle": "Tickets",
-      "changeStatus": "Alterar status",
-      "aiAsk": "Sugestão IA",
-      "aiNone": "Sem sugestão (IA limitada)",
-      "aiDisabled": "IA desativada para este tenant"
+      "tenant": "Organização (identificador)"
     }
+  },
+  "comunidade": {
+    "eyebrow": "Comunidade",
+    "title": "O corpo vivo do projeto",
+    "subtitle": "Devs, testadores, produtores de conteúdo e curadores aprovados — quem constrói e sustenta o PIANO LouvorJA, atualizado direto da fonte.",
+    "error": "Não foi possível carregar a comunidade agora. Tente novamente em instantes.",
+    "avatarAlt": "Avatar de {name}",
+    "profile": "Ver perfil no GitHub",
+    "roles": {
+      "staff": "Equipe",
+      "dev": "Dev",
+      "tester": "Testador",
+      "conteudo": "Conteúdo",
+      "curador": "Curador"
+    }
+  },
+  "institucional": {
+    "meta": {
+      "title": "PIANO LouvorJA — Página institucional para líderes",
+      "description": "Conheça o PIANO LouvorJA: letras sincronizadas para projeção, playbacks e versões cantadas para o culto. Material institucional e de divulgação para líderes de igreja."
+    },
+    "title": "O PIANO LouvorJA para a sua igreja",
+    "lede": "Uma ferramenta voluntária e gratuita para o culto: letras de hinos sincronizadas para projeção, playbacks e versões cantadas, direto no navegador do computador da igreja.",
+    "s1": {
+      "title": "O que é o PIANO",
+      "body": "O PIANO LouvorJA é um fork voluntário e gratuito do projeto LouvorJA, voltado ao culto: letras de hinos e cânticos sincronizadas para projeção, playbacks e versões cantadas. Importante: o aplicativo não executa partituras — o nome \"Piano\" é apenas um codinome do projeto."
+    },
+    "s2": {
+      "title": "Como usar na igreja",
+      "body": "Funciona no computador do templo, no navegador (Web App) ou no aplicativo desktop. A instalação leva poucos minutos e não exige conhecimento técnico: acesse a página de download, escolha a plataforma e siga o passo a passo na documentação."
+    },
+    "s3": {
+      "title": "Como divulgar no campo",
+      "body": "Preparamos um press kit pronto para imprimir e compartilhar com obreiros, anciãos e pastores locais. Ajude outras congregações a conhecer a ferramenta: compartilhe o material em reuniões de officers, boletins e grupos de comunicação do campo."
+    },
+    "s4": {
+      "title": "Contato institucional",
+      "body": "Para parcerias, dúvidas institucionais e apoio na adoção da ferramenta pelo campo, fale com a equipe pelo e-mail app{'@'}pianolouvorja.com.br ou pela página de contato."
+    },
+    "cta": {
+      "press": "Ver press kit para divulgação"
+    }
+  },
+  "press": {
+    "meta": {
+      "title": "Press kit — PIANO LouvorJA",
+      "description": "Material de divulgação do PIANO LouvorJA pronto para imprimir e compartilhar: o que é, mensagem-chave, onde encontrar e contato institucional."
+    },
+    "title": "Press kit do PIANO LouvorJA",
+    "lede": "Material pronto para imprimir e compartilhar com obreiros, anciãos e pastores locais.",
+    "about": "O PIANO LouvorJA é um fork voluntário e gratuito do projeto LouvorJA, voltado ao culto: letras de hinos e cânticos sincronizadas para projeção, playbacks e versões cantadas. O aplicativo não executa partituras — \"Piano\" é apenas um codinome do projeto.",
+    "keyPoints": [
+      "Letras de hinos e cânticos sincronizadas para projeção durante o culto",
+      "Playbacks e versões cantadas para o acompanhamento musical",
+      "Projeto voluntário, gratuito e em português, acessível a qualquer congregação"
+    ],
+    "where": {
+      "title": "Onde encontrar",
+      "items": [
+        "Site oficial: https://pianolouvorja.com.br",
+        "Download do app: https://pianolouvorja.com.br/download",
+        "Documentação: https://pianolouvorja.com.br/docs",
+        "Contato: app{'@'}pianolouvorja.com.br"
+      ]
+    },
+    "contact": "Contato institucional: app{'@'}pianolouvorja.com.br",
+    "printCta": "Imprimir / salvar em PDF",
+    "footer": "PIANO LouvorJA · https://pianolouvorja.com.br"
   }
 }

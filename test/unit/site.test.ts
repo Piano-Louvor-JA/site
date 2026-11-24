@@ -43,8 +43,8 @@ describe('siteConfig', () => {
 })
 
 describe('navLinks', () => {
-  it('has exactly 4 links', () => {
-    expect(navLinks.length).toBe(4)
+  it('has exactly 5 links', () => {
+    expect(navLinks.length).toBe(5)
   })
 
   it('every link has i18nKey starting with nav.', () => {
@@ -74,8 +74,16 @@ describe('navLinks', () => {
 })
 
 describe('secondaryNavLinks', () => {
-  it('has exactly 6 links', () => {
-    expect(secondaryNavLinks.length).toBe(6)
+  it('preserves the existing footer destinations alongside community and support', () => {
+    expect(secondaryNavLinks.map((link) => link.href)).toEqual([
+      '#platforms',
+      '#how-it-works',
+      '#about',
+      '/testers',
+      '/comunidade',
+      '/contact',
+      '/suporte',
+    ])
   })
 
   it('every link has i18nKey starting with nav.', () => {

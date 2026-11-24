@@ -83,7 +83,7 @@ describe('useAppHead', () => {
     useAppHead()
     const arg = useHeadMock.mock.calls[0][0]
     const alternates = arg.link.filter((l: any) => l.rel === 'alternate' && l.hreflang)
-    expect(alternates.length).toBe(7)
+    expect(alternates.length).toBe(13)
     const hreflangs = alternates.map((a: any) => a.hreflang)
     expect(hreflangs).toContain('pt-BR')
     expect(hreflangs).toContain('en')
@@ -91,6 +91,12 @@ describe('useAppHead', () => {
     expect(hreflangs).toContain('ru')
     expect(hreflangs).toContain('uk')
     expect(hreflangs).toContain('fr')
+    expect(hreflangs).toContain('ja')
+    expect(hreflangs).toContain('ko')
+    expect(hreflangs).toContain('zh')
+    expect(hreflangs).toContain('tr')
+    expect(hreflangs).toContain('ar')
+    expect(hreflangs).toContain('hi')
     expect(hreflangs).toContain('x-default')
   })
 
@@ -121,6 +127,37 @@ describe('useAppHead', () => {
     useAppHead()
     const arg = useHeadMock.mock.calls[0][0]
     expect(arg.htmlAttrs.lang).toBeDefined()
+  })
+
+  it('define htmlAttrs.dir="rtl" quando o locale ativo é RTL (ar)', () => {
+    const i18n = (globalThis as any).useI18n()
+    const prev = i18n.locale.value
+    i18n.locale.value = 'ar'
+    useHeadMock.mockClear()
+    useAppHead()
+    const arg = useHeadMock.mock.calls[0][0]
+    expect(arg.htmlAttrs.dir.value).toBe('rtl')
+    expect(arg.htmlAttrs.lang.value).toBe('ar')
+    i18n.locale.value = prev
+  })
+
+  it('define htmlAttrs.dir="ltr" para locale LTR explícito (hi)', () => {
+    const i18n = (globalThis as any).useI18n()
+    const prev = i18n.locale.value
+    i18n.locale.value = 'hi'
+    useHeadMock.mockClear()
+    useAppHead()
+    const arg = useHeadMock.mock.calls[0][0]
+    expect(arg.htmlAttrs.dir.value).toBe('ltr')
+    i18n.locale.value = prev
+  })
+
+  it('não define htmlAttrs.dir para locale sem direção configurada (pt-BR)', () => {
+    useHeadMock.mockClear()
+    useAppHead()
+    const arg = useHeadMock.mock.calls[0][0]
+    expect(arg.htmlAttrs.dir).toBeDefined()
+    expect(arg.htmlAttrs.dir._value).toBeUndefined()
   })
 
   it('define og:locale convertendo hifen para underscore', () => {

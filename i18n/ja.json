@@ -1,0 +1,1403 @@
+{
+  "meta": {
+    "title": "PIANO LouvorJA — 礼拝マネージャー",
+    "description": "礼拝運営のためのウェブプラットフォーム：讃美歌集、聖書、礼拝式、マルチスクリーン投影など。無料・オープンソース。"
+  },
+  "nav": {
+    "features": "機能",
+    "platforms": "プラットフォーム",
+    "about": "プロジェクトについて",
+    "howItWorks": "使い方",
+    "docs": "ドキュメント",
+    "contact": "お問い合わせ",
+    "openApp": "アプリを開く",
+    "language": "言語",
+    "download": "ダウンロード",
+    "releases": "リリース",
+    "testers": "テスター",
+    "toggleTheme": "ライト/ダークテーマの切り替え",
+    "comunidade": "コミュニティ",
+    "institucional": "教会向け案内",
+    "support": "サポート"
+  },
+  "hero": {
+    "badge": "新着：ウェブアプリ（PWA）公開",
+    "title": "礼拝マネージャー",
+    "titleHighlight": "シンプルで",
+    "subtitle": "讃美歌集、礼拝式、聖書、投影を一箇所で整理できます。あらゆるデバイスからアクセスでき、インストールは不要です。",
+    "ctaPrimary": "アプリを開く",
+    "ctaSecondary": "プラットフォームを見る",
+    "meta": {
+      "noInstall": "インストール不要",
+      "anyDevice": "あらゆるデバイス",
+      "openSource": "オープンソース"
+    },
+    "preview": {
+      "currentHymn": "現在の賛美歌",
+      "currentHymnTitle": "#15 — Divino Comigo",
+      "active": "演奏中",
+      "next": "次",
+      "nextTitle": "ようこそと賛美",
+      "elapsedTime": "経過時間"
+    },
+    "titleHighlight2": "完全"
+  },
+  "stats": {
+    "features": "エコシステムの機能",
+    "free": "無料",
+    "installs": "インストール数",
+    "offline": "オフライン対応"
+  },
+  "platforms": {
+    "eyebrow": "マルチプラットフォーム",
+    "title": "必要な場所でご利用いただけます",
+    "description": "生産性を最大化するにはデスクトップアプリ、手軽な利用にはブラウザ、外出先ではAndroidアプリをご利用ください。",
+    "desktop": {
+      "badge": "おすすめ",
+      "title": "ネイティブデスクトップ",
+      "subtitle": "Linux、macOS、Windows",
+      "description": "マルチスクリーン対応、独立した投影、キーボードショートカットを備えた完全な体験。",
+      "feature1": "マルチスクリーン投影",
+      "feature2": "完全オフラインモード",
+      "feature3": "キーボードショートカット",
+      "cta": "詳しく見る"
+    },
+    "web": {
+      "badge": "今すぐアクセス",
+      "title": "ウェブ（ブラウザ）",
+      "subtitle": "あらゆるPCやノートPC",
+      "description": "ブラウザから直接アクセスできます。手軽な利用や、アプリがインストールされていない場合の代替手段に最適です。",
+      "feature1": "インストール不要",
+      "feature2": "あらゆるOSで動作",
+      "feature3": "自動アップデート",
+      "cta": "ブラウザで開く"
+    },
+    "mobile": {
+      "badge": "新着",
+      "title": "モバイル",
+      "subtitle": "Android対応",
+      "description": "Androidネイティブアプリが登場しました。スマートフォンからデジタルステージを操作できます。",
+      "feature1": "Androidネイティブ対応",
+      "feature2": "デジタルステージ操作",
+      "feature3": "iOSは開発中",
+      "cta": "アプリをダウンロード"
+    }
+  },
+  "notifyModal": {
+    "title": "いち早く情報を受け取る",
+    "subtitle": "メールアドレスを入力いただくと、モバイルアプリの公開時にお知らせします。",
+    "placeholder": "your{'@'}email.com",
+    "button": "公開時にお知らせ",
+    "loading": "送信中...",
+    "success": "準備完了！公開次第、お知らせいたします。",
+    "errors": {
+      "invalidEmail": "有効なメールアドレスを入力してください。",
+      "alreadySubscribed": "このメールアドレスはすでに登録されています。",
+      "rateLimited": "試行回数が多すぎます。しばらくお待ちください。",
+      "serviceUnavailable": "サービスが一時的に利用できません。後でもう一度お試しください。",
+      "subscribeFailed": "登録できませんでした。しばらくしてからもう一度お試しください。",
+      "generic": "問題が発生しました。しばらくしてからもう一度お試しください。"
+    }
+  },
+  "features": {
+    "eyebrow": "機能",
+    "title": "礼拝に必要なすべてがここに",
+    "description": "礼拝のあらゆる場面を支える、統合されたツールスイートです。",
+    "items": {
+      "media": {
+        "title": "メディアセンター",
+        "description": "アルバム、讃美歌集、コレクションを3つの再生モードで管理できます。"
+      },
+      "liturgy": {
+        "title": "礼拝式",
+        "description": "13種類の項目で礼拝の順序を組み立てられます。ドラッグ＆ドロップ、複製、カウントダウン対応。"
+      },
+      "bible": {
+        "title": "聖書",
+        "description": "複数訳対応の高速検索、お気に入り、直接投影。"
+      },
+      "projection": {
+        "title": "マルチスクリーン投影",
+        "description": "プロジェクターやサブモニターへの独立出力を完全に制御できます。"
+      },
+      "tools": {
+        "title": "ユーティリティ",
+        "description": "時計、ストップウォッチ、タイマー、くじ引きを礼拝に統合。"
+      },
+      "player": {
+        "title": "高度なプレーヤー",
+        "description": "通常再生、歌いながらモード、スライドの同期表示。"
+      },
+      "settings": {
+        "title": "設定",
+        "description": "外観、投影、マルチスクリーンなど、細部までカスタマイズ可能な設定。"
+      },
+      "offline": {
+        "title": "ローカルデータ",
+        "description": "デスクトップアプリはメディアのダウンロード後、100%オフラインで動作します。ウェブ版の利用にはインターネット接続が必要です。"
+      }
+    }
+  },
+  "about": {
+    "eyebrow": "プロジェクトについて",
+    "title": "コミュニティによる、コミュニティのためのプロジェクト",
+    "text1": "{name}は、礼拝の運営を簡単にするために生まれた協同のオープンソースプロジェクトです。",
+    "text2": "Pianoチームが開発しており、コミュニティの貢献とともに絶えず進化しています。無料、広告なし、データ収集なし。",
+    "forkCredit": "PIANO LouvorJAはLouvorJAプロジェクト（github.com/louvorja）のフォークで、2019年からコミュニティによって維持されています。このプロジェクトを可能にしてくださった原作者と貢献者の皆様に感謝いたします。",
+    "openSource": "オープンソース",
+    "stats": {
+      "free": "無料",
+      "installs": "インストール数",
+      "offline": "PWAオフライン"
+    }
+  },
+  "how": {
+    "eyebrow": "使い方",
+    "title": "数分で始められます",
+    "description": "礼拝を整えるためのシンプルな4ステップです。",
+    "steps": {
+      "1": {
+        "title": "アプリを開く",
+        "desc": "ブラウザからアクセスするか、デスクトップ向けにダウンロード。登録は不要です。"
+      },
+      "2": {
+        "title": "讃美歌集を取り込む",
+        "desc": "アルバム、讃美歌集、コレクションをメディアセンターに追加します。"
+      },
+      "3": {
+        "title": "礼拝式を組み立てる",
+        "desc": "項目をドラッグして、時間管理つきの礼拝順序を作成します。"
+      },
+      "4": {
+        "title": "投影して導く",
+        "desc": "マルチスクリーン投影で賛美歌、聖句、スライドを表示します。"
+      }
+    }
+  },
+  "cta": {
+    "title": "始める準備はできましたか？",
+    "subtitle": "今すぐPIANO LouvorJAを開いて、礼拝の準備を数分で整えましょう。無料、登録不要。",
+    "button": "アプリを開く",
+    "meta": {
+      "free": "100%無料",
+      "noInstall": "インストール不要",
+      "openSource": "オープンソース"
+    }
+  },
+  "contact": {
+    "eyebrow": "お問い合わせ",
+    "title": "ご連絡ください",
+    "description": "ご質問、ご提案、不具合の報告などがございましたら、メッセージをお送りください。できるだけ早くお返事いたします。",
+    "form": {
+      "name": "お名前",
+      "namePlaceholder": "お名前",
+      "email": "メールアドレス",
+      "emailPlaceholder": "your{'@'}email.com",
+      "subject": "件名",
+      "subjectPlaceholder": "ご用件は何でしょうか？",
+      "message": "メッセージ",
+      "messagePlaceholder": "メッセージをご記入ください...",
+      "submit": "メッセージを送信",
+      "sending": "送信中...",
+      "success": "メッセージを送信しました！まもなくご返信いたします。",
+      "error": "送信エラーです。もう一度お試しいただくか、app{'@'}pianolouvorja.com.br まで直接メールください。",
+      "typeLabel": "件名",
+      "type": {
+        "general": "一般的なご質問・ご連絡",
+        "tester": "テスターになりたい",
+        "developer": "開発者になりたい",
+        "bug": "不具合の報告や改善のご提案"
+      },
+      "focusLabel": "PIANOをどこで使っていますか？",
+      "focus": {
+        "app-desktop": "デスクトップアプリ（Electron）",
+        "web-pwa": "ウェブ / PWA",
+        "api": "API",
+        "mobile-flutter": "モバイル（Flutter）",
+        "tv-receiver": "テレビ / レシーバー",
+        "docs": "ドキュメント",
+        "qa": "テスト / QA",
+        "design": "デザイン / UI-UX"
+      },
+      "bio": "簡単な自己紹介",
+      "bioPlaceholder": "1〜2文でご自身について...",
+      "links": "リンク（プロフィール、SNS）",
+      "linksPlaceholder": "1行に1リンク（任意）",
+      "avatar": "アバター（任意）",
+      "avatarPlaceholder": "画像をアップロード（JPG/PNG）",
+      "avatarPreview": "アバタープレビュー",
+      "removeAvatar": "アバターを削除",
+      "github": "GitHub",
+      "githubPlaceholder": "ユーザー名またはGitHubのURL",
+      "portfolio": "LinkedInまたはポートフォリオ",
+      "portfolioPlaceholder": "URL（任意）",
+      "areas": "関心のある分野",
+      "availability": "稼働可能時間",
+      "availabilityPlaceholder": "例：平日夜と週末、週5時間程度...",
+      "stack": "スキルと経験",
+      "stackPlaceholder": "得意な技術、これまでの経験...",
+      "motivation": "貢献したい理由は？",
+      "motivationPlaceholder": "ご関心の背景を簡単にお聞かせください（最低20文字）...",
+      "testerEmail": "テスターのメールアドレス（登録済みの場合）",
+      "testerEmailPlaceholder": "任意 — 報告を登録情報に紐付けます",
+      "reportTypeLabel": "報告の種類",
+      "reportType": {
+        "bug": "バグ（動作しない）",
+        "feature": "改善のご提案",
+        "other": "その他"
+      },
+      "version": "アプリのバージョン",
+      "versionPlaceholder": "例：1.4.2（web/desktop/mobile）",
+      "module": "影響のあるモジュール",
+      "modulePlaceholder": "例：讃美歌集、礼拝式、投影...",
+      "description": "説明",
+      "descriptionPlaceholder": "何が起きましたか？何を期待していましたか？（最低20文字）",
+      "steps": "再現手順",
+      "stepsPlaceholder": "1. 開く... 2. クリック...（任意）",
+      "attachment": "添付ファイル（スクリーンショット/ログ）",
+      "attachmentPlaceholder": "画像、PDF、TXT、JSON",
+      "removeAttachment": "添付ファイルを削除"
+    },
+    "direct": "または次のアドレスへ直接メール：",
+    "responseTime": "平均返答時間：24〜48時間"
+  },
+  "docs": {
+    "title": "ドキュメント",
+    "subtitle": "PIANO LouvorJAを使いこなすためのすべて",
+    "search": "ドキュメントを検索...",
+    "sections": {
+      "gettingStarted": {
+        "title": "はじめに",
+        "description": "初期設定とアプリの最初のステップ。"
+      },
+      "media": {
+        "title": "メディアセンター",
+        "description": "アルバム、讃美歌集、楽曲コレクションを管理します。"
+      },
+      "hymnal": {
+        "title": "讃美歌集",
+        "description": "アドベンチスト讃美歌集の楽曲検索、再生、書き出し。"
+      },
+      "collections": {
+        "title": "コレクション",
+        "description": "あらゆる機会に合わせたオリジナルのコレクションとプレイリストを作成・管理します。"
+      },
+      "liturgy": {
+        "title": "礼拝式",
+        "description": "礼拝の完全な順序を組み立て、整理します。"
+      },
+      "bible": {
+        "title": "聖書",
+        "description": "検索、お気に入り、聖句の投影。"
+      },
+      "projection": {
+        "title": "マルチスクリーン投影",
+        "description": "サブスクリーンと投影の設定。"
+      },
+      "streaming": {
+        "title": "ストリーミング",
+        "description": "OBS、vMix、配信プラットフォームと連携したオンライン礼拝。"
+      },
+      "tools": {
+        "title": "ユーティリティ",
+        "description": "時計、ストップウォッチ、タイマー、くじ引き。"
+      },
+      "settings": {
+        "title": "設定",
+        "description": "外観、投影、各種設定のカスタマイズ。"
+      },
+      "shortcuts": {
+        "title": "キーボードショートカット",
+        "description": "ショートカットで作業を高速化します。"
+      },
+      "faq": {
+        "title": "よくある質問",
+        "description": "よく寄せられるご質問"
+      }
+    },
+    "content": {
+      "gettingStarted": {
+        "intro": "PIANO LouvorJAは、最新のブラウザを備えたあらゆるデバイスで動作するウェブアプリケーションです。インストールは不要 — ブラウザで開くだけです。",
+        "steps": [
+          "デスクトップまたはモバイル端末のブラウザでアプリを開きます。",
+          "より快適に使うには、ブラウザのメニューからホーム画面に追加してください。",
+          "完了です！礼拝の準備を始めましょう。"
+        ],
+        "tip": "最高の礼拝体験のために、デュアルモニターのデスクトップのご利用をおすすめします：片方で操作、もう片方で投影です。"
+      },
+      "shortcuts": {
+        "table": {
+          "action": "操作",
+          "shortcut": "ショートカット"
+        },
+        "items": [
+          {
+            "action": "再生/一時停止",
+            "shortcut": "Space"
+          },
+          {
+            "action": "次のトラック",
+            "shortcut": "→"
+          },
+          {
+            "action": "前のトラック",
+            "shortcut": "←"
+          },
+          {
+            "action": "音量 +",
+            "shortcut": "↑"
+          },
+          {
+            "action": "音量 -",
+            "shortcut": "↓"
+          },
+          {
+            "action": "全画面モード",
+            "shortcut": "F"
+          },
+          {
+            "action": "投影の切り替え",
+            "shortcut": "P"
+          },
+          {
+            "action": "クイック検索",
+            "shortcut": "Ctrl+K"
+          },
+          {
+            "action": "投影を閉じる",
+            "shortcut": "ESC"
+          },
+          {
+            "action": "操作画面 ↔ 投影の切り替え（デスクトップアプリ）",
+            "shortcut": "Ctrl+Alt+P"
+          }
+        ]
+      },
+      "modules": {
+        "media": ["3モード対応プレーヤー", "讃美歌集とアルバム", "歌いながらモード"],
+        "hymnal": ["番号やタイトルでの高速検索", "連続再生", "PDFへの書き出しや印刷"],
+        "collections": [
+          "オンラインとオリジナルのコレクション",
+          "ドラッグ＆ドロップでプレイリストへ",
+          "歌詞つきの歌いながらモード"
+        ],
+        "liturgy": ["13種類の項目", "ドラッグ＆ドロップ", "項目ごとのカウントダウン"],
+        "bible": ["複数訳対応", "高速検索", "直接投影"],
+        "projection": ["独立出力", "マルチスクリーン", "完全な制御"],
+        "streaming": ["歌詞表示用のカスタムCSS", "OBS・vMix連携", "YouTube・Facebookへの出力"],
+        "tools": ["時計とストップウォッチ", "カウントダウンタイマー", "くじ引き"],
+        "settings": ["外観", "投影", "マルチスクリーン"]
+      }
+    },
+    "faq": {
+      "cost": {
+        "question": "PIANO LouvorJAは本当に無料ですか？",
+        "answer": "はい！PIANO LouvorJAは100%無料のオープンソースです。サブスクリプション、広告、データ収集は一切ありません。すべてのコードはGitHubで公開されています。"
+      },
+      "offline": {
+        "question": "インターネットなしで使えますか？",
+        "answer": "デスクトップアプリはメディアのダウンロード後、100%オフラインで動作します。ウェブ版の動作にはインターネット接続が必要です。APKアプリも、コンテンツをローカルにダウンロードし、機器が同じネットワークにあれば、インターネットなしで動作します。"
+      },
+      "devices": {
+        "question": "どんな機器で使えますか？",
+        "answer": "PIANOは最新のブラウザを備えたあらゆる機器で動作します：デスクトップ（Linux、macOS、Windows）、タブレット、スマートフォン。マルチスクリーン投影を最大限に活用するには、デスクトップをおすすめします。"
+      },
+      "data": {
+        "question": "データはどこに保存されますか？",
+        "answer": "デスクトップアプリはデータ（賛美歌、礼拝式、設定）を端末内に保存します。ウェブ版はインターネット接続が必要で、永続的なデータは保存しません。お問い合わせフォームを送信すると、お名前・メールアドレス・メッセージの情報がWeb3Forms経由で送信され、ご返信に使われます。詳しくはプライバシーポリシーをご覧ください。"
+      },
+      "privacy": {
+        "question": "プライバシーはどう保護されていますか？",
+        "answer": "PIANO LouvorJAはGDPRおよびLGPD（ブラジル個人情報保護法）に準拠しています。当ウェブサイトはトラッキング、アナリティクス、広告用クッキーを一切使用せず、言語設定を記憶する技術的なクッキーのみを使用します。マーケティング目的でデータを第三者に販売・共有することはありません。詳しくはプライバシーポリシーをご覧ください。"
+      },
+      "support": {
+        "question": "サポートや不具合の報告はどうすればよいですか？",
+        "answer": "お問い合わせページのフォームからご連絡いただくか、GitHubリポジトリで直接issueを開いてください。礼拝中の緊急の問題については、下記のトラブルシューティングFAQをご覧ください。"
+      },
+      "updates": {
+        "question": "アプリはどのように更新されますか？",
+        "answer": "PIANO LouvorJAはウェブアプリケーションです。ページを再読み込みすると更新が自動的に適用されます。手動のダウンロードやインストールは不要で、常に最新のバージョンをご利用いただけます。"
+      },
+      "troubleshooting": {
+        "question": "アプリが読み込まれない、エラーが表示される場合は？",
+        "answer": "1) ページを再読み込みしてください（Ctrl+F5でキャッシュをクリア）。2) 初回アクセス時にインターネット接続を確認してください。3) ブラウザ設定からサイトデータを消去してください。4) 競合する拡張機能を切り分けるため、シークレットモードでお試しください。5) 問題が解決しない場合は、ブラウザと機器の情報を添えて、お問い合わせフォームまたはGitHubでご報告ください。"
+      },
+      "contribute": {
+        "question": "プロジェクトに貢献するには？",
+        "answer": "本プロジェクトはオープンソースで、GitHubでの貢献を受け付けています。不具合の報告、機能のご提案、プルリクエストの送信、他の言語への翻訳のお手伝いができます。"
+      }
+    },
+    "sidebarLabel": "ドキュメントのセクション",
+    "guides": {
+      "title": "完全ガイド",
+      "lead": "エコシステムのすべてのツールを、プラットフォーム別に順を追って解説します。"
+    }
+  },
+  "footer": {
+    "tagline": "ウェブ礼拝マネージャー。無料・オープンソース。",
+    "navLabel": "フッターナビゲーション",
+    "navTitle": "ナビゲーション",
+    "product": "製品",
+    "resources": "リソース",
+    "company": "団体",
+    "links": {
+      "features": "機能",
+      "platforms": "プラットフォーム",
+      "download": "ダウンロード",
+      "releases": "リリース",
+      "howItWorks": "使い方",
+      "docs": "ドキュメント",
+      "contact": "お問い合わせ",
+      "github": "GitHub",
+      "app": "アプリを開く"
+    },
+    "copyright": "Pianoチームが信仰と献身をもって制作しました。",
+    "developedBy": "開発：",
+    "team": "Piano Team",
+    "rights": "All rights reserved.",
+    "forkedFrom": "フォーク元：",
+    "originalProject": "オリジナルのLouvorJAプロジェクト",
+    "legalNavLabel": "法的リンク",
+    "legalNavTitle": "法的情報",
+    "moreNavLabel": "その他のリンク",
+    "moreNavTitle": "その他",
+    "privacy": "プライバシーポリシー",
+    "terms": "利用規約",
+    "conduct": "コミュニティ行動規範",
+    "ranking": "ランキング",
+    "midias": "メディア"
+  },
+  "common": {
+    "loading": "読み込み中...",
+    "error": "エラー",
+    "close": "閉じる",
+    "back": "戻る",
+    "learnMore": "詳しく見る",
+    "skipToContent": "本文へスキップ",
+    "allRightsReserved": "All rights reserved."
+  },
+  "privacy": {
+    "title": "プライバシーポリシー",
+    "metaDescription": "PIANO LouvorJAがLGPD（ブラジル個人情報保護法）に準拠して個人データをどのように取り扱うかのご説明です。",
+    "lastUpdated": "最終更新：2026年7月30日",
+    "tocLabel": "目次",
+    "intro": "本プライバシーポリシーは、当ウェブサイトを通じて収集される個人データのPIANO LouvorJAにおける取り扱いをご説明するものです。私たちは、ブラジル個人情報保護法（LGPD — 第13.709/2018号法律）を遵守し、皆様のプライバシーを保護することに努めています。",
+    "sections": {
+      "data": {
+        "title": "1. 収集するデータ",
+        "body": [
+          "1.1 ご本人が提供するデータ",
+          "お問い合わせフォームのご記入時に、以下を収集します：",
+          "お名前",
+          "メールアドレス",
+          "メッセージの件名",
+          "メッセージの内容",
+          "1.2 技術的データ",
+          "技術的クッキー piano_lang：言語の設定のみを保存します。個人を特定する情報は含まれません。",
+          "トラッキング、アナリティクス、広告、プロファイリング用のクッキーは使用しません。"
+        ]
+      },
+      "purpose": {
+        "title": "2. 処理の目的",
+        "body": [
+          "お問い合わせフォームのデータは、以下の目的に限って使用されます：",
+          "ご要望へのご返信",
+          "技術サポートの提供",
+          "ご希望された通信の送信",
+          "法的根拠：LGPD第7条IX号（正当な利益およびご本人からの申出への対応）。"
+        ]
+      },
+      "sharing": {
+        "title": "3. データの共有",
+        "body": [
+          "3.1 Web3Forms",
+          "お問い合わせフォームは、送信内容の処理にWeb3Forms（米国）を使用します。データは当方のメールへ転送するためWeb3Formsに送信されます。",
+          "再委託先：Web3Forms",
+          "国：アメリカ合衆国",
+          "目的：メッセージの転送",
+          "3.2 ホスティング提供者",
+          "当サイトは、技術的なアクセス情報（IP、タイムスタンプ、ユーザーエージェント）を記録する場合があるクラウドインフラ上でホストされています。",
+          "3.3 データを共有しない相手",
+          "広告企業",
+          "SNS",
+          "データブローカー",
+          "マーケティング目的の第三者"
+        ]
+      },
+      "international": {
+        "title": "4. 国際的なデータ移転",
+        "body": [
+          "お問い合わせフォームのデータは、アメリカ合衆国のWeb3Formsによって処理されます。この国際的なデータ移転は、フォームサービスの提供に不可欠であり、LGPD第33条の法的根拠に該当します。"
+        ]
+      },
+      "rights": {
+        "title": "5. ご本人の権利（LGPD第18条）",
+        "body": [
+          "ご本人は、ご自身の個人データについて以下の権利を有します：",
+          "処理の存在の確認",
+          "データへのアクセス",
+          "不完全、不正確、または古いデータの訂正",
+          "不要なデータの匿名化、ブロック、削除",
+          "データのポータビリティ",
+          "個人データの削除",
+          "共有に関する情報の開示",
+          "権利を行使する方法",
+          "以下の内容を添えて privacidade{'@'}pianolouvorja.com.br までメールください：",
+          "氏名",
+          "行使をご希望される権利の内容",
+          "登録済みのメールアドレス",
+          "返答期限：15暦日以内（LGPD第19条）。"
+        ]
+      },
+      "security": {
+        "title": "6. 安全対策",
+        "body": [
+          "私たちは、以下の技術的・組織的な措置を講じています：",
+          "すべての通信におけるHTTPS/TLS暗号化",
+          "パスワードの保存なし（ログインシステムなし）",
+          "データ最小化（必要なもののみ収集）",
+          "個人を特定しない技術的クッキー",
+          "チームによるデータアクセスの制限"
+        ]
+      },
+      "retention": {
+        "title": "7. データの保有期間",
+        "body": [
+          "お問い合わせフォーム：ご返信に必要な期間の後、記録として最長12ヶ月間保持し、その後削除します。",
+          "アクセスログ：ホスティング提供者のポリシーに従います。",
+          "アプリのローカルデータ：ご本人が削除するまで端末内に保持されます。"
+        ]
+      },
+      "cookies": {
+        "title": "8. クッキー",
+        "body": ["第三者、アナリティクス、広告のクッキーは使用しません。"],
+        "table": {
+          "header": {
+            "cookie": "クッキー",
+            "type": "種類",
+            "purpose": "目的",
+            "duration": "期間"
+          },
+          "rows": [
+            {
+              "name": "piano_lang",
+              "type": "技術的",
+              "purpose": "希望言語を記憶する",
+              "duration": "セッション"
+            }
+          ]
+        }
+      },
+      "children": {
+        "title": "9. 児童および未成年",
+        "body": [
+          "本アプリは児童を対象としたものではなく、18歳未満の方のデータを意図的に収集することはありません。コンテンツ（賛美歌、礼拝式、聖書の言葉）は宗教的な性質のものであり、機微なデータの収集を伴いません。"
+        ]
+      },
+      "changes": {
+        "title": "10. ポリシーの変更",
+        "body": [
+          "本ポリシーは随時更新される場合があります。最新版は常に本ページで、更新日を冒頭に記してご覧いただけます。定期的なご確認をおすすめします。"
+        ]
+      },
+      "dpo": {
+        "title": "11. 個人情報保護責任者（DPO）",
+        "body": [
+          "LGPD第41条に基づき、ご質問は privacidade{'@'}pianolouvorja.com.br までお送りください。"
+        ]
+      },
+      "anpd": {
+        "title": "12. 個人情報保護監督機関",
+        "body": [
+          "苦情の申立ては、ANPD（ブラジル個人情報保護庁）へご連絡いただけます：",
+          "ウェブサイト：{link}",
+          "メール：ouvidoria{'@'}anpd.gov.br"
+        ],
+        "link": {
+          "url": "https://www.gov.br/anpd",
+          "text": "www.gov.br/anpd"
+        }
+      }
+    }
+  },
+  "terms": {
+    "title": "利用規約",
+    "metaDescription": "PIANO LouvorJAの利用条件および規約。",
+    "lastUpdated": "最終更新：2026年7月30日",
+    "tocLabel": "目次",
+    "intro": "PIANO LouvorJAへようこそ。本ウェブサイトおよびアプリケーションにアクセスし、ご利用いただくことで、本利用規約に同意したものとみなされます。よくお読みください。",
+    "sections": {
+      "acceptance": {
+        "title": "1. 規約への同意",
+        "body": [
+          "PIANO LouvorJAのご利用は、本規約への完全な同意を意味します。規約のいずれかにご同意いただけない場合は、アプリをご利用にならないでください。"
+        ]
+      },
+      "service": {
+        "title": "2. サービスの性質",
+        "body": [
+          "PIANO LouvorJAは、礼拝の運営を支援するために作られた無料のオープンソースウェブアプリケーションで、以下の機能を提供します：",
+          "デジタル讃美歌集と楽曲の再生",
+          "礼拝式および礼拝スケジュールの管理",
+          "歌詞と聖書の言葉の投影",
+          "サポートツール（タイマー、くじ引きなど）",
+          "本アプリは宗教的かつコミュニティでの利用を目的としており、営利目的ではありません。"
+        ]
+      },
+      "license": {
+        "title": "3. ライセンス",
+        "body": [
+          "3.1 ソフトウェア",
+          "ソースコードはオープンソースライセンスの下で配布されています。詳細は{link}をご覧ください。",
+          "3.2 コンテンツ",
+          "テキストコンテンツ（賛美歌、歌詞、文学）の著作権はそれぞれの権利者に帰属します。PIANO LouvorJAは：",
+          "コンテンツの著作者を名乗りません",
+          "コンテンツを直接商用化しません",
+          "第9.610/98号法律に従い著作権を尊重します"
+        ],
+        "link": {
+          "url": "https://github.com/Piano-Louvor-JA",
+          "text": "GitHubリポジトリ"
+        }
+      },
+      "user": {
+        "title": "4. ユーザーの責任",
+        "body": [
+          "PIANO LouvorJAのご利用にあたり、以下に同意していただきます：",
+          "倫理的に、かつ適用法令を遵守してアプリを利用すること",
+          "違法、名誉毀損、または第三者の権利を侵害する目的での利用をしないこと",
+          "表示される作品の著作権を尊重すること",
+          "セキュリティや可用性を損なう行為を試みないこと"
+        ]
+      },
+      "responsibility": {
+        "title": "5. 責任",
+        "body": [
+          "5.1 サービスの性質",
+          "PIANO LouvorJAは、いかなる種類の保証もなく「現状有姿」で提供されます。私たちは以下を保証しません：",
+          "サービスが中断されず、安全で、誤りがないこと",
+          "結果が正確で信頼できること",
+          "いかなる誤りや欠陥も修正されること",
+          "5.2 責任の制限",
+          "法律で認められる最大限の範囲において、PIANO LouvorJAは以下について責任を負いません：",
+          "直接的、間接的、付随的、または結果的な損害",
+          "データの喪失（定期的なバックアップをお願いします）",
+          "重要な利用中のサービス中断",
+          "第三者のコンテンツおよび外部リンク"
+        ]
+      },
+      "ip": {
+        "title": "6. 知的財産",
+        "body": [
+          "6.1 ソフトウェア",
+          "ソースコードは著作権により保護され、オープンソースライセンスの下で配布されています。",
+          "6.2 商標",
+          "「PIANO LouvorJA」および「LouvorJA」は本プロジェクトの商標です。無断使用は許可されません。",
+          "6.3 第三者のコンテンツ",
+          "賛美歌、歌詞、文学はそれぞれの作者および出版社に帰属します。これらのコンテンツを整理することによっても、知的財産権は移転しません。"
+        ]
+      },
+      "donations": {
+        "title": "7. 寄付と貢献",
+        "body": [
+          "PIANO LouvorJAは無料かつオープンソースです。GitHubでの自主的な貢献（プルリクエスト、issue、翻訳）を受け付けています。偶発的な寄付は、消費者関係を構成するものではなく、いかなる優遇も保証するものではありません。"
+        ]
+      },
+      "privacy": {
+        "title": "8. プライバシーとデータ",
+        "body": ["個人データの処理は、本規約の一部である{link}に従って行われます。"],
+        "link": {
+          "url": "/privacy",
+          "text": "プライバシーポリシー"
+        }
+      },
+      "modifications": {
+        "title": "9. 変更",
+        "body": [
+          "本規約は随時変更される場合があります。変更は公開後ただちに有効となります。定期的にご確認いただくことはご利用者の責任です。"
+        ]
+      },
+      "termination": {
+        "title": "10. 終了",
+        "body": [
+          "ブラウザを閉じることで、いつでもアプリのご利用を中止できます。アカウントシステムが存在しないため、正式な解約手続きは不要です。"
+        ]
+      },
+      "law": {
+        "title": "11. 準拠法",
+        "body": [
+          "本規約は、ブラジル連邦共和国の法律に準拠します。紛争はご利用者の住所地を管轄する裁判所で解決されるものとします。"
+        ]
+      },
+      "misc": {
+        "title": "12. 最終規定",
+        "body": [
+          "本規約のいずれかの条項が無効または履行不能と判断された場合でも、残りの条項は完全な効力を保ちます。いかなる違反に対する寛容も、将来の権利の放棄を構成するものではありません。"
+        ]
+      }
+    }
+  },
+  "error": {
+    "title": "ページが見つかりません",
+    "serverErrorTitle": "サーバーエラー",
+    "errorCode404": "404",
+    "errorCode500": "500",
+    "desc404": "お探しのページは存在しないか、移動されました。",
+    "desc500": "当方で問題が発生しました。チームに通知されています — しばらくしてからもう一度お試しください。",
+    "backHome": "ホームに戻る",
+    "reportIssue": "問題を報告",
+    "metaDesc404": "ページが見つかりません — PIANO LouvorJA",
+    "metaDesc500": "サーバーエラー — PIANO LouvorJA"
+  },
+  "newsletter": {
+    "title": "プロジェクトの最新情報を受け取る",
+    "subtitle": "新バージョン、機能、更新情報をお知らせします。スパムはありません。",
+    "placeholder": "メールアドレス",
+    "button": "登録",
+    "loading": "登録中...",
+    "success": "登録が完了しました！最新情報をメールでお届けします。",
+    "errors": {
+      "invalidEmail": "メールアドレスが無効です。ご確認のうえ、もう一度お試しください。",
+      "alreadySubscribed": "このメールアドレスはすでに登録されています。",
+      "generic": "登録できませんでした。もう一度お試しください。",
+      "rateLimited": "試行回数が多すぎます。数分お待ちください。",
+      "serviceUnavailable": "サービスが利用できません。後でもう一度お試しください。",
+      "unknownError": "問題が発生しました。もう一度お試しください。"
+    }
+  },
+  "welcomePopup": {
+    "title": "PianoLouvorJAを無料でダウンロード",
+    "description": "デスクトップとモバイルでアドベンチスト讃美歌集を。AppImage、ウェブアプリなど — プラットフォームをお選びください。",
+    "close": "閉じる",
+    "cta": "ダウンロードの選択肢を見る",
+    "secondaryCta": "閲覧を続ける"
+  },
+  "cookieBanner": {
+    "message": "体験向上のためクッキーを使用しています。閲覧を続けることで、プライバシーポリシーに同意したことになります。",
+    "accept": "理解し、同意します",
+    "reject": "辞退する",
+    "privacyLink": "プライバシーポリシーを読む"
+  },
+  "admin": {
+    "title": "ダッシュボード",
+    "loginTitle": "アクセス制限",
+    "loginSubtitle": "サインインしてパネルにアクセスしてください",
+    "email": "メールアドレス",
+    "emailPlaceholder": "admin{'@'}pianolouvorja.com.br",
+    "password": "パスワード",
+    "passwordPlaceholder": "パスワード",
+    "loginButton": "サインイン",
+    "loginError": "メールアドレスまたはパスワードが正しくありません",
+    "loggingIn": "サインイン中...",
+    "logout": "ログアウト",
+    "welcome": "ようこそ、{email}さん",
+    "dashboard": "ダッシュボード",
+    "stats": "統計",
+    "backToSite": "サイトに戻る",
+    "refresh": "更新",
+    "updatedAgo": "{min}分前に更新",
+    "updatedAt": "たった今",
+    "downloads": "ダウンロード数",
+    "stars": "スター",
+    "forks": "フォーク",
+    "subscribers": "登録者",
+    "donations": "寄付",
+    "visits": "訪問数（30日）",
+    "recentActivity": "最近のアクティビティ",
+    "quickLinks": "クイックリンク",
+    "noData": "データを取得できません",
+    "loading": "読み込み中...",
+    "comunidade": {
+      "tab": "保留中",
+      "tabMembros": "メンバー",
+      "tabEquipe": "チーム",
+      "subtitulo": "審査待ちの内容、メンバー、チームを一つの画面で管理します。",
+      "filtroStatus": "状態",
+      "todos": "すべて",
+      "carregando": "読み込み中…",
+      "recarregar": "↻ 再読み込み",
+      "carregarMais": "さらに読み込む",
+      "erroCarregar": "読み込みに失敗しました",
+      "semMembros": "この条件に合うメンバーはいません。",
+      "semEquipe": "スタッフが見つかりません。",
+      "roles": "役割",
+      "salvar": "保存",
+      "salvando": "保存中…",
+      "salvoOk": "役割を更新しました ✓",
+      "erroSalvar": "保存に失敗しました",
+      "aprovar": "承認",
+      "aprovadoOk": "メンバーを承認しました ✓",
+      "inativar": "無効化",
+      "inativadoOk": "メンバーを無効化しました ✓",
+      "reativar": "再有効化",
+      "gm": "GM（管理者）",
+      "role": {
+        "dev": "開発者",
+        "tester": "テスター",
+        "conteudo": "コンテンツ",
+        "curador": "キュレーター",
+        "staff": "スタッフ"
+      },
+      "title": "コミュニティ",
+      "tabsAriaLabel": "コミュニティ管理のタブ"
+    }
+  },
+  "download": {
+    "metaTitle": "ダウンロード — PIANO LouvorJA",
+    "metaDescription": "PIANO LouvorJAをデスクトップ（Linux、Windows、macOS）向けにダウンロード、ブラウザでウェブアプリを利用、またはモバイルのロードマップをご覧ください。",
+    "heroEyebrow": "ダウンロード",
+    "heroTitle": "PIANO LouvorJAを入手",
+    "heroSubtitle": "ご自身に合った方法をお選びください。全機能を備えたネイティブデスクトップ、すぐに使えるウェブアプリ、準備中のモバイル。",
+    "heroWebCta": "ウェブアプリを使う",
+    "heroGithubCta": "GitHubで見る",
+    "platformsTitle": "プラットフォームを選ぶ",
+    "platformsSubtitle": "それぞれのプラットフォームに、それぞれの強みがあります",
+    "desktop": {
+      "badge": "おすすめ",
+      "title": "ネイティブデスクトップ",
+      "description": "全機能を備えたElectronアプリ：独立したマルチスクリーン投影、完全オフラインモード、キーボードショートカット。",
+      "linux": {
+        "name": "Linux",
+        "format": "AppImage",
+        "arch": "x64",
+        "downloadLabel": "AppImageをダウンロード",
+        "hint": "ダウンロード後、実行権限を付与し（chmod +x）実行してください。FUSEのインストールが必要です。別方法：flatpak install でFlatpakに変換できます。"
+      },
+      "windows": {
+        "name": "Windows",
+        "format": "NSISインストーラー（.exe）",
+        "arch": "x64",
+        "downloadLabel": "Windows向けダウンロード",
+        "hint": "インストーラーを実行し、手順に従ってください。"
+      },
+      "macos": {
+        "name": "macOS",
+        "format": "ディスクイメージ（.dmg）",
+        "arch": "x64 / arm64（Apple Silicon）",
+        "downloadLabel": "macOS向けダウンロード",
+        "hint": ".dmgを開き、アプリをアプリケーションフォルダへドラッグしてください。"
+      },
+      "features": {
+        "multiScreen": "独立したマルチスクリーン投影",
+        "offline": "100%オフラインで動作",
+        "shortcuts": "専用のキーボードショートカット",
+        "autoUpdate": "自動アップデート"
+      },
+      "buildFromSource": "ソースからビルドしますか？",
+      "buildFromSourceLink": "GitHubで手順を見る",
+      "otherArch": "{arch}向けダウンロード",
+      "detectedArchitecture": "検出されたアーキテクチャ：{architecture}"
+    },
+    "web": {
+      "badge": "すぐに使える",
+      "title": "ウェブアプリ",
+      "description": "ブラウザから直接ご利用いただけます。インストール不要、あらゆるOSで動作します。手軽な利用や、アプリをインストールしていない場合に最適です。",
+      "cta": "ウェブアプリを開く",
+      "features": {
+        "noInstall": "インストール不要",
+        "anyOs": "あらゆるOS",
+        "autoUpdate": "自動アップデート",
+        "pwa": "ブラウザでアクセス"
+      }
+    },
+    "mobile": {
+      "badge": "利用可能",
+      "title": "モバイル",
+      "description": "Androidアプリをダウンロードすれば、PIANOをいつでも持ち歩けます — スマートフォンからステージを操作できます。",
+      "platforms": "Android と iOS",
+      "features": {
+        "nativeAndroid": "Androidネイティブ（計画中）",
+        "nativeIos": "iOSネイティブ（計画中）",
+        "cloudSync": "クラウド同期（計画中）",
+        "remote": "デスクトップからのリモート操作",
+        "network": "ローカルネットワーク同期",
+        "offline": "オフライン対応"
+      },
+      "useWebInstead": "スマートフォンではウェブアプリをご利用ください",
+      "noAssets": "モバイル向けダウンロードは間もなく提供されます。",
+      "android": {
+        "name": "Android",
+        "format": ".apk パッケージ",
+        "arch": "Universal（arm64、armv7、x86_64）",
+        "downloadLabel": "APKをダウンロード",
+        "hint": "提供元不明のアプリを許可してAPKをインストールしてください。"
+      },
+      "ios": {
+        "name": "iOS",
+        "format": "TestFlightアプリ",
+        "arch": "universal",
+        "downloadLabel": "TestFlightを開く",
+        "hint": "TestFlightへの招待が必要です。"
+      },
+      "apkNote": "Androidの設定で提供元不明のアプリを許可したうえで、APKをインストールしてください。"
+    },
+    "midias": {
+      "title": "LouvorJAメディア",
+      "description": "コレクション、オーディオ、パックをコミュニティのGoogle Driveから直接ダウンロード — APIに依存せず、オフラインで、無料です。",
+      "cta": "メディアを開く"
+    },
+    "systemRequirements": {
+      "title": "システム要件",
+      "desktop": "デスクトップ：RAM 4GB、ディスク容量500MB、WebGL対応GPU",
+      "web": "ウェブ：最新のブラウザ（Chrome、Firefox、Edge、Safari）、初回アクセス時のインターネット接続"
+    },
+    "tv": {
+      "badge": "新着",
+      "title": "テレビ / デジタルステージ",
+      "description": "どのスマートテレビでもステージレシーバーに変えられます。Androidアプリ（APK）から操作できます — ウェブとデスクトップからの操作は準備中です。",
+      "noAssets": "テレビ向けパッケージは間もなく公開されます。",
+      "features": {
+        "realtime": "リアルタイムミラーリング",
+        "multicast": "複数テレビの同時出力",
+        "autodiscover": "ネットワーク自動検出",
+        "nativeLg": "webOS（LG）ネイティブアプリ",
+        "bigScreen": "大画面に最適化",
+        "remoteControl": "Palcoリモコン"
+      },
+      "webos": {
+        "name": "LG webOS TV",
+        "format": ".ipk パッケージ",
+        "arch": "arm",
+        "downloadLabel": "webOS向けダウンロード",
+        "hint": "開発者モードを使用するか、LG Device Manager経由でサイドロードしてください。"
+      },
+      "androidtv": {
+        "name": "Android TV",
+        "format": ".apk パッケージ",
+        "arch": "arm64",
+        "downloadLabel": "Android TV向けダウンロード",
+        "hint": "ファイルマネージャーまたはADBでAPKをサイドロードしてください。"
+      },
+      "downloadGeneric": "ダウンロード",
+      "tizen": {
+        "name": "Samsung Tizen TV",
+        "format": ".tpk パッケージ",
+        "hint": "USBまたはTizen Studio Device Managerからインストールしてください。"
+      },
+      "useDesktopInstead": "対応していないテレビでは、ブラウザの全画面モードでPalcoをご利用ください。"
+    },
+    "voidbr": {
+      "eyebrow": "提携Linuxディストロ",
+      "title": "VoidBR LouvorJA Piano",
+      "subtitle": "PIANO LouvorJAがプリインストールされた完全なLinuxディストリビューション — 教会が正規ソフトウェアを簡単に導入できるよう、VoidBRコミュニティが構築しました。",
+      "description": "起動可能なライブシステム：USBから起動し、PIANOと讃美歌集が設定済みの状態で利用・インストールできます。",
+      "feature1": "PIANO LouvorJAプリインストール＆最新版",
+      "feature2": "100%正規で無料 — 海賊版ゼロ",
+      "feature3": "軽量で安定したVoid Linuxベース",
+      "downloadLabel": "ISOをダウンロード（x86_64）",
+      "unavailable": "ISOは一時的に利用できません",
+      "communityLink": "VoidBRコミュニティ"
+    }
+  },
+  "contributors": {
+    "title": "PIANOを支えている人々",
+    "subtitle": "PIANO LouvorJAは、時間と知識をプロジェクトに捧げてくださる方々のおかげで存在しています。",
+    "contributions": "件のコントリビューション",
+    "viewAll": "GitHubですべて見る",
+    "ctaTitle": "プロジェクトに貢献する",
+    "ctaText": "PIANOはオープンソースで、コミュニティとともに成長しています。コードの貢献、不具合の報告、機能のご提案、翻訳のお手伝い、プロジェクトの共有ができます。",
+    "ctaWays": {
+      "code": "GitHubでプルリクエストを送る",
+      "bugs": "不具合を報告し、改善を提案する",
+      "translate": "翻訳をお手伝いする",
+      "share": "コミュニティに共有する"
+    },
+    "ctaButton": "貢献を始める",
+    "loading": "貢献者を読み込み中...",
+    "error": "現在、貢献者を読み込めませんでした。"
+  },
+  "releases": {
+    "metaTitle": "リリースノート — PIANO LouvorJA",
+    "metaDescription": "PIANO LouvorJAのバージョン履歴と変更点。新機能、改善、修正を追跡できます。",
+    "title": "リリースノート",
+    "subtitle": "PIANO LouvorJAのすべてのアップデートをお届けします。新機能、改善、修正。",
+    "latest": "最新",
+    "version": "バージョン",
+    "released": "リリース日",
+    "highlights": "ハイライト",
+    "pullRequests": "PR",
+    "changelog": "変更履歴",
+    "download": "バージョンをダウンロード",
+    "allVersions": "すべてのバージョン",
+    "loading": "バージョンを読み込み中...",
+    "error": "現在、バージョンを読み込めませんでした。",
+    "noReleases": "公開済みのバージョンはまだありません。",
+    "products": {
+      "web": "ウェブ",
+      "desktop": "デスクトップ",
+      "mobile": "モバイル",
+      "tv": "スマートテレビ"
+    },
+    "repos": {
+      "web": "ウェブ（サイト）",
+      "app": "アプリ（デスクトップ）",
+      "api": "API",
+      "site": "サイト",
+      "palco-receiver": "テレビ向けPalco",
+      "apk": "モバイルアプリ（APK）"
+    },
+    "filterLabel": "製品で絞り込む",
+    "filterAll": "すべて",
+    "filterEmpty": "この製品のリリースはまだありません。"
+  },
+  "tvSupport": {
+    "eyebrow": "ロードマップ",
+    "title": "テレビが教会のステージになります",
+    "description": "スマートテレビに賛美歌と礼拝式をデジタルステージとして表示しながら、スマートフォンから礼拝を操作 — プロジェクターやPCのない小さな集まりに最適です。",
+    "lgBrand": "webOS（LG）",
+    "lgStatus": "開発中",
+    "samsungBrand": "Tizen（Samsung）",
+    "samsungStatus": "開発中",
+    "rokuBrand": "Roku TV",
+    "rokuStatus": "計画中",
+    "androidTvBrand": "Android TV / Google TV",
+    "androidTvStatus": "計画中",
+    "chromecastBrand": "Chromecast",
+    "chromecastStatus": "計画中",
+    "cta": "最新情報を受け取る",
+    "appleTvBrand": "Apple TV",
+    "appleTvStatus": "計画中",
+    "statusAvailable": "利用可能",
+    "downloadCta": "今すぐダウンロード"
+  },
+  "team": {
+    "eyebrow": "チーム紹介",
+    "title": "プロジェクトを支えるメンバー",
+    "subtitle": "PIANO LouvorJAは、専門別の作業部隊に組織された献身的なチームが、ただひとつの目的 — 卓越をもってコミュニティに仕えること — に向かって構築しています。",
+    "areas": {
+      "leadership": {
+        "title": "リーダーシップとビジョン",
+        "description": "プロジェクトの方向性、プロダクトロードマップ、そしてPIANOが仕えるコミュニティとの関係。"
+      },
+      "desktop": {
+        "title": "デスクトップアプリ",
+        "description": "礼拝投影のためのマルチスクリーンElectronアプリ：メディア出力、ステージ表示、リモート操作。"
+      },
+      "web": {
+        "title": "ウェブアプリ",
+        "description": "礼拝運営のためのウェブアプリケーション。ブラウザからすぐにアクセスできます（インターネット接続が必要）。"
+      },
+      "api": {
+        "title": "APIとインフラ",
+        "description": "讃美歌集、プレイリスト、複数端末間の同期を支える公開APIとバックエンドサービス。"
+      },
+      "site": {
+        "title": "ウェブサイトとコンテンツ",
+        "description": "デジタルでの存在、ドキュメント、コミュニケーション：多言語サイト、リリース、リソース。"
+      },
+      "quality": {
+        "title": "品質とCI",
+        "description": "すべてのリリースで安定性を確保するためのパイプライン自動化、テスト、コードレビュー。"
+      },
+      "distro": {
+        "title": "VoidBR Linuxディストロ",
+        "description": "VoidBR LouvorJA PianoライブISOの維持：PIANOと讃美歌集がプリインストールされた完全な起動可能システム — 教会のための正規でシンプルなオフラインインストール。"
+      }
+    },
+    "people": {
+      "title": "プロジェクトを支える人々",
+      "avatarAlt": "{name}さんのGitHubアバター",
+      "more": "詳しく見る"
+    },
+    "members": {
+      "ezequiasfonseca": {
+        "role": "創設者 · リーダーシップとデスクトップアプリ",
+        "bio": "インフラ、Linuxシステム管理、DevOps、フルスタック開発を網羅する、15年の経験を持つシニアソフトウェアエンジニア。PIANO LouvorJAの創設者として、プロダクトのビジョンとデスクトップアプリを統括しています。"
+      },
+      "rafaumeu": {
+        "role": "テックリード · サイト、API、QA",
+        "bio": "PIANO LouvorJAエコシステム（ウェブサイト、API、PWA、品質自動化）に注力するフルスタック開発者。CI/CD、テスト、プロジェクトのマルチデバイス体験を担当しています。"
+      },
+      "rafaelji": {
+        "role": "デスクトップアプリとMac",
+        "bio": "2015年からのプログラマーで、バックエンド、フロントエンド、モバイルの経験があり、現在はReactフロントエンドに注力しています。Alva（安息日学校アプリ）、Appentecostes（13言語へのリアルタイムAI説教翻訳）、FatIA（SNS向けAI生成ビデオクリップ）という3つの個人プロジェクトを維持しています。"
+      },
+      "educharquero": {
+        "role": "Linux、ウェブアプリ、PWA",
+        "bio": "コンピュータネットワークの学位と教育学分野の大学院課程修了。Kurumin時代からのLinuxユーザーで、長年インフラに携わり、conectux.com.brを運営しています。"
+      },
+      "vcatafesta": {
+        "role": "VoidBRディストロ · LouvorJA Piano ISO",
+        "bio": "VoidBRコミュニティ（Void Linux Brazil）とChililinuxプロジェクト（LFSベースのGNU/Linux）の創設者。カスタムカーネル、自動化、パッケージングを手がける低レイヤーのLinux開発者で、PIANOをプリインストールした最新のVoidBR LouvorJA Piano ISOを維持し、教会が正規ソフトウェアを簡単に導入できるようにしています。"
+      },
+      "elomarxa": {
+        "role": "デジタルデザイン、UI、UX",
+        "bio": "デジタルデザイナー。ビジュアル素材の制作経験を持ち、UIとUXのスキルを磨いています。"
+      }
+    },
+    "work": {
+      "title": "私たちの働き方",
+      "text": "オープンソース、ピアレビュー、継続的デリバリー：各部隊は組織内のリポジトリを維持し、自動化された統合とデプロイを行っています。"
+    },
+    "cta": "GitHubで組織を見る",
+    "modal": {
+      "close": "閉じる"
+    },
+    "contribute": {
+      "title": "プロジェクトに貢献する",
+      "text": "PIANOはオープンソースで、コミュニティとともに成長しています。コードの貢献、不具合の報告、機能のご提案、翻訳のお手伝い、プロジェクトの共有ができます。",
+      "ways": {
+        "code": "GitHubでプルリクエストを送る",
+        "bugs": "不具合を報告し、改善を提案する",
+        "translate": "翻訳をお手伝いする",
+        "share": "コミュニティに共有する"
+      },
+      "button": "貢献を始める"
+    }
+  },
+  "community": {
+    "spot": "この場所はあなたのものです — ぜひテストに参加してください",
+    "eyebrow": "コミュニティ",
+    "title": "使う人、試す人、支える人",
+    "subtitle": "PIANO LouvorJAの成長を支えるテスター、愛好者、提案者の皆さん。参加してみませんか？",
+    "roles": {
+      "tester": "テスター",
+      "enthusiast": "愛好者",
+      "suggester": "提案者"
+    },
+    "since": "{since}から",
+    "link": "プロフィールを見る",
+    "cta": "コミュニティに参加する",
+    "channels": {
+      "whatsapp-support": "サポートグループ（WhatsApp）",
+      "dev-form": "開発者になる",
+      "telegram-community": "Telegramコミュニティ"
+    }
+  },
+  "testers": {
+    "eyebrow": "テストコミュニティ",
+    "title": "テスター",
+    "subtitle": "実際の礼拝の環境でPIANO LouvorJAを試し、見つけたことをすべて報告してくださる方々 — だからこそアプリは皆さまの教会で安定して動くのです。",
+    "gallery": {
+      "avatarAlt": "{name}さんのアバター",
+      "more": "詳しく見る"
+    },
+    "modal": {
+      "close": "閉じる"
+    },
+    "focus": {
+      "vm": "仮想マシン",
+      "install": "インストール",
+      "web": "ウェブ",
+      "desktop": "デスクトップ",
+      "mobile": "モバイル",
+      "tv": "テレビ / ステージ",
+      "community": "コミュニティ"
+    },
+    "members": {
+      "natan": {
+        "bio": "Void LinuxでPIANOをテストし、ゼロからのインストールを検証しています。"
+      }
+    },
+    "reports": {
+      "title": "最近のテスト報告",
+      "loading": "報告を読み込み中…",
+      "empty": "報告はまだありません。",
+      "comingSoon": "準備中：テストフォームから直接届く報告。",
+      "anonymous": "匿名"
+    },
+    "cta": {
+      "title": "PIANOを試してみますか？",
+      "button": "テスターになる",
+      "bug": "不具合を報告"
+    }
+  },
+  "donate": {
+    "title": "プロジェクトを支援する",
+    "subtitle": "PIANO LouvorJAは無料です。皆さまのご寄付が、プロジェクトを広告なしで維持する力になります。",
+    "button": "今すぐ寄付する",
+    "pix": "Pix",
+    "boleto": "銀行振込用紙（Boleto）",
+    "card": "カード"
+  },
+  "conduct": {
+    "title": "コミュニティ行動規範",
+    "metaDescription": "LouvorJAコミュニティの原則、モデレーション、申し立て — アドベンチスト教会の音楽哲学に基づいています。",
+    "lastUpdated": "バージョン 1.0 — 2026年11月",
+    "tocLabel": "このページの内容",
+    "intro": "LouvorJAコミュニティは、神をあがめ、教会を建てるピアノの礼拝コンテンツを、会員の皆さんが創作し、共有し、共に喜ぶための場です。本規範は、セブンスデー・アドベンチスト教会の公式原則、とりわけ「セブンスデー・アドベンチスト教会の音楽哲学」（年総会、2004年）、28の基本信仰、教会便覧に基づいています。",
+    "purposeQuote": "「あなたがたは、食べるにも飲むにも、神の栄光を現わすためにしなさい。」 — コリント人への第一の手紙 10:31",
+    "sections": {
+      "celebrate": {
+        "title": "1. 私たちが喜ぶもの",
+        "body": [
+          "神をあがめるコンテンツ、高貴なものと最良のものを求める内容（ピリピ人への手紙 4:8）、真実な霊的メッセージ、バランス、真実性、文化の多様性 — 音楽のスタイルは排除の理由にはなりません。コンテンツとメッセージが問われます。会員間の尊重：好みの違いは争いの理由にはなりません。"
+        ]
+      },
+      "notAllowed": {
+        "title": "2. 許されないもの",
+        "body": [
+          "教義：聖書または28の基本信仰に反する歌詞やメッセージ。",
+          "不適切な内容：情欲、激情、絶望、怒り、憎しみをかき立てるコンテンツ — 攻撃的、性的、暴力的、卑猥なもの。",
+          "著作権：保護された作品の盗作や無断使用 — 賛美歌には権利者がいます。",
+          "スパム：広告、自己宣伝、礼拝に関係のないコンテンツ。",
+          "行動：他の会員への嫌がらせ、人身攻撃、差別、迫害。"
+        ]
+      },
+      "moderation": {
+        "title": "3. モデレーション：報告と措置",
+        "body": [
+          "基本原則：非表示は削除ではない。不審なコンテンツはまずショーケースから非表示にされ、確認の後にのみ恒久的な削除が行われます。",
+          "軽微な初回報告（スパム等）：コンテンツは「確認中」と記され、表示されたままGame Mastersのキューに入ります。",
+          "3件の報告、または1件の重大な報告（教義、不適切、著作権）：最優先で自動的に非表示になります。",
+          "Game Mastersによる7日以内の確認：残すと判断されたコンテンツは説明とともに復帰し、削除と判断された場合、作者は本規範に基づく理由と指導を添えた措置を受けます。",
+          "措置：1回目は正式な警告＋コンテンツ削除。2回目は7日間の投稿停止。3回目は投稿禁止（アカウントの閲覧権は維持されます）。削除によって作者情報や正当に得たポイントが消されることはありません。すべての措置は開発者へ申し立て可能で、重大なケースはチームに回されます。"
+        ]
+      },
+      "gameMasters": {
+        "title": "4. Game Masters",
+        "body": [
+          "エトロの模型（出エジプト記 18章）に倣い、開発チームに招かれた2〜3名の会員が、確認キュー、警告、新会員への指導を担います。彼らは本規範を記載どおり適用し、変更は開発者に上申されます。重大なケースは開発チームへ。決断の順序：まずコミュニティを守り、次に創作者を守る。"
+        ]
+      },
+      "transparency": {
+        "title": "5. 透明性と申し立て",
+        "body": [
+          "本規範は公開されており、アプリ内のコミュニティセクションで閲覧できます。",
+          "すべての作者は、何が削除されたか、なぜか（規範のどの項目か）、どう申し立てるかを知ることができます。",
+          "変更はGame Mastersの意見を聞いたうえで、開発チーム＋リーダーシップを経由します。",
+          "コンテンツが黙って削除されることはありません。"
+        ]
+      },
+      "invitation": {
+        "title": "6. お誘い",
+        "body": [
+          "コミュニティは仕え合う場所です。卓越をもって発表し、正義をもって報告し、慈悲をもって確認してください。"
+        ],
+        "quote": "「主に向かって新しい歌を歌え。全地よ、主に向かって歌え。」 — 詩編 96:1"
+      }
+    }
+  },
+  "ranking": {
+    "title": "コミュニティランキング",
+    "metaDescription": "PIANO LouvorJAコミュニティの貢献者による、公開で透明なランキング — 投稿、使用、同期されたコレクション。",
+    "subtitle": "コミュニティの貢献 — 公開かつ透明",
+    "tabsLabel": "ランキング期間",
+    "tabAll": "全期間",
+    "tabWeek": "週間",
+    "errorText": "現在、ランキングを読み込めませんでした。",
+    "retry": "もう一度試す",
+    "empty": "まだスコアの記録がありません。",
+    "footerLink": "ランキング"
+  },
+  "midias": {
+    "title": "LouvorJAメディア",
+    "metaDescription": "LouvorJA PIANOのメディアとコレクションをGoogle Driveから直接ダウンロード — APIに依存せず、オフラインで、無料。",
+    "subtitle": "コミュニティのコレクションとオーディオ",
+    "description": "LouvorJA PIANOのメディアファイル（コレクション、オーディオ、パック）は、コミュニティのGoogle Driveでホストされています。下のボタンからダウンロードし、アプリ内で読み込んでください。",
+    "noteOffline": "オフライン対応：アプリ内に読み込めば、すべて端末に保存されます。",
+    "noteBackup": "インターネットが不安定な教会に最適 — 一度ダウンロードすれば、いつまでも使えます。",
+    "downloadButton": "Google Driveでメディアを開く",
+    "unavailable": "メディアのリンクは間もなく公開されます。",
+    "footerLink": "メディア"
+  },
+  "comunidade": {
+    "eyebrow": "コミュニティ",
+    "title": "プロジェクトを支える人々",
+    "subtitle": "承認された開発者、テスター、コンテンツ制作者、キュレーターをご紹介します。PIANO LouvorJA を支える人々の情報を直接取得しています。",
+    "error": "現在コミュニティを読み込めません。しばらくしてから再試行してください。",
+    "avatarAlt": "{name} のアバター",
+    "profile": "GitHub プロフィールを見る",
+    "roles": {
+      "staff": "チーム",
+      "dev": "開発者",
+      "tester": "テスター",
+      "conteudo": "コンテンツ",
+      "curador": "キュレーター"
+    }
+  },
+  "institucional": {
+    "meta": {
+      "title": "PIANO LouvorJA — 教会のリーダーの皆様へ",
+      "description": "教会向けの無料ツール。投影用の同期歌詞、伴奏、歌入り音源と導入資料をご紹介します。"
+    },
+    "title": "あなたの教会のための PIANO LouvorJA",
+    "lede": "有志が開発する無料の礼拝支援ツールです。教会のパソコンで同期歌詞、伴奏、歌入り音源を利用できます。",
+    "s1": {
+      "title": "PIANO とは",
+      "body": "PIANO LouvorJA は LouvorJA を基に有志が開発する無料の礼拝支援アプリです。投影用の同期歌詞、伴奏、歌入り音源を提供します。楽譜を演奏するアプリではありません。「Piano」はプロジェクトのコードネームです。"
+    },
+    "s2": {
+      "title": "教会での使い方",
+      "body": "会堂のパソコンで、ブラウザーまたはデスクトップアプリから使えます。ダウンロードページで環境を選び、ドキュメントの手順に従ってください。専門知識は必要ありません。"
+    },
+    "s3": {
+      "title": "地域の教会に紹介する",
+      "body": "長老や牧師に配布できる印刷用の紹介資料を用意しました。役員会、週報、地域の連絡グループで紹介し、ほかの教会にもお知らせください。"
+    },
+    "s4": {
+      "title": "団体向けのお問い合わせ",
+      "body": "連携、団体からのご質問、導入支援については、お問い合わせページまたは app{'@'}pianolouvorja.com.br にご連絡ください。"
+    },
+    "cta": {
+      "press": "紹介資料を見る"
+    }
+  },
+  "press": {
+    "meta": {
+      "title": "紹介資料 — PIANO LouvorJA",
+      "description": "PIANO LouvorJA の概要、主な特長、公式リンク、お問い合わせ先をまとめた印刷用資料です。"
+    },
+    "title": "PIANO LouvorJA 紹介資料",
+    "lede": "長老や牧師への配布用に印刷できる資料です。",
+    "about": "PIANO LouvorJA は LouvorJA を基に有志が開発する無料の礼拝支援アプリです。投影用の同期歌詞、伴奏、歌入り音源を提供します。楽譜を演奏するアプリではありません。「Piano」はプロジェクトのコードネームです。",
+    "keyPoints": [
+      "礼拝で投影できる賛美歌と歌の同期歌詞",
+      "伴奏と歌入り音源で音楽を支援",
+      "どの教会でも利用できる無料の有志プロジェクト"
+    ],
+    "where": {
+      "title": "公式リンク",
+      "items": [
+        "公式サイト: https://pianolouvorja.com.br",
+        "ダウンロード: https://pianolouvorja.com.br/download",
+        "ドキュメント: https://pianolouvorja.com.br/docs",
+        "お問い合わせ: app{'@'}pianolouvorja.com.br"
+      ]
+    },
+    "contact": "団体向けのお問い合わせ: app{'@'}pianolouvorja.com.br",
+    "printCta": "印刷 / PDF に保存",
+    "footer": "PIANO LouvorJA · https://pianolouvorja.com.br"
+  },
+  "tickets": {
+    "nav": "サポート",
+    "sending": "送信中…",
+    "loading": "読み込み中…",
+    "error": {
+      "api": "API を利用できません。再試行してください。"
+    },
+    "intake": {
+      "title": "サポート窓口",
+      "description": "サポートへの依頼を送信します。",
+      "name": "お名前",
+      "email": "メール",
+      "subject": "件名",
+      "message": "メッセージ",
+      "consent": "サポートのための個人データ処理（LGPD）に同意します。",
+      "consentRequired": "同意が必要です。",
+      "submit": "依頼を送信",
+      "successTitle": "依頼を受け付けました",
+      "successHint": "チームへの連絡時に参照できるよう、この番号を保存してください。",
+      "newRequest": "新しい依頼",
+      "portalLink": "自分のチケットへ"
+    },
+    "portal": {
+      "title": "自分のチケット",
+      "description": "依頼を確認し、チームに返信できます。",
+      "newTicket": "新しいチケット",
+      "priority": "優先度",
+      "create": "チケットを作成",
+      "empty": "チケットはまだありません。",
+      "reply": "返信"
+    },
+    "admin": {
+      "title": "管理 — チケット",
+      "description": "問い合わせの振り分けと組織のチケット。",
+      "intakeQueue": "問い合わせ一覧",
+      "intakeEmpty": "待機中の依頼はありません。",
+      "triage": "確認してチケットに変換",
+      "ticketsTitle": "チケット",
+      "tenant": "組織 ID"
+    }
+  }
+}

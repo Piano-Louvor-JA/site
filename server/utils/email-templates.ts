@@ -1,5 +1,5 @@
 import { EMAIL_BRAND_TOKENS as T } from './email-brand'
-import { getEmailStrings, type EmailStrings } from './email-i18n'
+import { getEmailStrings, isRtlLocale, type EmailStrings } from './email-i18n'
 
 const LOGO_URL = 'https://pianolouvorja.com.br/brand/logo-louvor-ja.svg'
 
@@ -101,20 +101,27 @@ function shell(
   strs: EmailStrings,
   template: string,
   unsubscribeUrl: string,
+  locale: string,
 ): string {
-  return `<table width="100%" cellpadding="0" cellspacing="0" style="background:${T.dark};font-family:system-ui,-apple-system,sans-serif;">
+  // RTL (ar): dir no wrapper + text-align:right no container. O align="center"
+  // do <td> externo permanece — o e-mail fica centralizado na página, mas o
+  // conteúdo lê da direita para a esquerda.
+  const rtl = isRtlLocale(locale)
+  const dirAttr = rtl ? ' dir="rtl"' : ''
+  const rtlAlign = rtl ? 'text-align:right;' : ''
+  return `<table width="100%" cellpadding="0" cellspacing="0" dir="${rtl ? 'rtl' : 'ltr'}" style="background:${T.dark};font-family:system-ui,-apple-system,sans-serif;${rtlAlign}"><tbody${dirAttr}>
 <tr><td align="center" style="padding:24px;">
-  <table width="600" cellpadding="0" cellspacing="0" style="max-width:600px;">
-    <tr><td style="padding:24px 0;border-bottom:2px solid ${headerAccent};">
+  <table width="600" cellpadding="0" cellspacing="0" style="max-width:600px;${rtlAlign}">
+    <tr><td style="padding:24px 0;border-bottom:2px solid ${headerAccent};${rtlAlign}">
       <img src="${LOGO_URL}" alt="Piano LouvorJA" style="max-height:40px;margin-bottom:8px;display:block;" />
       <span style="font-size:24px;font-weight:800;color:${headerAccent};">Piano LouvorJA</span>
       <br><span style="font-size:12px;color:${T.muted};">${strs.appSubtitle}</span>
     </td></tr>
-    <tr><td style="padding:12px 0;">${badge(strs, template)}</td></tr>
-    <tr><td style="padding:20px 0;color:${T.text};font-size:15px;line-height:1.6;">
+    <tr><td style="padding:12px 0;${rtlAlign}">${badge(strs, template)}</td></tr>
+    <tr><td style="padding:20px 0;color:${T.text};font-size:15px;line-height:1.6;${rtlAlign}">
       ${inner}
     </td></tr>
-    <tr><td style="padding:20px 0;border-top:1px solid ${T.border};color:${T.muted};font-size:12px;">
+    <tr><td style="padding:20px 0;border-top:1px solid ${T.border};color:${T.muted};font-size:12px;${rtlAlign}">
       <p><a href="https://github.com/Piano-Louvor-JA" style="color:${T.muted};">GitHub</a> &middot;
       <a href="https://pianolouvorja.com.br" style="color:${T.muted};">Site</a></p>
       <p><a href="${unsubscribeUrl}" style="color:${T.slateLight};">${strs.unsubscribe}</a></p>
@@ -122,7 +129,7 @@ function shell(
     </td></tr>
   </table>
 </td></tr>
-</table>`
+</tbody></table>`
 }
 
 export function renderTemplate(template: string, params: TemplateParams): string {
@@ -131,8 +138,8 @@ export function renderTemplate(template: string, params: TemplateParams): string
   const strs = getEmailStrings(locale)
 
   if (template === 'devotional') {
-    return shell(body, T.yellow, strs, template, params.unsubscribeUrl)
+    return shell(body, T.yellow, strs, template, params.unsubscribeUrl, locale)
   }
   // release and announcement
-  return shell(body, T.cyan, strs, template, params.unsubscribeUrl)
+  return shell(body, T.cyan, strs, template, params.unsubscribeUrl, locale)
 }

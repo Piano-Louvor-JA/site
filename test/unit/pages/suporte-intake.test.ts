@@ -30,7 +30,9 @@ const mountPage = async () => {
 }
 
 describe('página /suporte (intake público)', () => {
-  beforeEach(() => fetchMock.mockReset())
+  beforeEach(() => {
+    fetchMock.mockReset()
+  })
 
   it('renderiza formulário com consent e honeypot', async () => {
     const w = await mountPage()
@@ -66,23 +68,15 @@ describe('página /suporte (intake público)', () => {
     await flushPromises()
     expect(fetchMock).toHaveBeenCalledOnce()
     const [url, init] = fetchMock.mock.calls[0]
-    expect(url).toBe('https://api.test.local/v1/tickets-intake')
-    expect(JSON.parse(init.body).email).toBe('maria@test.local')
+    expect(url).toBe('https://api.test.local/v1/tickets/public/intake')
+    expect(JSON.parse(init.body).requester_email).toBe('maria@test.local')
+    expect(JSON.parse(init.body).consent_lgpd).toBe(true)
     expect(w.find('[data-testid="intake-protocol"]').text()).toContain('PRC-ABC123')
   })
 
-  it('consulta status por protocolo', async () => {
-    fetchMock.mockResolvedValueOnce({
-      ok: true,
-      status: 200,
-      json: async () => ({ protocol: 'PRC-ABC123', status: 'pending' }),
-    })
+  it('não oferece consulta de protocolo sem endpoint na API', async () => {
     const w = await mountPage()
-    const forms = w.findAll('form')
-    const statusForm = forms[forms.length - 1]
-    await statusForm.find('input').setValue('PRC-ABC123')
-    await statusForm.trigger('submit')
-    await flushPromises()
-    expect(w.find('[data-testid="intake-status-result"]').text()).toContain('pending')
+    expect(w.findAll('form')).toHaveLength(1)
+    expect(w.find('[data-testid="intake-status-result"]').exists()).toBe(false)
   })
 })

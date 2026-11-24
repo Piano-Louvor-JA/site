@@ -2,33 +2,48 @@
   import type { Collections, PageCollectionItemBase } from '@nuxt/content'
   // auto-import do módulo, exposto via virtual #imports (eslint-safe)
   import { queryCollection } from '#imports'
+  import { docDirFor, docLinkFor } from '~/utils/docs-locale'
 
   const route = useRoute()
   const { locale, t } = useI18n()
+  const localePath = useLocalePath()
 
-  // Slug pt-BR canônico — en/es caem no conteúdo pt-BR (fallback) até serem traduzidos
-  const localeDir = computed(() => (locale.value === 'pt-BR' ? 'pt-BR' : 'pt-BR'))
+  // Onda 3: docs localizadas por coleção; locale sem conteúdo → fallback pt-BR (AC4)
+  const localeDir = computed(() => docDirFor(locale.value))
+  const usedDir = ref('pt-BR')
   const slugPath = computed(() => {
     const slug = route.params.slug
     return Array.isArray(slug) ? slug.join('/') : String(slug ?? '')
   })
-  const collectionName = computed<keyof Collections>(
-    () => `docs_${localeDir.value.replace('-', '')}` as keyof Collections,
-  )
-
   type DocPage = PageCollectionItemBase & {
     reviewed_at?: string
     toc?: boolean
     body?: { toc?: { links?: Array<{ id: string; text: string }> } }
   }
+  void (0 as unknown as DocPage | null)
 
   const { data: page, error } = await useAsyncData(
     `docs-${slugPath.value}-${locale.value}`,
-    () =>
-      queryCollection(collectionName.value)
-        // content v3 lowercases o path no banco — consultar sempre em minúsculas
-        .path(`/docs/${localeDir.value.toLowerCase()}/${slugPath.value}`)
-        .first() as unknown as Promise<DocPage | null>,
+    async () => {
+      type Q = PageCollectionItemBase & {
+        reviewed_at?: string
+        toc?: boolean
+        body?: { toc?: { links?: Array<{ id: string; text: string }> } }
+      }
+      const query = (dir: string) =>
+        queryCollection(`docs_${dir.replace('-', '')}` as keyof Collections)
+          // content v3 lowercases o path no banco — consultar sempre em minúsculas
+          .path(`/docs/${dir.toLowerCase()}/${slugPath.value}`)
+          .first() as unknown as Promise<Q | null>
+      const primary = localeDir.value === 'pt-BR' ? null : await query(localeDir.value)
+      if (primary) {
+        usedDir.value = localeDir.value
+        return primary
+      }
+      // fallback pt-BR — nunca 404 quando o slug existe em pt-BR (SPEC AC4)
+      usedDir.value = 'pt-BR'
+      return await query('pt-BR')
+    },
   )
 
   const resolvedPage = computed(() => page.value ?? undefined)
@@ -37,11 +52,13 @@
     throw createError({ statusCode: 404, statusMessage: 'Doc not found', fatal: true })
   }
 
-  // TOC + navegação lateral (todas as páginas pt-BR, ordem nav_order)
+  // TOC + navegação lateral (da coleção usada — localizada ou fallback pt-BR)
   const { data: nav } = await useAsyncData(
     `docs-nav-${locale.value}`,
     () =>
-      queryCollection(collectionName.value).order('nav_order', 'ASC').all() as unknown as Promise<
+      queryCollection(`docs_${usedDir.value.replace('-', '')}` as keyof Collections)
+        .order('nav_order', 'ASC')
+        .all() as unknown as Promise<
         Array<{ title: string; stem: string; nav_order: number; platform?: string }>
       >,
   )
@@ -52,7 +69,10 @@
   useAppHead({
     title: page.value.title,
     description: page.value.description,
-    path: `/docs/${docSlug.value}`,
+    path:
+      locale.value === 'pt-BR'
+        ? `/docs/${docSlug.value}`
+        : `/${locale.value}/docs/${docSlug.value}`,
   })
 
   const SITE_URL = 'https://pianolouvorja.com.br'
@@ -159,7 +179,7 @@
 
   const editUrl = computed(() => `${REPO_BLOB}/${docSlug.value}.md`)
 
-  const isFallback = computed(() => locale.value !== 'pt-BR')
+  const isFallback = computed(() => docDirFor(locale.value) !== locale.value)
 
   // Ícones por plataforma (Tabler, já usado no site)
   const platformIcons: Record<string, string> = {
@@ -183,7 +203,7 @@
     <section class="doc-hero">
       <div class="doc-hero__container">
         <nav class="doc-breadcrumb" :aria-label="t('docs.breadcrumb') || 'Você está em'">
-          <NuxtLink to="/docs">{{ t('nav.docs') }}</NuxtLink>
+          <NuxtLink :to="localePath('/docs')">{{ t('nav.docs') }}</NuxtLink>
           <span aria-hidden="true">/</span>
           <span>{{ page?.title }}</span>
         </nav>
@@ -215,7 +235,7 @@
             :class="{
               'doc-sidebar__link--active': item.stem.endsWith(slugPath.replace(/^docs\//, '')),
             }"
-            :to="`/docs/${item.stem.replace(/^.*docs\/pt-BR\/?/, '')}`"
+            :to="docLinkFor(item.stem, usedDir)"
           >
             <i :class="['ti', platformIcons[item.platform ?? 'web'] ?? 'ti-file-text']" />
             <span>{{ item.title }}</span>

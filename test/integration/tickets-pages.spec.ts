@@ -50,10 +50,10 @@ describe('B2 — páginas tickets', () => {
     expect(src).not.toMatch(/server\/api/)
   })
 
-  it('nav /suporte presente (footer) e i18n 6 locales têm tickets.*', () => {
+  it('nav /suporte presente (footer) e i18n 12 locales têm tickets.*', () => {
     const site = readFileSync(resolve(__dirname, '../../app/data/site.ts'), 'utf8')
     expect(site).toMatch(/'\/suporte'/)
-    for (const loc of ['pt-BR', 'en', 'es', 'fr', 'ru', 'uk']) {
+    for (const loc of ['pt-BR', 'en', 'es', 'fr', 'ru', 'uk', 'ja', 'ko', 'zh', 'tr', 'ar', 'hi']) {
       const i18n = JSON.parse(
         readFileSync(resolve(__dirname, `../../i18n/${loc}.json`), 'utf8'),
       ) as { tickets?: unknown; nav?: Record<string, string> }

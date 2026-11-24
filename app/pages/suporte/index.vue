@@ -19,9 +19,6 @@
   const sending = ref(false)
   const error = ref('')
   const protocol = ref('')
-  const statusQuery = ref('')
-  const statusResult = ref<{ protocol: string; status: string } | null>(null)
-  const statusError = ref('')
 
   async function submit() {
     error.value = ''
@@ -32,23 +29,18 @@
     }
     sending.value = true
     try {
-      const r = await api.createIntake({ ...form.value })
+      const r = await api.createIntake({
+        requester_name: form.value.name,
+        requester_email: form.value.email,
+        subject: form.value.subject,
+        message: form.value.message,
+        consent_lgpd: true,
+      })
       protocol.value = r.protocol
     } catch (e) {
       error.value = e instanceof Error ? e.message : t('tickets.error.api')
     } finally {
       sending.value = false
-    }
-  }
-
-  async function checkStatus() {
-    statusError.value = ''
-    statusResult.value = null
-    if (!statusQuery.value.trim()) return
-    try {
-      statusResult.value = await api.intakeStatus(statusQuery.value.trim())
-    } catch {
-      statusError.value = t('tickets.intake.statusNotFound')
     }
   }
 </script>
@@ -91,13 +83,13 @@
             v-model="form.subject"
             required
             minlength="3"
-            maxlength="200"
+            maxlength="150"
             data-testid="intake-subject"
           />
         </label>
         <label>
           {{ $t('tickets.intake.message') }}
-          <textarea v-model="form.message" required maxlength="8000" rows="6" />
+          <textarea v-model="form.message" required minlength="5" maxlength="5000" rows="6" />
         </label>
         <!-- honeypot: oculto de humanos -->
         <input
@@ -120,26 +112,7 @@
         </button>
       </form>
 
-      <!-- Consulta de status -->
       <aside class="tickets-status">
-        <h2>{{ $t('tickets.intake.statusTitle') }}</h2>
-        <form @submit.prevent="checkStatus">
-          <input
-            v-model="statusQuery"
-            :placeholder="$t('tickets.intake.statusPlaceholder')"
-            aria-label="$t('tickets.intake.statusPlaceholder')"
-          />
-          <button type="submit">
-            {{ $t('tickets.intake.statusCheck') }}
-          </button>
-        </form>
-        <p v-if="statusResult" data-testid="intake-status-result">
-          {{ statusResult.protocol }} — {{ statusResult.status }}
-        </p>
-        <p v-if="statusError" class="tickets-error">
-          {{ statusError }}
-        </p>
-
         <NuxtLink :to="localePath('/suporte/meus-tickets')" class="tickets-portal-link">
           {{ $t('tickets.intake.portalLink') }}
         </NuxtLink>
