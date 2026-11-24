@@ -145,7 +145,12 @@
       {{ error }}
     </p>
 
-    <button type="button" :disabled="!canSend || localErrors.length > 0" @click="send">
+    <button
+      type="button"
+      class="btn btn-primary"
+      :disabled="!canSend || localErrors.length > 0"
+      @click="send"
+    >
       {{ sending ? 'Enviando…' : 'Enviar para revisão' }}
     </button>
 
@@ -159,34 +164,95 @@
 <style scoped>
   .docs-editor {
     max-width: 48rem;
+    margin: 0 auto;
+    padding: 1.5rem;
     display: grid;
     gap: 1rem;
+    color: var(--piano-text-on-dark, #fff);
   }
   .hint {
-    color: var(--muted-foreground, #666);
+    color: var(--piano-text-on-dark-muted, rgba(255, 255, 255, 0.7));
   }
   label {
     display: grid;
     gap: 0.35rem;
     font-weight: 600;
   }
+  input,
+  select,
+  textarea {
+    background: #131313;
+    border: 1px solid #353534;
+    border-radius: 8px;
+    color: var(--piano-text-on-dark, #fff);
+    padding: 0.5rem 0.75rem;
+    font: inherit;
+    font-size: 0.9rem;
+    transition: border-color 0.15s;
+  }
+  input:focus,
+  select:focus,
+  textarea:focus {
+    outline: none;
+    border-color: var(--piano-cyan);
+  }
+  input::placeholder,
+  textarea::placeholder {
+    color: rgba(255, 255, 255, 0.35);
+  }
   textarea {
     font-family: inherit;
+    min-height: 16rem;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    border: 1px solid #353534;
+    background: #1e1e1e;
+    color: var(--piano-text-on-dark, #fff);
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 500;
+    justify-self: start;
+    transition:
+      border-color 0.15s,
+      background 0.15s,
+      opacity 0.15s;
+  }
+  .btn:hover:not(:disabled) {
+    border-color: var(--piano-cyan);
+  }
+  .btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  .btn-primary {
+    background: var(--piano-accent);
+    border-color: var(--piano-accent);
+    color: #ffffff;
+    font-weight: 600;
+  }
+  .btn-primary:hover:not(:disabled) {
+    background: var(--piano-cyan-light);
+    border-color: var(--piano-cyan-light);
   }
   .picked {
     margin: 0;
     padding-left: 1.2rem;
-    color: var(--muted-foreground, #666);
+    color: var(--piano-text-on-dark-muted, rgba(255, 255, 255, 0.7));
   }
   .error {
-    color: #c0392b;
+    color: #fca5a5;
     margin: 0;
   }
   .ok {
-    color: #1e7e34;
+    color: #86efac;
     margin: 0;
   }
-  button:disabled {
-    opacity: 0.5;
+  a {
+    color: var(--piano-cyan);
   }
 </style>
