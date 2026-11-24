@@ -82,7 +82,7 @@ export async function translateChangelog(
 
   const out: TranslationResult = {}
   TRANSLATE_LOCALES.forEach((locale, i) => {
-    out[locale] = results[i] ?? text
+    out[locale] = results[i]!
   })
   return out
 }

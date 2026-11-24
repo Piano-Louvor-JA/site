@@ -58,3 +58,17 @@ describe('TeamSection roster dinâmico (SPEC Comunidade Orgânica)', () => {
     expect(people[0]!.find('.team__person-name').text()).toBe(teamMembers[0]!.name)
   })
 })
+
+it('renders members without GitHub or avatar using safe defaults', async () => {
+  fetchMock.mockResolvedValue({
+    data: [
+      apiMember({ github: null, avatar_url: null }),
+      apiMember({ id: 'm2', github: 'unknown', avatar_url: null }),
+    ],
+  })
+  const w = mount(TeamSection, { global: { stubs: ['i'] } })
+  await flushPromises()
+  expect(w.findAll('.team__person')).toHaveLength(2)
+  expect(w.findAll('.team__avatar')[0]!.attributes('src')).toContain('/ghost.png')
+  expect(w.findAll('.team__avatar')[1]!.attributes('src')).toContain('/unknown.png')
+})

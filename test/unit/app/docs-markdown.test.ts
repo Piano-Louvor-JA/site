@@ -62,3 +62,20 @@ describe('renderMarkdown', () => {
     expect(renderMarkdown('[x](javascript:alert(1))')).not.toContain('href="javascript')
   })
 })
+
+it('keeps a document without frontmatter editable', async () => {
+  const { splitFrontmatter, reassemble } = await import('~/utils/docs-markdown')
+  expect(splitFrontmatter('hello')).toEqual({ frontmatter: '', body: 'hello' })
+  expect(reassemble('hello', { title: 'Introdução', start: 0, end: 1 }, 'world')).toBe('world')
+})
+
+it('preserves frontmatter while replacing a section starting at the first body line', async () => {
+  const { splitFrontmatter } = await import('~/utils/docs-markdown')
+  const original = '---\ntitle: Guia\nnav_order: 2\n---\n## Um\nAntes\n## Dois\nDepois'
+  const sections = extractSections(original)
+  expect(sections.map((s) => s.title)).toEqual(['Um', 'Dois'])
+  const updated = reassemble(original, sections[0]!, '## Um\nNovo')
+  expect(splitFrontmatter(updated).frontmatter).toBe('---\ntitle: Guia\nnav_order: 2\n---\n')
+  expect(splitFrontmatter(updated).body).toBe('## Um\nNovo\n## Dois\nDepois')
+  expect(renderMarkdown(original)).not.toContain('nav_order')
+})

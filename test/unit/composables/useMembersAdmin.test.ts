@@ -120,3 +120,47 @@ describe('useMembersAdmin', () => {
     expect(fetchMock).not.toHaveBeenCalled()
   })
 })
+
+it('preserva filtros na paginação e encerra sem chamadas extras', async () => {
+  vi.stubGlobal('useNuxtApp', () => ({
+    $firebaseAuth: { currentUser: { getIdToken: async () => 'tok' } },
+  }))
+  vi.stubGlobal('useRuntimeConfig', () => ({ public: { pianoApiBase: 'https://api.test.local/' } }))
+  const fetch = vi
+    .fn()
+    .mockResolvedValueOnce({ data: [adminMember], next_cursor: 'next' })
+    .mockResolvedValueOnce({ data: [{ ...adminMember, id: 'two' }], next_cursor: null })
+  vi.stubGlobal('$fetch', fetch)
+  const { useMembersAdmin } = await import('~/composables/useMembersAdmin')
+  const api = useMembersAdmin()
+  expect(api.hasMembers.value).toBe(false)
+  await api.loadMore()
+  expect(fetch).not.toHaveBeenCalled()
+  await api.listMembers({ status: 'aprovado', role: 'dev', limit: 10 })
+  expect(api.hasMembers.value).toBe(true)
+  api.loading.value = true
+  await api.loadMore()
+  expect(fetch).toHaveBeenCalledTimes(1)
+  api.loading.value = false
+  await api.loadMore()
+  expect(fetch.mock.calls[1]![0]).toContain('status=aprovado&role=dev&cursor=next&limit=10')
+  expect(api.members.value.map((m) => m.id)).toEqual(['abc', 'two'])
+  await api.loadMore()
+  expect(fetch).toHaveBeenCalledTimes(2)
+})
+
+it('trata erros não Error e atualização de registro fora da página', async () => {
+  vi.stubGlobal('useNuxtApp', () => ({
+    $firebaseAuth: { currentUser: { getIdToken: async () => 'tok' } },
+  }))
+  vi.stubGlobal('useRuntimeConfig', () => ({ public: {} }))
+  const fetch = vi.fn().mockRejectedValueOnce('offline').mockResolvedValueOnce(adminMember)
+  vi.stubGlobal('$fetch', fetch)
+  const { useMembersAdmin } = await import('~/composables/useMembersAdmin')
+  const api = useMembersAdmin()
+  await api.listMembers({ status: '', role: '' })
+  expect(api.error.value).toBe('Erro ao carregar membros')
+  await expect(api.updateMember('a/b', {})).resolves.toEqual(adminMember)
+  expect(fetch.mock.calls[1]![0]).toBe('/v1/custom/admin/members/a%2Fb')
+  expect(api.members.value).toEqual([])
+})

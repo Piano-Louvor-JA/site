@@ -162,3 +162,77 @@ describe('AdminMembersTab (AC2 + PLAN §3.2)', () => {
     expect(w.text()).not.toContain('🎉')
   })
 })
+
+it.each([
+  [{ statusCode: 403, message: 'Negado' }, 'Erro 403: Negado'],
+  [{ statusCode: 500 }, 'Erro 500'],
+  [null, 'Erro ao salvar'],
+  ['offline', 'Erro ao salvar'],
+  [new Error('offline'), 'Erro ao salvar'],
+])('keeps roles and status intact when PATCH fails %j', async (error, expected) => {
+  const w = await mountTab()
+  await w.findAll('input[type="checkbox"]')[1]!.setValue(true)
+  fetchMock.mockRejectedValueOnce(error)
+  await w.find('.membros-tab__salvar').trigger('click')
+  await flushPromises()
+  expect(w.find('.membros-tab__feedback').classes()).toContain('--erro')
+  if (String(expected).startsWith('Erro ')) expect(w.text()).toContain(String(expected))
+  fetchMock.mockRejectedValueOnce(error)
+  await w.find('.membros-tab__inativar').trigger('click')
+  await flushPromises()
+  expect(w.find('.membros-tab__feedback').classes()).toContain('--erro')
+  expect(w.find('.membros-tab__status').text()).toBe('aprovado')
+  w.unmount()
+})
+
+it('changes filters, reloads and deactivates members successfully', async () => {
+  const w = await mountTab()
+  await w.find('select').setValue('aprovado')
+  await flushPromises()
+  expect(fetchMock).toHaveBeenLastCalledWith(
+    expect.stringContaining('status=aprovado'),
+    expect.anything(),
+  )
+  fetchMock.mockResolvedValueOnce(member({ status: 'inativo' }))
+  await w.find('.membros-tab__inativar').trigger('click')
+  await flushPromises()
+  expect(w.find('.membros-tab__status').text()).toBe('inativo')
+  expect(w.find('.membros-tab__feedback').classes()).not.toContain('--erro')
+  w.unmount()
+})
+
+it('loads another page and reactivates an inactive member', async () => {
+  const { default: MembersTab } = await import('~/components/admin/AdminMembersTab.vue')
+  fetchMock.mockResolvedValueOnce({ data: [member({ status: 'inativo' })], next_cursor: 'next' })
+  const w = mount(MembersTab)
+  await flushPromises()
+  fetchMock.mockResolvedValueOnce({ data: [member({ id: 'm2', roles: [] })], next_cursor: null })
+  await w.find('.membros-tab__mais').trigger('click')
+  await flushPromises()
+  expect(w.findAll('.membros-tab__card')).toHaveLength(2)
+  expect(w.find('.membros-tab__mais').exists()).toBe(false)
+  fetchMock.mockResolvedValueOnce(member())
+  await w.find('.membros-tab__aprovar').trigger('click')
+  await flushPromises()
+  expect(w.find('.membros-tab__status').text()).toBe('aprovado')
+  w.unmount()
+})
+
+it('handles stale member IDs and missing drafts safely', async () => {
+  const w = await mountTab()
+  const state = w.vm.$.setupState as unknown as {
+    dirty(id: string): boolean
+    salvar(id: string): Promise<void>
+    rascunhos: Record<string, string[]>
+  }
+  expect(state.dirty('removed')).toBe(false)
+  delete state.rascunhos.m1
+  expect(state.dirty('m1')).toBe(true)
+  fetchMock.mockResolvedValueOnce(member({ roles: [] }))
+  await state.salvar('m1')
+  expect(fetchMock).toHaveBeenLastCalledWith(
+    expect.stringContaining('/members/m1'),
+    expect.objectContaining({ body: { roles: [] } }),
+  )
+  w.unmount()
+})

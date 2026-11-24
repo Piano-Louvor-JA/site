@@ -135,3 +135,28 @@ describe('AdminTeamTab (gate gm)', () => {
     expect(w.find('.equipe-tab__vazio').exists()).toBe(false)
   })
 })
+
+it.each([null, {}, { email: '' }])(
+  'never offers GM controls without an authenticated email %j',
+  async (user) => {
+    vi.stubGlobal('useFirebaseAuth', () => ({ user: { value: user } }))
+    fetchMock.mockResolvedValue({ data: [], next_cursor: null })
+    const { default: TeamTab } = await import('~/components/admin/AdminTeamTab.vue')
+    const w = mount(TeamTab)
+    await flushPromises()
+    expect(w.find('.equipe-tab__vazio').exists()).toBe(true)
+    expect(w.find('.equipe-tab__gm').exists()).toBe(false)
+    w.unmount()
+  },
+)
+
+it('fails closed with existing staff but no signed-in user email', async () => {
+  vi.stubGlobal('useFirebaseAuth', () => ({ user: { value: null } }))
+  fetchMock.mockResolvedValue(staff())
+  const { default: TeamTab } = await import('~/components/admin/AdminTeamTab.vue')
+  const w = mount(TeamTab)
+  await flushPromises()
+  expect(w.findAll('.equipe-tab__card')).toHaveLength(2)
+  expect(w.find('.equipe-tab__gm').exists()).toBe(false)
+  w.unmount()
+})

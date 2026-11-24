@@ -26,7 +26,7 @@ export function extractSections(markdown: string): DocsSection[] {
   if (headings[0]! > 0) sections.push({ title: 'Introdução', start: 0, end: headings[0]! })
   headings.forEach((start, index) => {
     const end = index + 1 < headings.length ? headings[index + 1]! : lines.length
-    sections.push({ title: (lines[start] ?? '').replace(H2, '').trim(), start, end })
+    sections.push({ title: lines[start]!.replace(H2, '').trim(), start, end })
   })
   return sections
 }
