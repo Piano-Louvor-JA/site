@@ -1,533 +1,737 @@
 {
-  "meta.title": "PIANO LouvorJA — مدير خدمة العبادة",
-  "meta.description": "منصة ويب لإدارة خدمة العبادة: كتب الترانيم، الكتاب المقدس، ترتيب العبادة، العرض على شاشات متعددة والمزيد. مجانية ومفتوحة المصدر وتعمل دون اتصال بالإنترنت.",
-  "nav.features": "الميزات",
-  "nav.platforms": "المنصات",
-  "nav.about": "عن المشروع",
-  "nav.howItWorks": "كيف يعمل",
-  "nav.docs": "التوثيق",
-  "nav.contact": "اتصل بنا",
-  "nav.openApp": "فتح التطبيق",
-  "nav.language": "اللغة",
-  "nav.toggleTheme": "تبديل الوضع الفاتح/الداكن",
-  "hero.badge": "جديد: نسخة الويب متاحة الآن",
-  "hero.title": "مدير خدمة العبادة",
-  "hero.titleHighlight": "بسيط",
-  "hero.subtitle": "نظّم كتب الترانيم وترتيب العبادة والكتاب المقدس والعرض في مكان واحد. اعمل من أي جهاز دون الحاجة إلى تثبيت.",
-  "hero.ctaPrimary": "فتح التطبيق",
-  "hero.ctaSecondary": "استعرض المنصات",
-  "hero.meta.noInstall": "بدون تثبيت",
-  "hero.meta.anyDevice": "أي جهاز",
-  "hero.meta.openSource": "مفتوح المصدر",
-  "hero.preview.currentHymn": "الترنيمة الحالية",
-  "hero.preview.currentHymnTitle": "#15 — Divino Comigo",
-  "hero.preview.active": "قيد التشغيل",
-  "hero.preview.next": "التالي",
-  "hero.preview.nextTitle": "الترحيب والتسبيح",
-  "hero.preview.elapsedTime": "الوقت المنقضي",
-  "hero.titleHighlight2": "متكامل",
-  "stats.features": "ميزات المنظومة",
-  "stats.free": "مجاني",
-  "stats.installs": "عدد التثبيتات",
-  "stats.offline": "يعمل دون اتصال",
-  "platforms.eyebrow": "متعدد المنصات",
-  "platforms.title": "متاح حيث تحتاجه",
-  "platforms.description": "استخدمه على سطح المكتب لأقصى إنتاجية، أو في المتصفح كبديل سريع، أو انتظر تطبيقات الهاتف الأصلية.",
-  "platforms.desktop.badge": "موصى به",
-  "platforms.desktop.title": "تطبيق سطح المكتب الأصلي",
-  "platforms.desktop.subtitle": "لينكس وماك وويندوز",
-  "platforms.desktop.description": "تجربة كاملة مع دعم شاشات متعددة، وعرض مستقل، واختصارات لوحة المفاتيح.",
-  "platforms.desktop.feature1": "عرض على شاشات متعددة",
-  "platforms.desktop.feature2": "وضع عمل كامل دون اتصال",
-  "platforms.desktop.feature3": "اختصارات لوحة المفاتيح",
-  "platforms.desktop.cta": "اعرف المزيد",
-  "platforms.web.badge": "وصول فوري",
-  "platforms.web.title": "الويب (المتصفح)",
-  "platforms.web.subtitle": "أي حاسوب أو حاسوب محمول",
-  "platforms.web.description": "اعمل مباشرة من المتصفح. مثالي للاستخدام السريع أو كبديل عندما لا يكون التطبيق مثبتًا.",
-  "platforms.web.feature1": "بدون تثبيت",
-  "platforms.web.feature2": "يعمل على أي نظام تشغيل",
-  "platforms.web.feature3": "تحديثات تلقائية",
-  "platforms.web.cta": "افتح في المتصفح",
-  "platforms.mobile.badge": "قريبًا",
-  "platforms.mobile.title": "الهاتف (قريبًا)",
-  "platforms.mobile.subtitle": "أندرويد وiOS",
-  "platforms.mobile.description": "تطبيقات أصلية قيد التطوير لإحضار PIANO إلى هاتفك وجهازك اللوحي.",
-  "platforms.mobile.feature1": "أندرويد أصلي",
-  "platforms.mobile.feature2": "iOS أصلي",
-  "platforms.mobile.feature3": "مزامنة سحابية",
-  "platforms.mobile.cta": "أبلغني عند الإطلاق",
-  "notifyModal.title": "كن أول من يعلم",
-  "notifyModal.subtitle": "أدخل بريدك الإلكتروني وسنبلغك فور توفر تطبيق الهاتف.",
-  "notifyModal.placeholder": "بريدك@الإلكتروني.com",
-  "notifyModal.button": "أبلغني عند الإطلاق",
-  "notifyModal.loading": "جارٍ الإرسال...",
-  "notifyModal.success": "تم التسجيل! سنبلغك فور الإطلاق.",
-  "notifyModal.errors.invalidEmail": "يرجى إدخال بريد إلكتروني صالح.",
-  "notifyModal.errors.alreadySubscribed": "هذا البريد الإلكتروني مسجل بالفعل.",
-  "notifyModal.errors.generic": "حدث خطأ ما. يرجى المحاولة مرة أخرى بعد قليل.",
-  "features.eyebrow": "الميزات",
-  "features.title": "كل ما تحتاجه للعبادة",
-  "features.description": "طقم أدوات متكامل ومترابط لإدارة كل جانب من جوانب الخدمة.",
-  "features.items.media.title": "مركز الوسائط",
-  "features.items.media.description": "أدر الألبومات وكتب الترانيم والمجموعات بثلاثة أوضاع تشغيل.",
-  "features.items.liturgy.title": "ترتيب العبادة",
-  "features.items.liturgy.description": "ابنِ ترتيب الخدمة مع 13 نوعًا من العناصر، والسحب والإفلات، والنسخ، والعد التنازلي.",
-  "features.items.bible.title": "الكتاب المقدس",
-  "features.items.bible.description": "نسخ متعددة مع بحث سريع ومفضلات وعرض مباشر.",
-  "features.items.projection.title": "عرض على شاشات متعددة",
-  "features.items.projection.description": "مخرجات مستقلة للجهاز العارض أو التلفاز الثانوي مع تحكم كامل.",
-  "features.items.tools.title": "الأدوات المساعدة",
-  "features.items.tools.description": "ساعة، ساعة إيقاف، مؤقت وسحب عشوائي مدمجة في الخدمة.",
-  "features.items.player.title": "مشغل متقدم",
-  "features.items.player.description": "تشغيل عادي، وضع الترديد المرتل، وعرض شرائح متزامن.",
-  "features.items.settings.title": "الإعدادات",
-  "features.items.settings.description": "المظهر والعرض والشاشات المتعددة وتفضيلات قابلة للتخصيص بالكامل.",
-  "features.items.offline.title": "يعمل دون اتصال",
-  "features.items.offline.description": "يعمل تطبيق سطح المكتب دون اتصال بالكامل بعد تنزيل الوسائط. تتطلب نسخة الويب تنزيل موارد العمل دون اتصال أولًا.",
-  "about.eyebrow": "عن المشروع",
-  "about.title": "من المجتمع وإليه",
-  "about.text1": "{name} مشروع مفتوح المصدر تعاوني أُنشئ لتسهيل إدارة خدمة العبادة.",
-  "about.text2": "طوّره فريق Piano، وتتطور المنصة باستمرار بمساهمات المجتمع. مجانية، بدون إعلانات، دون جمع بيانات.",
-  "about.openSource": "مفتوح المصدر",
-  "about.stats.free": "مجاني",
-  "about.stats.installs": "عدد التثبيتات",
-  "about.stats.offline": "PWA دون اتصال",
-  "how.eyebrow": "كيف يعمل",
-  "how.title": "ابدأ خلال دقائق",
-  "how.description": "أربع خطوات بسيطة لتنظيم خدمتك.",
-  "how.steps.1.title": "افتح التطبيق",
-  "how.steps.1.desc": "ادخل من متصفحك أو نزّل نسخة سطح المكتب. لا حاجة للتسجيل.",
-  "how.steps.2.title": "استورد كتاب الترانيم",
-  "how.steps.2.desc": "أضف الألبومات وكتب الترانيم والمجموعات إلى مركز الوسائط.",
-  "how.steps.3.title": "ابنِ ترتيب العبادة",
-  "how.steps.3.desc": "اسحب العناصر لإنشاء ترتيب الخدمة مع متابعة الوقت.",
-  "how.steps.4.title": "اعرض وقد الخدمة",
-  "how.steps.4.desc": "استخدم العرض متعدد الشاشات لإظهار الترانيم والآيات والشرائح.",
-  "cta.title": "جاهز للبدء؟",
-  "cta.subtitle": "افتح PIANO LouvorJA الآن ونظّم خدمتك خلال دقائق. مجاني ودون تسجيل.",
-  "cta.button": "فتح التطبيق",
-  "cta.meta.free": "مجاني 100%",
-  "cta.meta.noInstall": "بدون تثبيت",
-  "cta.meta.openSource": "مفتوح المصدر",
-  "contact.eyebrow": "تواصل معنا",
-  "contact.title": "اتصل بنا",
-  "contact.description": "هل لديك أسئلة أو اقتراحات أو وجدت خطأ؟ أرسل لنا رسالة وسنرد في أقرب وقت ممكن.",
-  "contact.form.name": "الاسم",
-  "contact.form.namePlaceholder": "اسمك",
-  "contact.form.email": "البريد الإلكتروني",
-  "contact.form.emailPlaceholder": "بريدك@الإلكتروني.com",
-  "contact.form.subject": "الموضوع",
-  "contact.form.subjectPlaceholder": "بمَ تتعلق رسالتك؟",
-  "contact.form.message": "الرسالة",
-  "contact.form.messagePlaceholder": "اكتب رسالتك...",
-  "contact.form.submit": "إرسال الرسالة",
-  "contact.form.sending": "جارٍ الإرسال...",
-  "contact.form.success": "تم إرسال الرسالة بنجاح! سنرد عليك قريبًا.",
-  "contact.form.error": "خطأ في الإرسال. حاول مرة أخرى أو راسلنا مباشرة على app@pianolouvorja.com.br",
-  "contact.direct": "أو أرسل بريدًا إلكترونيًا مباشرة إلى",
-  "contact.responseTime": "متوسط وقت الرد: 24-48 ساعة",
-  "docs.title": "التوثيق",
-  "docs.subtitle": "كل ما تحتاجه لإتقان PIANO LouvorJA",
-  "docs.search": "ابحث في التوثيق...",
-  "docs.sections.gettingStarted.title": "البداية",
-  "docs.sections.gettingStarted.description": "الإعداد الأولي والخطوات الأولى في التطبيق.",
-  "docs.sections.media.title": "مركز الوسائط",
-  "docs.sections.media.description": "أدر الألبومات وكتب الترانيم ومجموعات الأناشيد.",
-  "docs.sections.hymnal.title": "كتاب الترانيم",
-  "docs.sections.hymnal.description": "البحث والتشغيل والتصدير لأناشيد كتاب ترانيم الأدفنتست.",
-  "docs.sections.collections.title": "المجموعات",
-  "docs.sections.collections.description": "أنشئ وأدر مجموعات وقوائم تشغيل مخصصة لكل مناسبة.",
-  "docs.sections.liturgy.title": "ترتيب العبادة",
-  "docs.sections.liturgy.description": "ابنِ ونظّم ترتيب الخدمة الكامل.",
-  "docs.sections.bible.title": "الكتاب المقدس",
-  "docs.sections.bible.description": "البحث والمفضلات وعرض الآيات.",
-  "docs.sections.projection.title": "عرض على شاشات متعددة",
-  "docs.sections.projection.description": "إعداد الشاشات الثانوية والعرض.",
-  "docs.sections.streaming.title": "البث المباشر",
-  "docs.sections.streaming.description": "التكامل مع OBS وvMix ومنصات البث للعبادة عبر الإنترنت.",
-  "docs.sections.tools.title": "الأدوات المساعدة",
-  "docs.sections.tools.description": "ساعة، ساعة إيقاف، مؤقت وسحب عشوائي.",
-  "docs.sections.settings.title": "الإعدادات",
-  "docs.sections.settings.description": "خصص المظهر والعرض والتفضيلات.",
-  "docs.sections.shortcuts.title": "اختصارات لوحة المفاتيح",
-  "docs.sections.shortcuts.description": "سرّع عملك بالاختصارات.",
-  "docs.sections.faq.title": "الأسئلة الشائعة",
-  "docs.sections.faq.description": "الأسئلة المتكررة",
-  "docs.content.gettingStarted.intro": "PIANO LouvorJA تطبيق ويب (PWA) يعمل على أي جهاز بمتصفح حديث. لا يتطلب تثبيتًا، لكن يمكنك \"تثبيته\" كتطبيق من متصفحك للاستخدام دون اتصال.",
-  "docs.content.gettingStarted.steps": [
-    "افتح التطبيق في متصفح جهازك (سطح المكتب أو الهاتف).",
-    "انقر على \"تثبيت التطبيق\" أو استخدم خيار المتصفح للإضافة إلى الشاشة الرئيسية.",
-    "تم! يعمل التطبيق دون اتصال بعد التحميل الأول."
-  ],
-  "docs.content.gettingStarted.tip": "لأفضل تجربة عبادة، استخدم حاسوبًا بشاشتين: واحدة للتحكم وواحدة للعرض.",
-  "docs.content.shortcuts.table.action": "الإجراء",
-  "docs.content.shortcuts.table.shortcut": "الاختصار",
-  "docs.content.shortcuts.items": [
-    {
-      "action": "تشغيل/إيقاف مؤقت",
-      "shortcut": "Space"
+  "meta": {
+    "title": "PIANO LouvorJA — مدير خدمة العبادة",
+    "description": "منصة ويب لإدارة خدمة العبادة: كتب الترانيم، الكتاب المقدس، ترتيب العبادة، العرض على شاشات متعددة والمزيد. مجانية ومفتوحة المصدر وتعمل دون اتصال بالإنترنت."
+  },
+  "nav": {
+    "features": "الميزات",
+    "platforms": "المنصات",
+    "about": "عن المشروع",
+    "howItWorks": "كيف يعمل",
+    "docs": "التوثيق",
+    "contact": "اتصل بنا",
+    "openApp": "فتح التطبيق",
+    "language": "اللغة",
+    "toggleTheme": "تبديل الوضع الفاتح/الداكن"
+  },
+  "hero": {
+    "badge": "جديد: نسخة الويب متاحة الآن",
+    "title": "مدير خدمة العبادة",
+    "titleHighlight": "بسيط",
+    "subtitle": "نظّم كتب الترانيم وترتيب العبادة والكتاب المقدس والعرض في مكان واحد. اعمل من أي جهاز دون الحاجة إلى تثبيت.",
+    "ctaPrimary": "فتح التطبيق",
+    "ctaSecondary": "استعرض المنصات",
+    "meta": {
+      "noInstall": "بدون تثبيت",
+      "anyDevice": "أي جهاز",
+      "openSource": "مفتوح المصدر"
     },
-    {
-      "action": "المسار التالي",
-      "shortcut": "→"
+    "preview": {
+      "currentHymn": "الترنيمة الحالية",
+      "currentHymnTitle": "#15 — Divino Comigo",
+      "active": "قيد التشغيل",
+      "next": "التالي",
+      "nextTitle": "الترحيب والتسبيح",
+      "elapsedTime": "الوقت المنقضي"
     },
-    {
-      "action": "المسار السابق",
-      "shortcut": "←"
+    "titleHighlight2": "متكامل"
+  },
+  "stats": {
+    "features": "ميزات المنظومة",
+    "free": "مجاني",
+    "installs": "عدد التثبيتات",
+    "offline": "يعمل دون اتصال"
+  },
+  "platforms": {
+    "eyebrow": "متعدد المنصات",
+    "title": "متاح حيث تحتاجه",
+    "description": "استخدمه على سطح المكتب لأقصى إنتاجية، أو في المتصفح كبديل سريع، أو انتظر تطبيقات الهاتف الأصلية.",
+    "desktop": {
+      "badge": "موصى به",
+      "title": "تطبيق سطح المكتب الأصلي",
+      "subtitle": "لينكس وماك وويندوز",
+      "description": "تجربة كاملة مع دعم شاشات متعددة، وعرض مستقل، واختصارات لوحة المفاتيح.",
+      "feature1": "عرض على شاشات متعددة",
+      "feature2": "وضع عمل كامل دون اتصال",
+      "feature3": "اختصارات لوحة المفاتيح",
+      "cta": "اعرف المزيد"
     },
-    {
-      "action": "رفع الصوت",
-      "shortcut": "↑"
+    "web": {
+      "badge": "وصول فوري",
+      "title": "الويب (المتصفح)",
+      "subtitle": "أي حاسوب أو حاسوب محمول",
+      "description": "اعمل مباشرة من المتصفح. مثالي للاستخدام السريع أو كبديل عندما لا يكون التطبيق مثبتًا.",
+      "feature1": "بدون تثبيت",
+      "feature2": "يعمل على أي نظام تشغيل",
+      "feature3": "تحديثات تلقائية",
+      "cta": "افتح في المتصفح"
     },
-    {
-      "action": "خفض الصوت",
-      "shortcut": "↓"
-    },
-    {
-      "action": "وضع ملء الشاشة",
-      "shortcut": "F"
-    },
-    {
-      "action": "تبديل العرض",
-      "shortcut": "P"
-    },
-    {
-      "action": "بحث سريع",
-      "shortcut": "Ctrl+K"
+    "mobile": {
+      "badge": "قريبًا",
+      "title": "الهاتف (قريبًا)",
+      "subtitle": "أندرويد وiOS",
+      "description": "تطبيقات أصلية قيد التطوير لإحضار PIANO إلى هاتفك وجهازك اللوحي.",
+      "feature1": "أندرويد أصلي",
+      "feature2": "iOS أصلي",
+      "feature3": "مزامنة سحابية",
+      "cta": "أبلغني عند الإطلاق"
     }
-  ],
-  "docs.content.modules.media": ["مشغل بثلاثة أوضاع", "كتب ترانيم وألبومات", "وضع الترديد المرتل"],
-  "docs.content.modules.hymnal": [
-    "بحث سريع بالرقم أو العنوان",
-    "تشغيل متسلسل",
-    "تصدير PDF أو طباعة"
-  ],
-  "docs.content.modules.collections": [
-    "مجموعات إلكترونية ومخصصة",
-    "سحب وإفلات إلى قائمة التشغيل",
-    "وضع الترديد المرتل مع الكلمات"
-  ],
-  "docs.content.modules.liturgy": ["13 نوعًا من العناصر", "سحب وإفلات", "عد تنازلي لكل عنصر"],
-  "docs.content.modules.bible": ["نسخ متعددة", "بحث سريع", "عرض مباشر"],
-  "docs.content.modules.projection": ["مخرجات مستقلة", "شاشات متعددة", "تحكم كامل"],
-  "docs.content.modules.streaming": [
-    "CSS مخصص لعرض الكلمات",
-    "تكامل مع OBS وvMix",
-    "مخرجات إلى يوتيوب وفيسبوك"
-  ],
-  "docs.content.modules.tools": ["ساعة وساعة إيقاف", "مؤقت عد تنازلي", "سحب عشوائي"],
-  "docs.content.modules.settings": ["المظهر", "العرض", "الشاشات المتعددة"],
-  "docs.faq.cost.question": "هل PIANO LouvorJA مجاني فعلًا؟",
-  "docs.faq.cost.answer": "نعم! PIANO LouvorJA مجاني ومفتوح المصدر بنسبة 100%. لا اشتراكات ولا إعلانات ولا جمع بيانات. جميع الشيفرة متاحة على GitHub.",
-  "docs.faq.offline.question": "هل يعمل دون إنترنت؟",
-  "docs.faq.offline.answer": "نعم. يعمل تطبيق سطح المكتب دون اتصال بالكامل بعد تنزيل الوسائط. تعمل نسخة الويب أيضًا دون اتصال، لكن عليك أولًا تنزيل موارد العمل دون اتصال. جميع الترانيم وترتيبات العبادة والإعدادات مخزنة محليًا على جهازك.",
-  "docs.faq.devices.question": "على أي أجهزة يمكنني استخدامه؟",
-  "docs.faq.devices.answer": "يعمل PIANO على أي جهاز بمتصفح حديث: سطح المكتب (لينكس، ماك، ويندوز)، الأجهزة اللوحية والهواتف. للحصول على أفضل تجربة عرض متعدد الشاشات، نوصي بسطح المكتب.",
-  "docs.faq.data.question": "أين تُخزَّن بياناتي؟",
-  "docs.faq.data.answer": "بيانات التطبيق — الترانيم وترتيبات العبادة والإعدادات — تُخزَّن محليًا في متصفحك أو جهازك. لا يُرسل شيء إلى خوادم خارجية أثناء الاستخدام. عند إرسال نموذج الاتصال، تُنقل معلوماتك (الاسم، البريد الإلكتروني، الرسالة) عبر Web3Forms لنتمكن من الرد. راجع سياسة الخصوصية للتفاصيل الكاملة.",
-  "docs.faq.privacy.question": "كيف تحمون خصوصيتي؟",
-  "docs.faq.privacy.answer": "يمتثل PIANO LouvorJA للائحة GDPR وLGPD (القانون البرازيلي العام لحماية البيانات). لا يستخدم الموقع ملفات تعقب أو تحليلات أو إعلانات — فقط ملف تعريف تقني لتذكر لغتك المفضلة. لا نبيع بياناتك ولا نشاركها مع أطراف ثالثة لأغراض تسويقية. راجع سياسة الخصوصية لمزيد من المعلومات.",
-  "docs.faq.support.question": "كيف أحصل على الدعم أو أبلغ عن مشكلة؟",
-  "docs.faq.support.answer": "يمكنك الوصول إلينا عبر نموذج الاتصال في صفحة الاتصال، أو فتح مشكلة مباشرة في مستودع GitHub. للمشاكل العاجلة أثناء الخدمة، راجع مداخل استكشاف الأخطاء بالأسفل.",
-  "docs.faq.updates.question": "كيف يُحدَّث التطبيق؟",
-  "docs.faq.updates.answer": "PIANO LouvorJA تطبيق ويب تقدمي (PWA). تُطبَّق التحديثات تلقائيًا عند إعادة تحميل الصفحة. لا حاجة لتنزيل أو تثبيت يدوي. لديك دائمًا أحدث إصدار.",
-  "docs.faq.troubleshooting.question": "ماذا لو لم يُحمَّل التطبيق أو أظهر خطأ؟",
-  "docs.faq.troubleshooting.answer": "1) أعد تحميل الصفحة (Ctrl+F5 لمسح ذاكرة التخزين المؤقت). 2) تحقق من اتصالك بالإنترنت عند أول وصول. 3) امسح بيانات الموقع من إعدادات المتصفح. 4) جرّب وضع التصفح الخفي لاستبعاد تعارض الإضافات. 5) إذا استمرت المشكلة، أبلغ عنها عبر نموذج الاتصال أو GitHub مع تفاصيل المتصفح والجهاز.",
-  "docs.faq.contribute.question": "كيف أساهم في المشروع؟",
-  "docs.faq.contribute.answer": "المشروع مفتوح المصدر ويقبل المساهمات على GitHub. يمكنك الإبلاغ عن الأخطاء، اقتراح ميزات، إرسال طلبات دمج، أو المساعدة في الترجمة إلى لغات أخرى.",
-  "docs.sidebarLabel": "أقسام التوثيق",
-  "footer.tagline": "مدير خدمة عبادة عبر الويب. مجاني ومفتوح المصدر.",
-  "footer.navLabel": "تنقل التذييل",
-  "footer.navTitle": "التنقل",
-  "footer.product": "المنتج",
-  "footer.resources": "الموارد",
-  "footer.company": "الشركة",
-  "footer.links.features": "الميزات",
-  "footer.links.platforms": "المنصات",
-  "footer.links.howItWorks": "كيف يعمل",
-  "footer.links.docs": "التوثيق",
-  "footer.links.contact": "اتصل بنا",
-  "footer.links.github": "GitHub",
-  "footer.links.app": "فتح التطبيق",
-  "footer.copyright": "صنعه فريق Piano بإيمان وتفانٍ.",
-  "footer.developedBy": "تطوير",
-  "footer.team": "فريق Piano",
-  "footer.rights": "جميع الحقوق محفوظة.",
-  "footer.legalNavLabel": "روابط قانونية",
-  "footer.legalNavTitle": "قانوني",
-  "footer.privacy": "سياسة الخصوصية",
-  "footer.terms": "شروط الاستخدام",
-  "footer.social.github": "GitHub",
-  "footer.social.youtube": "يوتيوب",
-  "footer.social.whatsapp": "واتساب",
-  "footer.social.telegram": "تيليجرام",
-  "common.loading": "جارٍ التحميل...",
-  "common.error": "خطأ",
-  "common.close": "إغلاق",
-  "common.back": "رجوع",
-  "common.learnMore": "اعرف المزيد",
-  "common.skipToContent": "تخطَّ إلى المحتوى",
-  "common.allRightsReserved": "جميع الحقوق محفوظة.",
-  "privacy.title": "سياسة الخصوصية",
-  "privacy.metaDescription": "كيف يتعامل PIANO LouvorJA مع بياناتك الشخصية بما يتوافق مع LGPD (الائحة البرازيلية لحماية البيانات).",
-  "privacy.lastUpdated": "آخر تحديث: 30 يوليو 2026",
-  "privacy.tocLabel": "جدول المحتويات",
-  "privacy.intro": "تصف سياسة الخصوصية هذه كيف يتعامل PIANO LouvorJA مع البيانات الشخصية المجموعة عبر هذا الموقع. نحن ملتزمون بحماية خصوصيتك بما يتوافق مع القانون البرازيلي العام لحماية البيانات (LGPD — القانون رقم 13.709/2018).",
-  "privacy.sections.data.title": "1. البيانات التي نجمعها",
-  "privacy.sections.data.body": [
-    "1.1 البيانات التي تقدمها",
-    "عند تعبئة نموذج الاتصال، نجمع:",
-    "الاسم",
-    "البريد الإلكتروني",
-    "موضوع الرسالة",
-    "محتوى الرسالة",
-    "1.2 البيانات التقنية",
-    "ملف تعريف تقني piano_lang: يخزن تفضيل لغتك فقط. لا يحوي أي معرّف شخصي.",
-    "لا نستخدم ملفات تعقب أو تحليلات أو إعلانات أو إنشاء ملفات شخصية.",
-    "1.3 بيانات التطبيق",
-    "تطبيق PIANO LouvorJA (الترانيم، ترتيب العبادة، الإعدادات، قوائم التشغيل) يخزن جميع البيانات محليًا في متصفحك (LocalStorage/IndexedDB). لا تُرسل هذه البيانات أبدًا إلى خوادمنا.",
-    "1.4 بيانات الجمهور التقنية (جمع تلقائي)",
-    "عند تصفح الموقع، نجمع بشكل مجمّع:",
-    "بلد منشأ الزيارة (مستنتج من ترويسة HTTP لمزود CDN، مثل Cloudflare/Vercel) — لا نستخدم تحديد الموقع الجغرافي عبر GPS.",
-    "عنوان IP يُعالج حصريًا كتجزئة (SHA-256 مع ملح سري). لا يُخزَّن عنوان IP نصًّا صريحًا أبدًا ولا يمكن عكسه لتحديد هويتك.",
-    "عدّاد زيارات لكل بلد يوميًا. لا يوجد ملف شخصي فردي أو سجل تصفح أو ربط بهويتك."
-  ],
-  "privacy.sections.purpose.title": "2. الغرض من المعالجة",
-  "privacy.sections.purpose.body": [
-    "تُستخدم بيانات نموذج الاتصال حصريًا من أجل:",
-    "الرد على طلبك",
-    "تقديم الدعم التقني",
-    "إرسال المراسلات المطلوبة",
-    "الأساس القانوني: المادة 7، البند IX من LGPD (المصلحة المشروعة والرد على مبادرتك)."
-  ],
-  "privacy.sections.sharing.title": "3. مشاركة البيانات",
-  "privacy.sections.sharing.body": [
-    "3.1 Web3Forms",
-    "يستخدم نموذج الاتصال Web3Forms (الولايات المتحدة) لمعالجة الطلبات. تُنقل البيانات إلى Web3Forms لإعادة توجيهها إلى بريدنا.",
-    "معالِج فرعي: Web3Forms",
-    "البلد: الولايات المتحدة",
-    "الغرض: إعادة توجيه الرسائل",
-    "3.2 مزود الاستضافة",
-    "يُستضاف الموقع لدى مزود بنية تحتية سحابية قد يسجل بيانات وصول تقنية (IP، الطابع الزمني، وكيل المستخدم).",
-    "3.3 لا نشارك البيانات مع",
-    "شركات الإعلانات",
-    "الشبكات الاجتماعية",
-    "وسطاء البيانات",
-    "أطراف ثالثة لأغراض تسويقية"
-  ],
-  "privacy.sections.international.title": "4. النقل الدولي",
-  "privacy.sections.international.body": [
-    "تُعالج بيانات نموذج الاتصال لدى Web3Forms في الولايات المتحدة. هذا النقل الدولي ضروري لتقديم خدمة النموذج ويندرج تحت الفرضيات القانونية للمادة 33 من LGPD."
-  ],
-  "privacy.sections.rights.title": "5. حقوقك (المادة 18، LGPD)",
-  "privacy.sections.rights.body": [
-    "لديك الحقوق التالية بشأن بياناتك الشخصية:",
-    "تأكيد وجود المعالجة",
-    "الوصول إلى البيانات",
-    "تصحيح البيانات الناقصة أو غير الدقيقة أو القديمة",
-    "إخفاء الهوية أو حجب أو حذف البيانات غير الضرورية",
-    "قابلية نقل البيانات",
-    "حذف البيانات الشخصية",
-    "المعلومات حول المشاركة",
-    "كيف تمارس حقوقك",
-    "أرسل بريدًا إلكترونيًا إلى contato@pianolouvorja.com.br مع:",
-    "الاسم الكامل",
-    "وصف الحق الذي تريد ممارسته",
-    "البريد الإلكتروني المسجل",
-    "وقت الرد: خلال 15 يومًا تقويميًا (المادة 19، LGPD)."
-  ],
-  "privacy.sections.security.title": "6. تدابير الأمان",
-  "privacy.sections.security.body": [
-    "نعتمد التدابير التقنية والتنظيمية التالية:",
-    "تشفير HTTPS/TLS في جميع المراسلات",
-    "عدم تخزين كلمات المرور (لا يوجد نظام تسجيل دخول)",
-    "تقليل البيانات (نجمع الضروري فقط)",
-    "ملفات تعريف تقنية دون معرّفات شخصية",
-    "تقييد الوصول إلى البيانات على الفريق"
-  ],
-  "privacy.sections.retention.title": "7. الاحتفاظ بالبيانات",
-  "privacy.sections.retention.body": [
-    "نموذج الاتصال: يُحتفظ به طالما كان ضروريًا للرد، ثم حتى 12 شهرًا للسجلات التاريخية، ثم يُحذف.",
-    "سجلات الوصول: وفق سياسة مزود الاستضافة.",
-    "بيانات التطبيق المحلية: تبقى على جهازك حتى تزيلها."
-  ],
-  "privacy.sections.cookies.title": "8. ملفات تعريف الارتباط",
-  "privacy.sections.cookies.body": [
-    "لا نستخدم ملفات تعريف ارتباط تابعة لجهات خارجية أو تحليلات أو إعلانات.",
-    "قياس الجمهور على مستوى البلد مجرَّد ومجهول (البلد + IP مجزّأ في عدادات يومية)؛ لا يستخدم ملفات تعقب ولا يحدد هوية الأفراد."
-  ],
-  "privacy.sections.cookies.table.header.cookie": "ملف الارتباط",
-  "privacy.sections.cookies.table.header.type": "النوع",
-  "privacy.sections.cookies.table.header.purpose": "الغرض",
-  "privacy.sections.cookies.table.header.duration": "المدة",
-  "privacy.sections.cookies.table.rows": [
-    {
-      "name": "piano_lang",
-      "type": "تقني",
-      "purpose": "تذكر اللغة المفضلة",
-      "duration": "الجلسة"
+  },
+  "notifyModal": {
+    "title": "كن أول من يعلم",
+    "subtitle": "أدخل بريدك الإلكتروني وسنبلغك فور توفر تطبيق الهاتف.",
+    "placeholder": "بريدك@الإلكتروني.com",
+    "button": "أبلغني عند الإطلاق",
+    "loading": "جارٍ الإرسال...",
+    "success": "تم التسجيل! سنبلغك فور الإطلاق.",
+    "errors": {
+      "invalidEmail": "يرجى إدخال بريد إلكتروني صالح.",
+      "alreadySubscribed": "هذا البريد الإلكتروني مسجل بالفعل.",
+      "generic": "حدث خطأ ما. يرجى المحاولة مرة أخرى بعد قليل."
     }
-  ],
-  "privacy.sections.children.title": "9. الأطفال والقاصرون",
-  "privacy.sections.children.body": [
-    "التطبيق ليس موجهًا للأطفال ولا نجمع عن قصد بيانات من دون سن 18. المحتوى (الترانيم، ترتيب العبادة، نصوص الكتاب المقدس) ديني الطابع ولا يتضمن جمع بيانات حساسة."
-  ],
-  "privacy.sections.changes.title": "10. التغييرات على هذه السياسة",
-  "privacy.sections.changes.body": [
-    "قد نحدّث هذه السياسة في أي وقت. ستتوفر أحدث نسخة دائمًا على هذه الصفحة، مع تاريخ التحديث في الأعلى. ننصح بالمراجعة الدورية."
-  ],
-  "privacy.sections.dpo.title": "11. مسؤول حماية البيانات (DPO)",
-  "privacy.sections.dpo.body": [
-    "التزامًا بالمادة 41 من LGPD، يمكن إرسال الأسئلة إلى contato@pianolouvorja.com.br."
-  ],
-  "privacy.sections.anpd.title": "12. جهة حماية البيانات",
-  "privacy.sections.anpd.body": [
-    "يمكنك التواصل مع ANPD (الجهة الوطنية البرازيلية لحماية البيانات) لتقديم شكاوى:",
-    "الموقع: {link}",
-    "البريد الإلكتروني: ouvidoria@anpd.gov.br"
-  ],
-  "privacy.sections.anpd.link.url": "https://www.gov.br/anpd",
-  "privacy.sections.anpd.link.text": "www.gov.br/anpd",
-  "terms.title": "شروط الاستخدام",
-  "terms.metaDescription": "شروط وأحكام استخدام PIANO LouvorJA.",
-  "terms.lastUpdated": "آخر تحديث: 30 يوليو 2026",
-  "terms.tocLabel": "جدول المحتويات",
-  "terms.intro": "مرحبًا بك في PIANO LouvorJA. بالوصول إلى هذا الموقع والتطبيق واستخدامهما، فأنت توافق على شروط الاستخدام هذه. يرجى القراءة بعناية.",
-  "terms.sections.acceptance.title": "1. قبول الشروط",
-  "terms.sections.acceptance.body": [
-    "استخدام PIANO LouvorJA يعني القبول الكامل بهذه الشروط. إن لم توافق على أي بند، فلا تستخدم التطبيق."
-  ],
-  "terms.sections.service.title": "2. طبيعة الخدمة",
-  "terms.sections.service.body": [
-    "PIANO LouvorJA تطبيق ويب مجاني ومفتوح المصدر مصمم للمساعدة في إدارة خدمة العبادة، بما يشمل:",
-    "كتاب ترانيم رقمي وتشغيل موسيقي",
-    "إدارة ترتيب العبادة وجدول الخدمة",
-    "عرض الكلمات ونصوص الكتاب المقدس",
-    "أدوات مساعدة (مؤقت، سحب عشوائي، إلخ)",
-    "التطبيق مخصص للاستخدام الديني والمجتمعي دون أغراض تجارية."
-  ],
-  "terms.sections.license.title": "3. الترخيص",
-  "terms.sections.license.body": [
-    "3.1 البرمجيات",
-    "تُوزَّع الشيفرة المصدرية بموجب ترخيص مفتوح المصدر. راجع {link} للتفاصيل.",
-    "3.2 المحتوى",
-    "المحتوى النصي (الترانيم، الكلمات، المؤلفات) يعود لأصحاب حقوق النشر المعنيين. PIANO LouvorJA:",
-    "لا يدّعي ملكية المحتوى",
-    "لا يُسوّق المحتوى مباشرة",
-    "يحترم حقوق النشر وفق القانون 9.610/98"
-  ],
-  "terms.sections.license.link.url": "https://github.com/Piano-Louvor-JA",
-  "terms.sections.license.link.text": "مستودع GitHub",
-  "terms.sections.user.title": "4. مسؤوليات المستخدم",
-  "terms.sections.user.body": [
-    "باستخدامك PIANO LouvorJA، فأنت توافق على:",
-    "استخدام التطبيق أخلاقيًا وبما يتوافق مع القوانين المعمول بها",
-    "عدم استخدامه لأغراض غير قانونية أو تشهيرية أو تنتهك حقوق الغير",
-    "احترام حقوق النشر للأعمال المعروضة",
-    "الحفاظ على بياناتك المحلية بأمان (لا نحتفظ بنسخ احتياطية على الخادم)",
-    "عدم محاولة المساس بالأمان أو التوافر"
-  ],
-  "terms.sections.responsibility.title": "5. المسؤولية",
-  "terms.sections.responsibility.body": [
-    "5.1 طبيعة الخدمة",
-    "يُقدَّم PIANO LouvorJA \"كما هو\" دون أي ضمانات. لا نضمن أن:",
-    "تكون الخدمة متواصلة أو آمنة أو خالية من الأخطاء",
-    "تكون النتائج دقيقة أو موثوقة",
-    "يُصلح أي خطأ أو عيب",
-    "5.2 حدود المسؤولية",
-    "إلى أقصى حد يسمح به القانون، لا يتحمل PIANO LouvorJA مسؤولية:",
-    "الأضرار المباشرة أو غير المباشرة أو العرضية أو التبعية",
-    "فقدان البيانات (قم بنسخ احتياطية — البيانات محلية)",
-    "انقطاع الخدمة أثناء الاستخدام الحرج",
-    "محتوى أطراف ثالثة أو روابط خارجية"
-  ],
-  "terms.sections.ip.title": "6. الملكية الفكرية",
-  "terms.sections.ip.body": [
-    "6.1 البرمجيات",
-    "الشيفرة المصدرية محمية بحقوق النشر وتُوزَّع بموجب ترخيص مفتوح المصدر.",
-    "6.2 العلامة التجارية",
-    "\"PIANO LouvorJA\" و\"LouvorJA\" علامتان تجاريتان للمشروع. لا يُسمح باستخدامهما دون إذن.",
-    "6.3 محتوى أطراف ثالثة",
-    "تعود الترانيم والكلمات والمؤلفات إلى مؤلفيها وناشريها المعنيين. تنظيم هذا المحتوى لا ينقل أي حقوق ملكية فكرية."
-  ],
-  "terms.sections.donations.title": "7. التبرعات والمساهمات",
-  "terms.sections.donations.body": [
-    "PIANO LouvorJA مجاني ومفتوح المصدر. تُقبل المساهمات الطوعية عبر GitHub (طلبات الدمج، المشكلات، الترجمات). التبرعات المحتملة لا تنشئ علاقة استهلاكية ولا تضمن مزايا."
-  ],
-  "terms.sections.privacy.title": "8. الخصوصية والبيانات",
-  "terms.sections.privacy.body": [
-    "تخضع معالجة البيانات الشخصية لـ{link}، وهي جزء من هذه الشروط.",
-    "تُجمع بيانات الجمهور التقنية (بلد المنشأ وعنوان IP المجزّأ، مجمّعة في عدادات يومية) تلقائيًا لأغراض إحصائية.",
-    "لا يُخزَّن عنوان IP نصًّا صريحًا أبدًا ولا يسمح بتحديد هوية المستخدمين فرديًا."
-  ],
-  "terms.sections.privacy.link.url": "/privacy",
-  "terms.sections.privacy.link.text": "سياسة الخصوصية",
-  "terms.sections.modifications.title": "9. التعديلات",
-  "terms.sections.modifications.body": [
-    "يجوز لنا تعديل هذه الشروط في أي وقت. تسري التغييرات فور نشرها. مراجعتها دوريًا مسؤولية المستخدم."
-  ],
-  "terms.sections.termination.title": "10. الإنهاء",
-  "terms.sections.termination.body": [
-    "يمكنك التوقف عن استخدام التطبيق في أي وقت بإغلاق المتصفح أو إزالة تثبيت PWA. نظرًا لعدم وجود نظام حسابات، لا يلزم إلغاء رسمي."
-  ],
-  "terms.sections.law.title": "11. القانون الحاكم",
-  "terms.sections.law.body": [
-    "تخضع هذه الشروط لقوانين جمهورية البرازيل الفيدرالية. تُحل النزاعات أمام محكمة محل إقامة المستخدم."
-  ],
-  "terms.sections.misc.title": "12. أحكام نهائية",
-  "terms.sections.misc.body": [
-    "إذا اعتُبر أي بند من هذه الشروط باطلًا أو غير قابل للإنفاذ، تبقى الأحكام الأخرى سارية بالكامل. التسامح مع أي مخالفة لا يُعد تنازلًا عن الحقوق المستقبلية."
-  ],
-  "error.title": "الصفحة غير موجودة",
-  "error.serverErrorTitle": "خطأ في الخادم",
-  "error.errorCode404": "404",
-  "error.errorCode500": "500",
-  "error.desc404": "الصفحة التي تبحث عنها غير موجودة أو تم نقلها.",
-  "error.desc500": "حدث خطأ ما لدينا. تم إبلاغ فريقنا — يرجى المحاولة بعد قليل.",
-  "error.backHome": "العودة إلى الرئيسية",
-  "error.reportIssue": "الإبلاغ عن مشكلة",
-  "error.metaDesc404": "الصفحة غير موجودة — PIANO LouvorJA",
-  "error.metaDesc500": "خطأ في الخادم — PIANO LouvorJA",
-  "newsletter.title": "احصل على تحديثات المشروع",
-  "newsletter.subtitle": "كن أول من يعلم بالإصدارات والميزات والتحديثات الجديدة. بدون رسائل مزعجة.",
-  "newsletter.placeholder": "بريدك الإلكتروني",
-  "newsletter.button": "اشترك",
-  "newsletter.loading": "جارٍ الاشتراك...",
-  "newsletter.success": "تم تأكيد الاشتراك! شكرًا لك.",
-  "newsletter.errors.invalidEmail": "بريد إلكتروني غير صالح. يرجى التحقق والمحاولة مجددًا.",
-  "newsletter.errors.alreadySubscribed": "هذا البريد الإلكتروني مشترك بالفعل.",
-  "newsletter.errors.generic": "فشل الاشتراك. يرجى المحاولة مرة أخرى.",
-  "newsletter.errors.rateLimited": "محاولات كثيرة جدًا. انتظر بضع دقائق.",
-  "newsletter.errors.serviceUnavailable": "الخدمة غير متاحة. حاول لاحقًا.",
-  "releases.metaTitle": "ملاحظات الإصدار - PIANO Louvor JA",
-  "releases.metaDescription": "تابع آخر التحديثات والتحسينات والإصلاحات لـ PIANO Louvor JA.",
-  "releases.title": "ملاحظات الإصدار",
-  "releases.subtitle": "تابع آخر التحديثات والتحسينات لـ PIANO.",
-  "releases.loading": "جارٍ تحميل الإصدارات...",
-  "releases.error": "تعذر تحميل الإصدارات. حاول لاحقًا.",
-  "releases.noReleases": "لم تُنشر أي إصدارات بعد.",
-  "releases.latest": "الأحدث",
-  "releases.highlights": "أبرز الميزات",
-  "releases.pullRequests": "طلبات الدمج",
-  "releases.changelog": "التغييرات",
-  "releases.viewOnGithub": "اعرض على GitHub",
-  "releases.allVersions": "عرض جميع الإصدارات",
-  "releases.products.web": "الويب",
-  "releases.products.desktop": "سطح المكتب",
-  "releases.products.mobile": "الهاتف",
-  "community.eyebrow": "المجتمع",
-  "community.title": "انضم إلى مجتمعنا",
-  "community.subtitle": "مطورون ومختبرون ومهتمون يتعاونون يوميًا لتحسين PIANO LouvorJA.",
-  "community.roles.tester": "مختبر",
-  "community.roles.enthusiast": "مهتم",
-  "community.roles.suggester": "مقترح",
-  "community.since": "عضو منذ {since}",
-  "community.link": "عرض الملف الشخصي",
-  "community.spot": "تريد الانضمام؟",
-  "community.cta": "انضم إلى المجموعة",
-  "community.whatsapp": "دعم واتساب",
-  "community.telegram": "المطورون على تيليجرام",
+  },
+  "features": {
+    "eyebrow": "الميزات",
+    "title": "كل ما تحتاجه للعبادة",
+    "description": "طقم أدوات متكامل ومترابط لإدارة كل جانب من جوانب الخدمة.",
+    "items": {
+      "media": {
+        "title": "مركز الوسائط",
+        "description": "أدر الألبومات وكتب الترانيم والمجموعات بثلاثة أوضاع تشغيل."
+      },
+      "liturgy": {
+        "title": "ترتيب العبادة",
+        "description": "ابنِ ترتيب الخدمة مع 13 نوعًا من العناصر، والسحب والإفلات، والنسخ، والعد التنازلي."
+      },
+      "bible": {
+        "title": "الكتاب المقدس",
+        "description": "نسخ متعددة مع بحث سريع ومفضلات وعرض مباشر."
+      },
+      "projection": {
+        "title": "عرض على شاشات متعددة",
+        "description": "مخرجات مستقلة للجهاز العارض أو التلفاز الثانوي مع تحكم كامل."
+      },
+      "tools": {
+        "title": "الأدوات المساعدة",
+        "description": "ساعة، ساعة إيقاف، مؤقت وسحب عشوائي مدمجة في الخدمة."
+      },
+      "player": {
+        "title": "مشغل متقدم",
+        "description": "تشغيل عادي، وضع الترديد المرتل، وعرض شرائح متزامن."
+      },
+      "settings": {
+        "title": "الإعدادات",
+        "description": "المظهر والعرض والشاشات المتعددة وتفضيلات قابلة للتخصيص بالكامل."
+      },
+      "offline": {
+        "title": "يعمل دون اتصال",
+        "description": "يعمل تطبيق سطح المكتب دون اتصال بالكامل بعد تنزيل الوسائط. تتطلب نسخة الويب تنزيل موارد العمل دون اتصال أولًا."
+      }
+    }
+  },
+  "about": {
+    "eyebrow": "عن المشروع",
+    "title": "من المجتمع وإليه",
+    "text1": "{name} مشروع مفتوح المصدر تعاوني أُنشئ لتسهيل إدارة خدمة العبادة.",
+    "text2": "طوّره فريق Piano، وتتطور المنصة باستمرار بمساهمات المجتمع. مجانية، بدون إعلانات، دون جمع بيانات.",
+    "openSource": "مفتوح المصدر",
+    "stats": {
+      "free": "مجاني",
+      "installs": "عدد التثبيتات",
+      "offline": "PWA دون اتصال"
+    }
+  },
+  "how": {
+    "eyebrow": "كيف يعمل",
+    "title": "ابدأ خلال دقائق",
+    "description": "أربع خطوات بسيطة لتنظيم خدمتك.",
+    "steps": {
+      "1": {
+        "title": "افتح التطبيق",
+        "desc": "ادخل من متصفحك أو نزّل نسخة سطح المكتب. لا حاجة للتسجيل."
+      },
+      "2": {
+        "title": "استورد كتاب الترانيم",
+        "desc": "أضف الألبومات وكتب الترانيم والمجموعات إلى مركز الوسائط."
+      },
+      "3": {
+        "title": "ابنِ ترتيب العبادة",
+        "desc": "اسحب العناصر لإنشاء ترتيب الخدمة مع متابعة الوقت."
+      },
+      "4": {
+        "title": "اعرض وقد الخدمة",
+        "desc": "استخدم العرض متعدد الشاشات لإظهار الترانيم والآيات والشرائح."
+      }
+    }
+  },
+  "cta": {
+    "title": "جاهز للبدء؟",
+    "subtitle": "افتح PIANO LouvorJA الآن ونظّم خدمتك خلال دقائق. مجاني ودون تسجيل.",
+    "button": "فتح التطبيق",
+    "meta": {
+      "free": "مجاني 100%",
+      "noInstall": "بدون تثبيت",
+      "openSource": "مفتوح المصدر"
+    }
+  },
+  "contact": {
+    "eyebrow": "تواصل معنا",
+    "title": "اتصل بنا",
+    "description": "هل لديك أسئلة أو اقتراحات أو وجدت خطأ؟ أرسل لنا رسالة وسنرد في أقرب وقت ممكن.",
+    "form": {
+      "name": "الاسم",
+      "namePlaceholder": "اسمك",
+      "email": "البريد الإلكتروني",
+      "emailPlaceholder": "بريدك@الإلكتروني.com",
+      "subject": "الموضوع",
+      "subjectPlaceholder": "بمَ تتعلق رسالتك؟",
+      "message": "الرسالة",
+      "messagePlaceholder": "اكتب رسالتك...",
+      "submit": "إرسال الرسالة",
+      "sending": "جارٍ الإرسال...",
+      "success": "تم إرسال الرسالة بنجاح! سنرد عليك قريبًا.",
+      "error": "خطأ في الإرسال. حاول مرة أخرى أو راسلنا مباشرة على app@pianolouvorja.com.br"
+    },
+    "direct": "أو أرسل بريدًا إلكترونيًا مباشرة إلى",
+    "responseTime": "متوسط وقت الرد: 24-48 ساعة"
+  },
+  "docs": {
+    "title": "التوثيق",
+    "subtitle": "كل ما تحتاجه لإتقان PIANO LouvorJA",
+    "search": "ابحث في التوثيق...",
+    "sections": {
+      "gettingStarted": {
+        "title": "البداية",
+        "description": "الإعداد الأولي والخطوات الأولى في التطبيق."
+      },
+      "media": {
+        "title": "مركز الوسائط",
+        "description": "أدر الألبومات وكتب الترانيم ومجموعات الأناشيد."
+      },
+      "hymnal": {
+        "title": "كتاب الترانيم",
+        "description": "البحث والتشغيل والتصدير لأناشيد كتاب ترانيم الأدفنتست."
+      },
+      "collections": {
+        "title": "المجموعات",
+        "description": "أنشئ وأدر مجموعات وقوائم تشغيل مخصصة لكل مناسبة."
+      },
+      "liturgy": {
+        "title": "ترتيب العبادة",
+        "description": "ابنِ ونظّم ترتيب الخدمة الكامل."
+      },
+      "bible": {
+        "title": "الكتاب المقدس",
+        "description": "البحث والمفضلات وعرض الآيات."
+      },
+      "projection": {
+        "title": "عرض على شاشات متعددة",
+        "description": "إعداد الشاشات الثانوية والعرض."
+      },
+      "streaming": {
+        "title": "البث المباشر",
+        "description": "التكامل مع OBS وvMix ومنصات البث للعبادة عبر الإنترنت."
+      },
+      "tools": {
+        "title": "الأدوات المساعدة",
+        "description": "ساعة، ساعة إيقاف، مؤقت وسحب عشوائي."
+      },
+      "settings": {
+        "title": "الإعدادات",
+        "description": "خصص المظهر والعرض والتفضيلات."
+      },
+      "shortcuts": {
+        "title": "اختصارات لوحة المفاتيح",
+        "description": "سرّع عملك بالاختصارات."
+      },
+      "faq": {
+        "title": "الأسئلة الشائعة",
+        "description": "الأسئلة المتكررة"
+      }
+    },
+    "content": {
+      "gettingStarted": {
+        "intro": "PIANO LouvorJA تطبيق ويب (PWA) يعمل على أي جهاز بمتصفح حديث. لا يتطلب تثبيتًا، لكن يمكنك \"تثبيته\" كتطبيق من متصفحك للاستخدام دون اتصال.",
+        "steps": [
+          "افتح التطبيق في متصفح جهازك (سطح المكتب أو الهاتف).",
+          "انقر على \"تثبيت التطبيق\" أو استخدم خيار المتصفح للإضافة إلى الشاشة الرئيسية.",
+          "تم! يعمل التطبيق دون اتصال بعد التحميل الأول."
+        ],
+        "tip": "لأفضل تجربة عبادة، استخدم حاسوبًا بشاشتين: واحدة للتحكم وواحدة للعرض."
+      },
+      "shortcuts": {
+        "table": {
+          "action": "الإجراء",
+          "shortcut": "الاختصار"
+        },
+        "items": [
+          {
+            "action": "تشغيل/إيقاف مؤقت",
+            "shortcut": "Space"
+          },
+          {
+            "action": "المسار التالي",
+            "shortcut": "→"
+          },
+          {
+            "action": "المسار السابق",
+            "shortcut": "←"
+          },
+          {
+            "action": "رفع الصوت",
+            "shortcut": "↑"
+          },
+          {
+            "action": "خفض الصوت",
+            "shortcut": "↓"
+          },
+          {
+            "action": "وضع ملء الشاشة",
+            "shortcut": "F"
+          },
+          {
+            "action": "تبديل العرض",
+            "shortcut": "P"
+          },
+          {
+            "action": "بحث سريع",
+            "shortcut": "Ctrl+K"
+          }
+        ]
+      },
+      "modules": {
+        "media": ["مشغل بثلاثة أوضاع", "كتب ترانيم وألبومات", "وضع الترديد المرتل"],
+        "hymnal": ["بحث سريع بالرقم أو العنوان", "تشغيل متسلسل", "تصدير PDF أو طباعة"],
+        "collections": [
+          "مجموعات إلكترونية ومخصصة",
+          "سحب وإفلات إلى قائمة التشغيل",
+          "وضع الترديد المرتل مع الكلمات"
+        ],
+        "liturgy": ["13 نوعًا من العناصر", "سحب وإفلات", "عد تنازلي لكل عنصر"],
+        "bible": ["نسخ متعددة", "بحث سريع", "عرض مباشر"],
+        "projection": ["مخرجات مستقلة", "شاشات متعددة", "تحكم كامل"],
+        "streaming": ["CSS مخصص لعرض الكلمات", "تكامل مع OBS وvMix", "مخرجات إلى يوتيوب وفيسبوك"],
+        "tools": ["ساعة وساعة إيقاف", "مؤقت عد تنازلي", "سحب عشوائي"],
+        "settings": ["المظهر", "العرض", "الشاشات المتعددة"]
+      }
+    },
+    "faq": {
+      "cost": {
+        "question": "هل PIANO LouvorJA مجاني فعلًا؟",
+        "answer": "نعم! PIANO LouvorJA مجاني ومفتوح المصدر بنسبة 100%. لا اشتراكات ولا إعلانات ولا جمع بيانات. جميع الشيفرة متاحة على GitHub."
+      },
+      "offline": {
+        "question": "هل يعمل دون إنترنت؟",
+        "answer": "نعم. يعمل تطبيق سطح المكتب دون اتصال بالكامل بعد تنزيل الوسائط. تعمل نسخة الويب أيضًا دون اتصال، لكن عليك أولًا تنزيل موارد العمل دون اتصال. جميع الترانيم وترتيبات العبادة والإعدادات مخزنة محليًا على جهازك."
+      },
+      "devices": {
+        "question": "على أي أجهزة يمكنني استخدامه؟",
+        "answer": "يعمل PIANO على أي جهاز بمتصفح حديث: سطح المكتب (لينكس، ماك، ويندوز)، الأجهزة اللوحية والهواتف. للحصول على أفضل تجربة عرض متعدد الشاشات، نوصي بسطح المكتب."
+      },
+      "data": {
+        "question": "أين تُخزَّن بياناتي؟",
+        "answer": "بيانات التطبيق — الترانيم وترتيبات العبادة والإعدادات — تُخزَّن محليًا في متصفحك أو جهازك. لا يُرسل شيء إلى خوادم خارجية أثناء الاستخدام. عند إرسال نموذج الاتصال، تُنقل معلوماتك (الاسم، البريد الإلكتروني، الرسالة) عبر Web3Forms لنتمكن من الرد. راجع سياسة الخصوصية للتفاصيل الكاملة."
+      },
+      "privacy": {
+        "question": "كيف تحمون خصوصيتي؟",
+        "answer": "يمتثل PIANO LouvorJA للائحة GDPR وLGPD (القانون البرازيلي العام لحماية البيانات). لا يستخدم الموقع ملفات تعقب أو تحليلات أو إعلانات — فقط ملف تعريف تقني لتذكر لغتك المفضلة. لا نبيع بياناتك ولا نشاركها مع أطراف ثالثة لأغراض تسويقية. راجع سياسة الخصوصية لمزيد من المعلومات."
+      },
+      "support": {
+        "question": "كيف أحصل على الدعم أو أبلغ عن مشكلة؟",
+        "answer": "يمكنك الوصول إلينا عبر نموذج الاتصال في صفحة الاتصال، أو فتح مشكلة مباشرة في مستودع GitHub. للمشاكل العاجلة أثناء الخدمة، راجع مداخل استكشاف الأخطاء بالأسفل."
+      },
+      "updates": {
+        "question": "كيف يُحدَّث التطبيق؟",
+        "answer": "PIANO LouvorJA تطبيق ويب تقدمي (PWA). تُطبَّق التحديثات تلقائيًا عند إعادة تحميل الصفحة. لا حاجة لتنزيل أو تثبيت يدوي. لديك دائمًا أحدث إصدار."
+      },
+      "troubleshooting": {
+        "question": "ماذا لو لم يُحمَّل التطبيق أو أظهر خطأ؟",
+        "answer": "1) أعد تحميل الصفحة (Ctrl+F5 لمسح ذاكرة التخزين المؤقت). 2) تحقق من اتصالك بالإنترنت عند أول وصول. 3) امسح بيانات الموقع من إعدادات المتصفح. 4) جرّب وضع التصفح الخفي لاستبعاد تعارض الإضافات. 5) إذا استمرت المشكلة، أبلغ عنها عبر نموذج الاتصال أو GitHub مع تفاصيل المتصفح والجهاز."
+      },
+      "contribute": {
+        "question": "كيف أساهم في المشروع؟",
+        "answer": "المشروع مفتوح المصدر ويقبل المساهمات على GitHub. يمكنك الإبلاغ عن الأخطاء، اقتراح ميزات، إرسال طلبات دمج، أو المساعدة في الترجمة إلى لغات أخرى."
+      }
+    },
+    "sidebarLabel": "أقسام التوثيق"
+  },
+  "footer": {
+    "tagline": "مدير خدمة عبادة عبر الويب. مجاني ومفتوح المصدر.",
+    "navLabel": "تنقل التذييل",
+    "navTitle": "التنقل",
+    "product": "المنتج",
+    "resources": "الموارد",
+    "company": "الشركة",
+    "links": {
+      "features": "الميزات",
+      "platforms": "المنصات",
+      "howItWorks": "كيف يعمل",
+      "docs": "التوثيق",
+      "contact": "اتصل بنا",
+      "github": "GitHub",
+      "app": "فتح التطبيق"
+    },
+    "copyright": "صنعه فريق Piano بإيمان وتفانٍ.",
+    "developedBy": "تطوير",
+    "team": "فريق Piano",
+    "rights": "جميع الحقوق محفوظة.",
+    "legalNavLabel": "روابط قانونية",
+    "legalNavTitle": "قانوني",
+    "privacy": "سياسة الخصوصية",
+    "terms": "شروط الاستخدام",
+    "social": {
+      "github": "GitHub",
+      "youtube": "يوتيوب",
+      "whatsapp": "واتساب",
+      "telegram": "تيليجرام"
+    }
+  },
+  "common": {
+    "loading": "جارٍ التحميل...",
+    "error": "خطأ",
+    "close": "إغلاق",
+    "back": "رجوع",
+    "learnMore": "اعرف المزيد",
+    "skipToContent": "تخطَّ إلى المحتوى",
+    "allRightsReserved": "جميع الحقوق محفوظة."
+  },
+  "privacy": {
+    "title": "سياسة الخصوصية",
+    "metaDescription": "كيف يتعامل PIANO LouvorJA مع بياناتك الشخصية بما يتوافق مع LGPD (الائحة البرازيلية لحماية البيانات).",
+    "lastUpdated": "آخر تحديث: 30 يوليو 2026",
+    "tocLabel": "جدول المحتويات",
+    "intro": "تصف سياسة الخصوصية هذه كيف يتعامل PIANO LouvorJA مع البيانات الشخصية المجموعة عبر هذا الموقع. نحن ملتزمون بحماية خصوصيتك بما يتوافق مع القانون البرازيلي العام لحماية البيانات (LGPD — القانون رقم 13.709/2018).",
+    "sections": {
+      "data": {
+        "title": "1. البيانات التي نجمعها",
+        "body": [
+          "1.1 البيانات التي تقدمها",
+          "عند تعبئة نموذج الاتصال، نجمع:",
+          "الاسم",
+          "البريد الإلكتروني",
+          "موضوع الرسالة",
+          "محتوى الرسالة",
+          "1.2 البيانات التقنية",
+          "ملف تعريف تقني piano_lang: يخزن تفضيل لغتك فقط. لا يحوي أي معرّف شخصي.",
+          "لا نستخدم ملفات تعقب أو تحليلات أو إعلانات أو إنشاء ملفات شخصية.",
+          "1.3 بيانات التطبيق",
+          "تطبيق PIANO LouvorJA (الترانيم، ترتيب العبادة، الإعدادات، قوائم التشغيل) يخزن جميع البيانات محليًا في متصفحك (LocalStorage/IndexedDB). لا تُرسل هذه البيانات أبدًا إلى خوادمنا.",
+          "1.4 بيانات الجمهور التقنية (جمع تلقائي)",
+          "عند تصفح الموقع، نجمع بشكل مجمّع:",
+          "بلد منشأ الزيارة (مستنتج من ترويسة HTTP لمزود CDN، مثل Cloudflare/Vercel) — لا نستخدم تحديد الموقع الجغرافي عبر GPS.",
+          "عنوان IP يُعالج حصريًا كتجزئة (SHA-256 مع ملح سري). لا يُخزَّن عنوان IP نصًّا صريحًا أبدًا ولا يمكن عكسه لتحديد هويتك.",
+          "عدّاد زيارات لكل بلد يوميًا. لا يوجد ملف شخصي فردي أو سجل تصفح أو ربط بهويتك."
+        ]
+      },
+      "purpose": {
+        "title": "2. الغرض من المعالجة",
+        "body": [
+          "تُستخدم بيانات نموذج الاتصال حصريًا من أجل:",
+          "الرد على طلبك",
+          "تقديم الدعم التقني",
+          "إرسال المراسلات المطلوبة",
+          "الأساس القانوني: المادة 7، البند IX من LGPD (المصلحة المشروعة والرد على مبادرتك)."
+        ]
+      },
+      "sharing": {
+        "title": "3. مشاركة البيانات",
+        "body": [
+          "3.1 Web3Forms",
+          "يستخدم نموذج الاتصال Web3Forms (الولايات المتحدة) لمعالجة الطلبات. تُنقل البيانات إلى Web3Forms لإعادة توجيهها إلى بريدنا.",
+          "معالِج فرعي: Web3Forms",
+          "البلد: الولايات المتحدة",
+          "الغرض: إعادة توجيه الرسائل",
+          "3.2 مزود الاستضافة",
+          "يُستضاف الموقع لدى مزود بنية تحتية سحابية قد يسجل بيانات وصول تقنية (IP، الطابع الزمني، وكيل المستخدم).",
+          "3.3 لا نشارك البيانات مع",
+          "شركات الإعلانات",
+          "الشبكات الاجتماعية",
+          "وسطاء البيانات",
+          "أطراف ثالثة لأغراض تسويقية"
+        ]
+      },
+      "international": {
+        "title": "4. النقل الدولي",
+        "body": [
+          "تُعالج بيانات نموذج الاتصال لدى Web3Forms في الولايات المتحدة. هذا النقل الدولي ضروري لتقديم خدمة النموذج ويندرج تحت الفرضيات القانونية للمادة 33 من LGPD."
+        ]
+      },
+      "rights": {
+        "title": "5. حقوقك (المادة 18، LGPD)",
+        "body": [
+          "لديك الحقوق التالية بشأن بياناتك الشخصية:",
+          "تأكيد وجود المعالجة",
+          "الوصول إلى البيانات",
+          "تصحيح البيانات الناقصة أو غير الدقيقة أو القديمة",
+          "إخفاء الهوية أو حجب أو حذف البيانات غير الضرورية",
+          "قابلية نقل البيانات",
+          "حذف البيانات الشخصية",
+          "المعلومات حول المشاركة",
+          "كيف تمارس حقوقك",
+          "أرسل بريدًا إلكترونيًا إلى contato@pianolouvorja.com.br مع:",
+          "الاسم الكامل",
+          "وصف الحق الذي تريد ممارسته",
+          "البريد الإلكتروني المسجل",
+          "وقت الرد: خلال 15 يومًا تقويميًا (المادة 19، LGPD)."
+        ]
+      },
+      "security": {
+        "title": "6. تدابير الأمان",
+        "body": [
+          "نعتمد التدابير التقنية والتنظيمية التالية:",
+          "تشفير HTTPS/TLS في جميع المراسلات",
+          "عدم تخزين كلمات المرور (لا يوجد نظام تسجيل دخول)",
+          "تقليل البيانات (نجمع الضروري فقط)",
+          "ملفات تعريف تقنية دون معرّفات شخصية",
+          "تقييد الوصول إلى البيانات على الفريق"
+        ]
+      },
+      "retention": {
+        "title": "7. الاحتفاظ بالبيانات",
+        "body": [
+          "نموذج الاتصال: يُحتفظ به طالما كان ضروريًا للرد، ثم حتى 12 شهرًا للسجلات التاريخية، ثم يُحذف.",
+          "سجلات الوصول: وفق سياسة مزود الاستضافة.",
+          "بيانات التطبيق المحلية: تبقى على جهازك حتى تزيلها."
+        ]
+      },
+      "cookies": {
+        "title": "8. ملفات تعريف الارتباط",
+        "body": [
+          "لا نستخدم ملفات تعريف ارتباط تابعة لجهات خارجية أو تحليلات أو إعلانات.",
+          "قياس الجمهور على مستوى البلد مجرَّد ومجهول (البلد + IP مجزّأ في عدادات يومية)؛ لا يستخدم ملفات تعقب ولا يحدد هوية الأفراد."
+        ],
+        "table": {
+          "header": {
+            "cookie": "ملف الارتباط",
+            "type": "النوع",
+            "purpose": "الغرض",
+            "duration": "المدة"
+          },
+          "rows": [
+            {
+              "name": "piano_lang",
+              "type": "تقني",
+              "purpose": "تذكر اللغة المفضلة",
+              "duration": "الجلسة"
+            }
+          ]
+        }
+      },
+      "children": {
+        "title": "9. الأطفال والقاصرون",
+        "body": [
+          "التطبيق ليس موجهًا للأطفال ولا نجمع عن قصد بيانات من دون سن 18. المحتوى (الترانيم، ترتيب العبادة، نصوص الكتاب المقدس) ديني الطابع ولا يتضمن جمع بيانات حساسة."
+        ]
+      },
+      "changes": {
+        "title": "10. التغييرات على هذه السياسة",
+        "body": [
+          "قد نحدّث هذه السياسة في أي وقت. ستتوفر أحدث نسخة دائمًا على هذه الصفحة، مع تاريخ التحديث في الأعلى. ننصح بالمراجعة الدورية."
+        ]
+      },
+      "dpo": {
+        "title": "11. مسؤول حماية البيانات (DPO)",
+        "body": ["التزامًا بالمادة 41 من LGPD، يمكن إرسال الأسئلة إلى contato@pianolouvorja.com.br."]
+      },
+      "anpd": {
+        "title": "12. جهة حماية البيانات",
+        "body": [
+          "يمكنك التواصل مع ANPD (الجهة الوطنية البرازيلية لحماية البيانات) لتقديم شكاوى:",
+          "الموقع: {link}",
+          "البريد الإلكتروني: ouvidoria@anpd.gov.br"
+        ],
+        "link": {
+          "url": "https://www.gov.br/anpd",
+          "text": "www.gov.br/anpd"
+        }
+      }
+    }
+  },
+  "terms": {
+    "title": "شروط الاستخدام",
+    "metaDescription": "شروط وأحكام استخدام PIANO LouvorJA.",
+    "lastUpdated": "آخر تحديث: 30 يوليو 2026",
+    "tocLabel": "جدول المحتويات",
+    "intro": "مرحبًا بك في PIANO LouvorJA. بالوصول إلى هذا الموقع والتطبيق واستخدامهما، فأنت توافق على شروط الاستخدام هذه. يرجى القراءة بعناية.",
+    "sections": {
+      "acceptance": {
+        "title": "1. قبول الشروط",
+        "body": [
+          "استخدام PIANO LouvorJA يعني القبول الكامل بهذه الشروط. إن لم توافق على أي بند، فلا تستخدم التطبيق."
+        ]
+      },
+      "service": {
+        "title": "2. طبيعة الخدمة",
+        "body": [
+          "PIANO LouvorJA تطبيق ويب مجاني ومفتوح المصدر مصمم للمساعدة في إدارة خدمة العبادة، بما يشمل:",
+          "كتاب ترانيم رقمي وتشغيل موسيقي",
+          "إدارة ترتيب العبادة وجدول الخدمة",
+          "عرض الكلمات ونصوص الكتاب المقدس",
+          "أدوات مساعدة (مؤقت، سحب عشوائي، إلخ)",
+          "التطبيق مخصص للاستخدام الديني والمجتمعي دون أغراض تجارية."
+        ]
+      },
+      "license": {
+        "title": "3. الترخيص",
+        "body": [
+          "3.1 البرمجيات",
+          "تُوزَّع الشيفرة المصدرية بموجب ترخيص مفتوح المصدر. راجع {link} للتفاصيل.",
+          "3.2 المحتوى",
+          "المحتوى النصي (الترانيم، الكلمات، المؤلفات) يعود لأصحاب حقوق النشر المعنيين. PIANO LouvorJA:",
+          "لا يدّعي ملكية المحتوى",
+          "لا يُسوّق المحتوى مباشرة",
+          "يحترم حقوق النشر وفق القانون 9.610/98"
+        ],
+        "link": {
+          "url": "https://github.com/Piano-Louvor-JA",
+          "text": "مستودع GitHub"
+        }
+      },
+      "user": {
+        "title": "4. مسؤوليات المستخدم",
+        "body": [
+          "باستخدامك PIANO LouvorJA، فأنت توافق على:",
+          "استخدام التطبيق أخلاقيًا وبما يتوافق مع القوانين المعمول بها",
+          "عدم استخدامه لأغراض غير قانونية أو تشهيرية أو تنتهك حقوق الغير",
+          "احترام حقوق النشر للأعمال المعروضة",
+          "الحفاظ على بياناتك المحلية بأمان (لا نحتفظ بنسخ احتياطية على الخادم)",
+          "عدم محاولة المساس بالأمان أو التوافر"
+        ]
+      },
+      "responsibility": {
+        "title": "5. المسؤولية",
+        "body": [
+          "5.1 طبيعة الخدمة",
+          "يُقدَّم PIANO LouvorJA \"كما هو\" دون أي ضمانات. لا نضمن أن:",
+          "تكون الخدمة متواصلة أو آمنة أو خالية من الأخطاء",
+          "تكون النتائج دقيقة أو موثوقة",
+          "يُصلح أي خطأ أو عيب",
+          "5.2 حدود المسؤولية",
+          "إلى أقصى حد يسمح به القانون، لا يتحمل PIANO LouvorJA مسؤولية:",
+          "الأضرار المباشرة أو غير المباشرة أو العرضية أو التبعية",
+          "فقدان البيانات (قم بنسخ احتياطية — البيانات محلية)",
+          "انقطاع الخدمة أثناء الاستخدام الحرج",
+          "محتوى أطراف ثالثة أو روابط خارجية"
+        ]
+      },
+      "ip": {
+        "title": "6. الملكية الفكرية",
+        "body": [
+          "6.1 البرمجيات",
+          "الشيفرة المصدرية محمية بحقوق النشر وتُوزَّع بموجب ترخيص مفتوح المصدر.",
+          "6.2 العلامة التجارية",
+          "\"PIANO LouvorJA\" و\"LouvorJA\" علامتان تجاريتان للمشروع. لا يُسمح باستخدامهما دون إذن.",
+          "6.3 محتوى أطراف ثالثة",
+          "تعود الترانيم والكلمات والمؤلفات إلى مؤلفيها وناشريها المعنيين. تنظيم هذا المحتوى لا ينقل أي حقوق ملكية فكرية."
+        ]
+      },
+      "donations": {
+        "title": "7. التبرعات والمساهمات",
+        "body": [
+          "PIANO LouvorJA مجاني ومفتوح المصدر. تُقبل المساهمات الطوعية عبر GitHub (طلبات الدمج، المشكلات، الترجمات). التبرعات المحتملة لا تنشئ علاقة استهلاكية ولا تضمن مزايا."
+        ]
+      },
+      "privacy": {
+        "title": "8. الخصوصية والبيانات",
+        "body": [
+          "تخضع معالجة البيانات الشخصية لـ{link}، وهي جزء من هذه الشروط.",
+          "تُجمع بيانات الجمهور التقنية (بلد المنشأ وعنوان IP المجزّأ، مجمّعة في عدادات يومية) تلقائيًا لأغراض إحصائية.",
+          "لا يُخزَّن عنوان IP نصًّا صريحًا أبدًا ولا يسمح بتحديد هوية المستخدمين فرديًا."
+        ],
+        "link": {
+          "url": "/privacy",
+          "text": "سياسة الخصوصية"
+        }
+      },
+      "modifications": {
+        "title": "9. التعديلات",
+        "body": [
+          "يجوز لنا تعديل هذه الشروط في أي وقت. تسري التغييرات فور نشرها. مراجعتها دوريًا مسؤولية المستخدم."
+        ]
+      },
+      "termination": {
+        "title": "10. الإنهاء",
+        "body": [
+          "يمكنك التوقف عن استخدام التطبيق في أي وقت بإغلاق المتصفح أو إزالة تثبيت PWA. نظرًا لعدم وجود نظام حسابات، لا يلزم إلغاء رسمي."
+        ]
+      },
+      "law": {
+        "title": "11. القانون الحاكم",
+        "body": [
+          "تخضع هذه الشروط لقوانين جمهورية البرازيل الفيدرالية. تُحل النزاعات أمام محكمة محل إقامة المستخدم."
+        ]
+      },
+      "misc": {
+        "title": "12. أحكام نهائية",
+        "body": [
+          "إذا اعتُبر أي بند من هذه الشروط باطلًا أو غير قابل للإنفاذ، تبقى الأحكام الأخرى سارية بالكامل. التسامح مع أي مخالفة لا يُعد تنازلًا عن الحقوق المستقبلية."
+        ]
+      }
+    }
+  },
+  "error": {
+    "title": "الصفحة غير موجودة",
+    "serverErrorTitle": "خطأ في الخادم",
+    "errorCode404": "404",
+    "errorCode500": "500",
+    "desc404": "الصفحة التي تبحث عنها غير موجودة أو تم نقلها.",
+    "desc500": "حدث خطأ ما لدينا. تم إبلاغ فريقنا — يرجى المحاولة بعد قليل.",
+    "backHome": "العودة إلى الرئيسية",
+    "reportIssue": "الإبلاغ عن مشكلة",
+    "metaDesc404": "الصفحة غير موجودة — PIANO LouvorJA",
+    "metaDesc500": "خطأ في الخادم — PIANO LouvorJA"
+  },
+  "newsletter": {
+    "title": "احصل على تحديثات المشروع",
+    "subtitle": "كن أول من يعلم بالإصدارات والميزات والتحديثات الجديدة. بدون رسائل مزعجة.",
+    "placeholder": "بريدك الإلكتروني",
+    "button": "اشترك",
+    "loading": "جارٍ الاشتراك...",
+    "success": "تم تأكيد الاشتراك! شكرًا لك.",
+    "errors": {
+      "invalidEmail": "بريد إلكتروني غير صالح. يرجى التحقق والمحاولة مجددًا.",
+      "alreadySubscribed": "هذا البريد الإلكتروني مشترك بالفعل.",
+      "generic": "فشل الاشتراك. يرجى المحاولة مرة أخرى.",
+      "rateLimited": "محاولات كثيرة جدًا. انتظر بضع دقائق.",
+      "serviceUnavailable": "الخدمة غير متاحة. حاول لاحقًا."
+    }
+  },
+  "releases": {
+    "metaTitle": "ملاحظات الإصدار - PIANO Louvor JA",
+    "metaDescription": "تابع آخر التحديثات والتحسينات والإصلاحات لـ PIANO Louvor JA.",
+    "title": "ملاحظات الإصدار",
+    "subtitle": "تابع آخر التحديثات والتحسينات لـ PIANO.",
+    "loading": "جارٍ تحميل الإصدارات...",
+    "error": "تعذر تحميل الإصدارات. حاول لاحقًا.",
+    "noReleases": "لم تُنشر أي إصدارات بعد.",
+    "latest": "الأحدث",
+    "highlights": "أبرز الميزات",
+    "pullRequests": "طلبات الدمج",
+    "changelog": "التغييرات",
+    "viewOnGithub": "اعرض على GitHub",
+    "allVersions": "عرض جميع الإصدارات",
+    "products": {
+      "web": "الويب",
+      "desktop": "سطح المكتب",
+      "mobile": "الهاتف"
+    }
+  },
+  "community": {
+    "eyebrow": "المجتمع",
+    "title": "انضم إلى مجتمعنا",
+    "subtitle": "مطورون ومختبرون ومهتمون يتعاونون يوميًا لتحسين PIANO LouvorJA.",
+    "roles": {
+      "tester": "مختبر",
+      "enthusiast": "مهتم",
+      "suggester": "مقترح"
+    },
+    "since": "عضو منذ {since}",
+    "link": "عرض الملف الشخصي",
+    "spot": "تريد الانضمام؟",
+    "cta": "انضم إلى المجموعة",
+    "whatsapp": "دعم واتساب",
+    "telegram": "المطورون على تيليجرام"
+  },
   "admin": {
     "comunidade": {
       "tab": "قيد الانتظار",

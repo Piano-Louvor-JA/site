@@ -1,529 +1,737 @@
 {
-  "meta.title": "PIANO LouvorJA — उपासना सेवा प्रबंधक",
-  "meta.description": "उपासना सेवा प्रबंधन हेतु वेब मंच: गीत पुस्तकें, बाइबल, उपासना क्रम, बहु-स्क्रीन प्रोजेक्शन और बहुत कुछ। निःशुल्क, ओपन-सोर्स, ऑफ़लाइन भी चलता है।",
-  "nav.features": "विशेषताएँ",
-  "nav.platforms": "प्लेटफ़ॉर्म",
-  "nav.about": "परिचय",
-  "nav.howItWorks": "यह कैसे काम करता है",
-  "nav.docs": "दस्तावेज़ीकरण",
-  "nav.contact": "संपर्क",
-  "nav.openApp": "ऐप खोलें",
-  "nav.language": "भाषा",
-  "nav.toggleTheme": "लाइट/डार्क थीम बदलें",
-  "hero.badge": "नया: वेब संस्करण उपलब्ध",
-  "hero.title": "उपासना सेवा प्रबंधक",
-  "hero.titleHighlight": "सरल और",
-  "hero.subtitle": "गीत पुस्तकें, उपासना क्रम, बाइबल और प्रोजेक्शन एक ही स्थान पर व्यवस्थित करें। किसी भी डिवाइस से पहुँचें, कोई इंस्टॉलेशन आवश्यक नहीं।",
-  "hero.ctaPrimary": "ऐप खोलें",
-  "hero.ctaSecondary": "प्लेटफ़ॉर्म देखें",
-  "hero.meta.noInstall": "कोई इंस्टॉलेशन नहीं",
-  "hero.meta.anyDevice": "कोई भी डिवाइस",
-  "hero.meta.openSource": "ओपन-सोर्स",
-  "hero.preview.currentHymn": "वर्तमान गीत",
-  "hero.preview.currentHymnTitle": "#15 — Divino Comigo",
-  "hero.preview.active": "चालू",
-  "hero.preview.next": "अगला",
-  "hero.preview.nextTitle": "स्वागत और स्तुति",
-  "hero.preview.elapsedTime": "बीता समय",
-  "hero.titleHighlight2": "संपूर्ण",
-  "stats.features": "विशेषताएँ",
-  "stats.free": "निःशुल्क",
-  "stats.installs": "इंस्टॉलेशन",
-  "stats.offline": "ऑफ़लाइन चलता है",
-  "platforms.eyebrow": "क्रॉस-प्लेटफ़ॉर्म",
-  "platforms.title": "जहाँ आपको चाहिए, वहाँ उपलब्ध",
-  "platforms.description": "अधिकतम उत्पादकता के लिए डेस्कटॉप पर, त्वरित विकल्प के रूप में ब्राउज़र में, या नेटिव मोबाइल ऐप की प्रतीक्षा करें।",
-  "platforms.desktop.badge": "अनुशंसित",
-  "platforms.desktop.title": "नेटिव डेस्कटॉप",
-  "platforms.desktop.subtitle": "लिनक्स, macOS और विंडोज़",
-  "platforms.desktop.description": "बहु-स्क्रीन समर्थन, स्वतंत्र प्रोजेक्शन और कीबोर्ड शॉर्टकट के साथ पूरा अनुभव।",
-  "platforms.desktop.feature1": "बहु-स्क्रीन प्रोजेक्शन",
-  "platforms.desktop.feature2": "पूर्ण ऑफ़लाइन मोड",
-  "platforms.desktop.feature3": "कीबोर्ड शॉर्टकट",
-  "platforms.desktop.cta": "और जानें",
-  "platforms.web.badge": "अभी प्रयोग करें",
-  "platforms.web.title": "वेब (ब्राउज़र)",
-  "platforms.web.subtitle": "कोई भी पीसी या लैपटॉप",
-  "platforms.web.description": "सीधे ब्राउज़र से प्रयोग करें। त्वरित उपयोग या ऐप इंस्टॉल न होने पर विकल्प के रूप में आदर्श।",
-  "platforms.web.feature1": "कोई इंस्टॉलेशन नहीं",
-  "platforms.web.feature2": "किसी भी OS पर चलता है",
-  "platforms.web.feature3": "स्वतः अपडेट",
-  "platforms.web.cta": "ब्राउज़र में खोलें",
-  "platforms.mobile.badge": "जल्द आ रहा है",
-  "platforms.mobile.title": "मोबाइल (जल्द आ रहा है)",
-  "platforms.mobile.subtitle": "एंड्रॉइड और iOS",
-  "platforms.mobile.description": "PIANO को आपके फ़ोन और टैबलेट तक लाने के लिए नेटिव ऐप विकसित हो रहे हैं।",
-  "platforms.mobile.feature1": "नेटिव एंड्रॉइड",
-  "platforms.mobile.feature2": "नेटिव iOS",
-  "platforms.mobile.feature3": "क्लाउड सिंक",
-  "platforms.mobile.cta": "लॉन्च पर सूचित करें",
-  "notifyModal.title": "सबसे पहले जानें",
-  "notifyModal.subtitle": "अपना ईमेल दर्ज करें; मोबाइल ऐप उपलब्ध होते ही हम आपको सूचित करेंगे।",
-  "notifyModal.placeholder": "aap@email.com",
-  "notifyModal.button": "लॉन्च पर सूचित करें",
-  "notifyModal.loading": "भेजा जा रहा है...",
-  "notifyModal.success": "हो गया! लॉन्च होते ही आपको सूचित किया जाएगा।",
-  "notifyModal.errors.invalidEmail": "कृपया एक वैध ईमेल पता दर्ज करें।",
-  "notifyModal.errors.alreadySubscribed": "यह ईमेल पहले से सब्सक्राइब है।",
-  "notifyModal.errors.generic": "कुछ गड़बड़ हो गई। कृपया थोड़ी देर बाद पुनः प्रयास करें।",
-  "features.eyebrow": "विशेषताएँ",
-  "features.title": "उपासना के लिए आवश्यक सब कुछ",
-  "features.description": "सेवा के हर पहलू को प्रबंधित करने के लिए एकीकृत उपकरणों का संपूर्ण सेट।",
-  "features.items.media.title": "मीडिया केंद्र",
-  "features.items.media.description": "तीन प्लेबैक मोड के साथ एल्बम, गीत पुस्तकें और संग्रह प्रबंधित करें।",
-  "features.items.liturgy.title": "उपासना क्रम",
-  "features.items.liturgy.description": "13 प्रकार के आइटम, ड्रैग-एंड-ड्रॉप, क्लोन और काउंटडाउन के साथ सेवा क्रम बनाएँ।",
-  "features.items.bible.title": "बाइबल",
-  "features.items.bible.description": "तेज़ खोज, पसंदीदा और सीधे प्रोजेक्शन के साथ बहु-संस्करण समर्थन।",
-  "features.items.projection.title": "बहु-स्क्रीन प्रोजेक्शन",
-  "features.items.projection.description": "प्रोजेक्टर या द्वितीयक टीवी के लिए स्वतंत्र आउटपुट, पूर्ण नियंत्रण के साथ।",
-  "features.items.tools.title": "उपयोगिताएँ",
-  "features.items.tools.description": "घड़ी, स्टॉपवॉच, टाइमर और रैफ़ल सेवा में एकीकृत।",
-  "features.items.player.title": "उन्नत प्लेयर",
-  "features.items.player.description": "सामान्य प्लेबैक, साथ-गान मोड और सिंक्रनाइज़्ड स्लाइड प्रदर्शन।",
-  "features.items.settings.title": "सेटिंग्स",
-  "features.items.settings.description": "रूप, प्रोजेक्शन, बहु-स्क्रीन और पूर्णतः अनुकूलन योग्य प्राथमिकताएँ।",
-  "features.items.offline.title": "ऑफ़लाइन चलता है",
-  "features.items.offline.description": "डेस्कटॉप ऐप मीडिया डाउनलोड के बाद 100% ऑफ़लाइन चलता है। वेब संस्करण में पहले ऑफ़लाइन संसाधन डाउनलोड करने होते हैं।",
-  "about.eyebrow": "परियोजना के बारे में",
-  "about.title": "समुदाय द्वारा, समुदाय के लिए",
-  "about.text1": "{name} एक सहयोगी ओपन-सोर्स परियोजना है, जो उपासना सेवा प्रबंधन को सरल बनाने के लिए बनाया गया है।",
-  "about.text2": "Piano टीम द्वारा विकसित, यह मंच समुदाय के योगदान से निरंतर विकसित हो रहा है। निःशुल्क, बिना विज्ञापन, बिना डेटा संग्रह।",
-  "about.openSource": "ओपन सोर्स",
-  "about.stats.free": "निःशुल्क",
-  "about.stats.installs": "इंस्टॉलेशन",
-  "about.stats.offline": "PWA ऑफ़लाइन",
-  "how.eyebrow": "यह कैसे काम करता है",
-  "how.title": "मिनटों में आरंभ करें",
-  "how.description": "अपनी सेवा व्यवस्थित करने के चार सरल चरण।",
-  "how.steps.1.title": "ऐप खोलें",
-  "how.steps.1.desc": "ब्राउज़र से प्रवेश करें या डेस्कटॉप के लिए डाउनलोड करें। पंजीकरण आवश्यक नहीं।",
-  "how.steps.2.title": "गीत पुस्तक आयात करें",
-  "how.steps.2.desc": "मीडिया केंद्र में एल्बम, गीत पुस्तकें और संग्रह जोड़ें।",
-  "how.steps.3.title": "उपासना क्रम बनाएँ",
-  "how.steps.3.desc": "समय पर नज़र रखते हुए आइटम खींचकर सेवा क्रम बनाएँ।",
-  "how.steps.4.title": "प्रोजेक्ट करें और नेतृत्व करें",
-  "how.steps.4.desc": "गीत, पद और स्लाइड प्रदर्शित करने के लिए बहु-स्क्रीन प्रोजेक्शन का उपयोग करें।",
-  "cta.title": "आरंभ करने के लिए तैयार?",
-  "cta.subtitle": "PIANO LouvorJA अभी खोलें और मिनटों में अपनी सेवा व्यवस्थित करें। निःशुल्क, बिना पंजीकरण।",
-  "cta.button": "ऐप खोलें",
-  "cta.meta.free": "100% निःशुल्क",
-  "cta.meta.noInstall": "कोई इंस्टॉलेशन नहीं",
-  "cta.meta.openSource": "ओपन सोर्स",
-  "contact.eyebrow": "संपर्क में रहें",
-  "contact.title": "हमसे संपर्क करें",
-  "contact.description": "प्रश्न, सुझाव या कोई बग मिला? हमें संदेश भेजें; हम शीघ्र से शीघ्र उत्तर देंगे।",
-  "contact.form.name": "नाम",
-  "contact.form.namePlaceholder": "आपका नाम",
-  "contact.form.email": "ईमेल",
-  "contact.form.emailPlaceholder": "aap@email.com",
-  "contact.form.subject": "विषय",
-  "contact.form.subjectPlaceholder": "यह किस बारे में है?",
-  "contact.form.message": "संदेश",
-  "contact.form.messagePlaceholder": "अपना संदेश लिखें...",
-  "contact.form.submit": "संदेश भेजें",
-  "contact.form.sending": "भेजा जा रहा है...",
-  "contact.form.success": "संदेश सफलतापूर्वक भेजा गया! हम शीघ्र ही उत्तर देंगे।",
-  "contact.form.error": "भेजने में त्रुटि। पुनः प्रयास करें या सीधे app@pianolouvorja.com.br पर ईमेल करें",
-  "contact.direct": "या सीधे ईमेल भेजें",
-  "contact.responseTime": "औसत उत्तर समय: 24-48 घंटे",
-  "docs.title": "दस्तावेज़ीकरण",
-  "docs.subtitle": "PIANO LouvorJA में निपुण होने के लिए आवश्यक सब कुछ",
-  "docs.search": "दस्तावेज़ खोजें...",
-  "docs.sections.gettingStarted.title": "आरंभ करना",
-  "docs.sections.gettingStarted.description": "प्रारंभिक सेटअप और ऐप के पहले चरण।",
-  "docs.sections.media.title": "मीडिया केंद्र",
-  "docs.sections.media.description": "एल्बम, गीत पुस्तकें और गीत संग्रह प्रबंधित करें।",
-  "docs.sections.hymnal.title": "गीत पुस्तक",
-  "docs.sections.hymnal.description": "एडवेंटिस्ट गीत पुस्तक के गीतों की खोज, प्लेबैक और निर्यात।",
-  "docs.sections.collections.title": "संग्रह",
-  "docs.sections.collections.description": "किसी भी अवसर के लिए कस्टम संग्रह और प्लेलिस्ट बनाएँ और प्रबंधित करें।",
-  "docs.sections.liturgy.title": "उपासना क्रम",
-  "docs.sections.liturgy.description": "पूरा सेवा क्रम बनाएँ और व्यवस्थित करें।",
-  "docs.sections.bible.title": "बाइबल",
-  "docs.sections.bible.description": "खोज, पसंदीदा और पद प्रोजेक्शन।",
-  "docs.sections.projection.title": "बहु-स्क्रीन प्रोजेक्शन",
-  "docs.sections.projection.description": "द्वितीयक स्क्रीन और प्रोजेक्शन सेट करें।",
-  "docs.sections.streaming.title": "स्ट्रीमिंग",
-  "docs.sections.streaming.description": "ऑनलाइन उपासना के लिए OBS, vMix और स्ट्रीमिंग प्लेटफ़ॉर्म के साथ एकीकरण।",
-  "docs.sections.tools.title": "उपयोगिताएँ",
-  "docs.sections.tools.description": "घड़ी, स्टॉपवॉच, टाइमर और रैफ़ल।",
-  "docs.sections.settings.title": "सेटिंग्स",
-  "docs.sections.settings.description": "रूप, प्रोजेक्शन और प्राथमिकताएँ अनुकूलित करें।",
-  "docs.sections.shortcuts.title": "कीबोर्ड शॉर्टकट",
-  "docs.sections.shortcuts.description": "शॉर्टकट से अपना कार्य तेज़ करें।",
-  "docs.sections.faq.title": "सामान्य प्रश्न",
-  "docs.sections.faq.description": "अक्सर पूछे जाने वाले प्रश्न",
-  "docs.content.gettingStarted.intro": "PIANO LouvorJA एक वेब ऐप (PWA) है जो आधुनिक ब्राउज़र वाले किसी भी डिवाइस पर चलता है। इंस्टॉलेशन आवश्यक नहीं, पर ऑफ़लाइन उपयोग के लिए आप इसे ब्राउज़र से ऐप इंस्टॉल करें विकल्प से जोड़ सकते हैं।",
-  "docs.content.gettingStarted.steps": [
-    "अपने डेस्कटॉप या मोबाइल ब्राउज़र में ऐप खोलें।",
-    "ऐप इंस्टॉल करें पर क्लिक करें या होम स्क्रीन पर जोड़ने के लिए ब्राउज़र शॉर्टकट उपयोग करें।",
-    "हो गया! पहली बार लोड होने के बाद ऐप ऑफ़लाइन चलता है।"
-  ],
-  "docs.content.gettingStarted.tip": "सर्वोत्तम उपासना अनुभव के लिए दो मॉनिटर वाला डेस्कटॉप उपयोग करें: एक नियंत्रण हेतु, एक प्रोजेक्शन हेतु।",
-  "docs.content.shortcuts.table.action": "क्रिया",
-  "docs.content.shortcuts.table.shortcut": "शॉर्टकट",
-  "docs.content.shortcuts.items": [
-    {
-      "action": "चलाएँ/रोकें",
-      "shortcut": "Space"
+  "meta": {
+    "title": "PIANO LouvorJA — उपासना सेवा प्रबंधक",
+    "description": "उपासना सेवा प्रबंधन हेतु वेब मंच: गीत पुस्तकें, बाइबल, उपासना क्रम, बहु-स्क्रीन प्रोजेक्शन और बहुत कुछ। निःशुल्क, ओपन-सोर्स, ऑफ़लाइन भी चलता है।"
+  },
+  "nav": {
+    "features": "विशेषताएँ",
+    "platforms": "प्लेटफ़ॉर्म",
+    "about": "परिचय",
+    "howItWorks": "यह कैसे काम करता है",
+    "docs": "दस्तावेज़ीकरण",
+    "contact": "संपर्क",
+    "openApp": "ऐप खोलें",
+    "language": "भाषा",
+    "toggleTheme": "लाइट/डार्क थीम बदलें"
+  },
+  "hero": {
+    "badge": "नया: वेब संस्करण उपलब्ध",
+    "title": "उपासना सेवा प्रबंधक",
+    "titleHighlight": "सरल और",
+    "subtitle": "गीत पुस्तकें, उपासना क्रम, बाइबल और प्रोजेक्शन एक ही स्थान पर व्यवस्थित करें। किसी भी डिवाइस से पहुँचें, कोई इंस्टॉलेशन आवश्यक नहीं।",
+    "ctaPrimary": "ऐप खोलें",
+    "ctaSecondary": "प्लेटफ़ॉर्म देखें",
+    "meta": {
+      "noInstall": "कोई इंस्टॉलेशन नहीं",
+      "anyDevice": "कोई भी डिवाइस",
+      "openSource": "ओपन-सोर्स"
     },
-    {
-      "action": "अगला ट्रैक",
-      "shortcut": "→"
+    "preview": {
+      "currentHymn": "वर्तमान गीत",
+      "currentHymnTitle": "#15 — Divino Comigo",
+      "active": "चालू",
+      "next": "अगला",
+      "nextTitle": "स्वागत और स्तुति",
+      "elapsedTime": "बीता समय"
     },
-    {
-      "action": "पिछला ट्रैक",
-      "shortcut": "←"
+    "titleHighlight2": "संपूर्ण"
+  },
+  "stats": {
+    "features": "विशेषताएँ",
+    "free": "निःशुल्क",
+    "installs": "इंस्टॉलेशन",
+    "offline": "ऑफ़लाइन चलता है"
+  },
+  "platforms": {
+    "eyebrow": "क्रॉस-प्लेटफ़ॉर्म",
+    "title": "जहाँ आपको चाहिए, वहाँ उपलब्ध",
+    "description": "अधिकतम उत्पादकता के लिए डेस्कटॉप पर, त्वरित विकल्प के रूप में ब्राउज़र में, या नेटिव मोबाइल ऐप की प्रतीक्षा करें।",
+    "desktop": {
+      "badge": "अनुशंसित",
+      "title": "नेटिव डेस्कटॉप",
+      "subtitle": "लिनक्स, macOS और विंडोज़",
+      "description": "बहु-स्क्रीन समर्थन, स्वतंत्र प्रोजेक्शन और कीबोर्ड शॉर्टकट के साथ पूरा अनुभव।",
+      "feature1": "बहु-स्क्रीन प्रोजेक्शन",
+      "feature2": "पूर्ण ऑफ़लाइन मोड",
+      "feature3": "कीबोर्ड शॉर्टकट",
+      "cta": "और जानें"
     },
-    {
-      "action": "वॉल्यूम +",
-      "shortcut": "↑"
+    "web": {
+      "badge": "अभी प्रयोग करें",
+      "title": "वेब (ब्राउज़र)",
+      "subtitle": "कोई भी पीसी या लैपटॉप",
+      "description": "सीधे ब्राउज़र से प्रयोग करें। त्वरित उपयोग या ऐप इंस्टॉल न होने पर विकल्प के रूप में आदर्श।",
+      "feature1": "कोई इंस्टॉलेशन नहीं",
+      "feature2": "किसी भी OS पर चलता है",
+      "feature3": "स्वतः अपडेट",
+      "cta": "ब्राउज़र में खोलें"
     },
-    {
-      "action": "वॉल्यूम -",
-      "shortcut": "↓"
-    },
-    {
-      "action": "फ़ुलस्क्रीन मोड",
-      "shortcut": "F"
-    },
-    {
-      "action": "प्रोजेक्शन चालू/बंद",
-      "shortcut": "P"
-    },
-    {
-      "action": "तेज़ खोज",
-      "shortcut": "Ctrl+K"
+    "mobile": {
+      "badge": "जल्द आ रहा है",
+      "title": "मोबाइल (जल्द आ रहा है)",
+      "subtitle": "एंड्रॉइड और iOS",
+      "description": "PIANO को आपके फ़ोन और टैबलेट तक लाने के लिए नेटिव ऐप विकसित हो रहे हैं।",
+      "feature1": "नेटिव एंड्रॉइड",
+      "feature2": "नेटिव iOS",
+      "feature3": "क्लाउड सिंक",
+      "cta": "लॉन्च पर सूचित करें"
     }
-  ],
-  "docs.content.modules.media": ["3 मोड वाला प्लेयर", "गीत पुस्तकें और एल्बम", "साथ-गान मोड"],
-  "docs.content.modules.hymnal": ["नंबर या शीर्षक से तेज़ खोज", "क्रमिक प्लेबैक", "PDF निर्यात या प्रिंट"],
-  "docs.content.modules.collections": [
-    "ऑनलाइन और कस्टम संग्रह",
-    "प्लेलिस्ट में ड्रैग-एंड-ड्रॉप",
-    "बोलों के साथ साथ-गान मोड"
-  ],
-  "docs.content.modules.liturgy": ["13 प्रकार के आइटम", "ड्रैग-एंड-ड्रॉप", "प्रति-आइटम काउंटडाउन"],
-  "docs.content.modules.bible": ["अनेक संस्करण", "तेज़ खोज", "सीधा प्रोजेक्शन"],
-  "docs.content.modules.projection": ["स्वतंत्र आउटपुट", "बहु-स्क्रीन", "पूर्ण नियंत्रण"],
-  "docs.content.modules.streaming": [
-    "बोल प्रदर्शन के लिए कस्टम CSS",
-    "OBS और vMix एकीकरण",
-    "YouTube और Facebook पर आउटपुट"
-  ],
-  "docs.content.modules.tools": ["घड़ी और स्टॉपवॉच", "काउंटडाउन टाइमर", "रैफ़ल"],
-  "docs.content.modules.settings": ["रूप", "प्रोजेक्शन", "बहु-स्क्रीन"],
-  "docs.faq.cost.question": "क्या PIANO LouvorJA वास्तव में निःशुल्क है?",
-  "docs.faq.cost.answer": "हाँ! PIANO LouvorJA 100% निःशुल्क और ओपन-सोर्स है। कोई सब्सक्रिप्शन, विज्ञापन या डेटा संग्रह नहीं। पूरा कोड GitHub पर उपलब्ध है।",
-  "docs.faq.offline.question": "क्या यह बिना इंटरनेट चलता है?",
-  "docs.faq.offline.answer": "हाँ। मीडिया डाउनलोड के बाद डेस्कटॉप ऐप 100% ऑफ़लाइन चलता है। वेब संस्करण भी ऑफ़लाइन चलता है, पर पहले ऑफ़लाइन संसाधन डाउनलोड करने होते हैं। सभी गीत, उपासना क्रम और सेटिंग्स आपके डिवाइस पर स्थानीय रूप से संग्रहीत होती हैं।",
-  "docs.faq.devices.question": "किन डिवाइस पर उपयोग कर सकता हूँ?",
-  "docs.faq.devices.answer": "PIANO आधुनिक ब्राउज़र वाले किसी भी डिवाइस पर चलता है: डेस्कटॉप (लिनक्स, macOS, विंडोज़), टैबलेट और फ़ोन। सर्वोत्तम बहु-स्क्रीन प्रोजेक्शन अनुभव के लिए डेस्कटॉप की अनुशंसा करते हैं।",
-  "docs.faq.data.question": "मेरा डेटा कहाँ संग्रहीत होता है?",
-  "docs.faq.data.answer": "ऐप का डेटा — गीत, उपासना क्रम, सेटिंग्स — आपके ब्राउज़र या डिवाइस में स्थानीय रूप से संग्रहीत होता है। उपयोग के दौरान कुछ भी बाहरी सर्वर पर नहीं भेजा जाता। संपर्क फ़ॉर्म भेजने पर आपकी जानकारी (नाम, ईमेल, संदेश) Web3Forms से जाती है ताकि हम उत्तर दे सकें। पूरा विवरण गोपनीयता नीति देखें।",
-  "docs.faq.privacy.question": "आप मेरी गोपनीयता कैसे सुरक्षित करते हैं?",
-  "docs.faq.privacy.answer": "PIANO LouvorJA GDPR और LGPD (ब्राज़ीलीय सामान्य डेटा सुरक्षा कानून) का पालन करता है। वेबसाइट कोई ट्रैकिंग, एनालिटिक्स या विज्ञापन कुकी नहीं रखती — केवल एक तकनीकी कुकी आपकी भाषा याद रखने के लिए। हम डेटा बिक्री या मार्केटिंग हेतु तृतीय पक्ष को नहीं देते। अधिक जानकारी हेतु गोपनीयता नीति देखें।",
-  "docs.faq.support.question": "सहायता कैसे पाऊँ या समस्या कैसे रिपोर्ट करूँ?",
-  "docs.faq.support.answer": "संपर्क पृष्ठ के फ़ॉर्म से, या सीधे हमारे GitHub रिपॉज़िटरी पर issue खोलकर हमसे संपर्क करें। सेवा के दौरान तत्काल समस्याओं के लिए नीचे दिए ट्रबलशूटिंग प्रश्न देखें।",
-  "docs.faq.updates.question": "ऐप कैसे अपडेट होता है?",
-  "docs.faq.updates.answer": "PIANO LouvorJA एक Progressive Web App (PWA) है। पेज पुनः लोड करने पर अपडेट स्वतः लागू हो जाते हैं। हाथ से डाउनलोड या इंस्टॉल की आवश्यकता नहीं। आपके पास हमेशा नवीनतम संस्करण रहता है।",
-  "docs.faq.troubleshooting.question": "यदि ऐप लोड न हो या त्रुटि दिखाए तो?",
-  "docs.faq.troubleshooting.answer": "1) पेज पुनः लोड करें (कैश साफ़ करने के लिए Ctrl+F5)। 2) पहली पहुँच पर अपना इंटरनेट कनेक्शन जाँचें। 3) ब्राउज़र सेटिंग से साइट डेटा मिटाएँ। 4) एक्सटेंशन टकराव जाँचने के लिए इनकॉग्निटो मोड आज़माएँ। 5) समस्या बनी रहे तो ब्राउज़र और डिवाइस विवरण के साथ संपर्क फ़ॉर्म या GitHub से रिपोर्ट करें।",
-  "docs.faq.contribute.question": "परियोजना में योगदान कैसे दूँ?",
-  "docs.faq.contribute.answer": "परियोजना ओपन-सोर्स है और GitHub पर योगदान स्वीकार करती है। आप बग रिपोर्ट कर सकते हैं, सुविधाएँ सुझा सकते हैं, पुल रिक्वेस्ट भेज सकते हैं या अन्य भाषाओं में अनुवाद में सहायता कर सकते हैं।",
-  "docs.sidebarLabel": "दस्तावेज़ अनुभाग",
-  "footer.tagline": "वेब उपासना सेवा प्रबंधक। निःशुल्क और ओपन-सोर्स।",
-  "footer.navLabel": "फ़ुटर नेविगेशन",
-  "footer.navTitle": "नेविगेशन",
-  "footer.product": "उत्पाद",
-  "footer.resources": "संसाधन",
-  "footer.company": "कंपनी",
-  "footer.links.features": "विशेषताएँ",
-  "footer.links.platforms": "प्लेटफ़ॉर्म",
-  "footer.links.howItWorks": "यह कैसे काम करता है",
-  "footer.links.docs": "दस्तावेज़ीकरण",
-  "footer.links.contact": "संपर्क",
-  "footer.links.github": "GitHub",
-  "footer.links.app": "ऐप खोलें",
-  "footer.copyright": "Piano टीम द्वारा विश्वास और समर्पण से बनाया गया।",
-  "footer.developedBy": "विकसितकर्ता",
-  "footer.team": "Piano टीम",
-  "footer.rights": "सर्वाधिकार सुरक्षित।",
-  "footer.legalNavLabel": "कानूनी लिंक",
-  "footer.legalNavTitle": "कानूनी",
-  "footer.privacy": "गोपनीयता नीति",
-  "footer.terms": "उपयोग की शर्तें",
-  "footer.social.github": "GitHub",
-  "footer.social.youtube": "YouTube",
-  "footer.social.whatsapp": "WhatsApp",
-  "footer.social.telegram": "Telegram",
-  "common.loading": "लोड हो रहा है...",
-  "common.error": "त्रुटि",
-  "common.close": "बंद करें",
-  "common.back": "पीछे",
-  "common.learnMore": "और जानें",
-  "common.skipToContent": "सामग्री पर जाएँ",
-  "common.allRightsReserved": "सर्वाधिकार सुरक्षित।",
-  "privacy.title": "गोपनीयता नीति",
-  "privacy.metaDescription": "PIANO LouvorJA आपके व्यक्तिगत डेटा को LGPD के अनुपालन में कैसे संभालता है।",
-  "privacy.lastUpdated": "अंतिम अपडेट: 30 जुलाई 2026",
-  "privacy.tocLabel": "विषय-सूची",
-  "privacy.intro": "यह गोपनीयता नीति वर्णन करती है कि PIANO LouvorJA इस वेबसाइट से संग्रहीत व्यक्तिगत डेटा को कैसे संभालता है। हम ब्राज़ीलीय सामान्य डेटा सुरक्षा कानून (LGPD — कानून सं. 13.709/2018) के अनुपालन में आपकी गोपनीयता की रक्षा के प्रति प्रतिबद्ध हैं।",
-  "privacy.sections.data.title": "1. हम जो डेटा संग्रहित करते हैं",
-  "privacy.sections.data.body": [
-    "1.1 आपके द्वारा दिया गया डेटा",
-    "संपर्क फ़ॉर्म भरने पर हम संग्रहित करते हैं:",
-    "नाम",
-    "ईमेल पता",
-    "संदेश का विषय",
-    "संदेश की सामग्री",
-    "1.2 तकनीकी डेटा",
-    "तकनीकी कुकी piano_lang: केवल आपकी भाषा प्राथमिकता रखती है। इसमें कोई व्यक्तिगत पहचानकर्ता नहीं।",
-    "हम ट्रैकिंग, एनालिटिक्स, विज्ञापन या प्रोफ़ाइलिंग कुकी का उपयोग नहीं करते।",
-    "1.3 ऐप डेटा",
-    "PIANO LouvorJA ऐप (गीत, उपासना क्रम, सेटिंग्स, प्लेलिस्ट) सारा डेटा आपके ब्राउज़र (LocalStorage/IndexedDB) में स्थानीय रूप से रखता है। यह डेटा कभी हमारे सर्वर पर नहीं भेजा जाता।",
-    "1.4 तकनीकी ऑडियंस डेटा (स्वतः संग्रह)",
-    "साइट ब्राउज़ करने पर हम समुच्चित रूप में संग्रहित करते हैं:",
-    "यात्रा का मूल देश (CDN प्रदाता के HTTP हेडर से, जैसे Cloudflare/Vercel) — हम GPS आधारित भू-स्थान का उपयोग नहीं करते।",
-    "IP पता केवल हैश (गुप्त salt के साथ SHA-256) के रूप में प्रोसेस होता है। IP पता कभी सादे पाठ में संग्रहीत नहीं होता और आपकी पहचान नहीं कर सकता।",
-    "प्रति देश प्रति दिन यात्रा-गणक। कोई व्यक्तिगत प्रोफ़ाइल, ब्राउज़िंग इतिहास या पहचान से लिंक नहीं।"
-  ],
-  "privacy.sections.purpose.title": "2. प्रोसेसिंग का उद्देश्य",
-  "privacy.sections.purpose.body": [
-    "संपर्क फ़ॉर्म का डेटा केवल इनके लिए उपयोग होता है:",
-    "आपके अनुरोध का उत्तर देना",
-    "तकनीकी सहायता देना",
-    "अनुरोधित संचार भेजना",
-    "कानूनी आधार: LGPD अनुच्छेद 7, मद IX (वैध हित और आपकी पहल पर उत्तर)।"
-  ],
-  "privacy.sections.sharing.title": "3. डेटा साझा करना",
-  "privacy.sections.sharing.body": [
-    "3.1 Web3Forms",
-    "संपर्क फ़ॉर्म सबमिशन प्रोसेस करने के लिए Web3Forms (USA) उपयोग करता है। डेटा हमारे ईमेल पर अग्रेषण हेतु Web3Forms को जाता है।",
-    "उप-प्रोसेसर: Web3Forms",
-    "देश: संयुक्त राज्य अमेरिका",
-    "उद्देश्य: संदेश अग्रेषण",
-    "3.2 होस्टिंग प्रदाता",
-    "साइट क्लाउड इंफ़्रा स्ट्रक्चर प्रदाता पर होस्ट है जो तकनीकी पहुँच डेटा (IP, टाइमस्टैम्प, यूज़र-एजेंट) लॉग कर सकता है।",
-    "3.3 हम डेटा इनके साथ साझा नहीं करते",
-    "विज्ञापन कंपनियाँ",
-    "सोशल नेटवर्क",
-    "डेटा ब्रोकर",
-    "मार्केटिंग हेतु तृतीय पक्ष"
-  ],
-  "privacy.sections.international.title": "4. अंतरराष्ट्रीय स्थानांतरण",
-  "privacy.sections.international.body": [
-    "संपर्क फ़ॉर्म का डेटा संयुक्त राज्य अमेरिका में Web3Forms द्वारा प्रोसेस होता है। यह अंतरराष्ट्रीय स्थानांतरण फ़ॉर्म सेवा देने के लिए आवश्यक है और LGPD के अनुच्छेद 33 की कानूनी उपधारणाओं में आता है।"
-  ],
-  "privacy.sections.rights.title": "5. आपके अधिकार (अनुच्छेद 18, LGPD)",
-  "privacy.sections.rights.body": [
-    "अपने व्यक्तिगत डेटा संबंधी आपके अधिकार:",
-    "प्रोसेसिंग के अस्तित्व की पुष्टि",
-    "डेटा तक पहुँच",
-    "अपूर्ण, ग़लत या पुराने डेटा का सुधार",
-    "अनावश्यक डेटा का गुमनामकरण, अवरोधन या विलोपन",
-    "डेटा पोर्टेबिलिटी",
-    "व्यक्तिगत डेटा का विलोपन",
-    "साझाकरण की जानकारी",
-    "अधिकार कैसे प्रयोग करें",
-    "contato@pianolouvorja.com.br पर ईमेल भेजें:",
-    "पूरा नाम",
-    "जिस अधिकार का प्रयोग करना है उसका विवरण",
-    "पंजीकृत ईमेल पता",
-    "उत्तर समय: 15 कैलेंडर दिनों के भीतर (अनुच्छेद 19, LGPD)।"
-  ],
-  "privacy.sections.security.title": "6. सुरक्षा उपाय",
-  "privacy.sections.security.body": [
-    "हम निम्न तकनीकी और संगठनात्मक उपाय अपनाते हैं:",
-    "सभी संचार पर HTTPS/TLS एन्क्रिप्शन",
-    "कोई पासवर्ड संग्रहण नहीं (कोई लॉगिन तंत्र नहीं)",
-    "डेटा न्यूनीकरण (केवल आवश्यक संग्रहित करते हैं)",
-    "व्यक्तिगत पहचान रहित तकनीकी कुकी",
-    "टीम द्वारा सीमित डेटा पहुँच"
-  ],
-  "privacy.sections.retention.title": "7. डेटा प्रतिधारण",
-  "privacy.sections.retention.body": [
-    "संपर्क फ़ॉर्म: उत्तर देने तक आवश्यकतानुसार, फिर ऐतिहासिक अभिलेख हेतु 12 माह तक, उसके बाद विलोपन।",
-    "पहुँच लॉग: होस्टिंग प्रदाता की नीति अनुसार।",
-    "स्थानीय ऐप डेटा: आपके डिवाइस पर तब तक रहता है जब तक आप इसे हटाएँ नहीं।"
-  ],
-  "privacy.sections.cookies.title": "8. कुकी",
-  "privacy.sections.cookies.body": [
-    "हम तृतीय-पक्ष, एनालिटिक्स या विज्ञापन कुकी उपयोग नहीं करते।",
-    "देश-स्तरीय ऑडियंस टेलीमेट्री समुच्चित और गुमनाम है (देश + हैश्ड IP दैनिक गणक); यह कोई ट्रैकिंग कुकी उपयोग नहीं करती और व्यक्तियों की पहचान नहीं करती।"
-  ],
-  "privacy.sections.cookies.table.header.cookie": "कुकी",
-  "privacy.sections.cookies.table.header.type": "प्रकार",
-  "privacy.sections.cookies.table.header.purpose": "उद्देश्य",
-  "privacy.sections.cookies.table.header.duration": "अवधि",
-  "privacy.sections.cookies.table.rows": [
-    {
-      "name": "piano_lang",
-      "type": "तकनीकी",
-      "purpose": "पसंदीदा भाषा याद रखना",
-      "duration": "सत्र"
+  },
+  "notifyModal": {
+    "title": "सबसे पहले जानें",
+    "subtitle": "अपना ईमेल दर्ज करें; मोबाइल ऐप उपलब्ध होते ही हम आपको सूचित करेंगे।",
+    "placeholder": "aap@email.com",
+    "button": "लॉन्च पर सूचित करें",
+    "loading": "भेजा जा रहा है...",
+    "success": "हो गया! लॉन्च होते ही आपको सूचित किया जाएगा।",
+    "errors": {
+      "invalidEmail": "कृपया एक वैध ईमेल पता दर्ज करें।",
+      "alreadySubscribed": "यह ईमेल पहले से सब्सक्राइब है।",
+      "generic": "कुछ गड़बड़ हो गई। कृपया थोड़ी देर बाद पुनः प्रयास करें।"
     }
-  ],
-  "privacy.sections.children.title": "9. बच्चे और अवयस्क",
-  "privacy.sections.children.body": [
-    "ऐप बच्चों को लक्षित नहीं करता और 18 वर्ष से कम आयु के किसी से जानबूझकर डेटा संग्रह नहीं करता। सामग्री (गीत, उपासना क्रम, बाइबल पाठ) धार्मिक है और संवेदनशील डेटा संग्रह शामिल नहीं।"
-  ],
-  "privacy.sections.changes.title": "10. इस नीति में परिवर्तन",
-  "privacy.sections.changes.body": [
-    "हम यह नीति कभी भी अपडेट कर सकते हैं। नवीनतम संस्करण हमेशा इस पृष्ठ पर उपलब्ध रहेगा, ऊपर अपडेट तिथि के साथ। समय-समय पर समीक्षा की अनुशंसा है।"
-  ],
-  "privacy.sections.dpo.title": "11. डेटा सुरक्षा अधिकारी (DPO)",
-  "privacy.sections.dpo.body": [
-    "LGPD के अनुच्छेद 41 के अनुपालन में, प्रश्न contato@pianolouvorja.com.br पर भेजे जा सकते हैं।"
-  ],
-  "privacy.sections.anpd.title": "12. डेटा सुरक्षा प्राधिकरण",
-  "privacy.sections.anpd.body": [
-    "शिकायत दर्ज करने के लिए आप ANPD (राष्ट्रीय डेटा सुरक्षा प्राधिकरण) से संपर्क कर सकते हैं:",
-    "वेबसाइट: {link}",
-    "ईमेल: ouvidoria@anpd.gov.br"
-  ],
-  "privacy.sections.anpd.link.url": "https://www.gov.br/anpd",
-  "privacy.sections.anpd.link.text": "www.gov.br/anpd",
-  "terms.title": "उपयोग की शर्तें",
-  "terms.metaDescription": "PIANO LouvorJA की उपयोगशर्तें।",
-  "terms.lastUpdated": "अंतिम अपडेट: 30 जुलाई 2026",
-  "terms.tocLabel": "विषय-सूची",
-  "terms.intro": "PIANO LouvorJA में आपका स्वागत है। इस वेबसाइट और ऐप तक पहुँच व उपयोग से आप इन उपयोगशर्तों से सहमत होते हैं। कृपया ध्यान से पढ़ें।",
-  "terms.sections.acceptance.title": "1. शर्तों की स्वीकृति",
-  "terms.sections.acceptance.body": [
-    "PIANO LouvorJA का उपयोग इन शर्तों की पूर्ण स्वीकृति मानता है। किसी प्रावधान से सहमत नहीं हैं तो ऐप का उपयोग न करें।"
-  ],
-  "terms.sections.service.title": "2. सेवा की प्रकृति",
-  "terms.sections.service.body": [
-    "PIANO LouvorJA एक निःशुल्क ओपन-सोर्स वेब ऐप है, उपासना सेवा प्रबंधन में सहायता हेतु, संगठित:",
-    "डिजिटल गीत पुस्तक और संगीत प्लेबैक",
-    "उपासना क्रम और सेवा अनुसूची प्रबंधन",
-    "बोल और बाइबल पाठ प्रोजेक्शन",
-    "सहायक उपकरण (टाइमर, रैफ़ल आदि)",
-    "ऐप धार्मिक और सामुदायिक उपयोग हेतु है, व्यावसायिक उद्देश्य नहीं।"
-  ],
-  "terms.sections.license.title": "3. लाइसेंस",
-  "terms.sections.license.body": [
-    "3.1 सॉफ़्टवेयर",
-    "सोर्स कोड ओपन-सोर्स लाइसेंस के अंतर्गत वितरित है। विवरण हेतु {link} देखें।",
-    "3.2 सामग्री",
-    "पाठ्य सामग्री (गीत, बोल, साहित्य) संबंधित कॉपीराइट धारकों की है। PIANO LouvorJA:",
-    "सामग्री की लेखकत्व का दावा नहीं करता",
-    "सामग्री का सीधा व्यावसायिक विपणन नहीं करता",
-    "कानून 9.610/98 के अनुसार कॉपीराइट का सम्मान करता है"
-  ],
-  "terms.sections.license.link.url": "https://github.com/Piano-Louvor-JA",
-  "terms.sections.license.link.text": "GitHub रिपॉज़िटरी",
-  "terms.sections.user.title": "4. उपयोगकर्ता उत्तरदायित्व",
-  "terms.sections.user.body": [
-    "PIANO LouvorJA उपयोग कर, आप सहमत होते हैं:",
-    "ऐप का नैतिक और लागू कानून के अनुपालन में उपयोग",
-    "अवैध, निंदात्मक या तृतीय-पक्ष अधिकारों का उल्लंघन करने वाला उपयोग नहीं",
-    "प्रदर्शित रचनाओं के कॉपीराइट का सम्मान",
-    "स्थानीय डेटा सुरक्षित रखना (हम सर्वर बैकअप नहीं रखते)",
-    "सुरक्षा या उपलब्धता से समझौता करने का प्रयास नहीं"
-  ],
-  "terms.sections.responsibility.title": "5. उत्तरदायित्व",
-  "terms.sections.responsibility.body": [
-    "5.1 सेवा की प्रकृति",
-    "PIANO LouvorJA किसी प्रकार की गारंटी रहित, जैसा है उपलब्ध कराया जाता है। हम गारंटी नहीं देते कि:",
-    "सेवा निर्बाध, सुरक्षित या त्रुटि-रहित रहेगी",
-    "परिणाम सटीक या विश्वसनीय होंगे",
-    "कोई त्रुटि सुधारी जाएगी",
-    "5.2 उत्तरदायित्व सीमा",
-    "कानून द्वारा अनुमत अधिकतम सीमा तक, PIANO LouvorJA उत्तरदायी नहीं:",
-    "प्रत्यक्ष, अप्रत्यक्ष, आकस्मिक या परिणामी हानि",
-    "डेटा हानि (बैकअप रखें — डेटा स्थानीय है)",
-    "महत्वपूर्ण उपयोग के दौरान सेवा बाधित होना",
-    "तृतीय-पक्ष सामग्री या बाहरी लिंक"
-  ],
-  "terms.sections.ip.title": "6. बौद्धिक संपदा",
-  "terms.sections.ip.body": [
-    "6.1 सॉफ़्टवेयर",
-    "सोर्स कोड कॉपीराइट से सुरक्षित और ओपन-सोर्स लाइसेंस पर वितरित।",
-    "6.2 ट्रेडमार्क",
-    "PIANO LouvorJA और LouvorJA परियोजना के ट्रेडमार्क हैं। अनधिकृत उपयोग वर्जित।",
-    "6.3 तृतीय-पक्ष सामग्री",
-    "गीत, बोल और साहित्य संबंधित लेखकों/प्रकाशकों के हैं। इस सामग्री का व्यवस्थापन कोई बौद्धिक संपदा अधिकार अंतरित नहीं करता।"
-  ],
-  "terms.sections.donations.title": "7. दान और योगदान",
-  "terms.sections.donations.body": [
-    "PIANO LouvorJA निःशुल्क और ओपन-सोर्स है। GitHub के माध्यम से स्वैच्छिक योगदान (पुल रिक्वेस्ट, issue, अनुवाद) स्वीकृत हैं। संभावित दान उपभोक्ता संबंध नहीं बनाते और लाभ की गारंटी नहीं देते।"
-  ],
-  "terms.sections.privacy.title": "8. गोपनीयता और डेटा",
-  "terms.sections.privacy.body": [
-    "व्यक्तिगत डेटा प्रोसेसिंग हमारी {link} द्वारा शासित है, जो इन शर्तों का भाग है।",
-    "तकनीकी ऑडियंस डेटा (मूल देश और हैश्ड IP, दैनिक गणकों में समुच्चित) सांख्यिकी हेतु स्वतः संग्रहित होता है।",
-    "IP पता कभी सादे पाठ में संग्रहीत नहीं होता और व्यक्तिगत उपयोगकर्ताओं की पहचान नहीं कर सकता।"
-  ],
-  "terms.sections.privacy.link.url": "/privacy",
-  "terms.sections.privacy.link.text": "गोपनीयता नीति",
-  "terms.sections.modifications.title": "9. संशोधन",
-  "terms.sections.modifications.body": [
-    "हम इन शर्तों में कभी भी संशोधन कर सकते हैं। परिवर्तन प्रकाशन पर तत्काल प्रभावी। समय-समय पर समीक्षा उपयोगकर्ता का उत्तरदायित्व है।"
-  ],
-  "terms.sections.termination.title": "10. समाप्ति",
-  "terms.sections.termination.body": [
-    "आप ब्राउज़र बंद करके या PWA हटाकर कभी भी ऐप उपयोग बंद कर सकते हैं। खाता तंत्र न होने से औपचारिक निरस्तीकरण आवश्यक नहीं।"
-  ],
-  "terms.sections.law.title": "11. लागू कानून",
-  "terms.sections.law.body": [
-    "ये शर्तें ब्राज़ील संघीय गणराज्य के कानूनों द्वारा शासित हैं। विवाद उपयोगकर्ता के निवास स्थान की न्यायालय में निपटेंगे।"
-  ],
-  "terms.sections.misc.title": "12. अंतिम प्रावधान",
-  "terms.sections.misc.body": [
-    "इन शर्तों का कोई प्रावधान अवैध या अप्रवर्तनीय हो तो शेष प्रावधान पूर्ण रूप से लागू रहेंगे। किसी उल्लंघन की सहनशीलता भविष्य के अधिकारों से विरोध नहीं मानी जाती।"
-  ],
-  "error.title": "पृष्ठ नहीं मिला",
-  "error.serverErrorTitle": "सर्वर त्रुटि",
-  "error.errorCode404": "404",
-  "error.errorCode500": "500",
-  "error.desc404": "आप जो पृष्ठ खोज रहे हैं वह नहीं मिला या हटा दिया गया।",
-  "error.desc500": "हमारी ओर से कुछ गड़बड़ हुई। हमारी टीम को सूचित कर दिया गया है — कृपया थोड़ी देर बाद पुनः प्रयास करें।",
-  "error.backHome": "होम पर वापस",
-  "error.reportIssue": "समस्या रिपोर्ट करें",
-  "error.metaDesc404": "पृष्ठ नहीं मिला — PIANO LouvorJA",
-  "error.metaDesc500": "सर्वर त्रुटि — PIANO LouvorJA",
-  "newsletter.title": "परियोजना अपडेट पाएँ",
-  "newsletter.subtitle": "नए संस्करणों, विशेषताओं और अपडेट की सूचना पाएँ। कोई स्पैम नहीं।",
-  "newsletter.placeholder": "आपका ईमेल",
-  "newsletter.button": "सब्सक्राइब करें",
-  "newsletter.loading": "सब्सक्राइब हो रहा है...",
-  "newsletter.success": "सब्सक्रिप्शन पुष्ट! धन्यवाद।",
-  "newsletter.errors.invalidEmail": "अवैध ईमेल। जाँच कर पुनः प्रयास करें।",
-  "newsletter.errors.alreadySubscribed": "यह ईमेल पहले से सब्सक्राइब है।",
-  "newsletter.errors.generic": "सब्सक्रिप्शन विफल। कृपया पुनः प्रयास करें।",
-  "newsletter.errors.rateLimited": "बहुत अधिक प्रयास। कुछ मिनट प्रतीक्षा करें।",
-  "newsletter.errors.serviceUnavailable": "सेवा अनुपलब्ध। बाद में पुनः प्रयास करें।",
-  "releases.metaTitle": "रिलीज़ नोट्स - PIANO Louvor JA",
-  "releases.metaDescription": "PIANO Louvor JA के नवीनतम अपडेट, सुविधाएँ और सुधार देखें।",
-  "releases.title": "रिलीज़ नोट्स",
-  "releases.subtitle": "PIANO के नवीनतम अपडेट और सुधार देखें।",
-  "releases.loading": "रिलीज़ लोड हो रहे हैं...",
-  "releases.error": "रिलीज़ लोड नहीं हो सके। बाद में पुनः प्रयास करें।",
-  "releases.noReleases": "अभी कोई रिलीज़ प्रकाशित नहीं।",
-  "releases.latest": "नवीनतम",
-  "releases.highlights": "मुख्य बातें",
-  "releases.pullRequests": "पुल रिक्वेस्ट",
-  "releases.changelog": "परिवर्तन",
-  "releases.viewOnGithub": "GitHub पर देखें",
-  "releases.allVersions": "सभी संस्करण देखें",
-  "releases.products.web": "वेब",
-  "releases.products.desktop": "डेस्कटॉप",
-  "releases.products.mobile": "मोबाइल",
-  "community.eyebrow": "समुदाय",
-  "community.title": "हमारे समुदाय से जुड़ें",
-  "community.subtitle": "डेवलपर, टेस्टर और उत्साही, हर दिन PIANO LouvorJA को बेहतर बनाने में सहयोग करते हैं।",
-  "community.roles.tester": "टेस्टर",
-  "community.roles.enthusiast": "उत्साही",
-  "community.roles.suggester": "सुझावकर्ता",
-  "community.since": "{since} से",
-  "community.link": "प्रोफ़ाइल देखें",
-  "community.spot": "जुड़ना चाहते हैं?",
-  "community.cta": "समूह से जुड़ें",
-  "community.whatsapp": "WhatsApp सहायता",
-  "community.telegram": "Telegram पर डेव",
+  },
+  "features": {
+    "eyebrow": "विशेषताएँ",
+    "title": "उपासना के लिए आवश्यक सब कुछ",
+    "description": "सेवा के हर पहलू को प्रबंधित करने के लिए एकीकृत उपकरणों का संपूर्ण सेट।",
+    "items": {
+      "media": {
+        "title": "मीडिया केंद्र",
+        "description": "तीन प्लेबैक मोड के साथ एल्बम, गीत पुस्तकें और संग्रह प्रबंधित करें।"
+      },
+      "liturgy": {
+        "title": "उपासना क्रम",
+        "description": "13 प्रकार के आइटम, ड्रैग-एंड-ड्रॉप, क्लोन और काउंटडाउन के साथ सेवा क्रम बनाएँ।"
+      },
+      "bible": {
+        "title": "बाइबल",
+        "description": "तेज़ खोज, पसंदीदा और सीधे प्रोजेक्शन के साथ बहु-संस्करण समर्थन।"
+      },
+      "projection": {
+        "title": "बहु-स्क्रीन प्रोजेक्शन",
+        "description": "प्रोजेक्टर या द्वितीयक टीवी के लिए स्वतंत्र आउटपुट, पूर्ण नियंत्रण के साथ।"
+      },
+      "tools": {
+        "title": "उपयोगिताएँ",
+        "description": "घड़ी, स्टॉपवॉच, टाइमर और रैफ़ल सेवा में एकीकृत।"
+      },
+      "player": {
+        "title": "उन्नत प्लेयर",
+        "description": "सामान्य प्लेबैक, साथ-गान मोड और सिंक्रनाइज़्ड स्लाइड प्रदर्शन।"
+      },
+      "settings": {
+        "title": "सेटिंग्स",
+        "description": "रूप, प्रोजेक्शन, बहु-स्क्रीन और पूर्णतः अनुकूलन योग्य प्राथमिकताएँ।"
+      },
+      "offline": {
+        "title": "ऑफ़लाइन चलता है",
+        "description": "डेस्कटॉप ऐप मीडिया डाउनलोड के बाद 100% ऑफ़लाइन चलता है। वेब संस्करण में पहले ऑफ़लाइन संसाधन डाउनलोड करने होते हैं।"
+      }
+    }
+  },
+  "about": {
+    "eyebrow": "परियोजना के बारे में",
+    "title": "समुदाय द्वारा, समुदाय के लिए",
+    "text1": "{name} एक सहयोगी ओपन-सोर्स परियोजना है, जो उपासना सेवा प्रबंधन को सरल बनाने के लिए बनाया गया है।",
+    "text2": "Piano टीम द्वारा विकसित, यह मंच समुदाय के योगदान से निरंतर विकसित हो रहा है। निःशुल्क, बिना विज्ञापन, बिना डेटा संग्रह।",
+    "openSource": "ओपन सोर्स",
+    "stats": {
+      "free": "निःशुल्क",
+      "installs": "इंस्टॉलेशन",
+      "offline": "PWA ऑफ़लाइन"
+    }
+  },
+  "how": {
+    "eyebrow": "यह कैसे काम करता है",
+    "title": "मिनटों में आरंभ करें",
+    "description": "अपनी सेवा व्यवस्थित करने के चार सरल चरण।",
+    "steps": {
+      "1": {
+        "title": "ऐप खोलें",
+        "desc": "ब्राउज़र से प्रवेश करें या डेस्कटॉप के लिए डाउनलोड करें। पंजीकरण आवश्यक नहीं।"
+      },
+      "2": {
+        "title": "गीत पुस्तक आयात करें",
+        "desc": "मीडिया केंद्र में एल्बम, गीत पुस्तकें और संग्रह जोड़ें।"
+      },
+      "3": {
+        "title": "उपासना क्रम बनाएँ",
+        "desc": "समय पर नज़र रखते हुए आइटम खींचकर सेवा क्रम बनाएँ।"
+      },
+      "4": {
+        "title": "प्रोजेक्ट करें और नेतृत्व करें",
+        "desc": "गीत, पद और स्लाइड प्रदर्शित करने के लिए बहु-स्क्रीन प्रोजेक्शन का उपयोग करें।"
+      }
+    }
+  },
+  "cta": {
+    "title": "आरंभ करने के लिए तैयार?",
+    "subtitle": "PIANO LouvorJA अभी खोलें और मिनटों में अपनी सेवा व्यवस्थित करें। निःशुल्क, बिना पंजीकरण।",
+    "button": "ऐप खोलें",
+    "meta": {
+      "free": "100% निःशुल्क",
+      "noInstall": "कोई इंस्टॉलेशन नहीं",
+      "openSource": "ओपन सोर्स"
+    }
+  },
+  "contact": {
+    "eyebrow": "संपर्क में रहें",
+    "title": "हमसे संपर्क करें",
+    "description": "प्रश्न, सुझाव या कोई बग मिला? हमें संदेश भेजें; हम शीघ्र से शीघ्र उत्तर देंगे।",
+    "form": {
+      "name": "नाम",
+      "namePlaceholder": "आपका नाम",
+      "email": "ईमेल",
+      "emailPlaceholder": "aap@email.com",
+      "subject": "विषय",
+      "subjectPlaceholder": "यह किस बारे में है?",
+      "message": "संदेश",
+      "messagePlaceholder": "अपना संदेश लिखें...",
+      "submit": "संदेश भेजें",
+      "sending": "भेजा जा रहा है...",
+      "success": "संदेश सफलतापूर्वक भेजा गया! हम शीघ्र ही उत्तर देंगे।",
+      "error": "भेजने में त्रुटि। पुनः प्रयास करें या सीधे app@pianolouvorja.com.br पर ईमेल करें"
+    },
+    "direct": "या सीधे ईमेल भेजें",
+    "responseTime": "औसत उत्तर समय: 24-48 घंटे"
+  },
+  "docs": {
+    "title": "दस्तावेज़ीकरण",
+    "subtitle": "PIANO LouvorJA में निपुण होने के लिए आवश्यक सब कुछ",
+    "search": "दस्तावेज़ खोजें...",
+    "sections": {
+      "gettingStarted": {
+        "title": "आरंभ करना",
+        "description": "प्रारंभिक सेटअप और ऐप के पहले चरण।"
+      },
+      "media": {
+        "title": "मीडिया केंद्र",
+        "description": "एल्बम, गीत पुस्तकें और गीत संग्रह प्रबंधित करें।"
+      },
+      "hymnal": {
+        "title": "गीत पुस्तक",
+        "description": "एडवेंटिस्ट गीत पुस्तक के गीतों की खोज, प्लेबैक और निर्यात।"
+      },
+      "collections": {
+        "title": "संग्रह",
+        "description": "किसी भी अवसर के लिए कस्टम संग्रह और प्लेलिस्ट बनाएँ और प्रबंधित करें।"
+      },
+      "liturgy": {
+        "title": "उपासना क्रम",
+        "description": "पूरा सेवा क्रम बनाएँ और व्यवस्थित करें।"
+      },
+      "bible": {
+        "title": "बाइबल",
+        "description": "खोज, पसंदीदा और पद प्रोजेक्शन।"
+      },
+      "projection": {
+        "title": "बहु-स्क्रीन प्रोजेक्शन",
+        "description": "द्वितीयक स्क्रीन और प्रोजेक्शन सेट करें।"
+      },
+      "streaming": {
+        "title": "स्ट्रीमिंग",
+        "description": "ऑनलाइन उपासना के लिए OBS, vMix और स्ट्रीमिंग प्लेटफ़ॉर्म के साथ एकीकरण।"
+      },
+      "tools": {
+        "title": "उपयोगिताएँ",
+        "description": "घड़ी, स्टॉपवॉच, टाइमर और रैफ़ल।"
+      },
+      "settings": {
+        "title": "सेटिंग्स",
+        "description": "रूप, प्रोजेक्शन और प्राथमिकताएँ अनुकूलित करें।"
+      },
+      "shortcuts": {
+        "title": "कीबोर्ड शॉर्टकट",
+        "description": "शॉर्टकट से अपना कार्य तेज़ करें।"
+      },
+      "faq": {
+        "title": "सामान्य प्रश्न",
+        "description": "अक्सर पूछे जाने वाले प्रश्न"
+      }
+    },
+    "content": {
+      "gettingStarted": {
+        "intro": "PIANO LouvorJA एक वेब ऐप (PWA) है जो आधुनिक ब्राउज़र वाले किसी भी डिवाइस पर चलता है। इंस्टॉलेशन आवश्यक नहीं, पर ऑफ़लाइन उपयोग के लिए आप इसे ब्राउज़र से ऐप इंस्टॉल करें विकल्प से जोड़ सकते हैं।",
+        "steps": [
+          "अपने डेस्कटॉप या मोबाइल ब्राउज़र में ऐप खोलें।",
+          "ऐप इंस्टॉल करें पर क्लिक करें या होम स्क्रीन पर जोड़ने के लिए ब्राउज़र शॉर्टकट उपयोग करें।",
+          "हो गया! पहली बार लोड होने के बाद ऐप ऑफ़लाइन चलता है।"
+        ],
+        "tip": "सर्वोत्तम उपासना अनुभव के लिए दो मॉनिटर वाला डेस्कटॉप उपयोग करें: एक नियंत्रण हेतु, एक प्रोजेक्शन हेतु।"
+      },
+      "shortcuts": {
+        "table": {
+          "action": "क्रिया",
+          "shortcut": "शॉर्टकट"
+        },
+        "items": [
+          {
+            "action": "चलाएँ/रोकें",
+            "shortcut": "Space"
+          },
+          {
+            "action": "अगला ट्रैक",
+            "shortcut": "→"
+          },
+          {
+            "action": "पिछला ट्रैक",
+            "shortcut": "←"
+          },
+          {
+            "action": "वॉल्यूम +",
+            "shortcut": "↑"
+          },
+          {
+            "action": "वॉल्यूम -",
+            "shortcut": "↓"
+          },
+          {
+            "action": "फ़ुलस्क्रीन मोड",
+            "shortcut": "F"
+          },
+          {
+            "action": "प्रोजेक्शन चालू/बंद",
+            "shortcut": "P"
+          },
+          {
+            "action": "तेज़ खोज",
+            "shortcut": "Ctrl+K"
+          }
+        ]
+      },
+      "modules": {
+        "media": ["3 मोड वाला प्लेयर", "गीत पुस्तकें और एल्बम", "साथ-गान मोड"],
+        "hymnal": ["नंबर या शीर्षक से तेज़ खोज", "क्रमिक प्लेबैक", "PDF निर्यात या प्रिंट"],
+        "collections": ["ऑनलाइन और कस्टम संग्रह", "प्लेलिस्ट में ड्रैग-एंड-ड्रॉप", "बोलों के साथ साथ-गान मोड"],
+        "liturgy": ["13 प्रकार के आइटम", "ड्रैग-एंड-ड्रॉप", "प्रति-आइटम काउंटडाउन"],
+        "bible": ["अनेक संस्करण", "तेज़ खोज", "सीधा प्रोजेक्शन"],
+        "projection": ["स्वतंत्र आउटपुट", "बहु-स्क्रीन", "पूर्ण नियंत्रण"],
+        "streaming": [
+          "बोल प्रदर्शन के लिए कस्टम CSS",
+          "OBS और vMix एकीकरण",
+          "YouTube और Facebook पर आउटपुट"
+        ],
+        "tools": ["घड़ी और स्टॉपवॉच", "काउंटडाउन टाइमर", "रैफ़ल"],
+        "settings": ["रूप", "प्रोजेक्शन", "बहु-स्क्रीन"]
+      }
+    },
+    "faq": {
+      "cost": {
+        "question": "क्या PIANO LouvorJA वास्तव में निःशुल्क है?",
+        "answer": "हाँ! PIANO LouvorJA 100% निःशुल्क और ओपन-सोर्स है। कोई सब्सक्रिप्शन, विज्ञापन या डेटा संग्रह नहीं। पूरा कोड GitHub पर उपलब्ध है।"
+      },
+      "offline": {
+        "question": "क्या यह बिना इंटरनेट चलता है?",
+        "answer": "हाँ। मीडिया डाउनलोड के बाद डेस्कटॉप ऐप 100% ऑफ़लाइन चलता है। वेब संस्करण भी ऑफ़लाइन चलता है, पर पहले ऑफ़लाइन संसाधन डाउनलोड करने होते हैं। सभी गीत, उपासना क्रम और सेटिंग्स आपके डिवाइस पर स्थानीय रूप से संग्रहीत होती हैं।"
+      },
+      "devices": {
+        "question": "किन डिवाइस पर उपयोग कर सकता हूँ?",
+        "answer": "PIANO आधुनिक ब्राउज़र वाले किसी भी डिवाइस पर चलता है: डेस्कटॉप (लिनक्स, macOS, विंडोज़), टैबलेट और फ़ोन। सर्वोत्तम बहु-स्क्रीन प्रोजेक्शन अनुभव के लिए डेस्कटॉप की अनुशंसा करते हैं।"
+      },
+      "data": {
+        "question": "मेरा डेटा कहाँ संग्रहीत होता है?",
+        "answer": "ऐप का डेटा — गीत, उपासना क्रम, सेटिंग्स — आपके ब्राउज़र या डिवाइस में स्थानीय रूप से संग्रहीत होता है। उपयोग के दौरान कुछ भी बाहरी सर्वर पर नहीं भेजा जाता। संपर्क फ़ॉर्म भेजने पर आपकी जानकारी (नाम, ईमेल, संदेश) Web3Forms से जाती है ताकि हम उत्तर दे सकें। पूरा विवरण गोपनीयता नीति देखें।"
+      },
+      "privacy": {
+        "question": "आप मेरी गोपनीयता कैसे सुरक्षित करते हैं?",
+        "answer": "PIANO LouvorJA GDPR और LGPD (ब्राज़ीलीय सामान्य डेटा सुरक्षा कानून) का पालन करता है। वेबसाइट कोई ट्रैकिंग, एनालिटिक्स या विज्ञापन कुकी नहीं रखती — केवल एक तकनीकी कुकी आपकी भाषा याद रखने के लिए। हम डेटा बिक्री या मार्केटिंग हेतु तृतीय पक्ष को नहीं देते। अधिक जानकारी हेतु गोपनीयता नीति देखें।"
+      },
+      "support": {
+        "question": "सहायता कैसे पाऊँ या समस्या कैसे रिपोर्ट करूँ?",
+        "answer": "संपर्क पृष्ठ के फ़ॉर्म से, या सीधे हमारे GitHub रिपॉज़िटरी पर issue खोलकर हमसे संपर्क करें। सेवा के दौरान तत्काल समस्याओं के लिए नीचे दिए ट्रबलशूटिंग प्रश्न देखें।"
+      },
+      "updates": {
+        "question": "ऐप कैसे अपडेट होता है?",
+        "answer": "PIANO LouvorJA एक Progressive Web App (PWA) है। पेज पुनः लोड करने पर अपडेट स्वतः लागू हो जाते हैं। हाथ से डाउनलोड या इंस्टॉल की आवश्यकता नहीं। आपके पास हमेशा नवीनतम संस्करण रहता है।"
+      },
+      "troubleshooting": {
+        "question": "यदि ऐप लोड न हो या त्रुटि दिखाए तो?",
+        "answer": "1) पेज पुनः लोड करें (कैश साफ़ करने के लिए Ctrl+F5)। 2) पहली पहुँच पर अपना इंटरनेट कनेक्शन जाँचें। 3) ब्राउज़र सेटिंग से साइट डेटा मिटाएँ। 4) एक्सटेंशन टकराव जाँचने के लिए इनकॉग्निटो मोड आज़माएँ। 5) समस्या बनी रहे तो ब्राउज़र और डिवाइस विवरण के साथ संपर्क फ़ॉर्म या GitHub से रिपोर्ट करें।"
+      },
+      "contribute": {
+        "question": "परियोजना में योगदान कैसे दूँ?",
+        "answer": "परियोजना ओपन-सोर्स है और GitHub पर योगदान स्वीकार करती है। आप बग रिपोर्ट कर सकते हैं, सुविधाएँ सुझा सकते हैं, पुल रिक्वेस्ट भेज सकते हैं या अन्य भाषाओं में अनुवाद में सहायता कर सकते हैं।"
+      }
+    },
+    "sidebarLabel": "दस्तावेज़ अनुभाग"
+  },
+  "footer": {
+    "tagline": "वेब उपासना सेवा प्रबंधक। निःशुल्क और ओपन-सोर्स।",
+    "navLabel": "फ़ुटर नेविगेशन",
+    "navTitle": "नेविगेशन",
+    "product": "उत्पाद",
+    "resources": "संसाधन",
+    "company": "कंपनी",
+    "links": {
+      "features": "विशेषताएँ",
+      "platforms": "प्लेटफ़ॉर्म",
+      "howItWorks": "यह कैसे काम करता है",
+      "docs": "दस्तावेज़ीकरण",
+      "contact": "संपर्क",
+      "github": "GitHub",
+      "app": "ऐप खोलें"
+    },
+    "copyright": "Piano टीम द्वारा विश्वास और समर्पण से बनाया गया।",
+    "developedBy": "विकसितकर्ता",
+    "team": "Piano टीम",
+    "rights": "सर्वाधिकार सुरक्षित।",
+    "legalNavLabel": "कानूनी लिंक",
+    "legalNavTitle": "कानूनी",
+    "privacy": "गोपनीयता नीति",
+    "terms": "उपयोग की शर्तें",
+    "social": {
+      "github": "GitHub",
+      "youtube": "YouTube",
+      "whatsapp": "WhatsApp",
+      "telegram": "Telegram"
+    }
+  },
+  "common": {
+    "loading": "लोड हो रहा है...",
+    "error": "त्रुटि",
+    "close": "बंद करें",
+    "back": "पीछे",
+    "learnMore": "और जानें",
+    "skipToContent": "सामग्री पर जाएँ",
+    "allRightsReserved": "सर्वाधिकार सुरक्षित।"
+  },
+  "privacy": {
+    "title": "गोपनीयता नीति",
+    "metaDescription": "PIANO LouvorJA आपके व्यक्तिगत डेटा को LGPD के अनुपालन में कैसे संभालता है।",
+    "lastUpdated": "अंतिम अपडेट: 30 जुलाई 2026",
+    "tocLabel": "विषय-सूची",
+    "intro": "यह गोपनीयता नीति वर्णन करती है कि PIANO LouvorJA इस वेबसाइट से संग्रहीत व्यक्तिगत डेटा को कैसे संभालता है। हम ब्राज़ीलीय सामान्य डेटा सुरक्षा कानून (LGPD — कानून सं. 13.709/2018) के अनुपालन में आपकी गोपनीयता की रक्षा के प्रति प्रतिबद्ध हैं।",
+    "sections": {
+      "data": {
+        "title": "1. हम जो डेटा संग्रहित करते हैं",
+        "body": [
+          "1.1 आपके द्वारा दिया गया डेटा",
+          "संपर्क फ़ॉर्म भरने पर हम संग्रहित करते हैं:",
+          "नाम",
+          "ईमेल पता",
+          "संदेश का विषय",
+          "संदेश की सामग्री",
+          "1.2 तकनीकी डेटा",
+          "तकनीकी कुकी piano_lang: केवल आपकी भाषा प्राथमिकता रखती है। इसमें कोई व्यक्तिगत पहचानकर्ता नहीं।",
+          "हम ट्रैकिंग, एनालिटिक्स, विज्ञापन या प्रोफ़ाइलिंग कुकी का उपयोग नहीं करते।",
+          "1.3 ऐप डेटा",
+          "PIANO LouvorJA ऐप (गीत, उपासना क्रम, सेटिंग्स, प्लेलिस्ट) सारा डेटा आपके ब्राउज़र (LocalStorage/IndexedDB) में स्थानीय रूप से रखता है। यह डेटा कभी हमारे सर्वर पर नहीं भेजा जाता।",
+          "1.4 तकनीकी ऑडियंस डेटा (स्वतः संग्रह)",
+          "साइट ब्राउज़ करने पर हम समुच्चित रूप में संग्रहित करते हैं:",
+          "यात्रा का मूल देश (CDN प्रदाता के HTTP हेडर से, जैसे Cloudflare/Vercel) — हम GPS आधारित भू-स्थान का उपयोग नहीं करते।",
+          "IP पता केवल हैश (गुप्त salt के साथ SHA-256) के रूप में प्रोसेस होता है। IP पता कभी सादे पाठ में संग्रहीत नहीं होता और आपकी पहचान नहीं कर सकता।",
+          "प्रति देश प्रति दिन यात्रा-गणक। कोई व्यक्तिगत प्रोफ़ाइल, ब्राउज़िंग इतिहास या पहचान से लिंक नहीं।"
+        ]
+      },
+      "purpose": {
+        "title": "2. प्रोसेसिंग का उद्देश्य",
+        "body": [
+          "संपर्क फ़ॉर्म का डेटा केवल इनके लिए उपयोग होता है:",
+          "आपके अनुरोध का उत्तर देना",
+          "तकनीकी सहायता देना",
+          "अनुरोधित संचार भेजना",
+          "कानूनी आधार: LGPD अनुच्छेद 7, मद IX (वैध हित और आपकी पहल पर उत्तर)।"
+        ]
+      },
+      "sharing": {
+        "title": "3. डेटा साझा करना",
+        "body": [
+          "3.1 Web3Forms",
+          "संपर्क फ़ॉर्म सबमिशन प्रोसेस करने के लिए Web3Forms (USA) उपयोग करता है। डेटा हमारे ईमेल पर अग्रेषण हेतु Web3Forms को जाता है।",
+          "उप-प्रोसेसर: Web3Forms",
+          "देश: संयुक्त राज्य अमेरिका",
+          "उद्देश्य: संदेश अग्रेषण",
+          "3.2 होस्टिंग प्रदाता",
+          "साइट क्लाउड इंफ़्रा स्ट्रक्चर प्रदाता पर होस्ट है जो तकनीकी पहुँच डेटा (IP, टाइमस्टैम्प, यूज़र-एजेंट) लॉग कर सकता है।",
+          "3.3 हम डेटा इनके साथ साझा नहीं करते",
+          "विज्ञापन कंपनियाँ",
+          "सोशल नेटवर्क",
+          "डेटा ब्रोकर",
+          "मार्केटिंग हेतु तृतीय पक्ष"
+        ]
+      },
+      "international": {
+        "title": "4. अंतरराष्ट्रीय स्थानांतरण",
+        "body": [
+          "संपर्क फ़ॉर्म का डेटा संयुक्त राज्य अमेरिका में Web3Forms द्वारा प्रोसेस होता है। यह अंतरराष्ट्रीय स्थानांतरण फ़ॉर्म सेवा देने के लिए आवश्यक है और LGPD के अनुच्छेद 33 की कानूनी उपधारणाओं में आता है।"
+        ]
+      },
+      "rights": {
+        "title": "5. आपके अधिकार (अनुच्छेद 18, LGPD)",
+        "body": [
+          "अपने व्यक्तिगत डेटा संबंधी आपके अधिकार:",
+          "प्रोसेसिंग के अस्तित्व की पुष्टि",
+          "डेटा तक पहुँच",
+          "अपूर्ण, ग़लत या पुराने डेटा का सुधार",
+          "अनावश्यक डेटा का गुमनामकरण, अवरोधन या विलोपन",
+          "डेटा पोर्टेबिलिटी",
+          "व्यक्तिगत डेटा का विलोपन",
+          "साझाकरण की जानकारी",
+          "अधिकार कैसे प्रयोग करें",
+          "contato@pianolouvorja.com.br पर ईमेल भेजें:",
+          "पूरा नाम",
+          "जिस अधिकार का प्रयोग करना है उसका विवरण",
+          "पंजीकृत ईमेल पता",
+          "उत्तर समय: 15 कैलेंडर दिनों के भीतर (अनुच्छेद 19, LGPD)।"
+        ]
+      },
+      "security": {
+        "title": "6. सुरक्षा उपाय",
+        "body": [
+          "हम निम्न तकनीकी और संगठनात्मक उपाय अपनाते हैं:",
+          "सभी संचार पर HTTPS/TLS एन्क्रिप्शन",
+          "कोई पासवर्ड संग्रहण नहीं (कोई लॉगिन तंत्र नहीं)",
+          "डेटा न्यूनीकरण (केवल आवश्यक संग्रहित करते हैं)",
+          "व्यक्तिगत पहचान रहित तकनीकी कुकी",
+          "टीम द्वारा सीमित डेटा पहुँच"
+        ]
+      },
+      "retention": {
+        "title": "7. डेटा प्रतिधारण",
+        "body": [
+          "संपर्क फ़ॉर्म: उत्तर देने तक आवश्यकतानुसार, फिर ऐतिहासिक अभिलेख हेतु 12 माह तक, उसके बाद विलोपन।",
+          "पहुँच लॉग: होस्टिंग प्रदाता की नीति अनुसार।",
+          "स्थानीय ऐप डेटा: आपके डिवाइस पर तब तक रहता है जब तक आप इसे हटाएँ नहीं।"
+        ]
+      },
+      "cookies": {
+        "title": "8. कुकी",
+        "body": [
+          "हम तृतीय-पक्ष, एनालिटिक्स या विज्ञापन कुकी उपयोग नहीं करते।",
+          "देश-स्तरीय ऑडियंस टेलीमेट्री समुच्चित और गुमनाम है (देश + हैश्ड IP दैनिक गणक); यह कोई ट्रैकिंग कुकी उपयोग नहीं करती और व्यक्तियों की पहचान नहीं करती।"
+        ],
+        "table": {
+          "header": {
+            "cookie": "कुकी",
+            "type": "प्रकार",
+            "purpose": "उद्देश्य",
+            "duration": "अवधि"
+          },
+          "rows": [
+            {
+              "name": "piano_lang",
+              "type": "तकनीकी",
+              "purpose": "पसंदीदा भाषा याद रखना",
+              "duration": "सत्र"
+            }
+          ]
+        }
+      },
+      "children": {
+        "title": "9. बच्चे और अवयस्क",
+        "body": [
+          "ऐप बच्चों को लक्षित नहीं करता और 18 वर्ष से कम आयु के किसी से जानबूझकर डेटा संग्रह नहीं करता। सामग्री (गीत, उपासना क्रम, बाइबल पाठ) धार्मिक है और संवेदनशील डेटा संग्रह शामिल नहीं।"
+        ]
+      },
+      "changes": {
+        "title": "10. इस नीति में परिवर्तन",
+        "body": [
+          "हम यह नीति कभी भी अपडेट कर सकते हैं। नवीनतम संस्करण हमेशा इस पृष्ठ पर उपलब्ध रहेगा, ऊपर अपडेट तिथि के साथ। समय-समय पर समीक्षा की अनुशंसा है।"
+        ]
+      },
+      "dpo": {
+        "title": "11. डेटा सुरक्षा अधिकारी (DPO)",
+        "body": ["LGPD के अनुच्छेद 41 के अनुपालन में, प्रश्न contato@pianolouvorja.com.br पर भेजे जा सकते हैं।"]
+      },
+      "anpd": {
+        "title": "12. डेटा सुरक्षा प्राधिकरण",
+        "body": [
+          "शिकायत दर्ज करने के लिए आप ANPD (राष्ट्रीय डेटा सुरक्षा प्राधिकरण) से संपर्क कर सकते हैं:",
+          "वेबसाइट: {link}",
+          "ईमेल: ouvidoria@anpd.gov.br"
+        ],
+        "link": {
+          "url": "https://www.gov.br/anpd",
+          "text": "www.gov.br/anpd"
+        }
+      }
+    }
+  },
+  "terms": {
+    "title": "उपयोग की शर्तें",
+    "metaDescription": "PIANO LouvorJA की उपयोगशर्तें।",
+    "lastUpdated": "अंतिम अपडेट: 30 जुलाई 2026",
+    "tocLabel": "विषय-सूची",
+    "intro": "PIANO LouvorJA में आपका स्वागत है। इस वेबसाइट और ऐप तक पहुँच व उपयोग से आप इन उपयोगशर्तों से सहमत होते हैं। कृपया ध्यान से पढ़ें।",
+    "sections": {
+      "acceptance": {
+        "title": "1. शर्तों की स्वीकृति",
+        "body": [
+          "PIANO LouvorJA का उपयोग इन शर्तों की पूर्ण स्वीकृति मानता है। किसी प्रावधान से सहमत नहीं हैं तो ऐप का उपयोग न करें।"
+        ]
+      },
+      "service": {
+        "title": "2. सेवा की प्रकृति",
+        "body": [
+          "PIANO LouvorJA एक निःशुल्क ओपन-सोर्स वेब ऐप है, उपासना सेवा प्रबंधन में सहायता हेतु, संगठित:",
+          "डिजिटल गीत पुस्तक और संगीत प्लेबैक",
+          "उपासना क्रम और सेवा अनुसूची प्रबंधन",
+          "बोल और बाइबल पाठ प्रोजेक्शन",
+          "सहायक उपकरण (टाइमर, रैफ़ल आदि)",
+          "ऐप धार्मिक और सामुदायिक उपयोग हेतु है, व्यावसायिक उद्देश्य नहीं।"
+        ]
+      },
+      "license": {
+        "title": "3. लाइसेंस",
+        "body": [
+          "3.1 सॉफ़्टवेयर",
+          "सोर्स कोड ओपन-सोर्स लाइसेंस के अंतर्गत वितरित है। विवरण हेतु {link} देखें।",
+          "3.2 सामग्री",
+          "पाठ्य सामग्री (गीत, बोल, साहित्य) संबंधित कॉपीराइट धारकों की है। PIANO LouvorJA:",
+          "सामग्री की लेखकत्व का दावा नहीं करता",
+          "सामग्री का सीधा व्यावसायिक विपणन नहीं करता",
+          "कानून 9.610/98 के अनुसार कॉपीराइट का सम्मान करता है"
+        ],
+        "link": {
+          "url": "https://github.com/Piano-Louvor-JA",
+          "text": "GitHub रिपॉज़िटरी"
+        }
+      },
+      "user": {
+        "title": "4. उपयोगकर्ता उत्तरदायित्व",
+        "body": [
+          "PIANO LouvorJA उपयोग कर, आप सहमत होते हैं:",
+          "ऐप का नैतिक और लागू कानून के अनुपालन में उपयोग",
+          "अवैध, निंदात्मक या तृतीय-पक्ष अधिकारों का उल्लंघन करने वाला उपयोग नहीं",
+          "प्रदर्शित रचनाओं के कॉपीराइट का सम्मान",
+          "स्थानीय डेटा सुरक्षित रखना (हम सर्वर बैकअप नहीं रखते)",
+          "सुरक्षा या उपलब्धता से समझौता करने का प्रयास नहीं"
+        ]
+      },
+      "responsibility": {
+        "title": "5. उत्तरदायित्व",
+        "body": [
+          "5.1 सेवा की प्रकृति",
+          "PIANO LouvorJA किसी प्रकार की गारंटी रहित, जैसा है उपलब्ध कराया जाता है। हम गारंटी नहीं देते कि:",
+          "सेवा निर्बाध, सुरक्षित या त्रुटि-रहित रहेगी",
+          "परिणाम सटीक या विश्वसनीय होंगे",
+          "कोई त्रुटि सुधारी जाएगी",
+          "5.2 उत्तरदायित्व सीमा",
+          "कानून द्वारा अनुमत अधिकतम सीमा तक, PIANO LouvorJA उत्तरदायी नहीं:",
+          "प्रत्यक्ष, अप्रत्यक्ष, आकस्मिक या परिणामी हानि",
+          "डेटा हानि (बैकअप रखें — डेटा स्थानीय है)",
+          "महत्वपूर्ण उपयोग के दौरान सेवा बाधित होना",
+          "तृतीय-पक्ष सामग्री या बाहरी लिंक"
+        ]
+      },
+      "ip": {
+        "title": "6. बौद्धिक संपदा",
+        "body": [
+          "6.1 सॉफ़्टवेयर",
+          "सोर्स कोड कॉपीराइट से सुरक्षित और ओपन-सोर्स लाइसेंस पर वितरित।",
+          "6.2 ट्रेडमार्क",
+          "PIANO LouvorJA और LouvorJA परियोजना के ट्रेडमार्क हैं। अनधिकृत उपयोग वर्जित।",
+          "6.3 तृतीय-पक्ष सामग्री",
+          "गीत, बोल और साहित्य संबंधित लेखकों/प्रकाशकों के हैं। इस सामग्री का व्यवस्थापन कोई बौद्धिक संपदा अधिकार अंतरित नहीं करता।"
+        ]
+      },
+      "donations": {
+        "title": "7. दान और योगदान",
+        "body": [
+          "PIANO LouvorJA निःशुल्क और ओपन-सोर्स है। GitHub के माध्यम से स्वैच्छिक योगदान (पुल रिक्वेस्ट, issue, अनुवाद) स्वीकृत हैं। संभावित दान उपभोक्ता संबंध नहीं बनाते और लाभ की गारंटी नहीं देते।"
+        ]
+      },
+      "privacy": {
+        "title": "8. गोपनीयता और डेटा",
+        "body": [
+          "व्यक्तिगत डेटा प्रोसेसिंग हमारी {link} द्वारा शासित है, जो इन शर्तों का भाग है।",
+          "तकनीकी ऑडियंस डेटा (मूल देश और हैश्ड IP, दैनिक गणकों में समुच्चित) सांख्यिकी हेतु स्वतः संग्रहित होता है।",
+          "IP पता कभी सादे पाठ में संग्रहीत नहीं होता और व्यक्तिगत उपयोगकर्ताओं की पहचान नहीं कर सकता।"
+        ],
+        "link": {
+          "url": "/privacy",
+          "text": "गोपनीयता नीति"
+        }
+      },
+      "modifications": {
+        "title": "9. संशोधन",
+        "body": [
+          "हम इन शर्तों में कभी भी संशोधन कर सकते हैं। परिवर्तन प्रकाशन पर तत्काल प्रभावी। समय-समय पर समीक्षा उपयोगकर्ता का उत्तरदायित्व है।"
+        ]
+      },
+      "termination": {
+        "title": "10. समाप्ति",
+        "body": [
+          "आप ब्राउज़र बंद करके या PWA हटाकर कभी भी ऐप उपयोग बंद कर सकते हैं। खाता तंत्र न होने से औपचारिक निरस्तीकरण आवश्यक नहीं।"
+        ]
+      },
+      "law": {
+        "title": "11. लागू कानून",
+        "body": [
+          "ये शर्तें ब्राज़ील संघीय गणराज्य के कानूनों द्वारा शासित हैं। विवाद उपयोगकर्ता के निवास स्थान की न्यायालय में निपटेंगे।"
+        ]
+      },
+      "misc": {
+        "title": "12. अंतिम प्रावधान",
+        "body": [
+          "इन शर्तों का कोई प्रावधान अवैध या अप्रवर्तनीय हो तो शेष प्रावधान पूर्ण रूप से लागू रहेंगे। किसी उल्लंघन की सहनशीलता भविष्य के अधिकारों से विरोध नहीं मानी जाती।"
+        ]
+      }
+    }
+  },
+  "error": {
+    "title": "पृष्ठ नहीं मिला",
+    "serverErrorTitle": "सर्वर त्रुटि",
+    "errorCode404": "404",
+    "errorCode500": "500",
+    "desc404": "आप जो पृष्ठ खोज रहे हैं वह नहीं मिला या हटा दिया गया।",
+    "desc500": "हमारी ओर से कुछ गड़बड़ हुई। हमारी टीम को सूचित कर दिया गया है — कृपया थोड़ी देर बाद पुनः प्रयास करें।",
+    "backHome": "होम पर वापस",
+    "reportIssue": "समस्या रिपोर्ट करें",
+    "metaDesc404": "पृष्ठ नहीं मिला — PIANO LouvorJA",
+    "metaDesc500": "सर्वर त्रुटि — PIANO LouvorJA"
+  },
+  "newsletter": {
+    "title": "परियोजना अपडेट पाएँ",
+    "subtitle": "नए संस्करणों, विशेषताओं और अपडेट की सूचना पाएँ। कोई स्पैम नहीं।",
+    "placeholder": "आपका ईमेल",
+    "button": "सब्सक्राइब करें",
+    "loading": "सब्सक्राइब हो रहा है...",
+    "success": "सब्सक्रिप्शन पुष्ट! धन्यवाद।",
+    "errors": {
+      "invalidEmail": "अवैध ईमेल। जाँच कर पुनः प्रयास करें।",
+      "alreadySubscribed": "यह ईमेल पहले से सब्सक्राइब है।",
+      "generic": "सब्सक्रिप्शन विफल। कृपया पुनः प्रयास करें।",
+      "rateLimited": "बहुत अधिक प्रयास। कुछ मिनट प्रतीक्षा करें।",
+      "serviceUnavailable": "सेवा अनुपलब्ध। बाद में पुनः प्रयास करें।"
+    }
+  },
+  "releases": {
+    "metaTitle": "रिलीज़ नोट्स - PIANO Louvor JA",
+    "metaDescription": "PIANO Louvor JA के नवीनतम अपडेट, सुविधाएँ और सुधार देखें।",
+    "title": "रिलीज़ नोट्स",
+    "subtitle": "PIANO के नवीनतम अपडेट और सुधार देखें।",
+    "loading": "रिलीज़ लोड हो रहे हैं...",
+    "error": "रिलीज़ लोड नहीं हो सके। बाद में पुनः प्रयास करें।",
+    "noReleases": "अभी कोई रिलीज़ प्रकाशित नहीं।",
+    "latest": "नवीनतम",
+    "highlights": "मुख्य बातें",
+    "pullRequests": "पुल रिक्वेस्ट",
+    "changelog": "परिवर्तन",
+    "viewOnGithub": "GitHub पर देखें",
+    "allVersions": "सभी संस्करण देखें",
+    "products": {
+      "web": "वेब",
+      "desktop": "डेस्कटॉप",
+      "mobile": "मोबाइल"
+    }
+  },
+  "community": {
+    "eyebrow": "समुदाय",
+    "title": "हमारे समुदाय से जुड़ें",
+    "subtitle": "डेवलपर, टेस्टर और उत्साही, हर दिन PIANO LouvorJA को बेहतर बनाने में सहयोग करते हैं।",
+    "roles": {
+      "tester": "टेस्टर",
+      "enthusiast": "उत्साही",
+      "suggester": "सुझावकर्ता"
+    },
+    "since": "{since} से",
+    "link": "प्रोफ़ाइल देखें",
+    "spot": "जुड़ना चाहते हैं?",
+    "cta": "समूह से जुड़ें",
+    "whatsapp": "WhatsApp सहायता",
+    "telegram": "Telegram पर डेव"
+  },
   "admin": {
     "comunidade": {
       "tab": "लंबित",
