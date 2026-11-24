@@ -59,6 +59,19 @@ function withImageLinks(markdown: string, images: DocsImageInput[], stamp: strin
   return `${markdown.trim()}\n\n${links.join('\n')}\n`
 }
 
+/** Markdown atual do guia (staging). Leitura para o editor carregar seções. */
+export async function getGuideMarkdown(slug: string): Promise<string> {
+  const octokit = new Octokit({ auth: token() })
+  const file = await octokit.rest.repos.getContent({
+    owner: OWNER,
+    repo: REPO,
+    ref: BASE,
+    path: `content/docs/pt-BR/${slug}.md`,
+  })
+  if (!('content' in file.data)) throw new DocsGithubUnavailable()
+  return atob(String(file.data.content))
+}
+
 export async function createDocsPullRequest(
   input: DocsPullRequestInput,
 ): Promise<DocsPullRequestResult> {

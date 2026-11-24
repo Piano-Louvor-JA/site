@@ -17,7 +17,7 @@ const MAX_IMAGE_BYTES = 5 * 1024 * 1024
 const MAX_IMAGES = 6
 const EDIT_WINDOW_MS = 10 * 60 * 1000
 const ALLOWED_MIME_TYPES = new Set(['image/png', 'image/jpeg', 'image/webp'])
-const SLUG_RE = /^[a-z0-9]+(?:-[a-z0-9]+)*$/
+export const SLUG_RE = /^[a-z0-9]+(?:-[a-z0-9]+)*$/
 
 const edits = new Map<string, number>()
 
