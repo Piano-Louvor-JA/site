@@ -49,106 +49,106 @@
 
   // F2.4 — cards de guias completos (14 páginas de conteúdo); textos em
   // docs.guides.cards.* (i18n) e rotas via localePath para respeitar /xx.
-  const guideCards = [
+  const guideCards = computed(() => [
     {
-      to: localePath('/docs/getting-started'),
+      to: '/docs/getting-started',
       testid: 'getting-started',
       icon: 'ti-rocket',
       title: t('docs.guides.cards.gettingStarted.title'),
       desc: t('docs.guides.cards.gettingStarted.desc'),
     },
     {
-      to: localePath('/docs/install/windows'),
+      to: '/docs/install/windows',
       testid: 'windows',
       icon: 'ti-brand-windows',
       title: t('docs.guides.cards.windows.title'),
       desc: t('docs.guides.cards.windows.desc'),
     },
     {
-      to: localePath('/docs/install/macos'),
+      to: '/docs/install/macos',
       testid: 'macos',
       icon: 'ti-brand-apple',
       title: t('docs.guides.cards.macos.title'),
       desc: t('docs.guides.cards.macos.desc'),
     },
     {
-      to: localePath('/docs/install/linux'),
+      to: '/docs/install/linux',
       testid: 'linux',
       icon: 'ti-brand-linux',
       title: t('docs.guides.cards.linux.title'),
       desc: t('docs.guides.cards.linux.desc'),
     },
     {
-      to: localePath('/docs/install/android-apk'),
+      to: '/docs/install/android-apk',
       testid: 'android',
       icon: 'ti-brand-android',
       title: t('docs.guides.cards.android.title'),
       desc: t('docs.guides.cards.android.desc'),
     },
     {
-      to: localePath('/docs/install/web-pwa'),
+      to: '/docs/install/web-pwa',
       testid: 'pwa',
       icon: 'ti-world',
       title: t('docs.guides.cards.pwa.title'),
       desc: t('docs.guides.cards.pwa.desc'),
     },
     {
-      to: localePath('/docs/install/tv-samsung-tizen'),
+      to: '/docs/install/tv-samsung-tizen',
       testid: 'tv-samsung',
       icon: 'ti-device-tv',
       title: t('docs.guides.cards.tvSamsung.title'),
       desc: t('docs.guides.cards.tvSamsung.desc'),
     },
     {
-      to: localePath('/docs/install/tv-lg-webos'),
+      to: '/docs/install/tv-lg-webos',
       testid: 'tv-lg',
       icon: 'ti-device-tv',
       title: t('docs.guides.cards.tvLg.title'),
       desc: t('docs.guides.cards.tvLg.desc'),
     },
     {
-      to: localePath('/docs/install/tv-android'),
+      to: '/docs/install/tv-android',
       testid: 'tv-android',
       icon: 'ti-device-tv',
       title: t('docs.guides.cards.tvAndroid.title'),
       desc: t('docs.guides.cards.tvAndroid.desc'),
     },
     {
-      to: localePath('/docs/palco-multi-device'),
+      to: '/docs/palco-multi-device',
       testid: 'palco',
       icon: 'ti-devices',
       title: t('docs.guides.cards.palco.title'),
       desc: t('docs.guides.cards.palco.desc'),
     },
     {
-      to: localePath('/docs/faq'),
+      to: '/docs/faq',
       testid: 'faq',
       icon: 'ti-help-circle',
       title: t('docs.guides.cards.faq.title'),
       desc: t('docs.guides.cards.faq.desc'),
     },
     {
-      to: localePath('/docs/troubleshooting'),
+      to: '/docs/troubleshooting',
       testid: 'troubleshooting',
       icon: 'ti-bug',
       title: t('docs.guides.cards.troubleshooting.title'),
       desc: t('docs.guides.cards.troubleshooting.desc'),
     },
     {
-      to: localePath('/docs/shortcuts'),
+      to: '/docs/shortcuts',
       testid: 'shortcuts',
       icon: 'ti-keyboard',
       title: t('docs.guides.cards.shortcuts.title'),
       desc: t('docs.guides.cards.shortcuts.desc'),
     },
     {
-      to: localePath('/docs/manual'),
+      to: '/docs/manual',
       testid: 'manual',
       icon: 'ti-book-2',
       title: t('docs.guides.cards.manual.title'),
       desc: t('docs.guides.cards.manual.desc'),
     },
-  ]
+  ])
 
   const allSectionIds = ['gettingStarted', ...moduleSections.map((m) => m.id), 'shortcuts', 'faq']
 
