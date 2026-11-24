@@ -28,6 +28,9 @@ docs/
 !content/docs/
 # ...e a página catch-all das docs (RF-08):
 !app/pages/docs/
+# Editor interno de docs (SPEC editor-leigo): API precisa ser versionada.
+!server/api/docs/
+!server/api/docs/propose.post.ts
 
 # Internal planning (SDD)
 .planning/
@@ -41,3 +44,7 @@ content/docs-index.json
 # Gerados no build (hook nitro:build:before) — nunca commitar
 /public/llms-full.txt
 /public/sitemap.xml
+
+# evidência local de screenshots (gerada, não versionada)
+.evidence/
+evidencia/

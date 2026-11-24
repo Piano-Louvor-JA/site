@@ -11,7 +11,10 @@
     "download": "Télécharger",
     "releases": "Versions",
     "testers": "Testeurs",
-    "toggleTheme": "Basculer le thème clair/sombre"
+    "toggleTheme": "Basculer le thème clair/sombre",
+    "support": "Assistance",
+    "comunidade": "Communauté",
+    "institucional": "Dirigeants"
   },
   "meta": {
     "title": "PIANO LouvorJA — Gestionnaire de culte web",
@@ -478,8 +481,67 @@
     "sidebarLabel": "Sections de la documentation",
     "guides": {
       "title": "Guides complets",
-      "lead": "Chaque outil de l’écosystème expliqué étape par étape, par plateforme."
-    }
+      "lead": "Chaque outil de l’écosystème expliqué étape par étape, par plateforme.",
+      "cards": {
+        "gettingStarted": {
+          "title": "Premier culte en 15 minutes",
+          "desc": "Du téléchargement à la projection : flux complet."
+        },
+        "windows": {
+          "title": "Installer sur Windows",
+          "desc": "Microsoft Store ou installateur EXE."
+        },
+        "macos": {
+          "title": "Installer sur macOS",
+          "desc": "DMG Apple Silicon ou Intel."
+        },
+        "linux": {
+          "title": "Installer sur Linux",
+          "desc": "AppImage, Snap ou Flathub."
+        },
+        "android": {
+          "title": "Installer sur Android (APK)",
+          "desc": "Mobile et TV Box."
+        },
+        "pwa": {
+          "title": "Utiliser dans le navigateur (PWA)",
+          "desc": "Sans rien installer."
+        },
+        "tvSamsung": {
+          "title": "TV Samsung (Tizen)",
+          "desc": "Projection via Palco."
+        },
+        "tvLg": {
+          "title": "TV LG (webOS)",
+          "desc": "Projection via Palco."
+        },
+        "tvAndroid": {
+          "title": "Android TV / Google TV",
+          "desc": "APK ou TV Box."
+        },
+        "palco": {
+          "title": "Palco multi-appareils",
+          "desc": "Le mobile contrôle, la TV projette."
+        },
+        "faq": {
+          "title": "Questions fréquentes",
+          "desc": "Gratuit, hors ligne, confidentialité."
+        },
+        "troubleshooting": {
+          "title": "Résolution de problèmes",
+          "desc": "Diagnostic par symptôme."
+        },
+        "shortcuts": {
+          "title": "Raccourcis clavier",
+          "desc": "Tableau complet par contexte."
+        },
+        "manual": {
+          "title": "Manuel complet",
+          "desc": "Tous les outils, section par section."
+        }
+      }
+    },
+    "editOnGithub": "Modifier cette page sur GitHub"
   },
   "privacy": {
     "title": "Politique de confidentialité",
@@ -813,7 +875,41 @@
     "recentActivity": "Activité récente",
     "quickLinks": "Liens rapides",
     "noData": "Données indisponibles",
-    "loading": "Chargement..."
+    "loading": "Chargement...",
+    "comunidade": {
+      "tab": "En attente",
+      "tabMembros": "Membres",
+      "tabEquipe": "Équipe",
+      "subtitulo": "Modération des candidatures, gestion des membres et de l’équipe — en un seul panneau.",
+      "filtroStatus": "Statut",
+      "todos": "Tous",
+      "carregando": "Chargement…",
+      "recarregar": "↻ Recharger",
+      "carregarMais": "Charger plus",
+      "erroCarregar": "Échec du chargement",
+      "semMembros": "Aucun membre dans ce filtre.",
+      "semEquipe": "Aucun membre staff trouvé.",
+      "roles": "Rôles",
+      "salvar": "Enregistrer",
+      "salvando": "Enregistrement…",
+      "salvoOk": "Rôles mis à jour ✓",
+      "erroSalvar": "Échec de l’enregistrement",
+      "aprovar": "Approuver",
+      "aprovadoOk": "Membre approuvé ✓",
+      "inativar": "Désactiver",
+      "inativadoOk": "Membre désactivé ✓",
+      "reativar": "Réactiver",
+      "gm": "GM (administrateur)",
+      "role": {
+        "dev": "Développeur",
+        "tester": "Testeur",
+        "conteudo": "Contenu",
+        "curador": "Curateur",
+        "staff": "Équipe"
+      },
+      "title": "Communauté",
+      "tabsAriaLabel": "Onglets du panneau de communauté"
+    }
   },
   "contributors": {
     "title": "Ceux qui font vivre PIANO",
@@ -1263,5 +1359,114 @@
       },
       "button": "Commencer à contribuer"
     }
+  },
+  "tickets": {
+    "nav": "Assistance",
+    "sending": "Envoi…",
+    "loading": "Chargement…",
+    "error": {
+      "api": "API indisponible. Réessayez."
+    },
+    "intake": {
+      "title": "Centre d'assistance",
+      "description": "Envoyez une demande d’assistance.",
+      "name": "Nom",
+      "email": "E-mail",
+      "subject": "Sujet",
+      "message": "Message",
+      "consent": "J’accepte le traitement de mes données pour le support (LGPD).",
+      "consentRequired": "Le consentement est requis.",
+      "submit": "Envoyer la demande",
+      "successTitle": "Demande enregistrée !",
+      "successHint": "Conservez cette référence pour contacter l’équipe.",
+      "newRequest": "Nouvelle demande",
+      "portalLink": "Accéder à mes tickets"
+    },
+    "portal": {
+      "title": "Mes tickets",
+      "description": "Suivez vos demandes et répondez à l’équipe.",
+      "newTicket": "Nouveau ticket",
+      "priority": "Priorité",
+      "create": "Créer un ticket",
+      "empty": "Aucun ticket pour le moment.",
+      "reply": "Répondre"
+    },
+    "admin": {
+      "title": "Admin — Tickets",
+      "description": "File de triage et tickets de l’organisation.",
+      "intakeQueue": "File de triage",
+      "intakeEmpty": "Aucune demande en attente.",
+      "triage": "Trier et convertir",
+      "ticketsTitle": "Tickets",
+      "tenant": "Identifiant de l’organisation"
+    }
+  },
+  "comunidade": {
+    "eyebrow": "Communauté",
+    "title": "Le corps vivant du projet",
+    "subtitle": "Développeurs, testeurs, producteurs de contenu et conservateurs approuvés — ceux qui construisent et font vivre PIANO LouvorJA, mis à jour directement à la source.",
+    "error": "Impossible de charger la communauté pour le moment. Réessayez dans quelques instants.",
+    "avatarAlt": "Avatar de {name}",
+    "profile": "Voir le profil GitHub",
+    "roles": {
+      "staff": "Équipe",
+      "dev": "Dev",
+      "tester": "Testeur",
+      "conteudo": "Contenu",
+      "curador": "Conservateur"
+    }
+  },
+  "institucional": {
+    "meta": {
+      "title": "PIANO LouvorJA — Pour les dirigeants d'église",
+      "description": "Découvrez PIANO LouvorJA : paroles synchronisées pour la projection, playback et versions chantées pour le culte. Matériel institutionnel et de partage pour les dirigeants d'église."
+    },
+    "title": "PIANO LouvorJA pour votre église",
+    "lede": "Un outil gratuit, conçu par des bénévoles, pour le culte : paroles de cantiques synchronisées pour la projection, playback et versions chantées, directement dans le navigateur de l'ordinateur de l'église.",
+    "s1": {
+      "title": "Qu'est-ce que PIANO",
+      "body": "PIANO LouvorJA est un fork gratuit et bénévole du projet LouvorJA, dédié au culte : paroles de cantiques et chants synchronisées pour la projection, playback et versions chantées. À noter : l'application ne joue pas de partitions — « Piano » est simplement le nom de code du projet."
+    },
+    "s2": {
+      "title": "Comment l'utiliser à l'église",
+      "body": "Il fonctionne sur l'ordinateur du temple, dans le navigateur (Web App) ou dans l'application de bureau. L'installation ne prend que quelques minutes et ne demande aucune connaissance technique : rendez-vous sur la page de téléchargement, choisissez votre plateforme et suivez le guide pas à pas de la documentation."
+    },
+    "s3": {
+      "title": "Comment le partager dans votre champ",
+      "body": "Nous avons préparé un press kit prêt à imprimer et à partager avec les anciens et les pasteurs locaux. Aidez d'autres congrégations à découvrir l'outil : partagez ce matériel lors des réunions d'officiers, dans les bulletins et les groupes de communication du champ."
+    },
+    "s4": {
+      "title": "Contact institutionnel",
+      "body": "Pour tout partenariat, question institutionnelle ou accompagnement dans l'adoption de l'outil par votre champ, contactez l'équipe à app{'@'}pianolouvorja.com.br ou via la page de contact."
+    },
+    "cta": {
+      "press": "Voir le press kit"
+    }
+  },
+  "press": {
+    "meta": {
+      "title": "Press kit — PIANO LouvorJA",
+      "description": "Matériel de partage de PIANO LouvorJA, prêt à imprimer et à partager avec les anciens et les pasteurs locaux : présentation, message clé, où le trouver et contact institutionnel."
+    },
+    "title": "Press kit de PIANO LouvorJA",
+    "lede": "Matériel prêt à imprimer, à partager avec les anciens et les pasteurs locaux.",
+    "about": "PIANO LouvorJA est un fork gratuit et bénévole du projet LouvorJA, dédié au culte : paroles de cantiques et chants synchronisées pour la projection, playback et versions chantées. L'application ne joue pas de partitions — « Piano » est simplement le nom de code du projet.",
+    "keyPoints": [
+      "Paroles de cantiques et chants synchronisées pour la projection pendant le culte",
+      "Playback et versions chantées pour l'accompagnement musical",
+      "Un projet bénévole et gratuit, accessible à toutes les congrégations"
+    ],
+    "where": {
+      "title": "Où le trouver",
+      "items": [
+        "Site officiel : https://pianolouvorja.com.br",
+        "Téléchargement de l'app : https://pianolouvorja.com.br/download",
+        "Documentation : https://pianolouvorja.com.br/docs",
+        "Contact : app{'@'}pianolouvorja.com.br"
+      ]
+    },
+    "contact": "Contact institutionnel : app{'@'}pianolouvorja.com.br",
+    "printCta": "Imprimer / enregistrer en PDF",
+    "footer": "PIANO LouvorJA · https://pianolouvorja.com.br"
   }
 }

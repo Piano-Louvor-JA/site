@@ -1,6 +1,10 @@
 <script setup lang="ts">
   const { t } = useI18n()
   const { raw } = useLocaleMessages()
+  const localePath = useLocalePath()
+
+  // Onda 3 routing: prefixa /xx conforme locale — em /es/docs os cards linkam
+  // /es/docs/*, nunca a rota pt-BR (sem prefixo).
 
   // Module sections — maps to docs.sections.* i18n keys
   const moduleSections = [
@@ -43,107 +47,108 @@
   // Active section for sidebar highlight
   const activeSection = ref('gettingStarted')
 
-  // F2.4 — cards de guias completos (14 páginas de conteúdo)
-  const guideCards = [
+  // F2.4 — cards de guias completos (14 páginas de conteúdo); textos em
+  // docs.guides.cards.* (i18n) e rotas via localePath para respeitar /xx.
+  const guideCards = computed(() => [
     {
       to: '/docs/getting-started',
       testid: 'getting-started',
       icon: 'ti-rocket',
-      title: 'Primeiro culto em 15 minutos',
-      desc: 'Do download à projeção: fluxo completo.',
+      title: t('docs.guides.cards.gettingStarted.title'),
+      desc: t('docs.guides.cards.gettingStarted.desc'),
     },
     {
       to: '/docs/install/windows',
       testid: 'windows',
       icon: 'ti-brand-windows',
-      title: 'Instalar no Windows',
-      desc: 'Microsoft Store ou instalador EXE.',
+      title: t('docs.guides.cards.windows.title'),
+      desc: t('docs.guides.cards.windows.desc'),
     },
     {
       to: '/docs/install/macos',
       testid: 'macos',
       icon: 'ti-brand-apple',
-      title: 'Instalar no macOS',
-      desc: 'DMG Apple Silicon ou Intel.',
+      title: t('docs.guides.cards.macos.title'),
+      desc: t('docs.guides.cards.macos.desc'),
     },
     {
       to: '/docs/install/linux',
       testid: 'linux',
       icon: 'ti-brand-linux',
-      title: 'Instalar no Linux',
-      desc: 'AppImage, Snap ou Flathub.',
+      title: t('docs.guides.cards.linux.title'),
+      desc: t('docs.guides.cards.linux.desc'),
     },
     {
       to: '/docs/install/android-apk',
       testid: 'android',
       icon: 'ti-brand-android',
-      title: 'Instalar no Android (APK)',
-      desc: 'Celular e TV Box.',
+      title: t('docs.guides.cards.android.title'),
+      desc: t('docs.guides.cards.android.desc'),
     },
     {
       to: '/docs/install/web-pwa',
       testid: 'pwa',
       icon: 'ti-world',
-      title: 'Usar pelo navegador (PWA)',
-      desc: 'Sem instalar nada.',
+      title: t('docs.guides.cards.pwa.title'),
+      desc: t('docs.guides.cards.pwa.desc'),
     },
     {
       to: '/docs/install/tv-samsung-tizen',
       testid: 'tv-samsung',
       icon: 'ti-device-tv',
-      title: 'TV Samsung (Tizen)',
-      desc: 'Projeção via Palco.',
+      title: t('docs.guides.cards.tvSamsung.title'),
+      desc: t('docs.guides.cards.tvSamsung.desc'),
     },
     {
       to: '/docs/install/tv-lg-webos',
       testid: 'tv-lg',
       icon: 'ti-device-tv',
-      title: 'TV LG (webOS)',
-      desc: 'Projeção via Palco.',
+      title: t('docs.guides.cards.tvLg.title'),
+      desc: t('docs.guides.cards.tvLg.desc'),
     },
     {
       to: '/docs/install/tv-android',
       testid: 'tv-android',
       icon: 'ti-device-tv',
-      title: 'Android TV / Google TV',
-      desc: 'APK ou TV Box.',
+      title: t('docs.guides.cards.tvAndroid.title'),
+      desc: t('docs.guides.cards.tvAndroid.desc'),
     },
     {
       to: '/docs/palco-multi-device',
       testid: 'palco',
       icon: 'ti-devices',
-      title: 'Palco multi-dispositivo',
-      desc: 'Celular controla, TV projeta.',
+      title: t('docs.guides.cards.palco.title'),
+      desc: t('docs.guides.cards.palco.desc'),
     },
     {
       to: '/docs/faq',
       testid: 'faq',
       icon: 'ti-help-circle',
-      title: 'Perguntas frequentes',
-      desc: 'Gratuito, offline, privacidade.',
+      title: t('docs.guides.cards.faq.title'),
+      desc: t('docs.guides.cards.faq.desc'),
     },
     {
       to: '/docs/troubleshooting',
       testid: 'troubleshooting',
       icon: 'ti-bug',
-      title: 'Solução de problemas',
-      desc: 'Diagnóstico por sintoma.',
+      title: t('docs.guides.cards.troubleshooting.title'),
+      desc: t('docs.guides.cards.troubleshooting.desc'),
     },
     {
       to: '/docs/shortcuts',
       testid: 'shortcuts',
       icon: 'ti-keyboard',
-      title: 'Atalhos de teclado',
-      desc: 'Tabela completa por contexto.',
+      title: t('docs.guides.cards.shortcuts.title'),
+      desc: t('docs.guides.cards.shortcuts.desc'),
     },
     {
       to: '/docs/manual',
       testid: 'manual',
       icon: 'ti-book-2',
-      title: 'Manual completo',
-      desc: 'Todas as ferramentas, seção por seção.',
+      title: t('docs.guides.cards.manual.title'),
+      desc: t('docs.guides.cards.manual.desc'),
     },
-  ]
+  ])
 
   const allSectionIds = ['gettingStarted', ...moduleSections.map((m) => m.id), 'shortcuts', 'faq']
 
@@ -292,7 +297,7 @@
               v-for="guide in guideCards"
               :key="guide.to"
               class="doc-guide-card"
-              :to="guide.to"
+              :to="localePath(guide.to)"
               :data-testid="`docs-guide-${guide.testid}`"
             >
               <i :class="['ti', guide.icon]" />
