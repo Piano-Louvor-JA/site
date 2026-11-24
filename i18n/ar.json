@@ -430,8 +430,67 @@
     "sidebarLabel": "أقسام الوثائق",
     "guides": {
       "title": "أدلة كاملة",
-      "lead": "كل أداة في المنظومة مشروحة خطوة بخطوة، حسب المنصة."
-    }
+      "lead": "كل أداة في المنظومة مشروحة خطوة بخطوة، حسب المنصة.",
+      "cards": {
+        "gettingStarted": {
+          "title": "أول اجتماع عبادي في 15 دقيقة",
+          "desc": "من التنزيل إلى العرض: المسار الكامل."
+        },
+        "windows": {
+          "title": "التثبيت على Windows",
+          "desc": "Microsoft Store أو مثبّت EXE."
+        },
+        "macos": {
+          "title": "التثبيت على macOS",
+          "desc": "DMG لـ Apple Silicon أو Intel."
+        },
+        "linux": {
+          "title": "التثبيت على Linux",
+          "desc": "AppImage أو Snap أو Flatpak."
+        },
+        "android": {
+          "title": "التثبيت على Android (APK)",
+          "desc": "الهاتف وجهاز TV Box."
+        },
+        "pwa": {
+          "title": "الاستخدام عبر المتصفح (PWA)",
+          "desc": "دون تثبيت أي شيء."
+        },
+        "tvSamsung": {
+          "title": "تلفزيون Samsung (Tizen)",
+          "desc": "العرض عبر Palco."
+        },
+        "tvLg": {
+          "title": "تلفزيون LG (webOS)",
+          "desc": "العرض عبر Palco."
+        },
+        "tvAndroid": {
+          "title": "Android TV / Google TV",
+          "desc": "APK أو جهاز TV Box."
+        },
+        "palco": {
+          "title": "Palco متعدد الأجهزة",
+          "desc": "الهاتف يتحكم والتلفزيون يعرض."
+        },
+        "faq": {
+          "title": "الأسئلة الشائعة",
+          "desc": "مجاني، دون اتصال، خصوصية."
+        },
+        "troubleshooting": {
+          "title": "حل المشكلات",
+          "desc": "التشخيص حسب العَرَض."
+        },
+        "shortcuts": {
+          "title": "اختصارات لوحة المفاتيح",
+          "desc": "جدول كامل حسب السياق."
+        },
+        "manual": {
+          "title": "الدليل الكامل",
+          "desc": "جميع الأدوات، قسمًا بعد قسم."
+        }
+      }
+    },
+    "editOnGithub": "حرّر هذه الصفحة على GitHub"
   },
   "footer": {
     "tagline": "مدير عبادة عبر الويب. مجاني ومفتوح المصدر.",

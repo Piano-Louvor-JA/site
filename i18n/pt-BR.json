@@ -438,8 +438,67 @@
     "sidebarLabel": "Seções da documentação",
     "guides": {
       "title": "Guias completos",
-      "lead": "Cada ferramenta do ecossistema explicada passo a passo, por plataforma."
-    }
+      "lead": "Cada ferramenta do ecossistema explicada passo a passo, por plataforma.",
+      "cards": {
+        "gettingStarted": {
+          "title": "Primeiro culto em 15 minutos",
+          "desc": "Do download à projeção: fluxo completo."
+        },
+        "windows": {
+          "title": "Instalar no Windows",
+          "desc": "Microsoft Store ou instalador EXE."
+        },
+        "macos": {
+          "title": "Instalar no macOS",
+          "desc": "DMG Apple Silicon ou Intel."
+        },
+        "linux": {
+          "title": "Instalar no Linux",
+          "desc": "AppImage, Snap ou Flathub."
+        },
+        "android": {
+          "title": "Instalar no Android (APK)",
+          "desc": "Celular e TV Box."
+        },
+        "pwa": {
+          "title": "Usar pelo navegador (PWA)",
+          "desc": "Sem instalar nada."
+        },
+        "tvSamsung": {
+          "title": "TV Samsung (Tizen)",
+          "desc": "Projeção via Palco."
+        },
+        "tvLg": {
+          "title": "TV LG (webOS)",
+          "desc": "Projeção via Palco."
+        },
+        "tvAndroid": {
+          "title": "Android TV / Google TV",
+          "desc": "APK ou TV Box."
+        },
+        "palco": {
+          "title": "Palco multi-dispositivo",
+          "desc": "Celular controla, TV projeta."
+        },
+        "faq": {
+          "title": "Perguntas frequentes",
+          "desc": "Gratuito, offline, privacidade."
+        },
+        "troubleshooting": {
+          "title": "Solução de problemas",
+          "desc": "Diagnóstico por sintoma."
+        },
+        "shortcuts": {
+          "title": "Atalhos de teclado",
+          "desc": "Tabela completa por contexto."
+        },
+        "manual": {
+          "title": "Manual completo",
+          "desc": "Todas as ferramentas, seção por seção."
+        }
+      }
+    },
+    "editOnGithub": "Editar esta página no GitHub"
   },
   "footer": {
     "tagline": "Gerenciador de culto web. Gratuito e open-source.",
