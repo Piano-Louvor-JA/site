@@ -17,7 +17,8 @@
     "testers": "المختبِرون",
     "toggleTheme": "تبديل المظهر الفاتح/الداكن",
     "comunidade": "المجتمع",
-    "institucional": "للكنائس"
+    "institucional": "للكنائس",
+    "support": "الدعم"
   },
   "hero": {
     "badge": "جديد: تطبيق الويب (PWA) متاح الآن",
@@ -1355,5 +1356,46 @@
     "contact": "التواصل المؤسسي: app{'@'}pianolouvorja.com.br",
     "printCta": "طباعة / حفظ بصيغة PDF",
     "footer": "PIANO LouvorJA · https://pianolouvorja.com.br"
+  },
+  "tickets": {
+    "nav": "الدعم",
+    "sending": "جارٍ الإرسال…",
+    "loading": "جارٍ التحميل…",
+    "error": {
+      "api": "واجهة الخدمة غير متاحة. أعد المحاولة."
+    },
+    "intake": {
+      "title": "مركز الدعم",
+      "description": "أرسل طلب دعم.",
+      "name": "الاسم",
+      "email": "البريد الإلكتروني",
+      "subject": "الموضوع",
+      "message": "الرسالة",
+      "consent": "أوافق على معالجة بياناتي لتقديم الدعم وفق LGPD.",
+      "consentRequired": "الموافقة مطلوبة.",
+      "submit": "إرسال الطلب",
+      "successTitle": "سُجّل الطلب",
+      "successHint": "احتفظ بهذا الرقم للرجوع إليه عند التواصل مع الفريق.",
+      "newRequest": "طلب جديد",
+      "portalLink": "الانتقال إلى تذاكري"
+    },
+    "portal": {
+      "title": "تذاكري",
+      "description": "تابع طلباتك وردّ على الفريق.",
+      "newTicket": "تذكرة جديدة",
+      "priority": "الأولوية",
+      "create": "إنشاء تذكرة",
+      "empty": "لا توجد تذاكر بعد.",
+      "reply": "ردّ"
+    },
+    "admin": {
+      "title": "الإدارة — التذاكر",
+      "description": "قائمة فرز الطلبات وتذاكر المؤسسة.",
+      "intakeQueue": "قائمة فرز الطلبات",
+      "intakeEmpty": "لا توجد طلبات معلّقة.",
+      "triage": "فرز وتحويل إلى تذكرة",
+      "ticketsTitle": "التذاكر",
+      "tenant": "معرّف المؤسسة"
+    }
   }
 }

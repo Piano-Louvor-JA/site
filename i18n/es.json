@@ -15,8 +15,9 @@
     "download": "Descargar",
     "releases": "Versiones",
     "testers": "Probadores",
-    "comunidade": "Comunidad",
     "toggleTheme": "Alternar tema claro/oscuro",
+    "support": "Soporte",
+    "comunidade": "Comunidad",
     "institucional": "Líderes"
   },
   "hero": {
@@ -1154,21 +1155,6 @@
       "button": "Empezar a contribuir"
     }
   },
-  "comunidade": {
-    "eyebrow": "Comunidad",
-    "title": "El cuerpo vivo del proyecto",
-    "subtitle": "Devs, testers, productores de contenido y curadores aprobados — quienes construyen y sostienen PIANO LouvorJA, actualizado directamente de la fuente.",
-    "error": "No se pudo cargar la comunidad ahora. Inténtalo de nuevo en unos instantes.",
-    "avatarAlt": "Avatar de {name}",
-    "profile": "Ver perfil de GitHub",
-    "roles": {
-      "staff": "Equipo",
-      "dev": "Dev",
-      "tester": "Tester",
-      "conteudo": "Contenido",
-      "curador": "Curador"
-    }
-  },
   "community": {
     "spot": "Este lugar es tuyo — ven a probar",
     "eyebrow": "Comunidad",
@@ -1314,6 +1300,62 @@
     "downloadButton": "Abrir medios en Google Drive",
     "unavailable": "Los enlaces de medios se publicarán pronto.",
     "footerLink": "Medios"
+  },
+  "tickets": {
+    "nav": "Soporte",
+    "sending": "Enviando…",
+    "loading": "Cargando…",
+    "error": {
+      "api": "API no disponible. Intente de nuevo."
+    },
+    "intake": {
+      "title": "Centro de Soporte",
+      "description": "Envía una solicitud de soporte.",
+      "name": "Nombre",
+      "email": "Correo",
+      "subject": "Asunto",
+      "message": "Mensaje",
+      "consent": "Acepto el tratamiento de mis datos para atención (LGPD).",
+      "consentRequired": "Se requiere aceptar el consentimiento.",
+      "submit": "Enviar solicitud",
+      "successTitle": "¡Solicitud registrada!",
+      "successHint": "Guarda el protocolo como referencia al contactar al equipo.",
+      "newRequest": "Nueva solicitud",
+      "portalLink": "Ir a mis tickets"
+    },
+    "portal": {
+      "title": "Mis Tickets",
+      "description": "Siga sus solicitudes y responda al equipo.",
+      "newTicket": "Nuevo ticket",
+      "priority": "Prioridad",
+      "create": "Crear ticket",
+      "empty": "Aún no hay tickets.",
+      "reply": "Responder"
+    },
+    "admin": {
+      "title": "Admin — Tickets",
+      "description": "Cola de revisión y tickets de la organización.",
+      "intakeQueue": "Cola de triaje",
+      "intakeEmpty": "Sin solicitudes pendientes.",
+      "triage": "Triar y convertir",
+      "ticketsTitle": "Tickets",
+      "tenant": "Identificador de la organización"
+    }
+  },
+  "comunidade": {
+    "eyebrow": "Comunidad",
+    "title": "El cuerpo vivo del proyecto",
+    "subtitle": "Devs, testers, productores de contenido y curadores aprobados — quienes construyen y sostienen PIANO LouvorJA, actualizado directamente de la fuente.",
+    "error": "No se pudo cargar la comunidad ahora. Inténtalo de nuevo en unos instantes.",
+    "avatarAlt": "Avatar de {name}",
+    "profile": "Ver perfil de GitHub",
+    "roles": {
+      "staff": "Equipo",
+      "dev": "Dev",
+      "tester": "Tester",
+      "conteudo": "Contenido",
+      "curador": "Curador"
+    }
   },
   "institucional": {
     "meta": {

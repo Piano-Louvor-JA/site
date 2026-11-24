@@ -17,7 +17,8 @@
     "testers": "テスター",
     "toggleTheme": "ライト/ダークテーマの切り替え",
     "comunidade": "コミュニティ",
-    "institucional": "教会向け案内"
+    "institucional": "教会向け案内",
+    "support": "サポート"
   },
   "hero": {
     "badge": "新着：ウェブアプリ（PWA）公開",
@@ -1357,5 +1358,46 @@
     "contact": "団体向けのお問い合わせ: app{'@'}pianolouvorja.com.br",
     "printCta": "印刷 / PDF に保存",
     "footer": "PIANO LouvorJA · https://pianolouvorja.com.br"
+  },
+  "tickets": {
+    "nav": "サポート",
+    "sending": "送信中…",
+    "loading": "読み込み中…",
+    "error": {
+      "api": "API を利用できません。再試行してください。"
+    },
+    "intake": {
+      "title": "サポート窓口",
+      "description": "サポートへの依頼を送信します。",
+      "name": "お名前",
+      "email": "メール",
+      "subject": "件名",
+      "message": "メッセージ",
+      "consent": "サポートのための個人データ処理（LGPD）に同意します。",
+      "consentRequired": "同意が必要です。",
+      "submit": "依頼を送信",
+      "successTitle": "依頼を受け付けました",
+      "successHint": "チームへの連絡時に参照できるよう、この番号を保存してください。",
+      "newRequest": "新しい依頼",
+      "portalLink": "自分のチケットへ"
+    },
+    "portal": {
+      "title": "自分のチケット",
+      "description": "依頼を確認し、チームに返信できます。",
+      "newTicket": "新しいチケット",
+      "priority": "優先度",
+      "create": "チケットを作成",
+      "empty": "チケットはまだありません。",
+      "reply": "返信"
+    },
+    "admin": {
+      "title": "管理 — チケット",
+      "description": "問い合わせの振り分けと組織のチケット。",
+      "intakeQueue": "問い合わせ一覧",
+      "intakeEmpty": "待機中の依頼はありません。",
+      "triage": "確認してチケットに変換",
+      "ticketsTitle": "チケット",
+      "tenant": "組織 ID"
+    }
   }
 }

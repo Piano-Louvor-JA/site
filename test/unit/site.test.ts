@@ -74,8 +74,16 @@ describe('navLinks', () => {
 })
 
 describe('secondaryNavLinks', () => {
-  it('has exactly 6 links', () => {
-    expect(secondaryNavLinks.length).toBe(6)
+  it('preserves the existing footer destinations alongside community and support', () => {
+    expect(secondaryNavLinks.map((link) => link.href)).toEqual([
+      '#platforms',
+      '#how-it-works',
+      '#about',
+      '/testers',
+      '/comunidade',
+      '/contact',
+      '/suporte',
+    ])
   })
 
   it('every link has i18nKey starting with nav.', () => {
@@ -95,8 +103,14 @@ describe('secondaryNavLinks', () => {
     expect(new Set(hrefs).size).toBe(hrefs.length)
   })
 
-  it('last link points to /contact', () => {
-    expect(secondaryNavLinks[secondaryNavLinks.length - 1].href).toBe('/contact')
+  it('last link points to /suporte', () => {
+    expect(secondaryNavLinks[secondaryNavLinks.length - 1].href).toBe('/suporte')
+  })
+
+  it('has /contact before /suporte', () => {
+    const hrefs = secondaryNavLinks.map((l) => l.href)
+    expect(hrefs).toContain('/suporte')
+    expect(hrefs.indexOf('/contact')).toBeLessThan(hrefs.indexOf('/suporte'))
   })
 
   it('has /testers before /contact', () => {

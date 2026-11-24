@@ -15,8 +15,9 @@
     "download": "Download",
     "releases": "Releases",
     "testers": "Testers",
-    "comunidade": "Community",
     "toggleTheme": "Toggle light/dark theme",
+    "support": "Support",
+    "comunidade": "Community",
     "institucional": "Leaders"
   },
   "hero": {
@@ -1154,21 +1155,6 @@
       "button": "Start contributing"
     }
   },
-  "comunidade": {
-    "eyebrow": "Community",
-    "title": "The living body of the project",
-    "subtitle": "Approved developers, testers, content producers and curators — the people who build and sustain PIANO LouvorJA, updated straight from the source.",
-    "error": "Could not load the community right now. Please try again shortly.",
-    "avatarAlt": "Avatar of {name}",
-    "profile": "View GitHub profile",
-    "roles": {
-      "staff": "Team",
-      "dev": "Dev",
-      "tester": "Tester",
-      "conteudo": "Content",
-      "curador": "Curator"
-    }
-  },
   "community": {
     "spot": "This spot is yours — come test",
     "eyebrow": "Community",
@@ -1314,6 +1300,62 @@
     "downloadButton": "Open media on Google Drive",
     "unavailable": "Media links will be published soon.",
     "footerLink": "Media"
+  },
+  "tickets": {
+    "nav": "Support",
+    "sending": "Sending…",
+    "loading": "Loading…",
+    "error": {
+      "api": "API unavailable. Try again."
+    },
+    "intake": {
+      "title": "Support Center",
+      "description": "Send a support request.",
+      "name": "Name",
+      "email": "Email",
+      "subject": "Subject",
+      "message": "Message",
+      "consent": "I agree with the processing of my data for support (LGPD).",
+      "consentRequired": "Consent is required.",
+      "submit": "Send request",
+      "successTitle": "Request registered!",
+      "successHint": "Keep this reference when contacting the team.",
+      "newRequest": "New request",
+      "portalLink": "Go to my tickets"
+    },
+    "portal": {
+      "title": "My Tickets",
+      "description": "Track your requests and reply to the team.",
+      "newTicket": "New ticket",
+      "priority": "Priority",
+      "create": "Create ticket",
+      "empty": "No tickets yet.",
+      "reply": "Reply"
+    },
+    "admin": {
+      "title": "Admin — Tickets",
+      "description": "Triage queue and organization tickets.",
+      "intakeQueue": "Triage queue",
+      "intakeEmpty": "No pending requests.",
+      "triage": "Triage & convert",
+      "ticketsTitle": "Tickets",
+      "tenant": "Organization ID"
+    }
+  },
+  "comunidade": {
+    "eyebrow": "Community",
+    "title": "The living body of the project",
+    "subtitle": "Approved developers, testers, content producers and curators — the people who build and sustain PIANO LouvorJA, updated straight from the source.",
+    "error": "Could not load the community right now. Please try again shortly.",
+    "avatarAlt": "Avatar of {name}",
+    "profile": "View GitHub profile",
+    "roles": {
+      "staff": "Team",
+      "dev": "Dev",
+      "tester": "Tester",
+      "conteudo": "Content",
+      "curador": "Curator"
+    }
   },
   "institucional": {
     "meta": {

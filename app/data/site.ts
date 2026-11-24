@@ -37,6 +37,7 @@ export const secondaryNavLinks: NavLink[] = [
   { i18nKey: 'nav.testers', href: '/testers' },
   { i18nKey: 'nav.comunidade', href: '/comunidade' },
   { i18nKey: 'nav.contact', href: '/contact' },
+  { i18nKey: 'nav.support', href: '/suporte' },
 ]
 
 /**

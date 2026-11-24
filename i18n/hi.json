@@ -17,7 +17,8 @@
     "testers": "परीक्षक",
     "toggleTheme": "लाइट/डार्क थीम बदलें",
     "comunidade": "समुदाय",
-    "institucional": "कलीसियाओं के लिए"
+    "institucional": "कलीसियाओं के लिए",
+    "support": "सहायता"
   },
   "hero": {
     "badge": "नया: वेब ऐप (PWA) उपलब्ध",
@@ -1355,5 +1356,46 @@
     "contact": "संस्थागत संपर्क: app{'@'}pianolouvorja.com.br",
     "printCta": "प्रिंट करें / PDF में सहेजें",
     "footer": "PIANO LouvorJA · https://pianolouvorja.com.br"
+  },
+  "tickets": {
+    "nav": "सहायता",
+    "sending": "भेजा जा रहा है…",
+    "loading": "लोड हो रहा है…",
+    "error": {
+      "api": "API उपलब्ध नहीं है। फिर प्रयास करें।"
+    },
+    "intake": {
+      "title": "सहायता केंद्र",
+      "description": "सहायता का अनुरोध भेजें।",
+      "name": "नाम",
+      "email": "ईमेल",
+      "subject": "विषय",
+      "message": "संदेश",
+      "consent": "मैं सहायता के लिए अपने डेटा के प्रसंस्करण (LGPD) से सहमत हूँ।",
+      "consentRequired": "सहमति आवश्यक है।",
+      "submit": "अनुरोध भेजें",
+      "successTitle": "अनुरोध दर्ज हुआ",
+      "successHint": "टीम से संपर्क करते समय संदर्भ के लिए यह संख्या सँभालकर रखें।",
+      "newRequest": "नया अनुरोध",
+      "portalLink": "मेरे टिकट पर जाएँ"
+    },
+    "portal": {
+      "title": "मेरे टिकट",
+      "description": "अनुरोध देखें और टीम को उत्तर दें।",
+      "newTicket": "नया टिकट",
+      "priority": "प्राथमिकता",
+      "create": "टिकट बनाएँ",
+      "empty": "अभी कोई टिकट नहीं है।",
+      "reply": "उत्तर दें"
+    },
+    "admin": {
+      "title": "प्रशासन — टिकट",
+      "description": "अनुरोधों की समीक्षा कतार और संगठन के टिकट।",
+      "intakeQueue": "अनुरोधों की समीक्षा कतार",
+      "intakeEmpty": "कोई लंबित अनुरोध नहीं है।",
+      "triage": "समीक्षा करके टिकट में बदलें",
+      "ticketsTitle": "टिकट",
+      "tenant": "संगठन की पहचान"
+    }
   }
 }

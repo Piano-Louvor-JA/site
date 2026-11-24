@@ -17,7 +17,8 @@
     "testers": "Testçiler",
     "toggleTheme": "Açık/koyu tema değiştir",
     "comunidade": "Topluluk",
-    "institucional": "Kiliseler için"
+    "institucional": "Kiliseler için",
+    "support": "Destek"
   },
   "hero": {
     "badge": "Yeni: web uygulaması (PWA) yayında",
@@ -1367,5 +1368,46 @@
     "contact": "Kurumsal iletişim: app{'@'}pianolouvorja.com.br",
     "printCta": "Yazdır / PDF olarak kaydet",
     "footer": "PIANO LouvorJA · https://pianolouvorja.com.br"
+  },
+  "tickets": {
+    "nav": "Destek",
+    "sending": "Gönderiliyor…",
+    "loading": "Yükleniyor…",
+    "error": {
+      "api": "API kullanılamıyor. Yeniden deneyin."
+    },
+    "intake": {
+      "title": "Destek Merkezi",
+      "description": "Bir destek talebi gönderin.",
+      "name": "Ad",
+      "email": "E-posta",
+      "subject": "Konu",
+      "message": "Mesaj",
+      "consent": "Destek amacıyla verilerimin işlenmesini (LGPD) kabul ediyorum.",
+      "consentRequired": "Onay gereklidir.",
+      "submit": "Talep gönder",
+      "successTitle": "Talep kaydedildi",
+      "successHint": "Ekiple iletişim kurarken kullanmak için bu referansı saklayın.",
+      "newRequest": "Yeni talep",
+      "portalLink": "Taleplerime git"
+    },
+    "portal": {
+      "title": "Taleplerim",
+      "description": "Taleplerinizi takip edin ve ekibe yanıt verin.",
+      "newTicket": "Yeni talep",
+      "priority": "Öncelik",
+      "create": "Talep oluştur",
+      "empty": "Henüz talep yok.",
+      "reply": "Yanıtla"
+    },
+    "admin": {
+      "title": "Yönetim — Talepler",
+      "description": "Ön değerlendirme kuyruğu ve kuruluş talepleri.",
+      "intakeQueue": "Ön değerlendirme kuyruğu",
+      "intakeEmpty": "Bekleyen istek yok.",
+      "triage": "Değerlendir ve talebe dönüştür",
+      "ticketsTitle": "Talepler",
+      "tenant": "Kuruluş kimliği"
+    }
   }
 }

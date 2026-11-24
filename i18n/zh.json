@@ -17,7 +17,8 @@
     "testers": "测试者",
     "toggleTheme": "切换浅色/深色主题",
     "comunidade": "社区",
-    "institucional": "教会介绍"
+    "institucional": "教会介绍",
+    "support": "支持"
   },
   "hero": {
     "badge": "新功能：网页应用（PWA）已上线",
@@ -1341,5 +1342,46 @@
     "contact": "机构联系: app{'@'}pianolouvorja.com.br",
     "printCta": "打印 / 另存为 PDF",
     "footer": "PIANO LouvorJA · https://pianolouvorja.com.br"
+  },
+  "tickets": {
+    "nav": "支持",
+    "sending": "正在发送…",
+    "loading": "正在加载…",
+    "error": {
+      "api": "API 暂不可用，请重试。"
+    },
+    "intake": {
+      "title": "支持中心",
+      "description": "提交支持请求。",
+      "name": "姓名",
+      "email": "电子邮箱",
+      "subject": "主题",
+      "message": "消息",
+      "consent": "我同意为提供支持而处理我的个人数据（LGPD）。",
+      "consentRequired": "必须同意才能提交。",
+      "submit": "发送请求",
+      "successTitle": "请求已登记",
+      "successHint": "请保存此编号，以便联系团队时提供参考。",
+      "newRequest": "新请求",
+      "portalLink": "前往我的工单"
+    },
+    "portal": {
+      "title": "我的工单",
+      "description": "查看请求并回复团队。",
+      "newTicket": "新工单",
+      "priority": "优先级",
+      "create": "创建工单",
+      "empty": "暂无工单。",
+      "reply": "回复"
+    },
+    "admin": {
+      "title": "管理 — 工单",
+      "description": "请求分流队列和组织的工单。",
+      "intakeQueue": "请求分流队列",
+      "intakeEmpty": "没有待处理请求。",
+      "triage": "分流并转为工单",
+      "ticketsTitle": "工单",
+      "tenant": "组织标识符"
+    }
   }
 }
