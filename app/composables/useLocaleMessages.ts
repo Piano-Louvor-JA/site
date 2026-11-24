@@ -15,6 +15,13 @@ import es from '../../assets/i18n/es'
 import ru from '../../assets/i18n/ru'
 import uk from '../../assets/i18n/uk'
 import fr from '../../assets/i18n/fr'
+// ?raw keeps these JSON catalogues out of the i18n AST compilation.
+import jaRaw from '../../assets/i18n/ja.json?raw'
+import koRaw from '../../assets/i18n/ko.json?raw'
+import zhRaw from '../../assets/i18n/zh.json?raw'
+import trRaw from '../../assets/i18n/tr.json?raw'
+import arRaw from '../../assets/i18n/ar.json?raw'
+import hiRaw from '../../assets/i18n/hi.json?raw'
 
 const localeData: Record<string, Record<string, unknown>> = {
   'pt-BR': ptBR,
@@ -23,6 +30,12 @@ const localeData: Record<string, Record<string, unknown>> = {
   ru,
   uk,
   fr,
+  ja: JSON.parse(jaRaw),
+  ko: JSON.parse(koRaw),
+  zh: JSON.parse(zhRaw),
+  tr: JSON.parse(trRaw),
+  ar: JSON.parse(arRaw),
+  hi: JSON.parse(hiRaw),
 }
 
 export function isNullish(v: unknown): boolean {
