@@ -430,7 +430,65 @@
     "sidebarLabel": "문서 섹션",
     "guides": {
       "title": "완전한 가이드",
-      "lead": "생태계의 모든 도구를 플랫폼별로 단계별로 설명합니다."
+      "lead": "생태계의 모든 도구를 플랫폼별로 단계별로 설명합니다.",
+      "cards": {
+        "gettingStarted": {
+          "title": "15분 만에 첫 예배",
+          "desc": "다운로드부터 투영까지: 전체 흐름."
+        },
+        "windows": {
+          "title": "Windows에 설치",
+          "desc": "Microsoft Store 또는 EXE 설치 프로그램."
+        },
+        "macos": {
+          "title": "macOS에 설치",
+          "desc": "Apple Silicon 또는 Intel용 DMG."
+        },
+        "linux": {
+          "title": "Linux에 설치",
+          "desc": "AppImage, Snap 또는 Flatpak."
+        },
+        "android": {
+          "title": "Android에 설치 (APK)",
+          "desc": "휴대폰과 TV Box."
+        },
+        "pwa": {
+          "title": "브라우저에서 사용 (PWA)",
+          "desc": "설치 불필요."
+        },
+        "tvSamsung": {
+          "title": "Samsung TV (Tizen)",
+          "desc": "Palco를 통한 투영."
+        },
+        "tvLg": {
+          "title": "LG TV (webOS)",
+          "desc": "Palco를 통한 투영."
+        },
+        "tvAndroid": {
+          "title": "Android TV / Google TV",
+          "desc": "APK 또는 TV Box."
+        },
+        "palco": {
+          "title": "멀티 디바이스 Palco",
+          "desc": "휴대폰이 제어하고 TV가 투영합니다."
+        },
+        "faq": {
+          "title": "자주 묻는 질문",
+          "desc": "무료, 오프라인, 개인정보 보호."
+        },
+        "troubleshooting": {
+          "title": "문제 해결",
+          "desc": "증상별 진단."
+        },
+        "shortcuts": {
+          "title": "키보드 단축키",
+          "desc": "상황별 전체 표."
+        },
+        "manual": {
+          "title": "전체 매뉴얼",
+          "desc": "모든 도구를 항목별로."
+        }
+      }
     }
   },
   "footer": {

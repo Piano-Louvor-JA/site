@@ -430,7 +430,65 @@
     "sidebarLabel": "दस्तावेज़ीकरण अनुभाग",
     "guides": {
       "title": "संपूर्ण गाइड",
-      "lead": "इकोसिस्टम का हर उपकरण चरण दर चरण, प्लेटफ़ॉर्म अनुसार समझाया गया।"
+      "lead": "इकोसिस्टम का हर उपकरण चरण दर चरण, प्लेटफ़ॉर्म अनुसार समझाया गया।",
+      "cards": {
+        "gettingStarted": {
+          "title": "15 मिनट में पहली उपासना",
+          "desc": "डाउनलोड से प्रोजेक्शन तक: पूरी प्रक्रिया।"
+        },
+        "windows": {
+          "title": "Windows पर इंस्टॉल करें",
+          "desc": "Microsoft Store या EXE इंस्टॉलर।"
+        },
+        "macos": {
+          "title": "macOS पर इंस्टॉल करें",
+          "desc": "Apple Silicon या Intel के लिए DMG।"
+        },
+        "linux": {
+          "title": "Linux पर इंस्टॉल करें",
+          "desc": "AppImage, Snap या Flatpak।"
+        },
+        "android": {
+          "title": "Android पर इंस्टॉल करें (APK)",
+          "desc": "फ़ोन और TV Box।"
+        },
+        "pwa": {
+          "title": "ब्राउज़र में उपयोग करें (PWA)",
+          "desc": "कुछ इंस्टॉल करने की आवश्यकता नहीं।"
+        },
+        "tvSamsung": {
+          "title": "Samsung TV (Tizen)",
+          "desc": "Palco के माध्यम से प्रोजेक्शन।"
+        },
+        "tvLg": {
+          "title": "LG TV (webOS)",
+          "desc": "Palco के माध्यम से प्रोजेक्शन।"
+        },
+        "tvAndroid": {
+          "title": "Android TV / Google TV",
+          "desc": "APK या TV Box।"
+        },
+        "palco": {
+          "title": "मल्टी-डिवाइस Palco",
+          "desc": "फ़ोन नियंत्रित करता है, TV प्रोजेक्ट करता है।"
+        },
+        "faq": {
+          "title": "सामान्य प्रश्न",
+          "desc": "निःशुल्क, ऑफ़लाइन, गोपनीयता।"
+        },
+        "troubleshooting": {
+          "title": "समस्या निवारण",
+          "desc": "लक्षण के अनुसार निदान।"
+        },
+        "shortcuts": {
+          "title": "कीबोर्ड शॉर्टकट",
+          "desc": "संदर्भ अनुसार पूरी तालिका।"
+        },
+        "manual": {
+          "title": "पूर्ण मैनुअल",
+          "desc": "सभी टूल, खंड दर खंड।"
+        }
+      }
     }
   },
   "footer": {

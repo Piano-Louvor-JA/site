@@ -679,7 +679,65 @@
     "sidebarLabel": "Разделы документации",
     "guides": {
       "title": "Полные руководства",
-      "lead": "Каждый инструмент экосистемы объяснён пошагово, по платформам."
+      "lead": "Каждый инструмент экосистемы объяснён пошагово, по платформам.",
+      "cards": {
+        "gettingStarted": {
+          "title": "Первая служба за 15 минут",
+          "desc": "От загрузки до проецирования: весь процесс."
+        },
+        "windows": {
+          "title": "Установка на Windows",
+          "desc": "Microsoft Store или EXE-установщик."
+        },
+        "macos": {
+          "title": "Установка на macOS",
+          "desc": "DMG для Apple Silicon или Intel."
+        },
+        "linux": {
+          "title": "Установка на Linux",
+          "desc": "AppImage, Snap или Flatpak."
+        },
+        "android": {
+          "title": "Установка на Android (APK)",
+          "desc": "Смартфон и TV Box."
+        },
+        "pwa": {
+          "title": "Использование в браузере (PWA)",
+          "desc": "Без установки."
+        },
+        "tvSamsung": {
+          "title": "Samsung TV (Tizen)",
+          "desc": "Проекция через Palco."
+        },
+        "tvLg": {
+          "title": "LG TV (webOS)",
+          "desc": "Проекция через Palco."
+        },
+        "tvAndroid": {
+          "title": "Android TV / Google TV",
+          "desc": "APK или TV Box."
+        },
+        "palco": {
+          "title": "Palco на несколько устройств",
+          "desc": "Телефон управляет, ТВ проецирует."
+        },
+        "faq": {
+          "title": "Часто задаваемые вопросы",
+          "desc": "Бесплатно, офлайн, приватность."
+        },
+        "troubleshooting": {
+          "title": "Устранение неполадок",
+          "desc": "Диагностика по симптомам."
+        },
+        "shortcuts": {
+          "title": "Горячие клавиши",
+          "desc": "Полная таблица по контексту."
+        },
+        "manual": {
+          "title": "Полное руководство",
+          "desc": "Все инструменты, раздел за разделом."
+        }
+      }
     }
   },
   "community": {

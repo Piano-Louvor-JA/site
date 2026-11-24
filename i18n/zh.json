@@ -426,7 +426,65 @@
     "sidebarLabel": "文档章节",
     "guides": {
       "title": "完整指南",
-      "lead": "按平台逐步讲解生态系统中的每个工具。"
+      "lead": "按平台逐步讲解生态系统中的每个工具。",
+      "cards": {
+        "gettingStarted": {
+          "title": "15分钟完成首次礼拜",
+          "desc": "从下载到投屏：完整流程。"
+        },
+        "windows": {
+          "title": "在 Windows 上安装",
+          "desc": "Microsoft Store 或 EXE 安装包。"
+        },
+        "macos": {
+          "title": "在 macOS 上安装",
+          "desc": "Apple Silicon 或 Intel 版 DMG。"
+        },
+        "linux": {
+          "title": "在 Linux 上安装",
+          "desc": "AppImage、Snap 或 Flatpak。"
+        },
+        "android": {
+          "title": "在 Android 上安装 (APK)",
+          "desc": "手机和 TV Box。"
+        },
+        "pwa": {
+          "title": "在浏览器中使用 (PWA)",
+          "desc": "无需安装。"
+        },
+        "tvSamsung": {
+          "title": "Samsung TV (Tizen)",
+          "desc": "通过 Palco 投屏。"
+        },
+        "tvLg": {
+          "title": "LG TV (webOS)",
+          "desc": "通过 Palco 投屏。"
+        },
+        "tvAndroid": {
+          "title": "Android TV / Google TV",
+          "desc": "APK 或 TV Box。"
+        },
+        "palco": {
+          "title": "多设备 Palco",
+          "desc": "手机控制，电视投屏。"
+        },
+        "faq": {
+          "title": "常见问题",
+          "desc": "免费、离线、保护隐私。"
+        },
+        "troubleshooting": {
+          "title": "故障排除",
+          "desc": "按症状诊断。"
+        },
+        "shortcuts": {
+          "title": "键盘快捷键",
+          "desc": "按场景的完整列表。"
+        },
+        "manual": {
+          "title": "完整手册",
+          "desc": "所有工具，逐节讲解。"
+        }
+      }
     }
   },
   "footer": {

@@ -438,7 +438,65 @@
     },
     "guides": {
       "title": "Guías completas",
-      "lead": "Cada herramienta del ecosistema explicada paso a paso, por plataforma."
+      "lead": "Cada herramienta del ecosistema explicada paso a paso, por plataforma.",
+      "cards": {
+        "gettingStarted": {
+          "title": "Tu primer culto en 15 minutos",
+          "desc": "De la descarga a la proyección: flujo completo."
+        },
+        "windows": {
+          "title": "Instalar en Windows",
+          "desc": "Microsoft Store o instalador EXE."
+        },
+        "macos": {
+          "title": "Instalar en macOS",
+          "desc": "DMG Apple Silicon o Intel."
+        },
+        "linux": {
+          "title": "Instalar en Linux",
+          "desc": "AppImage, Snap o Flatpak."
+        },
+        "android": {
+          "title": "Instalar en Android (APK)",
+          "desc": "Móvil y TV Box."
+        },
+        "pwa": {
+          "title": "Usar desde el navegador (PWA)",
+          "desc": "Sin instalar nada."
+        },
+        "tvSamsung": {
+          "title": "TV Samsung (Tizen)",
+          "desc": "Proyección vía Palco."
+        },
+        "tvLg": {
+          "title": "TV LG (webOS)",
+          "desc": "Proyección vía Palco."
+        },
+        "tvAndroid": {
+          "title": "Android TV / Google TV",
+          "desc": "APK o TV Box."
+        },
+        "palco": {
+          "title": "Palco multidispositivo",
+          "desc": "El móvil controla, la TV proyecta."
+        },
+        "faq": {
+          "title": "Preguntas frecuentes",
+          "desc": "Gratuito, sin conexión, privacidad."
+        },
+        "troubleshooting": {
+          "title": "Solución de problemas",
+          "desc": "Diagnóstico por síntoma."
+        },
+        "shortcuts": {
+          "title": "Atajos de teclado",
+          "desc": "Tabla completa por contexto."
+        },
+        "manual": {
+          "title": "Manual completo",
+          "desc": "Todas las herramientas, sección por sección."
+        }
+      }
     }
   },
   "footer": {

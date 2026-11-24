@@ -1,5 +1,6 @@
 <script setup lang="ts">
   const { t } = useI18n()
+  const localePath = useLocalePath()
 
   // SEO
   useAppHead({
@@ -46,13 +47,13 @@
           <p class="inst-card__body">
             {{ $t(`institucional.${s.key}.body`) }}
           </p>
-          <a v-if="s.key === 's2'" href="/download" class="inst-card__link">{{
+          <a v-if="s.key === 's2'" :href="localePath('/download')" class="inst-card__link">{{
             $t('nav.download')
           }}</a>
-          <a v-if="s.key === 's3'" href="/institucional/press" class="inst-card__link">{{
+          <a v-if="s.key === 's3'" :href="localePath('/institucional/press')" class="inst-card__link">{{
             $t('institucional.cta.press')
           }}</a>
-          <a v-if="s.key === 's4'" href="/contact" class="inst-card__link">{{
+          <a v-if="s.key === 's4'" :href="localePath('/contact')" class="inst-card__link">{{
             $t('nav.contact')
           }}</a>
         </article>
@@ -62,7 +63,7 @@
     <!-- CTA press -->
     <section class="inst-cta">
       <div class="inst-cta__container">
-        <a href="/institucional/press" class="inst-cta__btn" data-testid="institucional-press-cta">
+        <a :href="localePath('/institucional/press')" class="inst-cta__btn" data-testid="institucional-press-cta">
           {{ $t('institucional.cta.press') }}
         </a>
       </div>
