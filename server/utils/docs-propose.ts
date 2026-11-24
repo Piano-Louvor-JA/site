@@ -40,6 +40,16 @@ function token(): string {
   return value
 }
 
+/** Preserva frontmatter do guia atual (nav_order/toc...); só atualiza title/reviewed_at. */
+function withFrontmatter(current: string, title: string, body: string): string {
+  const match = current.match(/^---\n([\s\S]*?)\n---\n?/)
+  if (!match) return `---\ntitle: ${title}\n---\n\n${body}`
+  const frontmatter = (match[1] ?? '')
+    .replace(/^title:.*$/m, `title: ${title}`)
+    .replace(/^reviewed_at:.*$/m, 'reviewed_at: pendente')
+  return `---\n${frontmatter}\n---\n\n${body}`
+}
+
 function withImageLinks(markdown: string, images: DocsImageInput[], stamp: string): string {
   if (images.length === 0) return markdown
   const links = images.map((image, index) => {
@@ -57,6 +67,15 @@ export async function createDocsPullRequest(
   const branch = `docs/edit-${input.slug}-${stamp}`
   const octokit = new Octokit({ auth: token() })
   const baseRef = await octokit.rest.git.getRef({ owner: OWNER, repo: REPO, ref: `heads/${BASE}` })
+
+  // Frontmatter do guia atual precisa sobreviver à edição do voluntário.
+  const currentFile = await octokit.rest.repos.getContent({
+    owner: OWNER,
+    repo: REPO,
+    ref: BASE,
+    path: `content/docs/pt-BR/${input.slug}.md`,
+  })
+  const current = 'content' in currentFile.data ? atob(String(currentFile.data.content)) : ''
 
   await octokit.rest.git.createRef({
     owner: OWNER,
@@ -77,14 +96,14 @@ export async function createDocsPullRequest(
     })
   }
 
-  const content = withImageLinks(input.markdown, input.images, stamp)
+  const body = withImageLinks(input.markdown, input.images, stamp)
   await octokit.rest.repos.createOrUpdateFileContents({
     owner: OWNER,
     repo: REPO,
     branch,
     path: `content/docs/pt-BR/${input.slug}.md`,
     message: `docs: atualiza ${input.slug}`,
-    content: Buffer.from(content).toString('base64'),
+    content: Buffer.from(withFrontmatter(current, input.title, body)).toString('base64'),
   })
 
   const pr = await octokit.rest.pulls.create({

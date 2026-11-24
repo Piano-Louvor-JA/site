@@ -6,12 +6,16 @@ const { calls, mockOctokit } = vi.hoisted(() => {
     createRef: vi.fn(),
     createOrUpdateFileContents: vi.fn(),
     create: vi.fn(),
+    getContent: vi.fn(),
   }
   const mockOctokit = vi.fn(function MockOctokit() {
     return {
       rest: {
         git: { getRef: calls.getRef, createRef: calls.createRef },
-        repos: { createOrUpdateFileContents: calls.createOrUpdateFileContents },
+        repos: {
+          createOrUpdateFileContents: calls.createOrUpdateFileContents,
+          getContent: calls.getContent,
+        },
         pulls: { create: calls.create },
       },
     }
@@ -28,6 +32,13 @@ describe('createDocsPullRequest', () => {
     vi.resetAllMocks()
     process.env.GITHUB_DOCS_TOKEN = 'test-token'
     calls.getRef.mockResolvedValue({ data: { object: { sha: 'base-sha' } } })
+    calls.getContent.mockResolvedValue({
+      data: {
+        content: btoa(
+          '---\ntitle: Antigo\nnav_order: 9\nreviewed_at: 2026-11-15\n---\n\ncorpo antigo',
+        ),
+      },
+    })
     calls.createRef.mockResolvedValue({})
     calls.createOrUpdateFileContents.mockResolvedValue({})
     calls.create.mockResolvedValue({
@@ -73,6 +84,14 @@ describe('createDocsPullRequest', () => {
         branch: 'docs/edit-manual-20261120120000',
       }),
     )
+    const docCommit = calls.createOrUpdateFileContents.mock.calls.find(
+      (args) => args[0].path === 'content/docs/pt-BR/manual.md',
+    )!
+    const committed = atob(docCommit[0].content)
+    expect(committed).toContain('nav_order: 9')
+    expect(committed).toContain('title: Manual atualizado')
+    expect(committed).toContain('reviewed_at: pendente')
+    expect(committed).not.toContain('corpo antigo')
     expect(calls.create).toHaveBeenCalledWith(
       expect.objectContaining({
         base: 'staging',
