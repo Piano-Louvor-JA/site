@@ -86,3 +86,44 @@ describe('useRoster', () => {
     )
   })
 })
+
+it.each([
+  null,
+  { data: [null] },
+  { data: [1] },
+  { data: [{ id: 1 }] },
+  { data: [{ id: 'x', name: 2 }] },
+  { data: [{ id: 'x', name: 'X', roles: null }] },
+])('rejects malformed roster %j', async (payload) => {
+  mocks.fetchMock.mockResolvedValue(payload)
+  const api = useRoster('dev')
+  expect(api.isEmpty.value).toBe(false)
+  await vi.waitFor(() => expect(api.pending.value).toBe(false))
+  expect(api.error.value).toBe(true)
+  expect(api.isEmpty.value).toBe(false)
+})
+
+it('uses default API when Nuxt config is missing and reports an honest empty roster', async () => {
+  vi.stubGlobal('useRuntimeConfig', () => {
+    throw new Error('outside Nuxt')
+  })
+  mocks.fetchMock.mockResolvedValue({ data: [] })
+  const api = useRoster('dev')
+  await vi.waitFor(() => expect(api.pending.value).toBe(false))
+  expect(api.isEmpty.value).toBe(true)
+  expect(mocks.fetchMock).toHaveBeenLastCalledWith(
+    'https://api.pianolouvorja.com.br/v1/custom/community/roster?role=dev',
+    expect.anything(),
+  )
+})
+
+it.each([undefined, {}, { public: {} }, { public: { pianoApiBase: '' } }])(
+  'uses default API for incomplete config %j',
+  async (config) => {
+    vi.stubGlobal('useRuntimeConfig', () => config)
+    mocks.fetchMock.mockResolvedValue({ data: [] })
+    const api = useRoster('dev')
+    await vi.waitFor(() => expect(api.pending.value).toBe(false))
+    expect(api.error.value).toBe(false)
+  },
+)
