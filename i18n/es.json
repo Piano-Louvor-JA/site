@@ -497,7 +497,8 @@
           "desc": "Todas las herramientas, sección por sección."
         }
       }
-    }
+    },
+    "editOnGithub": "Editar esta página en GitHub"
   },
   "footer": {
     "tagline": "Gestor de culto web. Gratuito y de código abierto.",

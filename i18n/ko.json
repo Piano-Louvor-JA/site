@@ -489,7 +489,8 @@
           "desc": "모든 도구를 항목별로."
         }
       }
-    }
+    },
+    "editOnGithub": "GitHub에서 이 페이지 편집"
   },
   "footer": {
     "tagline": "웹 예배 관리 도구. 무료 오픈소스.",

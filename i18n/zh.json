@@ -485,7 +485,8 @@
           "desc": "所有工具，逐节讲解。"
         }
       }
-    }
+    },
+    "editOnGithub": "在 GitHub 上编辑此页面"
   },
   "footer": {
     "tagline": "网页崇拜管理工具。免费开源。",

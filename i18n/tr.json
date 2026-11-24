@@ -497,7 +497,8 @@
           "desc": "Tüm araçlar, bölüm bölüm."
         }
       }
-    }
+    },
+    "editOnGithub": "Bu sayfayı GitHub’da düzenle"
   },
   "footer": {
     "tagline": "Web tabanlı ibadet yönetim aracı. Ücretsiz ve açık kaynak.",

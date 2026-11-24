@@ -76,7 +76,7 @@
   })
 
   const SITE_URL = 'https://pianolouvorja.com.br'
-  const REPO_BLOB = 'https://github.com/Piano-Louvor-JA/site/blob/main/content/docs/pt-BR'
+  const REPO_BLOB = 'https://github.com/Piano-Louvor-JA/site/blob/main/content/docs'
 
   const breadcrumbJsonLd = computed(() => ({
     '@context': 'https://schema.org',
@@ -177,7 +177,7 @@
     ],
   })
 
-  const editUrl = computed(() => `${REPO_BLOB}/${docSlug.value}.md`)
+  const editUrl = computed(() => `${REPO_BLOB}/${docDirFor(locale.value)}/${docSlug.value}.md`)
 
   const isFallback = computed(() => docDirFor(locale.value) !== locale.value)
 

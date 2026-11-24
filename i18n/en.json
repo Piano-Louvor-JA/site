@@ -497,7 +497,8 @@
           "desc": "Every tool, section by section."
         }
       }
-    }
+    },
+    "editOnGithub": "Edit this page on GitHub"
   },
   "footer": {
     "tagline": "Web worship service manager. Free and open-source.",

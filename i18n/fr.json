@@ -540,7 +540,8 @@
           "desc": "Tous les outils, section par section."
         }
       }
-    }
+    },
+    "editOnGithub": "Modifier cette page sur GitHub"
   },
   "privacy": {
     "title": "Politique de confidentialité",
