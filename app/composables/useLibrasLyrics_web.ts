@@ -1,31 +1,56 @@
 import { computed, ref, watch, type Ref } from 'vue'
-import type { LibrasState } from '../types'
-import { normalizeLyrics } from '../types'
-// Adaptação Web: usa useCookie do Nuxt em vez de isLibrasEnabled do app
-import { useCookie } from '#app' // <-- Nova dependência Nuxt
-const isLibrasEnabled = computed(() => useCookie('libras.enabled').value === true)
-import { useCookie } from '#app' // <-- Nova dependência Nuxt
-const isLibrasEnabled = computed(() => useCookie('libras.enabled').value === true)
-import { getLibrasGloss } from '../services/libras-translate'
-
-// Adicionar handleLibrasReady no composable
-const handleLibrasReady = (gloss: string | null) => {
-  if (gloss) {
-    gloss.value = gloss
-  } else {
-    // Degradação silenciosa (SPEC §7)
-    gloss.value = null
-  }
-}
+import { useCookie } from '#app'
+import type { LibrasState } from '../src/modules/libras/types'
+import { getLibrasGloss } from '../src/modules/libras/services/libras-translate'
 
 /**
- * Observa somente a letra atual do player (SPEC fatia 2).
+ * Observa somente a letra atual do player (SPEC fatia 2) — versão Web.
+ * - `librasEnabled` lido do cookie Nuxt `libras.enabled` (não do userPreferences do Electron).
  * - desligado (default false): estado disabled, zero trabalho.
- * - letra null/vazia: disabled.
  * - cache→API→fallback; falha total → unavailable, nunca lança.
- * - troca de letra invalida render anterior via token monotônico.
  */
 export function useLibrasLyrics(lyrics: Ref<string | null>) {
   const state = ref<LibrasState>('disabled')
   const gloss = ref<string | null>(null)
-// ... restante do arquivo
+
+  // useCookie deve ser chamado dentro do setup/composable (instância Nuxt ativa)
+  const librasCookie = useCookie<boolean | null>('libras.enabled', { default: () => null })
+  const isLibrasEnabled = computed(() => librasCookie.value === true)
+
+  // Token monotônico anti-stale
+  let token = 0
+
+  watch([isLibrasEnabled, lyrics], async ([enabled, current]) => {
+    const myToken = ++token
+    if (!enabled || !current) {
+      state.value = 'disabled'
+      gloss.value = null
+      return
+    }
+    state.value = 'loading'
+    gloss.value = null
+    try {
+      const result = await getLibrasGloss(current)
+      if (myToken !== token) return // stale
+      if (result.gloss) {
+        gloss.value = result.gloss
+        state.value = 'ready'
+      } else {
+        state.value = 'unavailable'
+      }
+    } catch {
+      if (myToken === token) state.value = 'unavailable'
+    }
+  }, { immediate: true })
+
+  function handleLibrasReady(value: string | null) {
+    if (value) {
+      gloss.value = value
+      state.value = 'ready'
+    } else {
+      gloss.value = null
+    }
+  }
+
+  return { state, gloss, isLibrasEnabled, handleLibrasReady }
+}
