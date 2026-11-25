@@ -49,8 +49,12 @@
           <i class="ti ti-cloud-download" aria-hidden="true" />
           {{ $t('midias.downloadButton') }}
         </a>
-        <p v-else class="midias-page__unavailable" data-testid="midias-unavailable" role="status">
-          {{ $t('midias.unavailable') }}
+        <!--
+          SPEC pianolouvorja-locale-convite v1.1: catálogo vazio para o locale
+          ativo → convite à comunidade (midias.convite_catalogo), não erro.
+        -->
+        <p v-else class="midias-page__unavailable" data-testid="midias-convite" role="status">
+          {{ $t('midias.convite_catalogo') }}
         </p>
       </section>
     </div>
