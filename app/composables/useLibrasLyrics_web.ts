@@ -1,5 +1,4 @@
 import { computed, ref, watch, type Ref } from 'vue'
-import { useCookie } from '#app'
 import type { LibrasState } from '../src/modules/libras/types'
 import { getLibrasGloss } from '../src/modules/libras/services/libras-translate'
 
@@ -20,28 +19,32 @@ export function useLibrasLyrics(lyrics: Ref<string | null>) {
   // Token monotônico anti-stale
   let token = 0
 
-  watch([isLibrasEnabled, lyrics], async ([enabled, current]) => {
-    const myToken = ++token
-    if (!enabled || !current) {
-      state.value = 'disabled'
-      gloss.value = null
-      return
-    }
-    state.value = 'loading'
-    gloss.value = null
-    try {
-      const result = await getLibrasGloss(current)
-      if (myToken !== token) return // stale
-      if (result.gloss) {
-        gloss.value = result.gloss
-        state.value = 'ready'
-      } else {
-        state.value = 'unavailable'
+  watch(
+    [isLibrasEnabled, lyrics],
+    async ([enabled, current]) => {
+      const myToken = ++token
+      if (!enabled || !current) {
+        state.value = 'disabled'
+        gloss.value = null
+        return
       }
-    } catch {
-      if (myToken === token) state.value = 'unavailable'
-    }
-  }, { immediate: true })
+      state.value = 'loading'
+      gloss.value = null
+      try {
+        const result = await getLibrasGloss(current)
+        if (myToken !== token) return // stale
+        if (result.gloss) {
+          gloss.value = result.gloss
+          state.value = 'ready'
+        } else {
+          state.value = 'unavailable'
+        }
+      } catch {
+        if (myToken === token) state.value = 'unavailable'
+      }
+    },
+    { immediate: true },
+  )
 
   function handleLibrasReady(value: string | null) {
     if (value) {
