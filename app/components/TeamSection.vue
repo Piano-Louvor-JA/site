@@ -2,6 +2,24 @@
   import { teamAreas, teamMembers, teamOrgUrl } from '~/data/team'
   import { useRoster, type RosterMember } from '~/composables/useRoster'
 
+  const { t, te } = useI18n()
+
+  /**
+   * Role localizada com fallback: membros dinâmicos (Sheet/roster) podem não ter
+   * chave team.members.<login>.* em todas as locales — nunca vazar a key crua.
+   */
+  function memberRole(login: string): string {
+    return te(`team.members.${login}.role`)
+      ? t(`team.members.${login}.role`)
+      : t('team.members.default.role')
+  }
+
+  function memberBio(member: DisplayMember): string | null {
+    return te(`team.members.${member.login}.bio`)
+      ? t(`team.members.${member.login}.bio`)
+      : member.bio
+  }
+
   /**
    * People dinâmico (SPEC Comunidade Orgânica D3/AC1): roster staff da API.
    * Fallback hardcoded team.ts enquanto env NUXT_PUBLIC_PIANO_API_BASE
@@ -112,7 +130,7 @@
               />
               <span class="team__person-info">
                 <span class="team__person-name">{{ member.name }}</span>
-                <span class="team__person-role">{{ $t(`team.members.${member.login}.role`) }}</span>
+                <span class="team__person-role">{{ memberRole(member.login) }}</span>
               </span>
             </div>
             <button
@@ -145,7 +163,7 @@
               />
               <span class="team__person-info">
                 <span class="team__person-name">{{ member.name }}</span>
-                <span class="team__person-role">{{ $t(`team.members.${member.login}.role`) }}</span>
+                <span class="team__person-role">{{ memberRole(member.login) }}</span>
               </span>
             </div>
             <button
@@ -190,10 +208,10 @@
             {{ activeMember.name }}
           </h4>
           <p class="team-modal__role">
-            {{ $t(`team.members.${activeMember.login}.role`) }}
+            {{ memberRole(activeMember.login) }}
           </p>
-          <p class="team-modal__bio">
-            {{ $t(`team.members.${activeMember.login}.bio`) }}
+          <p v-if="memberBio(activeMember)" class="team-modal__bio">
+            {{ memberBio(activeMember) }}
           </p>
           <div class="team-modal__links">
             <a

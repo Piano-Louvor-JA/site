@@ -1,7 +1,7 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest'
 import { mount, flushPromises } from '@vue/test-utils'
 
-// useRoster é chamado dentro do TeamSection — mocka o fetch global usado lá.
+// useRoster é chamado dentro de TeamSection — mocka o fetch global usado lá.
 const fetchMock = vi.fn()
 
 vi.stubGlobal('$fetch', fetchMock)
@@ -103,4 +103,35 @@ it('renders members without GitHub or avatar using safe defaults', async () => {
   expect(w.findAll('.team__person')).toHaveLength(2)
   expect(w.findAll('.team__avatar')[0]!.attributes('src')).toContain('/ghost.png')
   expect(w.findAll('.team__avatar')[1]!.attributes('src')).toContain('/unknown.png')
+})
+
+it('AC3: membro sem chave team.members.<login> usa fallback default.role, nunca a key crua', async () => {
+  fetchMock.mockImplementation((url: string) =>
+    url.includes('role=staff')
+      ? Promise.resolve({
+          data: [apiMember({ id: 'm9', name: 'Novo Dev', github: 'novodev' })],
+        })
+      : Promise.resolve({ data: [] }),
+  )
+  const wrapper = mount(TeamSection, { global: { stubs: ['i'] } })
+  await flushPromises()
+  const role = wrapper.find('.team__person-role')
+  expect(role.text()).toBe('Membro da equipe')
+  expect(role.text()).not.toContain('team.members.')
+})
+
+it('AC7: mesma pessoa em 2 docs (seed + sync) é deduplicada no cliente', async () => {
+  fetchMock.mockImplementation((url: string) =>
+    url.includes('role=staff')
+      ? Promise.resolve({
+          data: [
+            apiMember({ id: 'seed', name: 'Felipe', github: 'felipehj', roles: ['dev', 'staff'] }),
+            apiMember({ id: 'sync', name: 'Felipe', github: 'felipehj', roles: ['staff'] }),
+          ],
+        })
+      : Promise.resolve({ data: [] }),
+  )
+  const wrapper = mount(TeamSection, { global: { stubs: ['i'] } })
+  await flushPromises()
+  expect(wrapper.findAll('.team__person')).toHaveLength(1)
 })
