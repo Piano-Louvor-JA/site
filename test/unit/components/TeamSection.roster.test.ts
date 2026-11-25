@@ -32,12 +32,16 @@ describe('TeamSection roster dinâmico (SPEC Comunidade Orgânica)', () => {
   })
 
   it('renderiza o roster da API (staff) quando o fetch resolve', async () => {
-    fetchMock.mockResolvedValue({
-      data: [
-        apiMember(),
-        apiMember({ id: 'm2', name: 'Ezequias Fonseca', github: 'ezequiasfonseca' }),
-      ],
-    })
+    fetchMock.mockImplementation((url: string) =>
+      url.includes('role=staff')
+        ? Promise.resolve({
+            data: [
+              apiMember(),
+              apiMember({ id: 'm2', name: 'Ezequias Fonseca', github: 'ezequiasfonseca' }),
+            ],
+          })
+        : Promise.resolve({ data: [] }), // dev: sem devs para este cenário
+    )
     const wrapper = mount(TeamSection, { global: { stubs: ['i'] } })
     await flushPromises()
     const people = wrapper.findAll('.team__person')
@@ -57,15 +61,43 @@ describe('TeamSection roster dinâmico (SPEC Comunidade Orgânica)', () => {
     expect(people).toHaveLength(teamMembers.length)
     expect(people[0]!.find('.team__person-name').text()).toBe(teamMembers[0]!.name)
   })
+
+  it('renderiza subseção devs (role=dev) quando a API resolve devs (SPEC v1.1.0 AC-devs)', async () => {
+    // 1ª chamada: staff; 2ª: dev (useRoster é chamado 2× no componente)
+    fetchMock.mockImplementation((url: string) => {
+      if (url.includes('role=staff')) {
+        return Promise.resolve({ data: [apiMember()] })
+      }
+      if (url.includes('role=dev')) {
+        return Promise.resolve({
+          data: [
+            apiMember({ id: 'd1', name: 'Felipe', github: 'felipehj', roles: ['dev'] }),
+            apiMember({ id: 'd2', name: 'Lucas', github: 'lucas-dev', roles: ['dev'] }),
+          ],
+        })
+      }
+      return Promise.reject(new Error('url inesperada: ' + url))
+    })
+    const wrapper = mount(TeamSection, { global: { stubs: ['i'] } })
+    await flushPromises()
+    const devs = wrapper.findAll('.team__dev')
+    expect(devs).toHaveLength(2)
+    expect(devs[0]!.find('.team__person-name').text()).toBe('Felipe')
+    expect(devs[1]!.find('.team__person-name').text()).toBe('Lucas')
+  })
 })
 
 it('renders members without GitHub or avatar using safe defaults', async () => {
-  fetchMock.mockResolvedValue({
-    data: [
-      apiMember({ github: null, avatar_url: null }),
-      apiMember({ id: 'm2', github: 'unknown', avatar_url: null }),
-    ],
-  })
+  fetchMock.mockImplementation((url: string) =>
+    url.includes('role=staff')
+      ? Promise.resolve({
+          data: [
+            apiMember({ github: null, avatar_url: null }),
+            apiMember({ id: 'm2', github: 'unknown', avatar_url: null }),
+          ],
+        })
+      : Promise.resolve({ data: [] }),
+  )
   const w = mount(TeamSection, { global: { stubs: ['i'] } })
   await flushPromises()
   expect(w.findAll('.team__person')).toHaveLength(2)

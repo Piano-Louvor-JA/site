@@ -10,6 +10,15 @@
    */
   const { members: rosterMembers, pending: rosterPending } = useRoster('staff')
 
+  /**
+   * Devs ativos (SPEC v1.1.0): subseção própria na home, roster role=dev.
+   * Sem fallback hardcoded — lista vazia honesta quando a API não devolve devs.
+   */
+  const {
+    members: rosterDevs,
+    pending: rosterDevsPending,
+  } = useRoster('dev')
+
   type DisplayMember = {
     login: string
     name: string
@@ -33,6 +42,10 @@
 
   const people = computed<DisplayMember[]>(() =>
     rosterPending.value ? [] : rosterMembers.value.map(fromRoster),
+  )
+
+  const devs = computed<DisplayMember[]>(() =>
+    rosterDevsPending.value ? [] : rosterDevs.value.map(fromRoster),
   )
 
   const activeMember = ref<DisplayMember | null>(null)
@@ -88,6 +101,39 @@
         </h3>
         <ul class="team__people-list">
           <li v-for="member in people" :key="member.login" class="team__person">
+            <div class="team__person-card">
+              <img
+                :src="member.avatar"
+                :alt="$t('team.people.avatarAlt', { name: member.name })"
+                class="team__avatar"
+                width="72"
+                height="72"
+                loading="lazy"
+              />
+              <span class="team__person-info">
+                <span class="team__person-name">{{ member.name }}</span>
+                <span class="team__person-role">{{ $t(`team.members.${member.login}.role`) }}</span>
+              </span>
+            </div>
+            <button
+              type="button"
+              class="team__person-more"
+              :aria-label="$t('team.people.more')"
+              @click="openMember(member)"
+            >
+              {{ $t('team.people.more') }}
+              <i class="ti ti-arrow-right" aria-hidden="true" />
+            </button>
+          </li>
+        </ul>
+      </div>
+
+      <div v-if="devs.length" class="team__people">
+        <h3 class="team__people-title">
+          {{ $t('team.devs.title') }}
+        </h3>
+        <ul class="team__people-list">
+          <li v-for="member in devs" :key="member.login" class="team__person team__dev">
             <div class="team__person-card">
               <img
                 :src="member.avatar"
