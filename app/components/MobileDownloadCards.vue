@@ -12,6 +12,8 @@
 
   const hasAssets = computed(() => Object.keys(props.mobileData.assets).length > 0)
 
+  const formatSize = (bytes: number) => `${(bytes / 1024 / 1024).toFixed(1)} MB`
+
   const mobileCards = computed(() =>
     Object.entries(props.mobileData.assets).map(([platform, asset]) => ({
       platform,
@@ -71,6 +73,9 @@
           </p>
           <p v-if="mobileData.tag" class="download-card__version">
             {{ mobileData.tag }}
+          </p>
+          <p class="download-card__size">
+            {{ formatSize(card.asset.size) }}
           </p>
           <a
             :href="card.asset.url"
@@ -220,6 +225,12 @@
       font-size: 0.75rem;
       color: var(--piano-accent);
       font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+
+    &__size {
+      font-size: 0.75rem;
+      color: var(--piano-text-tertiary);
       margin-bottom: 1rem;
     }
 

@@ -1,0 +1,1447 @@
+{
+  "meta": {
+    "title": "PIANO LouvorJA — 崇拜管理工具",
+    "description": "崇拜管理网页平台：赞美诗集、圣经、崇拜程序、多屏投影等。免费开源。"
+  },
+  "nav": {
+    "features": "功能",
+    "platforms": "平台",
+    "about": "关于",
+    "howItWorks": "使用方法",
+    "docs": "文档",
+    "contact": "联系",
+    "openApp": "打开应用",
+    "language": "语言",
+    "download": "下载",
+    "releases": "版本发布",
+    "testers": "测试者",
+    "toggleTheme": "切换浅色/深色主题",
+    "comunidade": "社区",
+    "institucional": "教会介绍",
+    "support": "支持"
+  },
+  "hero": {
+    "badge": "新功能：网页应用（PWA）已上线",
+    "title": "崇拜管理工具",
+    "titleHighlight": "简单",
+    "subtitle": "在一个地方管理赞美诗集、崇拜程序、圣经和投影。从任何设备访问，无需安装。",
+    "ctaPrimary": "打开应用",
+    "ctaSecondary": "查看平台",
+    "meta": {
+      "noInstall": "无需安装",
+      "anyDevice": "任何设备",
+      "openSource": "开源"
+    },
+    "preview": {
+      "currentHymn": "当前诗歌",
+      "currentHymnTitle": "#15 — Divino Comigo",
+      "active": "进行中",
+      "next": "下一个",
+      "nextTitle": "欢迎与赞美",
+      "elapsedTime": "已用时间"
+    },
+    "titleHighlight2": "而完整"
+  },
+  "stats": {
+    "features": "生态系统功能",
+    "free": "免费",
+    "installs": "安装量",
+    "offline": "离线可用"
+  },
+  "platforms": {
+    "eyebrow": "跨平台",
+    "title": "在您需要的任何地方",
+    "description": "使用桌面应用获得最高效率，用浏览器作为快速替代，或在手机上使用 Android 应用。",
+    "desktop": {
+      "badge": "推荐",
+      "title": "原生桌面",
+      "subtitle": "Linux、macOS 和 Windows",
+      "description": "完整体验，支持多屏幕、独立投影和键盘快捷键。",
+      "feature1": "多屏幕投影",
+      "feature2": "完全离线模式",
+      "feature3": "键盘快捷键",
+      "cta": "了解更多"
+    },
+    "web": {
+      "badge": "立即访问",
+      "title": "网页（浏览器）",
+      "subtitle": "任何 PC 或笔记本电脑",
+      "description": "直接通过浏览器访问。适合快速使用或未安装应用时的备选方案。",
+      "feature1": "无需安装",
+      "feature2": "适用于任何系统",
+      "feature3": "自动更新",
+      "cta": "在浏览器中打开"
+    },
+    "mobile": {
+      "badge": "新增",
+      "title": "移动端",
+      "subtitle": "Android 已上线",
+      "description": "原生 Android 应用现已上线。直接用手机控制数字舞台。",
+      "feature1": "原生 Android 已上线",
+      "feature2": "数字舞台控制",
+      "feature3": "iOS 开发中",
+      "cta": "下载应用"
+    }
+  },
+  "notifyModal": {
+    "title": "第一时间了解动态",
+    "subtitle": "输入您的电子邮箱，移动应用上线时我们会立即通知您。",
+    "placeholder": "your{'@'}email.com",
+    "button": "上线时通知我",
+    "loading": "发送中...",
+    "success": "设置完成！上线后将第一时间通知您。",
+    "errors": {
+      "invalidEmail": "请输入有效的电子邮箱地址。",
+      "alreadySubscribed": "该邮箱已订阅。",
+      "rateLimited": "尝试次数过多。请稍后再试。",
+      "serviceUnavailable": "服务暂时不可用。请稍后再试。",
+      "subscribeFailed": "订阅失败。请稍后再试。",
+      "generic": "出现问题。请稍后再试。"
+    }
+  },
+  "features": {
+    "eyebrow": "功能",
+    "title": "崇拜所需的一切",
+    "description": "一套完整的集成工具，管理崇拜的方方面面。",
+    "items": {
+      "media": {
+        "title": "媒体中心",
+        "description": "以三种播放模式管理专辑、赞美诗集和合集。"
+      },
+      "liturgy": {
+        "title": "崇拜程序",
+        "description": "使用 13 种项目类型、拖放、克隆和倒计时来构建崇拜程序。"
+      },
+      "bible": {
+        "title": "圣经",
+        "description": "多版本，快速搜索，收藏和直接投影。"
+      },
+      "projection": {
+        "title": "多屏投影",
+        "description": "为投影仪或辅助电视提供完全可控的独立输出。"
+      },
+      "tools": {
+        "title": "实用工具",
+        "description": "时钟、秒表、计时器和抽奖已集成到崇拜中。"
+      },
+      "player": {
+        "title": "高级播放器",
+        "description": "普通播放、跟唱模式和同步歌词幻灯片显示。"
+      },
+      "settings": {
+        "title": "设置",
+        "description": "外观、投影、多屏幕和完全可自定义的偏好设置。"
+      },
+      "offline": {
+        "title": "本地数据",
+        "description": "桌面应用在下载媒体后可 100% 离线工作。网页版需要互联网连接。"
+      }
+    }
+  },
+  "about": {
+    "eyebrow": "关于项目",
+    "title": "由社群创建，为社群服务",
+    "text1": "{name} 是一个协作开源项目，旨在让崇拜管理更加轻松。",
+    "text2": "由 Piano 团队开发，平台在社群贡献下不断发展。免费，无广告，不收集数据。",
+    "forkCredit": "PIANO LouvorJA 是 LouvorJA 项目（github.com/louvorja）的分支，自 2019 年起由社群维护。我们感谢让这个项目成为可能的原创者和贡献者。",
+    "openSource": "开源",
+    "stats": {
+      "free": "免费",
+      "installs": "安装量",
+      "offline": "PWA 离线"
+    }
+  },
+  "how": {
+    "eyebrow": "使用方法",
+    "title": "几分钟内开始",
+    "description": "组织崇拜的四个简单步骤。",
+    "steps": {
+      "1": {
+        "title": "打开应用",
+        "desc": "通过浏览器访问或下载桌面版。无需注册。"
+      },
+      "2": {
+        "title": "导入赞美诗集",
+        "desc": "将专辑、赞美诗集和合集添加到媒体中心。"
+      },
+      "3": {
+        "title": "构建崇拜程序",
+        "desc": "拖动项目以创建带时间跟踪的崇拜程序。"
+      },
+      "4": {
+        "title": "投影并主持",
+        "desc": "使用多屏投影显示诗歌、经文和幻灯片。"
+      }
+    }
+  },
+  "cta": {
+    "title": "准备开始了吗？",
+    "subtitle": "立即打开 PIANO LouvorJA，几分钟内组织好您的崇拜。免费，无需注册。",
+    "button": "打开应用",
+    "meta": {
+      "free": "100% 免费",
+      "noInstall": "无需安装",
+      "openSource": "开源"
+    }
+  },
+  "contact": {
+    "eyebrow": "取得联系",
+    "title": "联系我们",
+    "description": "有疑问、建议或发现错误？给我们发消息，我们会尽快回复。",
+    "form": {
+      "name": "姓名",
+      "namePlaceholder": "您的姓名",
+      "email": "电子邮箱",
+      "emailPlaceholder": "your{'@'}email.com",
+      "subject": "主题",
+      "subjectPlaceholder": "关于什么？",
+      "message": "消息",
+      "messagePlaceholder": "写下您的消息...",
+      "submit": "发送消息",
+      "sending": "发送中...",
+      "success": "消息发送成功！我们会尽快回复您。",
+      "error": "发送错误。请重试或直接发邮件至 app{'@'}pianolouvorja.com.br",
+      "typeLabel": "主题",
+      "type": {
+        "general": "一般问题 / 联系",
+        "tester": "我想成为测试者",
+        "developer": "我想成为开发者",
+        "bug": "报告错误或提出改进建议"
+      },
+      "focusLabel": "您在哪里使用 PIANO？",
+      "focus": {
+        "app-desktop": "桌面应用（Electron）",
+        "web-pwa": "网页 / PWA",
+        "api": "API",
+        "mobile-flutter": "移动端（Flutter）",
+        "tv-receiver": "电视 / 接收器",
+        "docs": "文档",
+        "qa": "测试 / QA",
+        "design": "设计 / UI-UX"
+      },
+      "bio": "简短介绍",
+      "bioPlaceholder": "关于您的 1-2 句话...",
+      "links": "链接（个人主页、社交媒体）",
+      "linksPlaceholder": "每行一个链接（可选）",
+      "avatar": "头像（可选）",
+      "avatarPlaceholder": "上传图片（JPG/PNG）",
+      "avatarPreview": "头像预览",
+      "removeAvatar": "移除头像",
+      "github": "GitHub",
+      "githubPlaceholder": "用户名或 GitHub 链接",
+      "portfolio": "LinkedIn 或作品集",
+      "portfolioPlaceholder": "链接（可选）",
+      "areas": "感兴趣的领域",
+      "availability": "可用时间",
+      "availabilityPlaceholder": "例如：晚上和周末，每周约 5 小时...",
+      "stack": "技术栈和经验",
+      "stackPlaceholder": "您掌握的技术、过往经验...",
+      "motivation": "您为什么想贡献？",
+      "motivationPlaceholder": "简单谈谈您的动机（至少 20 个字符）...",
+      "testerEmail": "测试者邮箱（如已注册）",
+      "testerEmailPlaceholder": "可选 — 将报告与您的注册关联",
+      "reportTypeLabel": "报告类型",
+      "reportType": {
+        "bug": "错误（某些功能不正常）",
+        "feature": "改进建议",
+        "other": "其他"
+      },
+      "version": "应用版本",
+      "versionPlaceholder": "例如 1.4.2（网页/桌面/移动）",
+      "module": "受影响模块",
+      "modulePlaceholder": "例如：赞美诗集、崇拜程序、投影...",
+      "description": "描述",
+      "descriptionPlaceholder": "发生了什么？您期望什么？（至少 20 个字符）",
+      "steps": "重现步骤",
+      "stepsPlaceholder": "1. 打开... 2. 点击...（可选）",
+      "attachment": "附件（截图/日志）",
+      "attachmentPlaceholder": "图片、PDF、TXT 或 JSON",
+      "removeAttachment": "移除附件"
+    },
+    "direct": "或直接发送电子邮件至",
+    "responseTime": "平均回复时间：24-48 小时"
+  },
+  "docs": {
+    "title": "文档",
+    "subtitle": "掌握 PIANO LouvorJA 所需的一切",
+    "search": "搜索文档...",
+    "sections": {
+      "gettingStarted": {
+        "title": "快速开始",
+        "description": "初始设置和应用的第一步。"
+      },
+      "media": {
+        "title": "媒体中心",
+        "description": "管理专辑、赞美诗集和歌曲合集。"
+      },
+      "hymnal": {
+        "title": "赞美诗集",
+        "description": "基督复临安息日会赞美诗的搜索、播放和导出。"
+      },
+      "collections": {
+        "title": "合集",
+        "description": "为任何场合创建和管理自定义合集与播放列表。"
+      },
+      "liturgy": {
+        "title": "崇拜程序",
+        "description": "构建和组织完整的崇拜程序。"
+      },
+      "bible": {
+        "title": "圣经",
+        "description": "搜索、收藏和经文投影。"
+      },
+      "projection": {
+        "title": "多屏投影",
+        "description": "设置辅助屏幕和投影。"
+      },
+      "streaming": {
+        "title": "直播",
+        "description": "集成 OBS、vMix 和直播平台进行在线崇拜。"
+      },
+      "tools": {
+        "title": "实用工具",
+        "description": "时钟、秒表、计时器和抽奖。"
+      },
+      "settings": {
+        "title": "设置",
+        "description": "自定义外观、投影和偏好设置。"
+      },
+      "shortcuts": {
+        "title": "键盘快捷键",
+        "description": "用快捷键加快您的工作流程。"
+      },
+      "faq": {
+        "title": "常见问题",
+        "description": "常见问题解答"
+      }
+    },
+    "content": {
+      "gettingStarted": {
+        "intro": "PIANO LouvorJA 是一个可在任何装有现代浏览器的设备上运行的网页应用。无需安装 — 在浏览器中打开即可。",
+        "steps": [
+          "在桌面或移动设备的浏览器中打开应用。",
+          "为获得更好体验，可从浏览器菜单将其添加到主屏幕。",
+          "完成！开始组织您的崇拜。"
+        ],
+        "tip": "为获得最佳崇拜体验，请使用双显示器桌面电脑：一台控制，一台投影。"
+      },
+      "shortcuts": {
+        "table": {
+          "action": "操作",
+          "shortcut": "快捷键"
+        },
+        "items": [
+          {
+            "action": "播放/暂停",
+            "shortcut": "空格"
+          },
+          {
+            "action": "下一曲",
+            "shortcut": "→"
+          },
+          {
+            "action": "上一曲",
+            "shortcut": "←"
+          },
+          {
+            "action": "音量 +",
+            "shortcut": "↑"
+          },
+          {
+            "action": "音量 -",
+            "shortcut": "↓"
+          },
+          {
+            "action": "全屏模式",
+            "shortcut": "F"
+          },
+          {
+            "action": "切换投影",
+            "shortcut": "P"
+          },
+          {
+            "action": "快速搜索",
+            "shortcut": "Ctrl+K"
+          },
+          {
+            "action": "关闭投影",
+            "shortcut": "ESC"
+          },
+          {
+            "action": "切换操作员 ↔ 投影（桌面应用）",
+            "shortcut": "Ctrl+Alt+P"
+          }
+        ]
+      },
+      "modules": {
+        "media": ["3 种模式的播放器", "赞美诗集和专辑", "跟唱模式"],
+        "hymnal": ["按编号或标题快速搜索", "顺序播放", "导出为 PDF 或打印"],
+        "collections": ["在线和自定义合集", "拖放创建播放列表", "带歌词的跟唱模式"],
+        "liturgy": ["13 种项目类型", "拖放", "每项倒计时"],
+        "bible": ["多版本", "快速搜索", "直接投影"],
+        "projection": ["独立输出", "多屏幕", "完全控制"],
+        "streaming": ["歌词显示自定义 CSS", "OBS 和 vMix 集成", "输出到 YouTube 和 Facebook"],
+        "tools": ["时钟和秒表", "倒计时器", "抽奖"],
+        "settings": ["外观", "投影", "多屏幕"]
+      }
+    },
+    "faq": {
+      "cost": {
+        "question": "PIANO LouvorJA 真的免费吗？",
+        "answer": "是的！PIANO LouvorJA 100% 免费开源。没有订阅、广告或数据收集。所有代码都在 GitHub 上公开。"
+      },
+      "offline": {
+        "question": "没有互联网能用吗？",
+        "answer": "桌面应用在下载媒体后可 100% 离线工作。网页版需要互联网连接。APK 应用也可以离线使用，只要内容已下载到本地且设备在同一网络中。"
+      },
+      "devices": {
+        "question": "可以在哪些设备上使用？",
+        "answer": "PIANO 可在任何装有现代浏览器的设备上运行：桌面（Linux、macOS、Windows）、平板和手机。为获得最佳多屏投影体验，我们推荐使用桌面电脑。"
+      },
+      "data": {
+        "question": "我的数据存储在哪里？",
+        "answer": "桌面应用将数据（诗歌、崇拜程序、设置）本地存储在您的设备上。网页版需要互联网连接且不存储持久数据。提交联系表单时，您的信息（姓名、邮箱、消息）将通过 Web3Forms 传输以便我们回复。详情请参阅我们的隐私政策。"
+      },
+      "privacy": {
+        "question": "你们如何保护我的隐私？",
+        "answer": "PIANO LouvorJA 遵守 GDPR 和 LGPD（巴西通用数据保护法）。本网站不使用追踪、分析或广告 Cookie — 仅使用一个记住您首选语言的技术 Cookie。我们不会出于营销目的向第三方出售或共享数据。更多信息请参阅隐私政策。"
+      },
+      "support": {
+        "question": "如何获得支持或报告问题？",
+        "answer": "您可以通过联系页面的表单联系我们，或直接在我们的 GitHub 仓库提交 issue。崇拜期间的紧急问题，请参阅下方的故障排除常见问题。"
+      },
+      "updates": {
+        "question": "应用如何更新？",
+        "answer": "PIANO LouvorJA 是一个网页应用。重新加载页面时会自动应用更新。无需手动下载或安装，您始终使用最新版本。"
+      },
+      "troubleshooting": {
+        "question": "如果应用无法加载或显示错误怎么办？",
+        "answer": "1) 重新加载页面（Ctrl+F5 清除缓存）。2) 首次访问时检查互联网连接。3) 在浏览器设置中清除网站数据。4) 尝试无痕模式以排除扩展冲突。5) 如果问题仍然存在，请通过联系表单或 GitHub 报告，并附上浏览器和设备详情。"
+      },
+      "contribute": {
+        "question": "如何为项目做贡献？",
+        "answer": "本项目是开源的，接受 GitHub 上的贡献。您可以报告错误、建议功能、提交拉取请求或帮助翻译成其他语言。"
+      }
+    },
+    "sidebarLabel": "文档章节",
+    "guides": {
+      "title": "完整指南",
+      "lead": "按平台逐步讲解生态系统中的每个工具。",
+      "cards": {
+        "gettingStarted": {
+          "title": "15分钟完成首次礼拜",
+          "desc": "从下载到投屏：完整流程。"
+        },
+        "windows": {
+          "title": "在 Windows 上安装",
+          "desc": "Microsoft Store 或 EXE 安装包。"
+        },
+        "macos": {
+          "title": "在 macOS 上安装",
+          "desc": "Apple Silicon 或 Intel 版 DMG。"
+        },
+        "linux": {
+          "title": "在 Linux 上安装",
+          "desc": "AppImage、Snap 或 Flatpak。"
+        },
+        "android": {
+          "title": "在 Android 上安装 (APK)",
+          "desc": "手机和 TV Box。"
+        },
+        "pwa": {
+          "title": "在浏览器中使用 (PWA)",
+          "desc": "无需安装。"
+        },
+        "tvSamsung": {
+          "title": "Samsung TV (Tizen)",
+          "desc": "通过 Palco 投屏。"
+        },
+        "tvLg": {
+          "title": "LG TV (webOS)",
+          "desc": "通过 Palco 投屏。"
+        },
+        "tvAndroid": {
+          "title": "Android TV / Google TV",
+          "desc": "APK 或 TV Box。"
+        },
+        "palco": {
+          "title": "多设备 Palco",
+          "desc": "手机控制，电视投屏。"
+        },
+        "faq": {
+          "title": "常见问题",
+          "desc": "免费、离线、保护隐私。"
+        },
+        "troubleshooting": {
+          "title": "故障排除",
+          "desc": "按症状诊断。"
+        },
+        "shortcuts": {
+          "title": "键盘快捷键",
+          "desc": "按场景的完整列表。"
+        },
+        "manual": {
+          "title": "完整手册",
+          "desc": "所有工具，逐节讲解。"
+        }
+      }
+    },
+    "editOnGithub": "在 GitHub 上编辑此页面"
+  },
+  "footer": {
+    "tagline": "网页崇拜管理工具。免费开源。",
+    "navLabel": "页脚导航",
+    "navTitle": "导航",
+    "product": "产品",
+    "resources": "资源",
+    "company": "公司",
+    "links": {
+      "features": "功能",
+      "platforms": "平台",
+      "download": "下载",
+      "releases": "版本发布",
+      "howItWorks": "使用方法",
+      "docs": "文档",
+      "contact": "联系",
+      "github": "GitHub",
+      "app": "打开应用"
+    },
+    "copyright": "由 Piano 团队怀着信心与奉献制作。",
+    "developedBy": "开发者",
+    "team": "Piano 团队",
+    "rights": "版权所有。",
+    "forkedFrom": "分支自",
+    "originalProject": "原 LouvorJA 项目",
+    "legalNavLabel": "法律链接",
+    "legalNavTitle": "法律",
+    "moreNavLabel": "更多链接",
+    "moreNavTitle": "更多",
+    "privacy": "隐私政策",
+    "terms": "使用条款",
+    "conduct": "行为准则",
+    "ranking": "排行",
+    "midias": "媒体"
+  },
+  "common": {
+    "loading": "加载中...",
+    "error": "错误",
+    "close": "关闭",
+    "back": "返回",
+    "learnMore": "了解更多",
+    "skipToContent": "跳转到内容",
+    "allRightsReserved": "版权所有。"
+  },
+  "privacy": {
+    "title": "隐私政策",
+    "metaDescription": "PIANO LouvorJA 如何根据 LGPD（巴西 GDPR）处理您的个人数据。",
+    "lastUpdated": "最后更新：2026 年 7 月 30 日",
+    "tocLabel": "目录",
+    "intro": "本隐私政策描述 PIANO LouvorJA 如何处理通过本网站收集的个人数据。我们致力于遵守巴西通用数据保护法（LGPD — 第 13.709/2018 号法律），保护您的隐私。",
+    "sections": {
+      "data": {
+        "title": "1. 我们收集的数据",
+        "body": [
+          "1.1 您提供的数据",
+          "当您填写联系表单时，我们收集：",
+          "姓名",
+          "电子邮箱地址",
+          "消息主题",
+          "消息内容",
+          "1.2 技术数据",
+          "技术 Cookie piano_lang：仅存储您的语言偏好。不含任何个人标识符。",
+          "我们不使用追踪、分析、广告或用户画像 Cookie。"
+        ]
+      },
+      "purpose": {
+        "title": "2. 处理目的",
+        "body": [
+          "联系表单数据仅用于：",
+          "回复您的请求",
+          "提供技术支持",
+          "发送您要求的通讯",
+          "法律依据：LGPD 第 7 条第 IX 项（正当利益和回应您的请求）。"
+        ]
+      },
+      "sharing": {
+        "title": "3. 数据共享",
+        "body": [
+          "3.1 Web3Forms",
+          "联系表单使用 Web3Forms（美国）处理提交。数据被传输至 Web3Forms 以转发到我们的邮箱。",
+          "子处理者：Web3Forms",
+          "国家：美国",
+          "目的：消息转发",
+          "3.2 托管服务商",
+          "本网站托管在可能记录技术访问数据（IP、时间戳、用户代理）的云基础设施提供商上。",
+          "3.3 我们不会与以下方共享数据",
+          "广告公司",
+          "社交网络",
+          "数据经纪商",
+          "出于营销目的的第三方"
+        ]
+      },
+      "international": {
+        "title": "4. 国际传输",
+        "body": [
+          "联系表单数据由位于美国的 Web3Forms 处理。此项国际传输是提供表单服务所必需的，符合 LGPD 第 33 条的法律假设。"
+        ]
+      },
+      "rights": {
+        "title": "5. 您的权利（LGPD 第 18 条）",
+        "body": [
+          "您对个人数据享有以下权利：",
+          "确认处理是否存在",
+          "访问数据",
+          "更正不完整、不准确或过时的数据",
+          "对不必要数据的匿名化、屏蔽或删除",
+          "数据可携带性",
+          "删除个人数据",
+          "共享信息",
+          "如何行使您的权利",
+          "发送电子邮件至 privacidade{'@'}pianolouvorja.com.br，并附上：",
+          "全名",
+          "您想行使的权利的描述",
+          "注册的电子邮箱地址",
+          "回复时间：15 个日历日内（LGPD 第 19 条）。"
+        ]
+      },
+      "security": {
+        "title": "6. 安全措施",
+        "body": [
+          "我们采取以下技术和组织措施：",
+          "所有通信采用 HTTPS/TLS 加密",
+          "不存储密码（无登录系统）",
+          "数据最小化（仅收集必要数据）",
+          "不含个人标识的技术 Cookie",
+          "团队对数据访问的限制"
+        ]
+      },
+      "retention": {
+        "title": "7. 数据保留",
+        "body": [
+          "联系表单：保留至回复所需时间，之后最多保留 12 个月作为历史记录，随后删除。",
+          "访问日志：依照托管服务商的政策。",
+          "本地应用数据：保留在您的设备上直到您删除。"
+        ]
+      },
+      "cookies": {
+        "title": "8. Cookie",
+        "body": ["我们不使用第三方、分析或广告 Cookie。"],
+        "table": {
+          "header": {
+            "cookie": "Cookie",
+            "type": "类型",
+            "purpose": "目的",
+            "duration": "期限"
+          },
+          "rows": [
+            {
+              "name": "piano_lang",
+              "type": "技术",
+              "purpose": "记住首选语言",
+              "duration": "会话"
+            }
+          ]
+        }
+      },
+      "children": {
+        "title": "9. 儿童与未成年人",
+        "body": [
+          "本应用不面向儿童，且不会故意收集 18 岁以下任何人的数据。内容（诗歌、崇拜程序、圣经文本）具有宗教性质，不涉及敏感数据收集。"
+        ]
+      },
+      "changes": {
+        "title": "10. 政策变更",
+        "body": [
+          "我们可能随时更新本政策。最新版本将始终在本页面提供，更新日期显示在顶部。建议定期查看。"
+        ]
+      },
+      "dpo": {
+        "title": "11. 数据保护官（DPO）",
+        "body": ["根据 LGPD 第 41 条，可通过 privacidade{'@'}pianolouvorja.com.br 提问。"]
+      },
+      "anpd": {
+        "title": "12. 数据保护机构",
+        "body": [
+          "您可以联系 ANPD（国家数据保护机构）提出投诉：",
+          "网站：{link}",
+          "邮箱：ouvidoria{'@'}anpd.gov.br"
+        ],
+        "link": {
+          "url": "https://www.gov.br/anpd",
+          "text": "www.gov.br/anpd"
+        }
+      }
+    }
+  },
+  "terms": {
+    "title": "使用条款",
+    "metaDescription": "PIANO LouvorJA 的使用条款和条件。",
+    "lastUpdated": "最后更新：2026 年 7 月 30 日",
+    "tocLabel": "目录",
+    "intro": "欢迎来到 PIANO LouvorJA。访问和使用本网站和应用即表示您同意这些使用条款。请仔细阅读。",
+    "sections": {
+      "acceptance": {
+        "title": "1. 条款接受",
+        "body": ["使用 PIANO LouvorJA 即表示完全接受本条款。如不同意任何条款，请勿使用本应用。"]
+      },
+      "service": {
+        "title": "2. 服务性质",
+        "body": [
+          "PIANO LouvorJA 是一款协助崇拜管理的免费开源网页应用，包括：",
+          "数字赞美诗集和音乐播放",
+          "崇拜程序和时间安排管理",
+          "歌词和圣经文本投影",
+          "辅助工具（计时器、抽奖等）",
+          "本应用用于宗教和社群用途，无商业目的。"
+        ]
+      },
+      "license": {
+        "title": "3. 许可",
+        "body": [
+          "3.1 软件",
+          "源代码以开源许可分发。详情请参阅 {link}。",
+          "3.2 内容",
+          "文本内容（诗歌、歌词、文献）属于其各自的版权持有人。PIANO LouvorJA：",
+          "不主张内容的作者身份",
+          "不直接将内容商业化",
+          "遵守第 9.610/98 号法律尊重版权"
+        ],
+        "link": {
+          "url": "https://github.com/Piano-Louvor-JA",
+          "text": "GitHub 仓库"
+        }
+      },
+      "user": {
+        "title": "4. 用户责任",
+        "body": [
+          "使用 PIANO LouvorJA 即表示您同意：",
+          "道德地并遵守适用法律使用本应用",
+          "不将其用于非法、诽谤或侵犯第三方权利的目的",
+          "尊重所展示作品的版权",
+          "不尝试损害安全性或可用性"
+        ]
+      },
+      "responsibility": {
+        "title": "5. 责任",
+        "body": [
+          "5.1 服务性质",
+          "PIANO LouvorJA 按\"原样\"提供，不作任何种类的保证。我们不保证：",
+          "服务将不中断、安全或无错误",
+          "结果准确或可靠",
+          "任何错误或缺陷将被修复",
+          "5.2 责任限制",
+          "在法律允许的最大范围内，PIANO LouvorJA 不对以下事项负责：",
+          "直接、间接、附带或后果性损害",
+          "数据丢失（请定期备份）",
+          "关键使用期间的服务中断",
+          "第三方内容或外部链接"
+        ]
+      },
+      "ip": {
+        "title": "6. 知识产权",
+        "body": [
+          "6.1 软件",
+          "源代码受版权保护并以开源许可分发。",
+          "6.2 商标",
+          "\"PIANO LouvorJA\" 和 \"LouvorJA\" 是项目商标。未经许可不得使用。",
+          "6.3 第三方内容",
+          "诗歌、歌词和文献属于其各自的作者和出版商。整理这些内容不转移任何知识产权。"
+        ]
+      },
+      "donations": {
+        "title": "7. 捐赠与贡献",
+        "body": [
+          "PIANO LouvorJA 免费且开源。接受通过 GitHub 的自愿贡献（拉取请求、issue、翻译）。 eventual 捐赠不构成消费者关系，也不保证任何优势。"
+        ]
+      },
+      "privacy": {
+        "title": "8. 隐私与数据",
+        "body": ["个人数据的处理受我们 {link} 的约束，该政策是本条款的一部分。"],
+        "link": {
+          "url": "/privacy",
+          "text": "隐私政策"
+        }
+      },
+      "modifications": {
+        "title": "9. 修改",
+        "body": ["我们可能随时修改本条款。更改自发布后立即生效。用户有责任定期查看。"]
+      },
+      "termination": {
+        "title": "10. 终止",
+        "body": ["您可以随时关闭浏览器停止使用本应用。由于没有账户系统，无需正式注销。"]
+      },
+      "law": {
+        "title": "11. 管辖法律",
+        "body": ["本条款受巴西联邦共和国法律管辖。任何争议应在用户住所地法院解决。"]
+      },
+      "misc": {
+        "title": "12. 最终条款",
+        "body": [
+          "如果本条款的任何条款被认定为无效或不可执行，其余条款仍将完全有效。对任何违规的容忍不构成对未来权利的放弃。"
+        ]
+      }
+    }
+  },
+  "error": {
+    "title": "页面未找到",
+    "serverErrorTitle": "服务器错误",
+    "errorCode404": "404",
+    "errorCode500": "500",
+    "desc404": "您查找的页面不存在或已被移动。",
+    "desc500": "我们的服务器出了问题。团队已收到通知 — 请稍后再试。",
+    "backHome": "返回首页",
+    "reportIssue": "报告问题",
+    "metaDesc404": "页面未找到 — PIANO LouvorJA",
+    "metaDesc500": "服务器错误 — PIANO LouvorJA"
+  },
+  "newsletter": {
+    "title": "获取项目更新",
+    "subtitle": "接收有关新版本、功能和更新的通知。无垃圾邮件。",
+    "placeholder": "您的电子邮箱",
+    "button": "订阅",
+    "loading": "订阅中...",
+    "success": "订阅已确认！您将在邮箱中收到更新。",
+    "errors": {
+      "invalidEmail": "无效的邮箱。请检查后重试。",
+      "alreadySubscribed": "该邮箱已订阅。",
+      "generic": "订阅失败。请重试。",
+      "rateLimited": "尝试次数过多。请几分钟后再试。",
+      "serviceUnavailable": "服务不可用。请稍后再试。",
+      "unknownError": "出现问题。请重试。"
+    }
+  },
+  "welcomePopup": {
+    "title": "免费下载 PianoLouvorJA",
+    "description": "在桌面和移动设备上播放基督复临安息日会赞美诗。AppImage、网页应用等 — 选择您的平台。",
+    "close": "关闭",
+    "cta": "查看下载选项",
+    "secondaryCta": "继续浏览"
+  },
+  "cookieBanner": {
+    "message": "我们使用 Cookie 改善您的体验。继续浏览即表示您同意我们的隐私政策。",
+    "accept": "我理解并接受",
+    "reject": "拒绝",
+    "privacyLink": "阅读隐私政策"
+  },
+  "admin": {
+    "title": "仪表板",
+    "loginTitle": "受限访问",
+    "loginSubtitle": "登录以访问面板",
+    "email": "电子邮箱",
+    "emailPlaceholder": "admin{'@'}pianolouvorja.com.br",
+    "password": "密码",
+    "passwordPlaceholder": "输入您的密码",
+    "loginButton": "登录",
+    "loginError": "邮箱或密码无效",
+    "loggingIn": "登录中...",
+    "logout": "退出登录",
+    "welcome": "欢迎，{email}",
+    "dashboard": "仪表板",
+    "stats": "统计",
+    "backToSite": "返回网站",
+    "refresh": "刷新",
+    "updatedAgo": "{min} 分钟前更新",
+    "updatedAt": "刚刚更新",
+    "downloads": "下载量",
+    "stars": "Star 数",
+    "forks": "Fork 数",
+    "subscribers": "订阅者",
+    "donations": "捐赠",
+    "visits": "访问量（30 天）",
+    "recentActivity": "最近活动",
+    "quickLinks": "快速链接",
+    "noData": "数据不可用",
+    "loading": "加载中...",
+    "comunidade": {
+      "tab": "待处理",
+      "tabMembros": "成员",
+      "tabEquipe": "团队",
+      "subtitulo": "在同一面板中管理待审核内容、成员和团队。",
+      "filtroStatus": "状态",
+      "todos": "全部",
+      "carregando": "正在加载…",
+      "recarregar": "↻ 重新加载",
+      "carregarMais": "加载更多",
+      "erroCarregar": "加载失败",
+      "semMembros": "没有符合条件的成员。",
+      "semEquipe": "未找到工作人员。",
+      "roles": "角色",
+      "salvar": "保存",
+      "salvando": "正在保存…",
+      "salvoOk": "角色已更新 ✓",
+      "erroSalvar": "保存失败",
+      "aprovar": "批准",
+      "aprovadoOk": "成员已批准 ✓",
+      "inativar": "停用",
+      "inativadoOk": "成员已停用 ✓",
+      "reativar": "重新启用",
+      "gm": "GM（管理员）",
+      "role": {
+        "dev": "开发者",
+        "tester": "测试者",
+        "conteudo": "内容",
+        "curador": "策展人",
+        "staff": "工作人员"
+      },
+      "title": "社区",
+      "tabsAriaLabel": "社区管理面板选项卡"
+    }
+  },
+  "download": {
+    "metaTitle": "下载 — PIANO LouvorJA",
+    "metaDescription": "下载适用于桌面（Linux、Windows、macOS）的 PIANO LouvorJA，在浏览器中使用网页应用，或了解移动路线图。",
+    "heroEyebrow": "下载",
+    "heroTitle": "获取 PIANO LouvorJA",
+    "heroSubtitle": "选择最适合您的选项。功能齐全的原生桌面、即时网页应用或即将推出的移动版。",
+    "heroWebCta": "使用网页应用",
+    "heroGithubCta": "在 GitHub 上查看",
+    "platformsTitle": "选择您的平台",
+    "platformsSubtitle": "每个平台各有优势",
+    "desktop": {
+      "badge": "推荐",
+      "title": "原生桌面",
+      "description": "功能齐全的 Electron 应用：独立多屏投影、完全离线模式和键盘快捷键。",
+      "linux": {
+        "name": "Linux",
+        "format": "AppImage",
+        "arch": "x64",
+        "downloadLabel": "下载 AppImage",
+        "hint": "下载后授予执行权限（chmod +x）并运行。需要安装 FUSE。替代方案：用 flatpak install 转换为 Flatpak。"
+      },
+      "windows": {
+        "name": "Windows",
+        "format": "NSIS 安装程序 (.exe)",
+        "arch": "x64",
+        "downloadLabel": "下载 Windows 版",
+        "hint": "运行安装程序并按步骤操作。"
+      },
+      "macos": {
+        "name": "macOS",
+        "format": "磁盘映像 (.dmg)",
+        "arch": "x64 / arm64（Apple Silicon）",
+        "downloadLabel": "下载 macOS 版",
+        "hint": "打开 .dmg 并将应用拖到应用程序文件夹。"
+      },
+      "features": {
+        "multiScreen": "独立多屏投影",
+        "offline": "100% 离线工作",
+        "shortcuts": "专用键盘快捷键",
+        "autoUpdate": "自动更新"
+      },
+      "buildFromSource": "想从源码构建？",
+      "buildFromSourceLink": "在 GitHub 上查看说明",
+      "otherArch": "下载 {arch} 版",
+      "detectedArchitecture": "检测到的架构：{architecture}"
+    },
+    "web": {
+      "badge": "即时",
+      "title": "网页应用",
+      "description": "直接在浏览器中使用。无需安装，适用于任何操作系统。适合快速使用或未安装应用时。",
+      "cta": "打开网页应用",
+      "features": {
+        "noInstall": "无需安装",
+        "anyOs": "任何操作系统",
+        "autoUpdate": "自动更新",
+        "pwa": "浏览器访问"
+      }
+    },
+    "mobile": {
+      "badge": "已上线",
+      "title": "移动端",
+      "description": "下载 Android 应用，随身携带 PIANO — 直接用手机控制舞台。",
+      "platforms": "Android 和 iOS",
+      "features": {
+        "nativeAndroid": "原生 Android（计划中）",
+        "nativeIos": "原生 iOS（计划中）",
+        "cloudSync": "云同步（计划中）",
+        "remote": "从桌面远程控制",
+        "network": "本地网络同步",
+        "offline": "离线工作"
+      },
+      "useWebInstead": "在手机上使用网页应用",
+      "noAssets": "移动版下载即将推出。",
+      "android": {
+        "name": "Android",
+        "format": ".apk 包",
+        "arch": "通用（arm64、armv7、x86_64）",
+        "downloadLabel": "下载 APK",
+        "hint": "允许未知来源后安装 APK。"
+      },
+      "ios": {
+        "name": "iOS",
+        "format": "TestFlight 应用",
+        "arch": "通用",
+        "downloadLabel": "打开 TestFlight",
+        "hint": "需要 TestFlight 邀请。"
+      },
+      "apkNote": "在 Android 设置中允许来自未知来源的应用以安装 APK。"
+    },
+    "midias": {
+      "title": "LouvorJA 媒体",
+      "description": "直接从社群 Google Drive 下载合集、音频和资源包 — 无 API 依赖、离线、免费。",
+      "cta": "打开媒体"
+    },
+    "systemRequirements": {
+      "title": "系统要求",
+      "desktop": "桌面：4GB 内存、500MB 磁盘空间、支持 WebGL 的 GPU",
+      "web": "网页：现代浏览器（Chrome、Firefox、Edge、Safari），首次访问需要互联网连接"
+    },
+    "tv": {
+      "badge": "新增",
+      "title": "电视 / 数字舞台",
+      "description": "把任何智能电视变成舞台接收器。用 Android 应用（APK）控制 — 网页和桌面控制即将推出。",
+      "noAssets": "电视安装包即将发布。",
+      "features": {
+        "realtime": "实时镜像",
+        "multicast": "多台电视同时使用",
+        "autodiscover": "自动网络发现",
+        "nativeLg": "webOS（LG）原生应用",
+        "bigScreen": "大屏幕优化",
+        "remoteControl": "Palco 远程控制"
+      },
+      "webos": {
+        "name": "LG webOS 电视",
+        "format": ".ipk 包",
+        "arch": "arm",
+        "downloadLabel": "下载 webOS 版",
+        "hint": "使用开发者模式或通过 LG Device Manager 侧载。"
+      },
+      "androidtv": {
+        "name": "Android TV",
+        "format": ".apk 包",
+        "arch": "arm64",
+        "downloadLabel": "下载 Android TV 版",
+        "hint": "用文件管理器或 ADB 侧载 APK。"
+      },
+      "downloadGeneric": "下载",
+      "tizen": {
+        "name": "三星 Tizen 电视",
+        "format": ".tpk 包",
+        "hint": "通过 USB 或 Tizen Studio Device Manager 安装。"
+      },
+      "useDesktopInstead": "对于不支持的电视，使用浏览器全屏模式访问 Palco。"
+    },
+    "voidbr": {
+      "eyebrow": "合作伙伴 Linux 发行版",
+      "title": "VoidBR LouvorJA Piano",
+      "subtitle": "预装 PIANO LouvorJA 的完整 Linux 发行版 — 由 VoidBR 社群打造，帮助教会轻松采用合法软件。",
+      "description": "可启动的 live 系统：从 USB 启动，使用并安装，PIANO 和赞美诗已配置就绪。",
+      "feature1": "预装并更新的 PIANO LouvorJA",
+      "feature2": "100% 合法且免费 — 零盗版",
+      "feature3": "Void Linux 基础，轻量且稳定",
+      "downloadLabel": "下载 ISO (x86_64)",
+      "unavailable": "ISO 暂时不可用",
+      "communityLink": "VoidBR 社群"
+    }
+  },
+  "contributors": {
+    "title": "让 PIANO 成为可能的人",
+    "subtitle": "PIANO LouvorJA 的存在归功于这些奉献时间和知识的人。",
+    "contributions": "贡献",
+    "viewAll": "在 GitHub 上查看全部",
+    "ctaTitle": "为项目做贡献",
+    "ctaText": "PIANO 是开源的，与社群一起成长。您可以贡献代码、报告错误、建议功能、帮助翻译或分享项目。",
+    "ctaWays": {
+      "code": "在 GitHub 上提交拉取请求",
+      "bugs": "报告错误并提出改进建议",
+      "translate": "帮助翻译",
+      "share": "与您的社群分享"
+    },
+    "ctaButton": "开始贡献",
+    "loading": "加载贡献者中...",
+    "error": "目前无法加载贡献者。"
+  },
+  "releases": {
+    "metaTitle": "版本说明 — PIANO LouvorJA",
+    "metaDescription": "PIANO LouvorJA 的版本历史和变更。跟踪新功能、改进和修复。",
+    "title": "版本说明",
+    "subtitle": "了解 PIANO LouvorJA 的每一次更新。新功能、改进和修复。",
+    "latest": "最新",
+    "version": "版本",
+    "released": "发布日期",
+    "highlights": "亮点",
+    "pullRequests": "PR",
+    "changelog": "变更日志",
+    "download": "下载版本",
+    "allVersions": "所有版本",
+    "loading": "加载版本中...",
+    "error": "目前无法加载版本。",
+    "noReleases": "尚未发布任何版本。",
+    "products": {
+      "web": "网页",
+      "desktop": "桌面",
+      "mobile": "移动",
+      "tv": "智能电视"
+    },
+    "repos": {
+      "web": "网页（网站）",
+      "app": "应用（桌面）",
+      "api": "API",
+      "site": "网站",
+      "palco-receiver": "电视用 Palco",
+      "apk": "移动应用（APK）"
+    },
+    "filterLabel": "按产品筛选",
+    "filterAll": "全部",
+    "filterEmpty": "该产品暂无版本。"
+  },
+  "tvSupport": {
+    "eyebrow": "路线图",
+    "title": "您的电视成为教会舞台",
+    "description": "用手机控制崇拜，智能电视将诗歌和崇拜程序显示为数字舞台 — 非常适合没有投影仪或电脑的小组。",
+    "lgBrand": "webOS（LG）",
+    "lgStatus": "开发中",
+    "samsungBrand": "Tizen（三星）",
+    "samsungStatus": "开发中",
+    "rokuBrand": "Roku TV",
+    "rokuStatus": "计划中",
+    "androidTvBrand": "Android TV / Google TV",
+    "androidTvStatus": "计划中",
+    "chromecastBrand": "Chromecast",
+    "chromecastStatus": "计划中",
+    "cta": "保持关注",
+    "appleTvBrand": "Apple TV",
+    "appleTvStatus": "计划中",
+    "statusAvailable": "已上线",
+    "downloadCta": "立即下载"
+  },
+  "team": {
+    "eyebrow": "我们的团队",
+    "title": "项目背后的专业人士",
+    "subtitle": "PIANO LouvorJA 由一支按专业工作方向组织、为一个共同目标而团结的敬业团队构建：以卓越服务社群。",
+    "areas": {
+      "leadership": {
+        "title": "领导与愿景",
+        "description": "项目方向、产品路线图以及与 PIANO 所服务社群的关系。"
+      },
+      "desktop": {
+        "title": "桌面应用",
+        "description": "用于崇拜投影的多屏 Electron 应用：媒体输出、舞台显示和远程控制。"
+      },
+      "web": {
+        "title": "网页应用",
+        "description": "用于崇拜管理的网页应用，可快速通过浏览器访问（需要互联网连接）。"
+      },
+      "api": {
+        "title": "API 与基础设施",
+        "description": "支持赞美诗集、播放列表和跨设备同步的公共 API 和后端服务。"
+      },
+      "site": {
+        "title": "网站与内容",
+        "description": "数字形象、文档和沟通：多语言网站、版本发布和资源。"
+      },
+      "quality": {
+        "title": "质量与 CI",
+        "description": "流水线自动化、测试和代码审查，确保每次发布的稳定性。"
+      },
+      "distro": {
+        "title": "VoidBR Linux 发行版",
+        "description": "维护 VoidBR LouvorJA Piano live ISO：预装 PIANO 和赞美诗的完整可启动系统 — 为教会提供合法、简单、离线的安装。"
+      }
+    },
+    "people": {
+      "title": "构建项目的人",
+      "avatarAlt": "{name} 的 GitHub 头像",
+      "more": "了解更多"
+    },
+    "members": {
+      "ezequiasfonseca": {
+        "role": "创始人 · 领导与桌面应用",
+        "bio": "拥有 15 年经验的资深软件工程师，涵盖基础设施、Linux 系统管理、DevOps 和全栈开发。PIANO LouvorJA 创始人，领导产品愿景和桌面应用。"
+      },
+      "rafaumeu": {
+        "role": "技术负责人 · 网站、API 与 QA",
+        "bio": "专注于 PIANO LouvorJA 生态系统的全栈开发者：网站、API、PWA 和质量自动化。负责 CI/CD、测试以及项目的多设备体验。"
+      },
+      "rafaelji": {
+        "role": "桌面应用与 Mac",
+        "bio": "自 2015 年编程至今，具备后端、前端和移动开发经验 — 目前专注于 React 前端。维护三个个人项目：Alva（安息日学应用）、Appentecostes（AI 实时讲道翻译 13 种语言）和 FatIA（社交媒体 AI 生成视频剪辑）。"
+      },
+      "educharquero": {
+        "role": "Linux、网页应用与 PWA",
+        "bio": "计算机网络学位，教育研究生学历。自 Kurumin 时代起的 Linux 用户，数十年基础设施经验，conectux.com.br 的所有者。"
+      },
+      "vcatafesta": {
+        "role": "VoidBR 发行版 · LouvorJA Piano ISO",
+        "bio": "VoidBR 社群（Void Linux Brazil）和 Chililinux 项目（基于 LFS 的 GNU/Linux）创始人。底层 Linux 开发者 — 定制内核、自动化和打包 — 维护预装并更新 PIANO 的 VoidBR LouvorJA Piano ISO，帮助教会轻松采用合法软件。"
+      },
+      "elomarxa": {
+        "role": "数字设计、UI 和 UX",
+        "bio": "数字设计师，在视觉资产制作方面经验丰富，并不断提升 UI 和 UX 技能。"
+      }
+    },
+    "work": {
+      "title": "我们的工作方式",
+      "text": "开源、同行评审和持续交付：每个方向在组织中维护自己的仓库，配备自动化集成和部署。"
+    },
+    "cta": "在 GitHub 上探索组织",
+    "modal": {
+      "close": "关闭"
+    },
+    "contribute": {
+      "title": "为项目做贡献",
+      "text": "PIANO 是开源的，与社群一起成长。您可以贡献代码、报告错误、建议功能、帮助翻译或分享项目。",
+      "ways": {
+        "code": "在 GitHub 上提交拉取请求",
+        "bugs": "报告错误并提出改进建议",
+        "translate": "帮助翻译",
+        "share": "与您的社群分享"
+      },
+      "button": "开始贡献"
+    }
+  },
+  "community": {
+    "spot": "这个位置是您的 — 来测试吧",
+    "eyebrow": "社群",
+    "title": "使用、测试和贡献的人",
+    "subtitle": "帮助 PIANO LouvorJA 成长的测试者、爱好者和建议者。想加入吗？",
+    "roles": {
+      "tester": "测试者",
+      "enthusiast": "爱好者",
+      "suggester": "建议者"
+    },
+    "since": "自 {since}",
+    "link": "查看资料",
+    "cta": "加入社群",
+    "channels": {
+      "whatsapp-support": "支持群组（WhatsApp）",
+      "dev-form": "成为开发者",
+      "telegram-community": "Telegram 社群"
+    }
+  },
+  "testers": {
+    "eyebrow": "测试社群",
+    "title": "测试者",
+    "subtitle": "在真实崇拜条件下测试 PIANO LouvorJA 并报告所有发现的人 — 这正是应用为您的教会保持稳定的方式。",
+    "gallery": {
+      "avatarAlt": "{name} 的头像",
+      "more": "了解更多"
+    },
+    "modal": {
+      "close": "关闭"
+    },
+    "focus": {
+      "vm": "虚拟机",
+      "install": "安装",
+      "web": "网页",
+      "desktop": "桌面",
+      "mobile": "移动",
+      "tv": "电视 / 舞台",
+      "community": "社群"
+    },
+    "members": {
+      "natan": {
+        "bio": "在 Void Linux 上测试 PIANO 并验证从零开始的安装。"
+      }
+    },
+    "reports": {
+      "title": "最近的测试报告",
+      "loading": "加载报告中…",
+      "empty": "尚无报告。",
+      "comingSoon": "即将推出：直接来自测试表单的报告。",
+      "anonymous": "匿名"
+    },
+    "cta": {
+      "title": "想测试 PIANO 吗？",
+      "button": "成为测试者",
+      "bug": "报告错误"
+    }
+  },
+  "donate": {
+    "title": "支持项目",
+    "subtitle": "PIANO LouvorJA 是免费的。您的捐赠帮助项目保持活力并无广告。",
+    "button": "立即捐赠",
+    "pix": "Pix",
+    "boleto": "银行汇票",
+    "card": "银行卡"
+  },
+  "conduct": {
+    "title": "社群行为准则",
+    "metaDescription": "LouvorJA 社群的原则、审核和申诉 — 基于基督复临安息日会的音乐理念。",
+    "lastUpdated": "版本 1.0 — 2026 年 11 月",
+    "tocLabel": "本页目录",
+    "intro": "LouvorJA 社群的存在是为了让成员能够创建、分享和颂扬荣耀上帝、建立教会的钢琴崇拜内容。本准则基于基督复临安息日会的官方原则，尤其是《基督复临安息日会音乐理念》（年度理事会，2004）、28 条基本信仰和《教会规程》。",
+    "purposeQuote": "\"所以，你们或吃或喝，无论做什么，都要为荣耀上帝而行。\" — 哥林多前书 10:31",
+    "sections": {
+      "celebrate": {
+        "title": "1. 我们颂扬什么",
+        "body": [
+          "荣耀上帝、追求崇高与最佳（腓 4:8）、传递真实属灵信息、平衡、真实性和文化多样性的内容 — 音乐风格不是排斥的理由；内容和信息才是。成员之间的尊重：品味差异不是冲突的理由。"
+        ]
+      },
+      "notAllowed": {
+        "title": "2. 不允许的内容",
+        "body": [
+          "教义：与圣经或 28 条基本信仰相悖的歌词或信息。",
+          "不当：煽动情欲、激愤、绝望、愤怒或仇恨的内容 — 冒犯性、色情、暴力或亵渎的。",
+          "版权：剽窃或未经授权使用受保护作品 — 诗歌有版权持有人。",
+          "垃圾信息：广告、自我推销、与崇拜无关的内容。",
+          "行为：骚扰、人身攻击、歧视或迫害其他成员。"
+        ]
+      },
+      "moderation": {
+        "title": "3. 审核：举报与警告",
+        "body": [
+          "核心原则：隐藏不等于删除。可疑内容首先从展示中隐藏；仅在审查后才最终删除。",
+          "首次轻微举报（垃圾信息/其他）：内容被标记为\"审查中\"，保持可见，进入游戏管理员队列。",
+          "3 次举报或 1 次严重举报（教义、不当、版权）：自动以最高优先级隐藏。",
+          "游戏管理员 7 天内审查：保留的内容附带说明返回；删除的内容给作者带来警告及本准则的理由和指导。",
+          "警告：第 1 次正式警告 + 内容删除；第 2 次暂停发布 7 天；第 3 次禁止发布（账户保留浏览权限）。删除不会抹去作者身份或合法获得的积分。每次警告可向开发者申诉；严重案例上报团队。"
+        ]
+      },
+      "gameMasters": {
+        "title": "4. 游戏管理员",
+        "body": [
+          "遵循叶忒罗的模式（出埃及记 18），由开发团队邀请的两到三名成员承担审查队列、警告和新成员指导。他们按本准则原文执行；变更需上报开发者。严重案例提交开发团队。决策顺序：首先保护社群；其次保护创作者。"
+        ]
+      },
+      "transparency": {
+        "title": "5. 透明度与申诉",
+        "body": [
+          "本准则公开并可在应用的社群板块中查看。",
+          "每位作者都知道删除了什么、为什么（哪条准则）以及如何申诉。",
+          "变更经由开发团队 + 领导层，并咨询游戏管理员。",
+          "没有内容会被悄无声息地删除。"
+        ]
+      },
+      "invitation": {
+        "title": "6. 一份邀请",
+        "body": ["社群是一个服务的地方。以卓越发布，以公义举报，以怜悯审查。"],
+        "quote": "\"你们要向耶和华唱新歌，全地都要向耶和华歌唱。\" — 诗篇 96:1"
+      }
+    }
+  },
+  "ranking": {
+    "title": "社群排行",
+    "metaDescription": "PIANO LouvorJA 社群贡献者的公开透明排行 — 发布、使用和同步的合集。",
+    "subtitle": "社群贡献 — 公开透明",
+    "tabsLabel": "排行周期",
+    "tabAll": "全部",
+    "tabWeek": "每周",
+    "errorText": "目前无法加载排行。",
+    "retry": "重试",
+    "empty": "尚无记录的积分。",
+    "footerLink": "排行"
+  },
+  "midias": {
+    "title": "LouvorJA 媒体",
+    "metaDescription": "直接从 Google Drive 下载 LouvorJA PIANO 媒体和合集 — 无 API 依赖、离线、免费。",
+    "subtitle": "社群合集与音频",
+    "description": "LouvorJA PIANO 媒体文件（合集、音频和资源包）托管在社群 Google Drive 上。使用下方按钮下载并在应用中导入。",
+    "noteOffline": "离线工作：在应用中导入后，所有内容都保存在您的设备上。",
+    "noteBackup": "非常适合网络不稳定的教会 — 一次下载，永久使用。",
+    "downloadButton": "在 Google Drive 上打开媒体",
+    "unavailable": "媒体链接即将发布。",
+    "convite_catalogo": "该语言暂无已发布的曲库。欢迎加入 PIANO LouvorJA 社区，协助翻译和发布合集吧！",
+    "footerLink": "媒体"
+  },
+  "comunidade": {
+    "eyebrow": "社区",
+    "title": "共同建设项目的人们",
+    "subtitle": "已批准的开发者、测试者、内容制作者和策展人——共同建设和支持 PIANO LouvorJA 的人们，信息直接从源头更新。",
+    "error": "暂时无法加载社区。请稍后重试。",
+    "avatarAlt": "{name} 的头像",
+    "profile": "查看 GitHub 个人资料",
+    "roles": {
+      "staff": "团队",
+      "dev": "开发者",
+      "tester": "测试者",
+      "conteudo": "内容",
+      "curador": "策展人"
+    }
+  },
+  "institucional": {
+    "meta": {
+      "title": "PIANO LouvorJA — 致教会领袖",
+      "description": "免费的教会敬拜辅助工具：同步歌词投影、伴奏和演唱音源，以及教会使用与推广资料。"
+    },
+    "title": "为您的教会提供 PIANO LouvorJA",
+    "lede": "由志愿者开发的免费敬拜辅助工具。可在教会电脑上使用同步歌词投影、伴奏和演唱音源。",
+    "s1": {
+      "title": "什么是 PIANO",
+      "body": "PIANO LouvorJA 是基于 LouvorJA、由志愿者维护的免费敬拜辅助应用，提供同步歌词投影、伴奏和演唱音源。本应用不演奏乐谱；Piano 只是项目代号。"
+    },
+    "s2": {
+      "title": "如何在教会使用",
+      "body": "在教堂电脑的浏览器或桌面应用中运行。请前往下载页面，选择您的平台并按照文档中的步骤操作，无需专业技术知识。"
+    },
+    "s3": {
+      "title": "向本地区教会介绍",
+      "body": "我们准备了可打印并与长老、牧师分享的宣传资料。欢迎在教会会议、周报和地区沟通群中分享，让更多教会了解本工具。"
+    },
+    "s4": {
+      "title": "机构联系",
+      "body": "如需合作、机构咨询或使用支持，请通过联系页面或 app{'@'}pianolouvorja.com.br 联系团队。"
+    },
+    "cta": {
+      "press": "查看宣传资料"
+    }
+  },
+  "press": {
+    "meta": {
+      "title": "宣传资料 — PIANO LouvorJA",
+      "description": "可打印的 PIANO LouvorJA 宣传资料，包括项目介绍、主要功能、官方链接和联系方式。"
+    },
+    "title": "PIANO LouvorJA 宣传资料",
+    "lede": "可打印并与长老、牧师分享的介绍资料。",
+    "about": "PIANO LouvorJA 是基于 LouvorJA、由志愿者维护的免费敬拜辅助应用，提供同步歌词投影、伴奏和演唱音源。本应用不演奏乐谱；Piano 只是项目代号。",
+    "keyPoints": [
+      "敬拜期间可用于投影的赞美诗和歌曲同步歌词",
+      "用于音乐伴奏的伴奏和演唱音源",
+      "任何教会均可使用的免费志愿者项目"
+    ],
+    "where": {
+      "title": "官方链接",
+      "items": [
+        "官方网站: https://pianolouvorja.com.br",
+        "应用下载: https://pianolouvorja.com.br/download",
+        "文档: https://pianolouvorja.com.br/docs",
+        "联系: app{'@'}pianolouvorja.com.br"
+      ]
+    },
+    "contact": "机构联系: app{'@'}pianolouvorja.com.br",
+    "printCta": "打印 / 另存为 PDF",
+    "footer": "PIANO LouvorJA · https://pianolouvorja.com.br"
+  },
+  "tickets": {
+    "nav": "支持",
+    "sending": "正在发送…",
+    "loading": "正在加载…",
+    "error": {
+      "api": "API 暂不可用，请重试。"
+    },
+    "intake": {
+      "title": "支持中心",
+      "description": "提交支持请求。",
+      "name": "姓名",
+      "email": "电子邮箱",
+      "subject": "主题",
+      "message": "消息",
+      "consent": "我同意为提供支持而处理我的个人数据（LGPD）。",
+      "consentRequired": "必须同意才能提交。",
+      "submit": "发送请求",
+      "successTitle": "请求已登记",
+      "successHint": "请保存此编号，以便联系团队时提供参考。",
+      "newRequest": "新请求",
+      "portalLink": "前往我的工单"
+    },
+    "portal": {
+      "title": "我的工单",
+      "description": "查看请求并回复团队。",
+      "newTicket": "新工单",
+      "priority": "优先级",
+      "create": "创建工单",
+      "empty": "暂无工单。",
+      "reply": "回复"
+    },
+    "admin": {
+      "title": "管理 — 工单",
+      "description": "请求分流队列和组织的工单。",
+      "intakeQueue": "请求分流队列",
+      "intakeEmpty": "没有待处理请求。",
+      "triage": "分流并转为工单",
+      "ticketsTitle": "工单",
+      "tenant": "组织标识符"
+    }
+  }
+}

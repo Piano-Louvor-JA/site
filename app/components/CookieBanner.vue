@@ -160,8 +160,10 @@
 
       &--reject {
         background: transparent;
-        border: 1px solid var(--piano-border-subtle);
-        color: var(--piano-text-on-dark-secondary);
+        border: 1px solid rgba(255, 255, 255, 0.35);
+        // SPEC piano-admin-direct-api RF-03: banner sempre dark — texto claro fixo
+        // (token de tema virava #43474e no dark = ilegivel)
+        color: rgba(255, 255, 255, 0.85);
 
         &:hover {
           background: var(--piano-slate);

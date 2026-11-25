@@ -10,10 +10,29 @@ interface SendBody {
   subject: string
   body: string
   template: string
+  /** Traduções por locale (opcional): { en: {subject, body}, ar: {...}, ... } */
+  translations?: Record<string, { subject?: string; body?: string }>
 }
 
 const BATCH_SIZE = 50
 const BATCH_DELAY_MS = 2000
+
+/**
+ * Resolve o conteúdo (assunto+corpo) no idioma do destinatário.
+ * Prioridade: tradução do locale → conteúdo base (pt-BR, digitado pelo admin).
+ */
+export function resolveLocalizedContent(
+  base: { subject: string; body: string },
+  translations: Record<string, { subject?: string; body?: string }> | undefined,
+  locale: string,
+): { subject: string; body: string } {
+  const t = translations?.[locale]
+  if (!t) return base
+  return {
+    subject: t.subject?.trim() ? t.subject : base.subject,
+    body: t.body?.trim() ? t.body : base.body,
+  }
+}
 
 export default defineEventHandler(async (event) => {
   const body = await readBody<SendBody>(event)
@@ -35,34 +54,54 @@ export default defineEventHandler(async (event) => {
     }
   }
 
-  const emails = subs.filter((s) => s.active).map((s) => s.email)
+  const active = subs.filter((s) => s.active)
   const errors: string[] = []
   let sent = 0
   let failed = 0
 
-  for (let i = 0; i < emails.length; i += BATCH_SIZE) {
-    const batch = emails.slice(i, i + BATCH_SIZE)
-    const html = renderTemplate(body.template || 'announcement', {
-      subject: body.subject,
-      body: body.body,
-      unsubscribeUrl: 'https://pianolouvorja.com.br',
-    })
+  // Agrupa por locale: cada lote de idioma recebe assunto+corpo+shell no
+  // idioma do destinatário (SPEC site-email-i18n-12). Locales desconhecidos
+  // agrupam sob pt-BR (fallback de getEmailStrings/renderTemplate).
+  const byLocale = new Map<string, string[]>()
+  for (const s of active) {
+    const locale = s.locale || 'pt-BR'
+    const bucket = byLocale.get(locale)
+    if (bucket) bucket.push(s.email)
+    else byLocale.set(locale, [s.email])
+  }
 
-    const result = await sendMail({
-      to: batch,
-      subject: body.subject,
-      html,
-    })
+  for (const [locale, emails] of byLocale) {
+    const content = resolveLocalizedContent(
+      { subject: body.subject, body: body.body },
+      body.translations,
+      locale,
+    )
 
-    if (result.success) {
-      sent += batch.length
-    } else {
-      failed += batch.length
-      errors.push(result.error || 'Unknown error')
-    }
+    for (let i = 0; i < emails.length; i += BATCH_SIZE) {
+      const batch = emails.slice(i, i + BATCH_SIZE)
+      const html = renderTemplate(body.template || 'announcement', {
+        subject: content.subject,
+        body: content.body,
+        unsubscribeUrl: 'https://pianolouvorja.com.br',
+        locale,
+      })
 
-    if (i + BATCH_SIZE < emails.length) {
-      await new Promise((resolve) => setTimeout(resolve, BATCH_DELAY_MS))
+      const result = await sendMail({
+        to: batch,
+        subject: content.subject,
+        html,
+      })
+
+      if (result.success) {
+        sent += batch.length
+      } else {
+        failed += batch.length
+        errors.push(result.error || 'Unknown error')
+      }
+
+      if (i + BATCH_SIZE < emails.length) {
+        await new Promise((resolve) => setTimeout(resolve, BATCH_DELAY_MS))
+      }
     }
   }
 
@@ -70,7 +109,7 @@ export default defineEventHandler(async (event) => {
     date: new Date().toISOString(),
     subject: body.subject,
     template: body.template || 'announcement',
-    total: emails.length,
+    total: active.length,
     sent,
     failed,
     errors,
@@ -78,7 +117,7 @@ export default defineEventHandler(async (event) => {
   addToNewsletterHistory(record)
 
   return {
-    total: emails.length,
+    total: active.length,
     sent,
     failed,
     errors,

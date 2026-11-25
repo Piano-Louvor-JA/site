@@ -34,7 +34,12 @@ export function useTimeseries(initialPeriod: TimeseriesPeriod = '30d') {
       }
       const headers: Record<string, string> = {}
       if (token) headers.Authorization = `Bearer ${token}`
-      data.value = await $fetch<TimeseriesResponse>('/api/admin/timeseries', {
+      // SPEC piano-site-telemetria-v2 (RF-A3/S3): fonte única = API do PIANO.
+      // O site é SSG — a rota Nitro /api/admin/timeseries não existe no hosting.
+      const apiBase =
+        String(useRuntimeConfig().public.pianoApiBase ?? '').replace(/\/$/, '') ||
+        'https://api.pianolouvorja.com.br'
+      data.value = await $fetch<TimeseriesResponse>(`${apiBase}/v1/geo/timeseries`, {
         query: { period: period.value },
         headers,
       })

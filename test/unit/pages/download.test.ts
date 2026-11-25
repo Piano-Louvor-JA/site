@@ -12,6 +12,7 @@ function mountDownloadPage() {
     global: {
       stubs: {
         ClientOnly: { template: '<slot />' },
+        NuxtLink: { template: '<a :href="to"><slot /></a>', props: ['to'] },
       },
     },
   })
@@ -106,5 +107,19 @@ describe('DownloadPage', () => {
     expect(badge.exists()).toBe(true)
     expect(badge.text()).toContain('Instalações')
     expect(badge.text()).toContain('1.234')
+  })
+
+  it('exibe a seção Mídias com link para /midias', async () => {
+    const wrapper = mountDownloadPage()
+    await flushPromises()
+
+    const section = wrapper.find('.download-midias')
+    expect(section.exists()).toBe(true)
+    expect(section.text()).toContain('Mídias do LouvorJA')
+
+    const cta = wrapper.find('.download-midias__cta')
+    expect(cta.exists()).toBe(true)
+    expect(cta.attributes('href')).toBe('/midias')
+    expect(cta.text()).toContain('Abrir Mídias')
   })
 })

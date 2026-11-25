@@ -3,6 +3,213 @@
 All notable changes to this project are documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.12.0](https://github.com/Piano-Louvor-JA/site/compare/v1.11.0...v1.12.0) (2026-11-24)
+
+### Features
+
+- **admin:** hub Comunidade unificado — Pendentes/Membros/Equipe (PLAN §3.2) ([c9f9cc3](https://github.com/Piano-Louvor-JA/site/commit/c9f9cc344ddd08c353d778893e246d6db652cf25)), references [#274](https://github.com/Piano-Louvor-JA/site/issues/274)
+- **brand:** add email signature logo PNG (350px + 700px retina) from logo-louvor-agrupado.svg ([03e237c](https://github.com/Piano-Louvor-JA/site/commit/03e237c1914769b85ecdb7dd66d7c5ae1784e55b))
+- **comunidade:** roster dinâmico via API em People, /testers e página /comunidade ([e371f82](https://github.com/Piano-Louvor-JA/site/commit/e371f82b9508083dbdad2ec6820973f5b8a0df39))
+- **docs:** add complete English documentation (14 pages) — wave 3 F3 ([bba974c](https://github.com/Piano-Louvor-JA/site/commit/bba974c2467c2812be3b9fb7f5d0378c7571bf4e))
+- **docs:** add guided section editor with preview ([e96dc22](https://github.com/Piano-Louvor-JA/site/commit/e96dc22aa2be4acc085ec41e71e471f8ae4b7a34))
+- **docs:** add reviewed editor for volunteers ([9d46fcd](https://github.com/Piano-Louvor-JA/site/commit/9d46fcdbac0d258a3ec994f5afa213a13631dc09))
+- **docs:** ar documentation (14 pages) — wave 3 F4 ([957f126](https://github.com/Piano-Louvor-JA/site/commit/957f1262f00e2d7d677bc127eb6a293ee357d1a3))
+- **docs:** english install guides (7 pages) — wave 3 F3 partial ([757a320](https://github.com/Piano-Louvor-JA/site/commit/757a3202d4b8a3f13f6049a568562c7682512660))
+- **docs:** es documentation (14 pages) — wave 3 F4 ([799c594](https://github.com/Piano-Louvor-JA/site/commit/799c594ba4fab89f77feb80dce549cdcc48f7f36))
+- **docs:** fr documentation (14 pages) — wave 3 F4 ([b9f68c9](https://github.com/Piano-Louvor-JA/site/commit/b9f68c9f3b76207c4edea4262364c6487b725ed7))
+- **docs:** hi documentation (14 pages) — wave 3 F4 ([574a02a](https://github.com/Piano-Louvor-JA/site/commit/574a02a1e9a48be80202f11d50d7e04df4abee78))
+- **docs:** ja documentation (14 pages) — wave 3 F4 ([6f94eb2](https://github.com/Piano-Louvor-JA/site/commit/6f94eb2c2a6c89790d8dba74b90b11fe5b68122c))
+- **docs:** ko documentation (14 pages) — wave 3 F4 ([f7efc84](https://github.com/Piano-Louvor-JA/site/commit/f7efc84d2fbaee95ca0b54376c3f102482de09f7))
+- **docs:** localized doc routes for 11 locales with pt-BR fallback (wave 3 F2) ([70245c9](https://github.com/Piano-Louvor-JA/site/commit/70245c9698dded79ddb9622fdae4edcc3a348443))
+- **docs:** ru documentation (14 pages) — wave 3 F4 ([cf19cec](https://github.com/Piano-Louvor-JA/site/commit/cf19cec23e6a27d37ecfcea840cbfee937d80565))
+- **docs:** tr documentation (14 pages) — wave 3 F4 ([4124fcb](https://github.com/Piano-Louvor-JA/site/commit/4124fcb221f7fed708e86ecee722da9200fa115a))
+- **docs:** uk documentation (14 pages) — wave 3 F4 ([4f1c505](https://github.com/Piano-Louvor-JA/site/commit/4f1c505d449a20dc236ef5a37a3815cf11272da8))
+- **docs:** zh documentation (14 pages) — wave 3 F4 ([c2ad0ea](https://github.com/Piano-Louvor-JA/site/commit/c2ad0ead4161320aee5bcc5354edaedfca206ce4))
+- **email:** i18n de e-mails transacionais em 12 locales (TDD) ([4fa5d43](https://github.com/Piano-Louvor-JA/site/commit/4fa5d4347fc7d3cf6b00c58e6787cfdb0a59a0f7))
+- **i18n:** add ar hi locales (wave 2) ([089915e](https://github.com/Piano-Louvor-JA/site/commit/089915ebb96f3f80fa1dd28d0e89f473e8c8c93a))
+- **i18n:** add ja ko zh tr locales (wave 1) ([e5ce67b](https://github.com/Piano-Louvor-JA/site/commit/e5ce67b399b8a053ff302b9686d7f0b1e6c978c4))
+- **i18n:** add ja, ko, zh, tr, ar, hi assets locales (site, 367 keys) ([9801ac3](https://github.com/Piano-Louvor-JA/site/commit/9801ac3b3c8230c19cca825c6be77993f4180c6f))
+- **i18n:** catalogos institucional + press nos 6 locales (F2) ([f38b15c](https://github.com/Piano-Louvor-JA/site/commit/f38b15c52907a75995ba3747d45daa36e80481d0))
+- **i18n:** wire ar hi locales with RTL support and llms.txt update ([b5127f5](https://github.com/Piano-Louvor-JA/site/commit/b5127f5a35169357e7d23317b0e3ecbfc2140005))
+- **institucional:** pagina líderes, press kit, SEO e SSG (F3-F4) ([2b86cb7](https://github.com/Piano-Louvor-JA/site/commit/2b86cb7e81d22ee39f22094fd43d680f44166c73))
+- **site:** replace legacy favicon assets with LouvorJA brand ([2bd1715](https://github.com/Piano-Louvor-JA/site/commit/2bd17157a31360cf0ed0aebb5a3a8818dccb29e4))
+- **tickets:** central de tickets B2 no site (intake público + portal + admin) ([82cb783](https://github.com/Piano-Louvor-JA/site/commit/82cb7833f5512996095855a7956b4ca38a86f55b))
+
+### Bug Fixes
+
+- **brand:** use logo-louvor-ja.svg (correct logo) for email signature PNGs ([fa7845c](https://github.com/Piano-Louvor-JA/site/commit/fa7845cea6f529c60d521d678abc2800ced5f35a))
+- **community:** prioritize API tester profile over sheet fallback ([cfe8143](https://github.com/Piano-Louvor-JA/site/commit/cfe814357ae298fa4e23e89d14ec8239e545bf18))
+- **docs:** localePath nos cards do índice e breadcrumb — /xx/docs linka /xx/docs/* ([78ba8f8](https://github.com/Piano-Louvor-JA/site/commit/78ba8f8a9553f766c22bfc3fd7a1323f5919808c))
+- **docs:** preserve detail routing in community admin branch ([1c5c8db](https://github.com/Piano-Louvor-JA/site/commit/1c5c8dbea265361d0c9513736a3f87cdeaf9d7df))
+- **docs:** preserve frontmatter in proposed edits ([d3a3bcf](https://github.com/Piano-Louvor-JA/site/commit/d3a3bcf8c4c0f407dc21d0d7c70eb579b5b39ae2))
+- **docs:** preserve localized navigation across locale changes and hydration ([547fd3e](https://github.com/Piano-Louvor-JA/site/commit/547fd3e33826a0e46c0a69e59e0626f74229ce56))
+- **docs:** sidebar links com prefixo docs/<locale> duplicado — docLinkFor ([1928909](https://github.com/Piano-Louvor-JA/site/commit/192890937c5a247ce62e37545f615c383561bdb6))
+- **docs:** track proposal API route ([ca055e5](https://github.com/Piano-Louvor-JA/site/commit/ca055e5717ba39c41bd47c359093a7a29c2213d1))
+- **i18n:** add ja ko zh tr to LocaleCode type in header ([c07b080](https://github.com/Piano-Louvor-JA/site/commit/c07b080439aa1d1a83c4ff0381509916054ea407))
+- **i18n:** add missing es shortcut items 8-9 (wave 3 AC1) ([eb8e2c7](https://github.com/Piano-Louvor-JA/site/commit/eb8e2c727e8e3056d13640b58e8a2a7c6d937088))
+- **i18n:** admin comunidade sem literais hardcoded — + chaves title/tabsAriaLabel nos 6 locales (P2 reviewer [#170](https://github.com/Piano-Louvor-JA/site/issues/170)) ([a0c10ea](https://github.com/Piano-Louvor-JA/site/commit/a0c10ea40fa53f6fcf04707937b4317bc873e15e))
+- **i18n:** docs guide cards PT residue + links localized per language + editOnGithub translated and locale-aware ([5035c75](https://github.com/Piano-Louvor-JA/site/commit/5035c757b71f8e29cdb7e8fdc01a2db260bcf531))
+- **i18n:** ko hymnal glossary compliance per SPEC R2 ([3ed96ed](https://github.com/Piano-Louvor-JA/site/commit/3ed96ed20b78e0bed2a380daa15caefa4262c755))
+- **i18n:** load nested raw catalogues for all supported locales ([1396b65](https://github.com/Piano-Louvor-JA/site/commit/1396b653f6905cc5c741534c6799f20327bac473))
+- **i18n:** translate docs guide cards and localize hardcoded links ([3e9c826](https://github.com/Piano-Louvor-JA/site/commit/3e9c8269cb5cf610a137e75887cff994e1109612)), references [download#tv](https://github.com/download/issues/tv)
+- **site:** use official PIANO app icon as favicon brand source ([6c16dcb](https://github.com/Piano-Louvor-JA/site/commit/6c16dcbbe2059e7688db619dd05f30c4df770652))
+- **tickets:** align supported site flows with existing API contract ([15b2be6](https://github.com/Piano-Louvor-JA/site/commit/15b2be6f4c5956ce670fe80436f91c2c42fd4371))
+
+### Tests
+
+- **admin:** generate evidence inside the current checkout ([bb808f5](https://github.com/Piano-Louvor-JA/site/commit/bb808f50f13f95d44fcb41b22e11757b395abc3d))
+- complete production coverage for localized docs and community admin ([5c82b6e](https://github.com/Piano-Louvor-JA/site/commit/5c82b6e61091cea9828d089ebc9847f3eda39fca))
+- **evidence:** dump HTML das abas do hub para screenshots (fixtures reais) ([3d4d5b8](https://github.com/Piano-Louvor-JA/site/commit/3d4d5b8122f6d2009dc9adc8771946d09b9229d6))
+- **i18n:** locale-switch admin comunidade — 6 locales incl. RU/UK (8 specs) ([3d2acfb](https://github.com/Piano-Louvor-JA/site/commit/3d2acfba8be984d83d7531138cadbf3c082054f1))
+- **institucional:** red - paginas institucional/press + header link (F1) ([5524859](https://github.com/Piano-Louvor-JA/site/commit/5524859dff519b12e80b64b07b365436d284f8bf))
+
+### Styles
+
+- **docs:** match admin dark theme on editor form ([7b7b03e](https://github.com/Piano-Louvor-JA/site/commit/7b7b03e82fa00ed999a32e0b49a849da15fb5a98))
+- **i18n:** prettier format assets locales ([5fc812d](https://github.com/Piano-Louvor-JA/site/commit/5fc812d22f991f0ff191a1a34d836cd8f39a1cba))
+- **i18n:** prettier format institucional.vue ([f58c409](https://github.com/Piano-Louvor-JA/site/commit/f58c409bb31613b10e4d7cac2bcceef8b61e27bf))
+- prettier nos arquivos do PR — CI format:check verde sem tocar dívida fora do escopo ([e9b0eca](https://github.com/Piano-Louvor-JA/site/commit/e9b0eca265123acae5bdea34f37554266e558bf6))
+
+### Miscellaneous Chores
+
+- ignora .evidence/ (dumps locais de screenshot) ([f74560f](https://github.com/Piano-Louvor-JA/site/commit/f74560f3a550c915474d5df4f99345a45ee3296c))
+- synchronize main v1.11.0 into staging ([43c05e2](https://github.com/Piano-Louvor-JA/site/commit/43c05e24b5526fcbc6a681b3a5d3f656fd1ed939))
+
+## [1.11.0](https://github.com/Piano-Louvor-JA/site/compare/v1.10.0...v1.11.0) (2026-11-20)
+
+### Features
+
+- **telemetria:** geo-visit via API + prerender SEO 6 locales ([1236460](https://github.com/Piano-Louvor-JA/site/commit/12364609ff82f0e12c80b8de80596d45ea4a0ed7))
+
+### Bug Fixes
+
+- **admin:** gráfico timeseries aponta pra API do PIANO (rota Nitro não existe em SSG) ([419b044](https://github.com/Piano-Louvor-JA/site/commit/419b0446020abda1192cd6ad91dcf3ef102d4ab2))
+- **admin:** moderação comunidade via API direta (fim do 404 SSG) ([7e7e6fd](https://github.com/Piano-Louvor-JA/site/commit/7e7e6fd5e44c703e869d6895da9b5f5368642501))
+- **ci:** retain semantic-release compatible with Node 24 ([daf9b6e](https://github.com/Piano-Louvor-JA/site/commit/daf9b6e7a959e85921efb3bd4ea44e348aade906))
+- **docs:** corrige gates de review do PR [#122](https://github.com/Piano-Louvor-JA/site/issues/122) — SSG, SEO, E2E e i18n ([fcc7505](https://github.com/Piano-Louvor-JA/site/commit/fcc75056c064289c05fcfc42f1873f28251d1ada))
+- **download:** exibir tamanho real do apk android ([5b5e024](https://github.com/Piano-Louvor-JA/site/commit/5b5e0245e394ec1e191562175fe178f8ecb40b8d))
+- **quality:** libera gate de lint ([0afcba0](https://github.com/Piano-Louvor-JA/site/commit/0afcba0cd7d7c1890b9c9ff788284c1d4d802f1d))
+
+### Tests
+
+- **admin:** assert configured API timeseries endpoint ([0a706b7](https://github.com/Piano-Louvor-JA/site/commit/0a706b7df9e9bddf58d611dbdd7aa254ae62439f))
+- **site:** cover telemetry and Nuxt development error paths ([5fc058a](https://github.com/Piano-Louvor-JA/site/commit/5fc058a4fa2c9321a8898871c131b327ff77930a))
+
+### Styles
+
+- prettier (CI format check) ([a491b58](https://github.com/Piano-Louvor-JA/site/commit/a491b58bd3996a179abc934bff1f5bb460e67600))
+
+### Miscellaneous Chores
+
+- **deps:** bump SonarSource/sonarqube-scan-action from 8.4.1 to 8.5.0 ([e8f1183](https://github.com/Piano-Louvor-JA/site/commit/e8f118365336b3111106118eb6c6a91a8441836c))
+- **deps:** bump the npm-dependencies group with 26 updates ([d3feddc](https://github.com/Piano-Louvor-JA/site/commit/d3feddc776277a01014a5f03e03f0e2724bddcc3))
+
+## [1.10.0](https://github.com/Piano-Louvor-JA/site/compare/v1.9.0...v1.10.0) (2026-11-19)
+
+### Features
+
+- **download:** seção Mídias com CTA para /midias ([3ff4c28](https://github.com/Piano-Louvor-JA/site/commit/3ff4c2880904975636f2d926ade2ce24b435c9fe))
+
+### Bug Fixes
+
+- usa node:sqlite no Content para o build Hostinger ([9f1a59c](https://github.com/Piano-Louvor-JA/site/commit/9f1a59c70c8abdc17866636f4a77eca04b5584b2))
+
+### Miscellaneous Chores
+
+- sync main v1.9.0 into staging ([495a3e0](https://github.com/Piano-Louvor-JA/site/commit/495a3e047fe917d57fa0eaf56c12c89b89d00106))
+
+## [1.9.0](https://github.com/Piano-Louvor-JA/site/compare/v1.8.0...v1.9.0) (2026-11-18)
+
+### Features
+
+- **i18n:** add russian ukrainian and french locales ([a38b8dd](https://github.com/Piano-Louvor-JA/site/commit/a38b8dd3010f47e6e54748502513f98858446c54))
+- **seo:** international sitemap hreflang x-default and llms.txt for ru uk fr ([d3b0159](https://github.com/Piano-Louvor-JA/site/commit/d3b01595793cc921019667db34349db6fe9e0661))
+
+### Bug Fixes
+
+- **admin:** painel gestao chama a API direto (client-side) + CSS do login ([fbbf715](https://github.com/Piano-Louvor-JA/site/commit/fbbf7156d564677452ad59d2a2b196087fd5dcaa)), references [#43474e](https://github.com/Piano-Louvor-JA/site/issues/43474e)
+- **admin:** pendentes da comunidade via sheet gviz pública (rota Nitro 404 em SSG) ([758c745](https://github.com/Piano-Louvor-JA/site/commit/758c7453f6c98dc7135beb11973e704d84a0edb7))
+- **ci:** passa GITHUB_TOKEN no prerender e evita 500 no SSG ([c736a2a](https://github.com/Piano-Louvor-JA/site/commit/c736a2ac1c940866bd98787c73a0e4c1415dc115))
+- **downloads:** expor somente apk universal ([900438a](https://github.com/Piano-Louvor-JA/site/commit/900438aa54b94dafe26967da8a9be5fb47fbbb12))
+- **security:** ignora GHSA-fc5q-39xc-vjpf (picomatch ReDoS) até o fix sair ([94d9417](https://github.com/Piano-Louvor-JA/site/commit/94d94174918ac64668c2785af3500738a6aa5618))
+
+### Tests
+
+- **api:** cobre branches de pianoApiBase em usePianoApi ([ac4c0a5](https://github.com/Piano-Louvor-JA/site/commit/ac4c0a5cb3293ccd9bfa743c0b88374b1742e330))
+- **downloads:** alinhar testes legados ao contrato apk universal ([c736cbb](https://github.com/Piano-Louvor-JA/site/commit/c736cbb114a7ce52a64b8b0b6c8a51e88dbeb977))
+
+### Styles
+
+- **admin:** formata mensagem de env da Comunidade (CI [#127](https://github.com/Piano-Louvor-JA/site/issues/127)) ([1be2224](https://github.com/Piano-Louvor-JA/site/commit/1be2224e5778d902dda321d6f59d9bbbab8becb4))
+- **i18n:** format translated locale files with prettier ([30c4040](https://github.com/Piano-Louvor-JA/site/commit/30c4040197a288495c121dad71a4924d11ffd120))
+- prettier no teste de downloads ([5929e51](https://github.com/Piano-Louvor-JA/site/commit/5929e51f976ec16983b8d76c8a577edd52afb44a))
+
+### Miscellaneous Chores
+
+- remove artefato gerado docs-index.json do commit (review P1) e gitignore ([1d365fb](https://github.com/Piano-Louvor-JA/site/commit/1d365fb07dd5a7cc884c6aadfe3cfc29796abbba))
+
+## [1.8.0](https://github.com/Piano-Louvor-JA/site/compare/v1.7.0...v1.8.0) (2026-11-15)
+
+### Features
+
+- **admin:** página /admin/gestao — eventos sazonais CRUD + pool de tasks semanais (SPEC piano-admin-panel v1.1.0) ([6b68cf1](https://github.com/Piano-Louvor-JA/site/commit/6b68cf1799aa217f2eb3fa97fc729fb1638cb2b2))
+- **docs:** fases 1+2 @nuxt/content e 14 páginas pt-BR ([cd5e571](https://github.com/Piano-Louvor-JA/site/commit/cd5e571e56e88a5915e6a1b7f532235cc68f131d))
+- **midias:** página /midias com download de mídias via Google Drive ([d8e1295](https://github.com/Piano-Louvor-JA/site/commit/d8e129577951377a92e32a04c3f9a7553dee3333))
+- **site:** ranking público da comunidade + refit /conduta no layout (SPEC piano-site-public v1.0.0) ([ed64395](https://github.com/Piano-Louvor-JA/site/commit/ed64395f47c2f4d607fcc437e3f9dbc9d991f44f))
+
+### Bug Fixes
+
+- **admin:** map community rows to physical sheet lines ([370f3a4](https://github.com/Piano-Louvor-JA/site/commit/370f3a40f0fccfa557fb47faaae24b316990fa21))
+- **docs:** compatibiliza build e testes do conteúdo ([c911ee4](https://github.com/Piano-Louvor-JA/site/commit/c911ee45224cb85ea4676a40f41d004b74ef43e3))
+- **docs:** tipa frontmatter da página de conteúdo ([d098205](https://github.com/Piano-Louvor-JA/site/commit/d0982057b42c8e76a5c1b6161f59cdcd292fd354))
+- **lint:** remove unused vars no ranking.vue e ranking.test.ts (pre-push eslint) ([a835497](https://github.com/Piano-Louvor-JA/site/commit/a8354977d3378a2dabac63a22310a0e030a38691))
+- **ranking:** TS2558 — doFetch não recebe type argument (typecheck do CI) ([652288e](https://github.com/Piano-Louvor-JA/site/commit/652288e8453ee9fced3a832cf116edb756f9ae03))
+- **security:** ignora GHSA do Zod 3 falso positivo via @nuxt/content ([955fa9a](https://github.com/Piano-Louvor-JA/site/commit/955fa9ae0fcfe724fe6684e9bcb80362a9a73efa))
+
+### Styles
+
+- **cms:** formata configuração decap ([ba99b89](https://github.com/Piano-Louvor-JA/site/commit/ba99b894ac12bf679afb8c07f896fb8d3fe2c963))
+- format community-pending-row test with Prettier ([05b1d7f](https://github.com/Piano-Louvor-JA/site/commit/05b1d7f6054a2204cb74202c26d3324fcec52872))
+- prettier nos arquivos novos (ranking/conduta/footer/i18n) ([373004b](https://github.com/Piano-Louvor-JA/site/commit/373004babddc79e06fb0e49d096f927cda78b12c))
+
+### Miscellaneous Chores
+
+- **deps:** bump the npm-dependencies group with 17 updates ([d1262cc](https://github.com/Piano-Louvor-JA/site/commit/d1262ccca7a312fb820f07a5b8bffc98ca69cefd))
+- merge staging into dependabot após site[#118](https://github.com/Piano-Louvor-JA/site/issues/118) ([8b9e553](https://github.com/Piano-Louvor-JA/site/commit/8b9e55384dff4d30ea0f71afb21d49ee2b862c83))
+- merge staging into feat/media-drive-section ([6b7e879](https://github.com/Piano-Louvor-JA/site/commit/6b7e87930d14bb3e3cb99c876ad9b31e84092b4f))
+- merge staging into feat/site-public-ranking ([b8e0cfa](https://github.com/Piano-Louvor-JA/site/commit/b8e0cfaf40b73a8b45008a5d8492e2fd1d2fc5b2))
+- merge staging into feat/site-public-ranking após [#118](https://github.com/Piano-Louvor-JA/site/issues/118)/[#119](https://github.com/Piano-Louvor-JA/site/issues/119) ([3a934bd](https://github.com/Piano-Louvor-JA/site/commit/3a934bd867641dfa75a1175a7bc3668f04be4ad5))
+- resolve conflito de merge com staging (deps dependabot) ([5d36327](https://github.com/Piano-Louvor-JA/site/commit/5d363273f9669116c1dd5c92fc6d056fa6b92748))
+- resolve merge staging — footer ranking + midias ([1b353bc](https://github.com/Piano-Louvor-JA/site/commit/1b353bc16c1ebdae0847f595ef481e65853364a3))
+- retrigger CI com base staging (limpa checks órfãos de main) ([0c0b6f4](https://github.com/Piano-Louvor-JA/site/commit/0c0b6f4cc353f67da621c95f349f1c65d5427918))
+
+## [1.7.0](https://github.com/Piano-Louvor-JA/site/compare/v1.6.2...v1.7.0) (2026-11-09)
+
+### Features
+
+- **coc:** página /conduta com CoC v1.0 integral (pt/en/es) + link no footer ([78f4088](https://github.com/Piano-Louvor-JA/site/commit/78f4088f9dc46a6d7f7f8bd9db9eb050797041fa))
+
+### Bug Fixes
+
+- **admin:** isolamento do sendmail na moderacao e erro estruturado na ui ([d6fbf39](https://github.com/Piano-Louvor-JA/site/commit/d6fbf396f925f6eda3a91a01030a3fb046088d5e))
+- **deps:** patch security advisories and validate conduct translations ([68cecc1](https://github.com/Piano-Louvor-JA/site/commit/68cecc1100903285b82a1f90c056966bbbec5144))
+- **deps:** resolve active high severity advisories ([4ab3510](https://github.com/Piano-Louvor-JA/site/commit/4ab35107fcdc22ea7fb551ba3fbc21861fc0feda))
+- **deps:** resolve active high severity advisories ([70a7af6](https://github.com/Piano-Louvor-JA/site/commit/70a7af681accdb9404ba471254b99e45ee458dc2))
+- **deps:** resolve active high severity advisories ([58d97c0](https://github.com/Piano-Louvor-JA/site/commit/58d97c077ff64f57370c0831b6beb185d7877817))
+
+### Styles
+
+- **coc:** prettier ([78afaee](https://github.com/Piano-Louvor-JA/site/commit/78afaee0e4fc332440cbd9409762920a3aa4b728))
+
+### Miscellaneous Chores
+
+- **deps:** bump SonarSource/sonarqube-scan-action from 8.3.0 to 8.4.1 ([1f6de6d](https://github.com/Piano-Louvor-JA/site/commit/1f6de6de5745b7fd61d1ee14d64d0f5b0633b629))
+- **deps:** bump the npm-dependencies group across 1 directory with 29 updates ([3b7f77f](https://github.com/Piano-Louvor-JA/site/commit/3b7f77f1f13e2ee483b84d4025c68e586d6ba685))
+- merge staging after dependency updates ([31a0a1d](https://github.com/Piano-Louvor-JA/site/commit/31a0a1db1fc68d61357fd8d6e6c9667d5bd1f6e6))
+- merge staging after dependency updates ([cecb89c](https://github.com/Piano-Louvor-JA/site/commit/cecb89c83cc69013645b1aacd698b3c71e09cc83))
+- merge staging after dependency updates ([b8b0d00](https://github.com/Piano-Louvor-JA/site/commit/b8b0d004fe941cb84a5c3f85b868a4aac53ab4de))
+- sync main v1.6.2 into staging ([4713f7a](https://github.com/Piano-Louvor-JA/site/commit/4713f7a4cab7b5a455c2769b42f2586ba6aa4a0f))
+
 ## [1.6.2](https://github.com/Piano-Louvor-JA/site/compare/v1.6.1...v1.6.2) (2026-10-17)
 
 ### Bug Fixes

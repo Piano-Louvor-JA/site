@@ -51,7 +51,8 @@
     langMenuOpen.value = false
   }
 
-  type LocaleCode = 'pt-BR' | 'en' | 'es'
+  type LocaleCode =
+    'pt-BR' | 'en' | 'es' | 'ru' | 'uk' | 'fr' | 'ja' | 'ko' | 'zh' | 'tr' | 'ar' | 'hi'
 
   function changeLocale(code: LocaleCode) {
     setLocale(code)

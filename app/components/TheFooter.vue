@@ -122,6 +122,21 @@
                 {{ $t('footer.terms') }}
               </NuxtLink>
             </li>
+            <li>
+              <NuxtLink :to="localePath('/conduta')">
+                {{ $t('footer.conduct') }}
+              </NuxtLink>
+            </li>
+            <li>
+              <NuxtLink :to="localePath('/ranking')">
+                {{ $t('footer.ranking') }}
+              </NuxtLink>
+            </li>
+            <li>
+              <NuxtLink :to="localePath('/midias')">
+                {{ $t('footer.midias') }}
+              </NuxtLink>
+            </li>
           </ul>
         </nav>
       </div>

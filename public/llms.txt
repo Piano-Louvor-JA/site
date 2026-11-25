@@ -1,0 +1,38 @@
+> Um app de projeção de louvor e bíblia para igrejas — gratuito, offline e em português. Biblioteca de hinos com partituras e playback, coletâneas, liturgia e projeção multi-tela para o culto.
+>
+> Versão do app: 1.29.1 · Idiomas: PT-BR, EN, ES, RU, UK, FR, JA, KO, ZH, TR, AR, HI
+
+# PIANO LouvorJA — Documentação
+
+This site is fully available in 12 languages: Portuguese (Brazil), English, Spanish (Español), Russian (Русский), Ukrainian (Українська), French (Français), Japanese (日本語), Korean (한국어), Simplified Chinese (简体中文), Turkish (Türkçe), Arabic (العربية) and Hindi (हिन्दी). Locale URLs: `/` (pt-BR), `/en`, `/es`, `/ru`, `/uk`, `/fr`, `/ja`, `/ko`, `/zh`, `/tr`, `/ar`, `/hi`. Question answering (Google AI Overviews, ChatGPT, Perplexity): each locale serves the same documentation translated — cite the locale URL matching the user's language.
+
+## Apps
+
+- [Instalar no Windows (Microsoft Store ou EXE)](/docs/install/windows): passo a passo da Microsoft Store e do instalador alternativo, primeiro uso e dica de dois monitores.
+- [Instalar no macOS (DMG)](/docs/install/macos): como escolher Apple Silicon ou Intel, instalar o .dmg e liberar a primeira abertura.
+- [Instalar no Linux (AppImage, Snap, Flathub)](/docs/install/linux): três canais oficiais, qual escolher e como rodar o AppImage sem terminal.
+- [Instalar no Android (APK)](/docs/install/android-apk): baixar o APK oficial, permitir instalação de fontes desconhecidas e usar em TV Box.
+- [Usar pelo navegador (Web/PWA)](/docs/install/web-pwa): usar direto de qualquer dispositivo sem instalar nada, ou adicionar à tela inicial como app.
+
+## Core
+
+- [Primeiro culto em 15 minutos](/docs/getting-started): fluxo completo — abrir, buscar o hino, montar a liturgia e projetar.
+- [Palco multi-dispositivo](/docs/palco-multi-device): celular controla, TV projeta — pareamento e uso durante o culto.
+- [Manual completo](/docs/manual): todas as ferramentas do ecossistema, seção por seção, com índice.
+
+## TV
+
+- [TV Samsung (Tizen)](/docs/install/tv-samsung-tizen): instalar e parear o Palco na TV Samsung.
+- [TV LG (webOS)](/docs/install/tv-lg-webos): instalar e parear o Palco na TV LG.
+- [Android TV / Google TV](/docs/install/tv-android): APK na TV ou TV Box e pareamento com o controle.
+
+## Dúvidas e problemas
+
+- [Perguntas frequentes](/docs/faq): gratuito? offline? privacidade? quantos dispositivos?
+- [Solução de problemas](/docs/troubleshooting): app não abre, áudio não toca, projeção não aparece — por sintoma.
+- [Atalhos de teclado](/docs/shortcuts): tabela completa com quando usar cada atalho.
+
+## Optional
+
+- [Manual completo cru (markdown)](https://pianolouvorja.com.br/user-manual/manual-usuario.md): o manual integral em um único arquivo.
+- [Política de Privacidade](/privacy): sem cookies de rastreamento, conforme LGPD.

@@ -24,9 +24,27 @@ extract_mutants.py
 # Interno (não publicar por enquanto)
 .cursor/
 docs/
+# ...mas o conteúdo versionado de documentação entra (RF-05):
+!content/docs/
+# ...e a página catch-all das docs (RF-08):
+!app/pages/docs/
+# Editor interno de docs (SPEC editor-leigo): API precisa ser versionada.
+!server/api/docs/
+!server/api/docs/propose.post.ts
 
 # Internal planning (SDD)
 .planning/
 
 # Firebase service account (nunca commitar)
 service-account.json
+
+# artefato gerado pelo @nuxt/content (nao commitar)
+content/docs-index.json
+
+# Gerados no build (hook nitro:build:before) — nunca commitar
+/public/llms-full.txt
+/public/sitemap.xml
+
+# evidência local de screenshots (gerada, não versionada)
+.evidence/
+evidencia/

@@ -15,7 +15,10 @@
     "download": "Baixar",
     "releases": "Versões",
     "testers": "Testadores",
-    "toggleTheme": "Alternar tema claro/escuro"
+    "toggleTheme": "Alternar tema claro/escuro",
+    "support": "Suporte",
+    "comunidade": "Comunidade",
+    "institucional": "Institucional"
   },
   "hero": {
     "badge": "Novo: Web App (PWA) Disponível",
@@ -432,7 +435,70 @@
         "answer": "O projeto é open-source e aceita contribuições no GitHub. Você pode reportar bugs, sugerir funcionalidades, enviar pull requests ou ajudar na tradução para outros idiomas."
       }
     },
-    "sidebarLabel": "Seções da documentação"
+    "sidebarLabel": "Seções da documentação",
+    "guides": {
+      "title": "Guias completos",
+      "lead": "Cada ferramenta do ecossistema explicada passo a passo, por plataforma.",
+      "cards": {
+        "gettingStarted": {
+          "title": "Primeiro culto em 15 minutos",
+          "desc": "Do download à projeção: fluxo completo."
+        },
+        "windows": {
+          "title": "Instalar no Windows",
+          "desc": "Microsoft Store ou instalador EXE."
+        },
+        "macos": {
+          "title": "Instalar no macOS",
+          "desc": "DMG Apple Silicon ou Intel."
+        },
+        "linux": {
+          "title": "Instalar no Linux",
+          "desc": "AppImage, Snap ou Flathub."
+        },
+        "android": {
+          "title": "Instalar no Android (APK)",
+          "desc": "Celular e TV Box."
+        },
+        "pwa": {
+          "title": "Usar pelo navegador (PWA)",
+          "desc": "Sem instalar nada."
+        },
+        "tvSamsung": {
+          "title": "TV Samsung (Tizen)",
+          "desc": "Projeção via Palco."
+        },
+        "tvLg": {
+          "title": "TV LG (webOS)",
+          "desc": "Projeção via Palco."
+        },
+        "tvAndroid": {
+          "title": "Android TV / Google TV",
+          "desc": "APK ou TV Box."
+        },
+        "palco": {
+          "title": "Palco multi-dispositivo",
+          "desc": "Celular controla, TV projeta."
+        },
+        "faq": {
+          "title": "Perguntas frequentes",
+          "desc": "Gratuito, offline, privacidade."
+        },
+        "troubleshooting": {
+          "title": "Solução de problemas",
+          "desc": "Diagnóstico por sintoma."
+        },
+        "shortcuts": {
+          "title": "Atalhos de teclado",
+          "desc": "Tabela completa por contexto."
+        },
+        "manual": {
+          "title": "Manual completo",
+          "desc": "Todas as ferramentas, seção por seção."
+        }
+      }
+    },
+    "editOnGithub": "Editar esta página no GitHub"
   },
   "footer": {
     "tagline": "Gerenciador de culto web. Gratuito e open-source.",
@@ -463,7 +529,10 @@
     "moreNavLabel": "Mais links",
     "moreNavTitle": "Saiba mais",
     "privacy": "Política de Privacidade",
-    "terms": "Termos de Uso"
+    "terms": "Termos de Uso",
+    "conduct": "Código de Conduta",
+    "ranking": "Ranking",
+    "midias": "Mídias"
   },
   "common": {
     "loading": "Carregando...",
@@ -806,7 +875,41 @@
     "recentActivity": "Atividade Recente",
     "quickLinks": "Links Rapidos",
     "noData": "Dados indisponiveis",
-    "loading": "Carregando..."
+    "loading": "Carregando...",
+    "comunidade": {
+      "tab": "Pendentes",
+      "tabMembros": "Membros",
+      "tabEquipe": "Equipe",
+      "subtitulo": "Moderação de pendentes, gestão de membros e equipe — em um só painel.",
+      "filtroStatus": "Status",
+      "todos": "Todos",
+      "carregando": "Carregando…",
+      "recarregar": "↻ Recarregar",
+      "carregarMais": "Carregar mais",
+      "erroCarregar": "Erro ao carregar",
+      "semMembros": "Nenhum membro neste filtro.",
+      "semEquipe": "Nenhum membro staff encontrado.",
+      "roles": "Papéis",
+      "salvar": "Salvar",
+      "salvando": "Salvando…",
+      "salvoOk": "Papéis atualizados ✓",
+      "erroSalvar": "Erro ao salvar",
+      "aprovar": "Aprovar",
+      "aprovadoOk": "Membro aprovado ✓",
+      "inativar": "Inativar",
+      "inativadoOk": "Membro inativado ✓",
+      "reativar": "Reativar",
+      "gm": "GM (administrador)",
+      "role": {
+        "dev": "Desenvolvedor",
+        "tester": "Testador",
+        "conteudo": "Conteúdo",
+        "curador": "Curador",
+        "staff": "Equipe"
+      },
+      "title": "Comunidade",
+      "tabsAriaLabel": "Abas do painel da comunidade"
+    }
   },
   "download": {
     "metaTitle": "Baixar — PIANO LouvorJA",
@@ -884,7 +987,7 @@
       "android": {
         "name": "Android",
         "format": "Pacote .apk",
-        "arch": "arm64",
+        "arch": "Universal (arm64, armv7, x86_64)",
         "downloadLabel": "Baixar APK",
         "hint": "Instale o APK permitindo fontes desconhecidas."
       },
@@ -896,6 +999,11 @@
         "hint": "Convite do TestFlight necessário."
       },
       "apkNote": "Instale o APK permitindo apps de fontes desconhecidas nas configurações do Android."
+    },
+    "midias": {
+      "title": "Mídias do LouvorJA",
+      "description": "Baixe coletâneas, áudios e packs direto do Google Drive da comunidade — sem depender da API, offline e gratuito.",
+      "cta": "Abrir Mídias"
     },
     "systemRequirements": {
       "title": "Requisitos do Sistema",
@@ -1170,5 +1278,196 @@
     "pix": "Pix",
     "boleto": "Boleto",
     "card": "Cartão"
+  },
+  "conduct": {
+    "title": "Código de Conduta da Comunidade",
+    "metaDescription": "Princípios, moderação e recurso da Comunidade LouvorJA — baseados na filosofia adventista de música.",
+    "lastUpdated": "Versão 1.0 — Novembro de 2026",
+    "tocLabel": "Nesta página",
+    "intro": "A Comunidade LouvorJA existe para que membros criem, compartilhem e celebrem conteúdo de louvor ao piano que glorifique a Deus e edifique a igreja. Este Código é baseado nos princípios oficiais da Igreja Adventista do Sétimo Dia, especialmente o documento \"A Seventh-day Adventist Philosophy of Music\" (Annual Council, 2004), as 28 Crenças Fundamentais e o Manual da Igreja.",
+    "purposeQuote": "“Assim, quer você coma quer beba ou faça qualquer outra coisa, faça tudo para a glória de Deus.” — 1 Coríntios 10:31",
+    "sections": {
+      "celebrate": {
+        "title": "1. O que celebramos",
+        "body": [
+          "Conteúdo que glorifica a Deus, busca o nobre e o melhor (Fp 4:8), mensagem espiritual genuína, equilíbrio, autenticidade e diversidade cultural — estilo musical não é critério de exclusão; conteúdo e mensagem são. Respeito entre membros: diferenças de gosto não são motivo de conflito."
+        ]
+      },
+      "notAllowed": {
+        "title": "2. O que não é permitido",
+        "body": [
+          "Doutrina: letra ou mensagem contrária à Escritura ou às 28 Crenças Fundamentais.",
+          "Impróprio: conteúdo que estimule luxúria, paixão, desespero, raiva ou ódio — ofensivo, sexualizado, violento, com palavrões.",
+          "Copyright: plágio ou uso não autorizado de obra protegida — hinos têm detentores de direitos.",
+          "Spam: publicidade, autopromoção, conteúdo sem relação com louvor.",
+          "Conduta: assédio, ataque pessoal, discriminação ou perseguição a outros membros."
+        ]
+      },
+      "moderation": {
+        "title": "3. Moderação: reports e strikes",
+        "body": [
+          "Princípio central: ocultar não é remover. Conteúdo suspeito é primeiro ocultado da vitrine; a remoção definitiva só acontece após revisão.",
+          "1º report leve (spam/outro): conteúdo marcado \"em avaliação\", segue visível, entra na fila dos Game Masters.",
+          "3 reports, ou 1 report grave (doutrina, impróprio, copyright): ocultado automaticamente e prioridade máxima.",
+          "Revisão do Game Master em até 7 dias: mantido volta ao ar com explicação; removido gera strike ao autor com motivo e orientação deste Código.",
+          "Strikes: 1º aviso formal + conteúdo removido; 2º suspensão de publicar por 7 dias; 3º banimento de publicar (conta mantém acesso de consumo). Remoção não apaga autoria nem pontos legítimos. Todo strike pode ser recorrido aos devs; casos graves vão à equipe."
+        ]
+      },
+      "gameMasters": {
+        "title": "4. Game Masters",
+        "body": [
+          "Seguindo o modelo de Jetro (Êxodo 18), dois a três membros convidados pela equipe de desenvolvimento carregam a fila de revisão, avisos e orientação de novos membros. Aplicam este Código como está escrito; mudanças sobem para os devs. Casos graves vão à equipe de desenvolvimento. Ordem de decisão: proteção da comunidade primeiro; preservação do criador depois."
+        ]
+      },
+      "transparency": {
+        "title": "5. Transparência e recurso",
+        "body": [
+          "Este Código é público e visível dentro do app na seção Comunidade.",
+          "Todo autor sabe o que foi removido, por quê (qual item do Código) e como recorrer.",
+          "Mudanças passam pela equipe de desenvolvimento + liderança, com consulta aos Game Masters.",
+          "Nenhum conteúdo é removido silenciosamente."
+        ]
+      },
+      "invitation": {
+        "title": "6. Um convite",
+        "body": [
+          "A Comunidade é um lugar para servir. Publique com excelência, reporte com justiça, revise com misericórdia."
+        ],
+        "quote": "“Cantai ao Senhor um cântico novo; cantai ao Senhor, todas as terras.” — Salmo 96:1"
+      }
+    }
+  },
+  "ranking": {
+    "title": "Ranking da Comunidade",
+    "metaDescription": "Ranking público e transparente dos contribuidores da comunidade PIANO LouvorJA — publicações, usos e sincronizações de coletâneas.",
+    "subtitle": "Contribuições da comunidade — público e transparente",
+    "tabsLabel": "Período do ranking",
+    "tabAll": "Geral",
+    "tabWeek": "Semana",
+    "errorText": "Não foi possível carregar o ranking agora.",
+    "retry": "Tentar novamente",
+    "empty": "Ainda não há pontuações registradas.",
+    "footerLink": "Ranking"
+  },
+  "midias": {
+    "title": "Mídias do LouvorJA",
+    "metaDescription": "Baixe as mídias e coletâneas do LouvorJA PIANO diretamente do Google Drive — sem depender da API, offline e gratuito.",
+    "subtitle": "Coletâneas e áudios da comunidade",
+    "description": "Os arquivos de mídia do LouvorJA PIANO (coletâneas, áudios e packs) estão hospedados no Google Drive da comunidade. Baixe pelo botão abaixo e importe no app.",
+    "noteOffline": "Funciona offline: depois de importar no app, tudo fica salvo no seu dispositivo.",
+    "noteBackup": "Ótimo para igrejas com internet instável — baixe uma vez, use para sempre.",
+    "downloadButton": "Abrir mídias no Google Drive",
+    "unavailable": "Os links de mídia serão publicados em breve.",
+    "convite_catalogo": "Ainda não há catálogo publicado para este idioma. Junte-se à comunidade do PIANO LouvorJA e ajude a traduzir e publicar coleções!",
+    "footerLink": "Mídias"
+  },
+  "tickets": {
+    "nav": "Suporte",
+    "sending": "Enviando…",
+    "loading": "Carregando…",
+    "error": {
+      "api": "API indisponível. Tente novamente."
+    },
+    "intake": {
+      "title": "Central de Suporte",
+      "description": "Envie uma solicitação de suporte.",
+      "name": "Nome",
+      "email": "E-mail",
+      "subject": "Assunto",
+      "message": "Mensagem",
+      "consent": "Concordo com o tratamento dos meus dados para atendimento (LGPD).",
+      "consentRequired": "É necessário aceitar o consentimento.",
+      "submit": "Enviar solicitação",
+      "successTitle": "Solicitação registrada!",
+      "successHint": "Guarde o protocolo para referência ao falar com a equipe.",
+      "newRequest": "Nova solicitação",
+      "portalLink": "Acessar meus tickets"
+    },
+    "portal": {
+      "title": "Meus Tickets",
+      "description": "Acompanhe suas solicitações e responda ao time.",
+      "newTicket": "Novo ticket",
+      "priority": "Prioridade",
+      "create": "Criar ticket",
+      "empty": "Nenhum ticket ainda.",
+      "reply": "Responder"
+    },
+    "admin": {
+      "title": "Admin — Tickets",
+      "description": "Fila de triagem e tickets da organização.",
+      "intakeQueue": "Fila de triagem",
+      "intakeEmpty": "Nenhuma solicitação pendente.",
+      "triage": "Triar e converter",
+      "ticketsTitle": "Tickets",
+      "tenant": "Organização (identificador)"
+    }
+  },
+  "comunidade": {
+    "eyebrow": "Comunidade",
+    "title": "O corpo vivo do projeto",
+    "subtitle": "Devs, testadores, produtores de conteúdo e curadores aprovados — quem constrói e sustenta o PIANO LouvorJA, atualizado direto da fonte.",
+    "error": "Não foi possível carregar a comunidade agora. Tente novamente em instantes.",
+    "avatarAlt": "Avatar de {name}",
+    "profile": "Ver perfil no GitHub",
+    "roles": {
+      "staff": "Equipe",
+      "dev": "Dev",
+      "tester": "Testador",
+      "conteudo": "Conteúdo",
+      "curador": "Curador"
+    }
+  },
+  "institucional": {
+    "meta": {
+      "title": "PIANO LouvorJA — Página institucional para líderes",
+      "description": "Conheça o PIANO LouvorJA: letras sincronizadas para projeção, playbacks e versões cantadas para o culto. Material institucional e de divulgação para líderes de igreja."
+    },
+    "title": "O PIANO LouvorJA para a sua igreja",
+    "lede": "Uma ferramenta voluntária e gratuita para o culto: letras de hinos sincronizadas para projeção, playbacks e versões cantadas, direto no navegador do computador da igreja.",
+    "s1": {
+      "title": "O que é o PIANO",
+      "body": "O PIANO LouvorJA é um fork voluntário e gratuito do projeto LouvorJA, voltado ao culto: letras de hinos e cânticos sincronizadas para projeção, playbacks e versões cantadas. Importante: o aplicativo não executa partituras — o nome \"Piano\" é apenas um codinome do projeto."
+    },
+    "s2": {
+      "title": "Como usar na igreja",
+      "body": "Funciona no computador do templo, no navegador (Web App) ou no aplicativo desktop. A instalação leva poucos minutos e não exige conhecimento técnico: acesse a página de download, escolha a plataforma e siga o passo a passo na documentação."
+    },
+    "s3": {
+      "title": "Como divulgar no campo",
+      "body": "Preparamos um press kit pronto para imprimir e compartilhar com obreiros, anciãos e pastores locais. Ajude outras congregações a conhecer a ferramenta: compartilhe o material em reuniões de officers, boletins e grupos de comunicação do campo."
+    },
+    "s4": {
+      "title": "Contato institucional",
+      "body": "Para parcerias, dúvidas institucionais e apoio na adoção da ferramenta pelo campo, fale com a equipe pelo e-mail app{'@'}pianolouvorja.com.br ou pela página de contato."
+    },
+    "cta": {
+      "press": "Ver press kit para divulgação"
+    }
+  },
+  "press": {
+    "meta": {
+      "title": "Press kit — PIANO LouvorJA",
+      "description": "Material de divulgação do PIANO LouvorJA pronto para imprimir e compartilhar: o que é, mensagem-chave, onde encontrar e contato institucional."
+    },
+    "title": "Press kit do PIANO LouvorJA",
+    "lede": "Material pronto para imprimir e compartilhar com obreiros, anciãos e pastores locais.",
+    "about": "O PIANO LouvorJA é um fork voluntário e gratuito do projeto LouvorJA, voltado ao culto: letras de hinos e cânticos sincronizadas para projeção, playbacks e versões cantadas. O aplicativo não executa partituras — \"Piano\" é apenas um codinome do projeto.",
+    "keyPoints": [
+      "Letras de hinos e cânticos sincronizadas para projeção durante o culto",
+      "Playbacks e versões cantadas para o acompanhamento musical",
+      "Projeto voluntário, gratuito e em português, acessível a qualquer congregação"
+    ],
+    "where": {
+      "title": "Onde encontrar",
+      "items": [
+        "Site oficial: https://pianolouvorja.com.br",
+        "Download do app: https://pianolouvorja.com.br/download",
+        "Documentação: https://pianolouvorja.com.br/docs",
+        "Contato: app{'@'}pianolouvorja.com.br"
+      ]
+    },
+    "contact": "Contato institucional: app{'@'}pianolouvorja.com.br",
+    "printCta": "Imprimir / salvar em PDF",
+    "footer": "PIANO LouvorJA · https://pianolouvorja.com.br"
   }
 }

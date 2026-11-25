@@ -128,10 +128,18 @@ export default defineEventHandler(async (event) => {
   // relatos: sem email no review (o email de confirmação é pro endpoint de registro)
 
   if (template && email) {
-    const { subject, html } = renderModeracao(template, { nome, whatsappUrl })
-    const result = await sendMail({ to: email, subject, html })
-    emailEnviado = result.success
-    emailErro = result.error
+    // Notificação isolada (SPEC decisão 2): falha de SMTP/render NÃO pode
+    // transformar moderação já persistida em erro HTTP.
+    try {
+      const { subject, html } = renderModeracao(template, { nome, whatsappUrl })
+      const result = await sendMail({ to: email, subject, html })
+      emailEnviado = result.success
+      emailErro = result.error
+    } catch (err: unknown) {
+      emailEnviado = false
+      emailErro = err instanceof Error ? err.message : 'erro desconhecido no envio'
+      console.error('[community/review] falha ao enviar email de moderação:', emailErro)
+    }
   }
 
   return { ok: true, tab, row, status: novoStatus, emailEnviado, emailErro }

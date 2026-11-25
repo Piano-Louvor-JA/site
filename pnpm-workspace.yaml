@@ -1,6 +1,7 @@
 allowBuilds:
   '@firebase/util': true
   '@parcel/watcher': true
+  better-sqlite3: false
   # false: o postinstall do esbuild tenta EXECUTAR o binário (falha com EACCES na Hostinger).
   # O chmod em scripts/postinstall-host.mjs restaura +x antes do build.
   esbuild: false
@@ -13,6 +14,11 @@ hoistPattern:
   # Commitlint keeps its own newer preset instead of leaking it to release notes.
   - '!conventional-changelog-conventionalcommits'
 overrides:
+  'vue-i18n@11': '11.4.14'
+  '@intlify/core@11': '11.4.14'
+  '@intlify/core-base@11': '11.4.14'
+  'zod@4': '4.6.6'
+  '@intlify/shared@11': '11.4.14'
   # Preset 10 usa funções de renderização, disponíveis no writer 9.
   '@semantic-release/release-notes-generator>conventional-changelog-writer': '^9.3.0'
   rollup: 4.62.4
@@ -37,7 +43,7 @@ overrides:
   nodemailer: '>=10.0.6'
   svgo: '4.1.0'
   tmp: '0.2.7'
-  undici: '8.11.2'
+  undici: '8.12.2'
   # GHSA do devalue <=5.9.2 (Nuxt e i18n). Nuxt 4.5 pede ^5.8.2; 5.9.4 cabe nessa faixa.
   devalue: '5.9.4'
   # GHSA-xjh9-v7x6-24jw / GHSA-x8mw-p69m-v3mx (@fastify/busboy via firebase-admin)
@@ -51,6 +57,9 @@ overrides:
   sass-embedded: '-'
   sass-embedded-linux-x64: '-'
   sass-embedded-linux-musl-x64: '-'
+  # Hostinger: prebuild do better-sqlite3 exige GLIBC_2.29; o build host é mais antigo.
+  # @nuxt/content usa node:sqlite via content.experimental.sqliteConnector = 'native'.
+  better-sqlite3: '-'
   # GHSA de out/2026 — fixes publicados, overrides com range >=:
   '@modelcontextprotocol/sdk': '>=1.31.0'
   '@simple-git/argv-parser': '>=2.0.1'
@@ -86,6 +95,16 @@ audit:
     - GHSA-x6jw-m9v5-85vh
     - GHSA-g4wm-2vf7-vfgr
     - GHSA-858h-whjf-mvg5
+    # GHSA-mrhx-c7xc-m3w5: range npm "<4.6.6" marca Zod 3 como vulnerável.
+    # O advisory é do Zod 4 (fix >=4.6.6); @nuxt/content exige zod ^3.25.76.
+    # Zod 4 já está pinado em 4.6.6 via override 'zod@4'. Reavaliar quando
+    # @nuxt/content migrar para Zod 4.
+    - GHSA-mrhx-c7xc-m3w5
+    # picomatch <=4.0.7 ReDoS (GHSA-fc5q-39xc-vjpf). Fix >=4.0.8 NÃO existe
+    # publicado (latest = 4.0.7, atualizado 08/2026). picomatch é glob matcher
+    # de build/tooling (via tinyglobby/fdir do @nuxt/content), sem input
+    # adversarial em runtime. Reavaliar quando o 4.0.8 sair.
+    - GHSA-fc5q-39xc-vjpf
 
 # Vitest 5 usa " > " na cadeia do teste; Stryker 10 ainda usa espaços.
 # Remover após correção upstream: https://github.com/stryker-mutator/stryker-js/issues/6210

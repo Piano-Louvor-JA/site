@@ -86,8 +86,21 @@ describe('useLocaleMessages', () => {
     expect(enResult).toBeDefined()
   })
 
+  it.each(['ja', 'ko', 'zh', 'tr', 'ar', 'hi'])('loads raw guide arrays for %s', (code) => {
+    setLocale(code)
+    const { raw } = useLocaleMessages()
+    expect(typeof raw('meta.title')).toBe('string')
+    const shortcuts = raw<Array<{ action: string; shortcut: string }>>(
+      'docs.content.shortcuts.items',
+    )
+    expect(Array.isArray(shortcuts)).toBe(true)
+    expect(shortcuts!.length).toBeGreaterThan(0)
+    expect(typeof shortcuts![0].action).toBe('string')
+    expect(typeof shortcuts![0].shortcut).toBe('string')
+  })
+
   it('retorna undefined para locale invalido', () => {
-    setLocale('fr')
+    setLocale('de')
     const { raw } = useLocaleMessages()
     expect(raw('meta.title')).toBeUndefined()
   })
