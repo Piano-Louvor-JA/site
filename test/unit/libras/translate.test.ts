@@ -49,4 +49,34 @@ describe('Libras cache → API → fallback', () => {
     else fetchMock.mockResolvedValue({ ok: failure !== 'http', json: async () => ({ gloss: 123 }) })
     expect(await getLibrasGloss('Oi paz')).toEqual({ gloss: 'O I _ P A Z', sourceUsed: 'fallback' })
   })
+
+  it('falls back with underscore for words without letters/digits', async () => {
+    fetchMock.mockResolvedValue({ ok: true, json: async () => ({ gloss: '   ' }) })
+    expect(await getLibrasGloss('!!! ???')).toEqual({
+      gloss: '_ _ _',
+      sourceUsed: 'fallback',
+    })
+  })
+
+  it('aborts a slow VLibras request and falls back', async () => {
+    vi.useFakeTimers()
+    try {
+      fetchMock.mockImplementation(
+        (_url: string, init?: { signal?: AbortSignal }) =>
+          new Promise((_resolve, reject) => {
+            init?.signal?.addEventListener('abort', () =>
+              reject(new DOMException('Aborted', 'AbortError')),
+            )
+          }),
+      )
+      const pending = getLibrasGloss('Lento')
+      await vi.advanceTimersByTimeAsync(15_000)
+      await expect(pending).resolves.toEqual({
+        gloss: 'L E N T O',
+        sourceUsed: 'fallback',
+      })
+    } finally {
+      vi.useRealTimers()
+    }
+  })
 })
