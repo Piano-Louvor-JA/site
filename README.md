@@ -171,3 +171,35 @@ feature/xxx → staging (prerelease beta) → main (release estável + deploy)
 ## Licença
 
 [MIT](LICENSE) © 2026 Equipe LouvorJA
+
+## Identificação do site na API Piano
+
+O site usa `X-Client-Platform: site`, a versão do pacote em
+`X-Client-Version` e uma chave própria de parceiro em `X-Partner-Key`.
+O transporte é aplicado ao `fetch` e ao `$fetch` (incluindo `raw`, `create`
+e hooks), no navegador e no Nitro. `Authorization`, `X-Tenant`, corpo e
+headers explícitos são preservados. Google/Firebase, upstream e terceiros
+não recebem a chave; requisições `no-cors` não são alteradas.
+
+Configure `NUXT_PUBLIC_PIANO_PARTNER_KEY_STG` na hospedagem de staging e
+`NUXT_PUBLIC_PIANO_PARTNER_KEY_PROD` na produção antes do build/generate.
+No GitHub, os nomes dos secrets são `PARTNER_KEY_STG` e `PARTNER_KEY_PROD`.
+Eles devem conter chaves próprias “LouvorJA Portal Piano”, distintas das do web
+operador, desktop e palco. Sem chave, o acesso atual continua funcionando.
+Como o site é distribuído também por SSG, esses valores são identificadores
+públicos e revogáveis incorporados ao build; não são credenciais de usuário.
+
+A chave é escolhida pela URL efetiva e só é enviada à API Piano HTTPS ou
+à API local em localhost/127.0.0.1. Chamadas com chave recusam redirects para
+não encaminhá-la a outra origem. O deploy da hospedagem precisa receber
+suas próprias variáveis: secrets do GitHub não são copiados automaticamente.
+
+Os workflows de validação, incluindo CI Main e Homologation, usam staging
+para evitar tráfego de testes em produção. O workflow Deploy gera o artefato
+público com a chave de produção; o destino de publicação desse workflow ainda
+é um TODO no repositório. A hospedagem que compila o código do Git precisa
+receber as variáveis no próprio painel antes do novo build.
+
+Confirme também `NUXT_PUBLIC_PIANO_API_BASE`: em staging use
+`https://api-stg.pianolouvorja.com.br`; na produção,
+`https://api.pianolouvorja.com.br`. A chave não modifica a base da API.

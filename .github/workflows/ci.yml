@@ -3,6 +3,10 @@
 # (workflow CI Main).
 name: CI
 
+env:
+  NUXT_PUBLIC_PIANO_API_BASE: https://api-stg.pianolouvorja.com.br
+  NUXT_PUBLIC_PIANO_PARTNER_KEY_STG: ${{ secrets.PARTNER_KEY_STG }}
+
 on:
   pull_request:
     branches: [staging]
