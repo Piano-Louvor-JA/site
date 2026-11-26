@@ -1,3 +1,8 @@
+import { readFileSync } from 'node:fs'
+
+const siteVersion = JSON.parse(readFileSync(new URL('./package.json', import.meta.url), 'utf8'))
+  .version as string
+
 export default defineNuxtConfig({
   compatibilityDate: '2025-01-01',
   devtools: { enabled: true },
@@ -266,6 +271,9 @@ export default defineNuxtConfig({
     llmModel: process.env.LLM_MODEL || 'glm-4-flash',
 
     public: {
+      siteVersion,
+      pianoPartnerKeyStg: process.env.NUXT_PUBLIC_PIANO_PARTNER_KEY_STG || '',
+      pianoPartnerKeyProd: process.env.NUXT_PUBLIC_PIANO_PARTNER_KEY_PROD || '',
       // Asaas payment link (created in Asaas dashboard — Pix/boleto/card)
       // Env var: NUXT_PUBLIC_ASAAS_DONATE_URL
       asaasDonateUrl: process.env.NUXT_PUBLIC_ASAAS_DONATE_URL || '',
