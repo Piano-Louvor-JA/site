@@ -3,6 +3,16 @@
 All notable changes to this project are documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.14.0](https://github.com/Piano-Louvor-JA/site/compare/v1.13.0...v1.14.0) (2026-11-26)
+
+### Features
+
+- **api:** identifica requisições do portal com parceiro próprio ([#168](https://github.com/Piano-Louvor-JA/site/issues/168)) ([83b69a0](https://github.com/Piano-Louvor-JA/site/commit/83b69a0681b31339d5867a7a1e550d962c89383f))
+
+### Miscellaneous Chores
+
+- sync main → staging após release v1.13.0 ([6e30d61](https://github.com/Piano-Louvor-JA/site/commit/6e30d61fd93e8eb7f9067f43836b14b943996d03))
+
 ## [1.13.0](https://github.com/Piano-Louvor-JA/site/compare/v1.12.0...v1.13.0) (2026-11-26)
 
 ### Features
