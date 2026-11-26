@@ -8,6 +8,7 @@
   const navItems = [
     { to: '/admin', label: 'Dashboard', icon: 'ti-layout-dashboard' },
     { to: '/admin/infra', label: 'Infra', icon: 'ti-server-2' },
+    { to: '/admin/telemetria', label: 'Telemetria', icon: 'ti-device-desktop-analytics' },
     { to: '/admin/conteudo', label: 'Conteúdo', icon: 'ti-music' },
     { to: '/admin/documentacao', label: 'Documentação', icon: 'ti-book' },
     { to: '/admin/comunidade', label: 'Comunidade', icon: 'ti-users-group' },
