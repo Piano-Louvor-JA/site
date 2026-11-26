@@ -58,12 +58,30 @@
     }
   }
 
+  /**
+   * Hierarquia exibida (SPEC v1.1.0): ordem curada do team.ts — Ezequias 1º,
+   * Rafael 2º, demais em qualquer ordem. Roster members fora da ordem curada
+   * ficam por último (ordem alfabética), sem ocultar ninguém.
+   */
+  const rank = (login: string): number => {
+    const i = teamMembers.findIndex((t) => t.login === login)
+    return i === -1 ? Number.MAX_SAFE_INTEGER : i
+  }
+
   const people = computed<DisplayMember[]>(() =>
-    rosterPending.value ? [] : rosterMembers.value.map(fromRoster),
+    rosterPending.value
+      ? []
+      : [...rosterMembers.value]
+          .map(fromRoster)
+          .sort((a, b) => rank(a.login) - rank(b.login) || a.name.localeCompare(b.name)),
   )
 
   const devs = computed<DisplayMember[]>(() =>
-    rosterDevsPending.value ? [] : rosterDevs.value.map(fromRoster),
+    rosterDevsPending.value
+      ? []
+      : [...rosterDevs.value]
+          .map(fromRoster)
+          .sort((a, b) => rank(a.login) - rank(b.login) || a.name.localeCompare(b.name)),
   )
 
   const activeMember = ref<DisplayMember | null>(null)

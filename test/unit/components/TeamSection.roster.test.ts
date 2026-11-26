@@ -46,7 +46,9 @@ describe('TeamSection roster dinâmico (SPEC Comunidade Orgânica)', () => {
     await flushPromises()
     const people = wrapper.findAll('.team__person')
     expect(people).toHaveLength(2)
-    expect(people[0]!.find('.team__person-name').text()).toBe('Felipe Dev')
+    // ordem curada: Ezequias (team.ts) vem antes de Felipe (não curado)
+    expect(people[0]!.find('.team__person-name').text()).toBe('Ezequias Fonseca')
+    expect(people[1]!.find('.team__person-name').text()).toBe('Felipe Dev')
     // chamada direta à API pública, nunca rota relativa /api/
     expect(fetchMock.mock.calls[0]![0] as string).toMatch(
       /^https:\/\/.+\/v1\/custom\/community\/roster\?role=staff$/,
@@ -134,4 +136,24 @@ it('AC7: mesma pessoa em 2 docs (seed + sync) é deduplicada no cliente', async 
   const wrapper = mount(TeamSection, { global: { stubs: ['i'] } })
   await flushPromises()
   expect(wrapper.findAll('.team__person')).toHaveLength(1)
+})
+
+it('hierarquia: ordem curada do team.ts — Ezequias 1º, Rafael 2º, demais depois', async () => {
+  fetchMock.mockImplementation((url: string) =>
+    url.includes('role=staff')
+      ? Promise.resolve({
+          data: [
+            apiMember({ id: 'm1', name: 'Zeca', github: 'venatornocte' }),
+            apiMember({ id: 'm2', name: 'Rafael Dias Zendron', github: 'rafaumeu' }),
+            apiMember({ id: 'm3', name: 'Ezequias Fonseca', github: 'ezequiasfonseca' }),
+          ],
+        })
+      : Promise.resolve({ data: [] }),
+  )
+  const wrapper = mount(TeamSection, { global: { stubs: ['i'] } })
+  await flushPromises()
+  const names = wrapper.findAll('.team__person-name').map((n) => n.text())
+  expect(names[0]).toBe('Ezequias Fonseca')
+  expect(names[1]).toBe('Rafael Dias Zendron')
+  expect(names.indexOf('Zeca')).toBeGreaterThan(1)
 })
