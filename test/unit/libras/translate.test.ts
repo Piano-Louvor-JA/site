@@ -49,4 +49,12 @@ describe('Libras cache → API → fallback', () => {
     else fetchMock.mockResolvedValue({ ok: failure !== 'http', json: async () => ({ gloss: 123 }) })
     expect(await getLibrasGloss('Oi paz')).toEqual({ gloss: 'O I _ P A Z', sourceUsed: 'fallback' })
   })
+
+  it('falls back with underscore for words without letters/digits', async () => {
+    fetchMock.mockResolvedValue({ ok: true, json: async () => ({ gloss: '   ' }) })
+    expect(await getLibrasGloss('!!! ???')).toEqual({
+      gloss: '_ _ _',
+      sourceUsed: 'fallback',
+    })
+  })
 })
