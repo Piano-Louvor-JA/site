@@ -4,7 +4,11 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { getLibrasGloss } from '~/src/modules/libras/services/libras-translate'
 import { useLibrasLyrics } from '~/composables/useLibrasLyrics_web'
 
-vi.stubGlobal('useCookie', () => cookie)
+vi.stubGlobal('useCookie', (_name: string, opts?: { default?: () => boolean | null }) => {
+  // Exercita a factory default do composable (coverage da arrow em useCookie).
+  opts?.default?.()
+  return cookie
+})
 vi.mock('~/src/modules/libras/services/libras-translate', () => ({
   getLibrasGloss: vi.fn(),
 }))
@@ -59,6 +63,27 @@ describe('useLibrasLyrics', () => {
     await flushPromises()
     // catch stale: myToken !== token → não sobrescreve com unavailable
     expect(state.value).toBe('disabled')
+  })
+
+  it('discards a successful translation that became stale', async () => {
+    cookie.value = true
+    let resolveOld!: (value: { gloss: string; sourceUsed: 'api' }) => void
+    vi.mocked(getLibrasGloss).mockImplementationOnce(
+      () =>
+        new Promise((resolve) => {
+          resolveOld = resolve
+        }),
+    )
+    const lyrics = ref<string | null>('Olá')
+    const { state, gloss } = useLibrasLyrics(lyrics)
+    cookie.value = false
+    await flushPromises()
+    expect(state.value).toBe('disabled')
+    resolveOld({ gloss: 'TARDE', sourceUsed: 'api' })
+    await flushPromises()
+    // myToken !== token → return sem aplicar gloss
+    expect(state.value).toBe('disabled')
+    expect(gloss.value).toBeNull()
   })
 
   it('handleLibrasReady sets ready gloss or clears it', async () => {
