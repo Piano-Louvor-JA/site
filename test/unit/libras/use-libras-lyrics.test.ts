@@ -41,6 +41,26 @@ describe('useLibrasLyrics', () => {
     expect(state.value).toBe('unavailable')
   })
 
+  it('ignores a rejected translation that became stale', async () => {
+    cookie.value = true
+    let rejectOld!: (error: Error) => void
+    vi.mocked(getLibrasGloss).mockImplementationOnce(
+      () =>
+        new Promise((_, reject) => {
+          rejectOld = reject
+        }),
+    )
+    const lyrics = ref<string | null>('Olá')
+    const { state } = useLibrasLyrics(lyrics)
+    cookie.value = false
+    await flushPromises()
+    expect(state.value).toBe('disabled')
+    rejectOld(new Error('late failure'))
+    await flushPromises()
+    // catch stale: myToken !== token → não sobrescreve com unavailable
+    expect(state.value).toBe('disabled')
+  })
+
   it('handleLibrasReady sets ready gloss or clears it', async () => {
     const lyrics = ref<string | null>(null)
     const { state, gloss, handleLibrasReady } = useLibrasLyrics(lyrics)

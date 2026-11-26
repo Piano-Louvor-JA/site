@@ -57,4 +57,26 @@ describe('Libras cache → API → fallback', () => {
       sourceUsed: 'fallback',
     })
   })
+
+  it('aborts a slow VLibras request and falls back', async () => {
+    vi.useFakeTimers()
+    try {
+      fetchMock.mockImplementation(
+        (_url: string, init?: { signal?: AbortSignal }) =>
+          new Promise((_resolve, reject) => {
+            init?.signal?.addEventListener('abort', () =>
+              reject(new DOMException('Aborted', 'AbortError')),
+            )
+          }),
+      )
+      const pending = getLibrasGloss('Lento')
+      await vi.advanceTimersByTimeAsync(15_000)
+      await expect(pending).resolves.toEqual({
+        gloss: 'L E N T O',
+        sourceUsed: 'fallback',
+      })
+    } finally {
+      vi.useRealTimers()
+    }
+  })
 })

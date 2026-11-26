@@ -115,7 +115,7 @@ describe('libras-cache IndexedDB', () => {
     vi.spyOn(console, 'error').mockImplementation(() => {})
     stubIdb({
       onOpen: (request) => {
-        Object.defineProperty(request, 'error', { value: { name: 'QuotaExceededError' } })
+        Object.defineProperty(request, 'error', { value: null })
         request.onerror?.({ target: request } as unknown as Event)
       },
     })
