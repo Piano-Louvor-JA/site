@@ -3,6 +3,23 @@
 All notable changes to this project are documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.13.0](https://github.com/Piano-Louvor-JA/site/compare/v1.12.0...v1.13.0) (2026-11-26)
+
+### Features
+
+- **admin:** painel de Telemetria — dispositivos online ([122fe53](https://github.com/Piano-Louvor-JA/site/commit/122fe53c2bcc41881ff276de3c0b09164c1bacab))
+- **i18n:** convite_catalogo no estado de catalogo vazio por idioma ([78d306a](https://github.com/Piano-Louvor-JA/site/commit/78d306a51130a9e6b53f0c127b3c05d2a4371414))
+- **libras:** fatia 4 web — paridade LibrasPlayer/useLibrasLyrics, cache IDB, tradução VLibras real (sem mock) ([c28b48e](https://github.com/Piano-Louvor-JA/site/commit/c28b48e5b5b06abcf4e2ea65d182541d8aa21505))
+
+### Bug Fixes
+
+- **libras:** complete reactive player and handle cache failures ([415ecd7](https://github.com/Piano-Louvor-JA/site/commit/415ecd7660d106268ea84271dc903619ab0c894a))
+- **libras:** useCookie dentro do composable (instância Nuxt) — remove imports duplicados e handleLibrasReady quebrado ([ee5d2f4](https://github.com/Piano-Louvor-JA/site/commit/ee5d2f4915f8c3105205501bce4b6dce251cc2ed))
+
+### Tests
+
+- **libras:** coverage 100% para promoção v1.13.0 ([#166](https://github.com/Piano-Louvor-JA/site/issues/166)) ([30e6650](https://github.com/Piano-Louvor-JA/site/commit/30e6650e2ebf4024c8b92cd5978f350adff38b44))
+
 ## [1.12.0](https://github.com/Piano-Louvor-JA/site/compare/v1.11.0...v1.12.0) (2026-11-24)
 
 ### Features
