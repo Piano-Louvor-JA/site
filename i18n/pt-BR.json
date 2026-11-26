@@ -561,7 +561,10 @@
           "Conteúdo da mensagem",
           "1.2 Dados técnicos",
           "Cookie técnico piano_lang: armazena apenas sua preferência de idioma. Não contém identificador pessoal.",
-          "Não utilizamos cookies de rastreamento, analytics, publicidade ou perfilação."
+          "Não utilizamos cookies de rastreamento, analytics, publicidade ou perfilação.",
+          "1.3 Dados enviados pelos aplicativos",
+          "Enquanto estão abertos, os aplicativos do PIANO LouvorJA (desktop, celular e web) enviam a cada 5 minutos um sinal de funcionamento com: identificador anônimo da instalação (gerado no próprio aparelho, sem ligação com sua conta), plataforma, versão do app, sistema operacional, idioma, fuso horário e o distrito e a igreja informados por você.",
+          "A partir do endereço IP desse sinal obtemos apenas a cidade e o estado aproximados. O endereço IP não é armazenado."
         ]
       },
       "purpose": {
@@ -571,6 +574,7 @@
           "Responder à sua solicitação",
           "Fornecer suporte técnico",
           "Enviar comunicações solicitadas",
+          "O sinal de funcionamento dos aplicativos serve para saber quantos aparelhos estão em uso, em quais regiões e versões, e assim priorizar correções e melhorias.",
           "Base legal: Art. 7º, inciso IX da LGPD (legítimo interesse e resposta à sua iniciativa)."
         ]
       },
@@ -1358,6 +1362,7 @@
     "noteBackup": "Ótimo para igrejas com internet instável — baixe uma vez, use para sempre.",
     "downloadButton": "Abrir mídias no Google Drive",
     "unavailable": "Os links de mídia serão publicados em breve.",
+    "convite_catalogo": "Ainda não há catálogo publicado para este idioma. Junte-se à comunidade do PIANO LouvorJA e ajude a traduzir e publicar coleções!",
     "footerLink": "Mídias"
   },
   "tickets": {

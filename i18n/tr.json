@@ -561,7 +561,10 @@
           "Mesaj içeriği",
           "1.2 Teknik veriler",
           "Teknik çerez piano_lang: yalnızca dil tercihinizi saklar. Hiçbir kişisel tanımlayıcı içermez.",
-          "İzleme, analitik, reklam veya profil oluşturma çerezi kullanmıyoruz."
+          "İzleme, analitik, reklam veya profil oluşturma çerezi kullanmıyoruz.",
+          "1.3 Uygulamaların gönderdiği veriler",
+          "PIANO LouvorJA uygulamaları (masaüstü, mobil ve web) açıkken her 5 dakikada bir şu bilgileri içeren bir çalışma sinyali gönderir: kurulumun anonim kimliği (cihazda oluşturulur, hesabınızla bağlantılı değildir), platform, uygulama sürümü, işletim sistemi, dil, saat dilimi ve girdiğiniz bölge ile kilise.",
+          "Bu sinyalin IP adresinden yalnızca yaklaşık şehir ve eyalet bilgisini çıkarırız. IP adresi saklanmaz."
         ]
       },
       "purpose": {
@@ -571,6 +574,7 @@
           "Talebinize yanıt vermek",
           "Teknik destek sağlamak",
           "Talep ettiğiniz iletişimi göndermek",
+          "Uygulamaların çalışma sinyali, kaç cihazın hangi bölgelerde ve sürümlerde kullanıldığını göstererek düzeltme ve iyileştirmeleri önceliklendirmemizi sağlar.",
           "Hukuki dayanak: LGPD madde 7, IX (meşru menfaat ve talebinize yanıt)."
         ]
       },
@@ -1358,6 +1362,7 @@
     "noteBackup": "Ağ bağlantısı güvenilir olmayan kiliseler için ideal — bir kez indirin, her zaman kullanın.",
     "downloadButton": "Medyayı Google Drive'da aç",
     "unavailable": "Medya bağlantısı yakında.",
+    "convite_catalogo": "Bu dil için henüz yayınlanmış bir katalog yok. PIANO LouvorJA topluluğuna katılın, çeviri yapmaya ve koleksiyonları yayınlamaya yardım edin!",
     "footerLink": "Medya"
   },
   "comunidade": {

@@ -41,11 +41,14 @@ describe('Página /midias — downloads do Drive', () => {
     wrapper.unmount()
   })
 
-  it('sem link configurado: mostra estado "indisponível" sem quebrar', async () => {
+  it('sem link configurado: mostra convite à comunidade (SPEC locale-convite B2), não erro', async () => {
     vi.stubGlobal('useRuntimeConfig', () => ({ public: { driveMediaUrl: '' } }))
     const wrapper = mountPage()
     await flushPromises()
-    expect(wrapper.find('[data-testid="midias-unavailable"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="midias-convite"]').exists()).toBe(true)
+    expect(wrapper.find('[data-testid="midias-convite"]').text()).toBe(
+      pt.midias?.convite_catalogo as string,
+    )
     expect(wrapper.find('[data-testid="midias-download"]').exists()).toBe(false)
     wrapper.unmount()
   })
