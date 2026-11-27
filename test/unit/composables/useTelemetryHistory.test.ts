@@ -21,6 +21,8 @@ const loadComposable = async () => {
 describe('useTelemetryHistory', () => {
   beforeEach(() => {
     fetchMock.mockReset()
+    // reavalia o módulo a cada teste (constantes de topo contam para o coverage por teste do Stryker)
+    vi.resetModules()
     currentUser = { getIdToken: async () => 'token-admin' }
     pianoApiBase = 'https://api.example'
   })

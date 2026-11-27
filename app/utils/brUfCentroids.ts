@@ -1,6 +1,9 @@
 /**
  * Centroides aproximados (lat, lng) das UFs — só para posicionar bolinhas
  * no mapa admin de telemetria. Não é geocoding oficial.
+ *
+ * Projeção alinhada ao geoViewBox do mapa SVG (MapSVG / mapa-brazil.svg):
+ * mapsvg:geoViewBox="-74.008595 5.275696 -34.789914 -33.743888"
  */
 export const BR_UF_CENTROIDS: Record<string, readonly [number, number]> = {
   AC: [-9.02, -70.81],
@@ -32,18 +35,21 @@ export const BR_UF_CENTROIDS: Record<string, readonly [number, number]> = {
   TO: [-9.46, -48.26],
 }
 
-/** Bounding box aproximado do Brasil continental (para % no mapa). */
-const LAT_MAX = 5.3
-const LAT_MIN = -33.8
-const LNG_MIN = -74.0
-const LNG_MAX = -34.0
+/** geoViewBox do mapa-brazil.svg (oeste, norte, leste, sul). */
+export const BR_MAP_GEO = {
+  west: -74.008595,
+  north: 5.275696,
+  east: -34.789914,
+  south: -33.743888,
+} as const
 
 function hashOffset(seed: string): { dLat: number; dLng: number } {
   let h = 0
   for (let i = 0; i < seed.length; i++) h = (h * 31 + seed.charCodeAt(i)) | 0
   const a = ((h >>> 0) % 1000) / 1000
   const b = (((h >>> 8) >>> 0) % 1000) / 1000
-  return { dLat: (a - 0.5) * 1.6, dLng: (b - 0.5) * 1.6 }
+  // Offset leve para espalhar cidades sem sair da UF
+  return { dLat: (a - 0.5) * 0.9, dLng: (b - 0.5) * 0.9 }
 }
 
 export function projectBrPoint(
@@ -59,10 +65,11 @@ export function projectBrPoint(
     lat += dLat
     lng += dLng
   }
-  const left = ((lng - LNG_MIN) / (LNG_MAX - LNG_MIN)) * 100
-  const top = ((LAT_MAX - lat) / (LAT_MAX - LAT_MIN)) * 100
+  const { west, north, east, south } = BR_MAP_GEO
+  const left = ((lng - west) / (east - west)) * 100
+  const top = ((north - lat) / (north - south)) * 100
   return {
-    left: Math.min(98, Math.max(2, left)),
-    top: Math.min(98, Math.max(2, top)),
+    left: Math.min(99, Math.max(1, left)),
+    top: Math.min(99, Math.max(1, top)),
   }
 }

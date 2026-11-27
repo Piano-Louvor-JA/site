@@ -485,10 +485,11 @@
         <i class="ti ti-alert-triangle" aria-hidden="true" /> {{ histError }}
       </p>
       <p class="tele__sub tele__map-hint">
-        Verde = online agora · Cinza = teve acesso nos últimos 90 dias e está offline
+        Verde = online agora · Cinza = teve acesso nos últimos 90 dias e está offline · só Brasil
+        com UF (sem localização não entra no mapa)
       </p>
       <div v-if="histLoading && !mapPoints.length" class="tele__state">Carregando mapa…</div>
-      <AdminTelemetryBrazilMap v-else :points="mapPoints" />
+      <AdminTelemetryBrazilMap v-else :points="mapPoints" :live-online="summary.online" />
     </template>
   </div>
 </template>
