@@ -48,5 +48,8 @@ export default defineContentConfig({
     docs_tr: defineCollection({ type: 'page', source: 'docs/tr/**', schema: frontmatter }),
     docs_ar: defineCollection({ type: 'page', source: 'docs/ar/**', schema: frontmatter }),
     docs_hi: defineCollection({ type: 'page', source: 'docs/hi/**', schema: frontmatter }),
+    docs_it: defineCollection({ type: 'page', source: 'docs/it/**', schema: frontmatter }),
+    docs_nl: defineCollection({ type: 'page', source: 'docs/nl/**', schema: frontmatter }),
+    docs_pl: defineCollection({ type: 'page', source: 'docs/pl/**', schema: frontmatter }),
   },
 })
