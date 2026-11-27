@@ -39,6 +39,10 @@ export type Music = {
   hasAudio?: boolean
   audioUrl?: string | null
   officialMusicId?: number | null
+  /** Campos opcionais — visão admin (SPEC admin-conteudo-global D7) */
+  collectionName?: string | null
+  collectionVisibility?: string | null
+  ownerName?: string | null
 }
 
 export type Lyric = {
@@ -135,9 +139,79 @@ export function usePianoApi() {
   }
 
   // ---- Coletâneas ----
+
+  /**
+   * Payload cru (snake_case) da API para coletânea — rota pública e admin
+   * compartilham o shape (admin soma owner_name; pública ganha owner_name via D6).
+   */
+  type RawCollection = {
+    id_collection: number
+    name: string
+    description?: string | null
+    cover_url?: string | null
+    visibility?: string
+    owner_id?: number | null
+    owner_name?: string | null
+    author_name?: string | null
+    musics_count?: number
+    is_owner?: number | boolean
+  }
+
+  function mapCollection(r: RawCollection): Collection {
+    return {
+      id: r.id_collection,
+      name: r.name,
+      description: r.description ?? null,
+      coverUrl: r.cover_url ?? null,
+      ownerId: r.owner_id ?? null,
+      authorName: r.owner_name ?? r.author_name ?? null,
+      musicsCount: r.musics_count ?? 0,
+      visibility: r.visibility,
+      is_owner: r.is_owner,
+    }
+  }
+
+  /** Payload cru de música — rotas /musics (pública, coleção, admin) */
+  type RawMusic = {
+    id_music: number
+    name: string
+    duration?: number | null
+    audio_url?: string | null
+    official_music_id?: number | null
+    collection_name?: string | null
+    collection_visibility?: string | null
+    owner_name?: string | null
+  }
+
+  function mapMusic(r: RawMusic): Music {
+    return {
+      id: r.id_music,
+      name: r.name,
+      duration: r.duration ?? null,
+      audioUrl: r.audio_url ?? null,
+      hasAudio: r.audio_url != null,
+      officialMusicId: r.official_music_id ?? null,
+      collectionName: r.collection_name ?? null,
+      collectionVisibility: r.collection_visibility ?? null,
+      ownerName: r.owner_name ?? null,
+    }
+  }
+
   async function listCollections(): Promise<Collection[]> {
-    const res = await request<{ data?: Collection[] }>('/v1/custom/collections')
-    return res.data ?? []
+    const res = await request<{ data?: RawCollection[] }>('/v1/custom/collections')
+    return (res.data ?? []).map(mapCollection)
+  }
+
+  /** Visão total (admin): todas as coletâneas, qualquer dono (SPEC admin-conteudo-global RF-05) */
+  async function listAdminCollections(): Promise<Collection[]> {
+    const res = await request<{ data?: RawCollection[] }>('/v1/custom/admin/collections')
+    return (res.data ?? []).map(mapCollection)
+  }
+
+  /** Visão total (admin): todas as músicas, com coleção e dono (SPEC admin-conteudo-global RF-05) */
+  async function listAdminMusics(): Promise<Music[]> {
+    const res = await request<{ data?: RawMusic[] }>('/v1/custom/admin/musics')
+    return (res.data ?? []).map(mapMusic)
   }
 
   async function createCollection(input: {
@@ -186,8 +260,10 @@ export function usePianoApi() {
 
   // ---- Músicas ----
   async function listMusics(collectionId: number): Promise<Music[]> {
-    const res = await request<{ data?: Music[] }>(`/v1/custom/collections/${collectionId}/musics`)
-    return res.data ?? []
+    const res = await request<{ data?: RawMusic[] }>(
+      `/v1/custom/collections/${collectionId}/musics`,
+    )
+    return (res.data ?? []).map(mapMusic)
   }
 
   async function getMusic(id: number): Promise<{
@@ -315,6 +391,8 @@ export function usePianoApi() {
     logout,
     request,
     listCollections,
+    listAdminCollections,
+    listAdminMusics,
     createCollection,
     updateCollection,
     deleteCollection,
