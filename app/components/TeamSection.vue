@@ -32,10 +32,7 @@
    * Devs ativos (SPEC v1.1.0): subseção própria na home, roster role=dev.
    * Sem fallback hardcoded — lista vazia honesta quando a API não devolve devs.
    */
-  const {
-    members: rosterDevs,
-    pending: rosterDevsPending,
-  } = useRoster('dev')
+  const { members: rosterDevs, pending: rosterDevsPending } = useRoster('dev')
 
   type DisplayMember = {
     login: string

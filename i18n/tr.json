@@ -374,11 +374,7 @@
         ]
       },
       "modules": {
-        "media": [
-          "3 modlu oynatıcı",
-          "İlahi kitapları ve albümler",
-          "Eşlik modu"
-        ],
+        "media": ["3 modlu oynatıcı", "İlahi kitapları ve albümler", "Eşlik modu"],
         "hymnal": [
           "Numaraya veya başlığa göre hızlı arama",
           "Sıralı oynatma",
@@ -389,36 +385,16 @@
           "Sürükle-bırak ile çalma listesi",
           "Şarkı sözleriyle eşlik modu"
         ],
-        "liturgy": [
-          "13 öğe türü",
-          "Sürükle-bırak",
-          "Öğe başına geri sayım"
-        ],
-        "bible": [
-          "Çoklu çeviri",
-          "Hızlı arama",
-          "Doğrudan projeksiyon"
-        ],
-        "projection": [
-          "Bağımsız çıktı",
-          "Çoklu ekran",
-          "Tam kontrol"
-        ],
+        "liturgy": ["13 öğe türü", "Sürükle-bırak", "Öğe başına geri sayım"],
+        "bible": ["Çoklu çeviri", "Hızlı arama", "Doğrudan projeksiyon"],
+        "projection": ["Bağımsız çıktı", "Çoklu ekran", "Tam kontrol"],
         "streaming": [
           "Özel CSS ile şarkı sözü gösterimi",
           "OBS ve vMix entegrasyonu",
           "YouTube ve Facebook çıktısı"
         ],
-        "tools": [
-          "Saat ve kronometre",
-          "Geri sayım zamanlayıcı",
-          "Çekiliş"
-        ],
-        "settings": [
-          "Görünüm",
-          "Projeksiyon",
-          "Çoklu ekran"
-        ]
+        "tools": ["Saat ve kronometre", "Geri sayım zamanlayıcı", "Çekiliş"],
+        "settings": ["Görünüm", "Projeksiyon", "Çoklu ekran"]
       }
     },
     "faq": {
@@ -665,9 +641,7 @@
       },
       "cookies": {
         "title": "8. Çerezler",
-        "body": [
-          "Üçüncü taraf, analitik veya reklam çerezi kullanmıyoruz."
-        ],
+        "body": ["Üçüncü taraf, analitik veya reklam çerezi kullanmıyoruz."],
         "table": {
           "header": {
             "cookie": "Çerez",

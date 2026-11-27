@@ -32,15 +32,16 @@ describe('TeamSection roster dinâmico (SPEC Comunidade Orgânica)', () => {
   })
 
   it('renderiza o roster da API (staff) quando o fetch resolve', async () => {
-    fetchMock.mockImplementation((url: string) =>
-      url.includes('role=staff')
-        ? Promise.resolve({
-            data: [
-              apiMember(),
-              apiMember({ id: 'm2', name: 'Ezequias Fonseca', github: 'ezequiasfonseca' }),
-            ],
-          })
-        : Promise.resolve({ data: [] }), // dev: sem devs para este cenário
+    fetchMock.mockImplementation(
+      (url: string) =>
+        url.includes('role=staff')
+          ? Promise.resolve({
+              data: [
+                apiMember(),
+                apiMember({ id: 'm2', name: 'Ezequias Fonseca', github: 'ezequiasfonseca' }),
+              ],
+            })
+          : Promise.resolve({ data: [] }), // dev: sem devs para este cenário
     )
     const wrapper = mount(TeamSection, { global: { stubs: ['i'] } })
     await flushPromises()
