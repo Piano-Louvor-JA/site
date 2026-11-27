@@ -1176,6 +1176,9 @@
       "avatarAlt": "Awatar GitHub użytkownika {name}",
       "more": "Dowiedz się więcej"
     },
+    "devs": {
+      "title": "Deweloperzy"
+    },
     "members": {
       "ezequiasfonseca": {
         "role": "Założyciel · Przywództwo i aplikacja desktopowa",
@@ -1200,6 +1203,9 @@
       "elomarxa": {
         "role": "Design cyfrowy, UI i UX",
         "bio": "Designer cyfrowy, doświadczony w produkcji zasobów wizualnych, rozwijający umiejętności UI i UX."
+      },
+      "default": {
+        "role": "Członek zespołu"
       }
     },
     "work": {
