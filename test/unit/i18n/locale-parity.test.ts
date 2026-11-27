@@ -1,4 +1,4 @@
-import { describe, expect, it } from 'vitest'
+import { describe, expect, it as itTest } from 'vitest'
 import ptBR from '../../../i18n/pt-BR.json'
 import en from '../../../i18n/en.json'
 import es from '../../../i18n/es.json'
@@ -11,6 +11,9 @@ import zh from '../../../i18n/zh.json'
 import tr from '../../../i18n/tr.json'
 import ar from '../../../i18n/ar.json'
 import hi from '../../../i18n/hi.json'
+import it from '../../../i18n/it.json'
+import nl from '../../../i18n/nl.json'
+import pl from '../../../i18n/pl.json'
 import rawPtBR from '../../../assets/i18n/pt-BR.json'
 import rawEn from '../../../assets/i18n/en.json'
 import rawEs from '../../../assets/i18n/es.json'
@@ -23,6 +26,9 @@ import rawZh from '../../../assets/i18n/zh.json'
 import rawTr from '../../../assets/i18n/tr.json'
 import rawAr from '../../../assets/i18n/ar.json'
 import rawHi from '../../../assets/i18n/hi.json'
+import rawIt from '../../../assets/i18n/it.json'
+import rawNl from '../../../assets/i18n/nl.json'
+import rawPl from '../../../assets/i18n/pl.json'
 
 type Messages = Record<string, unknown>
 
@@ -57,6 +63,9 @@ const RUNTIME_LOCALES: Record<string, Messages> = {
   tr: tr as Messages,
   ar: ar as Messages,
   hi: hi as Messages,
+  it: it as Messages,
+  nl: nl as Messages,
+  pl: pl as Messages,
 }
 
 const RAW_LOCALES: Record<string, Messages> = {
@@ -72,18 +81,36 @@ const RAW_LOCALES: Record<string, Messages> = {
   tr: rawTr as Messages,
   ar: rawAr as Messages,
   hi: rawHi as Messages,
+  it: rawIt as Messages,
+  nl: rawNl as Messages,
+  pl: rawPl as Messages,
 }
 
 describe('i18n locale parity contract', () => {
   const baseFlat = flatten(RUNTIME_LOCALES['pt-BR'])
   const baseKeys = Object.keys(baseFlat).sort()
 
-  it('pt-BR runtime base has the expected key count', () => {
+  itTest('pt-BR runtime base has the expected key count', () => {
     expect(baseKeys.length).toBeGreaterThanOrEqual(600)
   })
 
-  for (const locale of ['en', 'es', 'ru', 'uk', 'fr', 'ja', 'ko', 'zh', 'tr', 'ar', 'hi']) {
-    it(`runtime locale ${locale} has exactly the same keys as pt-BR`, () => {
+  for (const locale of [
+    'en',
+    'es',
+    'ru',
+    'uk',
+    'fr',
+    'ja',
+    'ko',
+    'zh',
+    'tr',
+    'ar',
+    'hi',
+    'it',
+    'nl',
+    'pl',
+  ]) {
+    itTest(`runtime locale ${locale} has exactly the same keys as pt-BR`, () => {
       const flat = flatten(RUNTIME_LOCALES[locale])
       expect(Object.keys(flat).sort()).toEqual(baseKeys)
     })
@@ -92,15 +119,30 @@ describe('i18n locale parity contract', () => {
   const rawBaseFlat = flatten(RAW_LOCALES['pt-BR'])
   const rawBaseKeys = Object.keys(rawBaseFlat).sort()
 
-  for (const locale of ['en', 'es', 'ru', 'uk', 'fr', 'ja', 'ko', 'zh', 'tr', 'ar', 'hi']) {
-    it(`raw locale ${locale} has exactly the same keys as pt-BR`, () => {
+  for (const locale of [
+    'en',
+    'es',
+    'ru',
+    'uk',
+    'fr',
+    'ja',
+    'ko',
+    'zh',
+    'tr',
+    'ar',
+    'hi',
+    'it',
+    'nl',
+    'pl',
+  ]) {
+    itTest(`raw locale ${locale} has exactly the same keys as pt-BR`, () => {
       const flat = flatten(RAW_LOCALES[locale])
       expect(Object.keys(flat).sort()).toEqual(rawBaseKeys)
     })
   }
 
-  for (const locale of ['ru', 'uk', 'fr', 'ja', 'ko', 'zh', 'tr', 'ar', 'hi']) {
-    it(`runtime locale ${locale} preserves placeholders from pt-BR`, () => {
+  for (const locale of ['ru', 'uk', 'fr', 'ja', 'ko', 'zh', 'tr', 'ar', 'hi', 'it', 'nl', 'pl']) {
+    itTest(`runtime locale ${locale} preserves placeholders from pt-BR`, () => {
       const flat = flatten(RUNTIME_LOCALES[locale])
       for (const key of baseKeys) {
         expect(placeholders(flat[key]).sort()).toEqual(placeholders(baseFlat[key]).sort())
@@ -108,8 +150,8 @@ describe('i18n locale parity contract', () => {
     })
   }
 
-  for (const locale of ['ru', 'uk', 'fr', 'ja', 'ko', 'zh', 'tr', 'ar', 'hi']) {
-    it(`raw locale ${locale} preserves placeholders from pt-BR`, () => {
+  for (const locale of ['ru', 'uk', 'fr', 'ja', 'ko', 'zh', 'tr', 'ar', 'hi', 'it', 'nl', 'pl']) {
+    itTest(`raw locale ${locale} preserves placeholders from pt-BR`, () => {
       const flat = flatten(RAW_LOCALES[locale])
       for (const key of rawBaseKeys) {
         expect(placeholders(flat[key]).sort()).toEqual(placeholders(rawBaseFlat[key]).sort())

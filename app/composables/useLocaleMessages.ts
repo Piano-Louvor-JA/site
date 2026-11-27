@@ -22,6 +22,9 @@ import zhRaw from '../../assets/i18n/zh.json?raw'
 import trRaw from '../../assets/i18n/tr.json?raw'
 import arRaw from '../../assets/i18n/ar.json?raw'
 import hiRaw from '../../assets/i18n/hi.json?raw'
+import itRaw from '../../assets/i18n/it.json?raw'
+import nlRaw from '../../assets/i18n/nl.json?raw'
+import plRaw from '../../assets/i18n/pl.json?raw'
 
 const localeData: Record<string, Record<string, unknown>> = {
   'pt-BR': ptBR,
@@ -36,6 +39,9 @@ const localeData: Record<string, Record<string, unknown>> = {
   tr: JSON.parse(trRaw),
   ar: JSON.parse(arRaw),
   hi: JSON.parse(hiRaw),
+  it: JSON.parse(itRaw),
+  nl: JSON.parse(nlRaw),
+  pl: JSON.parse(plRaw),
 }
 
 export function isNullish(v: unknown): boolean {
