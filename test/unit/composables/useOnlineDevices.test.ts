@@ -175,9 +175,15 @@ describe('useOnlineDevices', () => {
     const { useOnlineDevices } = await load()
     const api = useOnlineDevices()
     await api.refresh()
+    api.filters.identified = 'yes'
+    expect(api.filtered.value.map((d) => d.install_id_short).sort()).toEqual([
+      'aaaaaa',
+      'bbbbbb',
+      'dddddd',
+    ])
+    expect(api.hasFilters.value).toBe(true)
     api.filters.identified = 'no'
     expect(api.filtered.value.map((d) => d.install_id_short)).toEqual(['cccccc'])
-    expect(api.hasFilters.value).toBe(true)
     api.showUnidentified()
     expect(api.filters.identified).toBe('')
     expect(api.filtered.value).toHaveLength(4)

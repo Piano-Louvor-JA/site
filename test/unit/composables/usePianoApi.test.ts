@@ -559,6 +559,20 @@ describe('usePianoApi', () => {
     })
   })
 
+  it('listAdminCollections sem data devolve lista vazia (branch ?? [])', async () => {
+    localStorage.setItem('piano_admin_token', 'tok-1')
+    fetchMock.mockResolvedValueOnce({})
+    const api = usePianoApi()
+    await expect(api.listAdminCollections()).resolves.toEqual([])
+  })
+
+  it('listAdminMusics sem data devolve lista vazia (branch ?? [])', async () => {
+    localStorage.setItem('piano_admin_token', 'tok-1')
+    fetchMock.mockResolvedValueOnce({})
+    const api = usePianoApi()
+    await expect(api.listAdminMusics()).resolves.toEqual([])
+  })
+
   it('listAdminMusics chama rota admin e mapeia Music com coleção e dono (RF-05/D7)', async () => {
     localStorage.setItem('piano_admin_token', 'tok-1')
     fetchMock.mockResolvedValueOnce({
