@@ -10,6 +10,8 @@
  */
 import { computed, reactive, ref } from 'vue'
 
+export type PresenceSource = 'heartbeat' | 'passive'
+
 export interface OnlineDevice {
   install_id_short: string
   platform: string
@@ -21,6 +23,8 @@ export interface OnlineDevice {
   region: string | null
   country: string | null
   identified: boolean
+  /** heartbeat = app atual; passive = tráfego sem token (app antigo). */
+  source?: PresenceSource
   first_seen: string
   last_seen: string
 }
@@ -28,7 +32,12 @@ export interface OnlineDevice {
 export interface OnlineResponse {
   generated_at: string
   online_window_min: number
-  totals: { online: number; identified: number; by_platform: Record<string, number> }
+  totals: {
+    online: number
+    identified: number
+    unidentified?: number
+    by_platform: Record<string, number>
+  }
   devices: OnlineDevice[]
 }
 
@@ -100,7 +109,14 @@ export function useOnlineDevices() {
   const generatedAt = ref<string | null>(null)
   const loading = ref(false)
   const error = ref('')
-  const filters = reactive({ platform: '', region: '', district: '', q: '' })
+  const filters = reactive({
+    platform: '',
+    region: '',
+    district: '',
+    q: '',
+    /** '' = todos; 'yes' = com token; 'no' = sem token */
+    identified: '' as '' | 'yes' | 'no',
+  })
   const sort = ref<{ key: SortKey; dir: 'asc' | 'desc' }>({ key: 'last_seen', dir: 'desc' })
   const viewMode = ref<ViewMode>(readView())
 
@@ -148,8 +164,11 @@ export function useOnlineDevices() {
       if (d.identified) identified++
     }
     const online = devices.value.length
+    const unidentified = online - identified
     return {
       online,
+      identified,
+      unidentified,
       identifiedPct: online ? Math.round((identified / online) * 100) : 0,
       groups,
     }
@@ -160,7 +179,9 @@ export function useOnlineDevices() {
   const districtOptions = computed(() => uniqueSorted(devices.value.map((d) => d.district)))
 
   const hasFilters = computed(() =>
-    Boolean(filters.platform || filters.region || filters.district || filters.q),
+    Boolean(
+      filters.platform || filters.region || filters.district || filters.q || filters.identified,
+    ),
   )
 
   const filtered = computed(() => {
@@ -169,6 +190,8 @@ export function useOnlineDevices() {
       if (filters.platform && d.platform !== filters.platform) return false
       if (filters.region && d.region !== filters.region) return false
       if (filters.district && d.district !== filters.district) return false
+      if (filters.identified === 'yes' && !d.identified) return false
+      if (filters.identified === 'no' && d.identified) return false
       if (q && !fold([d.church, d.district, d.city].join(' ')).includes(q)) return false
       return true
     })
@@ -197,6 +220,12 @@ export function useOnlineDevices() {
     filters.region = ''
     filters.district = ''
     filters.q = ''
+    filters.identified = ''
+  }
+
+  /** Atalho dos cards do topo: filtrar só quem está sem token. */
+  function showUnidentified(): void {
+    filters.identified = filters.identified === 'no' ? '' : 'no'
   }
 
   function setViewMode(mode: ViewMode): void {
@@ -253,6 +282,7 @@ export function useOnlineDevices() {
     refresh,
     toggleSort,
     clearFilters,
+    showUnidentified,
     setViewMode,
     start,
     stop,
