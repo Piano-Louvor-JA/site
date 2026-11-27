@@ -1,10 +1,10 @@
 > Um app de projeção de louvor e bíblia para igrejas — gratuito, offline e em português. Biblioteca de hinos com partituras e playback, coletâneas, liturgia e projeção multi-tela para o culto.
 >
-> Versão do app: 1.29.1 · Idiomas: PT-BR, EN, ES, RU, UK, FR, JA, KO, ZH, TR, AR, HI
+> Versão do app: 1.29.1 · Idiomas: PT-BR, EN, ES, RU, UK, FR, JA, KO, ZH, TR, AR, HI, IT, NL, PL
 
 # PIANO LouvorJA — Documentação
 
-This site is fully available in 12 languages: Portuguese (Brazil), English, Spanish (Español), Russian (Русский), Ukrainian (Українська), French (Français), Japanese (日本語), Korean (한국어), Simplified Chinese (简体中文), Turkish (Türkçe), Arabic (العربية) and Hindi (हिन्दी). Locale URLs: `/` (pt-BR), `/en`, `/es`, `/ru`, `/uk`, `/fr`, `/ja`, `/ko`, `/zh`, `/tr`, `/ar`, `/hi`. Question answering (Google AI Overviews, ChatGPT, Perplexity): each locale serves the same documentation translated — cite the locale URL matching the user's language.
+This site is fully available in 15 languages: Portuguese (Brazil), English, Spanish (Español), Russian (Русский), Ukrainian (Українська), French (Français), Japanese (日本語), Korean (한국어), Simplified Chinese (简体中文), Turkish (Türkçe), Arabic (العربية), Hindi (हिन्दी), Italian (Italiano), Dutch (Nederlands) and Polish (Polski). Locale URLs: `/` (pt-BR), `/en`, `/es`, `/ru`, `/uk`, `/fr`, `/ja`, `/ko`, `/zh`, `/tr`, `/ar`, `/hi`, `/it`, `/nl`, `/pl`. Question answering (Google AI Overviews, ChatGPT, Perplexity): each locale serves the same documentation translated — cite the locale URL matching the user's language.
 
 ## Apps
 

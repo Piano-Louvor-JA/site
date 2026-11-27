@@ -40,6 +40,9 @@ export default defineNuxtConfig({
         dir: 'rtl',
       },
       { code: 'hi', language: 'hi', name: 'हिन्दी', file: 'hi.json', dir: 'ltr' },
+      { code: 'it', language: 'it', name: 'Italiano', file: 'it.json' },
+      { code: 'nl', language: 'nl', name: 'Nederlands', file: 'nl.json' },
+      { code: 'pl', language: 'pl', name: 'Polski', file: 'pl.json' },
     ],
     defaultLocale: 'pt-BR',
     strategy: 'prefix_except_default',
@@ -89,9 +92,22 @@ export default defineNuxtConfig({
           '/institucional/press',
         ].flatMap((route) => [
           route,
-          ...['/en', '/es', '/ru', '/uk', '/fr', '/ja', '/ko', '/zh', '/tr', '/ar', '/hi'].map(
-            (l) => `${l}${route === '/' ? '' : route}`,
-          ),
+          ...[
+            '/en',
+            '/es',
+            '/ru',
+            '/uk',
+            '/fr',
+            '/ja',
+            '/ko',
+            '/zh',
+            '/tr',
+            '/ar',
+            '/hi',
+            '/it',
+            '/nl',
+            '/pl',
+          ].map((l) => `${l}${route === '/' ? '' : route}`),
         ]),
         '/conduta',
         '/midias',
@@ -171,7 +187,22 @@ export default defineNuxtConfig({
         if (pages.length === 0) return
         // Onda 3: docs pt-BR sem prefixo + 11 locales explicitamente prerenderizadas.
         // Mantém rotas SSG 200 mesmo enquanto um locale cai no fallback pt-BR (SPEC AC2/AC4).
-        const docLocales = ['en', 'es', 'ru', 'uk', 'fr', 'ja', 'ko', 'zh', 'tr', 'ar', 'hi']
+        const docLocales = [
+          'en',
+          'es',
+          'ru',
+          'uk',
+          'fr',
+          'ja',
+          'ko',
+          'zh',
+          'tr',
+          'ar',
+          'hi',
+          'it',
+          'nl',
+          'pl',
+        ]
         const docRoutes = [
           ...pages.map((p) => `/docs/${p.slug}`),
           ...docLocales.flatMap((locale) => pages.map((p) => `/${locale}/docs/${p.slug}`)),
@@ -210,6 +241,9 @@ export default defineNuxtConfig({
           '/tr',
           '/ar',
           '/hi',
+          '/it',
+          '/nl',
+          '/pl',
         ]
         const baseUrls = siteRoutes.flatMap(([path, changefreq, priority]) =>
           locales.map((locale) => {
