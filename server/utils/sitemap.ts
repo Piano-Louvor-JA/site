@@ -28,6 +28,9 @@ export const LOCALES = [
   '/tr',
   '/ar',
   '/hi',
+  '/it',
+  '/nl',
+  '/pl',
 ]
 
 /** Sitemap XML completo (rotas × locales + docs). `docPages` vem do índice do build. */

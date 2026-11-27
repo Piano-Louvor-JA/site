@@ -16,6 +16,9 @@ export const DOCS_AVAILABLE_LOCALES = [
   'tr',
   'ar',
   'hi',
+  'it',
+  'nl',
+  'pl',
 ] as const
 
 export type DocsLocale = (typeof DOCS_AVAILABLE_LOCALES)[number]
