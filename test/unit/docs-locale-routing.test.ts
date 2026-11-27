@@ -4,7 +4,23 @@ import { describe, expect, it } from 'vitest'
 
 import { docDirFor, docCollectionFor, docLinkFor } from '~/utils/docs-locale'
 
-const AVAILABLE = ['pt-BR', 'en', 'es', 'ru', 'uk', 'fr', 'ja', 'ko', 'zh', 'tr', 'ar', 'hi']
+const AVAILABLE = [
+  'pt-BR',
+  'en',
+  'es',
+  'ru',
+  'uk',
+  'fr',
+  'ja',
+  'ko',
+  'zh',
+  'tr',
+  'ar',
+  'hi',
+  'it',
+  'nl',
+  'pl',
+]
 
 describe('docs localizadas — resolução de diretório (F2)', () => {
   it('pt-BR resolve para pt-BR', () => {
