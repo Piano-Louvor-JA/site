@@ -29,6 +29,7 @@
     refresh,
     toggleSort,
     clearFilters,
+    showUnidentified,
     setViewMode,
     start,
     stop,
@@ -123,6 +124,20 @@
           <span class="tele-card__value">{{ summary.online }}</span>
           <span class="tele-card__hint">{{ summary.identifiedPct }}% identificados (token)</span>
         </div>
+        <button
+          type="button"
+          class="tele-card tele-card--warn"
+          :class="{ 'tele-card--active': filters.identified === 'no' }"
+          :aria-pressed="filters.identified === 'no'"
+          title="Filtrar dispositivos sem token (app desatualizado)"
+          @click="showUnidentified()"
+        >
+          <span class="tele-card__label"
+            ><i class="ti ti-key-off" aria-hidden="true" /> Sem token</span
+          >
+          <span class="tele-card__value">{{ summary.unidentified }}</span>
+          <span class="tele-card__hint">app sem atualizar</span>
+        </button>
         <div v-for="card in groupCards" :key="card.key" class="tele-card">
           <span class="tele-card__label"
             ><i :class="['ti', card.icon]" aria-hidden="true" /> {{ card.label }}</span
@@ -157,6 +172,11 @@
           <option v-for="d in districtOptions" :key="d" :value="d">
             {{ d }}
           </option>
+        </select>
+        <select v-model="filters.identified" class="tele-field" aria-label="Token">
+          <option value="">Token: todos</option>
+          <option value="yes">Com token</option>
+          <option value="no">Sem token</option>
         </select>
         <button v-if="hasFilters" type="button" class="tele__clear" @click="clearFilters()">
           <i class="ti ti-x" aria-hidden="true" /> Limpar
@@ -201,22 +221,38 @@
 
       <!-- Grade -->
       <ul v-else-if="viewMode === 'grid'" class="tele__grid">
-        <li v-for="d in filtered" :key="d.install_id_short + d.platform" class="tele-device">
+        <li
+          v-for="d in filtered"
+          :key="d.install_id_short + d.platform"
+          class="tele-device"
+          :class="{ 'tele-device--warn': !d.identified }"
+        >
           <div class="tele-device__top">
             <span class="tele-device__platform">
               <i :class="['ti', platformInfo(d.platform).icon]" aria-hidden="true" />
               {{ platformInfo(d.platform).label }}
             </span>
             <span class="tele-device__seen">
-              <span class="tele-device__dot" aria-hidden="true" />
+              <span
+                class="tele-device__dot"
+                :class="{ 'tele-device__dot--warn': !d.identified }"
+                aria-hidden="true"
+              />
               {{ relativeTime(d.last_seen, now) }}
             </span>
           </div>
           <p class="tele-device__church">
-            {{ d.church || 'Igreja não informada' }}
+            {{
+              d.church || (d.source === 'passive' ? 'App desatualizado' : 'Igreja não informada')
+            }}
           </p>
           <p class="tele-device__district">
-            {{ d.district || 'Distrito não informado' }}
+            {{
+              d.district ||
+              (d.source === 'passive'
+                ? 'Detectado pelo tráfego (sem heartbeat)'
+                : 'Distrito não informado')
+            }}
           </p>
           <dl class="tele-device__meta">
             <div>
@@ -243,6 +279,12 @@
                   title="Enviou token de parceiro"
                   >token</span
                 >
+                <span
+                  v-else
+                  class="tele-device__badge tele-device__badge--warn"
+                  title="Sem token de parceiro — app provavelmente desatualizado"
+                  >sem token</span
+                >
               </dd>
             </div>
           </dl>
@@ -267,11 +309,17 @@
             </tr>
           </thead>
           <tbody>
-            <tr v-for="d in filtered" :key="d.install_id_short + d.platform">
+            <tr
+              v-for="d in filtered"
+              :key="d.install_id_short + d.platform"
+              :class="{ 'tele-table__row--warn': !d.identified }"
+            >
               <td class="tele-table__church">
-                {{ d.church || '—' }}
+                {{ d.church || (d.source === 'passive' ? 'App desatualizado' : '—') }}
               </td>
-              <td>{{ d.district || '—' }}</td>
+              <td>
+                {{ d.district || (d.source === 'passive' ? 'Tráfego sem heartbeat' : '—') }}
+              </td>
               <td>{{ locationLabel(d) }}</td>
               <td>
                 <i :class="['ti', platformInfo(d.platform).icon]" aria-hidden="true" />
@@ -280,6 +328,7 @@
               <td>
                 {{ d.app_version ? `v${d.app_version}` : '—' }}
                 <span v-if="d.identified" class="tele-device__badge">token</span>
+                <span v-else class="tele-device__badge tele-device__badge--warn">sem token</span>
               </td>
               <td class="tele-table__seen">
                 {{ relativeTime(d.last_seen, now) }}
@@ -464,10 +513,28 @@
     border: 1px solid #353534;
     border-radius: 12px;
     padding: 1rem 1.25rem;
+    text-align: left;
+    color: inherit;
+    font: inherit;
 
     &--main {
       border-color: rgba(224, 137, 90, 0.55);
       background: linear-gradient(135deg, rgba(224, 137, 90, 0.14), #1e1e1e 70%);
+    }
+
+    &--warn {
+      border-color: rgba(251, 191, 36, 0.45);
+      background: linear-gradient(135deg, rgba(251, 191, 36, 0.1), #1e1e1e 70%);
+      cursor: pointer;
+
+      &:hover,
+      &.tele-card--active {
+        border-color: rgba(251, 191, 36, 0.85);
+      }
+
+      .tele-card__value {
+        color: #fbbf24;
+      }
     }
 
     &__label {
@@ -542,6 +609,14 @@
       border-color: rgba(224, 137, 90, 0.55);
     }
 
+    &--warn {
+      border-color: rgba(251, 191, 36, 0.35);
+
+      &:hover {
+        border-color: rgba(251, 191, 36, 0.7);
+      }
+    }
+
     &__top {
       display: flex;
       justify-content: space-between;
@@ -575,6 +650,11 @@
       border-radius: 50%;
       background: #22c55e;
       box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.2);
+
+      &--warn {
+        background: #fbbf24;
+        box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.2);
+      }
     }
 
     &__church {
@@ -622,6 +702,11 @@
       font-size: 0.68rem;
       font-weight: 700;
       text-transform: uppercase;
+
+      &--warn {
+        background: rgba(251, 191, 36, 0.18);
+        color: #fbbf24;
+      }
     }
 
     &__id {
@@ -658,6 +743,10 @@
 
     tbody tr:hover {
       background: rgba(224, 137, 90, 0.06);
+    }
+
+    &__row--warn {
+      background: rgba(251, 191, 36, 0.04);
     }
 
     &__sort {
