@@ -135,7 +135,7 @@ jobs:
           path: coverage
 
       - name: SonarQube Scan
-        uses: SonarSource/sonarqube-scan-action@v8.5.0
+        uses: SonarSource/sonarqube-scan-action@v8.5.1
         if: ${{ env.SONAR_TOKEN != '' }}
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
