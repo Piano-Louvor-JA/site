@@ -1,5 +1,9 @@
 name: Release
 
+env:
+  NUXT_PUBLIC_PIANO_API_BASE: https://api.pianolouvorja.com.br
+  NUXT_PUBLIC_PIANO_PARTNER_KEY_PROD: ${{ secrets.PARTNER_KEY_PROD }}
+
 on:
   push:
     branches: [main]
