@@ -28,22 +28,23 @@ describe('TelemetryBrazilMap', () => {
     expect(w.find('.tmap__legend').attributes('aria-hidden')).toBe('true')
   })
 
-  it('estrutura base: canvas com role img, svg e silhueta do Brasil', () => {
+  it('estrutura base: canvas com role img e mapa SVG do Brasil', () => {
     const w = mount(TelemetryBrazilMap, { props: { points: [] } })
     const canvas = w.find('.tmap__canvas')
     expect(canvas.attributes('role')).toBe('img')
     expect(canvas.attributes('aria-label')).toBe('Mapa do Brasil com acessos')
-    expect(w.find('svg.tmap__br').attributes('viewBox')).toBe('0 0 100 100')
-    expect(w.find('path.tmap__land').exists()).toBe(true)
+    const img = w.find('img.tmap__br')
+    expect(img.exists()).toBe(true)
+    expect(img.attributes('src')).toBe('/maps/mapa-brazil.svg')
   })
 
   it('pontos online e offline: renderiza pins, classes, títulos e contagens', () => {
     const w = mount(TelemetryBrazilMap, {
       props: {
         points: [
-          point({ city: 'Santos', region: 'SP', devices: 3, is_online: true }),
+          point({ city: 'Santos', region: 'SP', devices: 3, online: 2, is_online: true }),
           point({ city: 'Recife', region: 'PE', devices: 1, online: 0, is_online: false }),
-          point({ city: 'Manaus', region: 'AM', devices: 5, is_online: true }),
+          point({ city: 'Manaus', region: 'AM', devices: 5, online: 3, is_online: true }),
         ],
       },
     })
@@ -61,9 +62,27 @@ describe('TelemetryBrazilMap', () => {
     expect(pins[1]!.classes()).not.toContain('tmap__pin--on')
     expect(pins[1]!.attributes('title')).toBe('Recife / PE · 1 acesso(s) · offline (90d)')
 
+    // Legenda soma dispositivos (online / offline), não o nº de bolinhas.
     const legend = w.find('.tmap__legend').text()
-    expect(legend).toContain('Online agora (2)')
-    expect(legend).toContain('Acesso nos últimos 90 dias (1)')
+    expect(legend).toContain('Online agora (5)')
+    expect(legend).toContain('Acesso nos últimos 90 dias (4)')
+    expect(w.find('.tmap__gap').exists()).toBe(false)
+  })
+
+  it('mostra gap quando liveOnline é maior que dispositivos no mapa', () => {
+    const w = mount(TelemetryBrazilMap, {
+      props: {
+        liveOnline: 17,
+        points: [
+          point({ city: 'Salvador', region: 'BA', devices: 2, online: 2, is_online: true }),
+          point({ city: 'Santos', region: 'SP', devices: 1, online: 1, is_online: true }),
+        ],
+      },
+    })
+    expect(w.find('.tmap__legend').text()).toContain('Online agora (3)')
+    expect(w.find('.tmap__gap').text()).toContain(
+      '14 online agora sem UF/Brasil no mapa (não dá para posicionar).',
+    )
   })
 
   it('posiciona o pin em % conforme projectBrPoint', () => {
