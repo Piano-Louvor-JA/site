@@ -56,6 +56,7 @@ const payload = {
   totals: {
     online: 4,
     identified: 3,
+    unidentified: 1,
     by_platform: { 'desktop-windows': 1, 'desktop-linux': 1, 'apk-android': 1, web: 1 },
   },
   devices: [
@@ -78,6 +79,7 @@ const payload = {
       city: 'Recife',
       region: 'PE',
       identified: false,
+      source: 'passive',
       last_seen: '2026-11-26T11:50:00.000Z',
     }),
     device({
@@ -149,20 +151,46 @@ describe('useOnlineDevices', () => {
     expect(api.devices.value).toHaveLength(4)
   })
 
-  it('resumo por grupo de plataforma e % de identificados', async () => {
+  it('resumo por grupo de plataforma, sem token e % de identificados', async () => {
     const { useOnlineDevices } = await load()
     const api = useOnlineDevices()
     expect(api.summary.value).toEqual({
       online: 0,
+      identified: 0,
+      unidentified: 0,
       identifiedPct: 0,
       groups: { desktop: 0, web: 0, apk: 0, palco: 0, outros: 0 },
     })
     await api.refresh()
     expect(api.summary.value).toEqual({
       online: 4,
+      identified: 3,
+      unidentified: 1,
       identifiedPct: 75,
       groups: { desktop: 2, web: 1, apk: 1, palco: 0, outros: 0 },
     })
+  })
+
+  it('filtra por token e atalho showUnidentified alterna o filtro', async () => {
+    const { useOnlineDevices } = await load()
+    const api = useOnlineDevices()
+    await api.refresh()
+    api.filters.identified = 'yes'
+    expect(api.filtered.value.map((d) => d.install_id_short).sort()).toEqual([
+      'aaaaaa',
+      'bbbbbb',
+      'dddddd',
+    ])
+    expect(api.hasFilters.value).toBe(true)
+    api.filters.identified = 'no'
+    expect(api.filtered.value.map((d) => d.install_id_short)).toEqual(['cccccc'])
+    api.showUnidentified()
+    expect(api.filters.identified).toBe('')
+    expect(api.filtered.value).toHaveLength(4)
+    api.showUnidentified()
+    expect(api.filters.identified).toBe('no')
+    api.clearFilters()
+    expect(api.filters.identified).toBe('')
   })
 
   it('opções de filtro vêm dos dados (sem vazios, ordenadas)', async () => {

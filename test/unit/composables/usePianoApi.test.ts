@@ -472,4 +472,180 @@ describe('usePianoApi', () => {
       vi.stubGlobal('useRuntimeConfig', previous)
     }
   })
+
+  // ---- SPEC admin-conteudo-global v1.1.0 (RF-05, AC-5b, D7/D8) ----
+
+  it('listCollections mapeia snake_case → Collection camelCase (A5/AC-5b)', async () => {
+    localStorage.setItem('piano_admin_token', 'tok-1')
+    fetchMock.mockResolvedValueOnce({
+      data: [
+        {
+          id_collection: 12,
+          name: 'Coletânea Planalto',
+          description: 'desc',
+          cover_url: 'https://x/capa.jpg',
+          visibility: 'private',
+          owner_id: 3,
+          owner_name: 'Adriano Rodrigues',
+          author_name: 'legado',
+          musics_count: 7,
+          is_owner: 0,
+        },
+      ],
+      meta: { total: 1 },
+    })
+    const api = usePianoApi()
+    const list = await api.listCollections()
+    expect(list).toHaveLength(1)
+    expect(list[0]).toMatchObject({
+      id: 12,
+      name: 'Coletânea Planalto',
+      musicsCount: 7,
+      authorName: 'Adriano Rodrigues',
+      ownerId: 3,
+      coverUrl: 'https://x/capa.jpg',
+      visibility: 'private',
+    })
+  })
+
+  it('authorName usa fallback author_name quando owner_name é null (D7)', async () => {
+    localStorage.setItem('piano_admin_token', 'tok-1')
+    fetchMock.mockResolvedValueOnce({
+      data: [
+        {
+          id_collection: 13,
+          name: 'Órfã',
+          owner_name: null,
+          author_name: 'Nome Legado',
+          musics_count: 0,
+          visibility: 'public',
+        },
+      ],
+    })
+    const api = usePianoApi()
+    const list = await api.listCollections()
+    expect(list[0]!.authorName).toBe('Nome Legado')
+  })
+
+  it('listAdminCollections chama rota admin e mapeia com owner_name (RF-05)', async () => {
+    localStorage.setItem('piano_admin_token', 'tok-1')
+    fetchMock.mockResolvedValueOnce({
+      data: [
+        {
+          id_collection: 5,
+          name: 'Privada Manaus',
+          description: null,
+          cover_url: null,
+          visibility: 'private',
+          owner_id: 2,
+          author_name: null,
+          owner_name: 'Sonoplastia Planalto',
+          musics_count: 3,
+        },
+      ],
+      meta: { total: 1, page: 1, per_page: 24, last_page: 1 },
+    })
+    const api = usePianoApi()
+    const list = await api.listAdminCollections()
+    expect(fetchMock).toHaveBeenCalledWith(
+      'https://api-stg.pianolouvorja.com.br/v1/custom/admin/collections',
+      expect.anything(),
+    )
+    expect(list[0]).toMatchObject({
+      id: 5,
+      authorName: 'Sonoplastia Planalto',
+      musicsCount: 3,
+      visibility: 'private',
+    })
+  })
+
+  it('listAdminCollections sem data devolve lista vazia (branch ?? [])', async () => {
+    localStorage.setItem('piano_admin_token', 'tok-1')
+    fetchMock.mockResolvedValueOnce({})
+    const api = usePianoApi()
+    await expect(api.listAdminCollections()).resolves.toEqual([])
+  })
+
+  it('listAdminMusics sem data devolve lista vazia (branch ?? [])', async () => {
+    localStorage.setItem('piano_admin_token', 'tok-1')
+    fetchMock.mockResolvedValueOnce({})
+    const api = usePianoApi()
+    await expect(api.listAdminMusics()).resolves.toEqual([])
+  })
+
+  it('listAdminMusics chama rota admin e mapeia Music com coleção e dono (RF-05/D7)', async () => {
+    localStorage.setItem('piano_admin_token', 'tok-1')
+    fetchMock.mockResolvedValueOnce({
+      data: [
+        {
+          id_music: 21,
+          id_collection: 5,
+          name: 'Música A',
+          owner_id: 2,
+          owner_name: 'Adriano Rodrigues',
+          collection_name: 'Privada Manaus',
+          collection_visibility: 'private',
+          official_music_id: 88,
+          audio_url: 'https://x/a.mp3',
+          instrumental_url: null,
+          image_url: null,
+          duration: 120,
+        },
+        {
+          id_music: 22,
+          id_collection: 5,
+          name: 'Música B',
+          owner_id: 2,
+          owner_name: 'Adriano Rodrigues',
+          collection_name: 'Privada Manaus',
+          collection_visibility: 'private',
+          official_music_id: null,
+          audio_url: null,
+        },
+      ],
+      meta: { total: 2, page: 1, per_page: 24, last_page: 1 },
+    })
+    const api = usePianoApi()
+    const list = await api.listAdminMusics()
+    expect(fetchMock).toHaveBeenCalledWith(
+      'https://api-stg.pianolouvorja.com.br/v1/custom/admin/musics',
+      expect.anything(),
+    )
+    expect(list).toHaveLength(2)
+    expect(list[0]).toMatchObject({
+      id: 21,
+      name: 'Música A',
+      hasAudio: true,
+      audioUrl: 'https://x/a.mp3',
+      officialMusicId: 88,
+      collectionName: 'Privada Manaus',
+      collectionVisibility: 'private',
+      ownerName: 'Adriano Rodrigues',
+    })
+    expect(list[1]!.hasAudio).toBe(false)
+    expect(list[1]!.officialMusicId).toBeNull()
+  })
+
+  it('listMusics mapeia id_music/audio_url/official_music_id (A5/AC-5b drill-down)', async () => {
+    localStorage.setItem('piano_admin_token', 'tok-1')
+    fetchMock.mockResolvedValueOnce({
+      data: [
+        {
+          id_music: 31,
+          name: 'Com áudio',
+          audio_url: 'https://x/b.mp3',
+          official_music_id: 9,
+        },
+        { id_music: 32, name: 'Sem áudio', audio_url: null, official_music_id: null },
+      ],
+    })
+    const api = usePianoApi()
+    const list = await api.listMusics(5)
+    expect(fetchMock).toHaveBeenCalledWith(
+      'https://api-stg.pianolouvorja.com.br/v1/custom/collections/5/musics',
+      expect.anything(),
+    )
+    expect(list[0]).toMatchObject({ id: 31, hasAudio: true, officialMusicId: 9 })
+    expect(list[1]).toMatchObject({ id: 32, hasAudio: false, officialMusicId: null })
+  })
 })

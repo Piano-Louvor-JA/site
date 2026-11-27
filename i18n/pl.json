@@ -1,0 +1,1487 @@
+{
+  "meta": {
+    "title": "PIANO LouvorJA — Menedżer Nabożeństwa",
+    "description": "Platforma internetowa do zarządzania nabożeństwem: śpiewniki, Biblia, liturgia, projekcja wieloekranowa i więcej. Darmowa i open-source."
+  },
+  "nav": {
+    "features": "Funkcje",
+    "platforms": "Platformy",
+    "about": "O projekcie",
+    "howItWorks": "Jak to działa",
+    "docs": "Dokumentacja",
+    "contact": "Kontakt",
+    "openApp": "Otwórz aplikację",
+    "language": "Język",
+    "download": "Pobierz",
+    "releases": "Wydania",
+    "testers": "Testerzy",
+    "toggleTheme": "Przełącz motyw jasny/ciemny",
+    "support": "Wsparcie",
+    "comunidade": "Społeczność",
+    "institucional": "Działacze"
+  },
+  "hero": {
+    "badge": "Nowość: dostępna aplikacja internetowa (PWA)",
+    "title": "Menedżer Nabożeństwa",
+    "titleHighlight": "Prosty i",
+    "subtitle": "Organizuj śpiewniki, liturgię, Biblię i projekcję w jednym miejscu. Korzystaj z dowolnego urządzenia, bez instalacji.",
+    "ctaPrimary": "Otwórz aplikację",
+    "ctaSecondary": "Zobacz platformy",
+    "meta": {
+      "noInstall": "Bez instalacji",
+      "anyDevice": "Każde urządzenie",
+      "openSource": "Open-source"
+    },
+    "preview": {
+      "currentHymn": "Bieżąca pieśń",
+      "currentHymnTitle": "#15 — Divino Comigo",
+      "active": "Aktywne",
+      "next": "Następne",
+      "nextTitle": "Powitanie i uwielbienie",
+      "elapsedTime": "Czas trwania"
+    },
+    "titleHighlight2": "potężny"
+  },
+  "stats": {
+    "features": "Funkcje ekosystemu",
+    "free": "Darmowe",
+    "installs": "Instalacje",
+    "offline": "Działa offline"
+  },
+  "platforms": {
+    "eyebrow": "Wieloplatformowość",
+    "title": "Dostępne tam, gdzie tego potrzebujesz",
+    "description": "Korzystaj z aplikacji desktopowej dla maksymalnej produktywności, z przeglądarki jako szybkiej alternatywy lub z telefonu z aplikacją Android.",
+    "desktop": {
+      "badge": "Zalecane",
+      "title": "Natywny Desktop",
+      "subtitle": "Linux, macOS i Windows",
+      "description": "Pełne doświadczenie z obsługą wielu ekranów, niezależną projekcją i skrótami klawiszowymi.",
+      "feature1": "Projekcja wieloekranowa",
+      "feature2": "Pełny tryb offline",
+      "feature3": "Skróty klawiszowe",
+      "cta": "Dowiedz się więcej"
+    },
+    "web": {
+      "badge": "Dostęp teraz",
+      "title": "Web (Przeglądarka)",
+      "subtitle": "Każdy komputer lub laptop",
+      "description": "Dostęp bezpośrednio przez przeglądarkę. Idealne do szybkiego użycia lub jako rozwiązanie awaryjne, gdy nie ma zainstalowanej aplikacji.",
+      "feature1": "Bez instalacji",
+      "feature2": "Działa na każdym systemie",
+      "feature3": "Automatyczne aktualizacje",
+      "cta": "Otwórz w przeglądarce"
+    },
+    "mobile": {
+      "badge": "Nowość",
+      "title": "Mobilnie",
+      "subtitle": "Android dostępny",
+      "description": "Natywna aplikacja Android już dostępna. Steruj cyfrową sceną prosto z telefonu.",
+      "feature1": "Natywny Android dostępny",
+      "feature2": "Sterowanie cyfrową sceną",
+      "feature3": "iOS w rozwoju",
+      "cta": "Pobierz aplikację"
+    }
+  },
+  "notifyModal": {
+    "title": "Bądź pierwszy, który się dowie",
+    "subtitle": "Podaj swój e-mail, a powiadomimy Cię, gdy tylko aplikacja mobilna będzie dostępna.",
+    "placeholder": "twoj{'@'}email.com",
+    "button": "Powiadom o premierze",
+    "loading": "Wysyłanie...",
+    "success": "Wszystko gotowe! Zostaniesz powiadomiony, gdy tylko wystartujemy.",
+    "errors": {
+      "invalidEmail": "Podaj prawidłowy adres e-mail.",
+      "alreadySubscribed": "Ten e-mail jest już zapisany.",
+      "rateLimited": "Zbyt wiele prób. Odczekaj chwilę i spróbuj ponownie.",
+      "serviceUnavailable": "Usługa tymczasowo niedostępna. Spróbuj ponownie później.",
+      "subscribeFailed": "Nie udało się zapisać. Spróbuj ponownie za chwilę.",
+      "generic": "Coś poszło nie tak. Spróbuj ponownie za chwilę."
+    }
+  },
+  "features": {
+    "eyebrow": "Funkcje",
+    "title": "Wszystko, czego potrzebujesz do nabożeństwa",
+    "description": "Kompletny zestaw zintegrowanych narzędzi do zarządzania każdym aspektem nabożeństwa.",
+    "items": {
+      "media": {
+        "title": "Centrum Mediów",
+        "description": "Zarządzaj albumami, śpiewnikami i kolekcjami z trzema trybami odtwarzania."
+      },
+      "liturgy": {
+        "title": "Liturgia",
+        "description": "Twórz porządek nabożeństwa z 13 typami elementów, przeciąganiem, klonowaniem i odliczaniem."
+      },
+      "bible": {
+        "title": "Biblia",
+        "description": "Wielowersyjna z szybkim wyszukiwaniem, ulubionymi i bezpośrednią projekcją."
+      },
+      "projection": {
+        "title": "Projekcja wieloekranowa",
+        "description": "Niezależne wyjście na projektor lub dodatkowy telewizor z pełną kontrolą."
+      },
+      "tools": {
+        "title": "Narzędzia",
+        "description": "Zegar, stoper, minutnik i losowanie zintegrowane z nabożeństwem."
+      },
+      "player": {
+        "title": "Zaawansowany odtwarzacz",
+        "description": "Normalne odtwarzanie, tryb śpiewania razem i zsynchronizowane wyświetlanie slajdów."
+      },
+      "settings": {
+        "title": "Ustawienia",
+        "description": "Wygląd, projekcja, wiele ekranów i w pełni konfigurowalne preferencje."
+      },
+      "offline": {
+        "title": "Dane lokalne",
+        "description": "Aplikacja desktopowa działa w 100% offline po pobraniu mediów. Wersja internetowa wymaga połączenia z internetem."
+      }
+    }
+  },
+  "about": {
+    "eyebrow": "O projekcie",
+    "title": "Stworzone przez społeczność i dla społeczności",
+    "text1": "{name} to wspólny projekt open-source stworzony, aby ułatwić zarządzanie nabożeństwem.",
+    "text2": "Rozwijany przez zespół Piano, platforma stale ewoluuje dzięki wkładowi społeczności. Darmowa, bez reklam, bez zbierania danych.",
+    "forkCredit": "PIANO LouvorJA to fork projektu LouvorJA (github.com/louvorja), utrzymywany przez społeczność od 2019 roku. Dziękujemy pierwotnym twórcom i współtwórcom, którzy umożliwili ten projekt.",
+    "openSource": "Open Source",
+    "stats": {
+      "free": "Darmowe",
+      "installs": "Instalacje",
+      "offline": "PWA Offline"
+    }
+  },
+  "how": {
+    "eyebrow": "Jak to działa",
+    "title": "Zacznij w kilka minut",
+    "description": "Cztery proste kroki do zorganizowania nabożeństwa.",
+    "steps": {
+      "1": {
+        "title": "Otwórz aplikację",
+        "desc": "Skorzystaj z przeglądarki lub pobierz wersję desktopową. Rejestracja nie jest wymagana."
+      },
+      "2": {
+        "title": "Zaimportuj śpiewnik",
+        "desc": "Dodaj albumy, śpiewniki i kolekcje do Centrum Mediów."
+      },
+      "3": {
+        "title": "Utwórz liturgię",
+        "desc": "Przeciągaj elementy, aby stworzyć porządek nabożeństwa ze śledzeniem czasu."
+      },
+      "4": {
+        "title": "Projektuj i przewodź",
+        "desc": "Użyj projekcji wieloekranowej, aby wyświetlać pieśni, wersety i slajdy."
+      }
+    }
+  },
+  "cta": {
+    "title": "Gotowy, aby zacząć?",
+    "subtitle": "Otwórz PIANO LouvorJA już teraz i zorganizuj swoje nabożeństwo w kilka minut. Darmowe, bez rejestracji.",
+    "button": "Otwórz aplikację",
+    "meta": {
+      "free": "100% Darmowe",
+      "noInstall": "Bez instalacji",
+      "openSource": "Open source"
+    }
+  },
+  "contact": {
+    "eyebrow": "Napisz do nas",
+    "title": "Skontaktuj się z nami",
+    "description": "Masz pytania, sugestie lub znalazłeś błąd? Wyślij nam wiadomość, a odpowiemy tak szybko, jak to możliwe.",
+    "form": {
+      "name": "Imię",
+      "namePlaceholder": "Twoje imię",
+      "email": "E-mail",
+      "emailPlaceholder": "twoj{'@'}email.com",
+      "subject": "Temat",
+      "subjectPlaceholder": "O czym to jest?",
+      "message": "Wiadomość",
+      "messagePlaceholder": "Napisz swoją wiadomość...",
+      "submit": "Wyślij wiadomość",
+      "sending": "Wysyłanie...",
+      "success": "Wiadomość wysłana pomyślnie! Odezwiemy się wkrótce.",
+      "error": "Błąd wysyłania. Spróbuj ponownie lub napisz bezpośrednio na app{'@'}pianolouvorja.com.br",
+      "typeLabel": "Temat",
+      "type": {
+        "general": "Ogólne pytanie / kontakt",
+        "tester": "Chcę zostać testerem",
+        "developer": "Chcę zostać programistą",
+        "bug": "Zgłoszenie błędu lub propozycja ulepszenia"
+      },
+      "focusLabel": "Gdzie korzystasz z PIANO?",
+      "focus": {
+        "app-desktop": "Aplikacja desktopowa (Electron)",
+        "web-pwa": "Web / PWA",
+        "api": "API",
+        "mobile-flutter": "Mobilna (Flutter)",
+        "tv-receiver": "Telewizory / Odbiornik",
+        "docs": "Dokumentacja",
+        "qa": "Testowanie / QA",
+        "design": "Design / UI-UX"
+      },
+      "bio": "Krótkie bio",
+      "bioPlaceholder": "1-2 zdania o Tobie...",
+      "links": "Linki (profil, media społecznościowe)",
+      "linksPlaceholder": "Jeden link na linię (opcjonalnie)",
+      "avatar": "Awatar (opcjonalnie)",
+      "avatarPlaceholder": "Wyślij obraz (JPG/PNG)",
+      "avatarPreview": "Podgląd awatara",
+      "removeAvatar": "Usuń awatar",
+      "github": "GitHub",
+      "githubPlaceholder": "nazwa użytkownika lub URL GitHub",
+      "portfolio": "LinkedIn lub portfolio",
+      "portfolioPlaceholder": "URL (opcjonalnie)",
+      "areas": "Obszary zainteresowań",
+      "availability": "Dostępność",
+      "availabilityPlaceholder": "np. wieczory i weekendy, ~5h/tydzień...",
+      "stack": "Stack i doświadczenie",
+      "stackPlaceholder": "Technologie, które znasz, wcześniejsze doświadczenie...",
+      "motivation": "Dlaczego chcesz współtworzyć?",
+      "motivationPlaceholder": "Powiedz nam trochę o swojej motywacji (min. 20 znaków)...",
+      "testerEmail": "E-mail testera (jeśli już zapisany)",
+      "testerEmailPlaceholder": "Opcjonalnie — łączy zgłoszenie z Twoją rejestracją",
+      "reportTypeLabel": "Typ zgłoszenia",
+      "reportType": {
+        "bug": "Błąd (coś nie działa)",
+        "feature": "Propozycja ulepszenia",
+        "other": "Inne"
+      },
+      "version": "Wersja aplikacji",
+      "versionPlaceholder": "np. 1.4.2 (web/desktop/mobilna)",
+      "module": "Dotknięty moduł",
+      "modulePlaceholder": "np. Śpiewnik, Liturgia, Projekcja...",
+      "description": "Opis",
+      "descriptionPlaceholder": "Co się stało? Czego się spodziewałeś? (min. 20 znaków)",
+      "steps": "Kroki do odtworzenia",
+      "stepsPlaceholder": "1. Otwórz... 2. Kliknij... (opcjonalnie)",
+      "attachment": "Załącznik (zrzut ekranu/log)",
+      "attachmentPlaceholder": "Obraz, PDF, TXT lub JSON",
+      "removeAttachment": "Usuń załącznik"
+    },
+    "direct": "Albo wyślij e-mail bezpośrednio na",
+    "responseTime": "Średni czas odpowiedzi: 24-48h"
+  },
+  "docs": {
+    "title": "Dokumentacja",
+    "subtitle": "Wszystko, czego potrzebujesz, aby opanować PIANO LouvorJA",
+    "search": "Szukaj w dokumentacji...",
+    "sections": {
+      "gettingStarted": {
+        "title": "Pierwsze kroki",
+        "description": "Początkowa konfiguracja i pierwsze kroki w aplikacji."
+      },
+      "media": {
+        "title": "Centrum Mediów",
+        "description": "Zarządzanie albumami, śpiewnikami i kolekcjami pieśni."
+      },
+      "hymnal": {
+        "title": "Śpiewnik",
+        "description": "Wyszukiwanie, odtwarzanie i eksport pieśni śpiewnika adwentowego."
+      },
+      "collections": {
+        "title": "Kolekcje",
+        "description": "Twórz i zarządzaj własnymi kolekcjami i playlistami na każdą okazję."
+      },
+      "liturgy": {
+        "title": "Liturgia",
+        "description": "Twórz i organizuj kompletny porządek nabożeństwa."
+      },
+      "bible": {
+        "title": "Biblia",
+        "description": "Wyszukiwanie, ulubione i projekcja wersetów."
+      },
+      "projection": {
+        "title": "Projekcja wieloekranowa",
+        "description": "Konfiguracja dodatkowych ekranów i projekcji."
+      },
+      "streaming": {
+        "title": "Transmisja",
+        "description": "Integracja z OBS, vMix i platformami transmisji nabożeństw online."
+      },
+      "tools": {
+        "title": "Narzędzia",
+        "description": "Zegar, stoper, minutnik i losowanie."
+      },
+      "settings": {
+        "title": "Ustawienia",
+        "description": "Dostosuj wygląd, projekcję i preferencje."
+      },
+      "shortcuts": {
+        "title": "Skróty klawiszowe",
+        "description": "Przyspiesz swoją pracę skrótami."
+      },
+      "faq": {
+        "title": "FAQ",
+        "description": "Często zadawane pytania"
+      }
+    },
+    "content": {
+      "gettingStarted": {
+        "intro": "PIANO LouvorJA to aplikacja internetowa działająca na każdym urządzeniu z nowoczesną przeglądarką. Instalacja nie jest wymagana — po prostu otwórz ją w przeglądarce.",
+        "steps": [
+          "Otwórz aplikację w przeglądarce komputera lub urządzenia mobilnego.",
+          "Dla lepszego doświadczenia dodaj ją do ekranu głównego z menu przeglądarki.",
+          "Gotowe! Zacznij organizować swoje nabożeństwo."
+        ],
+        "tip": "Dla najlepszego doświadczenia używaj komputera z dwoma monitorami: jeden do sterowania, drugi do projekcji."
+      },
+      "shortcuts": {
+        "table": {
+          "action": "Akcja",
+          "shortcut": "Skrót"
+        },
+        "items": [
+          {
+            "action": "Odtwórz/Pauza",
+            "shortcut": "Spacja"
+          },
+          {
+            "action": "Następny utwór",
+            "shortcut": "→"
+          },
+          {
+            "action": "Poprzedni utwór",
+            "shortcut": "←"
+          },
+          {
+            "action": "Głośność +",
+            "shortcut": "↑"
+          },
+          {
+            "action": "Głośność -",
+            "shortcut": "↓"
+          },
+          {
+            "action": "Tryb pełnoekranowy",
+            "shortcut": "F"
+          },
+          {
+            "action": "Przełącz projekcję",
+            "shortcut": "P"
+          },
+          {
+            "action": "Szybkie wyszukiwanie",
+            "shortcut": "Ctrl+K"
+          },
+          {
+            "action": "Zamknij projekcję",
+            "shortcut": "ESC"
+          },
+          {
+            "action": "Przełącz operator ↔ projekcja (aplikacja desktopowa)",
+            "shortcut": "Ctrl+Alt+P"
+          }
+        ]
+      },
+      "modules": {
+        "media": ["Odtwarzacz z 3 trybami", "Śpiewniki i albumy", "Tryb śpiewania razem"],
+        "hymnal": [
+          "Szybkie wyszukiwanie po numerze lub tytule",
+          "Odtwarzanie sekwencyjne",
+          "Eksport do PDF lub druk"
+        ],
+        "collections": [
+          "Kolekcje online i własne",
+          "Przeciąganie do playlisty",
+          "Tryb śpiewania razem z tekstem"
+        ],
+        "liturgy": [
+          "13 typów elementów",
+          "Przeciąganie i upuszczanie",
+          "Odliczanie dla każdego elementu"
+        ],
+        "bible": ["Wiele wersji", "Szybkie wyszukiwanie", "Bezpośrednia projekcja"],
+        "projection": ["Niezależne wyjście", "Wiele ekranów", "Pełna kontrola"],
+        "streaming": [
+          "Własne CSS dla wyświetlania tekstów",
+          "Integracja z OBS i vMix",
+          "Wyjście na YouTube i Facebook"
+        ],
+        "tools": ["Zegar i stoper", "Minutnik odliczania", "Losowanie"],
+        "settings": ["Wygląd", "Projekcja", "Wiele ekranów"]
+      }
+    },
+    "faq": {
+      "cost": {
+        "question": "Czy PIANO LouvorJA jest naprawdę darmowe?",
+        "answer": "Tak! PIANO LouvorJA jest w 100% darmowe i open-source. Nie ma subskrypcji, reklam ani zbierania danych. Cały kod jest dostępny na GitHub."
+      },
+      "offline": {
+        "question": "Czy działa bez internetu?",
+        "answer": "Aplikacja desktopowa działa w 100% offline po pobraniu mediów. Wersja internetowa wymaga połączenia z internetem. Aplikacja APK również działa bez internetu, o ile treści są pobrane lokalnie, a urządzenia są w tej samej sieci."
+      },
+      "devices": {
+        "question": "Na jakich urządzeniach mogę jej używać?",
+        "answer": "PIANO działa na każdym urządzeniu z nowoczesną przeglądarką: komputer (Linux, macOS, Windows), tablety i telefony. Dla najlepszej projekcji wieloekranowej polecamy komputer."
+      },
+      "data": {
+        "question": "Gdzie są przechowywane moje dane?",
+        "answer": "Aplikacja desktopowa przechowuje dane (pieśni, liturgię, ustawienia) lokalnie na Twoim urządzeniu. Wersja internetowa wymaga połączenia z internetem i nie przechowuje trwałych danych. Wysyłając formularz kontaktowy, Twoje informacje (imię, e-mail, wiadomość) są przekazywane przez Web3Forms, abyśmy mogli odpowiedzieć. Szczegóły w naszej Polityce Prywatności."
+      },
+      "privacy": {
+        "question": "Jak chronicie moją prywatność?",
+        "answer": "PIANO LouvorJA jest zgodne z RODO i LGPD (brazylijską ustawą o ochronie danych). Strona nie używa śledzenia, analityki ani reklam — tylko techniczny plik cookie zapamiętujący wybrany język. Nie sprzedajemy ani nie udostępniamy danych podmiotom trzecim w celach marketingowych. Więcej informacji w Polityce Prywatności."
+      },
+      "support": {
+        "question": "Jak uzyskać wsparcie lub zgłosić problem?",
+        "answer": "Możesz skontaktować się z nami przez formularz na stronie Kontakt lub otworzyć issue bezpośrednio w naszym repozytorium GitHub. W pilnych sprawach podczas nabożeństwa zobacz wpisy rozwiązywania problemów w FAQ poniżej."
+      },
+      "updates": {
+        "question": "Jak aplikacja jest aktualizowana?",
+        "answer": "PIANO LouvorJA to aplikacja internetowa. Aktualizacje są stosowane automatycznie po odświeżeniu strony. Ręczne pobieranie czy instalacja nie są wymagane. Zawsze masz najnowszą wersję."
+      },
+      "troubleshooting": {
+        "question": "Co zrobić, jeśli aplikacja się nie ładuje lub pokazuje błąd?",
+        "answer": "1) Odśwież stronę (Ctrl+F5, aby wyczyścić cache). 2) Sprawdź połączenie z internetem przy pierwszym dostępie. 3) Wyczyść dane strony w ustawieniach przeglądarki. 4) Spróbuj trybu incognito, aby wykluczyć konfliktowe rozszerzenia. 5) Jeśli problem persists, zgłoś go przez formularz kontaktowy lub GitHub z danymi przeglądarki i urządzenia."
+      },
+      "contribute": {
+        "question": "Jak mogę współtworzyć projekt?",
+        "answer": "Projekt jest open-source i przyjmuje współtwórców na GitHub. Możesz zgłaszać błędy, proponować funkcje, przesyłać pull requesty lub pomagać w tłumaczeniu na inne języki."
+      }
+    },
+    "sidebarLabel": "Sekcje dokumentacji",
+    "guides": {
+      "title": "Kompletne przewodniki",
+      "lead": "Każde narzędzie ekosystemu wyjaśnione krok po kroku, według platform.",
+      "cards": {
+        "gettingStarted": {
+          "title": "Twoje pierwsze nabożeństwo w 15 minut",
+          "desc": "Od pobrania do projekcji: pełny przepływ."
+        },
+        "windows": {
+          "title": "Instalacja na Windows",
+          "desc": "Microsoft Store lub instalator EXE."
+        },
+        "macos": {
+          "title": "Instalacja na macOS",
+          "desc": "DMG dla Apple Silicon lub Intel."
+        },
+        "linux": {
+          "title": "Instalacja na Linux",
+          "desc": "AppImage, Snap lub Flatpak."
+        },
+        "android": {
+          "title": "Instalacja na Android (APK)",
+          "desc": "Telefony i TV boxy."
+        },
+        "pwa": {
+          "title": "Używanie w przeglądarce (PWA)",
+          "desc": "Nic do instalowania."
+        },
+        "tvSamsung": {
+          "title": "Telewizor Samsung (Tizen)",
+          "desc": "Projekcja przez Scenę."
+        },
+        "tvLg": {
+          "title": "Telewizor LG (webOS)",
+          "desc": "Projekcja przez Scenę."
+        },
+        "tvAndroid": {
+          "title": "Android TV / Google TV",
+          "desc": "APK lub TV box."
+        },
+        "palco": {
+          "title": "Scena wielourządzeniowa",
+          "desc": "Telefon steruje, telewizor projektuje."
+        },
+        "faq": {
+          "title": "Często zadawane pytania",
+          "desc": "Darmowe, offline, prywatne."
+        },
+        "troubleshooting": {
+          "title": "Rozwiązywanie problemów",
+          "desc": "Diagnoza według symptomów."
+        },
+        "shortcuts": {
+          "title": "Skróty klawiszowe",
+          "desc": "Pełna tabela według kontekstu."
+        },
+        "manual": {
+          "title": "Kompletny podręcznik",
+          "desc": "Każde narzędzie, sekcja po sekcji."
+        }
+      }
+    },
+    "editOnGithub": "Edytuj tę stronę na GitHub"
+  },
+  "footer": {
+    "tagline": "Internetowy menedżer nabożeństwa. Darmowy i open-source.",
+    "navLabel": "Nawigacja stopki",
+    "navTitle": "Nawigacja",
+    "product": "Produkt",
+    "resources": "Zasoby",
+    "company": "Firma",
+    "links": {
+      "features": "Funkcje",
+      "platforms": "Platformy",
+      "download": "Pobierz",
+      "releases": "Wydania",
+      "howItWorks": "Jak to działa",
+      "docs": "Dokumentacja",
+      "contact": "Kontakt",
+      "github": "GitHub",
+      "app": "Otwórz aplikację"
+    },
+    "copyright": "Stworzone przez zespół Piano z wiarą i oddaniem.",
+    "developedBy": "Stworzone przez",
+    "team": "Zespół Piano",
+    "rights": "Wszelkie prawa zastrzeżone.",
+    "forkedFrom": "Fork projektu",
+    "originalProject": "Pierwotny projekt LouvorJA",
+    "legalNavLabel": "Linki prawne",
+    "legalNavTitle": "Informacje prawne",
+    "moreNavLabel": "Więcej linków",
+    "moreNavTitle": "Więcej",
+    "privacy": "Polityka prywatności",
+    "terms": "Regulamin",
+    "conduct": "Kodeks postępowania",
+    "ranking": "Ranking",
+    "midias": "Media"
+  },
+  "common": {
+    "loading": "Ładowanie...",
+    "error": "Błąd",
+    "close": "Zamknij",
+    "back": "Wstecz",
+    "learnMore": "Dowiedz się więcej",
+    "skipToContent": "Przejdź do treści",
+    "allRightsReserved": "Wszelkie prawa zastrzeżone."
+  },
+  "privacy": {
+    "title": "Polityka Prywatności",
+    "metaDescription": "Jak PIANO LouvorJA przetwarza Twoje dane osobowe zgodnie z LGPD (brazylijskim RODO).",
+    "lastUpdated": "Ostatnia aktualizacja: 30 lipca 2026",
+    "tocLabel": "Spis treści",
+    "intro": "Niniejsza Polityka Prywatności opisuje, jak PIANO LouvorJA przetwarza dane osobowe zbierane przez tę stronę. Jesteśmy zobowiązani do ochrony Twojej prywatności zgodnie z Brazylijską Ogólną Ustawą o Ochronie Danych (LGPD — Ustawa nr 13.709/2018).",
+    "sections": {
+      "data": {
+        "title": "1. Dane, które zbieramy",
+        "body": [
+          "1.1 Dane, które podajesz",
+          "Wypełniając formularz kontaktowy, zbieramy:",
+          "Imię",
+          "Adres e-mail",
+          "Temat wiadomości",
+          "Treść wiadomości",
+          "1.2 Dane techniczne",
+          "Techniczny plik cookie piano_lang: przechowuje wyłącznie preferencję językową. Nie zawiera identyfikatora osobowego.",
+          "Nie używamy plików cookie śledzących, analitycznych, reklamowych ani profilujących.",
+          "1.3 Dane wysyłane przez aplikacje",
+          "Podczas otwarcia aplikacje PIANO LouvorJA (desktopowa, mobilna i internetowa) wysyłają co 5 minut sygnał statusu z: anonimowym identyfikatorem instalacji (wygenerowanym na urządzeniu, niezwiązanym z kontem), platformą, wersją aplikacji, systemem operacyjnym, językiem, strefą czasową oraz podanym okręgiem i kościołem.",
+          "Z adresu IP tego sygnału wyprowadzamy jedynie przybliżone miasto i stan. Adres IP nie jest przechowywany."
+        ]
+      },
+      "purpose": {
+        "title": "2. Cel przetwarzania",
+        "body": [
+          "Dane z formularza kontaktowego są używane wyłącznie do:",
+          "Odpowiedzi na Twoją prośbę",
+          "Świadczenia wsparcia technicznego",
+          "Wysłania żądanej komunikacji",
+          "Sygnał statusu aplikacji informuje nas, ile urządzeń jest w użyciu, w jakich regionach i wersjach, abyśmy mogli priorytetywać poprawki i ulepszenia.",
+          "Podstawa prawna: art. 7 ust. IX LGPD (prawny interes i odpowiedź na Twoją inicjatywę)."
+        ]
+      },
+      "sharing": {
+        "title": "3. Udostępnianie danych",
+        "body": [
+          "3.1 Web3Forms",
+          "Formularz kontaktowy korzysta z Web3Forms (USA) do przetwarzania zgłoszeń. Dane są przesyłane do Web3Forms w celu przekazania na nasz e-mail.",
+          "Podprocesor: Web3Forms",
+          "Kraj: Stany Zjednoczone",
+          "Cel: przekazanie wiadomości",
+          "3.2 Dostawca hostingu",
+          "Strona jest hostowana u dostawcy infrastruktury chmurowej, który może rejestrować techniczne dane dostępu (IP, znacznik czasu, user-agent).",
+          "3.3 NIE udostępniamy danych",
+          "Firmom reklamowym",
+          "Sieciom społecznościowym",
+          "Pośrednikom danych",
+          "Podmiotom trzecim w celach marketingowych"
+        ]
+      },
+      "international": {
+        "title": "4. Transfer międzynarodowy",
+        "body": [
+          "Dane z formularza kontaktowego są przetwarzane przez Web3Forms w Stanach Zjednoczonych. Ten transfer międzynarodowy jest niezbędny do świadczenia usługi formularza i mieści się w hipotezach prawnych art. 33 LGPD."
+        ]
+      },
+      "rights": {
+        "title": "5. Twoje prawa (art. 18 LGPD)",
+        "body": [
+          "W odniesieniu do swoich danych osobowych masz następujące prawa:",
+          "Potwierdzenie istnienia przetwarzania",
+          "Dostęp do danych",
+          "Sprostowanie danych niekompletnych, nieprawidłowych lub nieaktualnych",
+          "Anonimizację, zablokowanie lub usunięcie zbędnych danych",
+          "Przenoszenie danych",
+          "Usunięcie danych osobowych",
+          "Informacje o udostępnianiu",
+          "Jak skorzystać ze swoich praw",
+          "Wyślij e-mail na privacidade{'@'}pianolouvorja.com.br z:",
+          "Imieniem i nazwiskiem",
+          "Opisem prawa, które chcesz wykonać",
+          "Zarejestrowanym adresem e-mail",
+          "Czas odpowiedzi: do 15 dni kalendarzowych (art. 19 LGPD)."
+        ]
+      },
+      "security": {
+        "title": "6. Środki bezpieczeństwa",
+        "body": [
+          "Stosujemy następujące środki techniczne i organizacyjne:",
+          "Szyfrowanie HTTPS/TLS w całej komunikacji",
+          "Brak przechowywania haseł (brak systemu logowania)",
+          "Minimalizacja danych (zbieramy tylko to, co niezbędne)",
+          "Techniczne pliki cookie bez identyfikacji osobowej",
+          "Ograniczony dostęp zespołu do danych"
+        ]
+      },
+      "retention": {
+        "title": "7. Retencja danych",
+        "body": [
+          "Formularz kontaktowy: przechowywany tak długo, jak konieczne do odpowiedzi, następnie do 12 miesięcy dla celów historycznych, potem usuwany.",
+          "Logi dostępu: zgodnie z polityką dostawcy hostingu.",
+          "Lokalne dane aplikacji: pozostają na Twoim urządzeniu, dopóki ich nie usuniesz."
+        ]
+      },
+      "cookies": {
+        "title": "8. Pliki cookie",
+        "body": ["Nie używamy plików cookie podmiotów trzecich, analitycznych ani reklamowych."],
+        "table": {
+          "header": {
+            "cookie": "Plik cookie",
+            "type": "Typ",
+            "purpose": "Cel",
+            "duration": "Czas trwania"
+          },
+          "rows": [
+            {
+              "name": "piano_lang",
+              "type": "Techniczny",
+              "purpose": "Zapamiętywanie preferowanego języka",
+              "duration": "Sesja"
+            }
+          ]
+        }
+      },
+      "children": {
+        "title": "9. Dzieci i nieletni",
+        "body": [
+          "Aplikacja nie jest skierowana do dzieci i świadomie nie zbiera danych od osób poniżej 18 lat. Treści (pieśni, liturgia, teksty biblijne) mają charakter religijny i nie obejmują zbierania danych wrażliwych."
+        ]
+      },
+      "changes": {
+        "title": "10. Zmiany w tej Polityce",
+        "body": [
+          "Możemy zaktualizować tę Politykę w dowolnym momencie. Najnowsza wersja zawsze będzie dostępna na tej stronie, z datą aktualizacji na górze. Zalecamy okresowe sprawdzanie."
+        ]
+      },
+      "dpo": {
+        "title": "11. Inspektor Ochrony Danych (IOD)",
+        "body": [
+          "Zgodnie z art. 41 LGPD pytania można kierować na privacidade{'@'}pianolouvorja.com.br."
+        ]
+      },
+      "anpd": {
+        "title": "12. Organ nadzoru ochrony danych",
+        "body": [
+          "Możesz skontaktować się z ANPD (Krajowy Organ Ochrony Danych), aby złożyć skargę:",
+          "Strona: {link}",
+          "E-mail: ouvidoria{'@'}anpd.gov.br"
+        ],
+        "link": {
+          "url": "https://www.gov.br/anpd",
+          "text": "www.gov.br/anpd"
+        }
+      }
+    }
+  },
+  "terms": {
+    "title": "Regulamin",
+    "metaDescription": "Warunki korzystania z PIANO LouvorJA.",
+    "lastUpdated": "Ostatnia aktualizacja: 30 lipca 2026",
+    "tocLabel": "Spis treści",
+    "intro": "Witamy w PIANO LouvorJA. Korzystając z tej strony i aplikacji, zgadzasz się z niniejszym Regulaminem. Proszę przeczytać uważnie.",
+    "sections": {
+      "acceptance": {
+        "title": "1. Akceptacja warunków",
+        "body": [
+          "Korzystanie z PIANO LouvorJA oznacza pełną akceptację niniejszego Regulaminu. Jeśli nie zgadzasz się z jakimkolwiek postanowieniem, nie korzystaj z aplikacji."
+        ]
+      },
+      "service": {
+        "title": "2. Charakter usługi",
+        "body": [
+          "PIANO LouvorJA to darmowa aplikacja internetowa open-source zaprojektowana do wspomagania zarządzania nabożeństwem, obejmująca:",
+          "Cyfrowy śpiewnik i odtwarzanie muzyki",
+          "Zarządzanie liturgią i harmonogramem nabożeństwa",
+          "Projekcję tekstów pieśni i Biblii",
+          "Narzędzia pomocnicze (minutnik, losowanie itp.)",
+          "Aplikacja jest przeznaczona do użytku religijnego i wspólnotowego, bez celów komercyjnych."
+        ]
+      },
+      "license": {
+        "title": "3. Licencja",
+        "body": [
+          "3.1 Oprogramowanie",
+          "Kod źródłowy jest dystrybuowany na licencji open-source. Szczegóły w {link}.",
+          "3.2 Treści",
+          "Treści tekstowe (pieśni, teksty, literatura) należą do ich właścicieli praw autorskich. PIANO LouvorJA:",
+          "Nie rości sobie autorstwa treści",
+          "Nie komercjalizuje treści bezpośrednio",
+          "Szanuje prawa autorskie zgodnie z ustawą 9.610/98"
+        ],
+        "link": {
+          "url": "https://github.com/Piano-Louvor-JA",
+          "text": "repozytorium GitHub"
+        }
+      },
+      "user": {
+        "title": "4. Odpowiedzialność użytkownika",
+        "body": [
+          "Korzystając z PIANO LouvorJA, zobowiązujesz się do:",
+          "Etycznego korzystania z aplikacji zgodnie z obowiązującym prawem",
+          "Nieużywania jej do celów nielegalnych, zniesławiających lub naruszających prawa podmiotów trzecich",
+          "Szanowania praw autorskich wyświetlanych utworów",
+          "Niepodejmowania prób naruszenia bezpieczeństwa lub dostępności"
+        ]
+      },
+      "responsibility": {
+        "title": "5. Odpowiedzialność",
+        "body": [
+          "5.1 Charakter usługi",
+          "PIANO LouvorJA jest dostarczany \"TAK JAK JEST\", bez jakichkolwiek gwarancji. Nie gwarantujemy, że:",
+          "Usługa będzie nieprzerwana, bezpieczna lub wolna od błędów",
+          "Wyniki będą dokładne lub wiarygodne",
+          "Jakikolwiek błąd lub wada zostanie naprawiony",
+          "5.2 Ograniczenie odpowiedzialności",
+          "W najszerszym zakresie dozwolonym prawem PIANO LouvorJA nie ponosi odpowiedzialności za:",
+          "Szkody bezpośrednie, pośrednie, przypadkowe lub wynikowe",
+          "Utratę danych (rób regularne kopie zapasowe)",
+          "Przerwanie usługi podczas krytycznego użycia",
+          "Treści podmiotów trzecich lub linki zewnętrzne"
+        ]
+      },
+      "ip": {
+        "title": "6. Własność intelektualna",
+        "body": [
+          "6.1 Oprogramowanie",
+          "Kod źródłowy jest chroniony prawem autorskim i dystrybuowany na licencji open-source.",
+          "6.2 Znak towarowy",
+          "\"PIANO LouvorJA\" i \"LouvorJA\" są znakami towarowymi projektu. Używanie bez autoryzacji nie jest dozwolone.",
+          "6.3 Treści podmiotów trzecich",
+          "Pieśni, teksty i literatura należą do ich autorów i wydawców. Organizowanie tych treści nie przenosi żadnych praw własności intelektualnej."
+        ]
+      },
+      "donations": {
+        "title": "7. Dotacje i wkłady",
+        "body": [
+          "PIANO LouvorJA jest darmowe i open-source. Przyjmowane są dobrowolne wkłady przez GitHub (pull requesty, issues, tłumaczenia). Ewentualne dotacje nie stanowią relacji konsumenckiej ani nie gwarantują przywilejów."
+        ]
+      },
+      "privacy": {
+        "title": "8. Prywatność i dane",
+        "body": [
+          "Przetwarzanie danych osobowych reguluje nasza {link}, która jest częścią niniejszego Regulaminu."
+        ],
+        "link": {
+          "url": "/privacy",
+          "text": "Polityka Prywatności"
+        }
+      },
+      "modifications": {
+        "title": "9. Modyfikacje",
+        "body": [
+          "Możemy zmodyfikować niniejszy Regulamin w dowolnym momencie. Zmiany wchodzą w życie natychmiast po publikacji. Obowiązkiem użytkownika jest okresowe sprawdzanie."
+        ]
+      },
+      "termination": {
+        "title": "10. Zakończenie",
+        "body": [
+          "Możesz przestać korzystać z aplikacji w dowolnym momencie, zamykając przeglądarkę. Ponieważ nie ma systemu kont, formalne anulowanie nie jest wymagane."
+        ]
+      },
+      "law": {
+        "title": "11. Prawo właściwe",
+        "body": [
+          "Niniejszy Regulamin podlega prawom Federacyjnej Republiki Brazylii. Ewentualne spory będą rozstrzygane w sądzie właściwym dla miejsca zamieszkania użytkownika."
+        ]
+      },
+      "misc": {
+        "title": "12. Postanowienia końcowe",
+        "body": [
+          "Jeśli jakiekolwiek postanowienie niniejszego Regulaminu zostanie uznane za nieważne lub niewykonalne, pozostałe postanowienia pozostają w mocy. Tolerancja naruszenia nie stanowi zrzeczenia się przyszłych praw."
+        ]
+      }
+    }
+  },
+  "error": {
+    "title": "Nie znaleziono strony",
+    "serverErrorTitle": "Błąd serwera",
+    "errorCode404": "404",
+    "errorCode500": "500",
+    "desc404": "Szukana strona nie istnieje lub została przeniesiona.",
+    "desc500": "Po naszej stronie wystąpił błąd. Nasz zespół został poinformowany — spróbuj ponownie za chwilę.",
+    "backHome": "Powrót na stronę główną",
+    "reportIssue": "Zgłoś problem",
+    "metaDesc404": "Nie znaleziono strony — PIANO LouvorJA",
+    "metaDesc500": "Błąd serwera — PIANO LouvorJA"
+  },
+  "newsletter": {
+    "title": "Otrzymuj aktualności projektu",
+    "subtitle": "Bądź informowany o nowych wersjach, funkcjach i aktualizacjach. Bez spamu.",
+    "placeholder": "Twój najlepszy e-mail",
+    "button": "Subskrybuj",
+    "loading": "Subskrybowanie...",
+    "success": "Subskrypcja potwierdzona! Będziesz otrzymywać aktualności na swój e-mail.",
+    "errors": {
+      "invalidEmail": "Nieprawidłowy e-mail. Sprawdź i spróbuj ponownie.",
+      "alreadySubscribed": "Ten e-mail jest już zapisany.",
+      "generic": "Subskrypcja nie powiodła się. Spróbuj ponownie.",
+      "rateLimited": "Zbyt wiele prób. Odczekaj kilka minut.",
+      "serviceUnavailable": "Usługa niedostępna. Spróbuj ponownie później.",
+      "unknownError": "Coś poszło nie tak. Spróbuj ponownie."
+    }
+  },
+  "welcomePopup": {
+    "title": "Pobierz PianoLouvorJA bezpłatnie",
+    "description": "Odtwarzaj adwentowe śpiewniki na komputerze i telefonie. AppImage, aplikacja internetowa i więcej — wybierz swoją platformę.",
+    "close": "Zamknij",
+    "cta": "Zobacz opcje pobierania",
+    "secondaryCta": "Kontynuuj przeglądanie"
+  },
+  "cookieBanner": {
+    "message": "Używamy plików cookie, aby poprawić Twoje doświadczenie. Kontynuując przeglądanie, zgadzasz się z naszą Polityką Prywatności.",
+    "accept": "Rozumiem i akceptuję",
+    "reject": "Odrzuć",
+    "privacyLink": "Przeczytaj Politykę Prywatności"
+  },
+  "admin": {
+    "title": "Panel",
+    "loginTitle": "Dostęp ograniczony",
+    "loginSubtitle": "Zaloguj się, aby wejść do panelu",
+    "email": "E-mail",
+    "emailPlaceholder": "admin{'@'}pianolouvorja.com.br",
+    "password": "Hasło",
+    "passwordPlaceholder": "Twoje hasło",
+    "loginButton": "Zaloguj się",
+    "loginError": "Nieprawidłowy e-mail lub hasło",
+    "loggingIn": "Logowanie...",
+    "logout": "Wyloguj",
+    "welcome": "Witaj, {email}",
+    "dashboard": "Panel",
+    "stats": "Statystyki",
+    "backToSite": "Powrót na stronę",
+    "refresh": "Odśwież",
+    "updatedAgo": "Zaktualizowano {min} min temu",
+    "updatedAt": "Właśnie teraz",
+    "downloads": "Pobrania",
+    "stars": "Gwiazdki",
+    "forks": "Forki",
+    "subscribers": "Subskrybenci",
+    "donations": "Dotacje",
+    "visits": "Odwiedziny (30d)",
+    "recentActivity": "Ostatnia aktywność",
+    "quickLinks": "Szybkie linki",
+    "noData": "Dane niedostępne",
+    "loading": "Ładowanie...",
+    "comunidade": {
+      "tab": "Oczekujące",
+      "tabMembros": "Członkowie",
+      "tabEquipe": "Zespół",
+      "subtitulo": "Oczekująca moderacja, zarządzanie członkami i zespołem — w jednym panelu.",
+      "filtroStatus": "Status",
+      "todos": "Wszyscy",
+      "carregando": "Ładowanie…",
+      "recarregar": "↻ Odśwież",
+      "carregarMais": "Wczytaj więcej",
+      "erroCarregar": "Nie udało się wczytać",
+      "semMembros": "Brak członków w tym filtrze.",
+      "semEquipe": "Nie znaleziono członków zespołu.",
+      "roles": "Role",
+      "salvar": "Zapisz",
+      "salvando": "Zapisywanie…",
+      "salvoOk": "Role zaktualizowane ✓",
+      "erroSalvar": "Nie udało się zapisać",
+      "aprovar": "Zatwierdź",
+      "aprovadoOk": "Członek zatwierdzony ✓",
+      "inativar": "Dezaktywuj",
+      "inativadoOk": "Członek dezaktywowany ✓",
+      "reativar": "Reaktywuj",
+      "gm": "GM (administrator)",
+      "role": {
+        "dev": "Programista",
+        "tester": "Tester",
+        "conteudo": "Treści",
+        "curador": "Kurator",
+        "staff": "Zespół"
+      },
+      "title": "Społeczność",
+      "tabsAriaLabel": "Zakładki panelu społeczności"
+    }
+  },
+  "download": {
+    "metaTitle": "Pobierz — PIANO LouvorJA",
+    "metaDescription": "Pobierz PIANO LouvorJA na komputer (Linux, Windows, macOS), użyj aplikacji internetowej w przeglądarce lub śledź mapę drogową mobilną.",
+    "heroEyebrow": "Pobrania",
+    "heroTitle": "Zdobądź PIANO LouvorJA",
+    "heroSubtitle": "Wybierz najlepszą opcję dla siebie. Natywny desktop z pełnymi funkcjami, natychmiastowa aplikacja internetowa lub mobilna wkrótce.",
+    "heroWebCta": "Użyj aplikacji Web",
+    "heroGithubCta": "Zobacz na GitHub",
+    "platformsTitle": "Wybierz swoją platformę",
+    "platformsSubtitle": "Każda platforma ma swoje mocne strony",
+    "desktop": {
+      "badge": "Zalecane",
+      "title": "Natywny Desktop",
+      "description": "Aplikacja Electron z pełnymi funkcjami: niezależna projekcja wieloekranowa, pełny tryb offline i skróty klawiszowe.",
+      "linux": {
+        "name": "Linux",
+        "format": "AppImage",
+        "arch": "x64",
+        "downloadLabel": "Pobierz AppImage",
+        "hint": "Po pobraniu nadaj uprawnienie wykonywania (chmod +x) i uruchom. Wymaga zainstalowanego FUSE. Alternatywa: przekonwertuj na Flatpak przez flatpak install."
+      },
+      "windows": {
+        "name": "Windows",
+        "format": "Instalator NSIS (.exe)",
+        "arch": "x64",
+        "downloadLabel": "Pobierz na Windows",
+        "hint": "Uruchom instalator i wykonaj kroki."
+      },
+      "macos": {
+        "name": "macOS",
+        "format": "Obraz dysku (.dmg)",
+        "arch": "x64 / arm64 (Apple Silicon)",
+        "downloadLabel": "Pobierz na macOS",
+        "hint": "Otwórz .dmg i przeciągnij aplikację do Applications."
+      },
+      "features": {
+        "multiScreen": "Niezależna projekcja wieloekranowa",
+        "offline": "Działa w 100% offline",
+        "shortcuts": "Dedykowane skróty klawiszowe",
+        "autoUpdate": "Automatyczne aktualizacje"
+      },
+      "buildFromSource": "Wolisz zbudować ze źródeł?",
+      "buildFromSourceLink": "Zobacz instrukcje na GitHub",
+      "otherArch": "Pobierz dla {arch}",
+      "detectedArchitecture": "Wykryta architektura: {architecture}"
+    },
+    "web": {
+      "badge": "Natychmiast",
+      "title": "Aplikacja Web",
+      "description": "Używaj prosto w przeglądarce. Bez instalacji, działa na każdym systemie. Idealne do szybkiego użycia lub gdy nie masz zainstalowanej aplikacji.",
+      "cta": "Otwórz aplikację Web",
+      "features": {
+        "noInstall": "Bez instalacji",
+        "anyOs": "Każdy system",
+        "autoUpdate": "Automatyczne aktualizacje",
+        "pwa": "Dostęp z przeglądarki"
+      }
+    },
+    "mobile": {
+      "badge": "Dostępne",
+      "title": "Mobilnie",
+      "description": "Pobierz aplikację Android i zabierz PIANO ze sobą — steruj sceną prosto z telefonu.",
+      "platforms": "Android i iOS",
+      "features": {
+        "nativeAndroid": "Natywny Android (planowane)",
+        "nativeIos": "Natywny iOS (planowane)",
+        "cloudSync": "Synchronizacja chmurowa (planowane)",
+        "remote": "Zdalne sterowanie z desktopu",
+        "network": "Synchronizacja w sieci lokalnej",
+        "offline": "Działa offline"
+      },
+      "useWebInstead": "Użyj aplikacji internetowej na telefonie",
+      "noAssets": "Pobrania mobilne będą wkrótce dostępne.",
+      "android": {
+        "name": "Android",
+        "format": "pakiet .apk",
+        "arch": "Uniwersalny (arm64, armv7, x86_64)",
+        "downloadLabel": "Pobierz APK",
+        "hint": "Zainstaluj APK, zezwalając na nieznane źródła."
+      },
+      "ios": {
+        "name": "iOS",
+        "format": "aplikacja TestFlight",
+        "arch": "uniwersalna",
+        "downloadLabel": "Otwórz TestFlight",
+        "hint": "Wymagane zaproszenie TestFlight."
+      },
+      "apkNote": "Zainstaluj APK, zezwalając w ustawieniach Androida na aplikacje z nieznanych źródeł."
+    },
+    "midias": {
+      "title": "Media LouvorJA",
+      "description": "Pobierz kolekcje, audio i pakiety prosto z Dysku Google społeczności — bez zależności od API, offline i darmowo.",
+      "cta": "Otwórz Media"
+    },
+    "systemRequirements": {
+      "title": "Wymagania systemowe",
+      "desktop": "Desktop: 4GB RAM, 500MB dysku, GPU ze wsparciem WebGL",
+      "web": "Web: nowoczesna przeglądarka (Chrome, Firefox, Edge, Safari), połączenie z internetem przy pierwszym dostępie"
+    },
+    "tv": {
+      "badge": "Nowość",
+      "title": "TV / Scena Cyfrowa",
+      "description": "Zmień każdą Smart TV w odbiornik sceny. Steruj z aplikacji Android (APK) — sterowanie z webu i desktopu wkrótce.",
+      "noAssets": "Pakiety TV zostaną wkrótce opublikowane.",
+      "features": {
+        "realtime": "Lustrzane odbicie w czasie rzeczywistym",
+        "multicast": "Wiele telewizorów naraz",
+        "autodiscover": "Automatyczne wykrywanie w sieci",
+        "nativeLg": "Natywna aplikacja na webOS (LG)",
+        "bigScreen": "Zoptymalizowana pod duże ekrany",
+        "remoteControl": "Zdalne sterowanie Sceną"
+      },
+      "webos": {
+        "name": "Telewizor LG webOS",
+        "format": "pakiet .ipk",
+        "arch": "arm",
+        "downloadLabel": "Pobierz na webOS",
+        "hint": "Użyj trybu Developer Mode lub sideload przez LG Device Manager."
+      },
+      "androidtv": {
+        "name": "Android TV",
+        "format": "pakiet .apk",
+        "arch": "arm64",
+        "downloadLabel": "Pobierz na Android TV",
+        "hint": "Zainstaluj APK sideload przez menedżer plików lub ADB."
+      },
+      "downloadGeneric": "Pobierz",
+      "tizen": {
+        "name": "Telewizor Samsung Tizen",
+        "format": "pakiet .tpk",
+        "hint": "Zainstaluj przez USB lub Tizen Studio Device Manager."
+      },
+      "useDesktopInstead": "Dla niewspieranych telewizorów użyj Sceny w przeglądarce w trybie pełnoekranowym."
+    },
+    "voidbr": {
+      "eyebrow": "Partnerska dystrybucja Linux",
+      "title": "VoidBR LouvorJA Piano",
+      "subtitle": "Kompletna dystrybucja Linux z preinstalowanym PIANO LouvorJA — zbudowana przez społeczność VoidBR, aby ułatwić kościołom legalne używanie oprogramowania.",
+      "description": "Rozruchowy system live: uruchom z USB, używaj i instaluj z PIANO i śpiewnikiem już skonfigurowanymi.",
+      "feature1": "PIANO LouvorJA preinstalowany i aktualizowany",
+      "feature2": "100% legalne i darmowe — zero piractwa",
+      "feature3": "Baza Void Linux, lekka i stabilna",
+      "downloadLabel": "Pobierz ISO (x86_64)",
+      "unavailable": "ISO tymczasowo niedostępne",
+      "communityLink": "Społeczność VoidBR"
+    }
+  },
+  "contributors": {
+    "title": "Kto tworzy PIANO",
+    "subtitle": "PIANO LouvorJA istnieje dzięki tym ludziom, którzy poświęcają projektowi swój czas i wiedzę.",
+    "contributions": "wkładów",
+    "viewAll": "Zobacz wszystkich na GitHub",
+    "ctaTitle": "Współtwórz projekt",
+    "ctaText": "PIANO jest open-source i rośnie dzięki społeczności. Możesz współtworzyć kod, zgłaszać błędy, proponować funkcje, pomagać w tłumaczeniach lub dzielić się projektem.",
+    "ctaWays": {
+      "code": "Wysyłaj pull requesty na GitHub",
+      "bugs": "Zgłaszaj błędy i proponuj ulepszenia",
+      "translate": "Pomagaj w tłumaczeniach",
+      "share": "Podziel się ze swoją społecznością"
+    },
+    "ctaButton": "Zacznij współtworzyć",
+    "loading": "Ładowanie współtwórców...",
+    "error": "Nie udało się teraz wczytać współtwórców."
+  },
+  "releases": {
+    "metaTitle": "Notatki wydania — PIANO LouvorJA",
+    "metaDescription": "Historia wersji i zmian PIANO LouvorJA. Śledź nowe funkcje, ulepszenia i poprawki.",
+    "title": "Notatki wydania",
+    "subtitle": "Śledź każdą aktualizację PIANO LouvorJA. Nowe funkcje, ulepszenia i poprawki.",
+    "latest": "Najnowsza",
+    "version": "Wersja",
+    "released": "Wydana",
+    "highlights": "Najważniejsze",
+    "pullRequests": "PR-y",
+    "changelog": "Dziennik zmian",
+    "download": "Pobierz wersję",
+    "allVersions": "Wszystkie wersje",
+    "loading": "Ładowanie wersji...",
+    "error": "Nie udało się teraz wczytać wersji.",
+    "noReleases": "Brak opublikowanych wersji.",
+    "products": {
+      "web": "Web",
+      "desktop": "Desktop",
+      "mobile": "Mobilna",
+      "tv": "Smart TV"
+    },
+    "repos": {
+      "web": "Web (Strona)",
+      "app": "App (Desktop)",
+      "api": "API",
+      "site": "Strona",
+      "palco-receiver": "Scena na telewizory",
+      "apk": "Aplikacja mobilna (APK)"
+    },
+    "filterLabel": "Filtruj po produkcie",
+    "filterAll": "Wszystkie",
+    "filterEmpty": "Brak wydań dla tego produktu."
+  },
+  "tvSupport": {
+    "eyebrow": "Mapa drogowa",
+    "title": "Twój telewizor staje się sceną kościoła",
+    "description": "Steruj nabożeństwem z telefonu, a Smart TV wyświetla pieśni i liturgię jako cyfrową scenę — idealne dla małych grup bez projektora i komputera.",
+    "lgBrand": "webOS (LG)",
+    "lgStatus": "W rozwoju",
+    "samsungBrand": "Tizen (Samsung)",
+    "samsungStatus": "W rozwoju",
+    "rokuBrand": "Roku TV",
+    "rokuStatus": "Planowane",
+    "androidTvBrand": "Android TV / Google TV",
+    "androidTvStatus": "Planowane",
+    "chromecastBrand": "Chromecast",
+    "chromecastStatus": "Planowane",
+    "cta": "Bądź na bieżąco",
+    "appleTvBrand": "Apple TV",
+    "appleTvStatus": "Planowane",
+    "statusAvailable": "Dostępne",
+    "downloadCta": "Pobierz teraz"
+  },
+  "team": {
+    "eyebrow": "Nasz zespół",
+    "title": "Profesjonaliści stojący za projektem",
+    "subtitle": "PIANO LouvorJA buduje oddany zespół zorganizowany w wyspecjalizowane fronty pracy, zjednoczony jednym celem: służeniem społeczności z doskonałością.",
+    "areas": {
+      "leadership": {
+        "title": "Przywództwo i wizja",
+        "description": "Kierunek projektu, mapa drogowa produktu i relacja ze społecznością, której PIANO służy."
+      },
+      "desktop": {
+        "title": "Aplikacja desktopowa",
+        "description": "Aplikacja Electron z obsługą wielu ekranów do projekcji nabożeństwa: wyjście mediów, wyświetlanie sceny i zdalne sterowanie."
+      },
+      "web": {
+        "title": "Aplikacja Web",
+        "description": "Aplikacja internetowa do zarządzania nabożeństwem, z szybkim dostępem z przeglądarki (wymaga internetu)."
+      },
+      "api": {
+        "title": "API i infrastruktura",
+        "description": "Publiczne API i usługi backendowe napędzające śpiewniki, playlisty i synchronizację między urządzeniami."
+      },
+      "site": {
+        "title": "Strona i treści",
+        "description": "Obecność cyfrowa, dokumentacja i komunikacja: wielojęzyczna strona, wydania i zasoby."
+      },
+      "quality": {
+        "title": "Jakość i CI",
+        "description": "Automatyzacja pipeline, testowanie i przegląd kodu zapewniające stabilność każdego wydania."
+      },
+      "distro": {
+        "title": "Dystrybucja VoidBR Linux",
+        "description": "Utrzymuje live ISO VoidBR LouvorJA Piano: kompletny system rozruchowy z preinstalowanym PIANO i śpiewnikiem — legalna, prosta, offline instalacja dla kościołów."
+      }
+    },
+    "people": {
+      "title": "Kto buduje projekt",
+      "avatarAlt": "Awatar GitHub użytkownika {name}",
+      "more": "Dowiedz się więcej"
+    },
+    "devs": {
+      "title": "Deweloperzy"
+    },
+    "members": {
+      "ezequiasfonseca": {
+        "role": "Założyciel · Przywództwo i aplikacja desktopowa",
+        "bio": "Starszy inżynier oprogramowania z 15-letnim doświadczeniem w technologii, obejmującym infrastrukturę, administrację systemów Linux, DevOps i Full Stack. Założyciel PIANO LouvorJA, prowadzi wizję produktu i aplikację desktopową."
+      },
+      "rafaumeu": {
+        "role": "Tech Lead · Strona, API i QA",
+        "bio": "Full stack developer skupiony na ekosystemie PIANO LouvorJA: strona, API, PWA i automatyzacja jakości. Odpowiedzialny za CI/CD, testowanie i wielourządzeniowe doświadczenie projektu."
+      },
+      "rafaelji": {
+        "role": "Aplikacja desktopowa i Mac",
+        "bio": "Programista od 2015 roku, z doświadczeniem w backendzie, frontendzie i mobile — obecnie skupiony na frontendzie React. Prowadzi trzy projekty: Alva (aplikacja Szkoły Sabatniej), Appentecostes (tłumaczenie kazaní AI w czasie rzeczywistym na 13 języków) i FatIA (klipy wideo AI dla mediów społecznościowych)."
+      },
+      "educharquero": {
+        "role": "Linux, Web App i PWA",
+        "bio": "Dyplom z sieci komputerowych i podyplomowe z nauczania. Użytkownik Linuxa od czasów Kurumin, dekady w infrastrukturze, właściciel conectux.com.br."
+      },
+      "vcatafesta": {
+        "role": "Dystrybucja VoidBR · ISO LouvorJA Piano",
+        "bio": "Założyciel społeczności VoidBR (Void Linux Brazil) i projektu Chililinux (GNU/Linux oparty na LFS). Developer niskopoziomowy Linux — własne kernele, automatyzacja i pakowanie — utrzymuje ISO VoidBR LouvorJA Piano z preinstalowanym PIANO, ułatwiając kościołom legalne wdrożenie oprogramowania."
+      },
+      "elomarxa": {
+        "role": "Design cyfrowy, UI i UX",
+        "bio": "Designer cyfrowy, doświadczony w produkcji zasobów wizualnych, rozwijający umiejętności UI i UX."
+      },
+      "default": {
+        "role": "Członek zespołu"
+      }
+    },
+    "work": {
+      "title": "Jak pracujemy",
+      "text": "Open source, przegląd równieśny i ciągłe dostarczanie: każdy front utrzymuje swoje repozytorium w organizacji, z automatyczną integracją i wdrażaniem."
+    },
+    "cta": "Poznaj organizację na GitHub",
+    "modal": {
+      "close": "Zamknij"
+    },
+    "contribute": {
+      "title": "Współtwórz projekt",
+      "text": "PIANO jest open-source i rośnie dzięki społeczności. Możesz współtworzyć kod, zgłaszać błędy, proponować funkcje, pomagać w tłumaczeniach lub dzielić się projektem.",
+      "ways": {
+        "code": "Wysyłaj pull requesty na GitHub",
+        "bugs": "Zgłaszaj błędy i proponuj ulepszenia",
+        "translate": "Pomagaj w tłumaczeniach",
+        "share": "Podziel się ze swoją społecznością"
+      },
+      "button": "Zacznij współtworzyć"
+    }
+  },
+  "community": {
+    "spot": "To miejsce jest Twoje — przyjdź testować",
+    "eyebrow": "Społeczność",
+    "title": "Kto używa, testuje i współtworzy",
+    "subtitle": "Testerzy, entuzjaści i sugerujący, którzy pomagają PIANO LouvorJA rosnąć. Chcesz dołączyć?",
+    "roles": {
+      "tester": "Tester",
+      "enthusiast": "Entuzjasta",
+      "suggester": "Sugerujący"
+    },
+    "since": "Od {since}",
+    "link": "Zobacz profil",
+    "cta": "Dołącz do społeczności",
+    "channels": {
+      "whatsapp-support": "Grupa wsparcia (WhatsApp)",
+      "dev-form": "Zostań programistą",
+      "telegram-community": "Społeczność na Telegramie"
+    }
+  },
+  "testers": {
+    "eyebrow": "Społeczność testująca",
+    "title": "Testerzy",
+    "subtitle": "Ludzie, którzy testują PIANO LouvorJA w realnych warunkach nabożeństwa i zgłaszają wszystko, co znajdą — dzięki temu aplikacja pozostaje stabilna dla Twojego kościoła.",
+    "gallery": {
+      "avatarAlt": "Awatar użytkownika {name}",
+      "more": "Dowiedz się więcej"
+    },
+    "modal": {
+      "close": "Zamknij"
+    },
+    "focus": {
+      "vm": "Maszyna wirtualna",
+      "install": "Instalacja",
+      "web": "Web",
+      "desktop": "Desktop",
+      "mobile": "Mobilna",
+      "tv": "TV / Scena",
+      "community": "Społeczność"
+    },
+    "members": {
+      "natan": {
+        "bio": "Testuje PIANO na Void Linux i weryfikuje instalację od zera."
+      }
+    },
+    "reports": {
+      "title": "Ostatnie raporty z testów",
+      "loading": "Ładowanie raportów…",
+      "empty": "Brak raportów.",
+      "comingSoon": "Wkrótce: raporty prosto z formularza testów.",
+      "anonymous": "Anonimowy"
+    },
+    "cta": {
+      "title": "Chcesz testować PIANO?",
+      "button": "Zostań testerem",
+      "bug": "Zgłoś błąd"
+    }
+  },
+  "donate": {
+    "title": "Wesprzyj projekt",
+    "subtitle": "PIANO LouvorJA jest darmowe. Twoja dotacja pomaga utrzymać projekt żywym i bez reklam.",
+    "button": "Przekaż dotację",
+    "pix": "Pix",
+    "boleto": "Boleto",
+    "card": "Karta"
+  },
+  "conduct": {
+    "title": "Kodeks postępowania społeczności",
+    "metaDescription": "Zasady, moderacja i odwołania Społeczności LouvorJA — ugruntowane w adwentowej filozofii muzyki.",
+    "lastUpdated": "Wersja 1.0 — listopad 2026",
+    "tocLabel": "Na tej stronie",
+    "intro": "Społeczność LouvorJA istnieje, aby członkowie mogli tworzyć, dzielić się i świętować treści uwielbieniowe z fortepianem, które uwielbiają Boga i budują kościół. Ten Kodeks jest ugruntowany w oficjalnych zasadach Kościoła Adwentystów Dnia Siódmego, zwłaszcza \"Adwentowej Filozofii Muzyki\" (Rada Rococzna, 2004), 28 Zasadach Wiary i Podręczniku Kościelnym.",
+    "purposeQuote": "„Czy jecie, czy pijecie, czy cokolwiek innego czynicie, wszystko ku chwale Bożej czyńcie.” — 1 Koryntian 10:31",
+    "sections": {
+      "celebrate": {
+        "title": "1. Co świętujemy",
+        "body": [
+          "Treści, które uwielbiają Boga, dążą do szlachetnego i najlepszego (Flp 4:8), niosą autentyczne duchowe przesłanie, równowagę, autentyczność i różnorodność kulturową — styl muzyczny nie jest podstawą wykluczenia; treść i przesłanie są. Szacunek między członkami: różnice gustu nie są podstawą konfliktu."
+        ]
+      },
+      "notAllowed": {
+        "title": "2. Co nie jest dozwolone",
+        "body": [
+          "Doktryna: teksty lub przesłanie sprzeczne z Pismem lub 28 Zasadami Wiary.",
+          "Niestosowne: treści budzące pożądanie, namiętność, rozpacz, gniew lub nienawiść — obraźliwe, seksualizowane, brutalne lub bluźniercze.",
+          "Prawa autorskie: plagiat lub nieautoryzowane użycie chronionych utworów — pieśni mają właścicieli praw.",
+          "Spam: reklamy, autopromocja, treści niezwiązane z uwielbieniem.",
+          "Zachowanie: nękanie, ataki osobiste, dyskryminacja lub prześladowanie innych członków."
+        ]
+      },
+      "moderation": {
+        "title": "3. Moderacja: zgłoszenia i ostrzeżenia",
+        "body": [
+          "Zasada nadrzędna: ukrycie to nie usunięcie. Podejrzane treści są najpierw ukrywane z pokazu; ostateczne usunięcie dopiero po przeglądzie.",
+          "Pierwsze lekkie zgłoszenie (spam/inne): treść oznaczona \"w przeglądzie\", pozostaje widoczna, trafia do kolejki Game Masterów.",
+          "3 zgłoszenia lub 1 poważne (doktryna, niestosowne, prawa autorskie): automatycznie ukryte z najwyższym priorytetem.",
+          "Przegląd Game Mastera w ciągu 7 dni: zachowana treść wraca z wyjaśnieniem; usunięta treść przynosi autorowi ostrzeżenie z powodem i wskazówką z tego Kodeksu.",
+          "Ostrzeżenia: 1. formalne upomnienie + usunięcie treści; 2. 7-dniowa zawieszenie publikowania; 3. zakaz publikowania (konto zachowuje dostęp do konsumpcji). Usunięcie nie kasuje autorstwa ani należnych punktów. Od każdego ostrzeżenia można się odwołać do devów; poważne sprawy trafiają do zespołu."
+        ]
+      },
+      "gameMasters": {
+        "title": "4. Game Masterzy",
+        "body": [
+          "Wzorem Jetry (Wyjścia 18), dwóch-trzech członków zaproszonych przez zespół developerski prowadzi kolejkę przeglądów, upomnienia i wprowadzanie nowych członków. Stosują ten Kodeks dosłownie; zmiany trafiają do devów. Poważne sprawy idą do zespołu developerskiego. Kolejność decyzji: najpierw ochrona społeczności; potem ochrona twórcy."
+        ]
+      },
+      "transparency": {
+        "title": "5. Przejrzystość i odwołania",
+        "body": [
+          "Ten Kodeks jest publiczny i widoczny w aplikacji w sekcji Społeczność.",
+          "Każdy autor wie, co usunięto, dlaczego (który punkt Kodeksu) i jak się odwołać.",
+          "Zmiany przechodzą przez zespół developerski + przywództwo, w konsultacji z Game Masterami.",
+          "Żadna treść nie jest usuwana po cichu."
+        ]
+      },
+      "invitation": {
+        "title": "6. Zaproszenie",
+        "body": [
+          "Społeczność to miejsce służby. Publikuj z doskonałością, zgłaszaj z sprawiedliwością, przeglądaj z miłosierdziem."
+        ],
+        "quote": "„Śpiewajcie Panu pieśń nową, śpiewaj Panu, cała ziemio!” — Psalm 96:1"
+      }
+    }
+  },
+  "ranking": {
+    "title": "Ranking społeczności",
+    "metaDescription": "Publiczny, przejrzysty ranking współtwórców społeczności PIANO LouvorJA — publikacje, użycia i zsynchronizowane kolekcje.",
+    "subtitle": "Wkład społeczności — publiczny i przejrzysty",
+    "tabsLabel": "Okres rankingu",
+    "tabAll": "Cały czas",
+    "tabWeek": "Tygodniowy",
+    "errorText": "Nie udało się teraz wczytać rankingu.",
+    "retry": "Spróbuj ponownie",
+    "empty": "Brak zarejestrowanych wyników.",
+    "footerLink": "Ranking"
+  },
+  "midias": {
+    "title": "Media LouvorJA",
+    "metaDescription": "Pobierz media i kolekcje LouvorJA PIANO bezpośrednio z Dysku Google — niezależnie od API, offline i darmowo.",
+    "subtitle": "Kolekcje i audio społeczności",
+    "description": "Pliki mediów LouvorJA PIANO (kolekcje, audio i pakiety) są hostowane na Dysku Google społeczności. Pobierz przyciskiem poniżej i zaimportuj w aplikacji.",
+    "noteOffline": "Działa offline: po zaimportowaniu w aplikacji wszystko zapisuje się na Twoim urządzeniu.",
+    "noteBackup": "Świetne dla kościołów z niestabilnym internetem — pobierz raz, używaj zawsze.",
+    "downloadButton": "Otwórz media na Dysku Google",
+    "unavailable": "Linki do mediów zostaną wkrótce opublikowane.",
+    "convite_catalogo": "Dla tego języka nie ma jeszcze opublikowanego katalogu. Dołącz do społeczności PIANO LouvorJA i pomóż tłumaczyć i publikować kolekcje!",
+    "footerLink": "Media"
+  },
+  "tickets": {
+    "nav": "Wsparcie",
+    "sending": "Wysyłanie…",
+    "loading": "Ładowanie…",
+    "error": {
+      "api": "API niedostępne. Spróbuj ponownie."
+    },
+    "intake": {
+      "title": "Centrum wsparcia",
+      "description": "Wyślij prośbę o wsparcie.",
+      "name": "Imię",
+      "email": "E-mail",
+      "subject": "Temat",
+      "message": "Wiadomość",
+      "consent": "Zgadzam się na przetwarzanie moich danych dla wsparcia (LGPD).",
+      "consentRequired": "Zgoda jest wymagana.",
+      "submit": "Wyślij prośbę",
+      "successTitle": "Prośba zarejestrowana!",
+      "successHint": "Zachowaj to odniesienie przy kontakcie z zespołem.",
+      "newRequest": "Nowa prośba",
+      "portalLink": "Przejdź do moich zgłoszeń"
+    },
+    "portal": {
+      "title": "Moje zgłoszenia",
+      "description": "Śledź swoje prośby i odpowiadaj zespołowi.",
+      "newTicket": "Nowe zgłoszenie",
+      "priority": "Priorytet",
+      "create": "Utwórz zgłoszenie",
+      "empty": "Brak zgłoszeń.",
+      "reply": "Odpowiedz"
+    },
+    "admin": {
+      "title": "Admin — Zgłoszenia",
+      "description": "Kolejka triage i zgłoszeń organizacji.",
+      "intakeQueue": "Kolejka triage",
+      "intakeEmpty": "Brak oczekujących próśb.",
+      "triage": "Triage i konwersja",
+      "ticketsTitle": "Zgłoszenia",
+      "tenant": "ID organizacji"
+    }
+  },
+  "comunidade": {
+    "eyebrow": "Społeczność",
+    "title": "Żywe ciało projektu",
+    "subtitle": "Zatwierdzeni programiści, testerzy, producenci treści i kuratorzy — ludzie, którzy budują i podtrzymują PIANO LouvorJA, aktualizowani prosto ze źródła.",
+    "error": "Nie udało się teraz wczytać społeczności. Spróbuj ponownie za chwilę.",
+    "avatarAlt": "Awatar użytkownika {name}",
+    "profile": "Zobacz profil GitHub",
+    "roles": {
+      "staff": "Zespół",
+      "dev": "Dev",
+      "tester": "Tester",
+      "conteudo": "Treści",
+      "curador": "Kurator"
+    }
+  },
+  "institucional": {
+    "meta": {
+      "title": "PIANO LouvorJA — Dla przywódców kościoła",
+      "description": "Poznaj PIANO LouvorJA: zsynchronizowane teksty do projekcji, podkłady i wersje śpiewane dla nabożeństwa. Materiał instytucjonalny i ewangelizacyjny dla przywódców kościoła."
+    },
+    "title": "PIANO LouvorJA dla Twojego kościoła",
+    "lede": "Darmowe narzędzie budowane przez wolontariuszy do uwielbienia: zsynchronizowane teksty pieśni do projekcji, podkłady i wersje śpiewane, prosto w przeglądarce komputera Twojego kościoła.",
+    "s1": {
+      "title": "Czym jest PIANO",
+      "body": "PIANO LouvorJA to darmowy, wolontariacki fork projektu LouvorJA, skupiony na nabożeństwie: zsynchronizowane teksty pieśni do projekcji, podkłady i wersje śpiewane. Uwaga: aplikacja nie odtwarza nut — \"Piano\" to po prostu nazwa kodowa projektu."
+    },
+    "s2": {
+      "title": "Jak używać w kościele",
+      "body": "Działa na komputerze w sanktuarium, w przeglądarce (Web App) lub w aplikacji desktopowej. Konfiguracja zajmuje kilka minut i nie wymaga wiedzy technicznej: odwiedź stronę pobierania, wybierz platformę i wykonaj przewodnik krok po kroku w dokumentacji."
+    },
+    "s3": {
+      "title": "Jak dzielić się w Twoim polu",
+      "body": "Przygotowaliśmy zestaw prasowy gotowy do druku i dzielenia się z lokalnymi starszymi i pastorami. Pomóż innym zborom odkryć narzędzie: podziel się materiałem na spotkaniach funkcjonariuszy, w biuletynach i grupach komunikacji Twojego pola."
+    },
+    "s4": {
+      "title": "Kontakt instytucjonalny",
+      "body": "W sprawach partnerstw, pytań instytucjonalnych i wsparcia adopcji narzędzia w Twoim polu skontaktuj się z zespołem na app{'@'}pianolouvorja.com.br lub przez stronę kontaktową."
+    },
+    "cta": {
+      "press": "Zobacz zestaw prasowy"
+    }
+  },
+  "press": {
+    "meta": {
+      "title": "Zestaw prasowy — PIANO LouvorJA",
+      "description": "Materiał ewangelizacyjny PIANO LouvorJA, gotowy do druku i dzielenia się z lokalnymi starszymi i pastorami: czym jest, kluczowe przesłanie, gdzie znaleźć i kontakt instytucjonalny."
+    },
+    "title": "Zestaw prasowy PIANO LouvorJA",
+    "lede": "Materiał gotowy do druku, do dzielenia się z lokalnymi starszymi i pastorami.",
+    "about": "PIANO LouvorJA to darmowy, wolontariacki fork projektu LouvorJA, skupiony na nabożeństwie: zsynchronizowane teksty pieśni do projekcji, podkłady i wersje śpiewane. Aplikacja nie odtwarza nut — \"Piano\" to po prostu nazwa kodowa projektu.",
+    "keyPoints": [
+      "Zsynchronizowane teksty pieśni do projekcji podczas nabożeństwa",
+      "Podkłady i wersje śpiewane do akompaniamentu muzycznego",
+      "Darmowy, wolontariacki projekt dostępny dla każdego zboru"
+    ],
+    "where": {
+      "title": "Gdzie znaleźć",
+      "items": [
+        "Oficjalna strona: https://pianolouvorja.com.br",
+        "Pobieranie aplikacji: https://pianolouvorja.com.br/download",
+        "Dokumentacja: https://pianolouvorja.com.br/docs",
+        "Kontakt: app{'@'}pianolouvorja.com.br"
+      ]
+    },
+    "contact": "Kontakt instytucjonalny: app{'@'}pianolouvorja.com.br",
+    "printCta": "Drukuj / zapisz jako PDF",
+    "footer": "PIANO LouvorJA · https://pianolouvorja.com.br"
+  }
+}

@@ -2,6 +2,24 @@
   import { teamAreas, teamMembers, teamOrgUrl } from '~/data/team'
   import { useRoster, type RosterMember } from '~/composables/useRoster'
 
+  const { t, te } = useI18n()
+
+  /**
+   * Role localizada com fallback: membros dinâmicos (Sheet/roster) podem não ter
+   * chave team.members.<login>.* em todas as locales — nunca vazar a key crua.
+   */
+  function memberRole(login: string): string {
+    return te(`team.members.${login}.role`)
+      ? t(`team.members.${login}.role`)
+      : t('team.members.default.role')
+  }
+
+  function memberBio(member: DisplayMember): string | null {
+    return te(`team.members.${member.login}.bio`)
+      ? t(`team.members.${member.login}.bio`)
+      : (member.bio ?? null)
+  }
+
   /**
    * People dinâmico (SPEC Comunidade Orgânica D3/AC1): roster staff da API.
    * Fallback hardcoded team.ts enquanto env NUXT_PUBLIC_PIANO_API_BASE
@@ -9,6 +27,12 @@
    * garantir a env na mesma onda). Pending → lista oculta (sem fake).
    */
   const { members: rosterMembers, pending: rosterPending } = useRoster('staff')
+
+  /**
+   * Devs ativos (SPEC v1.1.0): subseção própria na home, roster role=dev.
+   * Sem fallback hardcoded — lista vazia honesta quando a API não devolve devs.
+   */
+  const { members: rosterDevs, pending: rosterDevsPending } = useRoster('dev')
 
   type DisplayMember = {
     login: string
@@ -31,8 +55,30 @@
     }
   }
 
+  /**
+   * Hierarquia exibida (SPEC v1.1.0): ordem curada do team.ts — Ezequias 1º,
+   * Rafael 2º, demais em qualquer ordem. Roster members fora da ordem curada
+   * ficam por último (ordem alfabética), sem ocultar ninguém.
+   */
+  const rank = (login: string): number => {
+    const i = teamMembers.findIndex((t) => t.login === login)
+    return i === -1 ? Number.MAX_SAFE_INTEGER : i
+  }
+
   const people = computed<DisplayMember[]>(() =>
-    rosterPending.value ? [] : rosterMembers.value.map(fromRoster),
+    rosterPending.value
+      ? []
+      : [...rosterMembers.value]
+          .map(fromRoster)
+          .sort((a, b) => rank(a.login) - rank(b.login) || a.name.localeCompare(b.name)),
+  )
+
+  const devs = computed<DisplayMember[]>(() =>
+    rosterDevsPending.value
+      ? []
+      : [...rosterDevs.value]
+          .map(fromRoster)
+          .sort((a, b) => rank(a.login) - rank(b.login) || a.name.localeCompare(b.name)),
   )
 
   const activeMember = ref<DisplayMember | null>(null)
@@ -99,7 +145,40 @@
               />
               <span class="team__person-info">
                 <span class="team__person-name">{{ member.name }}</span>
-                <span class="team__person-role">{{ $t(`team.members.${member.login}.role`) }}</span>
+                <span class="team__person-role">{{ memberRole(member.login) }}</span>
+              </span>
+            </div>
+            <button
+              type="button"
+              class="team__person-more"
+              :aria-label="$t('team.people.more')"
+              @click="openMember(member)"
+            >
+              {{ $t('team.people.more') }}
+              <i class="ti ti-arrow-right" aria-hidden="true" />
+            </button>
+          </li>
+        </ul>
+      </div>
+
+      <div v-if="devs.length" class="team__people">
+        <h3 class="team__people-title">
+          {{ $t('team.devs.title') }}
+        </h3>
+        <ul class="team__people-list">
+          <li v-for="member in devs" :key="member.login" class="team__person team__dev">
+            <div class="team__person-card">
+              <img
+                :src="member.avatar"
+                :alt="$t('team.people.avatarAlt', { name: member.name })"
+                class="team__avatar"
+                width="72"
+                height="72"
+                loading="lazy"
+              />
+              <span class="team__person-info">
+                <span class="team__person-name">{{ member.name }}</span>
+                <span class="team__person-role">{{ memberRole(member.login) }}</span>
               </span>
             </div>
             <button
@@ -144,10 +223,10 @@
             {{ activeMember.name }}
           </h4>
           <p class="team-modal__role">
-            {{ $t(`team.members.${activeMember.login}.role`) }}
+            {{ memberRole(activeMember.login) }}
           </p>
-          <p class="team-modal__bio">
-            {{ $t(`team.members.${activeMember.login}.bio`) }}
+          <p v-if="memberBio(activeMember)" class="team-modal__bio">
+            {{ memberBio(activeMember) }}
           </p>
           <div class="team-modal__links">
             <a

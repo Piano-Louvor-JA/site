@@ -1319,6 +1319,9 @@
       "avatarAlt": "Avatar de {name} sur GitHub",
       "more": "En savoir plus"
     },
+    "devs": {
+      "title": "Développeurs"
+    },
     "members": {
       "ezequiasfonseca": {
         "role": "Fondateur · Direction et App Desktop",
@@ -1343,6 +1346,9 @@
       "elomarxa": {
         "role": "Design numérique, UI et UX",
         "bio": "Designer numérique, expérimenté dans la production d'éléments graphiques et développant ses compétences en UI et UX."
+      },
+      "default": {
+        "role": "Membre de l'équipe"
       }
     },
     "work": {
