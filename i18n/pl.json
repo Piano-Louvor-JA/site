@@ -374,11 +374,7 @@
         ]
       },
       "modules": {
-        "media": [
-          "Odtwarzacz z 3 trybami",
-          "Śpiewniki i albumy",
-          "Tryb śpiewania razem"
-        ],
+        "media": ["Odtwarzacz z 3 trybami", "Śpiewniki i albumy", "Tryb śpiewania razem"],
         "hymnal": [
           "Szybkie wyszukiwanie po numerze lub tytule",
           "Odtwarzanie sekwencyjne",
@@ -394,31 +390,15 @@
           "Przeciąganie i upuszczanie",
           "Odliczanie dla każdego elementu"
         ],
-        "bible": [
-          "Wiele wersji",
-          "Szybkie wyszukiwanie",
-          "Bezpośrednia projekcja"
-        ],
-        "projection": [
-          "Niezależne wyjście",
-          "Wiele ekranów",
-          "Pełna kontrola"
-        ],
+        "bible": ["Wiele wersji", "Szybkie wyszukiwanie", "Bezpośrednia projekcja"],
+        "projection": ["Niezależne wyjście", "Wiele ekranów", "Pełna kontrola"],
         "streaming": [
           "Własne CSS dla wyświetlania tekstów",
           "Integracja z OBS i vMix",
           "Wyjście na YouTube i Facebook"
         ],
-        "tools": [
-          "Zegar i stoper",
-          "Minutnik odliczania",
-          "Losowanie"
-        ],
-        "settings": [
-          "Wygląd",
-          "Projekcja",
-          "Wiele ekranów"
-        ]
+        "tools": ["Zegar i stoper", "Minutnik odliczania", "Losowanie"],
+        "settings": ["Wygląd", "Projekcja", "Wiele ekranów"]
       }
     },
     "faq": {
@@ -665,9 +645,7 @@
       },
       "cookies": {
         "title": "8. Pliki cookie",
-        "body": [
-          "Nie używamy plików cookie podmiotów trzecich, analitycznych ani reklamowych."
-        ],
+        "body": ["Nie używamy plików cookie podmiotów trzecich, analitycznych ani reklamowych."],
         "table": {
           "header": {
             "cookie": "Plik cookie",
