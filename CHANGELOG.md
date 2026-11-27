@@ -3,6 +3,16 @@
 All notable changes to this project are documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.17.0](https://github.com/Piano-Louvor-JA/site/compare/v1.16.0...v1.17.0) (2026-11-27)
+
+### Features
+
+- **admin:** mapa do Brasil real e contagem alinhada na telemetria ([b83f338](https://github.com/Piano-Louvor-JA/site/commit/b83f338760bf59431a6c28b0a36d5e6d92eabccb))
+
+### Tests
+
+- cobre TelemetryBrazilMap e useTelemetryHistory para promoção a main ([5a4bee0](https://github.com/Piano-Louvor-JA/site/commit/5a4bee0e965f19b3b0d2e97db7846e6596ed8ab9))
+
 ## [1.16.0](https://github.com/Piano-Louvor-JA/site/compare/v1.15.0...v1.16.0) (2026-11-27)
 
 ### Features
