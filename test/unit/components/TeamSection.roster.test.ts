@@ -88,6 +88,25 @@ describe('TeamSection roster dinâmico (SPEC Comunidade Orgânica)', () => {
     expect(devs[0]!.find('.team__person-name').text()).toBe('Felipe')
     expect(devs[1]!.find('.team__person-name').text()).toBe('Lucas')
   })
+
+  it('abre o modal ao clicar em Saiba mais de um desenvolvedor', async () => {
+    fetchMock.mockImplementation((url: string) => {
+      if (url.includes('role=staff')) {
+        return Promise.resolve({ data: [apiMember()] })
+      }
+      if (url.includes('role=dev')) {
+        return Promise.resolve({
+          data: [apiMember({ id: 'd1', name: 'Felipe', github: 'felipehj', roles: ['dev'] })],
+        })
+      }
+      return Promise.reject(new Error('url inesperada: ' + url))
+    })
+    const wrapper = mount(TeamSection, { global: { stubs: ['i'] } })
+    await flushPromises()
+    await wrapper.find('.team__dev button.team__person-more').trigger('click')
+    expect(wrapper.find('.team-modal').exists()).toBe(true)
+    expect(wrapper.find('.team-modal').attributes('aria-label')).toBe('Felipe')
+  })
 })
 
 it('renders members without GitHub or avatar using safe defaults', async () => {
