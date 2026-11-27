@@ -59,7 +59,8 @@
   async function loadCollections() {
     loading.value = true
     try {
-      collections.value = await api.listCollections()
+      // Visão total (admin): todas as coletâneas, qualquer dono (SPEC admin-conteudo-global RF-06)
+      collections.value = await api.listAdminCollections()
     } catch {
       notify(false, 'Falha ao carregar coletâneas')
     } finally {
@@ -142,7 +143,33 @@
     section.value = 'musics'
     loading.value = true
     try {
+      // Drill-down por coletânea preserva listMusics(id) (SPEC D7)
       musics.value = await api.listMusics(c.id)
+    } catch {
+      notify(false, 'Falha ao carregar músicas')
+    } finally {
+      loading.value = false
+    }
+  }
+
+  // ---- Músicas (visão global admin) ----
+  const musicQuery = ref('')
+
+  const filteredMusics = computed(() => {
+    const q = musicQuery.value.trim().toLowerCase()
+    if (!q) return musics.value
+    return musics.value.filter(
+      (m) => m.name.toLowerCase().includes(q) || (m.collectionName ?? '').toLowerCase().includes(q),
+    )
+  })
+
+  async function loadAllMusics() {
+    selectedCollection.value = null
+    section.value = 'musics'
+    loading.value = true
+    try {
+      // Aba Músicas global: todas as músicas com coleção e dono (SPEC D7)
+      musics.value = await api.listAdminMusics()
     } catch {
       notify(false, 'Falha ao carregar músicas')
     } finally {
@@ -274,11 +301,7 @@
         <button :class="{ active: section === 'collections' }" @click="goCollections">
           <i class="ti ti-books" /> Coletâneas
         </button>
-        <button
-          :disabled="!selectedCollection"
-          :class="{ active: section === 'musics' }"
-          @click="section = 'musics'"
-        >
+        <button :class="{ active: section === 'musics' }" @click="loadAllMusics">
           <i class="ti ti-music" /> Músicas<span v-if="selectedCollection" class="crumb"
             >· {{ selectedCollection.name }}</span
           >
@@ -431,31 +454,46 @@
       </div>
     </section>
 
-    <!-- MÚSICAS -->
-    <section v-else-if="section === 'musics' && selectedCollection" class="admin-content__body">
-      <p class="breadcrumb">
+    <!-- MÚSICAS (drill-down por coletânea OU visão global admin) -->
+    <section v-else-if="section === 'musics'" class="admin-content__body">
+      <p v-if="selectedCollection" class="breadcrumb">
         <a href="#" @click.prevent="section = 'collections'">
           <i class="ti ti-arrow-left" /> {{ selectedCollection.name }}
         </a>
       </p>
+      <p v-else class="breadcrumb">
+        <i class="ti ti-world" />
+        Todas as músicas (visão admin — qualquer dono)
+      </p>
+      <div class="toolbar">
+        <input v-model="musicQuery" type="search" placeholder="Buscar música ou coleção…" />
+      </div>
       <div class="table-card">
         <table class="admin-table">
           <thead>
             <tr>
               <th>ID</th>
               <th>Nome</th>
+              <th v-if="!selectedCollection">Coleção</th>
+              <th v-if="!selectedCollection">Dono</th>
               <th>Áudio</th>
               <th>Hino oficial</th>
               <th>Ações</th>
             </tr>
           </thead>
           <tbody>
-            <tr v-for="m in musics" :key="m.id">
+            <tr v-for="m in filteredMusics" :key="m.id">
               <td class="cell-id">
                 {{ m.id }}
               </td>
               <td class="cell-name">
                 {{ m.name }}
+              </td>
+              <td v-if="!selectedCollection" class="cell-name">
+                {{ m.collectionName ?? '—' }}
+              </td>
+              <td v-if="!selectedCollection" class="cell-muted">
+                {{ m.ownerName ?? '—' }}
               </td>
               <td>
                 <i :class="['audio-icon', m.hasAudio ? 'ti ti-music' : 'ti ti-music-off none']" />
@@ -468,14 +506,14 @@
               </td>
             </tr>
             <tr v-if="loading">
-              <td colspan="5" class="loading-row">
+              <td :colspan="selectedCollection ? 5 : 7" class="loading-row">
                 <i class="ti ti-loader-2 spinning" />
               </td>
             </tr>
-            <tr v-else-if="musics.length === 0">
-              <td colspan="5" class="empty">
+            <tr v-else-if="filteredMusics.length === 0">
+              <td :colspan="selectedCollection ? 5 : 7" class="empty">
                 <i class="ti ti-music-off" />
-                Nenhuma música nesta coletânea
+                Nenhuma música encontrada
               </td>
             </tr>
           </tbody>
