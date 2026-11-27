@@ -11,6 +11,13 @@
     type SortKey,
     useOnlineDevices,
   } from '~/composables/useOnlineDevices'
+  import {
+    RANKING_OPTIONS,
+    type RankingDim,
+    useTelemetryHistory,
+  } from '~/composables/useTelemetryHistory'
+
+  type TeleTab = 'agora' | 'rankings' | 'mapa'
 
   const {
     devices,
@@ -35,18 +42,47 @@
     stop,
   } = useOnlineDevices()
 
+  const {
+    history,
+    rankings,
+    mapPoints,
+    loading: histLoading,
+    error: histError,
+    rankingBy,
+    maxRankDevices,
+    refresh: refreshHistory,
+    setRankingBy,
+  } = useTelemetryHistory()
+
+  const tab = ref<TeleTab>('agora')
+
   // Relógio para "há X min" andar entre uma busca e outra.
   const now = ref(Date.now())
   let clock: ReturnType<typeof setInterval> | null = null
 
   onMounted(() => {
     start()
+    void refreshHistory()
     clock = setInterval(() => (now.value = Date.now()), 15_000)
   })
   onUnmounted(() => {
     stop()
     if (clock) clearInterval(clock)
   })
+
+  async function selectTab(next: TeleTab) {
+    tab.value = next
+    if (next !== 'agora') await refreshHistory()
+  }
+
+  async function onRankingChange(event: Event) {
+    const value = (event.target as HTMLSelectElement).value as RankingDim
+    await setRankingBy(value)
+  }
+
+  async function refreshAll() {
+    await Promise.all([refresh(), refreshHistory()])
+  }
 
   const groupCards = computed(() => [
     {
@@ -95,25 +131,64 @@
   <div class="tele">
     <header class="tele__head">
       <div>
-        <h2 class="tele__title">Telemetria — dispositivos online</h2>
+        <h2 class="tele__title">Telemetria</h2>
         <p class="tele__sub">
-          Quem mandou sinal nos últimos 11 minutos · atualiza a cada 30 s
+          Online agora (11 min) · histórico e mapa dos últimos 90 dias
           <template v-if="generatedAt"> · coleta {{ formatTime(generatedAt) }} </template>
         </p>
       </div>
-      <button type="button" class="tele__refresh" :disabled="loading" @click="refresh()">
-        <i class="ti ti-refresh" :class="{ tele__spin: loading }" aria-hidden="true" />
+      <button
+        type="button"
+        class="tele__refresh"
+        :disabled="loading || histLoading"
+        @click="refreshAll()"
+      >
+        <i
+          class="ti ti-refresh"
+          :class="{ tele__spin: loading || histLoading }"
+          aria-hidden="true"
+        />
         Atualizar
       </button>
     </header>
 
-    <div v-if="error && !devices.length" class="tele__state tele__state--error">
+    <nav class="tele__tabs" aria-label="Seções da telemetria">
+      <button
+        type="button"
+        class="tele__tab"
+        :class="{ 'tele__tab--active': tab === 'agora' }"
+        :aria-pressed="tab === 'agora'"
+        @click="selectTab('agora')"
+      >
+        Agora
+      </button>
+      <button
+        type="button"
+        class="tele__tab"
+        :class="{ 'tele__tab--active': tab === 'rankings' }"
+        :aria-pressed="tab === 'rankings'"
+        @click="selectTab('rankings')"
+      >
+        Rankings
+      </button>
+      <button
+        type="button"
+        class="tele__tab"
+        :class="{ 'tele__tab--active': tab === 'mapa' }"
+        :aria-pressed="tab === 'mapa'"
+        @click="selectTab('mapa')"
+      >
+        Mapa Brasil
+      </button>
+    </nav>
+
+    <div v-if="tab === 'agora' && error && !devices.length" class="tele__state tele__state--error">
       <i class="ti ti-alert-triangle" aria-hidden="true" />
       <p>{{ error }}</p>
       <button type="button" class="tele__retry" @click="refresh()">Tentar novamente</button>
     </div>
 
-    <template v-else>
+    <template v-else-if="tab === 'agora'">
       <p v-if="error" class="tele__warn">
         <i class="ti ti-alert-triangle" aria-hidden="true" /> {{ error }}
       </p>
@@ -342,6 +417,79 @@
         </table>
       </div>
     </template>
+
+    <template v-else-if="tab === 'rankings'">
+      <p v-if="histError" class="tele__warn">
+        <i class="ti ti-alert-triangle" aria-hidden="true" /> {{ histError }}
+      </p>
+      <section v-if="history" class="tele__cards" aria-label="Resumo 90 dias">
+        <div class="tele-card tele-card--main">
+          <span class="tele-card__label">Vistos em 90 dias</span>
+          <span class="tele-card__value">{{ history.totals.seen }}</span>
+          <span class="tele-card__hint">{{ history.totals.online }} online agora</span>
+        </div>
+        <div class="tele-card">
+          <span class="tele-card__label">Offline (com histórico)</span>
+          <span class="tele-card__value">{{ history.totals.offline_seen }}</span>
+        </div>
+        <div class="tele-card">
+          <span class="tele-card__label">Com igreja</span>
+          <span class="tele-card__value">{{ history.totals.with_church }}</span>
+        </div>
+        <div class="tele-card">
+          <span class="tele-card__label">Com geo</span>
+          <span class="tele-card__value">{{ history.totals.with_geo }}</span>
+        </div>
+      </section>
+
+      <section class="tele__toolbar" aria-label="Ranking">
+        <label class="tele-field">
+          Dimensão
+          <select :value="rankingBy" aria-label="Dimensão do ranking" @change="onRankingChange">
+            <option v-for="opt in RANKING_OPTIONS" :key="opt.value" :value="opt.value">
+              {{ opt.label }}
+            </option>
+          </select>
+        </label>
+      </section>
+
+      <div v-if="histLoading && !rankings.length" class="tele__state">Carregando rankings…</div>
+      <div v-else-if="!rankings.length" class="tele__state">
+        Sem dados suficientes neste período.
+      </div>
+      <ol v-else class="tele-rank">
+        <li v-for="(item, idx) in rankings" :key="item.key" class="tele-rank__item">
+          <span class="tele-rank__pos">{{ idx + 1 }}</span>
+          <div class="tele-rank__body">
+            <div class="tele-rank__row">
+              <strong>{{ item.label }}</strong>
+              <span>{{ item.devices }} · {{ item.online }} online</span>
+            </div>
+            <div class="tele-rank__bar" aria-hidden="true">
+              <span
+                class="tele-rank__fill"
+                :style="{
+                  width: maxRankDevices
+                    ? Math.round((item.devices / maxRankDevices) * 100) + '%'
+                    : '0%',
+                }"
+              />
+            </div>
+          </div>
+        </li>
+      </ol>
+    </template>
+
+    <template v-else>
+      <p v-if="histError" class="tele__warn">
+        <i class="ti ti-alert-triangle" aria-hidden="true" /> {{ histError }}
+      </p>
+      <p class="tele__sub tele__map-hint">
+        Verde = online agora · Cinza = teve acesso nos últimos 90 dias e está offline
+      </p>
+      <div v-if="histLoading && !mapPoints.length" class="tele__state">Carregando mapa…</div>
+      <AdminTelemetryBrazilMap v-else :points="mapPoints" />
+    </template>
   </div>
 </template>
 
@@ -360,6 +508,34 @@
       justify-content: space-between;
       gap: 1rem;
       margin-bottom: 1.25rem;
+    }
+
+    &__tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 1.25rem;
+    }
+
+    &__tab {
+      border: 1px solid rgb(255 255 255 / 12%);
+      background: rgb(255 255 255 / 4%);
+      color: #bfc7d4;
+      border-radius: 999px;
+      padding: 0.35rem 0.9rem;
+      font-size: 0.85rem;
+      cursor: pointer;
+
+      &--active {
+        background: #e0895a;
+        border-color: #e0895a;
+        color: #131313;
+        font-weight: 600;
+      }
+    }
+
+    &__map-hint {
+      margin-bottom: 0.75rem;
     }
 
     &__title {
@@ -777,6 +953,62 @@
 
     &__muted {
       color: #8a93a1;
+    }
+  }
+
+  .tele-rank {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.55rem;
+
+    &__item {
+      display: grid;
+      grid-template-columns: 2rem 1fr;
+      gap: 0.75rem;
+      align-items: center;
+      background: rgb(255 255 255 / 4%);
+      border: 1px solid rgb(255 255 255 / 8%);
+      border-radius: 10px;
+      padding: 0.65rem 0.85rem;
+    }
+
+    &__pos {
+      font-weight: 700;
+      color: #e0895a;
+      text-align: center;
+    }
+
+    &__body {
+      display: grid;
+      gap: 0.35rem;
+    }
+
+    &__row {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.75rem;
+      font-size: 0.9rem;
+
+      span {
+        color: #bfc7d4;
+        white-space: nowrap;
+      }
+    }
+
+    &__bar {
+      height: 6px;
+      border-radius: 999px;
+      background: rgb(255 255 255 / 8%);
+      overflow: hidden;
+    }
+
+    &__fill {
+      display: block;
+      height: 100%;
+      background: #e0895a;
+      border-radius: inherit;
     }
   }
 
