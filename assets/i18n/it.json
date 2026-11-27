@@ -1,0 +1,779 @@
+{
+  "meta": {
+    "title": "PIANO LouvorJA — Gestione del Culto",
+    "description": "Piattaforma web per la gestione del culto: innari, Bibbia, liturgia, proiezione multischermo e altro. Gratuito e open-source."
+  },
+  "nav": {
+    "features": "Funzionalità",
+    "platforms": "Piattaforme",
+    "about": "Chi siamo",
+    "howItWorks": "Come funziona",
+    "docs": "Documentazione",
+    "contact": "Contatti",
+    "openApp": "Apri l'app",
+    "language": "Lingua",
+    "toggleTheme": "Attiva/disattiva tema chiaro/scuro"
+  },
+  "hero": {
+    "badge": "Novità: Web App (PWA) disponibile",
+    "title": "Gestione del Culto",
+    "titleHighlight": "Semplice e",
+    "subtitle": "Organizza innari, liturgia, Bibbia e proiezione in un unico posto. Accedi da qualsiasi dispositivo, senza installazione.",
+    "ctaPrimary": "Apri l'app",
+    "ctaSecondary": "Vedi le piattaforme",
+    "meta": {
+      "noInstall": "Nessuna installazione",
+      "anyDevice": "Qualsiasi dispositivo",
+      "openSource": "Open-source"
+    },
+    "preview": {
+      "currentHymn": "Inno attuale",
+      "currentHymnTitle": "#15 — Divino Comigo",
+      "active": "Attivo",
+      "next": "Prossimo",
+      "nextTitle": "Benvenuto e Lode",
+      "elapsedTime": "Tempo trascorso"
+    },
+    "titleHighlight2": "Completo"
+  },
+  "stats": {
+    "features": "Funzionalità dell'ecosistema",
+    "free": "Gratuito",
+    "installs": "Installazioni",
+    "offline": "Funziona offline"
+  },
+  "platforms": {
+    "eyebrow": "Multipiattaforma",
+    "title": "Disponibile dove ti serve",
+    "description": "Usa l'app desktop per la massima produttività, il browser come alternativa rapida, oppure il telefono con l'app Android.",
+    "desktop": {
+      "badge": "Consigliato",
+      "title": "Desktop nativo",
+      "subtitle": "Linux, macOS e Windows",
+      "description": "Esperienza completa con supporto multischermo, proiezione indipendente e scorciatoie da tastiera.",
+      "feature1": "Proiezione multischermo",
+      "feature2": "Modalità offline completa",
+      "feature3": "Scorciatoie da tastiera",
+      "cta": "Scopri di più"
+    },
+    "web": {
+      "badge": "Accedi ora",
+      "title": "Web (browser)",
+      "subtitle": "Qualsiasi PC o portatile",
+      "description": "Accedi direttamente dal browser. Ideale per un uso rapido o come alternativa quando non è installata l'app.",
+      "feature1": "Nessuna installazione",
+      "feature2": "Funziona su qualsiasi sistema",
+      "feature3": "Aggiornamenti automatici",
+      "cta": "Apri nel browser"
+    },
+    "mobile": {
+      "badge": "Novità",
+      "title": "Mobile",
+      "subtitle": "Android disponibile",
+      "description": "L'app nativa Android è già disponibile. Controlla il palco digitale direttamente dal tuo telefono.",
+      "feature1": "Android nativo disponibile",
+      "feature2": "Controllo del palco digitale",
+      "feature3": "iOS in sviluppo",
+      "cta": "Scarica l'app"
+    }
+  },
+  "notifyModal": {
+    "title": "Sii il primo a saperlo",
+    "subtitle": "Inserisci la tua email e ti avviseremo appena l'app mobile sarà disponibile.",
+    "placeholder": "tua@email.com",
+    "button": "Avvisami al lancio",
+    "loading": "Invio in corso...",
+    "success": "Tutto pronto! Sarai avvisato appena lanceremo.",
+    "errors": {
+      "invalidEmail": "Inserisci un indirizzo email valido.",
+      "alreadySubscribed": "Questa email è già iscritta.",
+      "generic": "Qualcosa è andato storto. Riprova tra poco."
+    }
+  },
+  "features": {
+    "eyebrow": "Funzionalità",
+    "title": "Tutto ciò che serve per il culto",
+    "description": "Una suite completa di strumenti integrati per gestire ogni aspetto del culto.",
+    "items": {
+      "media": {
+        "title": "Centro multimediale",
+        "description": "Gestisci album, innari e collezioni con tre modalità di riproduzione."
+      },
+      "liturgy": {
+        "title": "Liturgia",
+        "description": "Costruisci l'ordine del culto con 13 tipi di elementi, drag and drop, clonazione e conto alla rovescia."
+      },
+      "bible": {
+        "title": "Bibbia",
+        "description": "Versioni multiple con ricerca rapida, preferiti e proiezione diretta."
+      },
+      "projection": {
+        "title": "Proiezione multischermo",
+        "description": "Uscita indipendente per proiettore o TV secondaria con controllo completo."
+      },
+      "tools": {
+        "title": "Utilità",
+        "description": "Orologio, cronometro, timer e riffa integrati nel culto."
+      },
+      "player": {
+        "title": "Riproduttore avanzato",
+        "description": "Riproduzione normale, modalità canto insieme e visualizzazione sincronizzata delle slide."
+      },
+      "settings": {
+        "title": "Impostazioni",
+        "description": "Aspetto, proiezione, multischermo e preferenze completamente personalizzabili."
+      },
+      "offline": {
+        "title": "Dati locali",
+        "description": "L'app desktop funziona al 100% offline dopo aver scaricato i media. La versione web richiede la connessione a internet."
+      }
+    }
+  },
+  "about": {
+    "eyebrow": "Sul progetto",
+    "title": "Fatto dalla e per la comunità",
+    "text1": "{name} è un progetto open-source collaborativo creato per semplificare la gestione del culto.",
+    "text2": "Sviluppato dal team Piano, la piattaforma evolve continuamente grazie ai contributi della comunità. Gratuito, senza pubblicità, senza raccolta di dati.",
+    "openSource": "Open Source",
+    "stats": {
+      "free": "Gratuito",
+      "installs": "Installazioni",
+      "offline": "PWA offline"
+    }
+  },
+  "how": {
+    "eyebrow": "Come funziona",
+    "title": "Inizia in pochi minuti",
+    "description": "Quattro semplici passi per organizzare il tuo culto.",
+    "steps": {
+      "1": {
+        "title": "Apri l'app",
+        "desc": "Accedi dal browser o scarica la versione desktop. Nessuna registrazione richiesta."
+      },
+      "2": {
+        "title": "Importa il tuo innario",
+        "desc": "Aggiungi album, innari e collezioni al Centro multimediale."
+      },
+      "3": {
+        "title": "Costruisci la liturgia",
+        "desc": "Trascina gli elementi per creare l'ordine del culto con controllo dei tempi."
+      },
+      "4": {
+        "title": "Proietta e conduci",
+        "desc": "Usa la proiezione multischermo per mostrare inni, versetti e slide."
+      }
+    }
+  },
+  "cta": {
+    "title": "Pronto per iniziare?",
+    "subtitle": "Apri PIANO LouvorJA ora e organizza il tuo culto in pochi minuti. Gratuito, senza registrazione.",
+    "button": "Apri l'app",
+    "meta": {
+      "free": "100% gratuito",
+      "noInstall": "Nessuna installazione",
+      "openSource": "Open source"
+    }
+  },
+  "contact": {
+    "eyebrow": "Mettiti in contatto",
+    "title": "Contattaci",
+    "description": "Hai domande, suggerimenti o hai trovato un bug? Inviaci un messaggio e risponderemo il prima possibile.",
+    "form": {
+      "name": "Nome",
+      "namePlaceholder": "Il tuo nome",
+      "email": "Email",
+      "emailPlaceholder": "tua@email.com",
+      "subject": "Oggetto",
+      "subjectPlaceholder": "Di cosa si tratta?",
+      "message": "Messaggio",
+      "messagePlaceholder": "Scrivi il tuo messaggio...",
+      "submit": "Invia messaggio",
+      "sending": "Invio in corso...",
+      "success": "Messaggio inviato con successo! Ti risponderemo presto.",
+      "error": "Errore nell'invio. Riprova o scrivi direttamente a app@pianolouvorja.com.br"
+    },
+    "direct": "Oppure invia un'email direttamente a",
+    "responseTime": "Tempo medio di risposta: 24-48h"
+  },
+  "docs": {
+    "title": "Documentazione",
+    "subtitle": "Tutto ciò che ti serve per padroneggiare PIANO LouvorJA",
+    "search": "Cerca nella documentazione...",
+    "sections": {
+      "gettingStarted": {
+        "title": "Primi passi",
+        "description": "Configurazione iniziale e primi passi nell'app."
+      },
+      "media": {
+        "title": "Centro multimediale",
+        "description": "Gestisci album, innari e collezioni di canti."
+      },
+      "hymnal": {
+        "title": "Innario",
+        "description": "Ricerca, riproduzione ed esportazione dei canti dell'innario avventista."
+      },
+      "collections": {
+        "title": "Collezioni",
+        "description": "Crea e gestisci collezioni e playlist personalizzate per ogni occasione."
+      },
+      "liturgy": {
+        "title": "Liturgia",
+        "description": "Costruisci e organizza l'ordine completo del culto."
+      },
+      "bible": {
+        "title": "Bibbia",
+        "description": "Ricerca, preferiti e proiezione dei versetti."
+      },
+      "projection": {
+        "title": "Proiezione multischermo",
+        "description": "Configura schermi secondari e proiezione."
+      },
+      "streaming": {
+        "title": "Streaming",
+        "description": "Integrazione con OBS, vMix e piattaforme di streaming per il culto online."
+      },
+      "tools": {
+        "title": "Utilità",
+        "description": "Orologio, cronometro, timer e riffa."
+      },
+      "settings": {
+        "title": "Impostazioni",
+        "description": "Personalizza aspetto, proiezione e preferenze."
+      },
+      "shortcuts": {
+        "title": "Scorciatoie da tastiera",
+        "description": "Accelera il tuo flusso di lavoro con le scorciatoie."
+      },
+      "faq": {
+        "title": "FAQ",
+        "description": "Domande frequenti"
+      }
+    },
+    "content": {
+      "gettingStarted": {
+        "intro": "PIANO LouvorJA è un'applicazione web che funziona su qualsiasi dispositivo con un browser moderno. Nessuna installazione richiesta — basta aprirla nel browser.",
+        "steps": [
+          "Apri l'app nel browser del tuo computer o dispositivo mobile.",
+          "Per un'esperienza migliore, aggiungila alla schermata iniziale dal menu del browser.",
+          "Fatto! Inizia a organizzare il tuo culto."
+        ],
+        "tip": "Per la migliore esperienza di culto, usa un desktop con due monitor: uno per il controllo e uno per la proiezione."
+      },
+      "shortcuts": {
+        "table": {
+          "action": "Azione",
+          "shortcut": "Scorciatoia"
+        },
+        "items": [
+          {
+            "action": "Riproduci/Pausa",
+            "shortcut": "Spazio"
+          },
+          {
+            "action": "Traccia successiva",
+            "shortcut": "→"
+          },
+          {
+            "action": "Traccia precedente",
+            "shortcut": "←"
+          },
+          {
+            "action": "Volume +",
+            "shortcut": "↑"
+          },
+          {
+            "action": "Volume -",
+            "shortcut": "↓"
+          },
+          {
+            "action": "Modalità schermo intero",
+            "shortcut": "F"
+          },
+          {
+            "action": "Attiva/disattiva proiezione",
+            "shortcut": "P"
+          },
+          {
+            "action": "Ricerca rapida",
+            "shortcut": "Ctrl+K"
+          }
+        ]
+      },
+      "modules": {
+        "media": ["Riproduttore con 3 modalità", "Innari e album", "Modalità canto insieme"],
+        "hymnal": [
+          "Ricerca rapida per numero o titolo",
+          "Riproduzione sequenziale",
+          "Esportazione in PDF o stampa"
+        ],
+        "collections": [
+          "Collezioni online e personalizzate",
+          "Drag and drop verso la playlist",
+          "Modalità canto insieme con testi"
+        ],
+        "liturgy": ["13 tipi di elementi", "Drag and drop", "Conto alla rovescia per elemento"],
+        "bible": ["Versioni multiple", "Ricerca rapida", "Proiezione diretta"],
+        "projection": ["Uscita indipendente", "Multischermo", "Controllo completo"],
+        "streaming": [
+          "CSS personalizzato per la visualizzazione dei testi",
+          "Integrazione con OBS e vMix",
+          "Uscita verso YouTube e Facebook"
+        ],
+        "tools": ["Orologio e cronometro", "Timer con conto alla rovescia", "Riffa"],
+        "settings": ["Aspetto", "Proiezione", "Multischermo"]
+      }
+    },
+    "faq": {
+      "cost": {
+        "question": "PIANO LouvorJA è davvero gratuito?",
+        "answer": "Sì! PIANO LouvorJA è gratuito al 100% e open-source. Non ci sono abbonamenti, pubblicità né raccolta di dati. Tutto il codice è disponibile su GitHub."
+      },
+      "offline": {
+        "question": "Funziona senza internet?",
+        "answer": "L'app desktop funziona al 100% offline dopo aver scaricato i media. La versione web richiede la connessione a internet. Anche l'app APK funziona senza internet, purché i contenuti siano scaricati localmente e i dispositivi siano sulla stessa rete."
+      },
+      "devices": {
+        "question": "Su quali dispositivi posso usarlo?",
+        "answer": "PIANO funziona su qualsiasi dispositivo con un browser moderno: desktop (Linux, macOS, Windows), tablet e telefoni. Per la migliore esperienza di proiezione multischermo consigliamo il desktop."
+      },
+      "data": {
+        "question": "Dove sono conservati i miei dati?",
+        "answer": "L'app desktop conserva i dati (inni, liturgia, impostazioni) localmente sul tuo dispositivo. La versione web richiede la connessione a internet e non conserva dati persistenti. Quando invii il modulo di contatto, le tue informazioni (nome, email, messaggio) vengono trasmesse tramite Web3Forms per permetterci di rispondere. Consulta la nostra Informativa sulla privacy per i dettagli completi."
+      },
+      "privacy": {
+        "question": "Come proteggete la mia privacy?",
+        "answer": "PIANO LouvorJA rispetta il GDPR e la LGPD (Legge generale brasiliana sulla protezione dei dati). Il sito non utilizza cookie di tracciamento, analisi o pubblicità — solo un cookie tecnico per ricordare la tua lingua preferita. Non vendiamo né condividiamo dati con terze parti per finalità di marketing. Consulta la nostra Informativa sulla privacy per ulteriori informazioni."
+      },
+      "support": {
+        "question": "Come ottengo assistenza o segnalo un problema?",
+        "answer": "Puoi raggiungerci tramite il modulo di contatto nella pagina Contatti, oppure aprire una issue direttamente sul nostro repository GitHub. Per problemi urgenti durante un culto, vedi le voci del FAQ sulla risoluzione dei problemi qui sotto."
+      },
+      "updates": {
+        "question": "Come viene aggiornata l'applicazione?",
+        "answer": "PIANO LouvorJA è un'applicazione web. Gli aggiornamenti vengono applicati automaticamente quando ricarichi la pagina. Nessun download o installazione manuale richiesta. Hai sempre l'ultima versione."
+      },
+      "troubleshooting": {
+        "question": "E se l'applicazione non si carica o mostra un errore?",
+        "answer": "1) Ricarica la pagina (Ctrl+F5 per svuotare la cache). 2) Verifica la connessione a internet al primo accesso. 3) Cancella i dati del sito nelle impostazioni del browser. 4) Prova la modalità in incognito per escludere estensioni in conflitto. 5) Se il problema persiste, segnalalo tramite il modulo di contatto o su GitHub con browser e dettagli del dispositivo."
+      },
+      "contribute": {
+        "question": "Come posso contribuire al progetto?",
+        "answer": "Il progetto è open-source e accetta contributi su GitHub. Puoi segnalare bug, suggerire funzionalità, inviare pull request o aiutare a tradurre in altre lingue."
+      }
+    },
+    "sidebarLabel": "Sezioni della documentazione"
+  },
+  "footer": {
+    "tagline": "Gestione web del culto. Gratuita e open-source.",
+    "navLabel": "Navigazione a piè di pagina",
+    "navTitle": "Navigazione",
+    "product": "Prodotto",
+    "resources": "Risorse",
+    "company": "Organizzazione",
+    "links": {
+      "features": "Funzionalità",
+      "platforms": "Piattaforme",
+      "howItWorks": "Come funziona",
+      "docs": "Documentazione",
+      "contact": "Contatti",
+      "github": "GitHub",
+      "app": "Apri l'app"
+    },
+    "copyright": "Realizzato dal team Piano con fede e dedizione.",
+    "developedBy": "Sviluppato da",
+    "team": "Team Piano",
+    "rights": "Tutti i diritti riservati.",
+    "legalNavLabel": "Link legali",
+    "legalNavTitle": "Legale",
+    "privacy": "Informativa sulla privacy",
+    "terms": "Termini di utilizzo",
+    "social": {
+      "github": "GitHub",
+      "youtube": "YouTube",
+      "whatsapp": "WhatsApp",
+      "telegram": "Telegram"
+    }
+  },
+  "common": {
+    "loading": "Caricamento...",
+    "error": "Errore",
+    "close": "Chiudi",
+    "back": "Indietro",
+    "learnMore": "Scopri di più",
+    "skipToContent": "Vai al contenuto",
+    "allRightsReserved": "Tutti i diritti riservati."
+  },
+  "privacy": {
+    "title": "Informativa sulla privacy",
+    "metaDescription": "Come PIANO LouvorJA tratta i tuoi dati personali in conformità con la LGPD (GDPR brasiliano) e il GDPR europeo.",
+    "lastUpdated": "Ultimo aggiornamento: 30 luglio 2026",
+    "tocLabel": "Indice",
+    "intro": "Questa Informativa sulla privacy descrive come PIANO LouvorJA tratta i dati personali raccolti tramite questo sito. Ci impegniamo a proteggere la tua privacy in conformità con la Legge generale brasiliana sulla protezione dei dati (LGPD — Legge n. 13.709/2018). Il servizio è operato in Brasile; se accedi dall'Italia, si applica anche il Regolamento generale sulla protezione dei dati (GDPR — Regolamento UE 2016/679), la cui autorità di controllo è il Garante per la protezione dei dati personali.",
+    "sections": {
+      "data": {
+        "title": "1. Dati che raccogliamo",
+        "body": [
+          "1.1 Dati che fornisci",
+          "Quando compili il modulo di contatto, raccogliamo:",
+          "Nome",
+          "Indirizzo email",
+          "Oggetto del messaggio",
+          "Contenuto del messaggio",
+          "1.2 Dati tecnici",
+          "Cookie tecnico piano_lang: memorizza solo la tua preferenza linguistica. Non contiene identificatori personali.",
+          "Non utilizziamo cookie di tracciamento, analisi, pubblicità o profilazione.",
+          "1.3 Dati inviati dalle app",
+          "Mentre sono aperte, le app PIANO LouvorJA (desktop, mobile e web) inviano ogni 5 minuti un segnale di stato con: un identificatore anonimo dell'installazione (generato sul dispositivo, non collegato al tuo account), piattaforma, versione dell'app, sistema operativo, lingua, fuso orario e il distretto e la chiesa che hai inserito.",
+          "Dall'indirizzo IP di quel segnale deriviamo solo la città e lo stato approssimativi. L'indirizzo IP non viene conservato.",
+          "When you browse the site, we collect on an aggregated basis:",
+          "Country of origin of the visit (derived from the HTTP header of the CDN provider, e.g. Cloudflare/Vercel) — we do not use GPS-based geolocation.",
+          "IP address processed exclusively as a hash (SHA-256 with a secret salt). The IP address is NEVER stored in plain text and cannot be reversed to identify you.",
+          "Visits counter per country per day. There is no individual profile, browsing history, or link to your identity."
+        ]
+      },
+      "purpose": {
+        "title": "2. Finalità del trattamento",
+        "body": [
+          "I dati del modulo di contatto sono usati esclusivamente per:",
+          "Rispondere alla tua richiesta",
+          "Fornire assistenza tecnica",
+          "Inviare le comunicazioni richieste",
+          "Il segnale di stato delle app ci indica quanti dispositivi sono in uso, in quali regioni e versioni, così da poter dare priorità a correzioni e miglioramenti."
+        ]
+      },
+      "sharing": {
+        "title": "3. Condivisione dei dati",
+        "body": [
+          "3.1 Web3Forms",
+          "Il modulo di contatto usa Web3Forms (USA) per elaborare gli invii. I dati sono trasmessi a Web3Forms per l'inoltro alla nostra email.",
+          "Responsabile del trattamento: Web3Forms",
+          "Paese: Stati Uniti",
+          "Finalità: inoltro del messaggio",
+          "3.2 Provider di hosting",
+          "Il sito è ospitato su un'infrastruttura cloud che può registrare dati tecnici di accesso (IP, timestamp, user-agent).",
+          "3.3 NON condividiamo dati con",
+          "Società pubblicitarie",
+          "Social network",
+          "Broker di dati",
+          "Terze parti per finalità di marketing"
+        ]
+      },
+      "international": {
+        "title": "4. Trasferimento internazionale",
+        "body": [
+          "I dati del modulo di contatto sono elaborati da Web3Forms negli Stati Uniti. Questo trasferimento internazionale è necessario per fornire il servizio del modulo e rientra nelle ipotesi legali dell'art. 33 della LGPD; per il GDPR, nella deroga dell'art. 49(1)(d)."
+        ]
+      },
+      "rights": {
+        "title": "5. I tuoi diritti (art. 18 LGPD; art. 15 GDPR)",
+        "body": [
+          "Hai i seguenti diritti sui tuoi dati personali:",
+          "Conferma dell'esistenza del trattamento",
+          "Accesso ai dati",
+          "Correzione di dati incompleti, inesatti o non aggiornati",
+          "Anonimizzazione, blocco o eliminazione di dati non necessari",
+          "Portabilità dei dati",
+          "Eliminazione dei dati personali",
+          "Informazioni sulla condivisione",
+          "Come esercitare i diritti",
+          "Invia un'email a contato@pianolouvorja.com.br con:",
+          "Nome completo",
+          "Descrizione del diritto che vuoi esercitare",
+          "Indirizzo email registrato",
+          "Tempo di risposta: entro 15 giorni (art. 19 LGPD; art. 12(3) GDPR)."
+        ]
+      },
+      "security": {
+        "title": "6. Misure di sicurezza",
+        "body": [
+          "Adottiamo le seguenti misure tecniche e organizzative:",
+          "Cifratura HTTPS/TLS in tutte le comunicazioni",
+          "Nessuna conservazione di password (nessun sistema di login)",
+          "Minimizzazione dei dati (raccogliamo solo il necessario)",
+          "Cookie tecnici senza identificazione personale",
+          "Accesso ai dati riservato al team"
+        ]
+      },
+      "retention": {
+        "title": "7. Conservazione dei dati",
+        "body": [
+          "Modulo di contatto: conservato per il tempo necessario a rispondere, poi fino a 12 mesi per archivio storico, infine eliminato.",
+          "Log di accesso: secondo la policy del provider di hosting.",
+          "Dati locali dell'app: restano sul tuo dispositivo finché non li rimuovi."
+        ]
+      },
+      "cookies": {
+        "title": "8. Cookie",
+        "body": [
+          "Non utilizziamo cookie di terze parti, di analisi o pubblicitari.",
+          "Country-level audience telemetry is aggregated and anonymous (country + hashed IP in daily counters); it uses no tracking cookies and does not identify individuals."
+        ],
+        "table": {
+          "header": {
+            "cookie": "Cookie",
+            "type": "Tipo",
+            "purpose": "Finalità",
+            "duration": "Durata"
+          },
+          "rows": [
+            {
+              "name": "piano_lang",
+              "type": "Tecnico",
+              "purpose": "Ricorda la lingua preferita",
+              "duration": "Sessione"
+            }
+          ]
+        }
+      },
+      "children": {
+        "title": "9. Minori",
+        "body": [
+          "L'app non è rivolta ai minori e non raccoglie consapevolmente dati di persone sotto i 18 anni. I contenuti (inni, liturgia, testi biblici) sono di natura religiosa e non implicano la raccolta di dati sensibili."
+        ]
+      },
+      "changes": {
+        "title": "10. Modifiche a questa Informativa",
+        "body": [
+          "Possiamo aggiornare questa Informativa in qualsiasi momento. L'ultima versione sarà sempre disponibile su questa pagina, con la data di aggiornamento in alto. Consigliamo di consultarla periodicamente."
+        ]
+      },
+      "dpo": {
+        "title": "11. Responsabile della protezione dei dati (DPO)",
+        "body": [
+          "In conformità con l'art. 41 della LGPD, le domande possono essere inviate a contato@pianolouvorja.com.br. Ai sensi del GDPR (art. 37), il punto di riferimento per le questioni relative ai dati è lo stesso indirizzo."
+        ]
+      },
+      "anpd": {
+        "title": "12. Autorità di protezione dei dati",
+        "body": [
+          "Puoi contattare l'ANPD (Autorità nazionale brasiliana per la protezione dei dati) per presentare un reclamo; dall'Italia, il Garante per la protezione dei dati personali:",
+          "Sito: {link}",
+          "Email: ouvidoria@anpd.gov.br"
+        ],
+        "link": {
+          "url": "https://www.gov.br/anpd",
+          "text": "www.gov.br/anpd"
+        }
+      }
+    }
+  },
+  "terms": {
+    "title": "Termini di utilizzo",
+    "metaDescription": "Termini e condizioni di utilizzo di PIANO LouvorJA.",
+    "lastUpdated": "Ultimo aggiornamento: 30 luglio 2026",
+    "tocLabel": "Indice",
+    "intro": "Benvenuto in PIANO LouvorJA. Accedendo e utilizzando questo sito e questa applicazione, accetti i presenti Termini di utilizzo. Leggili attentamente.",
+    "sections": {
+      "acceptance": {
+        "title": "1. Accettazione dei Termini",
+        "body": [
+          "L'utilizzo di PIANO LouvorJA implica la piena accettazione dei presenti Termini. Se non concordi con alcuna disposizione, non utilizzare l'applicazione."
+        ]
+      },
+      "service": {
+        "title": "2. Natura del servizio",
+        "body": [
+          "PIANO LouvorJA è un'applicazione web gratuita e open-source pensata per assistere la gestione del culto, tra cui:",
+          "Innario digitale e riproduzione musicale",
+          "Gestione della liturgia e del programma del culto",
+          "Proiezione di testi e brani biblici",
+          "Strumenti di supporto (timer, riffa, ecc.)",
+          "L'app è destinata a un uso religioso e comunitario, senza finalità commerciali."
+        ]
+      },
+      "license": {
+        "title": "3. Licenza",
+        "body": [
+          "3.1 Software",
+          "Il codice sorgente è distribuito con licenza open-source. Vedi il {link} per i dettagli.",
+          "3.2 Contenuti",
+          "I contenuti testuali (inni, testi, letteratura) appartengono ai rispettivi titolari dei diritti. PIANO LouvorJA:",
+          "Non rivendica la paternità dei contenuti",
+          "Non commercializza direttamente i contenuti",
+          "Rispetta il diritto d'autore ai sensi della Legge 9.610/98 e del D.Lgs. 633/1941"
+        ],
+        "link": {
+          "url": "https://github.com/Piano-Louvor-JA",
+          "text": "repository GitHub"
+        }
+      },
+      "user": {
+        "title": "4. Responsabilità dell'utente",
+        "body": [
+          "Utilizzando PIANO LouvorJA, ti impegni a:",
+          "Usare l'app in modo etico e conforme alla legge applicabile",
+          "Non usarla per scopi illegali, diffamatori o che violino diritti di terzi",
+          "Rispettare i diritti d'autore delle opere mostrate",
+          "Non tentare di compromettere la sicurezza o la disponibilità",
+          "Not attempt to compromise security or availability"
+        ]
+      },
+      "responsibility": {
+        "title": "5. Responsabilità",
+        "body": [
+          "5.1 Natura del servizio",
+          "PIANO LouvorJA è fornito \"COSÌ COM'È\", senza garanzie di alcun tipo. Non garantiamo che:",
+          "Il servizio sarà ininterrotto, sicuro o esente da errori",
+          "I risultati saranno accurati o affidabili",
+          "Qualsiasi errore o difetto verrà corretto",
+          "5.2 Limitazione di responsabilità",
+          "Nella misura massima consentita dalla legge, PIANO LouvorJA non risponde di:",
+          "Danni diretti, indiretti, incidentali o consequenziali",
+          "Perdita di dati (effettua copie di backup regolari)",
+          "Interruzione del servizio durante l'uso critico",
+          "Contenuti di terzi o link esterni"
+        ]
+      },
+      "ip": {
+        "title": "6. Proprietà intellettuale",
+        "body": [
+          "6.1 Software",
+          "Il codice sorgente è protetto dal diritto d'autore e distribuito con licenza open-source.",
+          "6.2 Marchio",
+          "\"PIANO LouvorJA\" e \"LouvorJA\" sono marchi del progetto. L'uso non autorizzato non è consentito.",
+          "6.3 Contenuti di terzi",
+          "Inni, testi e letteratura appartengono ai rispettivi autori ed editori. L'organizzazione di questi contenuti non trasferisce alcun diritto di proprietà intellettuale."
+        ]
+      },
+      "donations": {
+        "title": "7. Donazioni e contributi",
+        "body": [
+          "PIANO LouvorJA è gratuito e open-source. Sono accettati contributi volontari via GitHub (pull request, issue, traduzioni). Eventuali donazioni non costituiscono un rapporto di consumo né garantiscono vantaggi."
+        ]
+      },
+      "privacy": {
+        "title": "8. Privacy e dati",
+        "body": [
+          "Il trattamento dei dati personali è disciplinato dalla nostra {link}, che fa parte integrante dei presenti Termini. Il servizio è operato in Brasile sotto la LGPD; dall'Italia si applica anche il GDPR (Regolamento UE 2016/679) — Garante per la protezione dei dati personali.",
+          "Technical audience data (country of origin and hashed IP address, aggregated into daily counters) is collected automatically for statistical purposes.",
+          "The IP address is never stored in plain text and does not allow identifying individual users."
+        ],
+        "link": {
+          "url": "/privacy",
+          "text": "Informativa sulla privacy"
+        }
+      },
+      "modifications": {
+        "title": "9. Modifiche",
+        "body": [
+          "Possiamo modificare i presenti Termini in qualsiasi momento. Le modifiche hanno effetto immediato alla pubblicazione. È responsabilità dell'utente consultarli periodicamente."
+        ]
+      },
+      "termination": {
+        "title": "10. Risoluzione",
+        "body": [
+          "Puoi smettere di usare l'app in qualsiasi momento chiudendo il browser. Non esistendo un sistema di account, non è richiesta una formale disdetta."
+        ]
+      },
+      "law": {
+        "title": "11. Legge applicabile",
+        "body": [
+          "I presenti Termini sono disciplinati dalle leggi della Repubblica Federale del Brasile. Eventuali controversie saranno risolte presso il foro del domicilio dell'utente."
+        ]
+      },
+      "misc": {
+        "title": "12. Disposizioni finali",
+        "body": [
+          "Se una disposizione dei presenti Termini dovesse risultare invalida o inapplicabile, le restanti disposizioni restano in pieno vigore. La tolleranza di eventuali violazioni non costituisce rinuncia a futuri diritti."
+        ]
+      }
+    }
+  },
+  "error": {
+    "title": "Pagina non trovata",
+    "serverErrorTitle": "Errore del server",
+    "errorCode404": "404",
+    "errorCode500": "500",
+    "desc404": "La pagina che cerchi non esiste o è stata spostata.",
+    "desc500": "Qualcosa è andato storto da parte nostra. Il nostro team è stato avvisato — riprova tra poco.",
+    "backHome": "Torna alla home",
+    "reportIssue": "Segnala il problema",
+    "metaDesc404": "Pagina non trovata — PIANO LouvorJA",
+    "metaDesc500": "Errore del server — PIANO LouvorJA"
+  },
+  "newsletter": {
+    "title": "Ricevi gli aggiornamenti del progetto",
+    "subtitle": "Sii avvisato su nuove versioni, funzionalità e aggiornamenti. Nessuno spam.",
+    "placeholder": "La tua migliore email",
+    "button": "Iscriviti",
+    "loading": "Iscrizione in corso...",
+    "success": "Iscrizione confermata! Riceverai gli aggiornamenti nella tua email.",
+    "errors": {
+      "invalidEmail": "Email non valida. Verifica e riprova.",
+      "alreadySubscribed": "Questa email è già iscritta.",
+      "generic": "Iscrizione non riuscita. Riprova.",
+      "rateLimited": "Troppi tentativi. Attendi qualche minuto.",
+      "serviceUnavailable": "Servizio non disponibile. Riprova più tardi."
+    }
+  },
+  "releases": {
+    "metaTitle": "Note di rilascio — PIANO LouvorJA",
+    "metaDescription": "Cronologia delle versioni e delle modifiche di PIANO LouvorJA. Segui nuove funzionalità, miglioramenti e correzioni.",
+    "title": "Note di rilascio",
+    "subtitle": "Segui ogni aggiornamento di PIANO LouvorJA. Nuove funzionalità, miglioramenti e correzioni.",
+    "loading": "Caricamento versioni...",
+    "error": "Impossibile caricare le versioni in questo momento.",
+    "noReleases": "Nessuna versione pubblicata.",
+    "latest": "Ultima",
+    "highlights": "In evidenza",
+    "pullRequests": "PR",
+    "changelog": "Changelog",
+    "viewOnGithub": "View on GitHub",
+    "allVersions": "Tutte le versioni",
+    "products": {
+      "web": "Web",
+      "desktop": "Desktop",
+      "mobile": "Mobile"
+    }
+  },
+  "community": {
+    "eyebrow": "Comunità",
+    "title": "Chi usa, testa e contribuisce",
+    "subtitle": "Tester, appassionati e suggeritori che aiutano PIANO LouvorJA a crescere. Vuoi unirti?",
+    "roles": {
+      "tester": "Tester",
+      "enthusiast": "Appassionato",
+      "suggester": "Suggeritore"
+    },
+    "since": "Dal {since}",
+    "link": "Vedi profilo",
+    "spot": "Questo posto è tuo — vieni a testare",
+    "cta": "Unisciti alla comunità",
+    "whatsapp": "WhatsApp Support",
+    "telegram": "Devs on Telegram"
+  },
+  "admin": {
+    "comunidade": {
+      "tab": "In attesa",
+      "tabMembros": "Membri",
+      "tabEquipe": "Team",
+      "subtitulo": "Moderazione in attesa, gestione membri e team — in un unico pannello.",
+      "filtroStatus": "Stato",
+      "todos": "Tutti",
+      "carregando": "Caricamento…",
+      "recarregar": "↻ Ricarica",
+      "carregarMais": "Carica altri",
+      "erroCarregar": "Caricamento non riuscito",
+      "semMembros": "Nessun membro in questo filtro.",
+      "semEquipe": "Nessun membro dello staff trovato.",
+      "roles": "Ruoli",
+      "salvar": "Salva",
+      "salvando": "Salvataggio…",
+      "salvoOk": "Ruoli aggiornati ✓",
+      "erroSalvar": "Salvataggio non riuscito",
+      "aprovar": "Approva",
+      "aprovadoOk": "Membro approvato ✓",
+      "inativar": "Disattiva",
+      "inativadoOk": "Membro disattivato ✓",
+      "reativar": "Riattiva",
+      "gm": "GM (amministratore)",
+      "role": {
+        "dev": "Sviluppatore",
+        "tester": "Tester",
+        "conteudo": "Contenuti",
+        "curador": "Curatore",
+        "staff": "Staff"
+      }
+    }
+  }
+}
