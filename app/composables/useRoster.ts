@@ -1,3 +1,5 @@
+// onMounted vem do auto-import do Nuxt — import explícito quebra o stub global
+// de testes (vi.stubGlobal) e o comportamento SSG do composable.
 import { computed, ref } from 'vue'
 import { teamMembers, type TeamMember } from '~/data/team'
 
@@ -80,7 +82,15 @@ export function useRoster(role: RosterRole | string) {
       if (!Array.isArray(data) || !data.every(isRosterMember)) {
         throw new Error('roster: payload inválido')
       }
-      members.value = data
+      // ponytail: dedupe simples por github/email — a API pode devolver a mesma
+      // pessoa em 2 docs (seed + sync Sheet); unificar roles no lado cliente.
+      const seen = new Map<string, RosterMember>()
+      for (const m of data) {
+        const key = (m.github ?? m.id).toLowerCase()
+        const prev = seen.get(key)
+        seen.set(key, prev ? { ...prev, roles: [...new Set([...prev.roles, ...m.roles])] } : m)
+      }
+      members.value = [...seen.values()]
       error.value = false
     } catch {
       error.value = true

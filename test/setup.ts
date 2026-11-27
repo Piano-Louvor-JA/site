@@ -35,6 +35,15 @@ const mockSetLocale = vi.fn((code: string) => {
 
 vi.stubGlobal('useI18n', () => ({
   t: (key: string) => getNestedValue(ptBR, key),
+  te: (key: string) => {
+    const value = key.split('.').reduce<unknown>((acc, part) => {
+      if (acc && typeof acc === 'object' && part in (acc as Record<string, unknown>)) {
+        return (acc as Record<string, unknown>)[part]
+      }
+      return undefined
+    }, ptBR)
+    return value !== undefined
+  },
   locale: sharedLocale,
   locales: {
     value: [

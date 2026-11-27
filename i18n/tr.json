@@ -1172,6 +1172,9 @@
       "avatarAlt": "{name} adlı kişinin GitHub avatarı",
       "more": "Daha fazla bilgi"
     },
+    "devs": {
+      "title": "Geliştiriciler"
+    },
     "members": {
       "ezequiasfonseca": {
         "role": "Kurucu · Liderlik ve Masaüstü Uygulaması",
@@ -1196,6 +1199,9 @@
       "elomarxa": {
         "role": "Dijital Tasarım, UI ve UX",
         "bio": "Görsel varlık üretiminde deneyimli ve UI/UX becerilerini sürekli geliştiren dijital tasarımcı."
+      },
+      "default": {
+        "role": "Ekip üyesi"
       }
     },
     "work": {

@@ -1160,6 +1160,9 @@
       "avatarAlt": "{name}의 GitHub 아바타",
       "more": "자세히 보기"
     },
+    "devs": {
+      "title": "개발자"
+    },
     "members": {
       "ezequiasfonseca": {
         "role": "창립자 · 리더십 및 데스크톱 앱",
@@ -1184,6 +1187,9 @@
       "elomarxa": {
         "role": "디지털 디자인, UI 및 UX",
         "bio": "비주얼 에셋 제작 경험이 풍부한 디지털 디자이너로 UI와 UX 역량을 개발 중입니다."
+      },
+      "default": {
+        "role": "팀 멤버"
       }
     },
     "work": {

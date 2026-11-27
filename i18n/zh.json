@@ -1148,6 +1148,9 @@
       "avatarAlt": "{name} 的 GitHub 头像",
       "more": "了解更多"
     },
+    "devs": {
+      "title": "开发者"
+    },
     "members": {
       "ezequiasfonseca": {
         "role": "创始人 · 领导与桌面应用",
@@ -1172,6 +1175,9 @@
       "elomarxa": {
         "role": "数字设计、UI 和 UX",
         "bio": "数字设计师，在视觉资产制作方面经验丰富，并不断提升 UI 和 UX 技能。"
+      },
+      "default": {
+        "role": "团队成员"
       }
     },
     "work": {
