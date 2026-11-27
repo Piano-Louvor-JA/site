@@ -3,6 +3,30 @@
 All notable changes to this project are documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.16.0](https://github.com/Piano-Louvor-JA/site/compare/v1.15.0...v1.16.0) (2026-11-27)
+
+### Features
+
+- **admin:** rankings e mapa BR na telemetria (90d) ([2fe86f3](https://github.com/Piano-Louvor-JA/site/commit/2fe86f36cc9583b1d40cde27a42d40c41e9a4eb3))
+
+### Bug Fixes
+
+- **assets:** favicon.svg arte oficial transparente ([b3a69d0](https://github.com/Piano-Louvor-JA/site/commit/b3a69d0e4267a9fc2fb5a5ad272eca7a576c7d40))
+
+### Tests
+
+- **admin:** cobre TelemetryBrazilMap e useTelemetryHistory ([f20aadb](https://github.com/Piano-Louvor-JA/site/commit/f20aadb81121655a71bd0fba0b9e3d87a050a529))
+
+### Continuous Integration
+
+- bump Node 24.18.0 → 26 (semantic-release exige >=26.13) ([6dc8ddc](https://github.com/Piano-Louvor-JA/site/commit/6dc8ddcf6e859796c14dc95235162f5559565dac))
+
+### Miscellaneous Chores
+
+- integra origin/staging (pós site[#185](https://github.com/Piano-Louvor-JA/site/issues/185)) em feat/telemetry-history-map ([8b12637](https://github.com/Piano-Louvor-JA/site/commit/8b126374e4bb938e35e595c7d092a4d79332f23f))
+- integra origin/staging em feat/telemetry-history-map ([feee415](https://github.com/Piano-Louvor-JA/site/commit/feee4153f64c08164d3d76bbfdac70ff6057c99f))
+- **sync:** main → staging após v1.15.0 ([07d6524](https://github.com/Piano-Louvor-JA/site/commit/07d65241d9f2e40ee5cc66d7616b7b3dcb364fbe))
+
 ## [1.15.0](https://github.com/Piano-Louvor-JA/site/compare/v1.14.0...v1.15.0) (2026-11-27)
 
 ### Features
