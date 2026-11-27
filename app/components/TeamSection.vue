@@ -17,7 +17,7 @@
   function memberBio(member: DisplayMember): string | null {
     return te(`team.members.${member.login}.bio`)
       ? t(`team.members.${member.login}.bio`)
-      : member.bio
+      : (member.bio ?? null)
   }
 
   /**
