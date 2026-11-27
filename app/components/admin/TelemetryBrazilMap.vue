@@ -4,6 +4,8 @@
 
   const props = defineProps<{
     points: MapPoint[]
+    /** Total “online agora” da aba Agora (todos os dispositivos). */
+    liveOnline?: number
   }>()
 
   interface Placed extends MapPoint {
@@ -27,28 +29,44 @@
     return out
   })
 
-  const onlineCount = computed(() => placed.value.filter((p) => p.is_online).length)
-  const offlineCount = computed(() => placed.value.filter((p) => !p.is_online).length)
+  /** Dispositivos online nos pontos colocados no mapa (não o nº de bolinhas). */
+  const onlineDevices = computed(() =>
+    placed.value.reduce((sum, p) => sum + Math.max(0, p.online), 0),
+  )
+  /** Dispositivos do período no mapa que não estão online agora. */
+  const offlineDevices = computed(() =>
+    placed.value.reduce((sum, p) => sum + Math.max(0, p.devices - p.online), 0),
+  )
+
+  const unmappedOnline = computed(() => {
+    const live = props.liveOnline
+    if (live == null || !Number.isFinite(live)) return 0
+    return Math.max(0, Math.floor(live) - onlineDevices.value)
+  })
 </script>
 
 <template>
   <div class="tmap">
     <div class="tmap__legend" aria-hidden="true">
-      <span><i class="tmap__dot tmap__dot--on" /> Online agora ({{ onlineCount }})</span>
+      <span><i class="tmap__dot tmap__dot--on" /> Online agora ({{ onlineDevices }})</span>
       <span
         ><i class="tmap__dot tmap__dot--off" /> Acesso nos últimos 90 dias ({{
-          offlineCount
+          offlineDevices
         }})</span
       >
     </div>
+    <p v-if="unmappedOnline > 0" class="tmap__gap">
+      {{ unmappedOnline }} online agora sem UF/Brasil no mapa (não dá para posicionar).
+    </p>
     <div class="tmap__canvas" role="img" aria-label="Mapa do Brasil com acessos">
-      <svg class="tmap__br" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
-        <!-- Silhueta simplificada do Brasil (aprox.) -->
-        <path
-          class="tmap__land"
-          d="M42 8 L55 6 L62 10 L70 14 L74 22 L78 30 L80 40 L78 52 L74 62 L68 72 L60 82 L52 88 L44 90 L36 86 L30 78 L26 68 L22 58 L18 48 L16 38 L18 28 L24 18 L32 12 Z"
-        />
-      </svg>
+      <img
+        class="tmap__br"
+        src="/maps/mapa-brazil.svg"
+        alt=""
+        width="613"
+        height="639"
+        draggable="false"
+      />
       <button
         v-for="(p, i) in placed"
         :key="`${p.region}-${p.city ?? ''}-${i}`"
@@ -83,6 +101,11 @@
     align-items: center;
     gap: 0.4rem;
   }
+  .tmap__gap {
+    margin: 0;
+    font-size: 0.85rem;
+    color: var(--admin-muted, #94a3b8);
+  }
   .tmap__dot {
     width: 0.7rem;
     height: 0.7rem;
@@ -98,8 +121,9 @@
   }
   .tmap__canvas {
     position: relative;
-    width: min(100%, 640px);
-    aspect-ratio: 1 / 1.05;
+    width: min(100%, 560px);
+    /* Proporção do mapa-brazil.svg (612.51611 × 639.04297) */
+    aspect-ratio: 612.51611 / 639.04297;
     margin-inline: auto;
     background: linear-gradient(180deg, #e8f1ff 0%, #f8fafc 100%);
     border: 1px solid var(--admin-border, #e2e8f0);
@@ -108,14 +132,13 @@
   }
   .tmap__br {
     position: absolute;
-    inset: 4% 8%;
-    width: 84%;
-    height: 92%;
-  }
-  .tmap__land {
-    fill: #c7e0c4;
-    stroke: #7a9e76;
-    stroke-width: 0.4;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    display: block;
+    pointer-events: none;
+    user-select: none;
   }
   .tmap__pin {
     position: absolute;
