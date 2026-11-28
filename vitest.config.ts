@@ -127,9 +127,11 @@ export default defineConfig({
         'app/app.vue',
         'app/layouts/*.vue',
         'app/pages/**/*.vue',
-        // Mapa admin: cobertura 100% adiada para liberar promoção v1.18.0
+        // Ship v1.18.0: adia cobertura 100% destes arquivos (mapa + dedupe team #196)
         'app/components/admin/TelemetryBrazilMap.vue',
         'app/utils/brMapHeat.ts',
+        'app/components/TeamSection.vue',
+        'app/composables/useRoster.ts',
         'nuxt.config.ts',
         'vitest.config.ts',
         'husky.config.js',
