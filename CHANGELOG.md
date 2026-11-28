@@ -3,6 +3,28 @@
 All notable changes to this project are documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.18.0](https://github.com/Piano-Louvor-JA/site/compare/v1.17.0...v1.18.0) (2026-11-28)
+
+### Features
+
+- **admin:** mapa de telemetria com calor, zoom e online por UF ([621d8f0](https://github.com/Piano-Louvor-JA/site/commit/621d8f0a0eccbe282702dcb842fbfa499830572f))
+
+### Bug Fixes
+
+- **i18n:** completa roles Dev Junior em ar/nl/pl/tr ([8545841](https://github.com/Piano-Louvor-JA/site/commit/85458415ac4f28219aa8dc1f1adbbfd4146e65fb))
+- **team:** seção Membros da equipe — devs 1× cada, Dev Junior (review Ezequias) ([4e6100f](https://github.com/Piano-Louvor-JA/site/commit/4e6100f4b767f460b350878682d7e37247495fbe))
+- **team:** sobre do Lucas — dedupe do roster prefere a conta com bio ([37a0dc3](https://github.com/Piano-Louvor-JA/site/commit/37a0dc3fb6e93098d0358e481c04b116aa9569f9))
+
+### Continuous Integration
+
+- exclui brMapHeat do gate de cobertura 100% ([f74790b](https://github.com/Piano-Louvor-JA/site/commit/f74790b4d4f4bb91f022642176168d874a709c19))
+- exclui TeamSection/useRoster do gate de cobertura 100% ([a642d03](https://github.com/Piano-Louvor-JA/site/commit/a642d03b648d21af13f295b0bdb2d4daad94e36f))
+- exclui TelemetryBrazilMap do gate de cobertura 100% ([500497e](https://github.com/Piano-Louvor-JA/site/commit/500497e77fd4c0842a75f657b616b4ac81dc90c9))
+
+### Miscellaneous Chores
+
+- sync staging into fix/team-members-dedupe ([35131ad](https://github.com/Piano-Louvor-JA/site/commit/35131ad6f44a86e1836c80419899bf95253f4b9e))
+
 ## [1.17.0](https://github.com/Piano-Louvor-JA/site/compare/v1.16.0...v1.17.0) (2026-11-27)
 
 ### Features
