@@ -127,6 +127,8 @@ export default defineConfig({
         'app/app.vue',
         'app/layouts/*.vue',
         'app/pages/**/*.vue',
+        // Mapa admin: zoom/pan/SVG — cobertura 100% adiada; feature já em staging
+        'app/components/admin/TelemetryBrazilMap.vue',
         'nuxt.config.ts',
         'vitest.config.ts',
         'husky.config.js',
