@@ -485,8 +485,8 @@
         <i class="ti ti-alert-triangle" aria-hidden="true" /> {{ histError }}
       </p>
       <p class="tele__sub tele__map-hint">
-        Verde = online agora · Cinza = teve acesso nos últimos 90 dias e está offline · só Brasil
-        com UF (sem localização não entra no mapa)
+        Verde/cinza = online/offline · UF mais acessada fica com verde mais forte · zoom mostra o
+        nome da cidade · só Brasil com UF
       </p>
       <div v-if="histLoading && !mapPoints.length" class="tele__state">Carregando mapa…</div>
       <AdminTelemetryBrazilMap v-else :points="mapPoints" :live-online="summary.online" />

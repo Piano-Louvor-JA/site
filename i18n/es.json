@@ -1173,7 +1173,7 @@
       "more": "Saber más"
     },
     "devs": {
-      "title": "Desarrolladores"
+      "title": "Miembros del equipo"
     },
     "members": {
       "ezequiasfonseca": {
@@ -1202,7 +1202,9 @@
       },
       "default": {
         "role": "Miembro del equipo"
-      }
+      },
+      "Lipesantos658": { "role": "Dev Junior" },
+      "venatornocte": { "role": "Dev Junior" }
     },
     "work": {
       "title": "Cómo trabajamos",

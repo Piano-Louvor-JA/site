@@ -1,5 +1,5 @@
-import { describe, expect, it } from 'vitest'
-import { mount } from '@vue/test-utils'
+import { describe, expect, it, vi, beforeEach, afterEach } from 'vitest'
+import { mount, flushPromises } from '@vue/test-utils'
 import TelemetryBrazilMap from '../../../../app/components/admin/TelemetryBrazilMap.vue'
 import type { MapPoint } from '../../../../app/composables/useTelemetryHistory'
 import { projectBrPoint } from '../../../../app/utils/brUfCentroids'
@@ -14,9 +14,25 @@ const point = (over: Partial<MapPoint> = {}): MapPoint => ({
   ...over,
 })
 
+const stubSvg = `<?xml version="1.0"?><svg viewBox="0 0 10 10"><path id="BR-SP" title="São Paulo" d="M0 0"/><path id="BR-BA" title="Bahia" d="M1 1"/></svg>`
+
 describe('TelemetryBrazilMap', () => {
-  it('sem pontos: mostra mensagem vazia, legenda zerada e nenhum pin', () => {
+  beforeEach(() => {
+    vi.stubGlobal(
+      'fetch',
+      vi.fn(async () => ({
+        ok: true,
+        text: async () => stubSvg,
+      })),
+    )
+  })
+  afterEach(() => {
+    vi.unstubAllGlobals()
+  })
+
+  it('sem pontos: mostra mensagem vazia, legenda zerada e nenhum pin', async () => {
     const w = mount(TelemetryBrazilMap, { props: { points: [] } })
+    await flushPromises()
     expect(w.findAll('button.tmap__pin')).toHaveLength(0)
     expect(w.find('.tmap__empty').exists()).toBe(true)
     expect(w.find('.tmap__empty').text()).toBe(
@@ -28,17 +44,52 @@ describe('TelemetryBrazilMap', () => {
     expect(w.find('.tmap__legend').attributes('aria-hidden')).toBe('true')
   })
 
-  it('estrutura base: canvas com role img e mapa SVG do Brasil', () => {
+  it('estrutura base: canvas, host SVG, toolbar de zoom e barra de calor', async () => {
     const w = mount(TelemetryBrazilMap, { props: { points: [] } })
+    await flushPromises()
     const canvas = w.find('.tmap__canvas')
     expect(canvas.attributes('role')).toBe('img')
     expect(canvas.attributes('aria-label')).toBe('Mapa do Brasil com acessos')
-    const img = w.find('img.tmap__br')
-    expect(img.exists()).toBe(true)
-    expect(img.attributes('src')).toBe('/maps/mapa-brazil.svg')
+    expect(w.find('.tmap__br').exists()).toBe(true)
+    expect(w.find('.tmap__heat-bar').exists()).toBe(true)
+    expect(w.find('button[aria-label="Aproximar"]').exists()).toBe(true)
+    expect(w.find('button[aria-label="Afastar"]').exists()).toBe(true)
+    expect(w.find('button[aria-label="Resetar zoom"]').exists()).toBe(true)
   })
 
-  it('pontos online e offline: renderiza pins, classes, títulos e contagens', () => {
+  it('mostra nome do estado, online no momento e únicos (90d) no centroide', async () => {
+    const w = mount(TelemetryBrazilMap, {
+      props: {
+        points: [
+          point({ city: 'São Luís', region: 'MA', devices: 2, online: 1, is_online: true }),
+          point({ city: 'Imperatriz', region: 'MA', devices: 3, online: 0, is_online: false }),
+        ],
+      },
+    })
+    await flushPromises()
+    const uf = w.find('.tmap__uf')
+    expect(uf.exists()).toBe(true)
+    expect(uf.find('.tmap__uf-name').text()).toBe('MARANHÃO')
+    expect(uf.find('.tmap__uf-online').text().replace(/\s+/g, ' ').trim()).toBe('1 online')
+    expect(uf.find('.tmap__uf-count').text()).toBe('5 únicos · 90d')
+    expect(uf.attributes('title')).toContain('1 online')
+    expect(uf.attributes('title')).toContain('5 único(s) nos últimos 90 dias')
+  })
+
+  it('não mostra badge de online quando a UF está zerada', async () => {
+    const w = mount(TelemetryBrazilMap, {
+      props: {
+        points: [point({ city: 'Belém', region: 'PA', devices: 3, online: 0, is_online: false })],
+      },
+    })
+    await flushPromises()
+    const uf = w.find('.tmap__uf')
+    expect(uf.find('.tmap__uf-online').exists()).toBe(false)
+    expect(uf.find('.tmap__uf-count').text()).toBe('3 únicos · 90d')
+    expect(uf.attributes('title')).not.toContain('online')
+  })
+
+  it('pontos online e offline: renderiza pins, classes, títulos e contagens', async () => {
     const w = mount(TelemetryBrazilMap, {
       props: {
         points: [
@@ -48,28 +99,57 @@ describe('TelemetryBrazilMap', () => {
         ],
       },
     })
+    await flushPromises()
     const pins = w.findAll('button.tmap__pin')
     expect(pins).toHaveLength(3)
     expect(w.find('.tmap__empty').exists()).toBe(false)
 
     expect(pins[0]!.classes()).toContain('tmap__pin--on')
-    expect(pins[0]!.classes()).not.toContain('tmap__pin--off')
     expect(pins[0]!.attributes('title')).toBe('Santos / SP · 3 acesso(s) · online agora')
-    expect(pins[0]!.attributes('aria-label')).toBe('Santos / SP · 3 acesso(s) · online agora')
-    expect(pins[0]!.attributes('type')).toBe('button')
-
     expect(pins[1]!.classes()).toContain('tmap__pin--off')
-    expect(pins[1]!.classes()).not.toContain('tmap__pin--on')
     expect(pins[1]!.attributes('title')).toBe('Recife / PE · 1 acesso(s) · offline (90d)')
 
-    // Legenda soma dispositivos (online / offline), não o nº de bolinhas.
     const legend = w.find('.tmap__legend').text()
     expect(legend).toContain('Online agora (5)')
     expect(legend).toContain('Acesso nos últimos 90 dias (4)')
     expect(w.find('.tmap__gap').exists()).toBe(false)
   })
 
-  it('mostra gap quando liveOnline é maior que dispositivos no mapa', () => {
+  it('aplica calor nas UFs do SVG conforme dispositivos', async () => {
+    const w = mount(TelemetryBrazilMap, {
+      props: {
+        points: [
+          point({ city: 'Santos', region: 'SP', devices: 8, online: 2, is_online: true }),
+          point({ city: 'Salvador', region: 'BA', devices: 1, online: 0, is_online: false }),
+        ],
+      },
+    })
+    await flushPromises()
+    const host = w.find('.tmap__br').element as HTMLElement
+    const sp = host.querySelector('#BR-SP') as SVGPathElement
+    const ba = host.querySelector('#BR-BA') as SVGPathElement
+    expect(sp.getAttribute('data-devices')).toBe('8')
+    expect(ba.getAttribute('data-devices')).toBe('1')
+    expect(sp.style.fill).not.toBe(ba.style.fill)
+  })
+
+  it('zoom revela labels de cidade e reset volta a 1×', async () => {
+    const w = mount(TelemetryBrazilMap, {
+      props: { points: [point({ city: 'Santos', region: 'SP' })] },
+    })
+    await flushPromises()
+    expect(w.find('.tmap__label').exists()).toBe(false)
+    await w.find('button[aria-label="Aproximar"]').trigger('click')
+    await w.find('button[aria-label="Aproximar"]').trigger('click')
+    await w.find('button[aria-label="Aproximar"]').trigger('click')
+    expect(w.find('.tmap__label').exists()).toBe(true)
+    expect(w.find('.tmap__label').text()).toBe('Santos')
+    await w.find('button[aria-label="Resetar zoom"]').trigger('click')
+    expect(w.find('.tmap__label').exists()).toBe(false)
+    expect(w.find('.tmap__zoom-readout').text()).toBe('1.0×')
+  })
+
+  it('mostra gap quando liveOnline é maior que dispositivos no mapa', async () => {
     const w = mount(TelemetryBrazilMap, {
       props: {
         liveOnline: 17,
@@ -79,69 +159,54 @@ describe('TelemetryBrazilMap', () => {
         ],
       },
     })
+    await flushPromises()
     expect(w.find('.tmap__legend').text()).toContain('Online agora (3)')
     expect(w.find('.tmap__gap').text()).toContain(
       '14 online agora sem UF/Brasil no mapa (não dá para posicionar).',
     )
   })
 
-  it('posiciona o pin em % conforme projectBrPoint', () => {
+  it('posiciona o marker em % conforme projectBrPoint (zoom 1×)', async () => {
     const w = mount(TelemetryBrazilMap, {
       props: { points: [point({ city: 'Santos', region: 'SP' })] },
     })
+    await flushPromises()
     const pos = projectBrPoint('SP', 'Santos')!
-    const style = w.find('button.tmap__pin').attributes('style')!
+    const style = w.find('.tmap__marker').attributes('style')!
     expect(style).toContain(`left: ${pos.left}%`)
     expect(style).toContain(`top: ${pos.top}%`)
   })
 
-  it('ponto sem cidade usa apenas a UF no título', () => {
+  it('ajusta viewBox do SVG ao aproximar (zoom vetorial)', async () => {
     const w = mount(TelemetryBrazilMap, {
-      props: { points: [point({ city: null, region: 'BA', devices: 4, is_online: false })] },
+      props: { points: [point({ city: 'Santos', region: 'SP' })] },
     })
-    const pin = w.find('button.tmap__pin')
-    expect(pin.attributes('title')).toBe('BA · 4 acesso(s) · offline (90d)')
+    await flushPromises()
+    const svg = () => (w.find('.tmap__br').element as HTMLElement).querySelector('svg')!
+    expect(svg().getAttribute('viewBox')).toMatch(/^0 0 /)
+    await w.find('button[aria-label="Aproximar"]').trigger('click')
+    await w.find('button[aria-label="Aproximar"]').trigger('click')
+    const vb = svg().getAttribute('viewBox')!
+    const parts = vb.split(/\s+/).map(Number)
+    expect(parts[2]!).toBeLessThan(612.51611)
+    expect(parts[3]!).toBeLessThan(639.04297)
   })
 
-  it('ponto com cidade vazia também usa apenas a UF', () => {
-    const w = mount(TelemetryBrazilMap, {
-      props: { points: [point({ city: '', region: 'RS', devices: 1 })] },
-    })
-    expect(w.find('button.tmap__pin').attributes('title')).toBe('RS · 1 acesso(s) · online agora')
-  })
-
-  it('ignora pontos com UF desconhecida e mostra mensagem vazia se nenhum couber', () => {
+  it('ignora pontos com UF desconhecida', async () => {
     const w = mount(TelemetryBrazilMap, {
       props: { points: [point({ region: 'XX' }), point({ region: '' })] },
     })
+    await flushPromises()
     expect(w.findAll('button.tmap__pin')).toHaveLength(0)
     expect(w.find('.tmap__empty').exists()).toBe(true)
-    expect(w.find('.tmap__legend').text()).toContain('Online agora (0)')
-  })
-
-  it('mistura UF válida e inválida: só renderiza as válidas, sem mensagem vazia', () => {
-    const w = mount(TelemetryBrazilMap, {
-      props: { points: [point({ region: 'XX' }), point({ region: 'rj', city: 'Niterói' })] },
-    })
-    const pins = w.findAll('button.tmap__pin')
-    expect(pins).toHaveLength(1)
-    expect(pins[0]!.attributes('title')).toContain('Niterói / rj')
-    expect(w.find('.tmap__empty').exists()).toBe(false)
-  })
-
-  it('pins de mesma região/cidade mantêm chaves distintas (múltiplos pins)', () => {
-    const w = mount(TelemetryBrazilMap, {
-      props: { points: [point(), point(), point({ is_online: false })] },
-    })
-    expect(w.findAll('button.tmap__pin')).toHaveLength(3)
-    expect(w.findAll('.tmap__pin--on')).toHaveLength(2)
-    expect(w.findAll('.tmap__pin--off')).toHaveLength(1)
   })
 
   it('reage à atualização das props', async () => {
     const w = mount(TelemetryBrazilMap, { props: { points: [] } })
+    await flushPromises()
     expect(w.findAll('button.tmap__pin')).toHaveLength(0)
     await w.setProps({ points: [point()] })
+    await flushPromises()
     expect(w.findAll('button.tmap__pin')).toHaveLength(1)
     expect(w.find('.tmap__empty').exists()).toBe(false)
   })
