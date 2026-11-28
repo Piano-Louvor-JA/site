@@ -77,10 +77,13 @@ export default [
         // Browser DOM types
         MouseEvent: 'readonly',
         KeyboardEvent: 'readonly',
+        WheelEvent: 'readonly',
+        PointerEvent: 'readonly',
         HTMLElement: 'readonly',
         HTMLInputElement: 'readonly',
         HTMLSelectElement: 'readonly',
         HTMLTextAreaElement: 'readonly',
+        SVGPathElement: 'readonly',
         requestAnimationFrame: 'readonly',
         File: 'readonly',
         FileReader: 'readonly',
