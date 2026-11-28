@@ -3,6 +3,98 @@
 All notable changes to this project are documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.17.0](https://github.com/Piano-Louvor-JA/site/compare/v1.16.0...v1.17.0) (2026-11-27)
+
+### Features
+
+- **admin:** mapa do Brasil real e contagem alinhada na telemetria ([b83f338](https://github.com/Piano-Louvor-JA/site/commit/b83f338760bf59431a6c28b0a36d5e6d92eabccb))
+
+### Tests
+
+- cobre TelemetryBrazilMap e useTelemetryHistory para promoção a main ([5a4bee0](https://github.com/Piano-Louvor-JA/site/commit/5a4bee0e965f19b3b0d2e97db7846e6596ed8ab9))
+
+## [1.16.0](https://github.com/Piano-Louvor-JA/site/compare/v1.15.0...v1.16.0) (2026-11-27)
+
+### Features
+
+- **admin:** rankings e mapa BR na telemetria (90d) ([2fe86f3](https://github.com/Piano-Louvor-JA/site/commit/2fe86f36cc9583b1d40cde27a42d40c41e9a4eb3))
+
+### Bug Fixes
+
+- **assets:** favicon.svg arte oficial transparente ([b3a69d0](https://github.com/Piano-Louvor-JA/site/commit/b3a69d0e4267a9fc2fb5a5ad272eca7a576c7d40))
+
+### Tests
+
+- **admin:** cobre TelemetryBrazilMap e useTelemetryHistory ([f20aadb](https://github.com/Piano-Louvor-JA/site/commit/f20aadb81121655a71bd0fba0b9e3d87a050a529))
+
+### Continuous Integration
+
+- bump Node 24.18.0 → 26 (semantic-release exige >=26.13) ([6dc8ddc](https://github.com/Piano-Louvor-JA/site/commit/6dc8ddcf6e859796c14dc95235162f5559565dac))
+
+### Miscellaneous Chores
+
+- integra origin/staging (pós site[#185](https://github.com/Piano-Louvor-JA/site/issues/185)) em feat/telemetry-history-map ([8b12637](https://github.com/Piano-Louvor-JA/site/commit/8b126374e4bb938e35e595c7d092a4d79332f23f))
+- integra origin/staging em feat/telemetry-history-map ([feee415](https://github.com/Piano-Louvor-JA/site/commit/feee4153f64c08164d3d76bbfdac70ff6057c99f))
+- **sync:** main → staging após v1.15.0 ([07d6524](https://github.com/Piano-Louvor-JA/site/commit/07d65241d9f2e40ee5cc66d7616b7b3dcb364fbe))
+
+## [1.15.0](https://github.com/Piano-Louvor-JA/site/compare/v1.14.0...v1.15.0) (2026-11-27)
+
+### Features
+
+- **admin:** card Sem token na telemetria de dispositivos ([dcf81fb](https://github.com/Piano-Louvor-JA/site/commit/dcf81fbe5e5f56c0814858abdeacab31d6150cc5))
+- **admin:** visão total de conteúdo + dono (SPEC v1.1.0) ([6ad8d5a](https://github.com/Piano-Louvor-JA/site/commit/6ad8d5acc0a2d2de2c5d7cb2c99d473db69bbf19))
+- **api:** identifica requisições do portal com parceiro próprio ([79b664b](https://github.com/Piano-Louvor-JA/site/commit/79b664b76b18278ce54b443d7d4e00c3063989fb))
+- **i18n:** Onda 4 — it/nl/pl (catálogos, docs, wiring, testes) ([aa6f881](https://github.com/Piano-Louvor-JA/site/commit/aa6f881b1a74868b73b4621bb34c655288efedbf))
+- **roster:** Corrigido AC3 i18n e deduplicado roster dinâmico v1.1.0 [e3856d2] ([4712892](https://github.com/Piano-Louvor-JA/site/commit/47128925d5dc915d8f466650e534a41065face79))
+- **team:** hierarquia People — ordem curada team.ts (Ezequias 1º, Rafael 2º), demais alfabético ([87c150f](https://github.com/Piano-Louvor-JA/site/commit/87c150faf031d1e5f41a6cf087fc228b2fb97756))
+- **team:** subseção devs na home via roster role=dev (SPEC v1.1.0) ([e3856d2](https://github.com/Piano-Louvor-JA/site/commit/e3856d2d1fdef4e32745ed0b8fb5d05ed0ef108d))
+
+### Bug Fixes
+
+- **ci:** fixa semantic-release em ^25 compatível com Node 24 ([3e6582d](https://github.com/Piano-Louvor-JA/site/commit/3e6582d8d9fbdd983d158c95b4032153537d8ae8))
+- **content:** collections docs_it/docs_nl/docs_pl + gates verdes ([25dd2fa](https://github.com/Piano-Louvor-JA/site/commit/25dd2fae56f4e6092226cb865da91cc4ef1cede6))
+- **i18n:** completa team.devs e default.role em it/nl/pl ([6e328f8](https://github.com/Piano-Louvor-JA/site/commit/6e328f8e0855f1aa2fbb346e96edc3c391d9d7b1))
+- normalizar bio undefined no TeamSection ([a0ae019](https://github.com/Piano-Louvor-JA/site/commit/a0ae019403254e7adb581293d58d6abac3aaaf8b))
+
+### Documentation
+
+- **i18n:** documentação italiana (14 páginas, registro formal cristão) ([d0dd521](https://github.com/Piano-Louvor-JA/site/commit/d0dd5217c824cf67ffd06f320eb0264dfc7a6da2))
+- **i18n:** documentação neerlandesa (14 páginas, registro formal cristão) ([5549430](https://github.com/Piano-Louvor-JA/site/commit/5549430dd5dd28f3eda7e3c39c309d650cbbfce3))
+
+### Tests
+
+- fecha gaps de cobertura em telemetria e admin collections ([f46cd91](https://github.com/Piano-Louvor-JA/site/commit/f46cd91e0712afd0ae70bd11daf9c2159596e5a5))
+- **i18n:** parity e routing para it/nl/pl (G1 RED) ([92447a9](https://github.com/Piano-Louvor-JA/site/commit/92447a9fa92cc8d279f744a5b1735b302769277e))
+- **team:** cobre clique Saiba mais da subseção devs ([17bf049](https://github.com/Piano-Louvor-JA/site/commit/17bf0496aa536f3d6d3193675f8e42e9da290e9a))
+
+### Styles
+
+- format TeamSection e i18n do roster ([1473fa0](https://github.com/Piano-Louvor-JA/site/commit/1473fa04e40fe9896997a345137dbd1efde8fa78))
+- prettier i18n/pl.json + docs nl (format:check verde) ([3ee6080](https://github.com/Piano-Louvor-JA/site/commit/3ee6080b6f163ab338777126ad6ee20513b390a2))
+
+### Miscellaneous Chores
+
+- **assets:** favicon.svg transparente (sem fundo preto) ([99e20dc](https://github.com/Piano-Louvor-JA/site/commit/99e20dcf02649166af91bbcae60997edd2ae7170))
+- **deps:** bump SonarSource/sonarqube-scan-action from 8.5.0 to 8.5.1 ([c53ec36](https://github.com/Piano-Louvor-JA/site/commit/c53ec36eb1f55cc0bf06166c427720ac164746e1))
+- **deps:** bump the npm-dependencies group with 19 updates ([b447413](https://github.com/Piano-Louvor-JA/site/commit/b447413885202573df0983d16b133525366928a0))
+- dispara CI da sync main → staging (v1.14.0) ([d1e7f30](https://github.com/Piano-Louvor-JA/site/commit/d1e7f306f30ed19f4886764038f60a1e732b4e29))
+- merge staging into dependabot/github_actions/staging/SonarSource/sonarqube-scan-action-8.5.1 ([9a41396](https://github.com/Piano-Louvor-JA/site/commit/9a413968cfb35433029cb6ed2c1dcc70b814e01f))
+- merge staging into dependabot/npm_and_yarn/staging/npm-dependencies-a91292eeab ([740df4e](https://github.com/Piano-Louvor-JA/site/commit/740df4e4e278c7e3e90f9f963a43eb440f3d122c))
+- merge staging into dependabot/npm_and_yarn/staging/npm-dependencies-a91292eeab ([b34c05b](https://github.com/Piano-Louvor-JA/site/commit/b34c05baca88a9eb6ddb189f0ecfce664ea301bc))
+- merge staging into feat/admin-conteudo-global ([bce4674](https://github.com/Piano-Louvor-JA/site/commit/bce46742313140994c1249bf5fab3bfefee3ef09))
+- merge staging into feat/admin-conteudo-global ([712327b](https://github.com/Piano-Louvor-JA/site/commit/712327b91a5ae7254a394688fabac61633c2a5d7))
+- merge staging into feat/admin-conteudo-global ([d3fc643](https://github.com/Piano-Louvor-JA/site/commit/d3fc643d5b0c16f5008e1b956d6cbe44279614bb))
+- merge staging into feat/admin-conteudo-global ([0285d7d](https://github.com/Piano-Louvor-JA/site/commit/0285d7dfe27043143517e2e46914b090cd75f0b3))
+- merge staging into feat/complete-client-identification ([0a59d76](https://github.com/Piano-Louvor-JA/site/commit/0a59d760ef4f53daa366b05fada1701bb6ad01ae))
+- merge staging into feat/complete-client-identification ([bc9adf8](https://github.com/Piano-Louvor-JA/site/commit/bc9adf823ddd7bdb3373394bed6df64a50665d1a))
+- merge staging into feat/complete-client-identification ([357cf43](https://github.com/Piano-Louvor-JA/site/commit/357cf43ca4f140160314cbf6e4b488f8cac0628c))
+- merge staging into feat/complete-client-identification ([381df82](https://github.com/Piano-Louvor-JA/site/commit/381df82ad8bca6110c1f314ad1e0192ea9958f64))
+- merge staging into feat/complete-client-identification ([8b9b6cd](https://github.com/Piano-Louvor-JA/site/commit/8b9b6cd242fe15106f31474a37e8e27f8e160dbe))
+- merge staging into feat/roster-people-v1.1.0 ([1cfbb92](https://github.com/Piano-Louvor-JA/site/commit/1cfbb9205bf28d19a41140c081d6b61af9af31a6))
+- merge staging into feat/roster-people-v1.1.0 ([96155c0](https://github.com/Piano-Louvor-JA/site/commit/96155c0877b7348316c06f9df20df2af660b4ae6))
+- merge staging into feat/roster-people-v1.1.0 ([d531c03](https://github.com/Piano-Louvor-JA/site/commit/d531c030ffc04630a49b51e72475590132ae8401))
+- merge staging into feat/roster-people-v1.1.0 ([b738700](https://github.com/Piano-Louvor-JA/site/commit/b738700ae7e457ae9c0c0f6eca1ac4bdf3d1495c))
+
 ## [1.14.0](https://github.com/Piano-Louvor-JA/site/compare/v1.13.0...v1.14.0) (2026-11-26)
 
 ### Features

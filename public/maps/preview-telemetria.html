@@ -1,0 +1,603 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Preview — Mapa telemetria (calor + zoom)</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        font-family: system-ui, sans-serif;
+      }
+      body {
+        margin: 0;
+        padding: 1.25rem;
+        background: #0f172a;
+        color: #e2e8f0;
+      }
+      h1 {
+        margin: 0 0 0.35rem;
+        font-size: 1.25rem;
+      }
+      .sub {
+        margin: 0 0 1rem;
+        color: #94a3b8;
+        font-size: 0.9rem;
+      }
+      .legend,
+      .heat,
+      .toolbar {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.75rem;
+        margin-bottom: 0.5rem;
+        font-size: 0.85rem;
+        color: #94a3b8;
+      }
+      .dot {
+        width: 0.7rem;
+        height: 0.7rem;
+        border-radius: 50%;
+        display: inline-block;
+        margin-right: 0.35rem;
+      }
+      .dot--on {
+        background: #22c55e;
+        box-shadow: 0 0 0 3px rgb(34 197 94 / 25%);
+      }
+      .dot--off {
+        background: #94a3b8;
+      }
+      .heat-bar {
+        width: 160px;
+        height: 0.55rem;
+        border-radius: 999px;
+        background: linear-gradient(90deg, #cfe0cc, #15803d);
+      }
+      .tool {
+        width: 2rem;
+        height: 2rem;
+        border: 1px solid #334155;
+        border-radius: 8px;
+        background: #1e293b;
+        color: #e2e8f0;
+        font-size: 1.1rem;
+        cursor: pointer;
+      }
+      .tool.wide {
+        width: auto;
+        padding: 0 0.65rem;
+        font-size: 0.85rem;
+      }
+      .hint {
+        margin: 0 0 0.75rem;
+        font-size: 0.75rem;
+        color: #64748b;
+      }
+      .canvas {
+        position: relative;
+        width: min(100%, 960px);
+        aspect-ratio: 612.51611 / 639.04297;
+        margin-inline: auto;
+        background: linear-gradient(180deg, #e8f1ff 0%, #f8fafc 100%);
+        border: 1px solid #334155;
+        border-radius: 12px;
+        overflow: hidden;
+        touch-action: none;
+      }
+      .canvas.grab {
+        cursor: grab;
+      }
+      .canvas.grab:active {
+        cursor: grabbing;
+      }
+      .br {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+      }
+      .br svg {
+        width: 100%;
+        height: 100%;
+        display: block;
+        shape-rendering: geometricPrecision;
+      }
+      .marker {
+        position: absolute;
+        width: 0;
+        height: 0;
+        z-index: 2;
+      }
+      .pin {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 12px;
+        height: 12px;
+        border: 0;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        padding: 0;
+      }
+      .pin--on {
+        background: #22c55e;
+        box-shadow: 0 0 0 4px rgb(34 197 94 / 30%);
+      }
+      .pin--off {
+        background: #94a3b8;
+      }
+      .label {
+        position: absolute;
+        left: 0;
+        top: 0;
+        transform: translate(-50%, calc(-100% - 10px));
+        white-space: nowrap;
+        font-size: 13px;
+        font-weight: 650;
+        color: #0f172a;
+        background: rgb(255 255 255 / 96%);
+        border: 1px solid rgb(15 23 42 / 16%);
+        border-radius: 5px;
+        padding: 0.2rem 0.45rem;
+        pointer-events: none;
+        box-shadow: 0 1px 3px rgb(15 23 42 / 16%);
+      }
+      .uf {
+        position: absolute;
+        z-index: 1;
+        transform: translate(-50%, -50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.1rem;
+        pointer-events: none;
+        text-align: center;
+        max-width: 9rem;
+      }
+      .uf-name {
+        font-size: 0.72rem;
+        font-weight: 800;
+        letter-spacing: 0.04em;
+        color: #14532d;
+        text-shadow:
+          0 0 4px #fff,
+          0 0 6px #fff,
+          0 1px 0 #fff;
+        line-height: 1.15;
+      }
+      .uf-online,
+      .uf-count {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.28rem;
+        font-size: 0.65rem;
+        font-weight: 650;
+        color: #1e293b;
+        background: rgb(255 255 255 / 92%);
+        border: 1px solid rgb(15 23 42 / 12%);
+        border-radius: 999px;
+        padding: 0.08rem 0.4rem;
+        white-space: nowrap;
+        box-shadow: 0 1px 2px rgb(15 23 42 / 10%);
+      }
+      .uf-online {
+        color: #166534;
+        border-color: rgb(34 197 94 / 35%);
+      }
+      .uf-online .dot {
+        width: 0.45rem;
+        height: 0.45rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Telemetria — calor por UF + zoom</h1>
+    <p class="sub">Zoom por viewBox (vetorial nítido). Nomes de cidade a partir de 1.55×.</p>
+    <div class="legend" id="legend"></div>
+    <div class="heat">
+      <span>Menos acessos</span>
+      <i class="heat-bar"></i>
+      <span>Mais acessos</span>
+    </div>
+    <div class="toolbar">
+      <button type="button" class="tool" id="zoomOut" aria-label="Afastar">−</button>
+      <button type="button" class="tool" id="zoomIn" aria-label="Aproximar">+</button>
+      <button type="button" class="tool wide" id="zoomReset" aria-label="Resetar zoom">1×</button>
+      <span id="zoomReadout">1.0×</span>
+    </div>
+    <p class="hint">Role o mouse para zoom · arraste para mover</p>
+    <div class="canvas" id="canvas" role="img" aria-label="Mapa do Brasil com acessos">
+      <div class="br" id="svgHost"></div>
+    </div>
+
+    <script>
+      const BR_UF_CENTROIDS = {
+        AC: [-9.02, -70.81],
+        AL: [-9.57, -36.78],
+        AM: [-3.47, -65.1],
+        AP: [1.41, -51.77],
+        BA: [-13.29, -41.71],
+        CE: [-5.2, -39.53],
+        DF: [-15.78, -47.93],
+        ES: [-19.19, -40.34],
+        GO: [-15.98, -49.86],
+        MA: [-5.42, -45.44],
+        MG: [-18.1, -44.38],
+        MS: [-20.77, -54.78],
+        MT: [-12.64, -55.42],
+        PA: [-3.79, -52.48],
+        PB: [-7.28, -36.72],
+        PE: [-8.38, -37.86],
+        PI: [-6.6, -42.28],
+        PR: [-24.89, -51.55],
+        RJ: [-22.25, -42.66],
+        RN: [-5.81, -36.59],
+        RO: [-10.83, -63.34],
+        RR: [1.99, -61.33],
+        RS: [-30.17, -53.5],
+        SC: [-27.45, -50.95],
+        SE: [-10.57, -37.45],
+        SP: [-22.19, -48.79],
+        TO: [-9.46, -48.26],
+      }
+      const GEO = { west: -74.008595, north: 5.275696, east: -34.789914, south: -33.743888 }
+      const VB_W = 612.51611
+      const VB_H = 639.04297
+      const BASE = { r: 207, g: 224, b: 204 }
+      const HOT = { r: 21, g: 128, b: 61 }
+      const LABEL_ZOOM = 1.55
+      const MIN_ZOOM = 1
+      const MAX_ZOOM = 5
+      const BR_UF_NAMES = {
+        AC: 'Acre',
+        AL: 'Alagoas',
+        AM: 'Amazonas',
+        AP: 'Amapá',
+        BA: 'Bahia',
+        CE: 'Ceará',
+        DF: 'Distrito Federal',
+        ES: 'Espírito Santo',
+        GO: 'Goiás',
+        MA: 'Maranhão',
+        MG: 'Minas Gerais',
+        MS: 'Mato Grosso do Sul',
+        MT: 'Mato Grosso',
+        PA: 'Pará',
+        PB: 'Paraíba',
+        PE: 'Pernambuco',
+        PI: 'Piauí',
+        PR: 'Paraná',
+        RJ: 'Rio de Janeiro',
+        RN: 'Rio Grande do Norte',
+        RO: 'Rondônia',
+        RR: 'Roraima',
+        RS: 'Rio Grande do Sul',
+        SC: 'Santa Catarina',
+        SE: 'Sergipe',
+        SP: 'São Paulo',
+        TO: 'Tocantins',
+      }
+
+      // % left/top no SVG (igual app/utils/brUfCentroids.ts)
+      const BR_CITY_MAP_PCT = {
+        'AC|rio branco': [15.77, 36.81],
+        'AL|maceio': [97.66, 36.0],
+        'AM|manaus': [35.66, 19.93],
+        'AP|macapa': [58.49, 12.22],
+        'BA|salvador': [90.71, 44.44],
+        'CE|fortaleza': [90.4, 21.15],
+        'DF|brasilia': [66.62, 51.4],
+        'ES|vitoria': [85.75, 62.97],
+        'GO|goiania': [63.09, 53.67],
+        'MA|sao luis': [74.9, 17.4],
+        'MG|belo horizonte': [76.68, 61.99],
+        'MS|campo grande': [49.44, 63.43],
+        'MT|cuiaba': [45.67, 50.91],
+        'PA|belem': [65.18, 15.98],
+        'PB|joao pessoa': [99.0, 29.87],
+        'PE|recife': [99.0, 32.04],
+        'PI|teresina': [79.57, 24.76],
+        'PR|curitiba': [63.07, 76.6],
+        'RJ|rio de janeiro': [78.53, 69.87],
+        'RN|natal': [98.49, 26.61],
+        'RO|porto velho': [25.77, 33.8],
+        'RR|boa vista': [34.0, 5.4],
+        'RS|porto alegre': [58.11, 89.32],
+        'SC|florianopolis': [64.62, 82.51],
+        'SE|aracaju': [94.12, 39.1],
+        'SP|sao paulo': [69.8, 71.55],
+        'TO|palmas': [65.49, 37.49],
+        'SP|campinas': [68.71, 69.85],
+        'SP|santos': [70.58, 72.62],
+        'RJ|niteroi': [78.88, 69.72],
+        'BA|feira de santana': [89.35, 42.51],
+        'BA|vitoria da conquista': [84.56, 49.04],
+        'MG|uberlandia': [65.61, 59.39],
+        'MA|imperatriz': [67.65, 25.81],
+      }
+      function normalizeCityKey(city) {
+        return city
+          .normalize('NFD')
+          .replace(/\p{M}/gu, '')
+          .toLowerCase()
+          .trim()
+          .replace(/\s+/g, ' ')
+      }
+      function hashOffset(seed) {
+        let h = 0
+        for (let i = 0; i < seed.length; i++) h = (h * 31 + seed.charCodeAt(i)) | 0
+        const a = ((h >>> 0) % 1000) / 1000
+        const b = (((h >>> 8) >>> 0) % 1000) / 1000
+        return { dLat: (a - 0.5) * 0.55, dLng: (b - 0.5) * 0.55 }
+      }
+      // MapSVG convertGeoToPixel (Mercator) — para UF / cidade fora do catálogo
+      function toPercent(lat, lng) {
+        const mapLonDelta = GEO.east - GEO.west
+        const latRad = (lat * Math.PI) / 180
+        const latBottom = (GEO.south * Math.PI) / 180
+        const x = (lng - GEO.west) * (VB_W / mapLonDelta)
+        const world = ((VB_W / mapLonDelta) * 360) / (2 * Math.PI)
+        const yBottom =
+          (world / 2) * Math.log((1 + Math.sin(latBottom)) / (1 - Math.sin(latBottom)))
+        const y =
+          VB_H - ((world / 2) * Math.log((1 + Math.sin(latRad)) / (1 - Math.sin(latRad))) - yBottom)
+        return {
+          left: Math.min(99, Math.max(1, (x / VB_W) * 100)),
+          top: Math.min(99, Math.max(1, (y / VB_H) * 100)),
+        }
+      }
+      function projectBrPoint(region, city) {
+        const uf = region.trim().toUpperCase()
+        const base = BR_UF_CENTROIDS[uf]
+        if (!base) return null
+        if (city) {
+          const key = uf + '|' + normalizeCityKey(city)
+          const known = BR_CITY_MAP_PCT[key]
+          if (known) return { left: known[0], top: known[1] }
+          const { dLat, dLng } = hashOffset(key)
+          return toPercent(base[0] + dLat, base[1] + dLng)
+        }
+        return toPercent(base[0], base[1])
+      }
+
+      function heatFill(count, max) {
+        if (count <= 0 || max <= 0) return `rgb(${BASE.r}, ${BASE.g}, ${BASE.b})`
+        const t = Math.min(1, Math.max(0, count / max))
+        const e = Math.pow(t, 0.65)
+        const r = Math.round(BASE.r + (HOT.r - BASE.r) * e)
+        const g = Math.round(BASE.g + (HOT.g - BASE.g) * e)
+        const b = Math.round(BASE.b + (HOT.b - BASE.b) * e)
+        return `rgb(${r}, ${g}, ${b})`
+      }
+
+      const samples = [
+        { city: 'São Paulo', region: 'SP', is_online: true, devices: 18 },
+        { city: 'Campinas', region: 'SP', is_online: false, devices: 7 },
+        { city: 'Santos', region: 'SP', is_online: true, devices: 4 },
+        { city: 'Salvador', region: 'BA', is_online: true, devices: 12 },
+        { city: 'Feira de Santana', region: 'BA', is_online: false, devices: 5 },
+        { city: 'Vitória da Conquista', region: 'BA', is_online: true, devices: 3 },
+        { city: 'Belo Horizonte', region: 'MG', is_online: true, devices: 9 },
+        { city: 'Uberlândia', region: 'MG', is_online: false, devices: 4 },
+        { city: 'Rio de Janeiro', region: 'RJ', is_online: true, devices: 8 },
+        { city: 'Niterói', region: 'RJ', is_online: false, devices: 2 },
+        { city: 'Curitiba', region: 'PR', is_online: true, devices: 5 },
+        { city: 'Porto Alegre', region: 'RS', is_online: false, devices: 4 },
+        { city: 'Florianópolis', region: 'SC', is_online: true, devices: 3 },
+        { city: 'Manaus', region: 'AM', is_online: true, devices: 6 },
+        { city: 'Belém', region: 'PA', is_online: false, devices: 3 },
+        { city: 'Fortaleza', region: 'CE', is_online: true, devices: 5 },
+        { city: 'Recife', region: 'PE', is_online: false, devices: 4 },
+        { city: 'Brasília', region: 'DF', is_online: true, devices: 6 },
+        { city: 'Goiânia', region: 'GO', is_online: false, devices: 2 },
+        { city: 'Cuiabá', region: 'MT', is_online: false, devices: 2 },
+        { city: 'Campo Grande', region: 'MS', is_online: true, devices: 2 },
+        { city: 'Rio Branco', region: 'AC', is_online: false, devices: 1 },
+        { city: 'Boa Vista', region: 'RR', is_online: true, devices: 1 },
+        { city: 'Macapá', region: 'AP', is_online: false, devices: 1 },
+        { city: 'Palmas', region: 'TO', is_online: true, devices: 1 },
+        { city: 'Teresina', region: 'PI', is_online: false, devices: 2 },
+        { city: 'São Luís', region: 'MA', is_online: true, devices: 2 },
+        { city: 'Natal', region: 'RN', is_online: false, devices: 2 },
+        { city: 'João Pessoa', region: 'PB', is_online: true, devices: 2 },
+        { city: 'Maceió', region: 'AL', is_online: false, devices: 2 },
+        { city: 'Aracaju', region: 'SE', is_online: true, devices: 2 },
+        { city: 'Vitória', region: 'ES', is_online: false, devices: 2 },
+        { city: 'Porto Velho', region: 'RO', is_online: true, devices: 1 },
+      ]
+
+      let zoom = 1
+      let panX = 0
+      let panY = 0
+      let drag = null
+      const markers = []
+      const ufMarkers = []
+
+      const canvas = document.getElementById('canvas')
+      const svgHost = document.getElementById('svgHost')
+      const legend = document.getElementById('legend')
+      const zoomReadout = document.getElementById('zoomReadout')
+
+      function clampPan() {
+        const vw = VB_W / zoom
+        const vh = VB_H / zoom
+        panX = Math.min(Math.max(0, panX), Math.max(0, VB_W - vw))
+        panY = Math.min(Math.max(0, panY), Math.max(0, VB_H - vh))
+      }
+
+      function applyViewBox() {
+        const svg = svgHost.querySelector('svg')
+        if (!svg) return
+        const vw = VB_W / zoom
+        const vh = VB_H / zoom
+        svg.setAttribute('viewBox', `${panX} ${panY} ${vw} ${vh}`)
+        svg.removeAttribute('width')
+        svg.removeAttribute('height')
+        svg.style.width = '100%'
+        svg.style.height = '100%'
+        const stroke = Math.max(0.35, 0.85 / zoom)
+        for (const path of svg.querySelectorAll('path[id^="BR-"]')) {
+          path.style.stroke = '#5f865b'
+          path.style.strokeWidth = String(stroke)
+        }
+      }
+
+      function placePct(el, leftPct, topPct) {
+        const vw = VB_W / zoom
+        const vh = VB_H / zoom
+        const mapX = (leftPct / 100) * VB_W
+        const mapY = (topPct / 100) * VB_H
+        el.style.left = ((mapX - panX) / vw) * 100 + '%'
+        el.style.top = ((mapY - panY) / vh) * 100 + '%'
+      }
+
+      function updateMarkers() {
+        const showCity = zoom >= LABEL_ZOOM
+        const showUf = zoom < 2.4
+        for (const m of markers) {
+          placePct(m.el, m.left, m.top)
+          m.label.style.display = showCity ? '' : 'none'
+        }
+        for (const u of ufMarkers) {
+          placePct(u.el, u.left, u.top)
+          u.el.style.display = showUf ? '' : 'none'
+        }
+        canvas.classList.toggle('grab', zoom > 1)
+        zoomReadout.textContent = zoom.toFixed(1) + '×'
+        applyViewBox()
+      }
+
+      function setZoomAt(next, clientX, clientY) {
+        const prev = zoom
+        const z = Math.min(MAX_ZOOM, Math.max(MIN_ZOOM, next))
+        if (z === prev) return
+        if (clientX != null && clientY != null) {
+          const rect = canvas.getBoundingClientRect()
+          const fx = (clientX - rect.left) / rect.width
+          const fy = (clientY - rect.top) / rect.height
+          const mapX = panX + fx * (VB_W / prev)
+          const mapY = panY + fy * (VB_H / prev)
+          panX = mapX - fx * (VB_W / z)
+          panY = mapY - fy * (VB_H / z)
+        }
+        zoom = z
+        if (zoom === MIN_ZOOM) {
+          panX = 0
+          panY = 0
+        } else clampPan()
+        updateMarkers()
+      }
+
+      document.getElementById('zoomIn').onclick = () => {
+        const r = canvas.getBoundingClientRect()
+        setZoomAt(zoom + 0.35, r.left + r.width / 2, r.top + r.height / 2)
+      }
+      document.getElementById('zoomOut').onclick = () => {
+        const r = canvas.getBoundingClientRect()
+        setZoomAt(zoom - 0.35, r.left + r.width / 2, r.top + r.height / 2)
+      }
+      document.getElementById('zoomReset').onclick = () => {
+        zoom = 1
+        panX = 0
+        panY = 0
+        updateMarkers()
+      }
+
+      canvas.addEventListener(
+        'wheel',
+        (e) => {
+          e.preventDefault()
+          setZoomAt(zoom + (e.deltaY > 0 ? -0.18 : 0.18), e.clientX, e.clientY)
+        },
+        { passive: false },
+      )
+
+      canvas.addEventListener('pointerdown', (e) => {
+        if (zoom <= 1) return
+        canvas.setPointerCapture(e.pointerId)
+        drag = { x: e.clientX, y: e.clientY, panX, panY }
+      })
+      canvas.addEventListener('pointermove', (e) => {
+        if (!drag) return
+        const rect = canvas.getBoundingClientRect()
+        panX = drag.panX - (e.clientX - drag.x) * (VB_W / zoom / rect.width)
+        panY = drag.panY - (e.clientY - drag.y) * (VB_H / zoom / rect.height)
+        clampPan()
+        updateMarkers()
+      })
+      function endDrag(e) {
+        if (canvas.hasPointerCapture?.(e.pointerId)) canvas.releasePointerCapture(e.pointerId)
+        drag = null
+      }
+      canvas.addEventListener('pointerup', endDrag)
+      canvas.addEventListener('pointercancel', endDrag)
+
+      async function main() {
+        const res = await fetch('./mapa-brazil.svg')
+        svgHost.innerHTML = await res.text()
+
+        const byUf = {}
+        const onlineUf = {}
+        for (const s of samples) {
+          byUf[s.region] = (byUf[s.region] || 0) + s.devices
+          const on = s.is_online ? s.devices : 0
+          onlineUf[s.region] = (onlineUf[s.region] || 0) + on
+        }
+        const onlineDevices = samples.reduce((n, s) => n + (s.is_online ? s.devices : 0), 0)
+        const offlineDevices = samples.reduce((n, s) => n + (s.is_online ? 0 : s.devices), 0)
+        legend.innerHTML = `
+          <span><i class="dot dot--on"></i>Online agora (${onlineDevices})</span>
+          <span><i class="dot dot--off"></i>Acesso nos últimos 90 dias (${offlineDevices})</span>
+        `
+
+        const max = Math.max(...Object.values(byUf), 1)
+        for (const path of svgHost.querySelectorAll('path[id^="BR-"]')) {
+          const uf = path.id.replace(/^BR-/, '')
+          path.style.fill = heatFill(byUf[uf] || 0, max)
+        }
+
+        for (const s of samples) {
+          const pos = projectBrPoint(s.region, s.city)
+          if (!pos) continue
+          const el = document.createElement('div')
+          el.className = 'marker'
+          const pin = document.createElement('button')
+          pin.type = 'button'
+          pin.className = 'pin ' + (s.is_online ? 'pin--on' : 'pin--off')
+          pin.title = `${s.city} / ${s.region} · ${s.devices} acesso(s)`
+          el.appendChild(pin)
+          const label = document.createElement('span')
+          label.className = 'label'
+          label.textContent = s.city
+          label.style.display = 'none'
+          el.appendChild(label)
+          canvas.appendChild(el)
+          markers.push({ el, label, left: pos.left, top: pos.top })
+        }
+
+        for (const [uf, devices] of Object.entries(byUf)) {
+          const pos = projectBrPoint(uf, null)
+          if (!pos) continue
+          const online = onlineUf[uf] || 0
+          const el = document.createElement('div')
+          el.className = 'uf'
+          el.title =
+            online > 0
+              ? `${BR_UF_NAMES[uf] || uf}: ${online} online · ${devices} único(s) nos últimos 90 dias`
+              : `${BR_UF_NAMES[uf] || uf}: ${devices} único(s) nos últimos 90 dias`
+          el.innerHTML = `<strong class="uf-name">${(BR_UF_NAMES[uf] || uf).toUpperCase()}</strong>
+            ${online > 0 ? `<span class="uf-online"><i class="dot dot--on"></i>${online} online</span>` : ''}
+            <span class="uf-count">${devices} único${devices === 1 ? '' : 's'} · 90d</span>`
+          canvas.appendChild(el)
+          ufMarkers.push({ el, left: pos.left, top: pos.top })
+        }
+        updateMarkers()
+      }
+
+      main()
+    </script>
+  </body>
+</html>
