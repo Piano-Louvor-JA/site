@@ -1161,7 +1161,7 @@
       "more": "자세히 보기"
     },
     "devs": {
-      "title": "개발자"
+      "title": "팀 멤버"
     },
     "members": {
       "ezequiasfonseca": {
@@ -1190,7 +1190,9 @@
       },
       "default": {
         "role": "팀 멤버"
-      }
+      },
+      "Lipesantos658": { "role": "주니어 개발자" },
+      "venatornocte": { "role": "주니어 개발자" }
     },
     "work": {
       "title": "일하는 방식",

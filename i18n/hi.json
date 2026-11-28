@@ -1163,7 +1163,7 @@
       "more": "और जानें"
     },
     "devs": {
-      "title": "डेवलपर्स"
+      "title": "टीम सदस्य"
     },
     "members": {
       "ezequiasfonseca": {
@@ -1192,7 +1192,9 @@
       },
       "default": {
         "role": "टीम सदस्य"
-      }
+      },
+      "Lipesantos658": { "role": "जूनियर डेव" },
+      "venatornocte": { "role": "जूनियर डेव" }
     },
     "work": {
       "title": "हम कैसे काम करते हैं",

@@ -1173,7 +1173,7 @@
       "more": "Learn more"
     },
     "devs": {
-      "title": "Developers"
+      "title": "Team members"
     },
     "members": {
       "ezequiasfonseca": {
@@ -1202,7 +1202,9 @@
       },
       "default": {
         "role": "Team member"
-      }
+      },
+      "Lipesantos658": { "role": "Junior Dev" },
+      "venatornocte": { "role": "Junior Dev" }
     },
     "work": {
       "title": "How we work",
