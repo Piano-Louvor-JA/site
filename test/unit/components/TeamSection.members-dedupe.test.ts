@@ -102,4 +102,22 @@ describe('TeamSection — Membros da equipe (review Ezequias)', () => {
     const roles = devSection.findAll('.team__person-role').map((r) => r.text())
     expect(roles).toEqual(['Dev Junior', 'Dev Junior'])
   })
+
+  it('dedupe prefere a conta com bio preenchida (sobre do Lucas não fica vazio)', async () => {
+    fetchMock.mockImplementation(async (url: string) => {
+      const devs = [
+        { ...DEVS[1], id: 'lu-old', bio: null }, // conta antiga sem bio
+        { ...DEVS[1], id: 'lu1', bio: 'Desenvolvedor web e apaixonado por música.' },
+      ]
+      if (String(url).includes('role=dev')) return { data: devs }
+      return { data: STAFF }
+    })
+    const w = mount(TeamSection, { global: { stubs: ['i'] } })
+    await flushPromises()
+    const devSection = w.findAll('.team__people')[1]
+    expect(devSection.findAll('.team__person-name')).toHaveLength(1)
+    // abre o modal e confere o bio
+    await devSection.find('.team__person-more').trigger('click')
+    expect(w.html()).toContain('Desenvolvedor web e apaixonado por música.')
+  })
 })

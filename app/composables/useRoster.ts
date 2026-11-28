@@ -88,7 +88,19 @@ export function useRoster(role: RosterRole | string) {
       for (const m of data) {
         const key = (m.github ?? m.id).toLowerCase()
         const prev = seen.get(key)
-        seen.set(key, prev ? { ...prev, roles: [...new Set([...prev.roles, ...m.roles])] } : m)
+        if (!prev) {
+          seen.set(key, m)
+          continue
+        }
+        // mesma pessoa em 2 docs → manter o doc com dados mais completos
+        // (bio preenchida vence; senão o card/modal exibe "sobre" vazio)
+        const base = prev.bio ? prev : m
+        const other = prev.bio ? m : prev
+        seen.set(key, {
+          ...base,
+          avatar_url: base.avatar_url ?? other.avatar_url,
+          roles: [...new Set([...prev.roles, ...m.roles])],
+        })
       }
       members.value = [...seen.values()]
       error.value = false

@@ -65,14 +65,24 @@
     return i === -1 ? Number.MAX_SAFE_INTEGER : i
   }
 
+  // dedupe por login (mesma pessoa com 2 contas → 1 card);
+  // preferir a entrada com bio preenchida (a conta antiga sem bio fica vaza no modal)
+  function dedupeByLogin<T extends { github: string | null; id: string; bio: string | null }>(
+    arr: T[],
+  ): T[] {
+    const best = new Map<string, T>()
+    for (const m of arr) {
+      const login = m.github ?? m.id
+      const cur = best.get(login)
+      if (!cur || (!cur.bio && m.bio)) best.set(login, m)
+    }
+    return [...best.values()]
+  }
+
   const devs = computed<DisplayMember[]>(() =>
     rosterDevsPending.value
       ? []
-      : [...rosterDevs.value]
-          // dedupe por login (mesma pessoa com 2 contas → 1 card)
-          .filter(
-            (m, i, arr) => arr.findIndex((o) => (o.github ?? o.id) === (m.github ?? m.id)) === i,
-          )
+      : dedupeByLogin(rosterDevs.value)
           .map(fromRoster)
           .sort((a, b) => rank(a.login) - rank(b.login) || a.name.localeCompare(b.name)),
   )
@@ -84,11 +94,10 @@
     rosterPending.value
       ? []
       : [...rosterMembers.value]
-          // dedupe por login + excluir quem já está na seção "Membros da equipe"
-          .filter((m, i, arr) => {
+          // dedupe + excluir quem já está na seção "Membros da equipe"
+          .filter((m) => {
             const login = m.github ?? m.id
-            if (devLogins.value.has(login)) return false
-            return arr.findIndex((o) => (o.github ?? o.id) === login) === i
+            return !devLogins.value.has(login)
           })
           .map(fromRoster)
           .sort((a, b) => rank(a.login) - rank(b.login) || a.name.localeCompare(b.name)),
