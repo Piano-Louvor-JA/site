@@ -1149,7 +1149,7 @@
       "more": "了解更多"
     },
     "devs": {
-      "title": "开发者"
+      "title": "团队成员"
     },
     "members": {
       "ezequiasfonseca": {
@@ -1178,7 +1178,9 @@
       },
       "default": {
         "role": "团队成员"
-      }
+      },
+      "Lipesantos658": { "role": "初级开发" },
+      "venatornocte": { "role": "初级开发" }
     },
     "work": {
       "title": "我们的工作方式",

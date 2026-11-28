@@ -65,18 +65,31 @@
     return i === -1 ? Number.MAX_SAFE_INTEGER : i
   }
 
-  const people = computed<DisplayMember[]>(() =>
-    rosterPending.value
-      ? []
-      : [...rosterMembers.value]
-          .map(fromRoster)
-          .sort((a, b) => rank(a.login) - rank(b.login) || a.name.localeCompare(b.name)),
-  )
-
   const devs = computed<DisplayMember[]>(() =>
     rosterDevsPending.value
       ? []
       : [...rosterDevs.value]
+          // dedupe por login (mesma pessoa com 2 contas → 1 card)
+          .filter(
+            (m, i, arr) => arr.findIndex((o) => (o.github ?? o.id) === (m.github ?? m.id)) === i,
+          )
+          .map(fromRoster)
+          .sort((a, b) => rank(a.login) - rank(b.login) || a.name.localeCompare(b.name)),
+  )
+
+  /** Logins já exibidos na subseção "Membros da equipe" — não repetir em cima. */
+  const devLogins = computed(() => new Set(devs.value.map((d) => d.login)))
+
+  const people = computed<DisplayMember[]>(() =>
+    rosterPending.value
+      ? []
+      : [...rosterMembers.value]
+          // dedupe por login + excluir quem já está na seção "Membros da equipe"
+          .filter((m, i, arr) => {
+            const login = m.github ?? m.id
+            if (devLogins.value.has(login)) return false
+            return arr.findIndex((o) => (o.github ?? o.id) === login) === i
+          })
           .map(fromRoster)
           .sort((a, b) => rank(a.login) - rank(b.login) || a.name.localeCompare(b.name)),
   )
